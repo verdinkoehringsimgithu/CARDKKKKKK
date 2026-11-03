@@ -5,7 +5,7 @@
 ## 当前锚点
 
 - [USER] 用户要求方便开发、可复用、易修改、规则可配置；不需要的功能应移除实现或完整条件编译，不能仅不调用。游戏、配置工具、README、Git提交与上传说明用中文。用户明确自行检查编译与Unity运行，本轮不启动Unity、编译器或测试。已有上传授权，协作者身份此前已验证，提交后正常push，不force。
-- [REPO] 本地 `D:\wenjian\cardkkk`；origin `https://github.com/verdinkoehringsimgithu/CARDKKKKKK.git`。本轮基于main `1a82d76`，开工时工作区干净。用户此前加入的 `.agents` 技能及 `Assets/CardTable/Art/Assets` 资源保留。Git原有身份不改。
+- [REPO] 本地 `D:\wenjian\cardkkk`；origin `https://github.com/verdinkoehringsimgithu/CARDKKKKKK.git`。桌面重构 `60b2784` 已上传，本轮策划基于此提交，开工时工作区干净。用户此前加入的 `.agents` 技能及 `Assets/CardTable/Art/Assets` 资源保留。Git原有身份不改。
 - [SCOPE] Unity 2022.3.62f3c1，Windows单机、鼠标、有限二维桌面、统一卡片尺寸、不旋转。实现自由卡牌桌面，具体配方、委托、回合与胜负尚未选定，不添加假配置。旧需求在 `docs/superpowers/specs/2026-11-03-tabletop-foundation-design.md`。本轮规则与结构见 README、`docs/configuration-guide.md`、`docs/tabletop-api.md`。
 - [CONFIG] `Unity/Configuration` 提供 CardDefinition、CardTableConfiguration、TableRuleSettings、FeatureSelection、InitialPile。中文菜单 `卡牌桌面/游戏规则配置`，四页为桌面规则/卡牌目录/初始桌面/功能与资源。窗口默认读取场景启动器的实际配置引用，修改停止后下一次启动应用，不热改模型。默认配置 `Assets/CardTable/Configuration/默认游戏配置.asset`，GUID `a74fc672df4144e8a77723d488c1475b`。9种定义为archive/supply/tool各.3/.1/.2，初始3堆各3张，位置180/540/900,360。目录可新增定义并编辑中文名称/分类/序号/属性/插画。
 - [VALIDATE] 配置验证检查ID/属性/引用/Windows存档文件名，并精确构造初始快照交Core.Restore检查几何、唯一归属、容量、当前堆叠规则；允许初始桌面为空。默认资产补齐仅创建缺文件，不覆盖设计者修改。规则窗口与Inspector使用中文枚举/属性/引用列表。
@@ -19,7 +19,10 @@
 - [SAVE] BoardSaveStore保留格式v1、SHA256、10MB上限、同目录临时写/Flush/原子替换/.bak恢复；备份结构验证注入当前catalog，禁用Save功能直接Save/Load也拒绝。旧family.sample按旧Rank匹配迁移，默认映射1..3；旧演示额外发牌4..9需补定义映射，缺失整体拒绝且保留当前桌面，不虚称所有旧档自动兼容。实例属性/翻面/ID/牌序/位置保留，静态字段按新定义解析。
 - [VERIFY] 本轮仅静态检查，不能报告编译/运行/测试通过。25脚本、7符号的128种组合扫描没有已裁剪方法残留引用；13个配置/Prefab/场景文件YAML可解析、内外部fileID与GUID有对应资产（含本地uGUI包）；CardTable无缺.meta、全Assets无GUID冲突。独立审查修正Editor对Unity.ugui的直接引用、唯一AudioListener、CanvasScaler Expand、预览保存恢复；最新预览已复核无新阻断。Tests/Core新增4组目录/迁移/堆叠/权限/排序场景源码，未执行；18组+3000随机操作通过只属于重构前历史版本。
 - [DELIVERY] 本轮代码、实际配置资产、Prefab、文档与静态整合已完成，保留用户既有资源，无额外玩法。中文提交与上传沿用已有授权，最终提交号/同步状态以git log和status为准。没有运行编译、核心检查工程或Unity，不得把静态扫描写成编译通过。
-- [NEXT] 用户从“卡牌桌面/游戏规则配置”配置卡牌/初始桌面/堆叠/拖拽/排序；功能页勾选控制权限，显式应用编译裁剪才剔除实现。下一步若要配方、委托或胜负，先定实际规则与状态，再进入玩法层，不把属性字段当作已存在的效果。
+- [NEXT] 当前窗口仍配置桌面规则，本次新增策划与数据草表尚未接入运行。用户后续要求实施时，先按策划做4日两工艺切片、唯一整局事务和生产闭环，再扩到14日；不要把纸面配方、属性字段或CSV当作现成效果系统。题材与数值为提案，用户下一轮修正优先。
+- [DESIGN_PROPOSAL] 2026-11-03 用户要求参考卡牌生存、缺氧及同类出可执行策划；截图方向为投入产出、非线性工艺、同级主产出相近而副产物不同。提案 `docs/superpowers/specs/2026-11-03-ember-workshop-design.md` 为《余烬工坊》v0.1，配套 `docs/planning/ember-workshop`。14天、两工人×两段、14资源/24定义/18配方，水粮每夜各2，热0..10，三条回收同产零件并分出导线/炉渣/浆料；14日三次修复。题材、数字与八周预算是推荐假设，不是用户已确认的最终设计。
+- [DESIGN_BOUNDARY] 本轮只交付文档和数据草案，未实现生产、CSV导入或整局存档v2。建议固定设施/地点/工人面板，InventoryBoard仅物品，一卡一单位/80单位/20堆/每堆20/错开3；GameEngine统一整局事务，复用桌面规划但不拼接多次Spawn模拟制作。首版无随机事件、健康模拟、污染、物流、战斗或连续物理。先4日一次修复的两工艺切片，再14日三工艺。
+- [DESIGN_VERIFY] 静态逐段核算通关账本，18配方ID/材料、工位占用、两段作业、热和每夜食水一致；56工人段、峰值热8、峰值库存41，D14支付前水2粮6、支付后水0粮4且三阶段完成。独立制作人已只读复核策划及全账本，结论无重要实施空白。仅证明一条数字可达路线，不是游戏测试、实际桌面几何或玩法平衡证据；跨夜作业和满缓冲须由后续实际实现覆盖。
 
 ## 接续顺序
 

@@ -1,0 +1,31 @@
+{
+  "card_definitions": 24,
+  "resource_types": 14,
+  "recipes": 18,
+  "ledger_days": 14,
+  "worker_segments": 56,
+  "peak_heat": 8,
+  "peak_inventory_units": 41,
+  "final_beacon_stage": 3,
+  "final_night_before_payment": [
+    2,
+    6
+  ],
+  "final_inventory": {
+    "raw_water": 2,
+    "clean_water": 0,
+    "raw_food": 2,
+    "ration": 4,
+    "wood": 1,
+    "scrap": 2,
+    "fiber": 5,
+    "charcoal": 0,
+    "part": 3,
+    "wire": 1,
+    "slag": 0,
+    "slurry": 1,
+    "plate": 0,
+    "filter": 0
+  },
+  "checks": "已核对CSV引用、材料扣除、工位和工人占用、一段及两段作业、热预算、批次大小、数量容量、夜间食水及账本全部列；仅策划数值静态核算，没有运行Unity或游戏测试，未检查实际桌面几何布局及玩法平衡。"
+}
