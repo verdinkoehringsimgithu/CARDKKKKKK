@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1001}
   - component: {fileID: 1002}
+  - component: {fileID: 1003}
+  - component: {fileID: 1004}
   m_Layer: 0
   m_Name: 卡牌桌面
   m_TagString: Untagged
@@ -29,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,4 +48,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f197d185ebd974da0dac581bbe6d2ea, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  theme: {fileID: 11400000, guid: beea84b396b68bd99131fc1e320b3382, type: 2}
+  configuration: {fileID: 11400000, guid: a74fc672df4144e8a77723d488c1475b, type: 2}
+  view: {fileID: 2002}
+  input: {fileID: 1003}
+--- !u!114 &1003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb6c04959b75e2598723e3a01ac24ce, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!81 &1004
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000}
+  m_Enabled: 1
+--- !u!1001 &2000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1001}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 5e73ebe23a385df8a703656d5a5fa0e1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e73ebe23a385df8a703656d5a5fa0e1, type: 3}
+--- !u!224 &2001 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e73ebe23a385df8a703656d5a5fa0e1, type: 3}
+  m_PrefabInstance: {fileID: 2000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 100169, guid: 5e73ebe23a385df8a703656d5a5fa0e1, type: 3}
+  m_PrefabInstance: {fileID: 2000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf2a0db8a525e0a986af6ffadead304, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:

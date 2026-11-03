@@ -1,3 +1,4 @@
+#if !CARDTABLE_DISABLE_SAVE
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -14,6 +15,7 @@ namespace CardKKK.Tabletop.Unity
         private const int CurrentVersion = 1;
         private const long MaximumFileBytes = 10 * 1024 * 1024;
         private readonly string path;
+        private readonly CardCatalog catalog;
 
         public bool LoadedFromBackup { get; private set; }
 
@@ -26,17 +28,20 @@ namespace CardKKK.Tabletop.Unity
             public string Sha256;
         }
 
-        public BoardSaveStore(string path)
+        public BoardSaveStore(string path, CardCatalog catalog = null)
         {
             if (string.IsNullOrWhiteSpace(path))
                 throw new ArgumentException("请提供存档路径。", nameof(path));
             this.path = Path.GetFullPath(path);
+            this.catalog = catalog;
         }
 
         public OperationResult Save(BoardEngine engine)
         {
             if (engine == null)
                 return OperationResult.Fail("桌面尚未准备好，请稍后重试。");
+            if ((engine.Rules.Features & TableFeatures.Save) == 0)
+                return OperationResult.Fail("当前配置已关闭存档功能。");
             if (engine.IsDragging)
                 return OperationResult.Fail("请先放下卡牌，或按 Esc 取消拖动，再保存。");
 
@@ -70,7 +75,7 @@ namespace CardKKK.Tabletop.Unity
                     string backup = null;
                     if (TryRead(path, out BoardSnapshot previous, out _))
                     {
-                        var validator = new BoardEngine(engine.Rules);
+                        var validator = new BoardEngine(engine.Rules, catalog);
                         if (validator.Restore(previous).Success)
                             backup = path + ".bak";
                     }
@@ -103,6 +108,8 @@ namespace CardKKK.Tabletop.Unity
             LoadedFromBackup = false;
             if (engine == null)
                 return OperationResult.Fail("桌面尚未准备好，请稍后重试。");
+            if ((engine.Rules.Features & TableFeatures.Save) == 0)
+                return OperationResult.Fail("当前配置已关闭存档功能。");
             if (engine.IsDragging)
                 return OperationResult.Fail("请先放下卡牌，或按 Esc 取消拖动，再读取。");
 
@@ -195,3 +202,4 @@ namespace CardKKK.Tabletop.Unity
         }
     }
 }
+#endif

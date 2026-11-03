@@ -29,6 +29,10 @@ internal static class Program
         Run("pop placement and insufficient space", Pop);
         Run("tidy, overlap resolution and overflow", Layout);
         Run("malformed snapshot restore rejection", RestoreValidation);
+        Run("定义目录隔离、静态字段解析与旧版迁移", CatalogDefinitions);
+        Run("可配置堆叠与自动合堆边界", ConfigurableStacking);
+        Run("拖拽权限与可选操作关闭时原子拒绝", DisabledFeatures);
+        Run("可配置排序保留同值牌的原顺序", ConfigurableSorting);
         Run("3000 randomized operations", Randomized);
         Run("100/500/1000 card preview timings", Benchmark);
         Console.WriteLine($"RESULT {passed} passed, {failed} failed");
@@ -444,6 +448,135 @@ internal static class Program
         }
     }
 
+    private static void CatalogDefinitions()
+    {
+        var attributes = new List<CardAttribute> { new CardAttribute { Key = "能量", Value = 3 } };
+        var definition = new CardDefinitionData("archive.3", "藏书 3", "Archive", 3,
+            attributes, "archive.sample", 3);
+        var catalog = new CardCatalog(new[] { definition });
+        attributes[0].Value = 999;
+        definition.Attributes[0].Value = 888;
+        var first = catalog.CreateCard("archive.3");
+        var second = catalog.CreateCard("archive.3");
+        first.Attributes[0].Value = 7;
+        Check(second.Attributes[0].Value == 3, "定义或实例共享了可变属性");
+
+        var engine = new BoardEngine(new BoardRules(), catalog);
+        first.Label = "伪造名称"; first.Family = "伪造分类"; first.Rank = -1; first.FaceUp = false;
+        var result = engine.Spawn(first, new TablePoint(10, 10));
+        Accept(result);
+        var card = engine.Capture().Cards.Single();
+        Check(card.Label == "藏书 3" && card.Family == "Archive" && card.Rank == 3,
+            "生成未以定义目录解析静态字段");
+        Check(!card.FaceUp && card.Attributes[0].Value == 7, "生成丢失实例状态");
+        Reject(engine, () => engine.Spawn(Card("unknown"), new TablePoint(500, 10)));
+
+        var legacy = engine.Capture();
+        legacy.Cards[0].DefinitionId = "archive.sample";
+        legacy.Cards[0].Label = "旧名称";
+        legacy.Cards[0].Family = "旧分类";
+        Accept(engine.Restore(legacy));
+        card = engine.Capture().Cards.Single();
+        Check(card.DefinitionId == "archive.3" && card.Label == "藏书 3" && card.Id == result.CardId,
+            "旧版定义映射失败或修改实例ID");
+        Check(!card.FaceUp && card.Attributes[0].Value == 7, "读取丢失实例翻面或属性");
+        legacy.Cards[0].Rank = 9;
+        Reject(engine, () => engine.Restore(legacy));
+        bool duplicateRejected = false;
+        try { new CardCatalog(new[] { definition, definition }); }
+        catch (ArgumentException) { duplicateRejected = true; }
+        Check(duplicateRejected, "重复定义ID未被拒绝");
+        duplicateRejected = false;
+        try
+        {
+            new CardCatalog(new[] { definition,
+                new CardDefinitionData("other", "另一张", "Archive", 5,
+                    Array.Empty<CardAttribute>(), "archive.sample", 3) });
+        }
+        catch (ArgumentException) { duplicateRejected = true; }
+        Check(duplicateRejected, "重复旧版映射未被拒绝");
+        Invariants(engine);
+    }
+
+    private static void ConfigurableStacking()
+    {
+        var mixed = State(new[] { Card("a", 0, "one"), Card("b", 1, "two") },
+            Pile("p", 10, 10, "a"), Pile("q", 500, 10, "b"));
+        var any = Load(mixed, new BoardRules { StackRule = StackRule.AnyCard });
+        Accept(any.BeginDrag("p"));
+        Check(any.PreviewDrop(new TablePoint(500, 10)).IsValid, "任意卡规则仍按分类拒绝");
+        Accept(any.CommitDrop(new TablePoint(500, 10)));
+        Check(any.Capture().Piles.Count == 1, "任意卡合堆未提交");
+        Invariants(any);
+
+        mixed.Cards[1].Family = "one";
+        var exact = Load(mixed, new BoardRules { StackRule = StackRule.SameDefinition });
+        Accept(exact.BeginDrag("p"));
+        Check(!exact.PreviewDrop(new TablePoint(500, 10)).IsValid, "同定义规则接受了不同定义");
+        Check(!exact.CommitDrop(new TablePoint(500, 10)).Success, "同定义规则错误合堆");
+        var merged = State(mixed.Cards, Pile("merged", 10, 10, "a", "b"));
+        Reject(exact, () => exact.Restore(merged));
+
+        var singles = new BoardEngine(new BoardRules { AllowStacking = false });
+        Accept(singles.Spawn(Card("a"), new TablePoint(10, 10)));
+        Accept(singles.Spawn(Card("b"), new TablePoint(10, 10)));
+        Check(singles.Capture().Piles.Count == 2, "关闭堆叠后生成仍合堆");
+        Reject(singles, () => singles.Restore(merged));
+        Invariants(singles);
+
+        var noAuto = new BoardEngine(new BoardRules { AutoMergeOnSpawn = false, AutoMergeOnTidy = false });
+        Accept(noAuto.Spawn(Card("a"), new TablePoint(10, 10)));
+        Accept(noAuto.Spawn(Card("b"), new TablePoint(10, 10)));
+        Check(noAuto.Capture().Piles.Count == 2, "关闭生成合堆未生效");
+        Accept(noAuto.TidyTable());
+        Check(noAuto.Capture().Piles.Count == 2, "关闭整理合堆未生效");
+        var state = noAuto.Capture();
+        Accept(noAuto.BeginDrag(state.Piles[0].Id));
+        Accept(noAuto.CommitDrop(state.Piles[1].Position));
+        Check(noAuto.Capture().Piles.Count == 1, "关闭自动合堆错误关闭了手动堆叠");
+        Invariants(noAuto);
+    }
+
+    private static void DisabledFeatures()
+    {
+        var state = TwoPiles().Capture();
+        var engine = Load(state, new BoardRules { Features = TableFeatures.None });
+        Reject(engine, () => engine.FlipCard("a"));
+        Reject(engine, () => engine.FlipPile("p"));
+        Reject(engine, () => engine.SortPile("p"));
+        Reject(engine, () => engine.ShufflePile("p", 3));
+        Reject(engine, () => engine.ReorderCard("p", "a", 2));
+        Reject(engine, () => engine.PopCard("p"));
+        Reject(engine, () => engine.TidyTable());
+        Accept(engine.BeginDrag("p"));
+        Accept(engine.CancelDrag());
+
+        engine = Load(state, new BoardRules { AllowWholePileDrag = false });
+        Reject(engine, () => engine.BeginDrag("p"));
+        Accept(engine.BeginDrag("p", "b"));
+        Accept(engine.CancelDrag());
+        engine = Load(state, new BoardRules { AllowSingleCardDrag = false });
+        Reject(engine, () => engine.BeginDrag("p", "b"));
+        Accept(engine.BeginDrag("p"));
+        Accept(engine.CancelDrag());
+    }
+
+    private static void ConfigurableSorting()
+    {
+        var cards = new[] { Card("a", 1), Card("b", 3), Card("c", 3), Card("d", 2) };
+        cards[0].Label = "乙"; cards[1].Label = "甲"; cards[2].Label = "甲"; cards[3].Label = "丙";
+        var state = State(cards, Pile("p", 10, 10, "a", "b", "c", "d"));
+        var engine = Load(state, new BoardRules { SortRule = CardSortRule.RankDescending });
+        Accept(engine.SortPile("p"));
+        Check(engine.Capture().Piles[0].CardIds.SequenceEqual(new[] { "b", "c", "d", "a" }),
+            "降序排序错误或同值牌不稳定");
+        engine = Load(state, new BoardRules { SortRule = CardSortRule.NameAscending });
+        Accept(engine.SortPile("p"));
+        var expected = cards.OrderBy(card => card.Label, StringComparer.Ordinal).Select(card => card.Id);
+        Check(engine.Capture().Piles[0].CardIds.SequenceEqual(expected), "名称排序未使用确定性稳定顺序");
+        Invariants(engine);
+    }
+
     private static void Benchmark()
     {
         foreach (int count in new[] { 100, 500, 1000 })
@@ -476,11 +609,19 @@ internal static class Program
         {
             Check(!string.IsNullOrWhiteSpace(pile.Id) && piles.Add(pile.Id), "Duplicate pile ID");
             Check(pile.CardIds.Count > 0 && pile.CardIds.Count <= rules.MaxPileSize, "Empty or oversized pile");
+            Check(rules.AllowStacking || pile.CardIds.Count == 1, "关闭堆叠时出现多张牌堆");
             float x = pile.Position.X, y = pile.Position.Y, height = rules.CardHeight + (pile.CardIds.Count - 1) * rules.PileOffset;
             Check(!float.IsNaN(x) && !float.IsNaN(y) && !float.IsInfinity(x) && !float.IsInfinity(y), "Nonfinite position");
             Check(x >= -0.001f && y >= -0.001f && x + rules.CardWidth <= rules.Width + 0.001f && y + height <= rules.Height + 0.001f, "Footprint out of bounds");
-            string family = cards[pile.CardIds[0]].Family;
-            foreach (string id in pile.CardIds) Check(members.Add(id) && cards.TryGetValue(id, out var card) && card.Family == family, "Membership or family invalid");
+            var first = cards[pile.CardIds[0]];
+            foreach (string id in pile.CardIds)
+            {
+                Check(members.Add(id) && cards.ContainsKey(id), "Membership invalid");
+                var card = cards[id];
+                Check(rules.StackRule == StackRule.AnyCard ||
+                    (rules.StackRule == StackRule.SameFamily ? card.Family == first.Family : card.DefinitionId == first.DefinitionId),
+                    "Pile violates configured stack rule");
+            }
         }
         Check(members.Count == cards.Count && cards.Keys.All(id => !string.IsNullOrWhiteSpace(id)), "Orphan or empty ID");
         for (int i = 0; i < state.Piles.Count; i++)

@@ -16,7 +16,6 @@ MonoBehaviour:
   CardFrame: {fileID: 0}
   CardBack: {fileID: 0}
   ActionIcon: {fileID: 0}
-  CardFaces: []
   TableColor: {r: 0.055, g: 0.13, b: 0.17, a: 1}
   CardColor: {r: 0.88, g: 0.89, b: 0.83, a: 1}
   BackColor: {r: 0.18, g: 0.27, b: 0.35, a: 1}

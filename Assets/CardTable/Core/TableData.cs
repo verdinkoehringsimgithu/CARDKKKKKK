@@ -3,6 +3,16 @@ using System.Collections.Generic;
 
 namespace CardKKK.Tabletop.Core
 {
+    public enum StackRule { SameFamily = 0, SameDefinition = 1, AnyCard = 2 }
+    public enum CardSortRule { RankAscending = 0, RankDescending = 1, NameAscending = 2 }
+
+    [Flags]
+    public enum TableFeatures
+    {
+        None = 0, Flip = 1, Sort = 2, Shuffle = 4, Reorder = 8,
+        Pop = 16, Tidy = 32, Save = 64, All = 127
+    }
+
     [Serializable]
     public struct TablePoint
     {
@@ -21,6 +31,7 @@ namespace CardKKK.Tabletop.Core
     [Serializable]
     public sealed class CardData
     {
+        // 已解析的导入/导出数据；有目录时，定义字段以 CardCatalog 为准。
         public string Id;
         public string DefinitionId;
         public string Label;
@@ -59,6 +70,14 @@ namespace CardKKK.Tabletop.Core
         public float Gap = 12;
         public int MaxCards = 1000;
         public int MaxPileSize = 20;
+        public bool AllowStacking = true;
+        public bool AllowWholePileDrag = true;
+        public bool AllowSingleCardDrag = true;
+        public bool AutoMergeOnSpawn = true;
+        public bool AutoMergeOnTidy = true;
+        public StackRule StackRule = StackRule.SameFamily;
+        public CardSortRule SortRule = CardSortRule.RankAscending;
+        public TableFeatures Features = TableFeatures.All;
         internal BoardRules Copy() { return (BoardRules)MemberwiseClone(); }
     }
 

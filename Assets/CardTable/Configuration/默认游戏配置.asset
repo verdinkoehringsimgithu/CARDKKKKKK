@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a321e7f01028bc09cd42d992b7b74f63, type: 3}
+  m_Name: 默认游戏配置
+  m_EditorClassIdentifier:
+  Rules:
+    Width: 1600
+    Height: 900
+    CardWidth: 100
+    CardHeight: 140
+    PileOffset: 22
+    SnapDistance: 65
+    Gap: 12
+    MaxCards: 1000
+    MaxPileSize: 20
+    AllowStacking: 1
+    AllowWholePileDrag: 1
+    AllowSingleCardDrag: 1
+    AutoMergeOnSpawn: 1
+    AutoMergeOnTidy: 1
+    StackRule: 0
+    SortRule: 0
+  Features:
+    Flip: 1
+    Sort: 1
+    Shuffle: 1
+    Reorder: 1
+    Pop: 1
+    Tidy: 1
+    Save: 1
+  Cards:
+  - {fileID: 11400000, guid: cc7c6be24a591e1d5919a66d272972e9, type: 2}
+  - {fileID: 11400000, guid: abd1d558367e4ad5e08646dfd55aa0f7, type: 2}
+  - {fileID: 11400000, guid: a0a076122530304c5b50040ea2400054, type: 2}
+  - {fileID: 11400000, guid: b5b1e752613bbaaa69f9bae5885f8d01, type: 2}
+  - {fileID: 11400000, guid: 944e38c1bd8b648661df325d304c95fe, type: 2}
+  - {fileID: 11400000, guid: a711eb06e06fdc456f5fadb3d9ddf02f, type: 2}
+  - {fileID: 11400000, guid: 318ace840d1969976e2a4d6e24458f8d, type: 2}
+  - {fileID: 11400000, guid: 5eda55f4a63f18d00d23ad9a35cd45b0, type: 2}
+  - {fileID: 11400000, guid: b62c98027bbcf9433f7128ad8bd6fc8f, type: 2}
+  InitialPiles:
+  - Position: {x: 180, y: 360}
+    Cards:
+    - {fileID: 11400000, guid: cc7c6be24a591e1d5919a66d272972e9, type: 2}
+    - {fileID: 11400000, guid: abd1d558367e4ad5e08646dfd55aa0f7, type: 2}
+    - {fileID: 11400000, guid: a0a076122530304c5b50040ea2400054, type: 2}
+  - Position: {x: 540, y: 360}
+    Cards:
+    - {fileID: 11400000, guid: b5b1e752613bbaaa69f9bae5885f8d01, type: 2}
+    - {fileID: 11400000, guid: 944e38c1bd8b648661df325d304c95fe, type: 2}
+    - {fileID: 11400000, guid: a711eb06e06fdc456f5fadb3d9ddf02f, type: 2}
+  - Position: {x: 900, y: 360}
+    Cards:
+    - {fileID: 11400000, guid: 318ace840d1969976e2a4d6e24458f8d, type: 2}
+    - {fileID: 11400000, guid: 5eda55f4a63f18d00d23ad9a35cd45b0, type: 2}
+    - {fileID: 11400000, guid: b62c98027bbcf9433f7128ad8bd6fc8f, type: 2}
+  Theme: {fileID: 11400000, guid: beea84b396b68bd99131fc1e320b3382, type: 2}
+  SaveFileName: card-table.json

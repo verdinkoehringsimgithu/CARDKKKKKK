@@ -29,12 +29,6 @@ namespace CardKKK.Tabletop.Core
             double dy = Math.Max(Math.Max(Y - point.Y, 0), point.Y - Top);
             return dx * dx + dy * dy;
         }
-        internal double DistanceSquared(TableRect other)
-        {
-            double dx = Math.Max(Math.Max(X - other.Right, 0), other.X - Right);
-            double dy = Math.Max(Math.Max(Y - other.Top, 0), other.Y - Top);
-            return dx * dx + dy * dy;
-        }
     }
 
     // The grid only finds candidates. Exact rectangles decide every collision.

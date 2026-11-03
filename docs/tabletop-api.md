@@ -1,24 +1,42 @@
-# Card table API contract
+# 核心接口约定
 
-This contract fixes the small shared surface between the plain C# domain, Unity UI and tests. Namespace `CardKKK.Tabletop.Core`. Unity 2022.3, C# 9-compatible, no external dependencies. All engine operations are synchronous and used from Unity's main thread.
+命名空间 `CardKKK.Tabletop.Core`。纯 C#，不引用 Unity。所有操作同步，由主线程调用；引擎独占已提交状态，外部通过命令修改，通过快照读取。
 
-## Data
+## 定义、实例与规则
 
-- `[Serializable] TablePoint` struct with public float `X`, `Y`, constructor `(float x, float y)`. Coordinates use board-local bottom-left origin.
-- `[Serializable] CardAttribute` class with public string `Key`, public int `Value`.
-- `[Serializable] CardData` class with public string `Id`, `DefinitionId`, `Label`, `Family`; public int `Rank`; public bool `FaceUp = true`; public `List<CardAttribute> Attributes` initialized empty.
-- `[Serializable] PileData` class with public string `Id`; public `TablePoint Position` (bottom-left of bottom card); public `List<string> CardIds` initialized empty, ordered bottom to top. Each later card is offset UP by `rules.PileOffset` units.
-- `[Serializable] BoardSnapshot` class with public int `SchemaVersion = 1`, `Revision`; public `List<CardData> Cards` and `List<PileData> Piles` initialized empty. Piles are ordered back to front. All returned data is a defensive copy.
-- `BoardRules` class public fields `Width = 1600`, `Height = 900`, `CardWidth = 100`, `CardHeight = 140`, `PileOffset = 22`, `SnapDistance = 65`, `Gap = 12`, `MaxCards = 1000`, `MaxPileSize = 20`. Validate finite positive geometry and limits at construction. Pile height is `CardHeight + (count-1)*PileOffset`.
-- `OperationResult` with public read-only `bool Success`, `string Error`, `string PileId`, `string CardId`.
-- `DropPreview` with public read-only `bool IsValid`, `TablePoint Position`, `string TargetPileId`, `int InsertionIndex`, `string Reason`, `IReadOnlyList<string> CardIds`. For merges, Position is the destination pile position. No target means free placement.
-- `DragInfo` with public read-only `IReadOnlyList<string> CardIds`, `string SourcePileId`.
+- `CardDefinitionData(id, label, family, rank, attributes, legacyDefinitionId = null, legacyRank = 0)`：不可变定义。属性输入和公开读取都深拷贝，不共享可变实例属性。
+- `CardCatalog(IEnumerable<CardDefinitionData>)`：唯一非空 ID 的只读定义目录。`TryGet` 查找当前 ID；`CreateCard(id)` 创建含默认属性的独立实例 DTO；`TryResolveSavedCard` 先尝试旧 ID + 旧序号迁移，再尝试当前 ID。
+- `CardData`：序列化 DTO，字段为实例 `Id`、`DefinitionId`、已解析 `Label/Family/Rank`、`FaceUp`、`List<CardAttribute> Attributes`。定义目录存在时，静态字段以目录为准；实例翻面和属性以当前实例为准。
+- `CardAttribute`：`Key` 与整数 `Value`。目前只存储数据，不包含自动效果解释器。
+- `PileData`：`Id`、`TablePoint Position`、`List<string> CardIds`。位置为底牌左下角，成员从底到顶。
+- `BoardSnapshot`：`SchemaVersion = 1`、`Revision`、`Cards`、`Piles`。堆列表从后到前。`Capture()` 返回防御性深拷贝。
+- `TablePoint`：`X/Y` 浮点数；桌面左下为原点，后续牌向上错开。
+- `BoardRules`：桌面宽高、卡牌宽高、堆内错开、吸附距离、间距、全桌上限、单堆上限，以及下列策略与开关。构造引擎时复制并验证，`Engine.Rules` 返回副本。
 
-## BoardEngine
+| 字段 | 含义 |
+|---|---|
+| `AllowStacking` | 允许多张同堆；关闭时所有堆只能单张 |
+| `StackRule` | `SameFamily / SameDefinition / AnyCard` |
+| `SortRule` | `RankAscending / RankDescending / NameAscending` |
+| `AllowWholePileDrag / AllowSingleCardDrag` | 分别允许整堆与单张拖动 |
+| `AutoMergeOnSpawn` | 生成位置重叠时合并兼容堆，否则找空位 |
+| `AutoMergeOnTidy` | 整理时是否合并附近兼容堆 |
+| `Features` | 翻面、排序、洗牌、堆内调序、抽牌、整理、存档的位标志 |
 
-Constructor `BoardEngine(BoardRules rules)`. Owns a private validated rule copy, board model and at most one drag. Exposes `BoardRules Rules` as a copy, `bool IsDragging`, `DragInfo CurrentDrag` as a copy, `event Action Changed`.
+默认尺寸 1600×900，卡片 100×140，错开 22，吸附距离 65，间距 12，全局上限 1000，单堆上限 20。宽高和错开为有限正数，吸附距离和间距可为零。堆高度为 `CardHeight + (count - 1) * PileOffset`。容量上限不能放宽几何边界。
 
-Public methods:
+## 引擎入口
+
+```csharp
+var catalog = new CardCatalog(definitions);
+var engine = new BoardEngine(rules, catalog);
+var template = catalog.CreateCard("herb.mint");
+OperationResult result = engine.Spawn(template, new TablePoint(200, 200));
+```
+
+构造器为 `BoardEngine(BoardRules rules, CardCatalog catalog = null)`。目录为 null 的路径保留给原导入 API 与独立核心检查；正常 Unity 入口始终注入目录。
+
+始终保留的底座：
 
 ```csharp
 BoardSnapshot Capture();
@@ -28,38 +46,53 @@ OperationResult BeginDrag(string pileId, string cardId = null);
 DropPreview PreviewDrop(TablePoint position);
 OperationResult CommitDrop(TablePoint position);
 OperationResult CancelDrag();
-OperationResult FlipCard(string cardId);
-OperationResult FlipPile(string pileId);
-OperationResult SortPile(string pileId);
-OperationResult ShufflePile(string pileId, int seed);
-OperationResult ReorderCard(string pileId, string cardId, int index);
-OperationResult PopCard(string pileId, string cardId = null);
-OperationResult TidyTable();
 OperationResult ResolveOverlaps();
 OperationResult Restore(BoardSnapshot snapshot);
 ```
 
-## Rules and boundaries
+可选模块（对应 `CARDTABLE_DISABLE_*` 被定义时，完整方法不参与编译）：
 
-- Spawn clones the template and generates a unique ID, never trusting template.Id. DefinitionId and Family must be nonempty. All cards must belong to exactly one nonempty pile. Pile IDs and card IDs globally unique within each ID kind. Rank ties sort stably by current order.
-- Spawn, unlike an explicit player drop, uses a bounded nearest-free search if the desired position is blocked. ShufflePile uses seeded Fisher-Yates, preserves all members and operates atomically. The same snapshot and seed produce the same permutation within the target runtime.
-- A pile contains one Family. Same-family piles can merge only if within capacity. MaxCards and MaxPileSize limit operations and saves. Rejections preserve the committed state.
-- `BeginDrag` locks other mutations except Cancel/Preview/Commit. Null cardId drags the whole pile, otherwise detaches exactly that card. Committed state remains unchanged during drag. Invalid CommitDrop ends drag and restores the original committed state. Preview and commit use the same planner. Source remaining cards are compacted only in the candidate state.
-- Target selection uses a spatial hash broadphase and exact geometry/range checks, prefers nearest eligible pile, then frontmost stable tie. A pointer already inside a foreign incompatible pile is an invalid drop. Insert index is based on projected vertical offset, clamped [0, target card count]. For a same-source whole-pile move, exclude source from candidates. Single-card dragging may reorder its original pile.
-- Single-card or whole-pile drop must be fully inside bounds, free of other pile footprints after merge/removal. Failed free placement never silently changes intent. Explicit Pop/ResolveOverlaps use a bounded deterministic nearest-free-slot search. Never loop indefinitely.
-- `TidyTable` merges nearby eligible same-family piles with deterministic pair order and capacity checks, then packs actual footprints in rows. Insufficient room rejects the whole command. `ResolveOverlaps` handles overlapping pairs by merging eligible stacks or moving a stack to a verified free slot, atomically.
-- SortPile uses stable Rank ascending. ReorderCard index is final index in the existing pile. PopCard defaults to top card, finds free placement before committing.
-- Restore validates schema, finite in-bounds positions, unique membership, IDs and family consistency BEFORE replacing state. Unknown schema and invalid input preserve current board, including current drag. Valid Restore is rejected while dragging. Overlapping saved piles may be rejected with an explicit error; never silently delete cards.
-- Animation cannot drive state mutation. Model transitions are atomic. Visual interpolation retargets to latest state. Drag commands are rejected until layout animation ends in the Unity adapter. This does not provide multithreaded or network access.
+```csharp
+OperationResult FlipCard(string cardId);             // FLIP
+OperationResult FlipPile(string pileId);             // FLIP
+OperationResult SortPile(string pileId);             // SORT
+OperationResult ShufflePile(string pileId, int seed);// SHUFFLE
+OperationResult ReorderCard(string pileId, string cardId, int index); // REORDER
+OperationResult PopCard(string pileId, string cardId = null);        // POP
+OperationResult TidyTable();                         // TIDY
+```
 
-## Save adapter
+调用可选方法的外部代码也必须使用对应条件编译。即使实现已编译，运行配置 `Features` 关闭时仍拒绝该操作，不做静默成功的空调用。
 
-Namespace `CardKKK.Tabletop.Unity`. `BoardSaveStore(string path)` has `OperationResult Save(BoardEngine engine)` and `OperationResult Load(BoardEngine engine)`. Use JsonUtility DTO serialization, bounded file size, temporary file and atomic replace with backup; preserve current board and old save on failure. Save rejects active drag. Load validates through engine.Restore and falls back to backup only on invalid/corrupt primary.
+`OperationResult` 返回 `Success/Error/PileId/CardId`。拒绝操作不改变已提交状态。`DropPreview` 包含有效性、实际位置、目标堆、插入序号、原因和移动成员；无目标堆代表自由放置。`CurrentDrag` 返回本次源堆与移动成员快照。
 
-## Unity demo / art
+## 状态、拖放与通知
 
-Namespace `CardKKK.Tabletop.Unity`. Separate `CardTableDemo` MonoBehaviour, self-contained demo scene and Editor menu `CardKKK/Open Card Table Demo`. 1600x900 reference Canvas, mouse drag, SHIFT-drag extracts single card, normal drag moves pile. Click selects and raises whole pile. Space flip, S sort selected pile, H shuffle selected pile, P pop, R tidy, O resolve overlaps, F5 save, F9 load, Escape cancel. Buttons show these operations. Pointer dragging previews green/red footprint and insertion indication. Render placeholders only. Reserve `Assets/CardTable/Art/{CardFaces,CardFrames,Table,Icons,Audio/SFX,Audio/Music}` and a ScriptableObject theme for replacement, no third-party game assets.
+- 核心只有一个修改入口体系：候选副本 → 统一规则与几何验证 → 原子提交 → `Changed` 通知。通知中的重入修改被拒绝，某个观察者异常不阻止其他观察者。
+- `Spawn` 不信任传入实例 ID，始终生成新的唯一 ID。带目录时按定义 ID 解析名称、分类和序号；默认属性须通过 `catalog.CreateCard` 获得。生成点被阻挡时进行有界空位搜索。
+- `BeginDrag(pileId)` 移动整堆；传入 cardId 只拆这一张。开始时缓存移除移动成员后的候选基础与空间索引，拖动过程中不改变提交状态。
+- 拖动独占模型，其他修改拒绝。预览与提交共用落点规划；非法提交结束拖动并保留原状态，取消也保留原状态。单张可回到原堆重新插入。
+- 目标选择使用空间哈希与精确距离/矩形，优先最近兼容堆，距离相同时取前层。落入不兼容或满容量堆内部会明确拒绝。合堆后的完整占用区域仍须在桌面内且不撞其他堆。
+- 引擎不负责动画锁。Unity 命令层在过渡动画未完成时拒绝新的修改，失焦/Esc取消拖动；动画只显示核心已提交状态。
 
-## Verification
+## 布局与复杂度边界
 
-Headless domain tests compile the actual Core source using .NET 8, with C# 9 language version, no Unity stubs or copied implementations. Tests cover atomic rejection, preview/drop equivalence, single/whole drag, stable sort, IDs/membership, collisions, finite table overflow, invalid snapshots, randomized operation invariants and load scale. The user explicitly takes responsibility for Unity compilation and runtime checks. Actual on-disk save round trips and visual interaction acceptance remain manual items in README. Domain benchmark results do not establish Unity FPS.
+排序采用 O(n log n) 比较排序，使用原位置作为同值次序；名称升序按 Ordinal，保证运行环境无关的确定次序。洗牌为指定种子的 Fisher–Yates O(n)，不改变成员。
+
+空位搜索最多检查 20000 个候选，先按距离、再按坐标确定次序；“最近”指候选集合中最近，不是连续空间的数学全局解。`ResolveOverlaps` 在候选上处理重叠，兼容且容量允许时合并，否则挪到验证过的空位；步骤有上限。
+
+整理使用确定次序的容量约束并查集做附近合堆，再按高度优先放入最短列。无法布局会整体拒绝；不是精确全局装箱求解器。空间哈希只负责粗查，最后始终做精确矩形检查。
+
+## 读档与文件适配器
+
+`Restore` 在替换状态前验证版本、有限位置、边界、唯一 ID、成员唯一归属、当前堆叠规则和重叠。带目录时解析所有定义，并保留实例当前属性、翻面、位置、成员序与 ID。未知定义或新规则不兼容时整体拒绝。有效读取在拖动期间也拒绝，不取消现有拖动来强行加载。
+
+命名空间 `CardKKK.Tabletop.Unity` 中，`BoardSaveStore(path, catalog = null)` 提供 `Save(engine)` 和 `Load(engine)`，完整类由 `CARDTABLE_DISABLE_SAVE` 裁剪。运行 Save 功能位关闭时直接调用也拒绝。格式版本1使用 JsonUtility 的快照载荷、SHA256 完整性、10 MB 上限、同目录临时写入、原子替换和 `.bak` 恢复。只有通过当前核心规则检查的旧主文件才轮换为有效备份。
+
+默认配置仅提供旧示例牌 `archive/supply/tool.sample` 序号1～3映射。旧序号4～9需要设计者补充定义，不能无依据地自动映射到其他牌。
+
+## Unity 分工与验证状态
+
+`CardTableDemo` 校验并装配配置、Controller、View、Input；`CardTableController.Execute(TableAction, definitionId)` 是按钮与快捷键的共同入口。`CardTableView` 和 `TableCardView` 显示快照，`TableInputRouter` 映射按键，`TableActionButton` 绑定按钮。`CardTableView.prefab` 和 `CardView.prefab` 承载可修改的序列化布局。
+
+本次只做源码与序列化引用静态检查，未运行编译、核心检查工程或 Unity。`Tests/Core` 默认编译实际 Core 源码且启用全部可选模块；新增四组规则/目录场景尚未执行。重构前的18组通过记录是历史结果。本版本运行状态由用户在自己的 Unity 编辑器中检查。
