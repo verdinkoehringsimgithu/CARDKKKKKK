@@ -1,0 +1,4 @@
+LICENCE - Game-in-a-Box: Card Battler Duel Kit by Leckie Pixel Studio (leckie1989)
+You MAY: use these assets in commercial and non-commercial games and interactive projects, modify them, and use them in trailers/marketing for your game. Credit appreciated, not required.
+You MAY NOT: resell, redistribute, sublicense or share the assets (original or modified) on their own or as part of another asset pack, template or toolkit, or claim them as your own artwork. You may not use the assets to train, fine-tune or evaluate AI or machine-learning models.
+Assets provided as-is without warranty.
