@@ -36,6 +36,6 @@ namespace CardKKK.Tabletop.Unity
         private void OnApplicationFocus(bool focused) { if (!focused) controller?.CancelDrag(); }
         private void OnDestroy() { view?.Unbind(); controller?.Dispose(); }
         private void ReportError(string error)
-        { Debug.LogError(error, this); if (view != null) view.ShowMessage(error); }
+        { Debug.LogError(error, this); if (view != null) view.ShowError(error); }
     }
 }

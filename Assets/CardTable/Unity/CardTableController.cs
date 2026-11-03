@@ -112,53 +112,52 @@ namespace CardKKK.Tabletop.Unity
             if (!IsAvailable(action)) { Tell("此功能未启用。"); return; }
             if (!CanInteract()) return;
             OperationResult result;
-            string message;
+            string message = "";
             PileData selected = FindPile(SelectedPileId);
             switch (action)
             {
                 case TableAction.Spawn:
                     if (string.IsNullOrEmpty(definitionId) || !catalog.TryGet(definitionId, out _))
-                    { Tell("请先在游戏配置中添加卡牌定义。"); return; }
+                    { Tell("没有可发的牌。"); return; }
                     BoardRules rules = Engine.Rules;
                     result = Engine.Spawn(catalog.CreateCard(definitionId), new TablePoint(rules.Width * 0.5f, rules.Height * 0.5f));
-                    message = "已生成卡牌。";
                     break;
 #if !CARDTABLE_DISABLE_FLIP
                 case TableAction.Flip:
                     if (selected == null) { Tell("请先选中卡牌。"); return; }
-                    result = Engine.FlipCard(SelectedCardId); message = "已翻面。"; break;
+                    result = Engine.FlipCard(SelectedCardId); break;
 #endif
 #if !CARDTABLE_DISABLE_SORT
                 case TableAction.Sort:
                     if (selected == null) { Tell("请先选中牌堆。"); return; }
-                    result = Engine.SortPile(selected.Id); message = "已按配置规则整理牌堆。"; break;
+                    result = Engine.SortPile(selected.Id); break;
 #endif
 #if !CARDTABLE_DISABLE_SHUFFLE
                 case TableAction.Shuffle:
                     if (selected == null) { Tell("请先选中牌堆。"); return; }
-                    result = Engine.ShufflePile(selected.Id, UnityEngine.Random.Range(0, int.MaxValue)); message = "已打乱牌序。"; break;
+                    result = Engine.ShufflePile(selected.Id, UnityEngine.Random.Range(0, int.MaxValue)); break;
 #endif
 #if !CARDTABLE_DISABLE_REORDER
                 case TableAction.ReorderEarlier:
                 case TableAction.ReorderLater:
                     if (selected == null) { Tell("请先选中卡牌。"); return; }
                     int index = selected.CardIds.IndexOf(SelectedCardId) + (action == TableAction.ReorderEarlier ? -1 : 1);
-                    result = Engine.ReorderCard(selected.Id, SelectedCardId, index); message = "已调整牌序。"; break;
+                    result = Engine.ReorderCard(selected.Id, SelectedCardId, index); break;
 #endif
 #if !CARDTABLE_DISABLE_POP
                 case TableAction.Pop:
                     if (selected == null) { Tell("请先选中牌堆。"); return; }
-                    result = Engine.PopCard(selected.Id); message = "已抽出顶牌。"; break;
+                    result = Engine.PopCard(selected.Id); break;
 #endif
 #if !CARDTABLE_DISABLE_TIDY
                 case TableAction.Tidy:
-                    result = Engine.TidyTable(); message = "已整理桌面。"; break;
+                    result = Engine.TidyTable(); break;
 #endif
 #if !CARDTABLE_DISABLE_SAVE
                 case TableAction.Save:
-                    result = saves.Save(Engine); message = "桌面已保存。"; break;
+                    result = saves.Save(Engine); message = "已保存"; break;
                 case TableAction.Load:
-                    result = saves.Load(Engine); message = saves.LoadedFromBackup ? "已从备份恢复桌面。" : "桌面已读取。"; break;
+                    result = saves.Load(Engine); message = saves.LoadedFromBackup ? "已从备份读取" : "已读取"; break;
 #endif
                 default: Tell("此功能未启用。"); return;
             }
@@ -197,7 +196,7 @@ namespace CardKKK.Tabletop.Unity
             if (result.Success)
             {
                 UpdateSelectionPile(); SelectionChanged?.Invoke();
-                Tell("已放下卡牌。"); Sound?.Invoke(TableSound.Drop);
+                Tell(""); Sound?.Invoke(TableSound.Drop);
             }
             else { Tell(result.Error); Sound?.Invoke(TableSound.Rejected); }
             DragCancelled?.Invoke();
@@ -205,15 +204,15 @@ namespace CardKKK.Tabletop.Unity
         public void CancelDrag()
         {
             if (!Engine.IsDragging) return;
-            Engine.CancelDrag(); DragCancelled?.Invoke(); Tell("已取消拖动。");
+            Engine.CancelDrag(); DragCancelled?.Invoke(); Tell("");
         }
         public void Tell(string message) => Message?.Invoke(message);
         public void Dispose() => Engine.Changed -= CaptureState;
         private bool Enabled(TableFeatures feature) => (Engine.Rules.Features & feature) != 0;
         private bool CanInteract()
         {
-            if (Engine.IsDragging) { Tell("请先放下卡牌，或按 Esc 取消拖动。"); return false; }
-            if (animationBusy != null && animationBusy()) { Tell("请等待卡牌过渡完成。"); return false; }
+            if (Engine.IsDragging) { Tell("先放下卡牌。"); return false; }
+            if (animationBusy != null && animationBusy()) return false;
             return true;
         }
         private void SetSelection(string cardId, string pileId)

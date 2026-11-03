@@ -14,7 +14,6 @@ namespace CardKKK.Tabletop.Unity
         [SerializeField, InspectorName("定义插画")] private Image illustration;
         [SerializeField, InspectorName("选中标记")] private Image selection;
         [SerializeField, InspectorName("标题")] private Text heading;
-        [SerializeField, InspectorName("占位说明")] private Text details;
         [SerializeField, InspectorName("底部说明")] private Text footer;
         private CardTableView owner;
         private CardData card;
@@ -34,7 +33,7 @@ namespace CardKKK.Tabletop.Unity
             duration = theme != null ? Mathf.Max(0.05f, theme.TransitionSeconds) : 0.18f;
             rect.sizeDelta = size;
             illustration.preserveAspect = true;
-            heading.font = details.font = footer.font = font;
+            heading.font = footer.font = font;
         }
         public void Bind(CardData data, PileData pile, Vector2 position, Sprite sprite, bool selected, bool immediate)
         {
@@ -74,12 +73,9 @@ namespace CardKKK.Tabletop.Unity
             frame.enabled = frame.sprite != null;
             illustration.sprite = artwork;
             illustration.enabled = displayedFace && artwork != null;
-            heading.text = displayedFace ? card.Label : "卡牌";
+            heading.text = displayedFace ? card.Label : "";
             heading.color = displayedFace ? new Color(0.1f, 0.16f, 0.19f) : Color.white;
-            details.text = displayedFace ? "插画占位\n\n序号 " + card.Rank : "•  •  •";
-            details.enabled = !illustration.enabled;
-            details.color = displayedFace ? new Color(0.13f, 0.2f, 0.23f) : new Color(0.6f, 0.8f, 0.84f);
-            footer.text = displayedFace ? "序 " + card.Rank : "卡牌桌面";
+            footer.text = displayedFace ? card.Rank.ToString() : "";
             footer.color = displayedFace ? new Color(0.13f, 0.2f, 0.23f) : Color.white;
         }
         public void OnPointerDown(PointerEventData data)

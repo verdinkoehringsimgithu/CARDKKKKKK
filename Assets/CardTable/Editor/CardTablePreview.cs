@@ -158,12 +158,7 @@ namespace CardKKK.Tabletop.Editor
                 }
                 foreach (Transform transform in root.GetComponentsInChildren<Transform>(true))
                     transform.gameObject.hideFlags = HideFlags.HideAndDontSave;
-                SetText(status, "编辑预览：修改配置后可用“卡牌桌面 > 刷新编辑预览”；点击运行开始操作。");
-                if (serialized.FindProperty("counts").objectReferenceValue is Text counts)
-                {
-                    int total = 0; foreach (InitialPile group in config.InitialPiles) total += group.Cards.Count;
-                    SetText(counts, "卡牌 " + total + " / " + rules.MaxCards + "　　牌堆 " + config.InitialPiles.Count);
-                }
+                SetText(status, "");
             }
             SceneView.RepaintAll(); EditorApplication.QueuePlayerLoopUpdate();
         }

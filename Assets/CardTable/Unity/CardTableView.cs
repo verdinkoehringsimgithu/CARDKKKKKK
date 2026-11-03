@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using CardKKK.Tabletop.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -23,7 +24,8 @@ namespace CardKKK.Tabletop.Unity
         [SerializeField, InspectorName("发牌按钮模板")] private TableActionButton spawnTemplate;
         [SerializeField, InspectorName("状态文字")] private Text status;
         [SerializeField, InspectorName("选中信息")] private Text selected;
-        [SerializeField, InspectorName("桌面统计")] private Text counts;
+        [SerializeField, InspectorName("操作帮助")] private GameObject helpPanel;
+        [SerializeField, InspectorName("帮助文字")] private Text helpText;
         [SerializeField, InspectorName("音效播放器")] private AudioSource effects;
         [SerializeField, InspectorName("音乐播放器")] private AudioSource music;
         private readonly Dictionary<string, TableCardView> views = new Dictionary<string, TableCardView>();
@@ -38,6 +40,7 @@ namespace CardKKK.Tabletop.Unity
         private Font ownedFont;
         private Vector2 pointerOffset;
         private bool dragVisuals;
+        private float messageUntil;
 
         public bool IsAnimating
         {
@@ -67,7 +70,7 @@ namespace CardKKK.Tabletop.Unity
             {
                 TableActionButton button = Instantiate(spawnTemplate, spawnButtons);
                 button.name = "生成_" + definition.DisplayName;
-                button.Bind(controller, definition.Id, "生成 " + definition.DisplayName);
+                button.Bind(controller, definition.Id, definition.DisplayName);
                 bindings.Add(button);
             }
             if (theme != null)
@@ -83,7 +86,9 @@ namespace CardKKK.Tabletop.Unity
             controller.Message += ShowMessage;
             controller.Sound += PlaySound;
             Render(true);
-            ShowMessage("左键选中并拖动；Shift 拖动拆出单张；Esc 取消。规则在“卡牌桌面 > 游戏规则配置”中修改。");
+            if (helpText != null) helpText.text = BuildHelp();
+            if (helpPanel != null) helpPanel.SetActive(false);
+            ShowMessage("");
         }
 
         public void Unbind()
@@ -98,8 +103,50 @@ namespace CardKKK.Tabletop.Unity
             controller = null;
         }
 
-        public void ShowMessage(string message) { if (status != null) status.text = message; }
-        private void Update() { foreach (TableCardView card in views.Values) card.Animate(Time.unscaledDeltaTime); }
+        public void ShowMessage(string message)
+        {
+            if (status == null) return;
+            status.text = message;
+            status.gameObject.SetActive(!string.IsNullOrWhiteSpace(message));
+            messageUntil = Time.unscaledTime + 4;
+        }
+        public void ShowError(string message)
+        {
+            ShowMessage(message);
+            messageUntil = float.PositiveInfinity;
+        }
+        public void ToggleHelp()
+        {
+            if (helpPanel == null) return;
+            controller?.CancelDrag();
+            helpPanel.SetActive(!helpPanel.activeSelf);
+        }
+        private string BuildHelp()
+        {
+            var text = new StringBuilder();
+            if (rules.AllowWholePileDrag) text.AppendLine("移动整堆　拖动");
+            if (rules.AllowSingleCardDrag) text.AppendLine("拆出一张　Shift + 拖动");
+            if (rules.AllowWholePileDrag || rules.AllowSingleCardDrag) text.AppendLine("取消拖动　Esc");
+            AppendHelp(text, TableAction.Flip, "翻面　空格");
+            AppendHelp(text, TableAction.Sort, "排序　S");
+            AppendHelp(text, TableAction.Shuffle, "洗牌　H");
+            AppendHelp(text, TableAction.Pop, "抽牌　P");
+            AppendHelp(text, TableAction.ReorderEarlier, "前后移动　左 / 右方向键");
+            AppendHelp(text, TableAction.Tidy, "整理桌面　R");
+            AppendHelp(text, TableAction.Save, "保存　F5");
+            AppendHelp(text, TableAction.Load, "读取　F9");
+            return text.ToString().TrimEnd();
+        }
+        private void AppendHelp(StringBuilder text, TableAction action, string line)
+        { if (controller.IsAvailable(action)) text.AppendLine(line); }
+        private void Update()
+        {
+            foreach (TableCardView card in views.Values) card.Animate(Time.unscaledDeltaTime);
+            if (status != null && status.gameObject.activeSelf && Time.unscaledTime >= messageUntil)
+                status.gameObject.SetActive(false);
+            if (helpPanel != null && helpPanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+                helpPanel.SetActive(false);
+        }
         private void OnRectTransformDimensionsChange() { if (rules != null) FitBoard(); }
         private void OnDestroy() { Unbind(); if (ownedFont != null) Destroy(ownedFont); }
         private void FitBoard()
@@ -135,15 +182,13 @@ namespace CardKKK.Tabletop.Unity
                     if (created && !immediate) card.EnterFrom(new Vector2(rules.Width * 0.5f, rules.Height - rules.CardHeight));
                 }
             dragVisuals = false; moving.Clear(); HidePreview(); RefreshSelection();
-            counts.text = "卡牌 " + controller.Snapshot.Cards.Count + " / " + rules.MaxCards + "　　牌堆 " + controller.Snapshot.Piles.Count;
         }
         private void RefreshSelection()
         {
             foreach (TableCardView card in views.Values) card.SetSelected(card.CardId == controller.SelectedCardId);
             CardData data = controller.FindCard(controller.SelectedCardId);
             PileData pile = controller.FindPile(controller.SelectedPileId);
-            selected.text = data == null ? "尚未选中卡牌\n\n点击任意卡牌后可操作。"
-                : "已选中\n" + data.Label + "\n\n序号 " + data.Rank + "　牌堆 " + (pile != null ? pile.CardIds.Count : 0) + " 张";
+            selected.text = data == null ? "" : data.Label + "\n" + (pile != null ? pile.CardIds.Count : 0) + " 张";
         }
         public void Select(TableCardView card) => controller?.Select(card.CardId, card.PileId);
         public void BeginCardDrag(TableCardView card, PointerEventData data)
@@ -175,7 +220,7 @@ namespace CardKKK.Tabletop.Unity
             insertion.gameObject.SetActive(plan.IsValid && target != null);
             insertion.rectTransform.anchoredPosition = new Vector2(plan.Position.X - 4, plan.Position.Y + plan.InsertionIndex * rules.PileOffset);
             insertion.rectTransform.sizeDelta = new Vector2(rules.CardWidth + 8, 4);
-            ShowMessage(plan.IsValid ? (target != null ? "松手插入牌堆；横线标记插入位置。" : "松手放置卡牌。") : plan.Reason);
+            ShowMessage(plan.IsValid ? "" : plan.Reason);
         }
         public void EndCardDrag(PointerEventData data)
         {
