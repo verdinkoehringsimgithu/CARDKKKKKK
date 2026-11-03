@@ -138,13 +138,31 @@ namespace CardKKK.Tabletop.Unity
             frame.enabled = frame.sprite != null;
             illustration.sprite = theme != null ? theme.FindFace(card.DefinitionId) : null;
             illustration.enabled = displayedFace && illustration.sprite != null;
-            heading.text = displayedFace ? card.Label : "CARD";
+            heading.text = displayedFace ? CardLabel(card) : "卡牌";
             heading.color = displayedFace ? new Color(0.1f, 0.16f, 0.19f) : Color.white;
-            details.text = displayedFace ? card.Family + "\n\n" + card.Rank : "•  •  •";
+            details.text = displayedFace ? FamilyLabel(card.Family) + "\n\n" + card.Rank : "•  •  •";
             details.enabled = !illustration.enabled;
             details.color = displayedFace ? new Color(0.13f, 0.2f, 0.23f) : new Color(0.6f, 0.8f, 0.84f);
-            footer.text = displayedFace ? "# " + card.Rank : "TABLETOP";
+            footer.text = displayedFace ? "序 " + card.Rank : "卡牌桌面";
             footer.color = displayedFace ? new Color(0.13f, 0.2f, 0.23f) : Color.white;
+        }
+
+        public static string FamilyLabel(string family)
+        {
+            switch (family)
+            {
+                case "Archive": return "藏书";
+                case "Supply": return "物资";
+                case "Tool": return "工具";
+                default: return string.IsNullOrEmpty(family) ? "未分类" : family;
+            }
+        }
+
+        public static string CardLabel(CardData data)
+        {
+            return data.Label == data.Family + " " + data.Rank
+                ? FamilyLabel(data.Family) + " " + data.Rank
+                : data.Label;
         }
 
         public void OnPointerDown(PointerEventData eventData)

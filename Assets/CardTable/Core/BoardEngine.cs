@@ -23,7 +23,7 @@ namespace CardKKK.Tabletop.Core
 
         public BoardEngine(BoardRules rules)
         {
-            if (rules == null) throw new ArgumentNullException(nameof(rules));
+            if (rules == null) throw new ArgumentNullException(nameof(rules), "桌面规则不能为空。");
             this.rules = rules.Copy();
             ValidateRules(this.rules);
         }
@@ -36,8 +36,8 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             string error = ValidateCard(template, false);
             if (error != null) return OperationResult.Fail(error);
-            if (state.Cards.Count >= rules.MaxCards) return OperationResult.Fail("Card limit reached.");
-            if (!Finite(position.X) || !Finite(position.Y)) return OperationResult.Fail("Spawn coordinates must be finite.");
+            if (state.Cards.Count >= rules.MaxCards) return OperationResult.Fail("已达到桌面卡牌数量上限。");
+            if (!Finite(position.X) || !Finite(position.Y)) return OperationResult.Fail("卡牌生成坐标必须是有效的有限数值。");
             position = new TablePoint(Clamp(position.X, 0, rules.Width - rules.CardWidth),
                 Clamp(position.Y, 0, rules.Height - rules.CardHeight));
             var candidate = Copy(state);
@@ -59,7 +59,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var pile = FindPile(candidate, pileId);
-            if (pile == null) return OperationResult.Fail("Pile does not exist.");
+            if (pile == null) return OperationResult.Fail("找不到该牌堆。");
             candidate.Piles.Remove(pile);
             candidate.Piles.Add(pile);
             return Commit(candidate, pile.Id);
@@ -70,9 +70,9 @@ namespace CardKKK.Tabletop.Core
             string blocked = MutationBlock();
             if (blocked != null) return OperationResult.Fail(blocked);
             var pile = FindPile(state, pileId);
-            if (pile == null) return OperationResult.Fail("Pile does not exist.");
+            if (pile == null) return OperationResult.Fail("找不到该牌堆。");
             if (cardId != null && !pile.CardIds.Contains(cardId))
-                return OperationResult.Fail("Card does not belong to this pile.");
+                return OperationResult.Fail("这张卡牌不属于该牌堆。");
             drag = new DragSession
             {
                 SourceId = pileId,
@@ -96,7 +96,7 @@ namespace CardKKK.Tabletop.Core
 
         public DropPreview PreviewDrop(TablePoint position)
         {
-            if (drag == null) return InvalidPlan(position, "No drag is active.");
+            if (drag == null) return InvalidPlan(position, "当前没有正在拖动的卡牌。");
             if (drag.LastPreview != null && position.X == drag.LastPosition.X && position.Y == drag.LastPosition.Y)
                 return drag.LastPreview;
             var preview = PlanDrop(position);
@@ -107,7 +107,7 @@ namespace CardKKK.Tabletop.Core
 
         public OperationResult CommitDrop(TablePoint position)
         {
-            if (notifying) return OperationResult.Fail("A state notification is in progress.");
+            if (notifying) return OperationResult.Fail("桌面正在更新，请稍后操作。");
             var preview = PreviewDrop(position);
             var session = drag;
             drag = null;
@@ -131,8 +131,8 @@ namespace CardKKK.Tabletop.Core
 
         public OperationResult CancelDrag()
         {
-            if (notifying) return OperationResult.Fail("A state notification is in progress.");
-            if (drag == null) return OperationResult.Fail("No drag is active.");
+            if (notifying) return OperationResult.Fail("桌面正在更新，请稍后操作。");
+            if (drag == null) return OperationResult.Fail("当前没有正在拖动的卡牌。");
             string id = drag.SourceId;
             drag = null;
             return OperationResult.Ok(id);
@@ -144,7 +144,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var card = candidate.Cards.Find(item => item.Id == cardId);
-            if (card == null) return OperationResult.Fail("Card does not exist.");
+            if (card == null) return OperationResult.Fail("找不到这张卡牌。");
             card.FaceUp = !card.FaceUp;
             return Commit(candidate, FindCardPile(candidate, cardId).Id, cardId);
         }
@@ -155,7 +155,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var pile = FindPile(candidate, pileId);
-            if (pile == null) return OperationResult.Fail("Pile does not exist.");
+            if (pile == null) return OperationResult.Fail("找不到该牌堆。");
             var cards = CardMap(candidate);
             foreach (string id in pile.CardIds) cards[id].FaceUp = !cards[id].FaceUp;
             return Commit(candidate, pile.Id);
@@ -167,7 +167,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var pile = FindPile(candidate, pileId);
-            if (pile == null) return OperationResult.Fail("Pile does not exist.");
+            if (pile == null) return OperationResult.Fail("找不到该牌堆。");
             var cards = CardMap(candidate);
             var originalOrder = new Dictionary<string, int>();
             for (int i = 0; i < pile.CardIds.Count; i++) originalOrder[pile.CardIds[i]] = i;
@@ -186,9 +186,9 @@ namespace CardKKK.Tabletop.Core
             var candidate = Copy(state);
             var pile = FindPile(candidate, pileId);
             if (pile == null || !pile.CardIds.Contains(cardId))
-                return OperationResult.Fail("Card does not belong to this pile.");
+                return OperationResult.Fail("这张卡牌不属于该牌堆。");
             if (index < 0 || index >= pile.CardIds.Count)
-                return OperationResult.Fail("Insertion index is outside this pile.");
+                return OperationResult.Fail("插入位置超出了该牌堆的范围。");
             pile.CardIds.Remove(cardId);
             pile.CardIds.Insert(index, cardId);
             return Commit(candidate, pile.Id, cardId);
@@ -200,7 +200,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var pile = FindPile(candidate, pileId);
-            if (pile == null) return OperationResult.Fail("Pile does not exist.");
+            if (pile == null) return OperationResult.Fail("找不到该牌堆。");
             var random = new Random(seed);
             for (int i = pile.CardIds.Count - 1; i > 0; i--)
             {
@@ -218,14 +218,14 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             var source = FindPile(candidate, pileId);
-            if (source == null) return OperationResult.Fail("Pile does not exist.");
+            if (source == null) return OperationResult.Fail("找不到该牌堆。");
             cardId = cardId ?? source.CardIds[source.CardIds.Count - 1];
-            if (!source.CardIds.Contains(cardId)) return OperationResult.Fail("Card does not belong to this pile.");
-            if (source.CardIds.Count == 1) return OperationResult.Fail("This pile already contains one card.");
+            if (!source.CardIds.Contains(cardId)) return OperationResult.Fail("这张卡牌不属于该牌堆。");
+            if (source.CardIds.Count == 1) return OperationResult.Fail("该牌堆只有一张卡牌，无需抽出。");
             source.CardIds.Remove(cardId);
             var wanted = new TablePoint(source.Position.X + rules.CardWidth + rules.Gap, source.Position.Y);
             if (!FindFree(candidate, 1, wanted, out TablePoint position))
-                return OperationResult.Fail("No free card slot was found on the table.");
+                return OperationResult.Fail("桌面上找不到可放置卡牌的空位。");
             var pile = new PileData { Id = NewId(), Position = position };
             pile.CardIds.Add(cardId);
             candidate.Piles.Add(pile);
@@ -238,7 +238,7 @@ namespace CardKKK.Tabletop.Core
             if (blocked != null) return OperationResult.Fail(blocked);
             var candidate = Copy(state);
             MergeNearby(candidate);
-            if (!PackColumns(candidate)) return OperationResult.Fail("The table has insufficient room for this arrangement.");
+            if (!PackColumns(candidate)) return OperationResult.Fail("桌面空间不足，无法完成本次整理。");
             return Commit(candidate);
         }
 
@@ -262,9 +262,9 @@ namespace CardKKK.Tabletop.Core
 
         private DropPreview PlanDrop(TablePoint position)
         {
-            if (drag == null) return InvalidPlan(position, "No drag is active.");
-            if (drag.Revision != state.Revision) return InvalidPlan(position, "The table changed during this drag.");
-            if (!Finite(position.X) || !Finite(position.Y)) return InvalidPlan(position, "Drop coordinates must be finite.");
+            if (drag == null) return InvalidPlan(position, "当前没有正在拖动的卡牌。");
+            if (drag.Revision != state.Revision) return InvalidPlan(position, "拖动期间桌面已发生变化，请重新拖动。");
+            if (!Finite(position.X) || !Finite(position.Y)) return InvalidPlan(position, "落点坐标必须是有效的有限数值。");
             var candidate = drag.BaseState;
             var cards = drag.Cards;
             string family = cards[drag.CardIds[0]].Family;
@@ -280,7 +280,7 @@ namespace CardKKK.Tabletop.Core
                 bool compatible = cards[other.CardIds[0]].Family == family &&
                                   other.CardIds.Count + drag.CardIds.Count <= rules.MaxPileSize;
                 if (!compatible && distance == 0)
-                    return InvalidPlan(position, "This pile is incompatible or at capacity.");
+                    return InvalidPlan(position, "该牌堆类型不兼容，或已达到容量上限。");
                 if (!compatible || distance > (double)rules.SnapDistance * rules.SnapDistance) continue;
                 if (distance < bestDistance || (distance == bestDistance && otherIndex > best))
                 {
@@ -301,11 +301,11 @@ namespace CardKKK.Tabletop.Core
                 footprint = Rect(position, result.CardIds.Count + drag.CardIds.Count);
             }
             else footprint = Rect(position, drag.CardIds.Count);
-            if (!Inside(footprint)) return InvalidPlan(position, "Drop position is outside the table.");
+            if (!Inside(footprint)) return InvalidPlan(position, "落点超出了桌面范围。");
             index.QueryInto(footprint, drag.Candidates);
             foreach (int other in drag.Candidates)
                 if (other != best && footprint.Overlaps(Rect(candidate.Piles[other])))
-                    return InvalidPlan(position, "Pile footprints overlap.");
+                    return InvalidPlan(position, "牌堆占用区域发生重叠。");
             return new DropPreview(true, position, targetId, insertion, "", drag.ReadOnlyCardIds);
         }
 
@@ -316,15 +316,15 @@ namespace CardKKK.Tabletop.Core
 
         private string MutationBlock()
         {
-            if (notifying) return "A state notification is in progress.";
-            return drag == null ? null : "Finish or cancel the current drag first.";
+            if (notifying) return "桌面正在更新，请稍后操作。";
+            return drag == null ? null : "请先放下卡牌或取消当前拖动。";
         }
 
         private OperationResult Commit(BoardSnapshot candidate, string pileId = null, string cardId = null)
         {
             string error = Validate(candidate);
             if (error != null) return OperationResult.Fail(error);
-            if (state.Revision == int.MaxValue) return OperationResult.Fail("Revision limit reached; start a new table.");
+            if (state.Revision == int.MaxValue) return OperationResult.Fail("桌面更新次数已达到上限，请新建桌面。");
             candidate.Revision = state.Revision + 1;
             state = candidate;
             NotifyChanged();
@@ -341,7 +341,7 @@ namespace CardKKK.Tabletop.Core
                 foreach (Action handler in handlers.GetInvocationList())
                 {
                     try { handler(); }
-                    catch (Exception error) { Trace.TraceError("Card table observer failed: {0}", error); }
+                    catch (Exception error) { Trace.TraceError("桌面更新通知处理失败：{0}", error); }
                 }
             }
             finally { notifying = false; }
@@ -381,12 +381,12 @@ namespace CardKKK.Tabletop.Core
                 {
                     candidate.Piles.RemoveAt(second);
                     if (!FindFree(candidate, b.CardIds.Count, b.Position, out TablePoint position))
-                        return "No collision-free position was found on the table.";
+                        return "桌面上找不到不会与其他牌堆重叠的空位。";
                     b.Position = position;
                     candidate.Piles.Insert(second, b);
                 }
             }
-            return "Overlap resolution reached its bounded work limit.";
+            return "重叠整理已达到本次处理上限，请调整牌堆后重试。";
         }
 
         private void MergeNearby(BoardSnapshot candidate)
@@ -535,18 +535,18 @@ namespace CardKKK.Tabletop.Core
 
         private string Validate(BoardSnapshot snapshot)
         {
-            if (snapshot == null) return "Table snapshot is missing.";
-            if (snapshot.SchemaVersion != 1) return "Unsupported table schema version.";
-            if (snapshot.Revision < 0) return "Table revision cannot be negative.";
-            if (snapshot.Cards == null || snapshot.Piles == null) return "Card and pile lists are required.";
+            if (snapshot == null) return "缺少桌面存档数据。";
+            if (snapshot.SchemaVersion != 1) return "不支持此版本的桌面存档。";
+            if (snapshot.Revision < 0) return "桌面更新次数不能为负数。";
+            if (snapshot.Cards == null || snapshot.Piles == null) return "存档必须包含卡牌列表和牌堆列表。";
             if (snapshot.Cards.Count > rules.MaxCards || snapshot.Piles.Count > rules.MaxCards)
-                return "The saved table exceeds the configured card limit.";
+                return "存档中的卡牌或牌堆数量超过了当前上限。";
             var cards = new Dictionary<string, CardData>();
             foreach (var card in snapshot.Cards)
             {
                 string error = ValidateCard(card, true);
                 if (error != null) return error;
-                if (cards.ContainsKey(card.Id)) return "Duplicate card ID.";
+                if (cards.ContainsKey(card.Id)) return "存档中存在重复的卡牌标识。";
                 cards.Add(card.Id, card);
             }
             var piles = new HashSet<string>();
@@ -554,41 +554,41 @@ namespace CardKKK.Tabletop.Core
             foreach (var pile in snapshot.Piles)
             {
                 if (pile == null || string.IsNullOrWhiteSpace(pile.Id) || !piles.Add(pile.Id))
-                    return "Pile IDs must be nonempty and unique.";
+                    return "每个牌堆都必须具有非空且唯一的标识。";
                 if (pile.CardIds == null || pile.CardIds.Count == 0 || pile.CardIds.Count > rules.MaxPileSize)
-                    return "A pile is empty or exceeds its card limit.";
-                if (!Inside(Rect(pile))) return "A pile is outside the table.";
+                    return "存档中存在空牌堆，或牌堆超过了容量上限。";
+                if (!Inside(Rect(pile))) return "存档中有牌堆超出了桌面范围。";
                 string family = null;
                 foreach (string cardId in pile.CardIds)
                 {
-                    if (cardId == null || !cards.TryGetValue(cardId, out var card)) return "Pile refers to a missing card.";
-                    if (!membership.Add(cardId)) return "A card belongs to more than one pile.";
+                    if (cardId == null || !cards.TryGetValue(cardId, out var card)) return "牌堆引用了不存在的卡牌。";
+                    if (!membership.Add(cardId)) return "同一张卡牌被重复放入了多个牌堆。";
                     if (family == null) family = card.Family;
-                    else if (family != card.Family) return "A pile contains incompatible card families.";
+                    else if (family != card.Family) return "同一牌堆中包含不兼容的卡牌类型。";
                 }
             }
-            if (membership.Count != cards.Count) return "Every card must belong to exactly one pile.";
+            if (membership.Count != cards.Count) return "每张卡牌都必须归属于一个牌堆，且只能归属一次。";
             var index = new SpatialIndex(snapshot.Piles, rules);
             for (int i = 0; i < snapshot.Piles.Count; i++)
             {
                 var rect = Rect(snapshot.Piles[i]);
                 foreach (int j in index.Query(rect))
-                    if (j > i && rect.Overlaps(Rect(snapshot.Piles[j]))) return "Pile footprints overlap.";
+                    if (j > i && rect.Overlaps(Rect(snapshot.Piles[j]))) return "牌堆占用区域发生重叠。";
             }
             return null;
         }
 
         private static string ValidateCard(CardData card, bool requireId)
         {
-            if (card == null) return "Card is missing.";
-            if (requireId && string.IsNullOrWhiteSpace(card.Id)) return "Card ID is required.";
+            if (card == null) return "缺少卡牌数据。";
+            if (requireId && string.IsNullOrWhiteSpace(card.Id)) return "卡牌必须具有非空标识。";
             if (string.IsNullOrWhiteSpace(card.DefinitionId) || string.IsNullOrWhiteSpace(card.Family))
-                return "Card definition and family are required.";
-            if (card.Attributes == null) return "Card attributes list is required.";
+                return "卡牌必须指定定义标识和类型。";
+            if (card.Attributes == null) return "卡牌必须包含属性列表。";
             var keys = new HashSet<string>();
             foreach (var attribute in card.Attributes)
                 if (attribute == null || string.IsNullOrWhiteSpace(attribute.Key) || !keys.Add(attribute.Key))
-                    return "Card attribute keys must be nonempty and unique.";
+                    return "卡牌属性名称必须非空，且不能重复。";
             return null;
         }
 
@@ -602,7 +602,7 @@ namespace CardKKK.Tabletop.Core
                 rules.Width / rules.CardWidth > 100000 || rules.Height / rules.CardHeight > 100000 ||
                 !Finite(rules.CardHeight + (rules.MaxPileSize - 1) * rules.PileOffset) ||
                 !Finite(rules.Width + 2 * rules.SnapDistance) || !Finite(rules.Height + 2 * rules.SnapDistance))
-                throw new ArgumentException("Board geometry and limits must be finite, positive, and bounded.", nameof(rules));
+                throw new ArgumentException("桌面尺寸、卡牌尺寸、间距和容量上限必须符合有效数值及范围要求。", nameof(rules));
         }
 
         private TableRect Rect(PileData pile) { return Rect(pile.Position, pile.CardIds.Count); }

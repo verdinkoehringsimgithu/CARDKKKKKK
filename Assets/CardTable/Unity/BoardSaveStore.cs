@@ -29,16 +29,16 @@ namespace CardKKK.Tabletop.Unity
         public BoardSaveStore(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
-                throw new ArgumentException("Save path is required.", nameof(path));
+                throw new ArgumentException("请提供存档路径。", nameof(path));
             this.path = Path.GetFullPath(path);
         }
 
         public OperationResult Save(BoardEngine engine)
         {
             if (engine == null)
-                return OperationResult.Fail("The board is not available.");
+                return OperationResult.Fail("桌面尚未准备好，请稍后重试。");
             if (engine.IsDragging)
-                return OperationResult.Fail("Finish or cancel the drag before saving.");
+                return OperationResult.Fail("请先放下卡牌，或按 Esc 取消拖动，再保存。");
 
             string temporary = path + ".tmp." + Guid.NewGuid().ToString("N");
             try
@@ -53,7 +53,7 @@ namespace CardKKK.Tabletop.Unity
                 };
                 byte[] bytes = Encoding.UTF8.GetBytes(JsonUtility.ToJson(document, true));
                 if (bytes.LongLength > MaximumFileBytes)
-                    return OperationResult.Fail("The save exceeds the supported file size.");
+                    return OperationResult.Fail("存档超过 10 MB，请减少桌面数据后再保存。");
 
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 using (var stream = new FileStream(temporary, FileMode.CreateNew, FileAccess.Write,
@@ -84,7 +84,7 @@ namespace CardKKK.Tabletop.Unity
             }
             catch (Exception exception) when (IsFileOrDataError(exception))
             {
-                return OperationResult.Fail("Save failed: " + exception.Message);
+                return OperationResult.Fail("保存失败。请检查存档目录的写入权限和可用磁盘空间。");
             }
             finally
             {
@@ -102,9 +102,9 @@ namespace CardKKK.Tabletop.Unity
         {
             LoadedFromBackup = false;
             if (engine == null)
-                return OperationResult.Fail("The board is not available.");
+                return OperationResult.Fail("桌面尚未准备好，请稍后重试。");
             if (engine.IsDragging)
-                return OperationResult.Fail("Finish or cancel the drag before loading.");
+                return OperationResult.Fail("请先放下卡牌，或按 Esc 取消拖动，再读取。");
 
             string primaryError;
             if (TryRead(path, out BoardSnapshot snapshot, out primaryError))
@@ -112,7 +112,7 @@ namespace CardKKK.Tabletop.Unity
                 OperationResult restored = engine.Restore(snapshot);
                 if (restored.Success)
                     return restored;
-                primaryError = restored.Error;
+                primaryError = "桌面数据不符合当前规则";
             }
 
             if (TryRead(path + ".bak", out BoardSnapshot backup, out string backupError))
@@ -123,15 +123,15 @@ namespace CardKKK.Tabletop.Unity
                     LoadedFromBackup = true;
                     return restored;
                 }
-                backupError = restored.Error;
+                backupError = "桌面数据不符合当前规则";
             }
-            return OperationResult.Fail("Load failed. Primary: " + primaryError + ". Backup: " + backupError);
+            return OperationResult.Fail("读取失败。主存档：" + primaryError + "。备份：" + backupError + "。请先保存一次，或检查存档文件。");
         }
 
         private static bool TryRead(string filename, out BoardSnapshot snapshot, out string error)
         {
             snapshot = null;
-            error = "File does not exist";
+            error = "未找到存档文件";
             try
             {
                 var info = new FileInfo(filename);
@@ -139,7 +139,7 @@ namespace CardKKK.Tabletop.Unity
                     return false;
                 if (info.Length == 0 || info.Length > MaximumFileBytes)
                 {
-                    error = "File size is invalid";
+                    error = "文件为空或超过 10 MB";
                     return false;
                 }
                 string json;
@@ -148,7 +148,7 @@ namespace CardKKK.Tabletop.Unity
                     // Check again after opening, before allocating for the input.
                     if (stream.Length == 0 || stream.Length > MaximumFileBytes)
                     {
-                        error = "File size is invalid";
+                        error = "文件为空或超过 10 MB";
                         return false;
                     }
                     using (var reader = new StreamReader(stream, Encoding.UTF8, true))
@@ -157,18 +157,18 @@ namespace CardKKK.Tabletop.Unity
                 Document document = JsonUtility.FromJson<Document>(json);
                 if (document == null || document.Format != Format || document.Version != CurrentVersion)
                 {
-                    error = "Unsupported save format or version";
+                    error = "存档格式或版本不兼容";
                     return false;
                 }
                 if (string.IsNullOrEmpty(document.Payload) || document.Sha256 != Hash(document.Payload))
                 {
-                    error = "Save integrity check failed";
+                    error = "文件完整性检查失败，内容可能已损坏";
                     return false;
                 }
                 snapshot = JsonUtility.FromJson<BoardSnapshot>(document.Payload);
                 if (snapshot == null)
                 {
-                    error = "Save contains no board";
+                    error = "存档中没有桌面数据";
                     return false;
                 }
                 error = string.Empty;
@@ -176,7 +176,7 @@ namespace CardKKK.Tabletop.Unity
             }
             catch (Exception exception) when (IsFileOrDataError(exception))
             {
-                error = exception.Message;
+                error = "无法读取文件，请检查读取权限及文件是否完整";
                 return false;
             }
         }

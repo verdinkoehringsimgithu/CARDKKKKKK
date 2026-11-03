@@ -8,9 +8,13 @@ using UnityEngine.UI;
 
 namespace CardKKK.Tabletop.Unity
 {
+    [ExecuteAlways]
     public sealed class CardTableDemo : MonoBehaviour
     {
+        private const string PresentationName = "卡牌桌面界面";
         [SerializeField] private CardTableTheme theme;
+        private GameObject presentationRoot;
+        private bool runtimePresentation;
         private readonly Dictionary<string, TableCardView> views = new Dictionary<string, TableCardView>();
         private readonly Dictionary<string, CardData> cards = new Dictionary<string, CardData>();
         private readonly Dictionary<string, PileData> piles = new Dictionary<string, PileData>();
@@ -22,6 +26,7 @@ namespace CardKKK.Tabletop.Unity
         private BoardSaveStore saveStore;
         private BoardRules rules;
         private Font font;
+        private bool ownsFont;
         private RectTransform canvasRect;
         private RectTransform boardRect;
         private RectTransform cardLayer;
@@ -44,28 +49,54 @@ namespace CardKKK.Tabletop.Unity
         public BoardEngine Engine => engine;
         public string SavePath => Path.Combine(Application.persistentDataPath, "card-table.json");
 
-        private void Awake()
+        private void OnEnable()
         {
+            if (engine != null && presentationRoot != null && runtimePresentation == Application.isPlaying)
+            {
+                presentationRoot.SetActive(true);
+                return;
+            }
+            if (engine != null || presentationRoot != null)
+                ClearPresentation();
+            RemoveOldPresentation();
+            runtimePresentation = Application.isPlaying;
+            presentationRoot = new GameObject(PresentationName);
+            presentationRoot.transform.SetParent(transform, false);
             rules = new BoardRules();
             engine = new BoardEngine(rules);
             saveStore = new BoardSaveStore(SavePath);
-            font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            font = theme != null && theme.UiFont != null ? theme.UiFont :
+                Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "Microsoft YaHei UI", "SimHei", "SimSun" }, 18);
+            ownsFont = theme == null || theme.UiFont == null;
             BuildInterface();
             engine.Changed += Refresh;
             SeedCards();
             Refresh(true);
-            SetStatus("Drag a pile. Hold SHIFT to pull one card. Matching families can stack.", false);
+            SetStatus(Application.isPlaying ? "拖动整堆；按住 Shift 拆出一张；同类卡牌可以叠放。" :
+                "桌面预览：点击上方运行按钮后，即可拖牌、洗牌、整理和保存。", false);
+            if (!Application.isPlaying)
+            {
+                foreach (Transform child in presentationRoot.GetComponentsInChildren<Transform>(true))
+                    child.gameObject.hideFlags = HideFlags.DontSaveInEditor | HideFlags.DontSaveInBuild;
+            }
         }
 
         private void OnDestroy()
         {
-            if (engine != null)
-                engine.Changed -= Refresh;
+            ClearPresentation();
         }
 
         private void OnDisable()
         {
             CancelCurrentDrag();
+            if (Application.isPlaying)
+            {
+                if (presentationRoot != null) presentationRoot.SetActive(false);
+            }
+            else
+            {
+                ClearPresentation();
+            }
         }
 
         private void OnApplicationFocus(bool focused)
@@ -74,8 +105,58 @@ namespace CardKKK.Tabletop.Unity
                 CancelCurrentDrag();
         }
 
+        private void ClearPresentation()
+        {
+            if (engine != null)
+            {
+                engine.Changed -= Refresh;
+                if (engine.IsDragging) engine.CancelDrag();
+            }
+            engine = null;
+            dragging = false;
+            views.Clear();
+            cards.Clear();
+            piles.Clear();
+            visibleViews.Clear();
+            freeViews.Clear();
+            dragViews.Clear();
+            removedIds.Clear();
+            selectedCardId = selectedPileId = null;
+            spawnedCount = 0;
+            if (presentationRoot != null)
+                DisposeGenerated(presentationRoot);
+            presentationRoot = null;
+            if (ownsFont && font != null)
+                DisposeGenerated(font);
+            font = null;
+            ownsFont = false;
+            runtimePresentation = false;
+        }
+
+        private void RemoveOldPresentation()
+        {
+            for (int index = transform.childCount - 1; index >= 0; index--)
+            {
+                Transform child = transform.GetChild(index);
+                if (child.name == PresentationName)
+                    DisposeGenerated(child.gameObject);
+            }
+        }
+
+        private static void DisposeGenerated(UnityEngine.Object target)
+        {
+            if (target is GameObject generated)
+                generated.SetActive(false);
+            if (Application.isPlaying) Destroy(target);
+            else DestroyImmediate(target);
+        }
+
         private void Update()
         {
+            if (engine != null && runtimePresentation != Application.isPlaying)
+                OnEnable();
+            if (!Application.isPlaying || engine == null)
+                return;
             float delta = Time.unscaledDeltaTime;
             foreach (TableCardView view in visibleViews)
                 view.Animate(delta);
@@ -89,8 +170,8 @@ namespace CardKKK.Tabletop.Unity
             if (Input.GetKeyDown(KeyCode.P)) PopSelected();
             if (Input.GetKeyDown(KeyCode.LeftArrow)) ReorderSelected(-1);
             if (Input.GetKeyDown(KeyCode.RightArrow)) ReorderSelected(1);
-            if (Input.GetKeyDown(KeyCode.R)) Run(engine.TidyTable, "Table arranged.");
-            if (Input.GetKeyDown(KeyCode.O)) Run(engine.ResolveOverlaps, "Overlaps resolved.");
+            if (Input.GetKeyDown(KeyCode.R)) Run(engine.TidyTable, "桌面已整理。");
+            if (Input.GetKeyDown(KeyCode.O)) Run(engine.ResolveOverlaps, "重叠已处理。");
             if (Input.GetKeyDown(KeyCode.F5)) Save();
             if (Input.GetKeyDown(KeyCode.F9)) Load();
         }
@@ -107,14 +188,19 @@ namespace CardKKK.Tabletop.Unity
 
         private bool CanInteract()
         {
+            if (!Application.isPlaying)
+            {
+                SetStatus("请先点击上方运行按钮，再操作卡牌。", false);
+                return false;
+            }
             if (engine.IsDragging || dragging)
             {
-                SetStatus("Finish the drag or press ESC first.", true);
+                SetStatus("请先结束拖动，或按 Esc 取消。", true);
                 return false;
             }
             if (IsAnimating())
             {
-                SetStatus("Cards are settling. Try again in a moment.", true);
+                SetStatus("卡牌正在归位，请稍候再操作。", true);
                 return false;
             }
             return true;
@@ -126,7 +212,7 @@ namespace CardKKK.Tabletop.Unity
                 return;
             selectedCardId = view.CardId;
             selectedPileId = view.PileId;
-            Show(engine.BringToFront(view.PileId), "Selected " + cards[view.CardId].Label);
+            Show(engine.BringToFront(view.PileId), "已选中：" + TableCardView.CardLabel(cards[view.CardId]));
             Refresh();
         }
 
@@ -182,11 +268,11 @@ namespace CardKKK.Tabletop.Unity
             if (inserting)
             {
                 insertionRect.anchoredPosition = ToVector(preview.Position) + new Vector2(-4, preview.InsertionIndex * rules.PileOffset);
-                SetStatus("Insert at slot " + (preview.InsertionIndex + 1) + " — release to commit.", false);
+                SetStatus("插入第 " + (preview.InsertionIndex + 1) + " 个位置，松手完成。", false);
             }
             else
             {
-                SetStatus(preview.IsValid ? "Free placement — release to commit." : "Cannot drop: " + preview.Reason, !preview.IsValid);
+                SetStatus(preview.IsValid ? "可以放置，松手完成。" : "无法放置：" + preview.Reason, !preview.IsValid);
             }
         }
 
@@ -203,7 +289,7 @@ namespace CardKKK.Tabletop.Unity
                 selectedPileId = result.PileId;
             dragViews.Clear();
             Refresh();
-            Show(result, "Drop committed.");
+            Show(result, "已放置。");
             Play(theme != null ? (result.Success ? theme.DropSound : theme.RejectedSound) : null);
         }
 
@@ -217,7 +303,7 @@ namespace CardKKK.Tabletop.Unity
             if (previewRect != null) previewRect.gameObject.SetActive(false);
             if (insertionRect != null) insertionRect.gameObject.SetActive(false);
             Refresh();
-            SetStatus("Drag cancelled; original placement restored.", false);
+            SetStatus("已取消拖动，卡牌回到原位。", false);
         }
 
         private Vector2 PointerPosition(PointerEventData pointer)
@@ -230,23 +316,23 @@ namespace CardKKK.Tabletop.Unity
         {
             if (!HasSelection() || !CanInteract()) return;
             OperationResult result = engine.FlipCard(selectedCardId);
-            Show(result, "Card flipped.");
+            Show(result, "已翻面。");
             if (result.Success) Play(theme != null ? theme.FlipSound : null);
         }
 
         private void SortSelected()
         {
-            if (HasSelection()) Run(() => engine.SortPile(selectedPileId), "Pile sorted by rank.");
+            if (HasSelection()) Run(() => engine.SortPile(selectedPileId), "已按序号整理牌堆。");
         }
 
         private void ShuffleSelected()
         {
-            if (HasSelection()) Run(() => engine.ShufflePile(selectedPileId, Environment.TickCount), "Pile shuffled.");
+            if (HasSelection()) Run(() => engine.ShufflePile(selectedPileId, Environment.TickCount), "已打乱牌序。");
         }
 
         private void PopSelected()
         {
-            if (HasSelection()) Run(() => engine.PopCard(selectedPileId), "Top card popped to a free position.");
+            if (HasSelection()) Run(() => engine.PopCard(selectedPileId), "已抽出顶牌并放到空位。");
         }
 
         private void ReorderSelected(int direction)
@@ -254,27 +340,27 @@ namespace CardKKK.Tabletop.Unity
             if (!HasSelection()) return;
             int index = piles[selectedPileId].CardIds.IndexOf(selectedCardId);
             int target = Mathf.Clamp(index + direction, 0, piles[selectedPileId].CardIds.Count - 1);
-            Run(() => engine.ReorderCard(selectedPileId, selectedCardId, target), "Card order changed.");
+            Run(() => engine.ReorderCard(selectedPileId, selectedCardId, target), "已调整卡牌顺序。");
         }
 
         private bool HasSelection()
         {
             if (!string.IsNullOrEmpty(selectedCardId) && cards.ContainsKey(selectedCardId) && piles.ContainsKey(selectedPileId))
                 return true;
-            SetStatus("Select a card first.", true);
+            SetStatus("请先选中一张卡牌。", true);
             return false;
         }
 
         private void Save()
         {
-            Run(() => saveStore.Save(engine), "Saved to " + SavePath);
+            Run(() => saveStore.Save(engine), "桌面已保存。");
         }
 
         private void Load()
         {
             if (!CanInteract()) return;
             OperationResult result = saveStore.Load(engine);
-            Show(result, saveStore.LoadedFromBackup ? "Backup save recovered." : "Save restored.");
+            Show(result, saveStore.LoadedFromBackup ? "已从备份恢复桌面。" : "已读取桌面存档。");
         }
 
         private void Run(Func<OperationResult> command, string success)
@@ -326,7 +412,7 @@ namespace CardKKK.Tabletop.Unity
             {
                 spawnedCount++;
             }
-            Show(result, "Dealt a " + family + " card.");
+            Show(result, "已生成一张" + TableCardView.FamilyLabel(family) + "卡。");
         }
 
         private static CardData MakeTemplate(string family, int rank)
@@ -334,7 +420,7 @@ namespace CardKKK.Tabletop.Unity
             return new CardData
             {
                 DefinitionId = family.ToLowerInvariant() + ".sample",
-                Label = family + " " + rank,
+                Label = TableCardView.FamilyLabel(family) + " " + rank,
                 Family = family,
                 Rank = rank,
                 FaceUp = true,
@@ -410,13 +496,13 @@ namespace CardKKK.Tabletop.Unity
                     visibleViews.Add(view);
                 }
             }
-            countsText.text = snapshot.Cards.Count + " CARDS    /    " + snapshot.Piles.Count + " PILES    /    REV " + snapshot.Revision;
+            countsText.text = snapshot.Cards.Count + " 张卡牌　／　" + snapshot.Piles.Count + " 个牌堆　／　状态版本 " + snapshot.Revision;
             if (HasSelectedCard(out CardData selected))
             {
                 PileData pile = piles[selectedPileId];
-                selectedText.text = "SELECTED\n\n" + selected.Label + "\n" + selected.Family + " · rank " + selected.Rank + "\n\nSlot " + (pile.CardIds.IndexOf(selected.Id) + 1) + " / " + pile.CardIds.Count;
+                selectedText.text = "当前选择\n\n" + TableCardView.CardLabel(selected) + "\n" + TableCardView.FamilyLabel(selected.Family) + " · 序号 " + selected.Rank + "\n\n堆内位置 " + (pile.CardIds.IndexOf(selected.Id) + 1) + " / " + pile.CardIds.Count;
             }
-            else selectedText.text = "SELECTED\n\nClick a card to inspect.\n\nMatching families stack.\nDifferent families stay apart.";
+            else selectedText.text = "当前选择\n\n点击卡牌查看。\n\n同类卡牌可以叠放。\n不同类型请分开放置。";
         }
 
         private bool HasSelectedCard(out CardData selected)
@@ -442,7 +528,7 @@ namespace CardKKK.Tabletop.Unity
         private void BuildInterface()
         {
             GameObject cameraObject = new GameObject("Table Camera", typeof(Camera), typeof(AudioListener));
-            cameraObject.transform.SetParent(transform, false);
+            cameraObject.transform.SetParent(presentationRoot.transform, false);
             cameraObject.transform.localPosition = new Vector3(0, 0, -10);
             Camera tableCamera = cameraObject.GetComponent<Camera>();
             tableCamera.clearFlags = CameraClearFlags.SolidColor;
@@ -450,7 +536,7 @@ namespace CardKKK.Tabletop.Unity
             tableCamera.cullingMask = 0;
             tableCamera.orthographic = true;
             Canvas canvas = new GameObject("Card Table Canvas", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster)).GetComponent<Canvas>();
-            canvas.transform.SetParent(transform, false);
+            canvas.transform.SetParent(presentationRoot.transform, false);
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 10;
             CanvasScaler scaler = canvas.GetComponent<CanvasScaler>();
@@ -460,9 +546,9 @@ namespace CardKKK.Tabletop.Unity
             canvasRect = (RectTransform)canvas.transform;
             MakeImage(canvasRect, "Background", Vector2.zero, new Vector2(1920, 1080), new Color(0.027f, 0.055f, 0.075f));
             Text title = MakeText(canvasRect, "Title", new Vector2(40, 993), new Vector2(1000, 48), 32, new Color(0.91f, 0.94f, 0.89f), TextAnchor.MiddleLeft);
-            title.text = "CARD TABLE / FOUNDATION";
+            title.text = "卡牌桌面";
             Text subtitle = MakeText(canvasRect, "Subtitle", new Vector2(42, 958), new Vector2(1500, 30), 17, new Color(0.53f, 0.68f, 0.72f), TextAnchor.MiddleLeft);
-            subtitle.text = "MOUSE TO MOVE A PILE     ·     SHIFT + DRAG FOR ONE CARD     ·     ESC TO CANCEL";
+            subtitle.text = "拖动整堆　·　按住 Shift 拆出单张　·　Esc 取消拖动";
             boardRect = MakeRect(canvasRect, "Board", new Vector2(40, 55), new Vector2(rules.Width, rules.Height));
             Image table = boardRect.gameObject.AddComponent<Image>();
             table.color = theme != null ? theme.TableColor : new Color(0.055f, 0.13f, 0.17f);
@@ -484,37 +570,40 @@ namespace CardKKK.Tabletop.Unity
             MakeImage(side, "Panel", Vector2.zero, new Vector2(220, 900), new Color(0.055f, 0.095f, 0.12f));
             selectedText = MakeText(side, "Selection", new Vector2(15, 718), new Vector2(190, 165), 16, new Color(0.79f, 0.87f, 0.87f), TextAnchor.UpperLeft);
             float yButton = 668;
-            AddButton(side, ref yButton, "Deal Archive", () => Spawn("Archive"));
-            AddButton(side, ref yButton, "Deal Supply", () => Spawn("Supply"));
-            AddButton(side, ref yButton, "Deal Tool", () => Spawn("Tool"));
+            AddButton(side, ref yButton, "生成藏书卡", () => Spawn("Archive"));
+            AddButton(side, ref yButton, "生成物资卡", () => Spawn("Supply"));
+            AddButton(side, ref yButton, "生成工具卡", () => Spawn("Tool"));
             yButton -= 12;
-            AddButton(side, ref yButton, "Flip card     [SPACE]", FlipSelected);
-            AddButton(side, ref yButton, "Sort pile          [S]", SortSelected);
-            AddButton(side, ref yButton, "Shuffle pile     [H]", ShuffleSelected);
-            AddButton(side, ref yButton, "Pop card         [P]", PopSelected);
-            AddButton(side, ref yButton, "Earlier slot        [←]", () => ReorderSelected(-1));
-            AddButton(side, ref yButton, "Later slot           [→]", () => ReorderSelected(1));
+            AddButton(side, ref yButton, "翻面　[空格]", FlipSelected);
+            AddButton(side, ref yButton, "整理牌堆　[S]", SortSelected);
+            AddButton(side, ref yButton, "打乱牌序　[H]", ShuffleSelected);
+            AddButton(side, ref yButton, "抽出顶牌　[P]", PopSelected);
+            AddButton(side, ref yButton, "堆内前移　[←]", () => ReorderSelected(-1));
+            AddButton(side, ref yButton, "堆内后移　[→]", () => ReorderSelected(1));
             yButton -= 12;
-            AddButton(side, ref yButton, "Tidy table        [R]", () => Run(engine.TidyTable, "Table arranged."));
-            AddButton(side, ref yButton, "Resolve overlap [O]", () => Run(engine.ResolveOverlaps, "Overlaps resolved."));
+            AddButton(side, ref yButton, "整理桌面　[R]", () => Run(engine.TidyTable, "桌面已整理。"));
+            AddButton(side, ref yButton, "处理重叠　[O]", () => Run(engine.ResolveOverlaps, "重叠已处理。"));
             yButton -= 12;
-            AddButton(side, ref yButton, "Save                [F5]", Save);
-            AddButton(side, ref yButton, "Load                [F9]", Load);
+            AddButton(side, ref yButton, "保存桌面　[F5]", Save);
+            AddButton(side, ref yButton, "读取桌面　[F9]", Load);
             countsText = MakeText(canvasRect, "Counts", new Vector2(1260, 1000), new Vector2(620, 32), 16, new Color(0.49f, 0.84f, 0.77f), TextAnchor.MiddleRight);
             statusText = MakeText(canvasRect, "Status", new Vector2(40, 12), new Vector2(1840, 30), 16, new Color(0.64f, 0.88f, 0.84f), TextAnchor.MiddleLeft);
-            effects = gameObject.AddComponent<AudioSource>();
+            effects = presentationRoot.AddComponent<AudioSource>();
             effects.playOnAwake = false;
-            music = gameObject.AddComponent<AudioSource>();
+            music = presentationRoot.AddComponent<AudioSource>();
             music.playOnAwake = false;
             music.loop = true;
             music.volume = 0.35f;
-            if (theme != null && theme.Music != null)
+            if (Application.isPlaying && theme != null && theme.Music != null)
             {
                 music.clip = theme.Music;
                 music.Play();
             }
-            if (EventSystem.current == null)
-                new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
+            if (Application.isPlaying && EventSystem.current == null)
+            {
+                GameObject input = new GameObject("鼠标输入", typeof(EventSystem), typeof(StandaloneInputModule));
+                input.transform.SetParent(presentationRoot.transform, false);
+            }
         }
 
         private void AddButton(RectTransform parent, ref float y, string label, Action action)
