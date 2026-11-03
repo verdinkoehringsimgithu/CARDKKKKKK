@@ -1,0 +1,7 @@
+{
+  "name": "CardKKK.Tabletop.Editor",
+  "rootNamespace": "CardKKK.Tabletop.Editor",
+  "references": ["CardKKK.Tabletop.Unity"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

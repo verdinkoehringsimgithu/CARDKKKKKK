@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774435e81b83312d4e67f424cdc79989, type: 3}
+  m_Name: CardTableTheme
+  m_EditorClassIdentifier:
+  TableSurface: {fileID: 0}
+  CardFrame: {fileID: 0}
+  CardBack: {fileID: 0}
+  ActionIcon: {fileID: 0}
+  CardFaces: []
+  TableColor: {r: 0.055, g: 0.13, b: 0.17, a: 1}
+  CardColor: {r: 0.88, g: 0.89, b: 0.83, a: 1}
+  BackColor: {r: 0.18, g: 0.27, b: 0.35, a: 1}
+  TransitionSeconds: 0.18
+  PickUpSound: {fileID: 0}
+  DropSound: {fileID: 0}
+  RejectedSound: {fileID: 0}
+  FlipSound: {fileID: 0}
+  Music: {fileID: 0}

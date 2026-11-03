@@ -1,0 +1,1 @@
+通用卡框、卡背占位目录。绑定到 CardTableTheme 的 CardFrame、CardBack 字段。

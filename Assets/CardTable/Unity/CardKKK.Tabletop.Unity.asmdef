@@ -1,0 +1,6 @@
+{
+  "name": "CardKKK.Tabletop.Unity",
+  "rootNamespace": "CardKKK.Tabletop.Unity",
+  "references": ["CardKKK.Tabletop.Core", "Unity.ugui"],
+  "autoReferenced": true
+}

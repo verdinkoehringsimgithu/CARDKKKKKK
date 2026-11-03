@@ -1,0 +1,1 @@
+桌面背景占位目录。绑定到 CardTableTheme 的 TableSurface 字段。
