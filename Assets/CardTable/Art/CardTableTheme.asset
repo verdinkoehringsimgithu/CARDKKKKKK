@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774435e81b83312d4e67f424cdc79989, type: 3}
   m_Name: CardTableTheme
   m_EditorClassIdentifier:
-  TableSurface: {fileID: 0}
-  CardFrame: {fileID: 0}
-  CardBack: {fileID: 0}
+  TableSurface: {fileID: 21300000, guid: 8cb3e03924b5a6548b28c86afabb4243, type: 3}
+  CardFrame: {fileID: 21300000, guid: fe4b8f6afddd09c44a6e54fecb68558d, type: 3}
+  CardBack: {fileID: 21300002, guid: fe4b8f6afddd09c44a6e54fecb68558d, type: 3}
   ActionIcon: {fileID: 0}
-  TableColor: {r: 0.055, g: 0.13, b: 0.17, a: 1}
-  CardColor: {r: 0.88, g: 0.89, b: 0.83, a: 1}
+  TableColor: {r: 1, g: 1, b: 1, a: 1}
+  CardColor: {r: 1, g: 1, b: 1, a: 1}
+  CardTextColor: {r: 0.1, g: 0.12, b: 0.14, a: 1}
   BackColor: {r: 0.18, g: 0.27, b: 0.35, a: 1}
   TransitionSeconds: 0.18
   PickUpSound: {fileID: 0}

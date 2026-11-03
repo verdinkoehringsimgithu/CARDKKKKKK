@@ -5,7 +5,7 @@
 ## 当前锚点
 
 - [USER] 用户要求方便开发、可复用、易修改、规则可配置；不需要的功能应移除实现或完整条件编译，不能仅不调用。游戏、配置工具、README、Git提交与上传说明用中文。用户明确自行检查编译与Unity运行，本轮不启动Unity、编译器或测试。已有上传授权，协作者身份此前已验证，提交后正常push，不force。
-- [REPO] 本地 `D:\wenjian\cardkkk`；origin `https://github.com/verdinkoehringsimgithu/CARDKKKKKK.git`。桌面重构 `60b2784` 已上传，本轮策划基于此提交，开工时工作区干净。用户此前加入的 `.agents` 技能及 `Assets/CardTable/Art/Assets` 资源保留。Git原有身份不改。
+- [REPO] 本地 `D:\wenjian\cardkkk`；origin `https://github.com/verdinkoehringsimgithu/CARDKKKKKK.git`。桌面重构60b2784、界面删字与策划重写d9f20db均已上传，本轮美术接入基于d9f20db，开工时工作区干净。用户此前加入的 `.agents` 技能及 `Assets/CardTable/Art/Assets` 资源保留。Git原有身份不改。
 - [SCOPE] Unity 2022.3.62f3c1，Windows单机、鼠标、有限二维桌面、统一卡片尺寸、不旋转。实现自由卡牌桌面，具体配方、委托、回合与胜负尚未选定，不添加假配置。旧需求在 `docs/superpowers/specs/2026-11-03-tabletop-foundation-design.md`。本轮规则与结构见 README、`docs/configuration-guide.md`、`docs/tabletop-api.md`。
 - [CONFIG] `Unity/Configuration` 提供 CardDefinition、CardTableConfiguration、TableRuleSettings、FeatureSelection、InitialPile。中文菜单 `卡牌桌面/游戏规则配置`，四页为桌面规则/卡牌目录/初始桌面/功能与资源。窗口默认读取场景启动器的实际配置引用，修改停止后下一次启动应用，不热改模型。默认配置 `Assets/CardTable/Configuration/默认游戏配置.asset`，GUID `a74fc672df4144e8a77723d488c1475b`。9种定义为archive/supply/tool各.3/.1/.2，初始3堆各3张，位置180/540/900,360。目录可新增定义并编辑中文名称/分类/序号/属性/插画。
 - [VALIDATE] 配置验证检查ID/属性/引用/Windows存档文件名，并精确构造初始快照交Core.Restore检查几何、唯一归属、容量、当前堆叠规则；允许初始桌面为空。默认资产补齐仅创建缺文件，不覆盖设计者修改。规则窗口与Inspector使用中文枚举/属性/引用列表。
@@ -15,7 +15,8 @@
 - [CORE] 状态仍是候选副本统一校验后原子提交、同步主线程、独占拖拽。预览复用缓存索引，提交共用规划。TableGeometry空间哈希+精确矩形；FindFree最多20000候选；Tidy容量约束并查集+高度优先最短列布局，不保证全局最优，失败回滚。所有API文档已中文更新。
 - [UI] 新结构：CardTableDemo薄启动器、CardTableController命令/选择、TableInputRouter快捷键、CardTableView呈现/牌池、TableActionButton按钮绑定、TableCardView牌面/动画。所有按钮与快捷键走Execute；成功模型Changed唯一刷新，取消/非法落点才额外归位。删除运行时整套UI生成器、MakeTemplate硬编码、重复刷新、玩家O键/手动重叠按钮、状态版本调试。自动避让核心仍保留。
 - [PREFAB] `Prefabs/CardTableView.prefab` 为可修改的真实Canvas布局，`CardView.prefab` 为牌面；演示场景引用真实Prefab、默认配置与原Bootstrap脚本GUID。运行视图不使用ExecuteAlways，编辑预览归Editor独立逻辑。预览缓存真实文字/字体/桌面矩形原值，在保存、切换模式、重载、关闭前恢复，之后再释放临时字体与牌；不覆盖预览后手动改动。发牌列表显示目录全部定义。Default Play入口和构建场景保留。
-- [ART] Art/CardFaces、CardFrames、Table、Icons、Audio/SFX、Audio/Music预留；用户Art/Assets保留不自动接入。单张CardDefinition.Artwork负责插画；主题仅通用卡框/卡背/桌面/字体/声音，原CardFaces重复映射与空序列化字段已删。中文OS字体保留，空图/音频继续占位/静音。详Art/README。
+- [ART] 用户要求现有美术先接上：Art/Assets/sprite_sheet.png保留GUID fe4b8f6afddd09c44a6e54fecb68558d，Multiple切棕面(166,674,68,109)/fileID21300000与棕背(54,145,68,109)/21300002，border4；Point/Clamp/无mipmap/无压缩。High Resolution/card_background.png GUID8cb3e03924b5a6548b28c86afabb4243转SingleSprite/border100。默认主题已引用三图、Table/CardColor白色保原图色，新增CardTextColor。源PNG未修改。Card目录还有独立空模板；展示海报和战斗样张不混用。没有物件插画/字体/音频，九定义Artwork保持空。详Art/README。
+- [ART_VIEW] 新CardTableArt helper按Sprite.border设置Sliced/Simple，运行和Editor预览共用Surface应用；TableCardView有贴图时底色透明保留透明角，文字读Theme.CardTextColor。Editor ImageState缓存并恢复原图片/颜色/模式，与原字体/矩形清理一起执行，避免预览写进场景。仅静态检查，不启动Unity编译。
 - [SAVE] BoardSaveStore保留格式v1、SHA256、10MB上限、同目录临时写/Flush/原子替换/.bak恢复；备份结构验证注入当前catalog，禁用Save功能直接Save/Load也拒绝。旧family.sample按旧Rank匹配迁移，默认映射1..3；旧演示额外发牌4..9需补定义映射，缺失整体拒绝且保留当前桌面，不虚称所有旧档自动兼容。实例属性/翻面/ID/牌序/位置保留，静态字段按新定义解析。
 - [VERIFY] 本轮仅静态检查，不能报告编译/运行/测试通过。25脚本、7符号的128种组合扫描没有已裁剪方法残留引用；13个配置/Prefab/场景文件YAML可解析、内外部fileID与GUID有对应资产（含本地uGUI包）；CardTable无缺.meta、全Assets无GUID冲突。独立审查修正Editor对Unity.ugui的直接引用、唯一AudioListener、CanvasScaler Expand、预览保存恢复；最新预览已复核无新阻断。Tests/Core新增4组目录/迁移/堆叠/权限/排序场景源码，未执行；18组+3000随机操作通过只属于重构前历史版本。
 - [DELIVERY] 本轮代码、实际配置资产、Prefab、文档与静态整合已完成，保留用户既有资源，无额外玩法。中文提交与上传沿用已有授权，最终提交号/同步状态以git log和status为准。没有运行编译、核心检查工程或Unity，不得把静态扫描写成编译通过。

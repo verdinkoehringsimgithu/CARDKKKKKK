@@ -16,6 +16,7 @@ namespace CardKKK.Tabletop.Editor
         private static readonly List<GameObject> roots = new List<GameObject>();
         private static readonly Dictionary<Text, TextState> texts = new Dictionary<Text, TextState>();
         private static readonly List<RectState> rectangles = new List<RectState>();
+        private static readonly List<ImageState> images = new List<ImageState>();
         private static bool queued;
         private static Font fallback;
 
@@ -33,6 +34,28 @@ namespace CardKKK.Tabletop.Editor
                 // 用户在预览后手动改过的字段归用户所有，恢复时保留它。
                 if (FontChanged && Target.font == AppliedFont) Target.font = OriginalFont;
                 if (TextChanged && Target.text == AppliedText) Target.text = OriginalText;
+            }
+        }
+        private sealed class ImageState
+        {
+            private readonly Image target;
+            private readonly Sprite originalSprite, appliedSprite;
+            private readonly Color originalColor, appliedColor;
+            private readonly Image.Type originalType, appliedType;
+
+            public ImageState(Image target, CardTableTheme theme)
+            {
+                this.target = target;
+                originalSprite = target.sprite; originalColor = target.color; originalType = target.type;
+                CardTableArt.ApplySurface(target, theme);
+                appliedSprite = target.sprite; appliedColor = target.color; appliedType = target.type;
+            }
+            public void Restore()
+            {
+                if (target == null) return;
+                if (target.sprite == appliedSprite) target.sprite = originalSprite;
+                if (target.color.Equals(appliedColor)) target.color = originalColor;
+                if (target.type == appliedType) target.type = originalType;
             }
         }
         private sealed class RectState
@@ -117,6 +140,8 @@ namespace CardKKK.Tabletop.Editor
                 var table = serialized.FindProperty("board").objectReferenceValue as RectTransform;
                 var area = serialized.FindProperty("boardArea").objectReferenceValue as RectTransform;
                 if (layer == null || prefab == null || table == null || area == null) continue;
+                if (serialized.FindProperty("surface").objectReferenceValue is Image surface)
+                    images.Add(new ImageState(surface, config.Theme));
                 Font font = config.Theme != null ? config.Theme.UiFont : null;
                 if (font == null)
                 {
@@ -169,6 +194,8 @@ namespace CardKKK.Tabletop.Editor
             texts.Clear();
             foreach (RectState state in rectangles) state.Restore();
             rectangles.Clear();
+            foreach (ImageState state in images) state.Restore();
+            images.Clear();
             foreach (GameObject root in roots) if (root != null) Object.DestroyImmediate(root);
             roots.Clear();
             if (fallback != null) { Object.DestroyImmediate(fallback); fallback = null; }

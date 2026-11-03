@@ -14,6 +14,7 @@ namespace CardKKK.Tabletop.Unity
         [Header("占位颜色与过渡")]
         [InspectorName("桌面颜色")] public Color TableColor = new Color(0.055f, 0.13f, 0.17f);
         [InspectorName("卡面颜色")] public Color CardColor = new Color(0.88f, 0.89f, 0.83f);
+        [InspectorName("卡面文字颜色")] public Color CardTextColor = new Color(0.1f, 0.12f, 0.14f);
         [InspectorName("卡背颜色")] public Color BackColor = new Color(0.18f, 0.27f, 0.35f);
         [InspectorName("过渡时长（秒）"), Range(0.05f, 0.6f)] public float TransitionSeconds = 0.18f;
         [Header("音效与音乐")]

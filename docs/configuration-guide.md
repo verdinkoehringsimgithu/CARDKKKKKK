@@ -56,7 +56,7 @@
 
 `Prefabs/CardTableView.prefab` 是完整桌面视图，`Prefabs/CardView.prefab` 是通用牌面。改布局优先编辑 Prefab 与组件序列化引用，避免重新在启动器里拼装 UI。场景使用真实的 Prefab 实例，配置引用在启动器中。编辑预览由 Editor 代码读取配置，运行视图没有 `ExecuteAlways`。
 
-单张插画属于 `CardDefinition.Artwork`；通用卡框、卡背、桌面、字体、音效与背景音乐属于 `CardTableTheme`。这些引用可为空。美术目录保留 `Art/CardFaces`、`CardFrames`、`Table`、`Icons`、`Audio/SFX`、`Audio/Music`，用户已有的 `Art/Assets` 不会被覆盖或自动接入。
+单张插画属于 `CardDefinition.Artwork`；通用卡框、卡背、桌面、字体、音效与背景音乐属于 `CardTableTheme`。卡面文字颜色也由主题配置。默认主题已引用 `Art/Assets` 中的棕色卡面、花纹卡背和暗色背景；其他素材保留原处。源图片未改动，Sprite 切片和边框配置在各自 `.meta` 中。空的插画或音频引用继续留空。
 
 ## 接入下一步玩法的边界
 

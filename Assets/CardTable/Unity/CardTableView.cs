@@ -75,7 +75,7 @@ namespace CardKKK.Tabletop.Unity
             }
             if (theme != null)
             {
-                surface.sprite = theme.TableSurface; surface.color = theme.TableColor;
+                CardTableArt.ApplySurface(surface, theme);
                 if (theme.Music != null) { music.clip = theme.Music; music.Play(); }
             }
             board.sizeDelta = new Vector2(rules.Width, rules.Height);

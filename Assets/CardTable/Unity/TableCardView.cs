@@ -67,16 +67,18 @@ namespace CardKKK.Tabletop.Unity
         }
         private void PaintFace()
         {
-            background.color = displayedFace ? (theme != null ? theme.CardColor : new Color(0.88f, 0.89f, 0.83f))
-                : (theme != null ? theme.BackColor : new Color(0.18f, 0.27f, 0.35f));
-            frame.sprite = theme != null ? (displayedFace ? theme.CardFrame : theme.CardBack) : null;
+            CardTableArt.ApplySprite(frame, theme != null ? (displayedFace ? theme.CardFrame : theme.CardBack) : null);
             frame.enabled = frame.sprite != null;
+            background.color = frame.enabled ? Color.clear
+                : displayedFace ? (theme != null ? theme.CardColor : new Color(0.88f, 0.89f, 0.83f))
+                : (theme != null ? theme.BackColor : new Color(0.18f, 0.27f, 0.35f));
             illustration.sprite = artwork;
             illustration.enabled = displayedFace && artwork != null;
             heading.text = displayedFace ? card.Label : "";
-            heading.color = displayedFace ? new Color(0.1f, 0.16f, 0.19f) : Color.white;
+            Color textColor = theme != null ? theme.CardTextColor : new Color(0.1f, 0.12f, 0.14f);
+            heading.color = displayedFace ? textColor : Color.white;
             footer.text = displayedFace ? card.Rank.ToString() : "";
-            footer.color = displayedFace ? new Color(0.13f, 0.2f, 0.23f) : Color.white;
+            footer.color = displayedFace ? textColor : Color.white;
         }
         public void OnPointerDown(PointerEventData data)
         { if (data.button == PointerEventData.InputButton.Left) owner?.Select(this); }
