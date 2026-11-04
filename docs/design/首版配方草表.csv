@@ -1,0 +1,9 @@
+﻿工艺ID,名称,工位,投入,不消耗的工具,人物准备分钟,后台分钟,主产物,副产物,解锁条件,额外规则
+craft.fast_charcoal,快烧制炭,kiln,wood=4,,15,45,charcoal=2,ash=1,开局已知,
+craft.sealed_charcoal,封窑制炭,kiln,wood=3,,30,90,charcoal=2,tar=1,开局已知,
+craft.clay_blank,捏陶坯,workbench,clay=2,,15,0,clay_blank=1,,开局已知,
+craft.crucible,烧坩埚,kiln,clay_blank=1;charcoal=1,,15,60,crucible=1,,曾获得charcoal,已有坩埚则拒绝重复制作
+craft.kiln_lining,装炉衬,kiln,ash=1;clay=2,,30,0,,,曾获得ash,设置窑状态lined；已装则拒绝
+craft.copper,普通熔铜,kiln,copper_ore=2;charcoal=2,crucible,15,60,copper_ingot=1,,曾获得crucible,lined状态将本配方charcoal成本替换为1
+craft.tar_copper,焦油助燃熔铜,kiln,copper_ore=2;charcoal=1;tar=1,crucible,15,30,copper_ingot=1,,曾获得tar,lined不改变本配方成本
+craft.copper_axe,装配铜斧,workbench,copper_ingot=2;wood=1;fiber=1,,30,0,copper_axe=1,,曾获得copper_ingot,已有铜斧则拒绝；持有铜斧时取木45分改30分

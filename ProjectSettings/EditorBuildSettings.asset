@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CardTable/Scenes/CardTableDemo.unity
     guid: 37b048dfdd5b7c2874fcb63605a2380b
+  - enabled: 1
+    path: Assets/TestGameplay/Scenes/TestGameplay.unity
+    guid: 980e6e81188b4bb79339541f05cc4fa2
   m_configObjects: {}

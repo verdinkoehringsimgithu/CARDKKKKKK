@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "asset_id": "4d8d901c-58e2-428d-8846-703aa766d1be",
+      "sha12": "72d78852a74e",
+      "label": "工坊16对象原图"
+    },
+    {
+      "asset_id": "4500be7d-a135-5991-8d0f-25883f235a44",
+      "sha12": "d2f5847baadf",
+      "label": "工坊16对象透明图集"
+    },
+    {
+      "asset_id": "31a583ad-b4eb-4c6c-8539-836f4f56029d",
+      "sha12": "cce8c52b4b4a",
+      "label": "同画风工坊空卡框原图"
+    },
+    {
+      "asset_id": "2d75ba86-4cfb-565f-acfa-f712c3fe60a1",
+      "sha12": "9ee868e1e29f",
+      "label": "同画风工坊空卡框透明图"
+    }
+  ]
+}
