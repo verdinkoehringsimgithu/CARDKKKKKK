@@ -231,7 +231,10 @@ MonoBehaviour:
   playButton: {fileID: 9104}
   label: {fileID: 9105}
   chineseFont: {fileID: 12800000, guid: e629089c69d84961a5cc29dd704f6301, type: 3}
-  gameplayScenePath: Assets/TestGameplay/Scenes/TestGameplay.unity
+  gameplayScenePath: Assets/TestGameplay/Spellcraft/Scenes/Spellcraft.unity
+  islandButton: {fileID: 9106}
+  islandLabel: {fileID: 9107}
+  islandScenePath: Assets/IslandSurvival/Scenes/IslandSurvival.unity
 --- !u!1001 &9100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,6 +276,28 @@ MonoBehaviour:
 --- !u!114 &9105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1023, guid: c8dad487ad7c4e89a969d41ef55959d3, type: 3}
+  m_PrefabInstance: {fileID: 9100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &9106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1034, guid: c8dad487ad7c4e89a969d41ef55959d3, type: 3}
+  m_PrefabInstance: {fileID: 9100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &9107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1043, guid: c8dad487ad7c4e89a969d41ef55959d3, type: 3}
   m_PrefabInstance: {fileID: 9100}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

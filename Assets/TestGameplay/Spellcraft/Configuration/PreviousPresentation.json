@@ -1,0 +1,481 @@
+{
+  "Entries": [
+    {
+      "Kind": "module",
+      "Id": "trigger.manual",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "手动开关",
+      "Description": "由你启动，消耗1能量。",
+      "SpriteIndex": 10
+    },
+    {
+      "Kind": "module",
+      "Id": "trigger.hit",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "受伤感应",
+      "Description": "生命受到伤害后启动；护盾完全挡住时不会启动。",
+      "SpriteIndex": 12
+    },
+    {
+      "Kind": "module",
+      "Id": "trigger.block",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "挡击感应",
+      "Description": "护盾实际吸收伤害后启动。",
+      "SpriteIndex": 5
+    },
+    {
+      "Kind": "module",
+      "Id": "trigger.spent",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "放电感应",
+      "Description": "每次消耗火花后启动；装置自身的消耗也能触发。",
+      "SpriteIndex": 6
+    },
+    {
+      "Kind": "module",
+      "Id": "trigger.turn",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "发条开关",
+      "Description": "每个己方回合开始时启动。",
+      "SpriteIndex": 11
+    },
+    {
+      "Kind": "module",
+      "Id": "trigger.burn",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "余烬感应",
+      "Description": "敌人受到燃烧伤害后启动，优先以该敌人为目标。",
+      "SpriteIndex": 7
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.bolt",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "火花炮",
+      "Description": "直伤会被护盾抵挡，并触发镜翼反射。",
+      "SpriteIndex": 4
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.guard",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "护盾发生器",
+      "Description": "护盾保留到下个己方回合开始。",
+      "SpriteIndex": 5
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.spark",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "蓄能线圈",
+      "Description": "先扣启动费用，再补充火花；可以喂给其他装置。",
+      "SpriteIndex": 6
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.burn",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "余烬喷口",
+      "Description": "燃烧在回合结束时结算，绕过护盾且不反射，结算后减少一层。",
+      "SpriteIndex": 7
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.frost",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "霜晶喷口",
+      "Description": "敌人被冻结时跳过行动，保留原意图。",
+      "SpriteIndex": 8
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.drain",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "虹吸线圈",
+      "Description": "按实际打掉的生命治疗；不能让已经倒下的角色复活。",
+      "SpriteIndex": 9
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.heavy",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "重型火花炮",
+      "Description": "适合把集中供给转成一次重击。",
+      "SpriteIndex": 4
+    },
+    {
+      "Kind": "module",
+      "Id": "effect.trickle",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "自励电池",
+      "Description": "轻量补给线圈，适合自动触发。",
+      "SpriteIndex": 6
+    },
+    {
+      "Kind": "module",
+      "Id": "modifier.none",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "直通接头",
+      "Description": "按效果原样执行。",
+      "SpriteIndex": 13
+    },
+    {
+      "Kind": "module",
+      "Id": "modifier.fork",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "分叉接头",
+      "Description": "攻击与异常改为作用于全部敌人，强度减少1；最低1。",
+      "SpriteIndex": 13
+    },
+    {
+      "Kind": "module",
+      "Id": "modifier.echo",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "共鸣双铃",
+      "Description": "效果执行两次，每次强度减少1；最低1，只支付一次基本火花。",
+      "SpriteIndex": 14
+    },
+    {
+      "Kind": "module",
+      "Id": "modifier.overload",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "过载反应堆",
+      "Description": "额外消耗1火花，效果强度增加2。",
+      "SpriteIndex": 15
+    },
+    {
+      "Kind": "card",
+      "Id": "card.strike",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "敲击",
+      "Description": "直伤会受到护盾与反射影响。",
+      "SpriteIndex": 10
+    },
+    {
+      "Kind": "card",
+      "Id": "card.guard",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "架盾",
+      "Description": "护盾挡住攻击后，可以触发挡击感应。",
+      "SpriteIndex": 5
+    },
+    {
+      "Kind": "card",
+      "Id": "card.charge",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "充能",
+      "Description": "为手动装置与自动连锁准备火花。",
+      "SpriteIndex": 6
+    },
+    {
+      "Kind": "card",
+      "Id": "card.ignite",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "点燃",
+      "Description": "燃烧绕过护盾，不触发直伤反射。",
+      "SpriteIndex": 7
+    },
+    {
+      "Kind": "card",
+      "Id": "card.discharge",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "倾泻",
+      "Description": "这次消耗只触发一次放电感应。",
+      "SpriteIndex": 4
+    },
+    {
+      "Kind": "encounter",
+      "Id": "yard",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "废料试场",
+      "Description": "甲虫会在攻击与架甲之间切换，先试出你这套装置的节奏。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "yard.beetle",
+      "EncounterId": "yard",
+      "IntentIndex": -1,
+      "Name": "废铁甲虫",
+      "Description": "架甲会挡住直伤，燃烧直接扣生命并绕过护盾。",
+      "SpriteIndex": 1
+    },
+    {
+      "Kind": "intent",
+      "Id": "yard.beetle",
+      "EncounterId": "yard",
+      "IntentIndex": 0,
+      "Name": "撞击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "yard.beetle",
+      "EncounterId": "yard",
+      "IntentIndex": 1,
+      "Name": "架甲",
+      "Description": "获得护盾。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "yard.beetle",
+      "EncounterId": "yard",
+      "IntentIndex": 2,
+      "Name": "连撞",
+      "Description": "连续攻击两次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "encounter",
+      "Id": "mirror",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "镜翼回廊",
+      "Description": "镜翼会反射每次直伤；可以先架盾、用燃烧绕开反射，或抢先击破。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "mirror.moth",
+      "EncounterId": "mirror",
+      "IntentIndex": -1,
+      "Name": "镜翼蛾",
+      "Description": "每次受到直伤，反射1点伤害。燃烧不反射。",
+      "SpriteIndex": 2
+    },
+    {
+      "Kind": "intent",
+      "Id": "mirror.moth",
+      "EncounterId": "mirror",
+      "IntentIndex": 0,
+      "Name": "翼击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "mirror.moth",
+      "EncounterId": "mirror",
+      "IntentIndex": 1,
+      "Name": "聚光",
+      "Description": "积蓄下次攻击。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "mirror.moth",
+      "EncounterId": "mirror",
+      "IntentIndex": 2,
+      "Name": "光束",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "mirror.beetle",
+      "EncounterId": "mirror",
+      "IntentIndex": -1,
+      "Name": "护巢甲虫",
+      "Description": "会架甲保护自己。",
+      "SpriteIndex": 1
+    },
+    {
+      "Kind": "intent",
+      "Id": "mirror.beetle",
+      "EncounterId": "mirror",
+      "IntentIndex": 0,
+      "Name": "架甲",
+      "Description": "获得护盾。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "mirror.beetle",
+      "EncounterId": "mirror",
+      "IntentIndex": 1,
+      "Name": "撞击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "encounter",
+      "Id": "drain",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "漏电熔炉",
+      "Description": "抽走火花会卡住自动装置。留下起动火花，或改用不耗火花的基础牌。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "drain.beetle",
+      "EncounterId": "drain",
+      "IntentIndex": -1,
+      "Name": "虹吸甲虫",
+      "Description": "抽取火花与重击交替。",
+      "SpriteIndex": 1
+    },
+    {
+      "Kind": "intent",
+      "Id": "drain.beetle",
+      "EncounterId": "drain",
+      "IntentIndex": 0,
+      "Name": "虹吸",
+      "Description": "抽走火花。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "drain.beetle",
+      "EncounterId": "drain",
+      "IntentIndex": 1,
+      "Name": "重撞",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "drain.beetle",
+      "EncounterId": "drain",
+      "IntentIndex": 2,
+      "Name": "架甲",
+      "Description": "获得护盾。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "drain.moth",
+      "EncounterId": "drain",
+      "IntentIndex": -1,
+      "Name": "碎镜蛾",
+      "Description": "每次受到直伤反射1点，攻击较弱。",
+      "SpriteIndex": 2
+    },
+    {
+      "Kind": "intent",
+      "Id": "drain.moth",
+      "EncounterId": "drain",
+      "IntentIndex": 0,
+      "Name": "翼击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "drain.moth",
+      "EncounterId": "drain",
+      "IntentIndex": 1,
+      "Name": "碎镜",
+      "Description": "连续攻击两次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "encounter",
+      "Id": "storm",
+      "EncounterId": "",
+      "IntentIndex": -1,
+      "Name": "雷暴核心",
+      "Description": "石像蓄力后会重击；镜翼在旁干扰。用冻结推迟爆发，或用循环抢先击破。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "storm.golem",
+      "EncounterId": "storm",
+      "IntentIndex": -1,
+      "Name": "雷暴石像",
+      "Description": "蓄力提高下一次攻击；战斗拖长后敌人会逐渐增强。",
+      "SpriteIndex": 3
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.golem",
+      "EncounterId": "storm",
+      "IntentIndex": 0,
+      "Name": "蓄雷",
+      "Description": "强化下一次攻击。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.golem",
+      "EncounterId": "storm",
+      "IntentIndex": 1,
+      "Name": "雷击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.golem",
+      "EncounterId": "storm",
+      "IntentIndex": 2,
+      "Name": "凝甲",
+      "Description": "获得护盾。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.golem",
+      "EncounterId": "storm",
+      "IntentIndex": 3,
+      "Name": "震荡",
+      "Description": "连续攻击两次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "enemy",
+      "Id": "storm.moth",
+      "EncounterId": "storm",
+      "IntentIndex": -1,
+      "Name": "护核镜翼",
+      "Description": "每次受到直伤反射1点伤害。",
+      "SpriteIndex": 2
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.moth",
+      "EncounterId": "storm",
+      "IntentIndex": 0,
+      "Name": "翼击",
+      "Description": "攻击一次。",
+      "SpriteIndex": 0
+    },
+    {
+      "Kind": "intent",
+      "Id": "storm.moth",
+      "EncounterId": "storm",
+      "IntentIndex": 1,
+      "Name": "窃电",
+      "Description": "抽走火花。",
+      "SpriteIndex": 0
+    }
+  ]
+}

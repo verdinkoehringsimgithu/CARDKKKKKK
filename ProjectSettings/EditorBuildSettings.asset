@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/CardTable/Scenes/CardTableDemo.unity
     guid: 37b048dfdd5b7c2874fcb63605a2380b
   - enabled: 1
-    path: Assets/TestGameplay/Scenes/TestGameplay.unity
-    guid: 980e6e81188b4bb79339541f05cc4fa2
+    path: Assets/TestGameplay/Spellcraft/Scenes/Spellcraft.unity
+    guid: b460ea0a1bfe4bf495d4741780537ba8
+  - enabled: 1
+    path: Assets/IslandSurvival/Scenes/IslandSurvival.unity
+    guid: deeaf43f1b6350ed80d529afb3fd49c3
   m_configObjects: {}

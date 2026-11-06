@@ -1,6 +1,6 @@
 {
   "name": "CardKKK.TestGameplay.Unity",
   "rootNamespace": "CardKKK.TestGameplay.Unity",
-  "references": ["CardKKK.TestGameplay.Core", "Unity.ugui"],
+  "references": ["Unity.ugui"],
   "autoReferenced": true
 }

@@ -41,3 +41,9 @@ Thumbs.db
 # Unity diagnostics
 sysinfo.txt
 crashlytics-build.properties
+
+# Python缓存与本地参考研究，不随项目上传
+__pycache__/
+*.py[cod]
+/work/survival-reference/
+/work/island-requirements/

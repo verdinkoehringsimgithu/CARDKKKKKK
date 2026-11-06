@@ -1,7 +1,0 @@
-{
-  "name": "CardKKK.TestGameplay.Editor",
-  "rootNamespace": "CardKKK.TestGameplay.Unity.Editor",
-  "references": ["CardKKK.TestGameplay.Core", "CardKKK.TestGameplay.Unity"],
-  "includePlatforms": ["Editor"],
-  "autoReferenced": true
-}

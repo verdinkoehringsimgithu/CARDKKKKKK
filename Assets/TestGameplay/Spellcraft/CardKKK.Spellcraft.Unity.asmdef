@@ -1,0 +1,10 @@
+{
+  "name": "CardKKK.Spellcraft.Unity",
+  "rootNamespace": "CardKKK.Spellcraft.Unity",
+  "references": [
+    "CardKKK.Spellcraft.Core",
+    "CardKKK.TestGameplay.Unity",
+    "Unity.ugui"
+  ],
+  "autoReferenced": true
+}

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "created_local_date": "2026-11-05",
+  "timezone": "Asia/Shanghai",
+  "tool_mode": "built-in image_gen (no CLI/API-key workflow)",
+  "spritecook_available_credits_at_start": 0,
+  "delivered_images": 3,
+  "generation_calls": 4,
+  "image_pixels_edited_programmatically": false,
+  "prompts_file": "GenerationPrompts.md",
+  "assets": [
+    {
+      "asset_id": null,
+      "file": "SpellcraftAtlas.png",
+      "label": "SpellcraftAtlas",
+      "provider": "built-in image_gen.imagegen",
+      "sha12": "04aea909f46c",
+      "sha256": "04aea909f46ca7e043b67107c05101822ab4d71062444ffae6f99b3528608f69",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "guid": "cd2b4d319fad49cfba036409d8b3884e",
+      "sprite_mode": "multiple",
+      "sprite_file_id": null,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero_fraction": 0.7722121746297017,
+      "source_file": "C:/Users/Administrator/.codex/generated_images/01a1a991-0875-75c2-bc3b-795ebf9ccab4/exec-5afd2683-6c69-4534-b540-a1a0dee43299.png",
+      "slices": [
+        {
+          "index": 0,
+          "name": "inventor",
+          "file_id": 21300000,
+          "rect_unity": {
+            "x": 0.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "973a2b1a18d753b8b8a0df150b9d778f"
+        },
+        {
+          "index": 1,
+          "name": "scrap_beetle",
+          "file_id": 21300002,
+          "rect_unity": {
+            "x": 313.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "7255aa3c25aa51d59f515fe095fa226f"
+        },
+        {
+          "index": 2,
+          "name": "mirror_moth",
+          "file_id": 21300004,
+          "rect_unity": {
+            "x": 627.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "1ac3965ab25c536ba1f09dfd3f28ec68"
+        },
+        {
+          "index": 3,
+          "name": "storm_golem",
+          "file_id": 21300006,
+          "rect_unity": {
+            "x": 940.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "1c9861ad95b75e87883110642de70cf5"
+        },
+        {
+          "index": 4,
+          "name": "spark_cannon",
+          "file_id": 21300008,
+          "rect_unity": {
+            "x": 0.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "f5aeb86b7f0954cb8b0c5ce6a1a05c20"
+        },
+        {
+          "index": 5,
+          "name": "energy_shield",
+          "file_id": 21300010,
+          "rect_unity": {
+            "x": 313.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "e6a67169b8295ef3b33de897ca929b3c"
+        },
+        {
+          "index": 6,
+          "name": "spark_battery",
+          "file_id": 21300012,
+          "rect_unity": {
+            "x": 627.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "659d163b201f57f2b2bcd2a3bf54366a"
+        },
+        {
+          "index": 7,
+          "name": "ember_bottle",
+          "file_id": 21300014,
+          "rect_unity": {
+            "x": 940.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "ceb5c342b6d3555a897ba00d4fb56e03"
+        },
+        {
+          "index": 8,
+          "name": "frost_crystal",
+          "file_id": 21300016,
+          "rect_unity": {
+            "x": 0.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "c22c51596105587caf4c6c112bf8dec5"
+        },
+        {
+          "index": 9,
+          "name": "siphon_coil",
+          "file_id": 21300018,
+          "rect_unity": {
+            "x": 313.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "77bef4b82f485e26964c78a1f0490b2f"
+        },
+        {
+          "index": 10,
+          "name": "repair_gauntlet",
+          "file_id": 21300020,
+          "rect_unity": {
+            "x": 627.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "5c29adcf01185462afd3c57eb5971646"
+        },
+        {
+          "index": 11,
+          "name": "clockwork_clock",
+          "file_id": 21300022,
+          "rect_unity": {
+            "x": 940.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "03193a06ca9c5f229a51155360a5c3d0"
+        },
+        {
+          "index": 12,
+          "name": "cracked_breastplate",
+          "file_id": 21300024,
+          "rect_unity": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "24b6e900112255158af58ee8c8fb88ef"
+        },
+        {
+          "index": 13,
+          "name": "branch_pipe",
+          "file_id": 21300026,
+          "rect_unity": {
+            "x": 313.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "f53187a670c75c49ab64b6cc8cbd8c56"
+        },
+        {
+          "index": 14,
+          "name": "resonance_bells",
+          "file_id": 21300028,
+          "rect_unity": {
+            "x": 627.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "a4c28586a7a25807b8e05b44deacddf8"
+        },
+        {
+          "index": 15,
+          "name": "overload_reactor",
+          "file_id": 21300030,
+          "rect_unity": {
+            "x": 940.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "sprite_id": "d2eff76ebf4251f8a68a5bf21ca44bce"
+        }
+      ]
+    },
+    {
+      "asset_id": null,
+      "file": "SpellcraftWorkshop.png",
+      "label": "SpellcraftWorkshop",
+      "provider": "built-in image_gen.imagegen",
+      "sha12": "473431f3a5cf",
+      "sha256": "473431f3a5cf9e894af7b3dc9e9a4fe234fb5634017d470c4be18089d89a781c",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "guid": "f99513b667db493b90054647f7d849a9",
+      "sprite_mode": "single",
+      "sprite_file_id": 21300000,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero_fraction": 0,
+      "source_file": "C:/Users/Administrator/.codex/generated_images/01a1a991-0875-75c2-bc3b-795ebf9ccab4/exec-491a8f80-2b2c-4319-9cf5-4a1332811ce6.png"
+    },
+    {
+      "asset_id": null,
+      "file": "SpellcraftCardFrame.png",
+      "label": "SpellcraftCardFrame",
+      "provider": "built-in image_gen.imagegen",
+      "sha12": "2ae380e1fdda",
+      "sha256": "2ae380e1fdda2290b7e756cae8ca6b08b58f0399879a37ee84cd84f0982c3a94",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "guid": "dc044df145cb4648be54e99e02711ee8",
+      "sprite_mode": "single",
+      "sprite_file_id": 21300000,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_zero_fraction": 0.13983154296875,
+      "source_file": "C:/Users/Administrator/.codex/generated_images/01a1a991-0875-75c2-bc3b-795ebf9ccab4/exec-e6abcbf8-202b-412b-b429-868cf5df9660.png",
+      "nine_slice_border_pixels": {
+        "left": 144,
+        "bottom": 480,
+        "right": 144,
+        "top": 216
+      }
+    }
+  ]
+}

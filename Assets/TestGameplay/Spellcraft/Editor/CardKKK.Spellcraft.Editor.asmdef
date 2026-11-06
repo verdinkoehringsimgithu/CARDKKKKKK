@@ -1,0 +1,13 @@
+{
+  "name": "CardKKK.Spellcraft.Editor",
+  "rootNamespace": "CardKKK.Spellcraft.Editor",
+  "references": [
+    "CardKKK.Spellcraft.Core",
+    "CardKKK.Spellcraft.Unity",
+    "Unity.ugui"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

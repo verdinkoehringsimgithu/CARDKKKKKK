@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: cd2b4d319fad49cfba036409d8b3884e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: inventor
+  - first:
+      213: 21300002
+    second: scrap_beetle
+  - first:
+      213: 21300004
+    second: mirror_moth
+  - first:
+      213: 21300006
+    second: storm_golem
+  - first:
+      213: 21300008
+    second: spark_cannon
+  - first:
+      213: 21300010
+    second: energy_shield
+  - first:
+      213: 21300012
+    second: spark_battery
+  - first:
+      213: 21300014
+    second: ember_bottle
+  - first:
+      213: 21300016
+    second: frost_crystal
+  - first:
+      213: 21300018
+    second: siphon_coil
+  - first:
+      213: 21300020
+    second: repair_gauntlet
+  - first:
+      213: 21300022
+    second: clockwork_clock
+  - first:
+      213: 21300024
+    second: cracked_breastplate
+  - first:
+      213: 21300026
+    second: branch_pipe
+  - first:
+      213: 21300028
+    second: resonance_bells
+  - first:
+      213: 21300030
+    second: overload_reactor
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inventor
+      rect:
+        serializedVersion: 2
+        x: 0.0
+        y: 940.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973a2b1a18d753b8b8a0df150b9d778f
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scrap_beetle
+      rect:
+        serializedVersion: 2
+        x: 313.5
+        y: 940.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7255aa3c25aa51d59f515fe095fa226f
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mirror_moth
+      rect:
+        serializedVersion: 2
+        x: 627.0
+        y: 940.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac3965ab25c536ba1f09dfd3f28ec68
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: storm_golem
+      rect:
+        serializedVersion: 2
+        x: 940.5
+        y: 940.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9861ad95b75e87883110642de70cf5
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spark_cannon
+      rect:
+        serializedVersion: 2
+        x: 0.0
+        y: 627.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5aeb86b7f0954cb8b0c5ce6a1a05c20
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_shield
+      rect:
+        serializedVersion: 2
+        x: 313.5
+        y: 627.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a67169b8295ef3b33de897ca929b3c
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spark_battery
+      rect:
+        serializedVersion: 2
+        x: 627.0
+        y: 627.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659d163b201f57f2b2bcd2a3bf54366a
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ember_bottle
+      rect:
+        serializedVersion: 2
+        x: 940.5
+        y: 627.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb5c342b6d3555a897ba00d4fb56e03
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost_crystal
+      rect:
+        serializedVersion: 2
+        x: 0.0
+        y: 313.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22c51596105587caf4c6c112bf8dec5
+      internalID: 21300016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: siphon_coil
+      rect:
+        serializedVersion: 2
+        x: 313.5
+        y: 313.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bef4b82f485e26964c78a1f0490b2f
+      internalID: 21300018
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: repair_gauntlet
+      rect:
+        serializedVersion: 2
+        x: 627.0
+        y: 313.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c29adcf01185462afd3c57eb5971646
+      internalID: 21300020
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clockwork_clock
+      rect:
+        serializedVersion: 2
+        x: 940.5
+        y: 313.5
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03193a06ca9c5f229a51155360a5c3d0
+      internalID: 21300022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cracked_breastplate
+      rect:
+        serializedVersion: 2
+        x: 0.0
+        y: 0.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b6e900112255158af58ee8c8fb88ef
+      internalID: 21300024
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: branch_pipe
+      rect:
+        serializedVersion: 2
+        x: 313.5
+        y: 0.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53187a670c75c49ab64b6cc8cbd8c56
+      internalID: 21300026
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resonance_bells
+      rect:
+        serializedVersion: 2
+        x: 627.0
+        y: 0.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c28586a7a25807b8e05b44deacddf8
+      internalID: 21300028
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload_reactor
+      rect:
+        serializedVersion: 2
+        x: 940.5
+        y: 0.0
+        width: 313.5
+        height: 313.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2eff76ebf4251f8a68a5bf21ca44bce
+      internalID: 21300030
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      inventor: 21300000
+      scrap_beetle: 21300002
+      mirror_moth: 21300004
+      storm_golem: 21300006
+      spark_cannon: 21300008
+      energy_shield: 21300010
+      spark_battery: 21300012
+      ember_bottle: 21300014
+      frost_crystal: 21300016
+      siphon_coil: 21300018
+      repair_gauntlet: 21300020
+      clockwork_clock: 21300022
+      cracked_breastplate: 21300024
+      branch_pipe: 21300026
+      resonance_bells: 21300028
+      overload_reactor: 21300030
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData: Spellcraft original built-in image_gen artwork
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,453 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c62e14f8664fd89193a9a9c855fc06, type: 3}
+  m_Name: 法术工坊配置
+  m_EditorClassIdentifier: ''
+  rules:
+    MaxHealth: 42
+    EnergyPerTurn: 3
+    StartingSpark: 3
+    SparkCap: 12
+    HandSize: 5
+    MaxCircuitActivations: 2
+    MaxEventsPerCommand: 128
+    HealAfterBattle: 9
+    Modules:
+    - Id: trigger.manual
+      Name: 手动启动
+      Description: 由你启动，消耗1能量。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 10
+      Trigger: 0
+      Effect: 0
+      Modifier: 0
+    - Id: trigger.hit
+      Name: 受伤触发
+      Description: 生命受到伤害后启动；护盾完全挡住时不会启动。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 12
+      Trigger: 2
+      Effect: 0
+      Modifier: 0
+    - Id: trigger.block
+      Name: 格挡触发
+      Description: 护盾实际吸收伤害后启动。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 5
+      Trigger: 3
+      Effect: 0
+      Modifier: 0
+    - Id: trigger.spent
+      Name: 耗火花触发
+      Description: 每次消耗火花后启动；装置自身的消耗也能触发。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 6
+      Trigger: 4
+      Effect: 0
+      Modifier: 0
+    - Id: trigger.turn
+      Name: 回合开始
+      Description: 每个己方回合开始时启动。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 11
+      Trigger: 1
+      Effect: 0
+      Modifier: 0
+    - Id: trigger.burn
+      Name: 燃烧触发
+      Description: 敌人受到燃烧伤害后启动，优先以该敌人为目标。
+      Kind: 0
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 7
+      Trigger: 5
+      Effect: 0
+      Modifier: 0
+    - Id: effect.bolt
+      Name: 电击器
+      Description: 直伤会被护盾抵挡，并触发反伤飞蛾反射。
+      Kind: 1
+      Value: 4
+      SparkCost: 1
+      SpriteIndex: 4
+      Trigger: 0
+      Effect: 0
+      Modifier: 0
+    - Id: effect.guard
+      Name: 护盾器
+      Description: 护盾保留到下个己方回合开始。
+      Kind: 1
+      Value: 4
+      SparkCost: 1
+      SpriteIndex: 5
+      Trigger: 0
+      Effect: 1
+      Modifier: 0
+    - Id: effect.spark
+      Name: 充能器
+      Description: 先扣启动费用，再补充火花；可以喂给其他装置。
+      Kind: 1
+      Value: 3
+      SparkCost: 1
+      SpriteIndex: 6
+      Trigger: 0
+      Effect: 2
+      Modifier: 0
+    - Id: effect.burn
+      Name: 喷火器
+      Description: 燃烧在回合结束时结算，绕过护盾且不反射，结算后减少一层。
+      Kind: 1
+      Value: 3
+      SparkCost: 1
+      SpriteIndex: 7
+      Trigger: 0
+      Effect: 3
+      Modifier: 0
+    - Id: effect.frost
+      Name: 冷冻器
+      Description: 敌人被冻结时跳过行动，保留原意图。
+      Kind: 1
+      Value: 1
+      SparkCost: 1
+      SpriteIndex: 8
+      Trigger: 0
+      Effect: 4
+      Modifier: 0
+    - Id: effect.drain
+      Name: 吸血器
+      Description: 按实际打掉的生命治疗；不能让已经倒下的角色复活。
+      Kind: 1
+      Value: 3
+      SparkCost: 1
+      SpriteIndex: 9
+      Trigger: 0
+      Effect: 5
+      Modifier: 0
+    - Id: effect.heavy
+      Name: 重型电击器
+      Description: 适合把集中供给转成一次重击。
+      Kind: 1
+      Value: 7
+      SparkCost: 2
+      SpriteIndex: 4
+      Trigger: 0
+      Effect: 0
+      Modifier: 0
+    - Id: effect.trickle
+      Name: 备用电池
+      Description: 轻量补给线圈，适合自动触发。
+      Kind: 1
+      Value: 2
+      SparkCost: 0
+      SpriteIndex: 6
+      Trigger: 0
+      Effect: 2
+      Modifier: 0
+    - Id: modifier.none
+      Name: 无改装
+      Description: 按效果原样执行。
+      Kind: 2
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 13
+      Trigger: 0
+      Effect: 0
+      Modifier: 0
+    - Id: modifier.fork
+      Name: 全体作用
+      Description: 攻击与异常改为作用于全部敌人，强度减少1；最低1。
+      Kind: 2
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 13
+      Trigger: 0
+      Effect: 0
+      Modifier: 1
+    - Id: modifier.echo
+      Name: 重复两次
+      Description: 效果执行两次，每次强度减少1；最低1，只支付一次基本火花。
+      Kind: 2
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 14
+      Trigger: 0
+      Effect: 0
+      Modifier: 2
+    - Id: modifier.overload
+      Name: 增强输出
+      Description: 额外消耗1火花，效果强度增加2。
+      Kind: 2
+      Value: 0
+      SparkCost: 0
+      SpriteIndex: 15
+      Trigger: 0
+      Effect: 0
+      Modifier: 3
+    Cards:
+    - Id: card.strike
+      Name: 敲击
+      Description: 直伤会受到护盾与反射影响。
+      Cost: 1
+      SparkCost: 0
+      Power: 3
+      SpriteIndex: 10
+      Kind: 0
+    - Id: card.guard
+      Name: 防御
+      Description: 护盾挡住攻击后，可以触发格挡触发。
+      Cost: 1
+      SparkCost: 0
+      Power: 6
+      SpriteIndex: 5
+      Kind: 1
+    - Id: card.charge
+      Name: 充能
+      Description: 为手动装置与自动连锁准备火花。
+      Cost: 1
+      SparkCost: 0
+      Power: 3
+      SpriteIndex: 6
+      Kind: 2
+    - Id: card.ignite
+      Name: 点燃
+      Description: 燃烧绕过护盾，不触发直伤反射。
+      Cost: 1
+      SparkCost: 0
+      Power: 2
+      SpriteIndex: 7
+      Kind: 3
+    - Id: card.discharge
+      Name: 全部放电
+      Description: 这次消耗只触发一次耗火花触发。
+      Cost: 1
+      SparkCost: 0
+      Power: 2
+      SpriteIndex: 4
+      Kind: 4
+    StartingDeck:
+    - card.strike
+    - card.strike
+    - card.strike
+    - card.guard
+    - card.guard
+    - card.guard
+    - card.charge
+    - card.charge
+    - card.ignite
+    - card.discharge
+    StartingUnlocked:
+    - trigger.manual
+    - trigger.hit
+    - trigger.block
+    - trigger.spent
+    - effect.bolt
+    - effect.guard
+    - effect.spark
+    - effect.burn
+    - modifier.none
+    Encounters:
+    - Id: yard
+      Name: 机械甲虫
+      Description: 甲虫会交替攻击和防御。
+      Enemies:
+      - Id: yard.beetle
+        Name: 机械甲虫
+        Description: 架甲会挡住直伤，燃烧直接扣生命并绕过护盾。
+        MaxHealth: 26
+        ReflectDamage: 0
+        SpriteIndex: 1
+        Intents:
+        - Kind: 0
+          Power: 4
+          Name: 攻击
+          Description: 攻击一次。
+        - Kind: 2
+          Power: 6
+          Name: 防御
+          Description: 获得护盾。
+        - Kind: 1
+          Power: 3
+          Name: 连击
+          Description: 连续攻击两次。
+      RewardModuleIds:
+      - modifier.fork
+      - effect.frost
+      - trigger.turn
+    - Id: mirror
+      Name: 反伤组合
+      Description: 反伤飞蛾会反射每次直伤；可以先架盾、用燃烧绕开反射，或抢先击破。
+      Enemies:
+      - Id: mirror.moth
+        Name: 反伤飞蛾
+        Description: 每次受到直伤，反射1点伤害。燃烧不反射。
+        MaxHealth: 22
+        ReflectDamage: 1
+        SpriteIndex: 2
+        Intents:
+        - Kind: 0
+          Power: 3
+          Name: 攻击
+          Description: 攻击一次。
+        - Kind: 4
+          Power: 3
+          Name: 蓄力
+          Description: 积蓄下次攻击。
+        - Kind: 0
+          Power: 5
+          Name: 重击
+          Description: 攻击一次。
+      - Id: mirror.beetle
+        Name: 防御甲虫
+        Description: 会架甲保护自己。
+        MaxHealth: 22
+        ReflectDamage: 0
+        SpriteIndex: 1
+        Intents:
+        - Kind: 2
+          Power: 5
+          Name: 防御
+          Description: 获得护盾。
+        - Kind: 0
+          Power: 5
+          Name: 攻击
+          Description: 攻击一次。
+      RewardModuleIds:
+      - modifier.echo
+      - effect.drain
+      - trigger.burn
+    - Id: drain
+      Name: 火花干扰
+      Description: 抽走火花会卡住自动装置。留下起动火花，或改用不耗火花的基础牌。
+      Enemies:
+      - Id: drain.beetle
+        Name: 吸能甲虫
+        Description: 抽取火花与重击交替。
+        MaxHealth: 32
+        ReflectDamage: 0
+        SpriteIndex: 1
+        Intents:
+        - Kind: 3
+          Power: 2
+          Name: 吸取火花
+          Description: 抽走火花。
+        - Kind: 0
+          Power: 7
+          Name: 重击
+          Description: 攻击一次。
+        - Kind: 2
+          Power: 7
+          Name: 防御
+          Description: 获得护盾。
+      - Id: drain.moth
+        Name: 反伤飞蛾
+        Description: 每次受到直伤反射1点，攻击较弱。
+        MaxHealth: 20
+        ReflectDamage: 1
+        SpriteIndex: 2
+        Intents:
+        - Kind: 0
+          Power: 3
+          Name: 攻击
+          Description: 攻击一次。
+        - Kind: 1
+          Power: 2
+          Name: 连击
+          Description: 连续攻击两次。
+      RewardModuleIds:
+      - modifier.overload
+      - effect.heavy
+      - effect.trickle
+    - Id: storm
+      Name: 强化组合
+      Description: 石像蓄力后会重击；反伤飞蛾在旁干扰。用冻结推迟爆发，或用循环抢先击破。
+      Enemies:
+      - Id: storm.golem
+        Name: 蓄力石像
+        Description: 蓄力提高下一次攻击；战斗拖长后敌人会逐渐增强。
+        MaxHealth: 66
+        ReflectDamage: 0
+        SpriteIndex: 3
+        Intents:
+        - Kind: 4
+          Power: 5
+          Name: 蓄力
+          Description: 强化下一次攻击。
+        - Kind: 0
+          Power: 8
+          Name: 重击
+          Description: 攻击一次。
+        - Kind: 2
+          Power: 8
+          Name: 防御
+          Description: 获得护盾。
+        - Kind: 1
+          Power: 4
+          Name: 连击
+          Description: 连续攻击两次。
+      - Id: storm.moth
+        Name: 反伤飞蛾
+        Description: 每次受到直伤反射1点伤害。
+        MaxHealth: 18
+        ReflectDamage: 1
+        SpriteIndex: 2
+        Intents:
+        - Kind: 0
+          Power: 3
+          Name: 攻击
+          Description: 攻击一次。
+        - Kind: 3
+          Power: 1
+          Name: 吸取火花
+          Description: 抽走火花。
+      RewardModuleIds: []
+    StartingCircuits:
+    - TriggerId: trigger.manual
+      EffectId: effect.bolt
+      ModifierId: modifier.none
+    - TriggerId: trigger.hit
+      EffectId: effect.spark
+      ModifierId: modifier.none
+    - TriggerId: trigger.spent
+      EffectId: effect.guard
+      ModifierId: modifier.none
+  font: {fileID: 12800000, guid: e629089c69d84961a5cc29dd704f6301, type: 3}
+  artwork:
+  - {fileID: 21300000, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300002, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300004, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300006, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300008, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300010, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300012, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300014, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300016, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300018, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300020, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300022, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300024, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300026, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300028, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  - {fileID: 21300030, guid: cd2b4d319fad49cfba036409d8b3884e, type: 3}
+  background: {fileID: 21300000, guid: f99513b667db493b90054647f7d849a9, type: 3}
+  cardFrame: {fileID: 21300000, guid: dc044df145cb4648be54e99e02711ee8, type: 3}
+  transitionSeconds: 0.18
+  previousPresentation: {fileID: 4900000, guid: a61c4f3a4c1b4ea0b7d7d4f1803d34f9, type: 3}
