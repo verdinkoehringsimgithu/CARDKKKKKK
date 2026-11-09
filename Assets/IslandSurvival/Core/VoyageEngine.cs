@@ -75,6 +75,22 @@ namespace CardKKK.IslandSurvival.Core
             return Ok();
         });
 
+        public VoyageResult StagePair(int firstId, int secondId) => Commit(s =>
+        {
+            VoyageCardState first = Find(s, firstId);
+            VoyageCardState second = Find(s, secondId);
+            if (first == null || second == null) return Fail("卡牌已离开桌面。");
+            if (first.JobId != 0 || second.JobId != 0) return Fail("卡牌正在使用中。");
+
+            int toAdd = (s.Staged.Contains(firstId) ? 0 : 1) + (firstId != secondId && !s.Staged.Contains(secondId) ? 1 : 0);
+            if (s.Staged.Count + toAdd > MaxStageSize) return Fail("这个组合放不下更多牌。");
+
+            bool changed = false;
+            if (!s.Staged.Contains(firstId)) { s.Staged.Add(firstId); changed = true; }
+            if (firstId != secondId && !s.Staged.Contains(secondId)) { s.Staged.Add(secondId); changed = true; }
+            return changed ? Ok() : Unchanged();
+        });
+
         public VoyageResult Unstage(int cardId) => Commit(s => s.Staged.Remove(cardId) ? Ok() : Unchanged());
 
         public VoyageResult ClearStage() => Commit(s =>

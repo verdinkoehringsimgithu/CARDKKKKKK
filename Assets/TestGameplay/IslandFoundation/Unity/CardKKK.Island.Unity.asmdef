@@ -1,0 +1,10 @@
+{
+  "name": "CardKKK.Island.Unity",
+  "rootNamespace": "CardKKK.Island.Unity",
+  "references": [
+    "CardKKK.Island.Core"
+  ],
+  "includePlatforms": [],
+  "noEngineReferences": false,
+  "autoReferenced": true
+}

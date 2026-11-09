@@ -32,6 +32,7 @@ namespace CardKKK.IslandSurvival.Core
 
         private string Settle(VoyageState s, VoyageJobState job)
         {
+            int firstProducedId = s.NextCardId;
             VoyageRecipeRule recipe = recipes[job.RecipeId];
             VoyageCardState location = job.Location == 0 ? null : Find(s, job.Location);
             VoyageCardState anchor = location ?? Find(s, job.Inputs[0].CardId);
@@ -87,6 +88,12 @@ namespace CardKKK.IslandSurvival.Core
             if (!recipe.Automatic) Learn(s, recipe.Id);
             if (discovered && !string.IsNullOrEmpty(recipe.DiscoveryCardId) && !s.Cards.Any(card => card.CardId == recipe.DiscoveryCardId))
                 EmitCard(s, recipe.DiscoveryCardId, anchor, bodies);
+            foreach (VoyageCardState produced in s.Cards.Where(card => card.Id >= firstProducedId))
+            {
+                produced.ProducedByJobId = job.Id;
+                produced.ProducedFromX = anchor.X;
+                produced.ProducedFromY = anchor.Y;
+            }
             return recipe.Name + "完成。";
         }
 

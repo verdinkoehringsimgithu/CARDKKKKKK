@@ -1,0 +1,1161 @@
+{
+  "evidence_level": "E1",
+  "source_asset": "assets/gamemain/configs/inputcontrols.inputactions",
+  "pathID": 418656196238816513,
+  "action_maps": [
+    {
+      "map_name": "gameplay",
+      "actions": [
+        {
+          "name": "PointerLeft",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/leftButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "DragDrop",
+          "type": 0,
+          "bindings": [
+            {
+              "path": "<Mouse>/delta",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Scroll",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/scroll/y",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "ScrollNegPos",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "1DAxis",
+              "interactions": "",
+              "composite": null,
+              "name": "1D Axis"
+            },
+            {
+              "path": "<Keyboard>/minus",
+              "interactions": "",
+              "composite": null,
+              "name": "negative"
+            },
+            {
+              "path": "<Keyboard>/equals",
+              "interactions": "",
+              "composite": null,
+              "name": "positive"
+            }
+          ]
+        },
+        {
+          "name": "PointerPos",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/position",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "PointerRight",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/rightButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "AltBtn",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/alt",
+              "interactions": "Press",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "CtrlBtn",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/ctrl",
+              "interactions": "Press",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameFormKeyboard",
+      "actions": [
+        {
+          "name": "C",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/c",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameStoryFormKeyboard",
+      "actions": [
+        {
+          "name": "C",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/c",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Z",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/z",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "X",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/x",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameBagFormKeyboard",
+      "actions": [
+        {
+          "name": "Alpha1",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/1",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha2",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/2",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha3",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/3",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha4",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/4",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha5",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/5",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameUIKeyboard",
+      "actions": [
+        {
+          "name": "Tab",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/tab",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F1",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f1",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F2",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f2",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F3",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f3",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F4",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f4",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F5",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f5",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F6",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f6",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "F8",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/f8",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "B",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/b",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "R",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/r",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "H",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/h",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "K",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/k",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "P",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/p",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "M",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/m",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Esc",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/escape",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Space",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/space",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "GM",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "OneModifier",
+              "interactions": "MultiTap",
+              "composite": null,
+              "name": "Alt+O"
+            },
+            {
+              "path": "<Keyboard>/rightAlt",
+              "interactions": "",
+              "composite": null,
+              "name": "modifier"
+            },
+            {
+              "path": "<Keyboard>/o",
+              "interactions": "",
+              "composite": null,
+              "name": "binding"
+            }
+          ]
+        },
+        {
+          "name": "DebugInfo",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "OneModifier",
+              "interactions": "MultiTap",
+              "composite": null,
+              "name": "Alt+I"
+            },
+            {
+              "path": "<Keyboard>/rightAlt",
+              "interactions": "",
+              "composite": null,
+              "name": "modifier"
+            },
+            {
+              "path": "<Keyboard>/i",
+              "interactions": "",
+              "composite": null,
+              "name": "binding"
+            }
+          ]
+        },
+        {
+          "name": "HideAllUI",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "OneModifier",
+              "interactions": "MultiTap",
+              "composite": null,
+              "name": "Alt+v"
+            },
+            {
+              "path": "<Keyboard>/rightAlt",
+              "interactions": "",
+              "composite": null,
+              "name": "modifier"
+            },
+            {
+              "path": "<Keyboard>/v",
+              "interactions": "",
+              "composite": null,
+              "name": "binding"
+            }
+          ]
+        },
+        {
+          "name": "Alpha1",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/1",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha2",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/2",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha3",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/3",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha4",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/4",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Alpha5",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/5",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Move",
+          "type": 0,
+          "bindings": [
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "DPad"
+            },
+            {
+              "path": "<Keyboard>/w",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/s",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/a",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/d",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "APad"
+            },
+            {
+              "path": "<Keyboard>/upArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/downArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/leftArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/rightArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "SnapGrid",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/e",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameUISettingKeyboard",
+      "actions": [
+        {
+          "name": "Esc",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/escape",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameMapFormKeyboard",
+      "actions": [
+        {
+          "name": "M",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/m",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameUITaskKeyboard",
+      "actions": [
+        {
+          "name": "Q",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/q",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "gameWorld",
+      "actions": [
+        {
+          "name": "Move",
+          "type": 0,
+          "bindings": [
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "DPad"
+            },
+            {
+              "path": "<Keyboard>/w",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/s",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/a",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/d",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "APad"
+            },
+            {
+              "path": "<Keyboard>/upArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/downArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/leftArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/rightArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "C",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/c",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "M",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/m",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Round",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "LR"
+            },
+            {
+              "path": "<Keyboard>/q",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/e",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "Look",
+          "type": 0,
+          "bindings": [
+            {
+              "path": "<Mouse>/scroll",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Pointer",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Mouse>/leftButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Space",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "<Keyboard>/space",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map_name": "UI",
+      "actions": [
+        {
+          "name": "Navigate",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "Gamepad"
+            },
+            {
+              "path": "<Gamepad>/leftStick/up",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Gamepad>/rightStick/up",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Gamepad>/leftStick/down",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Gamepad>/rightStick/down",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Gamepad>/leftStick/left",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Gamepad>/rightStick/left",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Gamepad>/leftStick/right",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "<Gamepad>/rightStick/right",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "<Gamepad>/dpad",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "Joystick"
+            },
+            {
+              "path": "<Joystick>/stick/up",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Joystick>/stick/down",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Joystick>/stick/left",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Joystick>/stick/right",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "2DVector",
+              "interactions": "",
+              "composite": null,
+              "name": "Keyboard"
+            },
+            {
+              "path": "<Keyboard>/w",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/upArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "up"
+            },
+            {
+              "path": "<Keyboard>/s",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/downArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "down"
+            },
+            {
+              "path": "<Keyboard>/a",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/leftArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "left"
+            },
+            {
+              "path": "<Keyboard>/d",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            },
+            {
+              "path": "<Keyboard>/rightArrow",
+              "interactions": "",
+              "composite": null,
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "Submit",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "*/{Submit}",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Cancel",
+          "type": 1,
+          "bindings": [
+            {
+              "path": "*/{Cancel}",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Point",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/position",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "<Pen>/position",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "<Touchscreen>/touch*/position",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "Click",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/leftButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "<Pen>/tip",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "<Touchscreen>/touch*/press",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            },
+            {
+              "path": "<XRController>/trigger",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "ScrollWheel",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/scroll",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "MiddleClick",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/middleButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "RightClick",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<Mouse>/rightButton",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "TrackedDevicePosition",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<XRController>/devicePosition",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        },
+        {
+          "name": "TrackedDeviceOrientation",
+          "type": 2,
+          "bindings": [
+            {
+              "path": "<XRController>/deviceRotation",
+              "interactions": "",
+              "composite": null,
+              "name": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

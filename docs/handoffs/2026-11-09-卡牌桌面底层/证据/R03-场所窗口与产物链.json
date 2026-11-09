@@ -1,0 +1,121 @@
+{
+  "evidence_level": "E1",
+  "description": "从点击桌面场所到打开局部窗口、投入卡槽、启动计时、产物生成并落桌的完整对象引用链",
+  "pairs": [
+    {
+      "facility_type": "Work (综合工作/采集)",
+      "desktop_entity": {
+        "prefab": "assets/gamemain/entities/timer/worktimer.prefab",
+        "root_pid": 2250488360667940380,
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "SpriteRenderer",
+          "SortingLayerOrderControl",
+          "DOTweenAnimation"
+        ],
+        "role": "桌面物理常驻实体，响应鼠标点击打开工作窗，并在桌面上原位显示进度条与吸附锚点"
+      },
+      "local_window": {
+        "prefab": "assets/gamemain/entities/timer/workform.prefab",
+        "root_pid": -3293211835474349119,
+        "ui_canvas": "CanvasUI (Canvas, CanvasScaler, GraphicRaycaster)",
+        "close_button": "btn_close (Button, CommonButtonSound)",
+        "start_button": "BtnStart (Button, TimerFormBtnColorControl, CommonButtonSound)",
+        "slots": {
+          "main_slot": "cardSlotMain (Transform -> CardSlot.prefab)",
+          "sub_slots": [
+            "cardSlot (1)",
+            "cardSlot (2)",
+            "cardSlot (3)",
+            "cardSlot (4)"
+          ],
+          "slot_connection_lines": [
+            "card_slot_line1",
+            "card_slot_line2",
+            "card_slot_line3",
+            "card_slot_line4"
+          ]
+        },
+        "progress_controls": {
+          "timer_group": "TimerGroup (TimerProgressControl)",
+          "progress_mesh": "timer_progress (MeshFilter, MeshRenderer)",
+          "countdown_text": "cdTime (TextMeshPro)"
+        },
+        "product_spawn_zone": {
+          "grid_transform": "cardGrid (Transform)",
+          "role": "产物卡牌实体临时生成与排布格位，计时结束后从该格位解绑并飞出至桌面落点"
+        }
+      }
+    },
+    {
+      "facility_type": "Produce (单主槽直接生产)",
+      "desktop_entity": {
+        "prefab": "assets/gamemain/entities/timer/producetimer.prefab",
+        "root_pid": 8481380785954573018
+      },
+      "local_window": {
+        "prefab": "assets/gamemain/entities/timer/produceform.prefab",
+        "root_pid": 205021520843728069,
+        "slots": {
+          "main_slot": "cardSlotMain",
+          "sub_slots": []
+        },
+        "product_spawn_zone": "cardGrid"
+      }
+    },
+    {
+      "facility_type": "Make (配方制造/合成)",
+      "desktop_entity": {
+        "prefab": "assets/gamemain/entities/timer/maketimer.prefab",
+        "root_pid": 450875176881946774
+      },
+      "local_window": {
+        "prefab": "assets/gamemain/entities/timer/makeform.prefab",
+        "root_pid": 7253617673844067184,
+        "slots": {
+          "main_slot": "cardSlotMain",
+          "sub_slots": [
+            "cardSlot (1)",
+            "cardSlot (2)",
+            "cardSlot (3)",
+            "cardSlot (4)"
+          ]
+        },
+        "product_spawn_zone": "cardGrid"
+      }
+    }
+  ],
+  "lifecycle_stages": [
+    {
+      "stage": "1. 交互触发打开窗口",
+      "caller": "BaseEntityLogic::OnPointerClick (VA: 0x1814d0570)",
+      "action": "点击桌面常驻实体（如 WorkTimer），通过 ResourceWidgetEntityLogic::CreateWidgetForm 实例化或激活对应 Form 预置体（如 WorkForm）",
+      "state": "窗口打开置于顶层 UI，桌面实体保留在底层世界空间"
+    },
+    {
+      "stage": "2. 槽位投料与配方预览",
+      "caller": "BaseCardSlotEntityLogic::OnDrop & BaseFormEntityLogic::MatchRecipe",
+      "action": "将实体牌拖入 cardSlotMain 或 cardSlot (1..4)，触发卡槽绑定。Form 调用 MatchRecipe 校验配方候选并在 cardGrid 预演产物图标",
+      "state": "卡牌获得任务锁与槽位占用，不可被其它窗体借用"
+    },
+    {
+      "stage": "3. 启动任务与双进度同步",
+      "caller": "BaseFormEntityLogic::OnStart & BaseTimerEntityLogic::StartTimer",
+      "action": "玩家点击 BtnStart 按钮；提交消耗/磨损，锁定输入槽。启动计时：Form 内的 TimerProgressControl (TimerGroup) 驱动倒计时文本 cdTime 与环形进度条，同时桌面实体上的 timer_progress 也同步呈现进度",
+      "window_close_behavior": "玩家若点击 btn_close 关闭窗口，窗口隐藏但桌面实体的计时器不中断，继续在桌面上推进！"
+    },
+    {
+      "stage": "4. 计时结束与产物出生产",
+      "caller": "TimerProgressControl::OnTimerProgressEnd -> BaseTimerEntityLogic::GetTimerPrize",
+      "action": "倒计时归零，触发产物生成：先在核心生成产物实例 ID 与归属，再在 cardGrid 格位实例化产物卡牌",
+      "state": "产物实体先在逻辑上确立存在"
+    },
+    {
+      "stage": "5. 产物解绑、飞出与落桌",
+      "caller": "BaseTimerEntityLogic::DetachEntityFly & CardBehaviourControl::JumpTowards",
+      "action": "产物卡从 cardGrid 槽位解除 Transform 父子绑定 (Detach)，播放抛物线飞向桌面目标落点 (Fly2Target / JumpTowards)。落桌后调用 ResetGridPos，卡牌进入普通桌面拖放与避让管线",
+      "state": "产物落桌并成为可交互桌面卡牌实体"
+    }
+  ]
+}

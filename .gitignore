@@ -47,3 +47,9 @@ __pycache__/
 *.py[cod]
 /work/survival-reference/
 /work/island-requirements/
+
+# 本地参考游戏与解包二进制；保留交接文档和可复现脚本
+/Card Cultivation/
+/work/card-cultivation-handoff/decoded/
+/work/card-cultivation-handoff/unpacked/
+/work/card-cultivation-handoff/deps/

@@ -1,0 +1,464 @@
+{
+  "evidence_level_methods": "E1",
+  "evidence_level_decision_tree": "E2/D",
+  "evidence_note": "方法符号、VA 虚地址与元数据索引由 GameAssembly.dll 提取，属 E1。决策树分支优先级顺序系根据符号与参数推断的架构模型与本项目设计契约（E2/D），未反编译原生机器码控制流，不能当作原游戏已确认行为。",
+  "dll": "GameAssembly.dll",
+  "metadata_version": 31,
+  "table_offset": "0x2a44168",
+  "methods": [
+    {
+      "index": 25433,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "PositionIsOverUI",
+      "params": 1,
+      "token": "0x6003448",
+      "va": 6447059632,
+      "va_hex": "0x1804652b0"
+    },
+    {
+      "index": 25439,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "OnPointerPerformed",
+      "params": 1,
+      "token": "0x600344e",
+      "va": 6447328352,
+      "va_hex": "0x1804a6c60"
+    },
+    {
+      "index": 25442,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "OnDrag",
+      "params": 1,
+      "token": "0x6003451",
+      "va": 6465672736,
+      "va_hex": "0x181625620"
+    },
+    {
+      "index": 25441,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "OnPointerUp",
+      "params": 1,
+      "token": "0x6003450",
+      "va": 6465668352,
+      "va_hex": "0x181624500"
+    },
+    {
+      "index": 25440,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "OnPointerCanceled",
+      "params": 1,
+      "token": "0x600344f",
+      "va": 6447059632,
+      "va_hex": "0x1804652b0"
+    },
+    {
+      "index": 25451,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "ClampedMousePosition",
+      "params": 0,
+      "token": "0x600345a",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 25452,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.InputMgrComponent",
+      "name": "ScreenPosToWorldPos",
+      "params": 2,
+      "token": "0x600345b",
+      "va": 6447059632,
+      "va_hex": "0x1804652b0"
+    },
+    {
+      "index": 19317,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnBeginDrag",
+      "params": 1,
+      "token": "0x6001c64",
+      "va": 6464127328,
+      "va_hex": "0x1814ac160"
+    },
+    {
+      "index": 19318,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnDrag",
+      "params": 1,
+      "token": "0x6001c65",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19339,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "SetDrag",
+      "params": 1,
+      "token": "0x6001c7a",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19358,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "SetPointerOffset",
+      "params": 1,
+      "token": "0x6001c8d",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19352,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnEndDrag",
+      "params": 1,
+      "token": "0x6001c87",
+      "va": 6464468624,
+      "va_hex": "0x1814ff690"
+    },
+    {
+      "index": 19345,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnDrop",
+      "params": 1,
+      "token": "0x6001c80",
+      "va": 6464275824,
+      "va_hex": "0x1814d0570"
+    },
+    {
+      "index": 19344,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnDropOverlappingBehavior",
+      "params": 0,
+      "token": "0x6001c7f",
+      "va": 6464531920,
+      "va_hex": "0x18150edd0"
+    },
+    {
+      "index": 19343,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "OnMoveDropOverlappingBehavior",
+      "params": 0,
+      "token": "0x6001c7e",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19320,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetOverlappingEntityLogicList",
+      "params": 1,
+      "token": "0x6001c67",
+      "va": 6464427344,
+      "va_hex": "0x1814f5550"
+    },
+    {
+      "index": 19321,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetOverlappingEntityLogic",
+      "params": 1,
+      "token": "0x6001c68",
+      "va": 6464127328,
+      "va_hex": "0x1814ac160"
+    },
+    {
+      "index": 19322,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetOverlappingBaseEntityLogic",
+      "params": 0,
+      "token": "0x6001c69",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19342,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "CheckIfCanEntityFormHandler",
+      "params": 0,
+      "token": "0x6001c7d",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19346,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "CheckWidgetIfCanEntityFormHandler",
+      "params": 0,
+      "token": "0x6001c81",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19148,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseCardSlotEntityLogic",
+      "name": "OnDrop",
+      "params": 1,
+      "token": "0x6001bbb",
+      "va": 6464526416,
+      "va_hex": "0x18150d850"
+    },
+    {
+      "index": 19137,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseCardSlotEntityLogic",
+      "name": "OnDragEntityShowSelect",
+      "params": 2,
+      "token": "0x6001bb0",
+      "va": 6464126000,
+      "va_hex": "0x1814abc30"
+    },
+    {
+      "index": 19360,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "IsTimerSnap",
+      "params": 0,
+      "token": "0x6001c8f",
+      "va": 6464465872,
+      "va_hex": "0x1814febd0"
+    },
+    {
+      "index": 22658,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.SnapSlotEntityLogic",
+      "name": "CheckSnapTrigger",
+      "params": 0,
+      "token": "0x6002971",
+      "va": 6465241184,
+      "va_hex": "0x1815bc060"
+    },
+    {
+      "index": 22661,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.SnapSlotEntityLogic",
+      "name": "ConnectSnapSlotEntityLogic",
+      "params": 0,
+      "token": "0x6002974",
+      "va": 6465203024,
+      "va_hex": "0x1815b2b50"
+    },
+    {
+      "index": 22662,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.SnapSlotEntityLogic",
+      "name": "DisconnectSnapSlotEntityLogic",
+      "params": 0,
+      "token": "0x6002975",
+      "va": 6465156032,
+      "va_hex": "0x1815a73c0"
+    },
+    {
+      "index": 19319,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "CanHaveCardOnTop",
+      "params": 1,
+      "token": "0x6001c66",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19341,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "CheckIfCanAddOnStack",
+      "params": 1,
+      "token": "0x6001c7c",
+      "va": 6464426192,
+      "va_hex": "0x1814f50d0"
+    },
+    {
+      "index": 19323,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "AddOnStack",
+      "params": 2,
+      "token": "0x6001c6a",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19329,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "RemoveFromStack",
+      "params": 0,
+      "token": "0x6001c70",
+      "va": 6464125584,
+      "va_hex": "0x1814aba90"
+    },
+    {
+      "index": 19324,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "IsChildOf",
+      "params": 1,
+      "token": "0x6001c6b",
+      "va": 6464492016,
+      "va_hex": "0x1815051f0"
+    },
+    {
+      "index": 19325,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetRootBaseEntityLogic",
+      "params": 0,
+      "token": "0x6001c6c",
+      "va": 6464126528,
+      "va_hex": "0x1814abe40"
+    },
+    {
+      "index": 19326,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetLeafBaseEntityLogic",
+      "params": 0,
+      "token": "0x6001c6d",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19361,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "PushAwayFromOthers",
+      "params": 0,
+      "token": "0x6001c90",
+      "va": 6464569072,
+      "va_hex": "0x181517ef0"
+    },
+    {
+      "index": 19335,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "Bounce",
+      "params": 0,
+      "token": "0x6001c76",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19336,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "UpdatePhysics",
+      "params": 1,
+      "token": "0x6001c77",
+      "va": 6464457616,
+      "va_hex": "0x1814fcb90"
+    },
+    {
+      "index": 19362,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "ClampPos",
+      "params": 0,
+      "token": "0x6001c91",
+      "va": 6458477280,
+      "va_hex": "0x180f48ae0"
+    },
+    {
+      "index": 19363,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "ClampPosBounds",
+      "params": 1,
+      "token": "0x6001c92",
+      "va": 6447145680,
+      "va_hex": "0x18047a2d0"
+    },
+    {
+      "index": 19364,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "CalcBoundsSizeByChildCount",
+      "params": 0,
+      "token": "0x6001c93",
+      "va": 6464463120,
+      "va_hex": "0x1814fe110"
+    },
+    {
+      "index": 19365,
+      "assembly": "Assembly-CSharp.dll",
+      "class": "UnityGameFramework.Scripts.BaseEntityLogic",
+      "name": "GetBoundsSqrDistance",
+      "params": 1,
+      "token": "0x6001c94",
+      "va": 6464127328,
+      "va_hex": "0x1814ac160"
+    }
+  ],
+  "decision_tree": {
+    "step_1_input_release": {
+      "handler": "InputMgrComponent::OnPointerUp (VA: 0x181624500)",
+      "ui_check": "InputMgrComponent::PositionIsOverUI (VA: 0x1804652b0)",
+      "condition": "if PositionIsOverUI(mousePos) == true -> Cancel drop session, suppress desktop drop",
+      "else": "Pass to current dragged entity IPointerHandler.OnDrop / OnPointerUp"
+    },
+    "step_2_drop_entry": {
+      "handler": "BaseEntityLogic::OnDrop (VA: 0x1814d0570)",
+      "validation": "Check isDragging state; if dropped directly over a BaseCardSlotEntityLogic, trigger slot.OnDrop",
+      "else": "Call BaseEntityLogic::OnDropOverlappingBehavior (VA: 0x18150edd0)"
+    },
+    "step_3_overlap_evaluation": {
+      "handler": "BaseEntityLogic::OnDropOverlappingBehavior (VA: 0x18150edd0)",
+      "gather_candidates": "BaseEntityLogic::GetOverlappingEntityLogicList (VA: 0x1814f5550)",
+      "priority_order": [
+        {
+          "priority": 1,
+          "target_type": "EntityForm / Widget / Form Slot",
+          "checker": "BaseEntityLogic::CheckIfCanEntityFormHandler (VA: 0x180f48ae0)",
+          "action": "Route into form cardSlot / open form widget",
+          "break_on_success": true
+        },
+        {
+          "priority": 2,
+          "target_type": "Snap Slot (Timer / Facility Attachment)",
+          "checker": "BaseEntityLogic::IsTimerSnap (VA: 0x18047a2d0) / SnapSlotEntityLogic::CheckSnapTrigger",
+          "action": "SnapSlotEntityLogic::ConnectSnapSlotEntityLogic (Snap card to grid/socket)",
+          "break_on_success": true
+        },
+        {
+          "priority": 3,
+          "target_type": "Stackable Card Entity",
+          "checker": "BaseEntityLogic::CheckIfCanAddOnStack (VA: 0x1814f50d0)",
+          "rules": [
+            "Cannot stack on itself",
+            "Cannot stack on its own child (IsChildOf check)",
+            "Target card CanHaveCardOnTop == true",
+            "Target card not dead, not locked, not in conflict",
+            "Stack count does not exceed limit"
+          ],
+          "action": "BaseEntityLogic::AddOnStack (VA: 0x1814d0570)",
+          "break_on_success": true
+        },
+        {
+          "priority": 4,
+          "target_type": "Free Desktop / Collision Evasion",
+          "condition": "No valid slot, form, or stack target accepted the drop",
+          "action": "BaseEntityLogic::PushAwayFromOthers (VA: 0x181517ef0) & BaseEntityLogic::Bounce (VA: 0x18047a2d0)",
+          "boundary_clamping": "BaseEntityLogic::ClampPosBounds (VA: 0x18047a2d0)"
+        }
+      ]
+    }
+  }
+}

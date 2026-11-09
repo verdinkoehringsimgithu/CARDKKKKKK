@@ -1,0 +1,58 @@
+[
+  {
+    "source": "Entities/Card.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\Entities\\Card.bundle",
+    "size": 5707443,
+    "sha256_source": "b111ae6cdf5516b055bc9fdeeabb8c4f553cc87c1d49801ee57658873dbb3ca4",
+    "sha256_decoded": "13f9e446ece2daa0adb565eb04dec718c4ef8547d4b947ea31149cd67f52f048",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000W\u0016�\u0000\u0000\u0002h\u0000\u0000\u0006�\u0000\u0000"
+  },
+  {
+    "source": "Entities/Timer.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\Entities\\Timer.bundle",
+    "size": 14528552,
+    "sha256_source": "8296e3aaac3ee5d4f2f369e242c19542cd7b0bb29ee6adf18bfdbfd354c7ffde",
+    "sha256_decoded": "31582e00f3e8674f616b0c56de7fc9e14b6435a51c020b4af69e1d428474c081",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000��(\u0000\u0000\u0004�\u0000\u0000\r#\u0000\u0000"
+  },
+  {
+    "source": "Entities/Area.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\Entities\\Area.bundle",
+    "size": 4871069,
+    "sha256_source": "25f87d979adde06bdf4dd93e789ac5b395a2cb0a6fcc1a2604a9386b5f07fc47",
+    "sha256_decoded": "b5c5946965ca1932220a66d5e8e7003126b2228955baaa8e578ccceed4b8d45a",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000JS�\u0000\u0000\u0001�\u0000\u0000\u0005�\u0000\u0000"
+  },
+  {
+    "source": "Entities/Animations.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\Entities\\Animations.bundle",
+    "size": 71932,
+    "sha256_source": "9e2186c65bca6e666c0ed11f26393726c9da6d2efc74e9eea5c26e2cdb102836",
+    "sha256_decoded": "f32ddb4574b17eaaefc8020d37ea734676b6ff9018a12342bfcc132c193d25bb",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0018�\u0000\u0000\u0000`\u0000\u0000\u0000�\u0000\u0000"
+  },
+  {
+    "source": "UI/UIForms.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\UI\\UIForms.bundle",
+    "size": 8011739,
+    "sha256_source": "519cee48691e96d1bd165e06429cc16f7a45ba8f5536b3535357d876c97c482f",
+    "sha256_decoded": "75fce61df538213b3122525e3259e11691edd9b21a1d4439c6b3ff691aed9bc6",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000z?�\u0000\u0000\u0003�\u0000\u0000\t;\u0000\u0000"
+  },
+  {
+    "source": "LubanTables.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\LubanTables.bundle",
+    "size": 1963587,
+    "sha256_source": "1889ce46ec0d835e7681bd7e82f42daa956fa7af6d6c60702a3d49926c418513",
+    "sha256_decoded": "c0107bc598b2977af929b72bd1a8d250ade1ede541c4587d082019bec8e33807",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000\u001d�C\u0000\u0000\u0001l\u0000\u0000\u0002�\u0000\u0000"
+  },
+  {
+    "source": "Configs.dat",
+    "output": "work\\card-cultivation-handoff\\decoded\\Configs.bundle",
+    "size": 1213632,
+    "sha256_source": "036c8a9063bcea126409951d485f6a12e397b14b12ae9c799b06f68bdfe5cd41",
+    "sha256_decoded": "6d4646a01beda30bd6fb5cdbd99770fc8903904b112d94980537e6e1377f5b14",
+    "header": "UnityFS\u0000\u0000\u0000\u0000\b5.x.x\u00002021.3.45f1\u0000\u0000\u0000\u0000\u0000\u0000\u0012��\u0000\u0000\u0000�\u0000\u0000\u0001s\u0000\u0000"
+  }
+]

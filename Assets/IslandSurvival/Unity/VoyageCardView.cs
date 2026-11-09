@@ -65,7 +65,7 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (Dragging || Time.unscaledTime - lastDrop < .15f) return;
             if (eventData.button == PointerEventData.InputButton.Left) owner?.Select(CardId, eventData.clickCount);
-            else if (eventData.button == PointerEventData.InputButton.Right) owner?.RemoveFromStage(CardId);
+            else if (eventData.button == PointerEventData.InputButton.Right) owner?.QuickAction(CardId);
         }
 
         public void OnPointerEnter(PointerEventData eventData) => owner?.Hover(CardId, true);

@@ -1,0 +1,684 @@
+{
+  "SchemaVersion": 1,
+  "DatabaseName": "孤岛工坊示例配方库",
+  "ContentVersion": "1.0.0",
+  "Description": "涵盖物品复用标签、物品作为场所、在场个体操作、标准等式合成与自身转变配方的完整示例库",
+  "Tags": [
+    {
+      "Id": "tag_fuel",
+      "Name": "燃料",
+      "ColorHex": "#E67E22",
+      "Category": "属性",
+      "Description": "可用于燃烧提供热量的材料"
+    },
+    {
+      "Id": "tag_food",
+      "Name": "食材",
+      "ColorHex": "#27AE60",
+      "Category": "类型",
+      "Description": "可供食用或加工烹饪的食物"
+    },
+    {
+      "Id": "tag_mineral",
+      "Name": "矿石",
+      "ColorHex": "#7F8C8D",
+      "Category": "材料",
+      "Description": "开采出的天然矿物原料"
+    },
+    {
+      "Id": "tag_worker",
+      "Name": "工匠",
+      "ColorHex": "#2980B9",
+      "Category": "角色",
+      "Description": "具备劳动与手工制造能力的在场个体"
+    }
+  ],
+  "Items": [
+    {
+      "Id": "wood",
+      "Name": "木料",
+      "Category": "基础原料",
+      "Description": "砍伐树木获得的木材",
+      "MaxStack": 99,
+      "TagIds": [
+        "tag_fuel"
+      ],
+      "Properties": [
+        {
+          "Key": "fuel_value",
+          "Value": "30"
+        }
+      ],
+      "AbilityContributions": [
+        {
+          "AbilityId": "heat",
+          "BaseValue": 8,
+          "Efficiency": 0.8,
+          "TargetAbilityId": "",
+          "Note": "木材含水量稍高，热量按 80% 折算生效"
+        }
+      ]
+    },
+    {
+      "Id": "charcoal",
+      "Name": "木炭",
+      "Category": "优质燃料",
+      "Description": "闷烧制成的高温木炭",
+      "MaxStack": 99,
+      "TagIds": [
+        "tag_fuel"
+      ],
+      "Properties": [
+        {
+          "Key": "fuel_value",
+          "Value": "80"
+        }
+      ],
+      "AbilityContributions": [
+        {
+          "AbilityId": "heat",
+          "BaseValue": 15,
+          "Efficiency": 1.0,
+          "TargetAbilityId": "",
+          "Note": "纯净高热，100% 全额释放热量"
+        }
+      ]
+    },
+    {
+      "Id": "raw_meat",
+      "Name": "生肉",
+      "Category": "食材",
+      "Description": "未经加工的新鲜生肉",
+      "MaxStack": 20,
+      "TagIds": [
+        "tag_food"
+      ],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "cooked_meat",
+      "Name": "烤肉",
+      "Category": "食物",
+      "Description": "在火上烤制完成的香喷喷烤肉",
+      "MaxStack": 20,
+      "TagIds": [
+        "tag_food"
+      ],
+      "Properties": [
+        {
+          "Key": "nutrition",
+          "Value": "50"
+        }
+      ],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "bone",
+      "Name": "骨头",
+      "Category": "副产物",
+      "Description": "烹饪或拆解剩下的硬骨",
+      "MaxStack": 50,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "iron_ore",
+      "Name": "铁矿石",
+      "Category": "矿石",
+      "Description": "坚硬的粗铁矿石",
+      "MaxStack": 99,
+      "TagIds": [
+        "tag_mineral"
+      ],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "iron_ingot",
+      "Name": "铁锭",
+      "Category": "金属材料",
+      "Description": "高温冶炼出的纯铁锭",
+      "MaxStack": 99,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "slag",
+      "Name": "炉渣",
+      "Category": "冶炼废料",
+      "Description": "冶炼铁矿伴生的杂质熔渣",
+      "MaxStack": 99,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "campfire",
+      "Name": "篝火",
+      "Category": "设施卡",
+      "Description": "点燃的营地篝火，提供高温与烹饪工位",
+      "MaxStack": 1,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "furnace",
+      "Name": "土窑高炉",
+      "Category": "设施卡",
+      "Description": "耐火泥砌筑的冶炼窑炉，用于烧炭和熔炼",
+      "MaxStack": 1,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "villager",
+      "Name": "村民工匠",
+      "Category": "人员个体",
+      "Description": "勤劳的村民，可作为合成中的在场操作个体",
+      "MaxStack": 1,
+      "TagIds": [
+        "tag_worker"
+      ],
+      "Properties": [],
+      "AbilityContributions": [
+        {
+          "AbilityId": "strength",
+          "BaseValue": 12,
+          "Efficiency": 1.0,
+          "TargetAbilityId": "",
+          "Note": "健硕身躯，提供标准力量"
+        },
+        {
+          "AbilityId": "cooking",
+          "BaseValue": 6,
+          "Efficiency": 1.0,
+          "TargetAbilityId": "",
+          "Note": "掌握基础野外烹饪"
+        },
+        {
+          "AbilityId": "smelting",
+          "BaseValue": 10,
+          "Efficiency": 1.0,
+          "TargetAbilityId": "",
+          "Note": "熟练工匠冶炼工艺"
+        }
+      ]
+    },
+    {
+      "Id": "bracelet",
+      "Name": "安神手链",
+      "Category": "饰品装备",
+      "Description": "佩戴后平复心绪的编织手链",
+      "MaxStack": 1,
+      "TagIds": [],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "calm_mind",
+      "Name": "宁神回响",
+      "Category": "心智产物",
+      "Description": "劳动专注中获得的心理慰藉与理智卡",
+      "MaxStack": 20,
+      "TagIds": [],
+      "Properties": [
+        {
+          "Key": "san_recovery",
+          "Value": "10"
+        }
+      ],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "leather_gloves",
+      "Name": "厚皮手套",
+      "Category": "防护装备",
+      "Description": "厚实耐热的工作手套，作业时提供防护",
+      "MaxStack": 1,
+      "TagIds": [],
+      "Properties": [
+        {
+          "Key": "max_durability",
+          "Value": "10"
+        }
+      ],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "hand_blister",
+      "Name": "手部水疱",
+      "Category": "劳损负面",
+      "Description": "高温与繁重作业导致的烫伤水疱",
+      "MaxStack": 5,
+      "TagIds": [],
+      "Properties": [
+        {
+          "Key": "pain",
+          "Value": "5"
+        }
+      ],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "burnt_meat",
+      "Name": "焦糊黑炭肉",
+      "Category": "烹饪副产",
+      "MaxStack": 20,
+      "TagIds": [
+        "tag_food"
+      ],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "sprain_wrist",
+      "Name": "手腕挫伤",
+      "Category": "身体状态",
+      "MaxStack": 5,
+      "TagIds": [
+        "tag_tool"
+      ],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "gem_chest",
+      "Name": "神秘矿宝盒",
+      "Category": "珍贵宝物",
+      "MaxStack": 10,
+      "TagIds": [
+        "tag_mineral"
+      ],
+      "Properties": [],
+      "AbilityContributions": []
+    },
+    {
+      "Id": "pickaxe",
+      "Name": "铁质镐头",
+      "Category": "耐用工具",
+      "MaxStack": 1,
+      "TagIds": [
+        "tag_tool"
+      ],
+      "Properties": [],
+      "AbilityContributions": [
+        {
+          "AbilityId": "strength",
+          "BaseValue": 8,
+          "Efficiency": 1.25,
+          "TargetAbilityId": "",
+          "Note": "优质杠杆支撑，力量按 125% 效率放大折算"
+        }
+      ]
+    }
+  ],
+  "Locations": [
+    {
+      "Id": "loc_campfire",
+      "Name": "营地篝火",
+      "Description": "以篝火物品作为发生的合成场所",
+      "SourceType": 1,
+      "BoundItemId": "campfire",
+      "Capacity": 2,
+      "FeatureTags": [
+        "高温",
+        "明火"
+      ],
+      "DurabilityCost": 0
+    },
+    {
+      "Id": "loc_furnace",
+      "Name": "土窑工位",
+      "Description": "以土窑高炉物品作为发生的合成场所",
+      "SourceType": 1,
+      "BoundItemId": "furnace",
+      "Capacity": 1,
+      "FeatureTags": [
+        "高温",
+        "密封"
+      ],
+      "DurabilityCost": 0
+    }
+  ],
+  "Recipes": [
+    {
+      "Id": "recipe_build_campfire",
+      "Name": "搭建篝火",
+      "Type": 0,
+      "LocationId": "",
+      "DurationMinutes": 5,
+      "Description": "徒手随身将木料搭建为篝火",
+      "Operators": [],
+      "Inputs": [
+        {
+          "MatchType": 0,
+          "TargetId": "wood",
+          "Quantity": 3,
+          "Consume": true,
+          "Note": "",
+          "DurabilityCost": 0
+        }
+      ],
+      "Outputs": [
+        {
+          "ItemId": "campfire",
+          "Quantity": 1,
+          "Chance": 1.0,
+          "IsByproduct": false,
+          "Note": "",
+          "OutputType": 0
+        }
+      ],
+      "SourceItemId": "",
+      "SourceQuantity": 1,
+      "TransformationConditions": [],
+      "TargetItemId": "",
+      "TargetQuantity": 1,
+      "TransformationByproducts": [],
+      "AbilityChecks": []
+    },
+    {
+      "Id": "recipe_smelt_iron",
+      "Name": "高炉炼铁",
+      "Type": 0,
+      "LocationId": "loc_furnace",
+      "DurationMinutes": 30,
+      "Description": "在土窑高炉中，由村民在场操作，将铁矿石与木炭炼成铁锭与炉渣",
+      "Operators": [
+        {
+          "MatchType": 0,
+          "TargetId": "villager",
+          "Quantity": 1,
+          "Role": "主冶炼工",
+          "Note": ""
+        }
+      ],
+      "Inputs": [
+        {
+          "MatchType": 0,
+          "TargetId": "iron_ore",
+          "Quantity": 2,
+          "Consume": true,
+          "Note": "",
+          "DurabilityCost": 0
+        },
+        {
+          "MatchType": 1,
+          "TargetId": "tag_fuel",
+          "Quantity": 1,
+          "Consume": true,
+          "Note": "任意燃料",
+          "DurabilityCost": 0
+        }
+      ],
+      "Outputs": [
+        {
+          "ItemId": "iron_ingot",
+          "Quantity": 1,
+          "Chance": 1.0,
+          "IsByproduct": false,
+          "Note": "主产物",
+          "OutputType": 0,
+          "TriggerCondition": 1
+        },
+        {
+          "ItemId": "slag",
+          "Quantity": 1,
+          "Chance": 1.0,
+          "IsByproduct": true,
+          "Note": "副产物",
+          "OutputType": 1,
+          "TriggerCondition": 0
+        },
+        {
+          "ItemId": "hand_blister",
+          "Quantity": 1,
+          "Chance": 0.3,
+          "OutputType": 1,
+          "IsByproduct": true,
+          "Note": "高温冶炼有概率起水疱"
+        },
+        {
+          "ItemId": "slag",
+          "Count": 2,
+          "Chance": 1.0,
+          "OutputType": 0,
+          "TriggerCondition": 2
+        }
+      ],
+      "SourceItemId": "",
+      "SourceQuantity": 1,
+      "TransformationConditions": [],
+      "TargetItemId": "",
+      "TargetQuantity": 1,
+      "TransformationByproducts": [],
+      "AbilityChecks": [
+        {
+          "AbilityId": "heat",
+          "Operator": ">=",
+          "RequiredValue": 20,
+          "FailureBranchNote": "熔炉热量不足，铁矿石无法彻底融化"
+        },
+        {
+          "AbilityId": "smelting",
+          "Operator": ">=",
+          "RequiredValue": 8,
+          "FailureBranchNote": "工匠冶炼工艺不精，杂质过多凝结废炉"
+        }
+      ]
+    },
+    {
+      "Id": "trans_cook_meat",
+      "Name": "炙烤生肉",
+      "Type": 1,
+      "LocationId": "loc_campfire",
+      "DurationMinutes": 10,
+      "Description": "在篝火旁将生肉烤制为烤肉，并产生骨头副产物",
+      "Operators": [],
+      "Inputs": [],
+      "Outputs": [
+        {
+          "ItemId": "burnt_meat",
+          "Count": 1,
+          "Chance": 1.0,
+          "OutputType": 0,
+          "TriggerCondition": 2
+        }
+      ],
+      "SourceItemId": "raw_meat",
+      "SourceQuantity": 1,
+      "TransformationConditions": [
+        {
+          "Type": 2,
+          "TargetId": "",
+          "Value": 10,
+          "Operator": ">=",
+          "Note": "烘烤持续时间",
+          "DurabilityCost": 0
+        }
+      ],
+      "TargetItemId": "cooked_meat",
+      "TargetQuantity": 1,
+      "TransformationByproducts": [
+        {
+          "ItemId": "bone",
+          "Quantity": 1,
+          "Chance": 1.0,
+          "IsByproduct": true,
+          "Note": ""
+        }
+      ],
+      "AbilityChecks": [
+        {
+          "AbilityId": "heat",
+          "Operator": ">=",
+          "RequiredValue": 8,
+          "FailureBranchNote": "火候不够，生肉夹生无法食用"
+        },
+        {
+          "AbilityId": "cooking",
+          "Operator": ">=",
+          "RequiredValue": 5,
+          "FailureBranchNote": "厨艺欠佳火候失控，肉块烧焦烤糊"
+        }
+      ]
+    },
+    {
+      "Id": "recipe_explore_mine",
+      "Name": "探索隐秘矿洞",
+      "Type": 0,
+      "Category": "探险检定",
+      "CraftTime": 4.0,
+      "LocationId": "",
+      "Operators": [
+        {
+          "ItemId": "villager",
+          "Count": 1,
+          "EfficiencyMultiplier": 1.0
+        }
+      ],
+      "Inputs": [
+        {
+          "Type": 0,
+          "ItemId": "pickaxe",
+          "Count": 1,
+          "EfficiencyMultiplier": 1.0
+        }
+      ],
+      "AbilityChecks": [
+        {
+          "AbilityId": "strength",
+          "Operator": ">=",
+          "RequiredValue": 18,
+          "FailureBranchNote": "碎石阻路体力不支，发生坍塌负伤受挫"
+        }
+      ],
+      "Outputs": [
+        {
+          "ItemId": "gem_chest",
+          "Count": 1,
+          "Chance": 1.0,
+          "OutputType": 0,
+          "TriggerCondition": 1
+        },
+        {
+          "ItemId": "iron_ore",
+          "Count": 3,
+          "Chance": 0.85,
+          "OutputType": 1,
+          "TriggerCondition": 1
+        },
+        {
+          "ItemId": "sprain_wrist",
+          "Count": 1,
+          "Chance": 1.0,
+          "OutputType": 0,
+          "TriggerCondition": 2
+        }
+      ]
+    }
+  ],
+  "AuxiliaryLines": [
+    {
+      "Id": "aux_bracelet_soothe",
+      "Name": "安神手链舒缓效应 (跨配方额外追加产出)",
+      "Description": "只要配方中有工匠个体参与，若额外投入【安神手链】(非耗材)，即可必定伴生产出【宁神回响】卡牌",
+      "MatchCombineMode": 0,
+      "MatchTagIds": [
+        "tag_worker"
+      ],
+      "MatchItemIds": [],
+      "MatchLocationIds": [],
+      "ExtraInputs": [
+        {
+          "MatchType": 0,
+          "TargetId": "bracelet",
+          "Quantity": 1,
+          "Consume": false,
+          "DurabilityCost": 0
+        }
+      ],
+      "SuppressBaseOutputs": false,
+      "OutputModifiers": [
+        {
+          "ItemId": "calm_mind",
+          "Quantity": 1,
+          "Chance": 1.0,
+          "OutputType": 1,
+          "Note": "额外伴生产出"
+        }
+      ]
+    },
+    {
+      "Id": "aux_gloves_protection",
+      "Name": "厚皮手套防护 (0% 拦截防止损伤)",
+      "Description": "在土窑或燃烧燃料的配方中，若额外投入【厚皮手套】(单次损耗1耐久)，将彻底拦截原可能产生的【手部水疱】(几率覆盖为 0%)",
+      "MatchCombineMode": 0,
+      "MatchTagIds": [
+        "tag_fuel"
+      ],
+      "MatchItemIds": [],
+      "MatchLocationIds": [
+        "loc_furnace"
+      ],
+      "ExtraInputs": [
+        {
+          "MatchType": 0,
+          "TargetId": "leather_gloves",
+          "Quantity": 1,
+          "Consume": false,
+          "DurabilityCost": 1
+        }
+      ],
+      "SuppressBaseOutputs": false,
+      "OutputModifiers": [
+        {
+          "ItemId": "hand_blister",
+          "Quantity": 1,
+          "Chance": 0.0,
+          "OutputType": 1,
+          "Note": "0%概率彻底拦截水疱"
+        }
+      ]
+    }
+  ],
+  "Abilities": [
+    {
+      "Id": "heat",
+      "Name": "火力热量",
+      "Category": "物理/环境",
+      "Description": "提供高温热量，用于烹饪烘焙、矿石冶炼等高能物理化学反应",
+      "IconOrEmoji": "🔥",
+      "ColorHex": "#E67E22"
+    },
+    {
+      "Id": "cooking",
+      "Name": "烹饪技艺",
+      "Category": "技艺/专精",
+      "Description": "精细掌握火候与调味，达标产出喷香佳肴，未达标则导致烧糊焦化",
+      "IconOrEmoji": "🍳",
+      "ColorHex": "#27AE60"
+    },
+    {
+      "Id": "smelting",
+      "Name": "冶炼工艺",
+      "Category": "工匠/制造",
+      "Description": "高温金属加工与熔炉操作能力，达标后可将生铁矿转化为高纯铁锭",
+      "IconOrEmoji": "⚒️",
+      "ColorHex": "#9B59B6"
+    },
+    {
+      "Id": "strength",
+      "Name": "体力力量",
+      "Category": "角色/生理",
+      "Description": "体力负重与破障探索能力，用于高强度劳作、矿洞开采与事件检定",
+      "IconOrEmoji": "💪",
+      "ColorHex": "#C0392B"
+    }
+  ]
+}

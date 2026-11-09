@@ -89,6 +89,9 @@ namespace CardKKK.IslandSurvival.Core
     [Serializable]
     public sealed class VoyageCardState
     {
+        // 仅供已提交快照的出牌表现使用，不写入存档或规则指纹。
+        [NonSerialized] public int ProducedByJobId;
+        [NonSerialized] public float ProducedFromX, ProducedFromY;
         public int Id, Durability, Charges, RechargeRemaining, TimerRemaining, Limb, JobId;
         public string CardId = "";
         public float X, Y;

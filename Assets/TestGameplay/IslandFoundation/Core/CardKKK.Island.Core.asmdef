@@ -1,0 +1,8 @@
+{
+  "name": "CardKKK.Island.Core",
+  "rootNamespace": "CardKKK.Island.Core",
+  "references": [],
+  "includePlatforms": [],
+  "noEngineReferences": true,
+  "autoReferenced": true
+}

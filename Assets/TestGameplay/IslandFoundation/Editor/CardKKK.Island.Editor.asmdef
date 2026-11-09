@@ -1,0 +1,13 @@
+{
+  "name": "CardKKK.Island.Editor",
+  "rootNamespace": "CardKKK.Island.Editor",
+  "references": [
+    "CardKKK.Island.Core",
+    "CardKKK.Island.Unity"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "noEngineReferences": false,
+  "autoReferenced": true
+}

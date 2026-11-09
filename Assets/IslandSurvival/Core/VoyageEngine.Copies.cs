@@ -13,7 +13,8 @@ namespace CardKKK.IslandSurvival.Core
             Cards = source.Cards.Select(card => new VoyageCardState
             {
                 Id = card.Id, CardId = card.CardId, Durability = card.Durability, Charges = card.Charges, RechargeRemaining = card.RechargeRemaining,
-                TimerRemaining = card.TimerRemaining, Limb = card.Limb, JobId = card.JobId, X = card.X, Y = card.Y
+                TimerRemaining = card.TimerRemaining, Limb = card.Limb, JobId = card.JobId, X = card.X, Y = card.Y,
+                ProducedByJobId = card.ProducedByJobId, ProducedFromX = card.ProducedFromX, ProducedFromY = card.ProducedFromY
             }).ToList(),
             Jobs = source.Jobs.Select(job => new VoyageJobState
             {

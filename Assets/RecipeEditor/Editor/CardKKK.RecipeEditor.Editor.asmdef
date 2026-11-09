@@ -1,0 +1,13 @@
+{
+  "name": "CardKKK.RecipeEditor.Editor",
+  "rootNamespace": "CardKKK.RecipeEditor.Editor",
+  "references": [
+    "CardKKK.RecipeEditor.Core",
+    "CardKKK.RecipeEditor.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "noEngineReferences": false,
+  "autoReferenced": true
+}

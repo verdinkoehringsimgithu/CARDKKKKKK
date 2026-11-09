@@ -1,0 +1,382 @@
+[
+  {
+    "path": "baselib.dll",
+    "size": 404664
+  },
+  {
+    "path": "CardCultivation.exe",
+    "size": 653824
+  },
+  {
+    "path": "CardCultivation_Data/app.info",
+    "size": 25
+  },
+  {
+    "path": "CardCultivation_Data/boot.config",
+    "size": 137
+  },
+  {
+    "path": "CardCultivation_Data/globalgamemanagers",
+    "size": 294956
+  },
+  {
+    "path": "CardCultivation_Data/globalgamemanagers.assets",
+    "size": 1342356
+  },
+  {
+    "path": "CardCultivation_Data/globalgamemanagers.assets.resS",
+    "size": 3948032
+  },
+  {
+    "path": "CardCultivation_Data/il2cpp_data/Metadata/global-metadata.dat",
+    "size": 11188024
+  },
+  {
+    "path": "CardCultivation_Data/il2cpp_data/Resources/mscorlib.dll-resources.dat",
+    "size": 337563
+  },
+  {
+    "path": "CardCultivation_Data/level0",
+    "size": 16380
+  },
+  {
+    "path": "CardCultivation_Data/level1",
+    "size": 5200
+  },
+  {
+    "path": "CardCultivation_Data/level1.resS",
+    "size": 131232
+  },
+  {
+    "path": "CardCultivation_Data/level2",
+    "size": 6080
+  },
+  {
+    "path": "CardCultivation_Data/Plugins/Steamworks.NET.txt",
+    "size": 239
+  },
+  {
+    "path": "CardCultivation_Data/Plugins/x86_64/lib_burst_generated.dll",
+    "size": 52224
+  },
+  {
+    "path": "CardCultivation_Data/Plugins/x86_64/steam_api64.dll",
+    "size": 298856
+  },
+  {
+    "path": "CardCultivation_Data/Resources/unity default resources",
+    "size": 4832808
+  },
+  {
+    "path": "CardCultivation_Data/Resources/unity_builtin_extra",
+    "size": 396168
+  },
+  {
+    "path": "CardCultivation_Data/resources.assets",
+    "size": 18705912
+  },
+  {
+    "path": "CardCultivation_Data/resources.assets.resS",
+    "size": 21214416
+  },
+  {
+    "path": "CardCultivation_Data/RuntimeInitializeOnLoads.json",
+    "size": 1519
+  },
+  {
+    "path": "CardCultivation_Data/ScriptingAssemblies.json",
+    "size": 3764
+  },
+  {
+    "path": "CardCultivation_Data/sharedassets0.assets",
+    "size": 87044
+  },
+  {
+    "path": "CardCultivation_Data/sharedassets1.assets",
+    "size": 11348
+  },
+  {
+    "path": "CardCultivation_Data/sharedassets2.assets",
+    "size": 4133
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Boss.dat",
+    "size": 7770504
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Buff.dat",
+    "size": 62904
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Card.dat",
+    "size": 14420144
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/CardTitle.dat",
+    "size": 2303721
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Cloud.dat",
+    "size": 358410
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Common.dat",
+    "size": 21199
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Drive.dat",
+    "size": 7978343
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Enemy.dat",
+    "size": 5902495
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Items.dat",
+    "size": 46141865
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Maps/Map1.dat",
+    "size": 652984724
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/MapsTimer.dat",
+    "size": 36934462
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Role.dat",
+    "size": 25306151
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Skill.dat",
+    "size": 16336706
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Spine.dat",
+    "size": 19661379
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/SpiritBeastPuppet.dat",
+    "size": 7249734
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/ArtData/Weapon.dat",
+    "size": 14815101
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Configs.dat",
+    "size": 1213632
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Effect.dat",
+    "size": 44621332
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Animations.dat",
+    "size": 71932
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Area.dat",
+    "size": 4871069
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Boss.dat",
+    "size": 5050791
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Card.dat",
+    "size": 5707443
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Effect.dat",
+    "size": 19070024
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Map.dat",
+    "size": 23418733
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Timer.dat",
+    "size": 14528552
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Entities/Tips.dat",
+    "size": 5506016
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Localization/ChineseSimplified.dat",
+    "size": 3605788
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Localization/ChineseTraditional.dat",
+    "size": 1522741
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Localization/English.dat",
+    "size": 1560314
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/LubanTables.dat",
+    "size": 1963587
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/RemoteResource.dat",
+    "size": 676589
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Scenes.dat",
+    "size": 148881
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/Sounds.dat",
+    "size": 121465031
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UIAnis.dat",
+    "size": 59632
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UIForms.dat",
+    "size": 8011739
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISounds.dat",
+    "size": 3715
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Boss.dat",
+    "size": 1270674
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Buff.dat",
+    "size": 26995
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Card.dat",
+    "size": 79284
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Common.dat",
+    "size": 26906193
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Enemy.dat",
+    "size": 2282033
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Fight.dat",
+    "size": 370153
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Guide.dat",
+    "size": 12021042
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Head.dat",
+    "size": 58903011
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Icons.dat",
+    "size": 7914
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Items.dat",
+    "size": 49080656
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Logos.dat",
+    "size": 205900
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/MapsTimer.dat",
+    "size": 134537
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/MiniMap.dat",
+    "size": 217497
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Pic.dat",
+    "size": 14295776
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Role.dat",
+    "size": 6178325
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Skill.dat",
+    "size": 17518521
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/SpiritBeastPuppet.dat",
+    "size": 2103252
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Timer.dat",
+    "size": 43117072
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/Weapon.dat",
+    "size": 14805029
+  },
+  {
+    "path": "CardCultivation_Data/StreamingAssets/UI/UISprites/World.dat",
+    "size": 1246605
+  },
+  {
+    "path": "ColdClientLoader.ini",
+    "size": 225
+  },
+  {
+    "path": "GameAssembly.dll",
+    "size": 57015296
+  },
+  {
+    "path": "steam_settings/DLC.txt",
+    "size": 0
+  },
+  {
+    "path": "steam_settings/force_language.txt",
+    "size": 8
+  },
+  {
+    "path": "steam_settings/settings/account_name.txt",
+    "size": 8
+  },
+  {
+    "path": "steam_settings/settings/language.txt",
+    "size": 7
+  },
+  {
+    "path": "steam_settings/settings/listen_port.txt",
+    "size": 5
+  },
+  {
+    "path": "steam_settings/settings/user_steam_id.txt",
+    "size": 17
+  },
+  {
+    "path": "steam_settings/steam_appid.txt",
+    "size": 7
+  },
+  {
+    "path": "steamclient.dll",
+    "size": 2395648
+  },
+  {
+    "path": "steamclient64.dll",
+    "size": 3019776
+  },
+  {
+    "path": "steamclient_loader.exe",
+    "size": 100864
+  },
+  {
+    "path": "UnityCrashHandler64.exe",
+    "size": 1201848
+  },
+  {
+    "path": "UnityPlayer.dll",
+    "size": 29428920
+  }
+]

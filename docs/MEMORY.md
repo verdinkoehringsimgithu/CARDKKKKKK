@@ -4,6 +4,44 @@
 
 ## 当前授权与方向
 
+- [INTEGRATION_REVIEW_20261109] 本轮复核后：job初始化、StagePair原子事务已在源码修正；同类并行产物原先仍按类型猜来源，现Settle记录非序列化ProducedByJobId/ProducedFromX/Y并经Copies传递，View读取来源；飞牌被拖起或入准备区会退出协程。未编译/运行。网页编辑器以Tools/RecipeEditorWeb/index.html为唯一内容源，根HTML仅跳转。整合状态见交接06；A~E规范非实现，原Survival暂留不可盲删。参考游戏与解包目录加入ignore；仅暂存项目源码/工具/交接，覆盖率配置保留未暂存。不提交推送。
+
+
+- [DESKTOP_HANDOFF_SCOPE] 2026-11-09 用户要求直接拆解本地 `Card Cultivation`，先做部分拆包、理解和任务安排，建立交接文件夹给其他AI；列出的移动/重叠/弹出/弹飞/合并/吸附/高亮/场所UI/引导/计时器是不完整举例。当前阶段为底层研究交接，未授权本轮重写游戏。入口 `docs/handoffs/2026-11-09-卡牌桌面底层/00-从这里开始.md`，含证据、任务依赖、建议契约、32项操作验收和接手指令。
+- [DESKTOP_HANDOFF_CORE] 原包 IL2CPP metadata v31；已提取 Assembly-CSharp 的1685类型和14376条全局字符串。7个选定StreamingAssets包还原UnityFS并LZ4解包为11节点，引擎2021.3.45f1；元数据/路径/节点/哈希索引在交接证据目录，二进制与两个纯Python复现脚本在 `work/card-cultivation-handoff/`。原始包不修改，不导入Assets。优先关注 BaseEntityLogic、BaseFormEntityLogic、WidgetResourceFormEntityLogic、SnapSlotEntityLogic、InputMgrComponent、TimerProgressControl；索引不是方法体。
+- [DESKTOP_HANDOFF_VERIFY_NEXT] 已完成全部 28 篇底层交接规范文档（其中 R01/R03/R04 为局部资源/输入提取 E1/E2，R02 决策树为 E2/D 建议模型，A~E 组为工程化设计契约与验收矩阵）。规范交付为后续开发提供了清晰设计基准，但不等同于全套底层已在代码与场景中实装。当前已实装代码包括：VoyageEngine.StagePair 原子双牌组合事务、VoyageView 卡牌任务可见性修复、按核心结算记录来源的飞牌动效、右键快速入槽及防重叠落点偏移；但场所独立弹出窗口与独立卡槽 Prefab、60/85px 施密特吸附管线及有限步松弛物理避让仍属设计规范，尚未在场景与 Prefab 中落地。当前状态：进入分阶段实装阶段，不虚夸底层闭环。未运行参考游戏/Unity/编译/测试。
+- [DESKTOP_R01] 2026-11-09 已完成R01：实现纯Python TypeTree反序列化器，从Card/Timer/Area/UIForms解析26个目标Prefab层级（1013节点、2587组件）。恢复BoxCollider2D尺寸(0.64, 0.852)、SortingLayerOrderControl三色(白/绿/红)、TimerProgressControl及场所桌面实体(Timer)+局部窗口(Form)解耦结构。产出R01-对象层级与参数.{json,md}。未启动编译器、Unity或测试。
+- [DESKTOP_R02] 2026-11-09 已完成 R02：提取 GameAssembly.dll 40 个判定相关函数符号 VA 与元数据 Token（E1）。梳理松手四级判定决策树（UI拦截→表单卡槽→吸附槽→卡牌堆叠→桌面避让与边界收束），已更正证据等级：决策树分支顺序系根据符号职责推断的架构模型与本项目设计契约（E2/D），未反编译解析原生机器码控制流，不能断言为原游戏已确认行为。产出修正后的 R02-松手判定决策树.{json,md}。未启动编译器、Unity或测试。
+- [DESKTOP_R03] 2026-11-09 已完成R03：还原5对场所/窗口Prefab结构、卡槽层次(主槽+辅槽)、双时钟同步(桌面实体原地timer_progress与窗口TimerGroup)、窗口关闭后台继续、cardGrid格位生成产物后DetachEntityFly飞向桌面落点的完整链路。产出R03-场所窗口与产物链.{json,md}。未启动编译器、Unity或测试。
+- [DESKTOP_R04] 2026-11-09 已完成R04：反序列化inputcontrols.inputactions（PathID: 418656196238816513），完整提取10个Action Maps（gameplay, gameUIKeyboard等）与全部按键绑定。结合IL2CPP逆向厘清InputMgrComponent与CameraControl运行时路由：UI阻挡绝对优先(PositionIsOverUI)、持牌拖拽与相机平移互斥、滚轮平滑阻尼缩放(ZoomDecay)、Esc取消与lookBounds视口边界保护契约。产出R04-输入映射与键位表.{json,md}。未启动编译器、Unity或测试。
+- [DESKTOP_A01] 2026-11-09 规范已记录（非整体实装）：A01：深度审计BoardEngine、VoyageEngine与IslandFoundation三引擎代码，确立“拒绝第四套平行桌面引擎”的三层分层复用架构：Layer 1 统一桌面空间与严密牌堆几何内核（复用并升级BoardEngine）；Layer 2 场所卡槽（SlotBinding）与独占任务锁（TaskLock）归属契约；Layer 3 玩法业务规则（保留Voyage 144条配方与时钟调度，废除旧集中暂存面板，转为实体场所卡槽）。产出A01-三引擎审计与复用契约.md。未启动编译器、Unity或测试。
+- [DESKTOP_A02] 2026-11-09 规范已记录（非整体实装）：A02：规范TableResult统一命令结果、只读查询（QueryDrop/QueryCandidates）、核心表现事件（CardMoved, CardStacked, SlotAssigned, TaskStarted, CardDetachedFly等）与8类具体错误码。确立事务“零污染准则”、唯一所有权单射与状态版本Revision递增控制：失败绝对不扣料、不位移、不递增版本。产出A02-统一命令与事件契约.md。未启动编译器、Unity或测试。
+- [DESKTOP_A03] 2026-11-09 规范已记录（非整体实装）：A03：冻结CardDefinition（静态定义）、TableRules（空间与配方规则）、TableTheme（外观与三色高亮主题）及运行时状态的四权分工。规范稳定技术ID格式与旧版别名迁移机制；确立写入三阶段原子安全协议（.tmp -> .bak -> replace）与读取三级严格校验（SHA256 + 规则指纹 + 归属拓扑图谱校验）。产出A03-配置与存档规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_A04] 2026-11-09 规范已记录（非整体实装）：A04：规范卡槽预留独占性、任务锁（TaskLock）工作期间自身计时冻结机制、消耗/磨损/返还/销毁全生命周期不变量与取消/完成操作的幂等性保护。产出A04-实例预留与任务锁规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_A05] 2026-11-09 规范已记录（非整体实装）：A05：建立确定性时钟流水线，规范同帧多事件5阶段全序排序（任务完成->设施充能->寿命腐败->生理扣除->生物移动）、多重暂停原因掩码（PauseFlags）与读档强制暂停策略。产出A05-时钟推进与事件顺序规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_B01] 2026-11-09 规范已记录（非整体实装）：B01：规范6px拖动死区阈值（点按不误拖）、抓取偏移零跳变法则、子堆与单牌拆分逻辑及原子取消平滑回弹。产出B01-拖拽会话与抓取偏移.md。未启动编译器、Unity或测试。
+- [DESKTOP_B02] 2026-11-09 规范已记录（非整体实装）：B02：建立三层坐标映射体系（屏幕像素->1600x900逻辑桌面->视口表现）、视口缩放平移与逻辑坐标隔离、UI滚轮阻断及lookBounds边界保护。产出B02-多分辨率适配与视口平移缩放.md。未启动编译器、Unity或测试。
+- [DESKTOP_B03] 2026-11-09 规范已记录（非整体实装）：B03：规范四级自顶向下落点判定流水线（UI卡槽->实体吸附槽->牌堆堆叠->桌面物理避让），确立Topmost命中优先法则与预览/提交同源评估引擎。产出B03-统一落点判定与命中优先级.md。未启动编译器、Unity或测试。
+- [DESKTOP_B04] 2026-11-09 规范已记录（非整体实装）：B04：规范单一父级线性列表拓扑、无循环父子保证、高精度任意位置插入算法（CalculateInsertionIndex）、MaxPileSize上限防御及实体属性守恒铁律。产出B04-物理叠牌与堆叠组织规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_B05] 2026-11-09 规范已记录（非整体实装）：B05：规范物理推开与有限步松弛动力学（8轮收敛上限）、任务锁牌与设施无限质量约束、ClampPosBounds桌面刚性收束及桌角阿基米德螺旋搜索兜底。产出B05-碰撞避让与空间收束规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_B06] 2026-11-09 规范已记录（非整体实装）：B06：建立双阈值施密特触发器滞回防抖模型（Enter 60px / Exit 85px）、卡槽安全拔出解绑流水线与目标失效互反引用自愈机制。产出B06-槽位吸附与滞回防抖规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_B07] 2026-11-09 规范已记录（非整体实装）：B07：规范全局L0背景至L6系统模态的七层渲染与射线命中同序拓扑，确立拖拽动态提层与精确回位、R01三色状态（白/绿/红）与Tooltip防遮挡自适应镜像。产出B07-渲染层级与高亮规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_B08] 2026-11-09 规范已记录（非整体实装）：B08：建立异常中断矩阵（Esc取消、失焦自愈、目标销毁降级、切场景注销），确立按钮与快捷键单一命令控制器入口（Single Source of Command）与模态防穿透遮罩。产出B08-输入屏蔽与异常保护.md。未启动编译器、Unity或测试。
+- [DESKTOP_C01] 2026-11-09 规范已记录（非整体实装）：C01：规范桌面常驻实体（timer_progress原地微型进度）与按需唤出的Canvas局部独立窗口（主槽+副槽1~4+cardGrid+BtnStart）解耦模型，保障同类多场所实例状态互斥隔离与窗口关闭后台静默推进。产出C01-场所实体与局部窗口模型.md。未启动编译器、Unity或测试。
+- [DESKTOP_C02] 2026-11-09 规范已记录（非整体实装）：C02：规范定义ID与标签双轨配方匹配算法、各槽实例排他防重借、缺项精确提示、未知配方盲试保护及32条副产线辅助联动机制。产出C02-配方匹配算法与探索解锁规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_C03] 2026-11-09 规范已记录（非整体实装）：C03：建立局部精准卡槽高亮管线（精确排除预留/任务锁/坏死牌）、动态响应自适应刷新与失配具体原因即时气泡指引机制。产出C03-卡槽候选高亮与可用性引导规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_C04] 2026-11-09 规范已记录（非整体实装）：C04：建立准备→执行→完成→放出四阶段实体生命周期状态流、卡牌在槽内持续可见与状态追踪机制及窗口/桌面双进度同步展示规范。产出C04-任务全生命周期与实体状态可见性规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_C05] 2026-11-09 规范已记录（非整体实装）：C05：建立先提交核心归属后播动画的DetachEntityFly飞牌管线、批量产物径向环形扇出算法及着陆后AutoMergeOnSpawn自动合堆保底策略。产出C05-产物飞出散开与落点预留规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_C06] 2026-11-09 规范已记录（非整体实装）：C06：建立工作进度与自然恢复冷却双通道独立数据模型、储量次数归零锁定卡槽状态机及不可再生资源耗尽注销规范。产出C06-工作进度与资源恢复分离规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_C07] 2026-11-09 规范已记录（非整体实装）：C07：建立移动生物安全目标查询管线（排查拖拽持牌/卡槽锁牌/失效牌）、全暂停钩子冻结及目标中途被消耗时二次断言安全重查机制。产出C07-移动生物追踪与动态寻路规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_D01] 2026-11-09 规范已记录（非整体实装）：D01：规范7类核心卡牌动效参数（Move/Drop/Reject/Snap/Fly/Merge/Disintegrate）、抛物线弹道模型及读档重开瞬时对齐快照的中断安全准则。产出D01-表现层动画参数与取消规则规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_D02] 2026-11-09 规范已记录（非整体实装）：D02：落实去AI说明墙与按需提示层级、6类操作音效精准映射（PickUp/Drop/Snap/Reject/Start/Finish）、轻量短错误气泡反馈及Humanizer文案铁律。产出D02-悬停反馈与视听交互规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_D03] 2026-11-09 规范已记录（非整体实装）：D03：建立真实序列化Prefab编辑态可见层级标准、对象池复用6步零残留清洗协议（Sanitization Protocol）及场景注销事件/材质清理机制。产出D03-预制体规范与对象池清理机制.md。未启动编译器、Unity或测试。
+- [DESKTOP_E01] 2026-11-09 规范已记录（非整体实装）：E01：建立手+资源点采集->产物弹飞->材料+工具生产点加工的全流程纵向操作闭环、多任务并行互斥隔离及V01~V32矩阵核心验收链路贯通规范。产出E01-纵向全链路整合流程规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_E02] 2026-11-09 规范已记录（非整体实装）：E02：规范各玩法存档跨目录物理隔离矩阵、完整拓扑图谱序列化标准（Cards/Piles/Facilities/Jobs/Global）及.tmp写入/.bak滚动备份/SHA256三级防损坏自愈机制。产出E02-独立存档与完整拓扑持久化规范.md。未启动编译器、Unity或测试。
+- [DESKTOP_IMPLEMENT_VIEW] 2026-11-09 桌面交互与核心事务阶段实装：1) VoyageEngine.cs 新增 StagePair(first, second) 原子事务，在单一 Commit 校验两卡状态与容量上限，杜绝多卡入槽时单边提交的副作用；2) VoyageView.cs 彻底解除任务进行中卡牌隐藏（原 card.JobId != 0 => SetActive(false)），卡牌在执行中持续在桌可见并施加工作高亮框；3) 修复 job 短路声明导致的未赋值编译问题（CS0165）；4) 实装基于产物配方映射的多任务独立来源飞牌（FindProducerJob），解决并行任务产物来源错位；5) 支持桌面拖拽双卡原子入槽与右键 QuickAction；6) 明确记录：独立场所专属弹出窗口与独立卡槽 Prefab、60/85px 施密特吸附等仍处文档规范阶段，尚未在代码与 Prefab 中实装。未启动编译器、Unity或测试，未提交上传。
+- [DESKTOP_E03] 2026-11-09 规范已记录（非整体实装）：E03：审查程序集依赖（Asmdef单向无环、Core纯C#无引擎依赖）、验证所有权单射与状态不变量证明，输出基于04验收矩阵的6步用户验收交互指引。产出E03-全工程静态审查与验收交付规范.md。未启动编译器、Unity或测试。
+
 - [VOYAGE_SCOPE] 2026-11-09 用户说“以我发你的那个为准 继续制作”。设计源为 `D:/wechat/liaotian/xwechat_files/wxid_dm9mfnvg9wzm22_c773/msg/file/2026-11/孤岛_游戏设计说明书_独立交付版_修订稿.pdf`。同目录便携编辑器是旧格式工具，示例 JSON 有 107 条物品记录且配方为空。本项目运行使用新字段；沿用有效物品 ID，防水涂料保留 `item_101`，木偶使用 `item_108`。时长、概率、水位、耐久未定，规则资产保存可编辑联调值。自由牌桌、法术拆装仍走各自原入口。
 - [VOYAGE_CORE] `Assets/IslandSurvival/Core/VoyageData.cs` 与 `VoyageEngine.*`。身体牌按实例锁定，统一输入槽支持保留、消耗、磨损与修复。准备阶段伤势跟随，倒计时继续；执行期间相关牌及伤势均锁定并冻结自身计时，结算时应用副产线、耐久和产物。饥饿随时间下降，SAN/饥饿归零判败；两种路线共用航线卡，合成出航卡判胜。状态与随机数随任务和卡牌位置保存。
 - [VOYAGE_UI_SAVE] `Scenes/IslandSurvival.unity` 现引用 `Prefabs/VoyageDesk.prefab`。`VoyageBootstrap` 处理时钟、入口与存档，`VoyageView` 展示组合、任务、文本卡、液面与磨损。`VoyageSaveStore` 用独立 `voyage-auto-v1.json` / `voyage-manual-v1.json`，有规则指纹、摘要、原子替换、备份回读。新规则不会读取旧营地档。配置入口「孤岛生存 → 出航规则配置」，`VoyageRules.asset` 配 131 种卡牌、144 条组合、32 条副产线，`VoyageCards` 是各牌资源。`tools/build_island_voyage_content.py --replace` 会重写内容，保留已有插画引用，日常调数直接编辑资产。`IslandVoyageAtlas.png` 16 张插画通过 CardDefinition 接入；低 SAN 背景和普通卡面褪色，海滩声淡出，卡纸、操作反馈与特定思绪声音独立。

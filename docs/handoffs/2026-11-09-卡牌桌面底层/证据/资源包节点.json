@@ -1,0 +1,110 @@
+[
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/Configs.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-9692e6880dba952aefa78d1904a31ae7",
+        "size": 3762460,
+        "flags": 4,
+        "sha256": "5807bb8534eaee021052ec40d0efa0104fe0432b6b4d7bad2f94bdff77e6f671"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/Entities/Animations.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-1a1bfa3d42a01b9de5c6aefcaee38f40",
+        "size": 687616,
+        "flags": 4,
+        "sha256": "97db03dff304867c2b682309242262d6fdbf954f74bd69ceb1396925f9a1c175"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/Entities/Area.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-4589bb49203ba09738de28261313bfba",
+        "size": 502509,
+        "flags": 4,
+        "sha256": "3cb5fb5813ce4fb1dfda8a04ee916e6ddacac3abf536aa7a57c08507f2aaae98"
+      },
+      {
+        "name": "CAB-4589bb49203ba09738de28261313bfba.resS",
+        "size": 16777216,
+        "flags": 0,
+        "sha256": "bebcf7dd9514c1580b62c5d80e6098f83fc981394364377be4eed5b97c53dccb"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/Entities/Card.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-feee03560942f61f727f8a449d68f835",
+        "size": 3594196,
+        "flags": 4,
+        "sha256": "f816201573287b0cfcce31f39f4f0b86ca4dbfb4617b1131238a6152911dd2a1"
+      },
+      {
+        "name": "CAB-feee03560942f61f727f8a449d68f835.resS",
+        "size": 16777216,
+        "flags": 0,
+        "sha256": "bebcf7dd9514c1580b62c5d80e6098f83fc981394364377be4eed5b97c53dccb"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/Entities/Timer.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-87748fae2fb1dd2d4c105ca6214540f4",
+        "size": 22027995,
+        "flags": 4,
+        "sha256": "b6cb8dccb1821293380742a354a061f1bb9844c38b7f1ba0f0764747b0ce59dc"
+      },
+      {
+        "name": "CAB-87748fae2fb1dd2d4c105ca6214540f4.resS",
+        "size": 20093280,
+        "flags": 0,
+        "sha256": "80acfe35347acdfca1c4f0fd13cbe3043d72a6bef2ee75e60308c0d36d481f9f"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/LubanTables.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-d6800a0a605c7b0c345db92449119b74",
+        "size": 8190080,
+        "flags": 4,
+        "sha256": "716ae25d1b2f1e65feae90f20d0903c3fea02617594f27d597a3f717d8bda335"
+      }
+    ]
+  },
+  {
+    "bundle": "work/card-cultivation-handoff/decoded/UI/UIForms.bundle",
+    "engine": "2021.3.45f1",
+    "nodes": [
+      {
+        "name": "CAB-b0d431d956a5361ca32cf2e2d2af2838",
+        "size": 8451771,
+        "flags": 4,
+        "sha256": "65f841c3a41d71debd651bda7df9e0f2465e2a065273c130c7484bcc5d649009"
+      },
+      {
+        "name": "CAB-b0d431d956a5361ca32cf2e2d2af2838.resS",
+        "size": 20541152,
+        "flags": 0,
+        "sha256": "e2b0346e9461e8fee8f8636da9b729cfb4a7c1866ea780c9463814c756ba1f30"
+      }
+    ]
+  }
+]
