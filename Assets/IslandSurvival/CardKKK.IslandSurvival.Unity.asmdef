@@ -1,6 +1,6 @@
 {
   "name": "CardKKK.IslandSurvival.Unity",
   "rootNamespace": "CardKKK.IslandSurvival.Unity",
-  "references": ["CardKKK.TestGameplay.Unity", "Unity.ugui"],
+  "references": ["CardKKK.TestGameplay.Unity", "CardKKK.IslandSurvival.Core", "CardKKK.Tabletop.Unity", "CardKKK.Tabletop.Core", "Unity.ugui"],
   "autoReferenced": true
 }

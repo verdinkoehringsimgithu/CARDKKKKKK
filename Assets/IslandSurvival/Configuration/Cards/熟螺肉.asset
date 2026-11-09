@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb1b8de3b778351ed4f5af8d2ce569, type: 3}
+  m_Name: "熟螺肉"
+  m_EditorClassIdentifier: ""
+  Id: "cooked_snail"
+  DisplayName: "熟螺肉"
+  Family: "材料"
+  SortRank: 440
+  Attributes:
+  - Key: "堆叠上限"
+    Value: 20
+  - Key: "占地单位"
+    Value: 1
+  - Key: "初始耐久"
+    Value: 0
+  - Key: "结构耐久"
+    Value: 0
+  - Key: "硬度"
+    Value: 0
+  Artwork: {fileID: 21300010, guid: 3a30df6c78da5e5a8edc44e47bcbcc3f, type: 3}
+  LegacyDefinitionId: ""
+  LegacyRank: 0

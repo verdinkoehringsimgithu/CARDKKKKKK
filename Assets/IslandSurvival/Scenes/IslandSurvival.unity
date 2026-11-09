@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: IslandSubmit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
@@ -195,7 +195,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8600000001001}
     m_Modifications:
-    - target: {fileID: 1001, guid: 9bf6f4f12acc553185a7d31db7a7ee7c, type: 3}
+    - target: {fileID: 1001, guid: 2f31bb27b133458db02699f60ac01fae, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -203,9 +203,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9bf6f4f12acc553185a7d31db7a7ee7c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2f31bb27b133458db02699f60ac01fae, type: 3}
 --- !u!224 &8600000002001 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1001, guid: 9bf6f4f12acc553185a7d31db7a7ee7c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1001, guid: 2f31bb27b133458db02699f60ac01fae, type: 3}
   m_PrefabInstance: {fileID: 8600000002000}
   m_PrefabAsset: {fileID: 0}

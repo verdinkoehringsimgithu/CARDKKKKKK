@@ -1,0 +1,8246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fe25c00e524d82ac49576a983c59a9, type: 3}
+  m_Name: "孤岛出航规则"
+  m_EditorClassIdentifier: ""
+  Rules:
+    Cards:
+    - Id: "item_1"
+      Description: ""
+      Tags:
+      - "head"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_2"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_3"
+      Description: ""
+      Tags:
+      - "torso"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_4"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_5"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 4
+      RechargeMinutes: 100
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_6"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 5
+      RechargeMinutes: 60
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_11"
+      Description: ""
+      Tags:
+      - "植物资源点"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 2
+      RechargeMinutes: 90
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_20"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 4
+      RechargeMinutes: 70
+      TimerMinutes: 400
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_30"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 2
+      RechargeMinutes: 110
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_50"
+      Description: ""
+      Tags:
+      - "植物资源点"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 3
+      RechargeMinutes: 70
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_52"
+      Description: ""
+      Tags:
+      - "植物资源点"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 4
+      RechargeMinutes: 110
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_7"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_8"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_24"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_26"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: "C06"
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.caged_bird"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_39"
+      Description: ""
+      Tags:
+      - "有机废料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_43"
+      Description: "微光来自藻叶内部。"
+      Tags:
+      - "san_colour"
+      - "oddity"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_10"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_43"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 180
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_31"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_32"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_33"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_34"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_35"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_36"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_37"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_38"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_48"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_72"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_12"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_13"
+      Description: ""
+      Tags:
+      - "护理材料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_14"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_15"
+      Description: ""
+      Tags:
+      - "木材"
+      - "航海观察物"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_17"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_18"
+      Description: ""
+      Tags:
+      - "航海观察物"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_19"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_21"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_22"
+      Description: ""
+      Tags:
+      - "编织材料"
+      - "制绳纤维"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_27"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_28"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_29"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_40"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_41"
+      Description: ""
+      Tags:
+      - "编织材料"
+      - "制绳纤维"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_42"
+      Description: ""
+      Tags:
+      - "有机废料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_44"
+      Description: ""
+      Tags:
+      - "shell"
+      - "贝壳料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_45"
+      Description: ""
+      Tags:
+      - "shell"
+      - "贝壳料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_46"
+      Description: ""
+      Tags:
+      - "贝壳料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_47"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_49"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_51"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_53"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_56"
+      Description: ""
+      Tags:
+      - "容器"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_57"
+      Description: ""
+      Tags:
+      - "木材"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_58"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_62"
+      Description: ""
+      Tags:
+      - "编织材料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_68"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_75"
+      Description: ""
+      Tags:
+      - "oddity"
+      - "海滩遗物"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_108"
+      Description: ""
+      Tags:
+      - "oddity"
+      - "海滩遗物"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_9"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 40
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_23"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 70
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_25"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 105
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_54"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 110
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_55"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 140
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_65"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 310
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_73"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 65
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_74"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: "item_39"
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 115
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_103"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_66"
+      Description: ""
+      Tags:
+      - "护理材料"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_67"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_69"
+      Description: ""
+      Tags:
+      - "刀"
+      - "刀或斧"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_70"
+      Description: ""
+      Tags:
+      - "刀"
+      - "刀或斧"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_71"
+      Description: ""
+      Tags:
+      - "刀或斧"
+      - "斧"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_76"
+      Description: ""
+      Tags:
+      - "容器"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_90"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_100"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.grinder"
+      Description: ""
+      Tags:
+      - "打磨物"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_77"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.77.2"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 90
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.77.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.77.3"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 180
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.77.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 2
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_78"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.78.2"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 105
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.78.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.78.3"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 210
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.78.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 2
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_79"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.79.2"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 125
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.79.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.79.3"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 250
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.79.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: "item_85"
+      NextInjuryId: ""
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 4
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_80"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.80.2"
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 100
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.80.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.80.3"
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 200
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.80.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 3
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_81"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.81.2"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 185
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.81.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.81.3"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 370
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.81.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 5
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_82"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.82.2"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 125
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.82.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.82.3"
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 250
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.82.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_4"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 3
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_83"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.83.2"
+      LimbId: "item_3"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 95
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.83.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.83.3"
+      LimbId: "item_3"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 190
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.83.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_3"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 3
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_84"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.84.2"
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 130
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.84.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.84.3"
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 260
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.84.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 3
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_85"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.85.2"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 160
+      InjuryLevel: 1
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.85.2"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: "voyage.injury.85.3"
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 320
+      InjuryLevel: 2
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.injury.85.3"
+      Description: ""
+      Tags:
+      - "injury"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_2"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 3
+      LimbDamage: 5
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_91"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 110
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_92"
+      Description: ""
+      Tags:
+      - "san_colour"
+      - "whisper"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 110
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -2
+    - Id: "item_93"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -1
+    - Id: "item_94"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -1
+    - Id: "item_95"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -2
+    - Id: "item_96"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 1
+    - Id: "item_97"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 1
+    - Id: "item_98"
+      Description: ""
+      Tags:
+      - "san_colour"
+      - "whisper"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: "item_1"
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -3
+    - Id: "item_99"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_104"
+      Description: ""
+      Tags:
+      - "san_colour"
+      - "whisper"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -2
+    - Id: "item_106"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 75
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: -2
+    - Id: "item_105"
+      Description: "照片背后写着回家的日期。"
+      Tags:
+      - "san_colour"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.task.food"
+      Description: "岩缝间有帽贝。用一只手采下来，掰开贝壳后拿白肉来。"
+      Tags: []
+      GrantsRecipes:
+      - "G01"
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.task.water"
+      Description: "沿海滩找水洼。碗或椰壳能装水，出航前再留一份。"
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.task.ship"
+      Description: "备齐木筏、帆、索具、防水涂料、船桨、航线和淡水。"
+      Tags: []
+      GrantsRecipes:
+      - "E06"
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.note.grind"
+      Description: "两只手配上打磨石，能把大贝壳磨成刀。碎贝壳能修刀或磨粉，燧石能修打磨石。"
+      Tags: []
+      GrantsRecipes:
+      - "B01"
+      - "F14"
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.note.current"
+      Description: "漂来的碎片都落在同一段潮线。顺着来向找。"
+      Tags:
+      - "航海线索"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.note.algae"
+      Description: "黑藻可以晒干。放得太久，藻叶会自己发光。"
+      Tags: []
+      GrantsRecipes:
+      - "F09"
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.story.home"
+      Description: "照片里的人记得这条海路。你开始想起登船前听见的潮声。"
+      Tags:
+      - "航海线索"
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.story.odd"
+      Description: "那声音和照片里的人很像。它每次都在退潮时出现。"
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "voyage.knowledge.dry"
+      Description: "把黑藻放入晒架，等叶片脱水。"
+      Tags: []
+      GrantsRecipes:
+      - "C01"
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_59"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_60"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_61"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_63"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_64"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_101"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    - Id: "item_102"
+      Description: ""
+      Tags: []
+      GrantsRecipes: []
+      TransformId: ""
+      NextInjuryId: ""
+      LimbId: ""
+      SeekRecipeId: ""
+      Charges: 0
+      RechargeMinutes: 0
+      TimerMinutes: 0
+      InjuryLevel: 0
+      LimbDamage: 0
+      SpawnHunger: 0
+      SpawnSan: 0
+    Recipes:
+    - Id: "A01"
+      Name: "采帽贝"
+      LocationId: "item_6"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_7"
+        Quantity: 1
+        Chance: 0.45
+        Group: "catch"
+        Unique: 0
+      - CardId: "item_8"
+        Quantity: 1
+        Chance: 0.55
+        Group: "catch"
+        Unique: 0
+      - CardId: "item_10"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A02"
+      Name: "掰开小帽贝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_8"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_9"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_45"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A03"
+      Name: "掰开大帽贝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 3
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_7"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_9"
+        Quantity: 2
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_44"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A04"
+      Name: "沿海滩探索"
+      LocationId: "item_5"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "explore"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_6"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_50"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.task.food"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.grinder"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.note.grind"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_15"
+        Quantity: 1
+        Chance: 0.28
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_19"
+        Quantity: 1
+        Chance: 0.25
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_17"
+        Quantity: 1
+        Chance: 0.23
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_18"
+        Quantity: 1
+        Chance: 0.1
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_75"
+        Quantity: 1
+        Chance: 0.07
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_108"
+        Quantity: 1
+        Chance: 0.07
+        Group: "drift"
+        Unique: 0
+      - CardId: "item_20"
+        Quantity: 1
+        Chance: 0.26
+        Group: "site"
+        Unique: 1
+      - CardId: "item_11"
+        Quantity: 1
+        Chance: 0.2
+        Group: "site"
+        Unique: 1
+      - CardId: "item_52"
+        Quantity: 1
+        Chance: 0.3
+        Group: "site"
+        Unique: 1
+      - CardId: "item_30"
+        Quantity: 1
+        Chance: 0.24
+        Group: "site"
+        Unique: 1
+      - CardId: "item_78"
+        Quantity: 1
+        Chance: 0.1
+        Group: ""
+        Unique: 0
+      - CardId: "item_82"
+        Quantity: 1
+        Chance: 0.05
+        Group: ""
+        Unique: 0
+      - CardId: "item_81"
+        Quantity: 1
+        Chance: 0.025
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A05"
+      Name: "采椰树林"
+      LocationId: "item_52"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_53"
+        Quantity: 1
+        Chance: 0.28
+        Group: "palms"
+        Unique: 0
+      - CardId: "item_57"
+        Quantity: 2
+        Chance: 0.47
+        Group: "palms"
+        Unique: 0
+      - CardId: "item_62"
+        Quantity: 1
+        Chance: 0.25
+        Group: "palms"
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A06"
+      Name: "取芦荟肉"
+      LocationId: "item_11"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_12"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A07"
+      Name: "采灌木"
+      LocationId: "item_50"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_22"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_49"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_23"
+        Quantity: 1
+        Chance: 0.5
+        Group: ""
+        Unique: 0
+      - CardId: "item_24"
+        Quantity: 1
+        Chance: 0.3
+        Group: ""
+        Unique: 0
+      - CardId: "item_79"
+        Quantity: 1
+        Chance: 0.05
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A08"
+      Name: "探鸟巢岩"
+      LocationId: "item_30"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_25"
+        Quantity: 1
+        Chance: 0.76
+        Group: ""
+        Unique: 0
+      - CardId: "item_28"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_27"
+        Quantity: 1
+        Chance: 0.43
+        Group: ""
+        Unique: 0
+      - CardId: "item_29"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_68"
+        Quantity: 1
+        Chance: 0.32
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A09"
+      Name: "敲开帽贝岩"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_6"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.grinder"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 3
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_7"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_8"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_46"
+        Quantity: 2
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "A10"
+      Name: "给植物补肥"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_51"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "植物资源点"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 2
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B01"
+      Name: "打磨贝壳刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_44"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_69"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_46"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B02"
+      Name: "切取芦荟凝胶"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_12"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "刀"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_13"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_14"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_77"
+        Quantity: 1
+        Chance: 0.14
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B03"
+      Name: "烤贝肉"
+      LocationId: "item_31"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_9"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_74"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B04"
+      Name: "熏贝肉"
+      LocationId: "item_35"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_9"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_31"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_65"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B05"
+      Name: "开椰子"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_53"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "刀或斧"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_54"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_55"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_56"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B06"
+      Name: "舀淡水"
+      LocationId: "item_20"
+      LocationWear: 0
+      LocationCharges: 1
+      Tag: "gather"
+      Minutes: 3
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "容器"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_103"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "B07.01"
+      Name: "吃烤贝肉"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_74"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 29
+      SanDelta: 0
+    - Id: "B07.02"
+      Name: "喝淡水"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_103"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 17
+      SanDelta: 0
+    - Id: "B07.03"
+      Name: "吃白肉"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_9"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 0.16
+        Group: ""
+        Unique: 0
+      HungerDelta: 18
+      SanDelta: 0
+    - Id: "B07.04"
+      Name: "吃烟熏贝肉"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_65"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 33
+      SanDelta: 0
+    - Id: "B07.05"
+      Name: "吃椰肉"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_54"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 24
+      SanDelta: 0
+    - Id: "B07.06"
+      Name: "喝椰汁"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_55"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 16
+      SanDelta: 0
+    - Id: "B07.07"
+      Name: "吃浆果"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_23"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 0.04
+        Group: ""
+        Unique: 0
+      HungerDelta: 12
+      SanDelta: 0
+    - Id: "B07.08"
+      Name: "喝黑藻汤"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_73"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 23
+      SanDelta: 0
+    - Id: "B07.09"
+      Name: "吃鸟蛋"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_25"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 0.09
+        Group: ""
+        Unique: 0
+      HungerDelta: 13
+      SanDelta: 0
+    - Id: "B07.10"
+      Name: "吃腐烂物"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 2
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_39"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 0.68
+        Group: ""
+        Unique: 0
+      HungerDelta: 5
+      SanDelta: 0
+    - Id: "C01"
+      Name: "晒干黑藻"
+      LocationId: "item_32"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 12
+      InitiallyKnown: 0
+      DiscoveryCardId: "voyage.knowledge.dry"
+      Automatic: 0
+      Inputs:
+      - CardId: "item_10"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_40"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C02"
+      Name: "取黑藻丝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_40"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "刀"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_41"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_42"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C03"
+      Name: "孵鸟蛋"
+      LocationId: "item_36"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 22
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_25"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_28"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_26"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_97"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C04"
+      Name: "养虫"
+      LocationId: "item_48"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 9
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_49"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_24"
+        Quantity: 2
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C05"
+      Name: "制堆肥"
+      LocationId: "item_38"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_29"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "有机废料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_47"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_51"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C06"
+      Name: "雏鸟觅食"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 1
+      InitiallyKnown: 0
+      DiscoveryCardId: ""
+      Automatic: 1
+      Inputs:
+      - CardId: "item_26"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_24"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_29"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_27"
+        Quantity: 1
+        Chance: 0.36
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C07"
+      Name: "把雏鸟放进笼"
+      LocationId: "item_37"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 3
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_26"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "voyage.caged_bird"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C08"
+      Name: "给笼中雏鸟喂虫"
+      LocationId: "item_37"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "voyage.caged_bird"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_24"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_29"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_27"
+        Quantity: 1
+        Chance: 0.36
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "C09"
+      Name: "放出雏鸟"
+      LocationId: "item_37"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 3
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.caged_bird"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_26"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D01"
+      Name: "研究黑藻"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 10
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_10"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "voyage.knowledge.dry"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.note.algae"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_91"
+        Quantity: 1
+        Chance: 0.8
+        Group: ""
+        Unique: 0
+      - CardId: "item_80"
+        Quantity: 1
+        Chance: 0.08
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D02"
+      Name: "看全家福"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_105"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "voyage.story.home"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_93"
+        Quantity: 1
+        Chance: 0.52
+        Group: "memory"
+        Unique: 0
+      - CardId: "item_106"
+        Quantity: 1
+        Chance: 0.15
+        Group: "memory"
+        Unique: 0
+      - CardId: "item_97"
+        Quantity: 1
+        Chance: 0.33
+        Group: "memory"
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_77"
+      Name: "休养·水泡 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_77"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_77"
+      Name: "护理·水泡 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_77"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.77.2"
+      Name: "休养·水泡 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.77.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_77"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.77.2"
+      Name: "护理·水泡 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.77.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_78"
+      Name: "休养·晒伤 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_78"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_78"
+      Name: "护理·晒伤 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_78"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.78.2"
+      Name: "休养·晒伤 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.78.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_78"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.78.2"
+      Name: "护理·晒伤 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.78.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_79"
+      Name: "休养·伤口 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_79"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_79"
+      Name: "护理·伤口 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_79"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.79.2"
+      Name: "休养·伤口 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.79.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_79"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.79.2"
+      Name: "护理·伤口 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.79.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_80"
+      Name: "休养·眩晕 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_80"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_80"
+      Name: "护理·眩晕 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_80"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.80.2"
+      Name: "休养·眩晕 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.80.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_80"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.80.2"
+      Name: "护理·眩晕 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.80.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_81"
+      Name: "休养·骨折 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_81"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_81"
+      Name: "护理·骨折 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_81"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.81.2"
+      Name: "休养·骨折 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.81.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_81"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.81.2"
+      Name: "护理·骨折 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.81.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_82"
+      Name: "休养·拉伤 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_82"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_82"
+      Name: "护理·拉伤 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_82"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.82.2"
+      Name: "休养·拉伤 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.82.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_82"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.82.2"
+      Name: "护理·拉伤 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.82.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_83"
+      Name: "休养·腹泻 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_83"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_83"
+      Name: "护理·腹泻 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_83"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.83.2"
+      Name: "休养·腹泻 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.83.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.83.2"
+      Name: "护理·腹泻 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.83.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_84"
+      Name: "休养·失眠 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_84"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_84"
+      Name: "护理·失眠 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_84"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.84.2"
+      Name: "休养·失眠 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.84.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_84"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.84.2"
+      Name: "护理·失眠 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.84.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.item_85"
+      Name: "休养·感染 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 12
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_85"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.item_85"
+      Name: "护理·感染 I"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_85"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.voyage.injury.85.2"
+      Name: "休养·感染 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.85.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      Outputs:
+      - CardId: "item_85"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D05.med.voyage.injury.85.2"
+      Name: "护理·感染 II"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.injury.85.2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 1
+      - CardId: ""
+        Tag: "护理材料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D07"
+      Name: "推算潮流"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "航海观察物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "voyage.note.current"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_91"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      - CardId: "item_99"
+        Quantity: 1
+        Chance: 0.17
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "D08"
+      Name: "研究荧光黑藻"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_43"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_92"
+        Quantity: 1
+        Chance: 0.72
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_104"
+        Quantity: 1
+        Chance: 0.18
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_94"
+        Quantity: 1
+        Chance: 0.1
+        Group: "oddity"
+        Unique: 0
+      - CardId: "voyage.story.odd"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "item_80"
+        Quantity: 1
+        Chance: 0.12
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: -5
+    - Id: "D09"
+      Name: "研究海滩遗物"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 9
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "海滩遗物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_92"
+        Quantity: 1
+        Chance: 0.57
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_104"
+        Quantity: 1
+        Chance: 0.18
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_98"
+        Quantity: 1
+        Chance: 0.25
+        Group: "oddity"
+        Unique: 0
+      - CardId: "voyage.story.odd"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      HungerDelta: 0
+      SanDelta: -4
+    - Id: "D10"
+      Name: "睡一觉"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 18
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_4"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_84"
+        Quantity: 1
+        Chance: 0.04
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 18
+    - Id: "D11"
+      Name: "静坐回想"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 10
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_105"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_97"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_96"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 8
+    - Id: "D12"
+      Name: "尝一口荧光黑藻"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 3
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_3"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_43"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_92"
+        Quantity: 1
+        Chance: 0.7
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_104"
+        Quantity: 1
+        Chance: 0.15
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_94"
+        Quantity: 1
+        Chance: 0.15
+        Group: "oddity"
+        Unique: 0
+      - CardId: "item_83"
+        Quantity: 1
+        Chance: 0.25
+        Group: ""
+        Unique: 0
+      HungerDelta: 7
+      SanDelta: -8
+    - Id: "D13"
+      Name: "看着照片缓一缓"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "care"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_105"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_98"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_99"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 5
+    - Id: "E01"
+      Name: "推导航线"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 15
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "航海线索"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_91"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_64"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.task.ship"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E02"
+      Name: "循幻觉辨认航线"
+      LocationId: "item_72"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "research"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_1"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_43"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_92"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_64"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      - CardId: "voyage.task.ship"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      HungerDelta: 0
+      SanDelta: -12
+    - Id: "E03"
+      Name: "扎木筏"
+      LocationId: "item_33"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 16
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 2
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "斧"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_59"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E04"
+      Name: "织帆"
+      LocationId: "item_34"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 15
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "编织材料"
+        Quantity: 2
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_61"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E05.rigging"
+      Name: "编索具"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "刀"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_60"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E05.coating"
+      Name: "调防水涂料"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_17"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_47"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_101"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E05.oar"
+      Name: "削船桨"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 9
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "刀"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_63"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "E06"
+      Name: "出航"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 10
+      InitiallyKnown: 0
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_59"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_60"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_61"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_101"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_63"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_64"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_103"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_102"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F01"
+      Name: "架篝火"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_31"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F02"
+      Name: "做烟熏架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 11
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_35"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F03"
+      Name: "编坐垫"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_49"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_72"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F04"
+      Name: "扎绳索"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "制绳纤维"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_58"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F05"
+      Name: "敲制燧石刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_19"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_70"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F06"
+      Name: "绑装燧石斧"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_19"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_71"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F07"
+      Name: "做滚木架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 10
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "斧"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_33"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F08"
+      Name: "做织架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 9
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_34"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F09"
+      Name: "搭晒架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 0
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_32"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F10"
+      Name: "搭暖窝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_28"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_49"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_36"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F11"
+      Name: "编虫笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_48"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F12"
+      Name: "扎鸟笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 9
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_58"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_37"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F13"
+      Name: "围堆肥角"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 8
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 2
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_49"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_38"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F14"
+      Name: "磨贝壳粉"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "贝壳料"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_47"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F15"
+      Name: "削木碗"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "木材"
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_70"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 2
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_76"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F16"
+      Name: "串贝壳项链"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_45"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_90"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F17"
+      Name: "搓芦荟纤维"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_14"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_22"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F18"
+      Name: "磨骨针"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_68"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: ""
+        Tag: "打磨物"
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_67"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F19"
+      Name: "做绷带"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 5
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_67"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 1
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_66"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F20"
+      Name: "煮黑藻汤"
+      LocationId: "item_31"
+      LocationWear: 1
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_10"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_103"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_73"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "F21"
+      Name: "编草鞋"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "craft"
+      Minutes: 7
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_62"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_100"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_69"
+      Name: "修理贝壳刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_69"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_46"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_69"
+      Name: "拆解贝壳刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_69"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_46"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_70"
+      Name: "修理燧石刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_70"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_19"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_70"
+      Name: "拆解燧石刀"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_70"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_19"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_71"
+      Name: "修理燧石斧"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_71"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_71"
+      Name: "拆解燧石斧"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_71"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.voyage.grinder"
+      Name: "修理打磨石"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.grinder"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_19"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.voyage.grinder"
+      Name: "拆解打磨石"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "voyage.grinder"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_19"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_90"
+      Name: "修理贝壳项链"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_90"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_22"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_90"
+      Name: "拆解贝壳项链"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_90"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_22"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_67"
+      Name: "修理针"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_67"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_68"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_67"
+      Name: "拆解针"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_67"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_68"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_100"
+      Name: "修理草鞋"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_100"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_62"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_100"
+      Name: "拆解草鞋"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_100"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_62"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_31"
+      Name: "修理篝火"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_31"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_57"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_31"
+      Name: "拆解篝火"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_31"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_57"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_32"
+      Name: "修理晒架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_32"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_32"
+      Name: "拆解晒架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_32"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_33"
+      Name: "修理滚木架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_33"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_57"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_33"
+      Name: "拆解滚木架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_33"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_57"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_34"
+      Name: "修理织架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_34"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_34"
+      Name: "拆解织架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_34"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_35"
+      Name: "修理烟熏架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_35"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_57"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_35"
+      Name: "拆解烟熏架"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_35"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_57"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_36"
+      Name: "修理暖窝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_36"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_28"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_36"
+      Name: "拆解暖窝"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_36"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_28"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_37"
+      Name: "修理鸟笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_37"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_37"
+      Name: "拆解鸟笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_37"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_38"
+      Name: "修理堆肥角"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_38"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_38"
+      Name: "拆解堆肥角"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_38"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_48"
+      Name: "修理虫笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_48"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_21"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_48"
+      Name: "拆解虫笼"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_48"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_21"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "repair.item_72"
+      Name: "修理坐垫"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "repair"
+      Minutes: 6
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_72"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 8
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_49"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs: []
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "salvage.item_72"
+      Name: "拆解坐垫"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: "salvage"
+      Minutes: 4
+      InitiallyKnown: 1
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "item_2"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_72"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "item_49"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 0
+      HungerDelta: 0
+      SanDelta: 0
+    - Id: "G01"
+      Name: "备好下一顿"
+      LocationId: ""
+      LocationWear: 0
+      LocationCharges: 0
+      Tag: ""
+      Minutes: 1
+      InitiallyKnown: 0
+      DiscoveryCardId: ""
+      Automatic: 0
+      Inputs:
+      - CardId: "voyage.task.food"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 1
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      - CardId: "item_9"
+        Tag: ""
+        Quantity: 1
+        IsConsumed: 0
+        DurabilityCost: 0
+        DurabilityRestore: 0
+        ChargesRestore: 0
+        MatchLimb: 0
+      Outputs:
+      - CardId: "voyage.task.water"
+        Quantity: 1
+        Chance: 1.0
+        Group: ""
+        Unique: 1
+      HungerDelta: 0
+      SanDelta: 0
+    AuxiliaryLines:
+    - Id: "D06"
+      CardId: "item_90"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 1
+      MinutesDelta: 0
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs:
+      - CardId: "item_96"
+        Quantity: 1
+        Chance: 0.33
+        Group: "necklace"
+        Unique: 0
+      - CardId: "item_97"
+        Quantity: 1
+        Chance: 0.12
+        Group: "necklace"
+        Unique: 0
+    - Id: "explore.photo"
+      CardId: "item_105"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 0
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs:
+      - CardId: "item_93"
+        Quantity: 1
+        Chance: 0.38
+        Group: "photo"
+        Unique: 0
+      - CardId: "item_106"
+        Quantity: 1
+        Chance: 0.14
+        Group: "photo"
+        Unique: 0
+      - CardId: "voyage.story.home"
+        Quantity: 1
+        Chance: 0.3
+        Group: ""
+        Unique: 1
+    - Id: "explore.shoes"
+      CardId: "item_100"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 1
+      MinutesDelta: -2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "research.fear"
+      CardId: "item_98"
+      RecipeTag: "research"
+      RequiredInputId: "item_1"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_77.gather"
+      CardId: "item_77"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_77.craft"
+      CardId: "item_77"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_77.repair"
+      CardId: "item_77"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.77.2.gather"
+      CardId: "voyage.injury.77.2"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.voyage.injury.77.2.craft"
+      CardId: "voyage.injury.77.2"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.voyage.injury.77.2.repair"
+      CardId: "voyage.injury.77.2"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.item_78.explore"
+      CardId: "item_78"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.78.2.explore"
+      CardId: "voyage.injury.78.2"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.item_79.gather"
+      CardId: "item_79"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_79.craft"
+      CardId: "item_79"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_79.repair"
+      CardId: "item_79"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.79.2.gather"
+      CardId: "voyage.injury.79.2"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs:
+      - CardId: "item_95"
+        Quantity: 1
+        Chance: 0.12
+        Group: ""
+        Unique: 0
+    - Id: "injury.voyage.injury.79.2.craft"
+      CardId: "voyage.injury.79.2"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs:
+      - CardId: "item_95"
+        Quantity: 1
+        Chance: 0.12
+        Group: ""
+        Unique: 0
+    - Id: "injury.voyage.injury.79.2.repair"
+      CardId: "voyage.injury.79.2"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs:
+      - CardId: "item_95"
+        Quantity: 1
+        Chance: 0.12
+        Group: ""
+        Unique: 0
+    - Id: "injury.item_80.research"
+      CardId: "item_80"
+      RecipeTag: "research"
+      RequiredInputId: "item_1"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.80.2.research"
+      CardId: "voyage.injury.80.2"
+      RecipeTag: "research"
+      RequiredInputId: "item_1"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.item_81.explore"
+      CardId: "item_81"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.81.2.explore"
+      CardId: "voyage.injury.81.2"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs:
+      - CardId: "item_95"
+        Quantity: 1
+        Chance: 0.12
+        Group: ""
+        Unique: 0
+    - Id: "injury.item_82.explore"
+      CardId: "item_82"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.82.2.explore"
+      CardId: "voyage.injury.82.2"
+      RecipeTag: "explore"
+      RequiredInputId: "item_4"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.item_84.research"
+      CardId: "item_84"
+      RecipeTag: "research"
+      RequiredInputId: "item_1"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.84.2.research"
+      CardId: "voyage.injury.84.2"
+      RecipeTag: "research"
+      RequiredInputId: "item_1"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.item_85.gather"
+      CardId: "item_85"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_85.craft"
+      CardId: "item_85"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.item_85.repair"
+      CardId: "item_85"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 2
+      OutputMultiplier: 1.0
+      SanDelta: 0
+      Outputs: []
+    - Id: "injury.voyage.injury.85.2.gather"
+      CardId: "voyage.injury.85.2"
+      RecipeTag: "gather"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.voyage.injury.85.2.craft"
+      CardId: "voyage.injury.85.2"
+      RecipeTag: "craft"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    - Id: "injury.voyage.injury.85.2.repair"
+      CardId: "voyage.injury.85.2"
+      RecipeTag: "repair"
+      RequiredInputId: "item_2"
+      DurabilityCost: 0
+      MinutesDelta: 4
+      OutputMultiplier: 1.0
+      SanDelta: -1
+      Outputs: []
+    StartCards:
+    - CardId: "item_1"
+      X: 0.08
+      Y: 0.1
+    - CardId: "item_3"
+      X: 0.21
+      Y: 0.1
+    - CardId: "item_2"
+      X: 0.34
+      Y: 0.1
+    - CardId: "item_2"
+      X: 0.47
+      Y: 0.1
+    - CardId: "item_4"
+      X: 0.6
+      Y: 0.1
+    - CardId: "item_4"
+      X: 0.73
+      Y: 0.1
+    - CardId: "item_105"
+      X: 0.08
+      Y: 0.22
+    - CardId: "item_5"
+      X: 0.21
+      Y: 0.22
+    - CardId: "item_10"
+      X: 0.34
+      Y: 0.22
+    HungerPerMinute: 0.42
+    RealSecondsPerMinute: 0.6
+    Seed: 1109
+    BirdStep: 0.012
+    BirdRange: 0.18
+    BirdReach: 0.012
+  Cards:
+  - {fileID: 11400000, guid: 99323ba2602c5e939b9fe8f1edac4dac, type: 2}
+  - {fileID: 11400000, guid: 7fe9ce9624e3510dbe32c1a092b2c3f9, type: 2}
+  - {fileID: 11400000, guid: 44c23f22b87f59b79b966b81c6c4b390, type: 2}
+  - {fileID: 11400000, guid: 74f3cc6dbfe6537899843f08db9d3545, type: 2}
+  - {fileID: 11400000, guid: fa81333c2ae257aabb02c0133dfd6ca5, type: 2}
+  - {fileID: 11400000, guid: b1f1927226ee57b894c2e12bb1f207f2, type: 2}
+  - {fileID: 11400000, guid: b3255551a6655e11ba307d037bd6d587, type: 2}
+  - {fileID: 11400000, guid: cbe6c73dcee85f6f86676efce022bf27, type: 2}
+  - {fileID: 11400000, guid: b1df9aaf4bfb5b438765d989869f89d6, type: 2}
+  - {fileID: 11400000, guid: ae02fb34bac25b5fa0009136b62a2090, type: 2}
+  - {fileID: 11400000, guid: ca7708fdbace5e3cb8210982fb8c397d, type: 2}
+  - {fileID: 11400000, guid: bee1ab6bc4225c41acc4355ef5149bfb, type: 2}
+  - {fileID: 11400000, guid: cd88c66e5fac5f499abe3ab9c5fea0d7, type: 2}
+  - {fileID: 11400000, guid: b7b53ad941ce543fa30bb7737cd88fac, type: 2}
+  - {fileID: 11400000, guid: 86d1a19a6a1a57f4b4fc7cbc8924c66d, type: 2}
+  - {fileID: 11400000, guid: e4ff13f0ba5f5f26be116cea1d3b5582, type: 2}
+  - {fileID: 11400000, guid: 266638b5a93656a9ae85cbfcf6130f06, type: 2}
+  - {fileID: 11400000, guid: 172b8f4b95a55a6da41341adac12a4ea, type: 2}
+  - {fileID: 11400000, guid: d23e5fb2dc825e2991f7e09bfc5b746a, type: 2}
+  - {fileID: 11400000, guid: c656c823526d506d95c9c2de42119d97, type: 2}
+  - {fileID: 11400000, guid: e15e6d8f7eb2575dac0716b438e7fe04, type: 2}
+  - {fileID: 11400000, guid: e219a11f762e579ea2fe4d6685e8e218, type: 2}
+  - {fileID: 11400000, guid: 65534aacbaa956ac9b47c256e26d577a, type: 2}
+  - {fileID: 11400000, guid: 89fc28d60bff54febd94918e48142555, type: 2}
+  - {fileID: 11400000, guid: 693e1afac8375c3eb75dbfcb45212636, type: 2}
+  - {fileID: 11400000, guid: 0234f8bfcf885d5ea38053b9b73231e4, type: 2}
+  - {fileID: 11400000, guid: a3e1275ca8f052fa8bb56bfe3e512e2d, type: 2}
+  - {fileID: 11400000, guid: df3cb34045e95e93b82523129a74d91a, type: 2}
+  - {fileID: 11400000, guid: f75c6da64e245ff89b9a31fe6e772d67, type: 2}
+  - {fileID: 11400000, guid: ac6f2dd036e65e6784f39ff9317e8a81, type: 2}
+  - {fileID: 11400000, guid: 71ca4d41a2d25437872a1282cd1cb130, type: 2}
+  - {fileID: 11400000, guid: 7164483d1b3356c6ad55ac008f7a3233, type: 2}
+  - {fileID: 11400000, guid: c291cf18b8a459628ba2d0db162cc97e, type: 2}
+  - {fileID: 11400000, guid: 8687b1077b82570299091455b4ed3d69, type: 2}
+  - {fileID: 11400000, guid: 17d5c9eecf39541ca089e2068b4060f9, type: 2}
+  - {fileID: 11400000, guid: 8abe6386a89f5e989c2dd02f248dd02f, type: 2}
+  - {fileID: 11400000, guid: 256b17e7d2d15f49bac69e36be493674, type: 2}
+  - {fileID: 11400000, guid: 610fe61d790e5490922b7c1e9829d8c8, type: 2}
+  - {fileID: 11400000, guid: 15b189d21bf25e58a13a07b560127256, type: 2}
+  - {fileID: 11400000, guid: 4ef57894f5295bce8b65548d9c35f82c, type: 2}
+  - {fileID: 11400000, guid: 4ead13811ba75d5295f04c3d8ea9f7b9, type: 2}
+  - {fileID: 11400000, guid: 169c46582f5a5b4e8b2daa0d3c5425e8, type: 2}
+  - {fileID: 11400000, guid: 07414d5bd4215fe785982e607538a4a3, type: 2}
+  - {fileID: 11400000, guid: dd48f11a8d8d5c859fca8fee048dda56, type: 2}
+  - {fileID: 11400000, guid: 29af419b0d115d4eb10bbd70d6c0ab73, type: 2}
+  - {fileID: 11400000, guid: 98530872fb4958a4b1d5bcb7ec04d663, type: 2}
+  - {fileID: 11400000, guid: aa3d04f9484a58bbbb85a2bde7d142d5, type: 2}
+  - {fileID: 11400000, guid: 8684b51c4d0e5a43b5bca769aaf54929, type: 2}
+  - {fileID: 11400000, guid: 025bc489e9eb504f9a0c08e0b5a7179d, type: 2}
+  - {fileID: 11400000, guid: b8f5f5371680584f821e9489e3106b0e, type: 2}
+  - {fileID: 11400000, guid: f972a492a3e15076be6f646917eeff87, type: 2}
+  - {fileID: 11400000, guid: 58a31a646296544e9890f11581d80899, type: 2}
+  - {fileID: 11400000, guid: de2ecfdfe02c53d48c699c0fba53d511, type: 2}
+  - {fileID: 11400000, guid: 3ed025ada3315e3585c70a1f3deccdfc, type: 2}
+  - {fileID: 11400000, guid: ee4ad1321f2c5b54ba7cbe863ea394e5, type: 2}
+  - {fileID: 11400000, guid: 1bc49e8398f05cce9f54273a95f6c7d8, type: 2}
+  - {fileID: 11400000, guid: d4b763bd6fae5779a092543dac9dc9bb, type: 2}
+  - {fileID: 11400000, guid: a0e4cfe49e9256a69de650ac927fcf81, type: 2}
+  - {fileID: 11400000, guid: fa664ca0d105521fb0e26cb588733082, type: 2}
+  - {fileID: 11400000, guid: 5f1dff585baa54e4a9d9ae25dcbb04cd, type: 2}
+  - {fileID: 11400000, guid: 3b58c2c4ea8e5ed3871d4c1b0156edbb, type: 2}
+  - {fileID: 11400000, guid: fb150be8be195b9c88bd4c3799011cea, type: 2}
+  - {fileID: 11400000, guid: 5c436bbd58fa531c8c8a8dc99a40717e, type: 2}
+  - {fileID: 11400000, guid: 493ab2596ef95898b04c4b1320cdc298, type: 2}
+  - {fileID: 11400000, guid: be52946ca7515b1f9c1a1141ed69b107, type: 2}
+  - {fileID: 11400000, guid: 39fb2a5d411e536e96e26aa78934d18b, type: 2}
+  - {fileID: 11400000, guid: 3b35c45d65c35f95986c1f02e0525e44, type: 2}
+  - {fileID: 11400000, guid: d456cf954c6551afb92323b90aa33206, type: 2}
+  - {fileID: 11400000, guid: a5125adc8a0d5043bde1d82d54df7f70, type: 2}
+  - {fileID: 11400000, guid: 432cbdc7d6e4586dbc049d93936ae7d3, type: 2}
+  - {fileID: 11400000, guid: c362bc7cb9de5bb592118c32b65af2ba, type: 2}
+  - {fileID: 11400000, guid: 3886e56e543954b9899f559ffbcd4fb3, type: 2}
+  - {fileID: 11400000, guid: aa1b8ce3876e534b812bd290e6d656b7, type: 2}
+  - {fileID: 11400000, guid: 936449949d045f5da784f0f23ee6f36a, type: 2}
+  - {fileID: 11400000, guid: 5b9fd45d83545dd59f1105ceb4ac4994, type: 2}
+  - {fileID: 11400000, guid: a0813a333a93517caa04ae80cf4229dc, type: 2}
+  - {fileID: 11400000, guid: 63065f57d728532da62c5a318cda3920, type: 2}
+  - {fileID: 11400000, guid: 449611300849546f8a08cb2b3ad32186, type: 2}
+  - {fileID: 11400000, guid: f7be3d8e4ee55e6bb81cede940079489, type: 2}
+  - {fileID: 11400000, guid: c169f34463d95910a8af7a68b8d5126c, type: 2}
+  - {fileID: 11400000, guid: cac7754a039656ca9b11936de58e0945, type: 2}
+  - {fileID: 11400000, guid: 3c06daedefa65ab39f3792e4548868b1, type: 2}
+  - {fileID: 11400000, guid: 2a2261c550bd516c92fb3ba8b7b30a9e, type: 2}
+  - {fileID: 11400000, guid: f0057cdd8e4d5a7a805966be3c25a285, type: 2}
+  - {fileID: 11400000, guid: 4a3984727f285b7881bae5dc9938e786, type: 2}
+  - {fileID: 11400000, guid: 5a377d323896542cb45ebaab1a781404, type: 2}
+  - {fileID: 11400000, guid: 9684417b745a5dad96d69a92bc5496f3, type: 2}
+  - {fileID: 11400000, guid: 11d0765d652655d395f7d5ad02c9d075, type: 2}
+  - {fileID: 11400000, guid: 5b7d80af2fc9558888f9708e0d8422ea, type: 2}
+  - {fileID: 11400000, guid: 4a0fc86952e15dd6ada94c10244675c9, type: 2}
+  - {fileID: 11400000, guid: a732458404ca538893048b77e68577e7, type: 2}
+  - {fileID: 11400000, guid: 901d8ceccdea5adfbd12c74f7845ca08, type: 2}
+  - {fileID: 11400000, guid: b4b676cb510f5aa58c8b6e53c963e04e, type: 2}
+  - {fileID: 11400000, guid: b462f96d95455ab88c0024c725ec0dee, type: 2}
+  - {fileID: 11400000, guid: a2f4489aae99527eac5e560d82b8cb42, type: 2}
+  - {fileID: 11400000, guid: d4abb44b97e65cbd93bb10b32e0f5567, type: 2}
+  - {fileID: 11400000, guid: 7fe992cba0945124926a1a869b627221, type: 2}
+  - {fileID: 11400000, guid: 06db4a04c40e59fcb68262bca9d91a2e, type: 2}
+  - {fileID: 11400000, guid: 59cc0d8b50a051b59944e4815e132ded, type: 2}
+  - {fileID: 11400000, guid: c1979f978fd5543e816607a59fbd3eb3, type: 2}
+  - {fileID: 11400000, guid: 8f64c8872c395ed7a7f5be3ab6d6f3b5, type: 2}
+  - {fileID: 11400000, guid: 5684a928956b56e28445011f481e27fd, type: 2}
+  - {fileID: 11400000, guid: 00b9db2b418c55e3bf4366d70839d89c, type: 2}
+  - {fileID: 11400000, guid: 97731a71148f58e6a3e9240536091783, type: 2}
+  - {fileID: 11400000, guid: bfc4ced91ba552338a74eabcee061e20, type: 2}
+  - {fileID: 11400000, guid: d849b66ac6f85ff8a05d0c8cc6d74131, type: 2}
+  - {fileID: 11400000, guid: 7446da73fd955567a79538e1a8d57272, type: 2}
+  - {fileID: 11400000, guid: fff0857d6ee054c89942afc618f2b139, type: 2}
+  - {fileID: 11400000, guid: 764a5df3ecf6550bb00cc86152ca4a27, type: 2}
+  - {fileID: 11400000, guid: af32a69276cc5623805119a4ebf2b625, type: 2}
+  - {fileID: 11400000, guid: 07f3fd480a3852079c5478246bc895d7, type: 2}
+  - {fileID: 11400000, guid: 3548d948b9e95d93ba27f949d8d15dc7, type: 2}
+  - {fileID: 11400000, guid: ecd6b52043c95901a30ce0fab625bb27, type: 2}
+  - {fileID: 11400000, guid: cff24e02533e5ff2817450e5f0286875, type: 2}
+  - {fileID: 11400000, guid: f9024a58f46d5be181fa7e071c0d314f, type: 2}
+  - {fileID: 11400000, guid: e608db05dc3b5b068dd0994f0a784ff1, type: 2}
+  - {fileID: 11400000, guid: a5f09929370c5352a03bb7b02bbb13ee, type: 2}
+  - {fileID: 11400000, guid: 656acec5255c59789ece9a25e2771967, type: 2}
+  - {fileID: 11400000, guid: 5f92ee7e41da5648a3912f67ec21a135, type: 2}
+  - {fileID: 11400000, guid: 0540663cade256ecbe4f2848a0833ee9, type: 2}
+  - {fileID: 11400000, guid: e6148aa85a715b229d233dd80bcfabd4, type: 2}
+  - {fileID: 11400000, guid: 3688d039d0d45dc984d25d90bc11d865, type: 2}
+  - {fileID: 11400000, guid: ed3547ee708951b686d8ce36157c41ac, type: 2}
+  - {fileID: 11400000, guid: 08c559482e745fd98143dacdd3556f77, type: 2}
+  - {fileID: 11400000, guid: aa0455bd303454ef96e5a606437d81f7, type: 2}
+  - {fileID: 11400000, guid: 247e3f2e4dea5d1e8bf17784dafafbe9, type: 2}
+  - {fileID: 11400000, guid: 26fb29a3cd33528b924f50e4a71887a0, type: 2}
+  - {fileID: 11400000, guid: a572c1b675875fd5b676027412b096af, type: 2}
+  - {fileID: 11400000, guid: d52663d51d365b0e9f525f765f23b1db, type: 2}
+  - {fileID: 11400000, guid: 993e342633135841a057f35c925da75a, type: 2}
+  - {fileID: 11400000, guid: 525b61225ca853cfaf69ea67527ce963, type: 2}

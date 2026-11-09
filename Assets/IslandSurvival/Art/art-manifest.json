@@ -1,0 +1,1044 @@
+{
+  "date": "2026-11-06",
+  "provider": "内置image_gen",
+  "spritecook_available_credits": 0,
+  "style": "原创纸感孤岛物件；深青轮廓、奶白、珊瑚橙与柔和绿块面。",
+  "slice_origin": "row/column从左上角0开始；rect为Unity左下角像素坐标。原图无像素改写。",
+  "card_count": 68,
+  "atlases": [
+    {
+      "path": "Assets/IslandSurvival/Art/IslandMaterialsAtlas.png",
+      "guid": "6964471a695b5e8e971ac92e03df4f98",
+      "sha12": "7b5d25b102a8",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "sprites": [
+        {
+          "id": "stone",
+          "file_id": 21300000,
+          "row": 0,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/石头.asset",
+          "opaque_pixels": 40788
+        },
+        {
+          "id": "wood",
+          "file_id": 21300002,
+          "row": 0,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/木头.asset",
+          "opaque_pixels": 35985
+        },
+        {
+          "id": "fiber",
+          "file_id": 21300004,
+          "row": 0,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/纤维.asset",
+          "opaque_pixels": 41685
+        },
+        {
+          "id": "flint",
+          "file_id": 21300006,
+          "row": 0,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/燧石.asset",
+          "opaque_pixels": 28159
+        },
+        {
+          "id": "small_shell",
+          "file_id": 21300008,
+          "row": 1,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/小贝壳.asset",
+          "opaque_pixels": 27438
+        },
+        {
+          "id": "large_shell",
+          "file_id": 21300010,
+          "row": 1,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/大贝壳.asset",
+          "opaque_pixels": 56611
+        },
+        {
+          "id": "limpet",
+          "file_id": 21300012,
+          "row": 1,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/帽贝.asset",
+          "opaque_pixels": 37685
+        },
+        {
+          "id": "shell_meat",
+          "file_id": 21300014,
+          "row": 1,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/贝肉.asset",
+          "opaque_pixels": 35467
+        },
+        {
+          "id": "aloe_leaf",
+          "file_id": 21300016,
+          "row": 2,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/芦荟叶.asset",
+          "opaque_pixels": 37670
+        },
+        {
+          "id": "gel",
+          "file_id": 21300018,
+          "row": 2,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/凝胶.asset",
+          "opaque_pixels": 41766
+        },
+        {
+          "id": "bandage",
+          "file_id": 21300020,
+          "row": 2,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/绷带.asset",
+          "opaque_pixels": 50769
+        },
+        {
+          "id": "simple_dressing",
+          "file_id": 21300022,
+          "row": 2,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/简易敷料.asset",
+          "opaque_pixels": 46905
+        },
+        {
+          "id": "algae",
+          "file_id": 21300024,
+          "row": 3,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/黑藻.asset",
+          "opaque_pixels": 42562
+        },
+        {
+          "id": "organic",
+          "file_id": 21300026,
+          "row": 3,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/有机废物.asset",
+          "opaque_pixels": 45799
+        },
+        {
+          "id": "ash",
+          "file_id": 21300028,
+          "row": 3,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/灰烬.asset",
+          "opaque_pixels": 27627
+        },
+        {
+          "id": "debris",
+          "file_id": 21300030,
+          "row": 3,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/碎屑.asset",
+          "opaque_pixels": 31626
+        }
+      ]
+    },
+    {
+      "path": "Assets/IslandSurvival/Art/IslandFoodToolsAtlas.png",
+      "guid": "3a30df6c78da5e5a8edc44e47bcbcc3f",
+      "sha12": "f1df3fc1ab55",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "sprites": [
+        {
+          "id": "ration",
+          "file_id": 21300000,
+          "row": 0,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/口粮.asset",
+          "opaque_pixels": 52994
+        },
+        {
+          "id": "cooked_shell",
+          "file_id": 21300002,
+          "row": 0,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/熟贝肉.asset",
+          "opaque_pixels": 48396
+        },
+        {
+          "id": "yam",
+          "file_id": 21300004,
+          "row": 0,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/芋.asset",
+          "opaque_pixels": 50921
+        },
+        {
+          "id": "cooked_yam",
+          "file_id": 21300006,
+          "row": 0,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/熟芋.asset",
+          "opaque_pixels": 43540
+        },
+        {
+          "id": "snail_meat",
+          "file_id": 21300008,
+          "row": 1,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/螺肉.asset",
+          "opaque_pixels": 35838
+        },
+        {
+          "id": "cooked_snail",
+          "file_id": 21300010,
+          "row": 1,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/熟螺肉.asset",
+          "opaque_pixels": 43396
+        },
+        {
+          "id": "dried_meat",
+          "file_id": 21300012,
+          "row": 1,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/干肉.asset",
+          "opaque_pixels": 39453
+        },
+        {
+          "id": "yam_seed",
+          "file_id": 21300014,
+          "row": 1,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/芋种.asset",
+          "opaque_pixels": 28069
+        },
+        {
+          "id": "aloe_bud",
+          "file_id": 21300016,
+          "row": 2,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/芦荟繁殖芽.asset",
+          "opaque_pixels": 36377
+        },
+        {
+          "id": "bone_piece",
+          "file_id": 21300018,
+          "row": 2,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/骨质片.asset",
+          "opaque_pixels": 39735
+        },
+        {
+          "id": "charcoal",
+          "file_id": 21300020,
+          "row": 2,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/炭.asset",
+          "opaque_pixels": 47210
+        },
+        {
+          "id": "shell_knife",
+          "file_id": 21300022,
+          "row": 2,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/贝壳刀.asset",
+          "opaque_pixels": 38951
+        },
+        {
+          "id": "flint_knife",
+          "file_id": 21300024,
+          "row": 3,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/燧石刀.asset",
+          "opaque_pixels": 34379
+        },
+        {
+          "id": "bone_knife",
+          "file_id": 21300026,
+          "row": 3,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/骨刀.asset",
+          "opaque_pixels": 31875
+        },
+        {
+          "id": "shell_ornament",
+          "file_id": 21300028,
+          "row": 3,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/贝饰.asset",
+          "opaque_pixels": 44614
+        },
+        {
+          "id": "fertilizer",
+          "file_id": 21300030,
+          "row": 3,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/肥料.asset",
+          "opaque_pixels": 42806
+        }
+      ]
+    },
+    {
+      "path": "Assets/IslandSurvival/Art/IslandEcologyAtlas.png",
+      "guid": "edd44845f8705a30ab9ca864d46ea1ba",
+      "sha12": "001643c5d589",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "sprites": [
+        {
+          "id": "limpet_rock",
+          "file_id": 21300000,
+          "row": 0,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/帽贝岩.asset",
+          "opaque_pixels": 43476
+        },
+        {
+          "id": "wild_aloe",
+          "file_id": 21300002,
+          "row": 0,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/野生芦荟.asset",
+          "opaque_pixels": 45580
+        },
+        {
+          "id": "coast",
+          "file_id": 21300004,
+          "row": 0,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/海岸采集点.asset",
+          "opaque_pixels": 45748
+        },
+        {
+          "id": "bush",
+          "file_id": 21300006,
+          "row": 0,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 940.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/灌木地.asset",
+          "opaque_pixels": 46524
+        },
+        {
+          "id": "campfire",
+          "file_id": 21300008,
+          "row": 1,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/篝火.asset",
+          "opaque_pixels": 41788
+        },
+        {
+          "id": "garden",
+          "file_id": 21300010,
+          "row": 1,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/花圃.asset",
+          "opaque_pixels": 38104
+        },
+        {
+          "id": "pen",
+          "file_id": 21300012,
+          "row": 1,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/围栏.asset",
+          "opaque_pixels": 42132
+        },
+        {
+          "id": "compost",
+          "file_id": 21300014,
+          "row": 1,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 627.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/堆肥区.asset",
+          "opaque_pixels": 46931
+        },
+        {
+          "id": "storage",
+          "file_id": 21300016,
+          "row": 2,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/储物箱.asset",
+          "opaque_pixels": 47208
+        },
+        {
+          "id": "drying_rack",
+          "file_id": 21300018,
+          "row": 2,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/晾晒架.asset",
+          "opaque_pixels": 43323
+        },
+        {
+          "id": "yam_plant",
+          "file_id": 21300020,
+          "row": 2,
+          "column": 2,
+          "rect": {
+            "x": 627.0,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/芋株.asset",
+          "opaque_pixels": 48317
+        },
+        {
+          "id": "aloe_plant",
+          "file_id": 21300022,
+          "row": 2,
+          "column": 3,
+          "rect": {
+            "x": 940.5,
+            "y": 313.5,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/种植芦荟.asset",
+          "opaque_pixels": 42487
+        },
+        {
+          "id": "snail",
+          "file_id": 21300024,
+          "row": 3,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/养殖螺.asset",
+          "opaque_pixels": 47153
+        },
+        {
+          "id": "young_snail",
+          "file_id": 21300026,
+          "row": 3,
+          "column": 1,
+          "rect": {
+            "x": 313.5,
+            "y": 0.0,
+            "width": 313.5,
+            "height": 313.5
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/幼螺.asset",
+          "opaque_pixels": 25225
+        }
+      ]
+    },
+    {
+      "path": "Assets/IslandSurvival/Art/IslandConditionsAtlas.png",
+      "guid": "62d86fc0640c5df9a799b58f4e19040a",
+      "sha12": "e18deefac3c6",
+      "width": 1254,
+      "height": 1254,
+      "columns": 3,
+      "rows": 2,
+      "sprites": [
+        {
+          "id": "condition_wound",
+          "file_id": 21300000,
+          "row": 0,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 627.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/伤口.asset",
+          "opaque_pixels": 105769
+        },
+        {
+          "id": "condition_bleeding",
+          "file_id": 21300002,
+          "row": 0,
+          "column": 1,
+          "rect": {
+            "x": 418.0,
+            "y": 627.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/流血.asset",
+          "opaque_pixels": 75762
+        },
+        {
+          "id": "condition_infection",
+          "file_id": 21300004,
+          "row": 0,
+          "column": 2,
+          "rect": {
+            "x": 836.0,
+            "y": 627.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/局部感染.asset",
+          "opaque_pixels": 99171
+        },
+        {
+          "id": "condition_pain",
+          "file_id": 21300006,
+          "row": 1,
+          "column": 0,
+          "rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/疼痛.asset",
+          "opaque_pixels": 79727
+        },
+        {
+          "id": "condition_irritation",
+          "file_id": 21300008,
+          "row": 1,
+          "column": 1,
+          "rect": {
+            "x": 418.0,
+            "y": 0.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/环境刺激.asset",
+          "opaque_pixels": 105827
+        },
+        {
+          "id": "condition_hunger",
+          "file_id": 21300010,
+          "row": 1,
+          "column": 2,
+          "rect": {
+            "x": 836.0,
+            "y": 0.0,
+            "width": 418.0,
+            "height": 627.0
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/Cards/饥饿性衰弱.asset",
+          "opaque_pixels": 107310
+        }
+      ]
+    },
+    {
+      "path": "Assets/IslandSurvival/Art/IslandVoyageAtlas.png",
+      "guid": "0d43df2421e65a1594248dca0f3726cd",
+      "sha12": "2cd3699d7521",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "sprites": [
+        {
+          "id": "voyage_head",
+          "file_id": 21300000,
+          "row": 0,
+          "column": 0,
+          "rect": {
+            "x": 0,
+            "y": 941,
+            "width": 313,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/头.asset",
+          "opaque_pixels": 47306
+        },
+        {
+          "id": "voyage_torso",
+          "file_id": 21300002,
+          "row": 0,
+          "column": 1,
+          "rect": {
+            "x": 313,
+            "y": 941,
+            "width": 314,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/躯干.asset",
+          "opaque_pixels": 48015
+        },
+        {
+          "id": "voyage_hand",
+          "file_id": 21300004,
+          "row": 0,
+          "column": 2,
+          "rect": {
+            "x": 627,
+            "y": 941,
+            "width": 313,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/手.asset",
+          "opaque_pixels": 33885
+        },
+        {
+          "id": "voyage_leg",
+          "file_id": 21300006,
+          "row": 0,
+          "column": 3,
+          "rect": {
+            "x": 940,
+            "y": 941,
+            "width": 314,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/腿.asset",
+          "opaque_pixels": 32911
+        },
+        {
+          "id": "voyage_photo",
+          "file_id": 21300008,
+          "row": 1,
+          "column": 0,
+          "rect": {
+            "x": 0,
+            "y": 627,
+            "width": 313,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/全家福.asset",
+          "opaque_pixels": 54552
+        },
+        {
+          "id": "voyage_cushion",
+          "file_id": 21300010,
+          "row": 1,
+          "column": 1,
+          "rect": {
+            "x": 313,
+            "y": 627,
+            "width": 314,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/坐垫.asset",
+          "opaque_pixels": 42648
+        },
+        {
+          "id": "voyage_pool",
+          "file_id": 21300012,
+          "row": 1,
+          "column": 2,
+          "rect": {
+            "x": 627,
+            "y": 627,
+            "width": 313,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/水洼.asset",
+          "opaque_pixels": 48347
+        },
+        {
+          "id": "voyage_coconut",
+          "file_id": 21300014,
+          "row": 1,
+          "column": 3,
+          "rect": {
+            "x": 940,
+            "y": 627,
+            "width": 314,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/椰子.asset",
+          "opaque_pixels": 51548
+        },
+        {
+          "id": "voyage_raft",
+          "file_id": 21300016,
+          "row": 2,
+          "column": 0,
+          "rect": {
+            "x": 0,
+            "y": 314,
+            "width": 313,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/木筏.asset",
+          "opaque_pixels": 35004
+        },
+        {
+          "id": "voyage_sail",
+          "file_id": 21300018,
+          "row": 2,
+          "column": 1,
+          "rect": {
+            "x": 313,
+            "y": 314,
+            "width": 314,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/帆.asset",
+          "opaque_pixels": 45105
+        },
+        {
+          "id": "voyage_rigging",
+          "file_id": 21300020,
+          "row": 2,
+          "column": 2,
+          "rect": {
+            "x": 627,
+            "y": 314,
+            "width": 313,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/索具.asset",
+          "opaque_pixels": 51083
+        },
+        {
+          "id": "voyage_oar",
+          "file_id": 21300022,
+          "row": 2,
+          "column": 3,
+          "rect": {
+            "x": 940,
+            "y": 314,
+            "width": 314,
+            "height": 313
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/船桨.asset",
+          "opaque_pixels": 20582
+        },
+        {
+          "id": "voyage_sealant",
+          "file_id": 21300024,
+          "row": 3,
+          "column": 0,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 313,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/防水涂料.asset",
+          "opaque_pixels": 40707
+        },
+        {
+          "id": "voyage_chart",
+          "file_id": 21300026,
+          "row": 3,
+          "column": 1,
+          "rect": {
+            "x": 313,
+            "y": 0,
+            "width": 314,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/航线.asset",
+          "opaque_pixels": 49855
+        },
+        {
+          "id": "voyage_water",
+          "file_id": 21300028,
+          "row": 3,
+          "column": 2,
+          "rect": {
+            "x": 627,
+            "y": 0,
+            "width": 313,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/淡水.asset",
+          "opaque_pixels": 46242
+        },
+        {
+          "id": "voyage_ending",
+          "file_id": 21300030,
+          "row": 3,
+          "column": 3,
+          "rect": {
+            "x": 940,
+            "y": 0,
+            "width": 314,
+            "height": 314
+          },
+          "card_asset": "Assets/IslandSurvival/Configuration/VoyageCards/出航！.asset",
+          "opaque_pixels": 45987
+        }
+      ],
+      "date": "2026-11-09",
+      "style_reference": "IslandFoodToolsAtlas.png"
+    }
+  ],
+  "cleanup": {
+    "method": "内置image_gen参考编辑，仅清透明边缘，保留格位与对象；没有用Python改图像像素。",
+    "originals": [
+      {
+        "path": "Assets/IslandSurvival/Art/Source/Originals/IslandConditionsAtlas.png",
+        "sha12": "350266884b82"
+      },
+      {
+        "path": "Assets/IslandSurvival/Art/Source/Originals/IslandEcologyAtlas.png",
+        "sha12": "8fab186c9acb"
+      },
+      {
+        "path": "Assets/IslandSurvival/Art/Source/Originals/IslandFoodToolsAtlas-cleanup-v1.png",
+        "sha12": "204a71c9c600"
+      },
+      {
+        "path": "Assets/IslandSurvival/Art/Source/Originals/IslandFoodToolsAtlas.png",
+        "sha12": "9c128b5db817"
+      },
+      {
+        "path": "Assets/IslandSurvival/Art/Source/Originals/IslandMaterialsAtlas.png",
+        "sha12": "812e7d1bd877"
+      }
+    ]
+  }
+}

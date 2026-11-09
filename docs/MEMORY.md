@@ -1,8 +1,18 @@
 # 开发记忆
 
-更新：2026-11-06。先读本文件和AGENTS.md，再看真实代码与Git状态。当前用户在讨论孤岛设计和竞品拆解，暂停实际开发；原已实现方向为法术拆装，不擅自切换游戏入口。
+更新：2026-11-09。先读本文件和 AGENTS.md，再看实际代码与 Git 状态。当前「孤岛生存」以用户提供的出航版 PDF 为准，旧营地经营版 1.3 及其需求表为历史资料。用户自己执行 Unity、编译与运行验收。
 
 ## 当前授权与方向
+
+- [VOYAGE_SCOPE] 2026-11-09 用户说“以我发你的那个为准 继续制作”。设计源为 `D:/wechat/liaotian/xwechat_files/wxid_dm9mfnvg9wzm22_c773/msg/file/2026-11/孤岛_游戏设计说明书_独立交付版_修订稿.pdf`。同目录便携编辑器是旧格式工具，示例 JSON 有 107 条物品记录且配方为空。本项目运行使用新字段；沿用有效物品 ID，防水涂料保留 `item_101`，木偶使用 `item_108`。时长、概率、水位、耐久未定，规则资产保存可编辑联调值。自由牌桌、法术拆装仍走各自原入口。
+- [VOYAGE_CORE] `Assets/IslandSurvival/Core/VoyageData.cs` 与 `VoyageEngine.*`。身体牌按实例锁定，统一输入槽支持保留、消耗、磨损与修复。准备阶段伤势跟随，倒计时继续；执行期间相关牌及伤势均锁定并冻结自身计时，结算时应用副产线、耐久和产物。饥饿随时间下降，SAN/饥饿归零判败；两种路线共用航线卡，合成出航卡判胜。状态与随机数随任务和卡牌位置保存。
+- [VOYAGE_UI_SAVE] `Scenes/IslandSurvival.unity` 现引用 `Prefabs/VoyageDesk.prefab`。`VoyageBootstrap` 处理时钟、入口与存档，`VoyageView` 展示组合、任务、文本卡、液面与磨损。`VoyageSaveStore` 用独立 `voyage-auto-v1.json` / `voyage-manual-v1.json`，有规则指纹、摘要、原子替换、备份回读。新规则不会读取旧营地档。配置入口「孤岛生存 → 出航规则配置」，`VoyageRules.asset` 配 131 种卡牌、144 条组合、32 条副产线，`VoyageCards` 是各牌资源。`tools/build_island_voyage_content.py --replace` 会重写内容，保留已有插画引用，日常调数直接编辑资产。`IslandVoyageAtlas.png` 16 张插画通过 CardDefinition 接入；低 SAN 背景和普通卡面褪色，海滩声淡出，卡纸、操作反馈与特定思绪声音独立。
+- [VOYAGE_VERIFY_NEXT] 静查 C# 语法、配置及 Prefab 引用，按依赖图分别核对研究/幻觉到 E06 的可达性。尚未验证 Unity 导入、鼠标操作、执行中存读档、数量和实际整局节奏。下一次从原桌面进入「孤岛生存」，核对腿×2＋海滩→帽贝岩、手＋帽贝岩→开壳→躯干进食，以及并行研究、到期冻结和恢复存档。部分牌用类别字样，后续补正式插画和细化数值。场所占用当前每张一项任务，主动中断退回投入。旧营地的历史锚点如下。
+
+- [ISLAND_IMPLEMENT] 本轮开始按docs/design/孤岛桌面生存-完整设计.md v1.2及正式XLSX需求表开发。路径Assets/IslandSurvival。Core/SurvivalData.cs统一DTO、SurvivalEngine候选副本事务；Actions/Tasks、Body/Biology、Configuration由并行代理实现，根负责Inventory/Validation/Unity存档与真实Prefab场景集成。尚在开发中，无编译/运行验证。各新Assets文件须补合法.meta。数值可临时但必须配置可改，不能自行增加机制。最新工作进展以真实文件和后续锚点为准。
+- [ISLAND_CARDS_13] 用户对策划评审指出偏数值模拟、缺卡牌联系，并明确纠正疾病应为《密教模拟器》式独立卡；反感把事实核对和基础设计筛查交给用户。已撤销“只做角色面板附着卡”的建议，按独立状态牌开发：CardKind.Condition第6类；伤口+流血/感染/疼痛/刺激/衰弱6定义；ItemState.ConditionId唯一引用身体canonical状态，拥有真实ID/坐标/任务锁、作为护理配方目标、状态结束取消目标任务再移除。独立状态桌面不计24/32/40生产容量，不是普通材料。开发者原始依据已查Steam HELLEBORE回复：Health变Affliction保留同张牌位置；不得凭印象再次把独立牌解释为面板图标。设计/Excel由配置代理更新1.3，原稿不改。
+- [ISLAND_CORE_NOW] 新Core已含Inventory/Validation/Actions/Production/Tasks/Body/Biology/Conditions/Queries，候选事务、逐分钟调度、R01~31、生态/喂养/两段繁殖/状态护理等已落源码；默认52卡56动作，经SurvivalConfiguration.BuildDefinition桥接CardDefinition。UI真实Prefab沿旧IslandPreparation GUID，根View1610与Bootstrap，运行模板+编辑态PreviewRoot；SurvivalSaveStore独立island-v1.json原子/.bak/SHA与规则指纹。尚未编译/运行，根继续静态集成修复，不能称完整验收。
+- [ISLAND_VERIFY_NOW] 已静查并修正：产出新Lot.AvailableAt防同分钟合堆重投；原槽腐败ResidueFrom且预留空壳先保留；潮汐同Amount合并预留；拆解复用目标Reservation.ReplacesItemId但取消前不借走净释放容量；40容量改8x6候选格(逻辑仍40)，CellHeight100；损坏区域既有成长/产叶继续只停新周期；精神0可暂放任务休息再恢复；每节点LastForcedDay；独立状态正反唯一引用。View已修Esc暂停、拖动暂停/结束恢复、失焦暂停、小容器子牌越界；配置代理仍审UI。用户仍自行编译/Unity运行，助手不启动。剩余meta/静态引用全检/需求对照/美术待本轮收口。
 
 - [UPLOAD_20261106] 用户明确要求修复Git上传并代为提交推送本次累积内容。上传前远端main为303ce22，本地未推送3a4e3fa误带work/survival-reference/package0/1/2.exe（约281/203/137MiB）。已建仅本地备份分支backup/upload-before-cleanup-20261106，并把当时暂存差异存入.git/codex-upload-staged-20261106.patch；soft重整尚未推送历史，停止跟踪三个安装包和三份pyc，原文件保留。共享.gitignore加入__pycache__/、*.py[cod]及两个研究/表格构建工作目录。代码、美术、孤岛入口、设计与正式XLSX正常纳入本次main；不要推送备份分支或使用push --all。具体上传完成与提交号以Git远端和本次答复为准，不推断已运行Unity。
 - [REQUIREMENTS] 2026-11-06用户要求按系统做程序/策划/美术需求表，并强调程序未定内容须方便策划配置。已交付outputs/01a1aae4-8672-7cd2-8fde-a44094785f06/孤岛生存-开发需求表.xlsx：系统需求62条/21系统、策划配置30合同、美术46项、阶段验收6项；列明三方交付、前置、独立进度、运行验收及计算整体现状。入口三方交付完成但待运行，其他未开始，无伪造已验收。统一配置合同要求中文字段/单位/默认/校验/应用/旧档策略，修改实际生效；未实现字段不出现在运行配置。数值可临时，新增机制仍由程序实现。

@@ -1,0 +1,7 @@
+{
+  "name": "CardKKK.IslandSurvival.Editor",
+  "rootNamespace": "CardKKK.IslandSurvival.Editor",
+  "references": ["CardKKK.IslandSurvival.Core", "CardKKK.IslandSurvival.Unity", "CardKKK.Tabletop.Unity"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

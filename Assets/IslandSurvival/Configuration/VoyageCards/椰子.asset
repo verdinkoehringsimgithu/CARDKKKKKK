@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb1b8de3b778351ed4f5af8d2ce569, type: 3}
+  m_Name: "椰子"
+  m_EditorClassIdentifier: ""
+  Id: "item_53"
+  DisplayName: "椰子"
+  Family: "材料"
+  SortRank: 510
+  Attributes:
+  - Key: "初始耐久"
+    Value: 0
+  Artwork: {fileID: 21300014, guid: 0d43df2421e65a1594248dca0f3726cd, type: 3}
+  LegacyDefinitionId: ""
+  LegacyRank: 0

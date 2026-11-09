@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-06",
+  "method": "内置image_gen参考编辑",
+  "first_pass": "Use case: precise-object-edit / transparent-edge cleanup. Edit the supplied transparent game-asset atlas ONLY to clean its corrupted cutout edges. Keep the EXACT same atlas composition, canvas proportions, cell layout, row-major object order, object identities, complete silhouettes, scale and placement, original hand-painted paper-grain style, dark petrol-teal outlines, cream/coral/jade palette, and all interior details. Remove ALL vivid neon/lime green pixels, gray-white jagged scraps, random fringe specks, pale outlines and ragged alpha debris immediately OUTSIDE the dark teal object contours. Restore each original contour to a clean smooth dark petrol-teal edge with native alpha antialiasing against a fully transparent background. On the condition atlas keep the intended muted gray-green contact clouds, but give their external silhouettes clean consistent dark teal outlines; remove the bright green and white extraction artifacts beyond them. Do NOT add a background, shadow layer, labels, text, grid lines, frames or extra objects. Do not redesign, replace, crop, reorder or move any object. Preserve transparent gutters. The result must be a crisp usable production RGBA sprite atlas without green halos when displayed on dark or cream backgrounds.",
+  "food_tools_second_pass": "Precisely clean this 4x4 game inventory atlas. Keep all 16 subjects in the exact same cells and preserve their shapes, appearance, existing scale, composition and colors INSIDE the outlines. The current cutouts have distracting tiny bright green, bright yellow, red and white pixel-fringes OUTSIDE their silhouettes. Erase all such exterior colored fringe and white debris, and replace the thin ragged outer contour with one continuous broad, solid, perfectly clean DARK TEAL (#173D46) contour. Each isolated object must have a uniform smooth dark teal external silhouette. Do not preserve the colored outline pixels, those are mistakes. The dark teal contour must separate the colored painting completely from the fully transparent background. Keep the original paper illustration style and existing object details. No new objects, no shifts, no frames, no grid, no text. Native transparent RGBA output.",
+  "selected_outputs": [
+    {
+      "atlas": "IslandMaterialsAtlas.png",
+      "generated_file": "exec-5eb31e55-8f6f-4abe-921b-6ba54a377e0d.png"
+    },
+    {
+      "atlas": "IslandFoodToolsAtlas.png",
+      "generated_file": "exec-3a2c92b3-32f7-467f-9e1b-36605682fe6b.png"
+    },
+    {
+      "atlas": "IslandEcologyAtlas.png",
+      "generated_file": "exec-90ec9f16-6ad1-43b3-9c84-3d57fd94e3ba.png"
+    },
+    {
+      "atlas": "IslandConditionsAtlas.png",
+      "generated_file": "exec-9ebdb27b-a690-4265-9c2c-29e3a661fb00.png"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cbb4f0080e534296d7cfb0e54e1eb0, type: 3}
+  m_Name: 孤岛生存主题
+  m_EditorClassIdentifier:
+  Material: {r: 0.22, g: 0.3, b: 0.32, a: 1}
+  Tool: {r: 0.28, g: 0.3, b: 0.35, a: 1}
+  Facility: {r: 0.25, g: 0.32, b: 0.3, a: 1}
+  Area: {r: 0.16, g: 0.36, b: 0.33, a: 1}
+  Creature: {r: 0.29, g: 0.34, b: 0.26, a: 1}
+  Condition: {r: 0.46, g: 0.2, b: 0.22, a: 1}
+  Pulse: {r: 0.75, g: 0.6, b: 0.32, a: 1}
+  PulseSeconds: 0.3
+  Success: {fileID: 8300000, guid: 433389d19e7f539ab07063d93e7b8191, type: 3}
+  Denied: {fileID: 8300000, guid: 8e77269170155aa58afd9a0d59052190, type: 3}
+  Warning: {fileID: 8300000, guid: 92c56fe06a79526d8ff52c3b90514632, type: 3}
+  Volume: 0.25
+  Ready: {r: 0.16, g: 0.36, b: 0.3, a: 1}
+  MissingMaterial: {r: 0.4, g: 0.3, b: 0.17, a: 1}
+  MissingFacility: {r: 0.39, g: 0.22, b: 0.23, a: 1}
+  Credits: "设计与制作：项目作者\n开发协作：Codex\n插画：项目内原创生成资产\n声音：项目内原创合成\n字体：Noto Sans CJK SC · SIL Open Font License"
