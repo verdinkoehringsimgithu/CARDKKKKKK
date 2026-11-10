@@ -4,6 +4,7 @@
 
 ## 当前授权与方向
 
+- [RECIPE_EDITOR_COMPILE] 2026-11-10 本地快进到 `d5c485a` 后，Unity 日志报 `RecipeEditorWindow` 的 CS0121 和两条 CS0117。新建独立场所改为只传名称、ID 和具名容量，避免命中绑定物品的重载。副产线列表复用 `CardBox` / `helpBox`。编译和 Play 由用户验证。本地旧出航改动备份为 `286c62e`。
 - [INTEGRATION_REVIEW_20261109] 本轮复核后：job初始化、StagePair原子事务已在源码修正；同类并行产物原先仍按类型猜来源，现Settle记录非序列化ProducedByJobId/ProducedFromX/Y并经Copies传递，View读取来源；飞牌被拖起或入准备区会退出协程。未编译/运行。网页编辑器以Tools/RecipeEditorWeb/index.html为唯一内容源，根HTML仅跳转。整合状态见交接06；A~E规范非实现，原Survival暂留不可盲删。参考游戏与解包目录加入ignore；仅暂存项目源码/工具/交接，覆盖率配置保留未暂存。不提交推送。
 
 

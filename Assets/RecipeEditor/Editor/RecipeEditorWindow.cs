@@ -1069,7 +1069,7 @@ namespace CardKKK.RecipeEditor.Editor
                 newId = $"loc_{_database.Locations.Count + idx++}";
             }
 
-            var newLoc = new RecipeLocation(newId, "新合成场所", "", capacity: 1)
+            var newLoc = new RecipeLocation(newId, "新合成场所", capacity: 1)
             {
                 SourceType = sourceType
             };
@@ -1820,9 +1820,7 @@ namespace CardKKK.RecipeEditor.Editor
                     }
 
                     bool isSelected = (_selectedAuxIndex == i);
-                    GUIStyle itemStyle = isSelected ? RecipeEditorStyles.ListItemSelected : RecipeEditorStyles.ListItemNormal;
-
-                    EditorGUILayout.BeginHorizontal(itemStyle);
+                    EditorGUILayout.BeginHorizontal(isSelected ? RecipeEditorStyles.CardBox : EditorStyles.helpBox);
                     if (GUILayout.Button(line.Name ?? line.Id, EditorStyles.label))
                     {
                         _selectedAuxIndex = i;
