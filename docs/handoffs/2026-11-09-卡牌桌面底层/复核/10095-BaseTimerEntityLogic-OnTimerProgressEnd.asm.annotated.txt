@@ -1,0 +1,165 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804FB440: mov         qword ptr [rsp+8],rbx
+  00000001804FB445: mov         qword ptr [rsp+10h],rsi
+  00000001804FB44A: push        rdi
+  00000001804FB44B: sub         rsp,50h
+  00000001804FB44F: mov         rbx,rcx
+  00000001804FB452: mov         rcx,qword ptr [rcx+0000000000000260h]
+  00000001804FB459: test        rcx,rcx
+  00000001804FB45C: je          00000001804FB6D7
+  00000001804FB462: dec         dword ptr [rcx+00000000000000D0h]
+  00000001804FB468: mov         rax,qword ptr [rbx+0000000000000260h]
+  00000001804FB46F: test        rax,rax
+  00000001804FB472: je          00000001804FB6D7
+  00000001804FB478: cmp         byte ptr [rax+0000000000000120h],0
+  00000001804FB47F: je          00000001804FB497
+  00000001804FB481: mov         rdx,qword ptr [rbx]
+  00000001804FB484: mov         rcx,rbx
+  00000001804FB487: mov         rax,qword ptr [rdx+0000000000000598h]
+  00000001804FB48E: mov         rdx,qword ptr [rdx+00000000000005A0h]
+  00000001804FB495: call        rax
+  00000001804FB497: mov         rax,qword ptr [rbx+0000000000000260h]
+  00000001804FB49E: test        rax,rax
+  00000001804FB4A1: je          00000001804FB6D7
+  00000001804FB4A7: cmp         dword ptr [rax+00000000000000D0h],0
+  00000001804FB4AE: jle         00000001804FB51B
+  00000001804FB4B0: cmp         byte ptr [rax+0000000000000120h],0
+  00000001804FB4B7: jne         00000001804FB4CF
+  00000001804FB4B9: mov         rdx,qword ptr [rbx]
+  00000001804FB4BC: mov         rcx,rbx
+  00000001804FB4BF: mov         rax,qword ptr [rdx+0000000000000598h]
+  00000001804FB4C6: mov         rdx,qword ptr [rdx+00000000000005A0h]
+  00000001804FB4CD: call        rax
+  00000001804FB4CF: mov         rcx,qword ptr [rbx+0000000000000280h]
+  00000001804FB4D6: test        rcx,rcx
+  00000001804FB4D9: je          00000001804FB6D7
+  00000001804FB4DF: mov         rax,qword ptr [rbx]
+  00000001804FB4E2: xorps       xmm3,xmm3
+  00000001804FB4E5: movd        xmm1,dword ptr [rcx+0000000000000080h]
+  00000001804FB4ED: xor         r8d,r8d
+  00000001804FB4F0: cvtdq2ps    xmm1,xmm1
+  00000001804FB4F3: mov         rcx,rbx
+  00000001804FB4F6: mov         rdx,qword ptr [rax+0000000000000578h]
+  00000001804FB4FD: mov         rax,qword ptr [rax+0000000000000580h]
+  00000001804FB504: mov         qword ptr [rsp+20h],rax
+  00000001804FB509: call        rdx
+  00000001804FB50B: mov         rbx,qword ptr [rsp+60h]
+  00000001804FB510: mov         rsi,qword ptr [rsp+68h]
+  00000001804FB515: add         rsp,50h
+  00000001804FB519: pop         rdi
+  00000001804FB51A: ret
+  00000001804FB51B: mov         rdx,qword ptr [rbx]
+  00000001804FB51E: mov         rcx,rbx
+  00000001804FB521: mov         rax,qword ptr [rdx+00000000000005A8h]
+  00000001804FB528: mov         rdx,qword ptr [rdx+00000000000005B0h]
+  00000001804FB52F: call        rax
+  00000001804FB531: mov         rdx,qword ptr [rbx+0000000000000280h]
+  00000001804FB538: test        rdx,rdx
+  00000001804FB53B: je          00000001804FB6D7
+  00000001804FB541: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FB548: test        rcx,rcx
+  00000001804FB54B: je          00000001804FB6D7
+  00000001804FB551: mov         rdx,qword ptr [rdx+28h]
+  00000001804FB555: xor         r8d,r8d
+  00000001804FB558: call        00000001804F2320 ; UnityGameFramework.Scripts.BaseFormEntityLogic::ChangeBaseEntityDecCostNum
+  00000001804FB55D: mov         rcx,qword ptr [rbx+0000000000000298h]
+  00000001804FB564: test        rcx,rcx
+  00000001804FB567: je          00000001804FB577
+  00000001804FB569: mov         rax,qword ptr [rcx+18h]
+  00000001804FB56D: mov         rdx,qword ptr [rcx+28h]
+  00000001804FB571: mov         rcx,qword ptr [rcx+40h]
+  00000001804FB575: call        rax
+  00000001804FB577: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FB57E: test        rcx,rcx
+  00000001804FB581: je          00000001804FB6D7
+  00000001804FB587: xor         r8d,r8d
+  00000001804FB58A: mov         dl,2
+  00000001804FB58C: call        00000001804F71E0 ; UnityGameFramework.Scripts.BaseFormEntityLogic::SetFormStatus
+  00000001804FB591: mov         rax,qword ptr [rbx]
+  00000001804FB594: xorps       xmm3,xmm3
+  00000001804FB597: xor         r8d,r8d
+  00000001804FB59A: xorps       xmm1,xmm1
+  00000001804FB59D: mov         rcx,rbx
+  00000001804FB5A0: mov         rdx,qword ptr [rax+0000000000000578h]
+  00000001804FB5A7: mov         rax,qword ptr [rax+0000000000000580h]
+  00000001804FB5AE: mov         qword ptr [rsp+20h],rax
+  00000001804FB5B3: call        rdx
+  00000001804FB5B5: mov         rax,qword ptr [rbx+0000000000000260h]
+  00000001804FB5BC: test        rax,rax
+  00000001804FB5BF: je          00000001804FB6D7
+  00000001804FB5C5: xor         edx,edx
+  00000001804FB5C7: mov         dword ptr [rax+00000000000000D4h],0FFFFFFFFh
+  00000001804FB5D1: mov         rcx,rbx
+  00000001804FB5D4: call        0000000180701910 ; UnityGameFramework.Scripts.BaseEntityLogic::DecCostNum
+  00000001804FB5D9: mov         rcx,qword ptr [rbx+00000000000002A0h]
+  00000001804FB5E0: test        rcx,rcx
+  00000001804FB5E3: je          00000001804FB6D7
+  00000001804FB5E9: xor         edx,edx
+  00000001804FB5EB: call        0000000181CC4400
+  00000001804FB5F0: xor         r8d,r8d
+  00000001804FB5F3: mov         dl,1
+  00000001804FB5F5: mov         rcx,rax
+  00000001804FB5F8: call        000000018065F450 ; UnityGameFramework.Scripts.GameObjectHelper::SetActiveEx
+  00000001804FB5FD: cmp         byte ptr [0000000183368448h],0
+  00000001804FB604: jne         00000001804FB619
+  00000001804FB606: lea         rcx,[000000018318DD78h]
+  00000001804FB60D: call        00000001803F2920
+  00000001804FB612: mov         byte ptr [0000000183368448h],1
+  00000001804FB619: cmp         byte ptr [000000018336843Ch],0
+  00000001804FB620: mov         rdx,qword ptr [000000018318DD78h]
+  00000001804FB627: mov         rax,qword ptr [rdx+00000000000000B8h]
+  00000001804FB62E: mov         rdi,qword ptr [rax+0000000000000088h]
+  00000001804FB635: jne         00000001804FB651
+  00000001804FB637: lea         rcx,[000000018318DD78h]
+  00000001804FB63E: call        00000001803F2920
+  00000001804FB643: mov         rdx,qword ptr [000000018318DD78h]
+  00000001804FB64A: mov         byte ptr [000000018336843Ch],1
+  00000001804FB651: mov         rax,qword ptr [rdx+00000000000000B8h]
+  00000001804FB658: mov         rcx,qword ptr [rax+00000000000000A8h]
+  00000001804FB65F: test        rcx,rcx
+  00000001804FB662: je          00000001804FB6D7
+  00000001804FB664: xor         edx,edx
+  00000001804FB666: call        000000018059E720 ; UnityGameFramework.Scripts.LubanTableComponent::get_BaseConfig
+  00000001804FB66B: test        rax,rax
+  00000001804FB66E: je          00000001804FB6D7
+  00000001804FB670: xor         edx,edx
+  00000001804FB672: mov         rcx,rax
+  00000001804FB675: call        00000001806D39F0 ; cfg.baseConf.TbBaseConfig::get_SoundTimerPrizeEnd
+  00000001804FB67A: xor         edx,edx
+  00000001804FB67C: mov         rcx,rbx
+  00000001804FB67F: mov         esi,eax
+  00000001804FB681: call        0000000182418FC0
+  00000001804FB686: test        rax,rax
+  00000001804FB689: je          00000001804FB6D7
+  00000001804FB68B: xor         r8d,r8d
+  00000001804FB68E: lea         rcx,[rsp+40h]
+  00000001804FB693: mov         rdx,rax
+  00000001804FB696: call        0000000182446090
+  00000001804FB69B: xor         r9d,r9d
+  00000001804FB69E: mov         qword ptr [rsp+20h],0
+  00000001804FB6A7: lea         r8,[rsp+30h]
+  00000001804FB6AC: mov         edx,esi
+  00000001804FB6AE: mov         rcx,rdi
+  00000001804FB6B1: movsd       xmm0,mmword ptr [rax]
+  00000001804FB6B5: mov         eax,dword ptr [rax+8]
+  00000001804FB6B8: movsd       mmword ptr [rsp+30h],xmm0
+  00000001804FB6BE: mov         dword ptr [rsp+38h],eax
+  00000001804FB6C2: call        00000001805FE460 ; UnityGameFramework.Scripts.SoundExtension::PlaySound
+  00000001804FB6C7: mov         rbx,qword ptr [rsp+60h]
+  00000001804FB6CC: mov         rsi,qword ptr [rsp+68h]
+  00000001804FB6D1: add         rsp,50h
+  00000001804FB6D5: pop         rdi
+  00000001804FB6D6: ret
+  00000001804FB6D7: call        00000001803F2AC0
+  00000001804FB6DC: int         3
+  00000001804FB6DD: int         3
+  00000001804FB6DE: int         3
+  00000001804FB6DF: int         3
+
+  Summary
+
+     2294000 il2cpp

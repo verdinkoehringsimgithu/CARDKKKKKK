@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using CardKKK.IslandSurvival.Core;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace CardKKK.IslandSurvival.Unity
     internal sealed class VoyageSaveStore
     {
         private const int MaximumBytes = 8 * 1024 * 1024;
-        private readonly string path, fingerprint;
+        private readonly string path, fingerprint, legacyFingerprint;
         private static readonly Encoding Utf8 = new UTF8Encoding(false);
 
         [Serializable]
@@ -26,7 +27,12 @@ namespace CardKKK.IslandSurvival.Unity
             VoyageDefinition rules = JsonUtility.FromJson<VoyageDefinition>(JsonUtility.ToJson(definition));
             foreach (VoyageCardRule card in rules.Cards) { card.Name = card.Description = ""; card.SortRank = 0; }
             foreach (VoyageRecipeRule recipe in rules.Recipes) recipe.Name = "";
-            fingerprint = Hash(JsonUtility.ToJson(rules));
+            string serialized = JsonUtility.ToJson(rules);
+            fingerprint = Hash(serialized);
+            // Exact v1 gameplay fingerprint, before desktop ownership/interaction settings were added.
+            string legacy = Regex.Replace(serialized, "\"Desk\":\\{[^{}]*\\},", "");
+            legacy = Regex.Replace(legacy, ",\"Family\":\"(?:[^\"\\\\]|\\\\.)*\"", "");
+            legacyFingerprint = Hash(legacy);
         }
 
         public bool Exists => File.Exists(path) || File.Exists(path + ".bak");
@@ -107,11 +113,13 @@ namespace CardKKK.IslandSurvival.Unity
                 if (!info.Exists) return false;
                 if (info.Length <= 0 || info.Length > MaximumBytes) { message = "存档大小异常。"; return false; }
                 Envelope envelope = JsonUtility.FromJson<Envelope>(File.ReadAllText(candidate, Utf8));
-                if (envelope == null || envelope.Version != 1 || envelope.Rules != fingerprint)
+                if (envelope == null || envelope.Version != 1 || envelope.Rules != fingerprint && envelope.Rules != legacyFingerprint)
                 { message = "存档对应其他版本的出航规则。"; return false; }
                 if (string.IsNullOrEmpty(envelope.Payload) || envelope.Sha256 != Hash(envelope.Payload))
                 { message = "存档内容损坏。"; return false; }
                 state = JsonUtility.FromJson<VoyageState>(envelope.Payload);
+                if (state != null && state.DeskVersion != 0 && envelope.Rules != fingerprint)
+                { state = null; message = "牌桌规则与此存档不一致。"; return false; }
                 return state != null;
             }
             catch (Exception exception) when (FileFailure(exception))

@@ -1,0 +1,108 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180705840: push        rbx
+  0000000180705842: sub         rsp,0B0h
+  0000000180705849: cmp         byte ptr [00000001833696A9h],0
+  0000000180705850: mov         rbx,rcx
+  0000000180705853: jne         0000000180705868
+  0000000180705855: lea         rcx,[00000001831C7F98h]
+  000000018070585C: call        00000001803F2920
+  0000000180705861: mov         byte ptr [00000001833696A9h],1
+  0000000180705868: test        dword ptr [rbx+000000000000022Ch],1E2h
+  0000000180705872: ja          0000000180705A2A
+  0000000180705878: cmp         dword ptr [rbx+0000000000000180h],0
+  000000018070587F: jne         0000000180705A2A
+  0000000180705885: cmp         byte ptr [rbx+5Ch],0
+  0000000180705889: jne         0000000180705A2A
+  000000018070588F: cmp         qword ptr [rbx+0000000000000170h],0
+  0000000180705897: ja          0000000180705A2A
+  000000018070589D: cmp         byte ptr [0000000183368447h],0
+  00000001807058A4: jne         00000001807058B9
+  00000001807058A6: lea         rcx,[000000018318DD78h]
+  00000001807058AD: call        00000001803F2920
+  00000001807058B2: mov         byte ptr [0000000183368447h],1
+  00000001807058B9: mov         rax,qword ptr [000000018318DD78h]
+  00000001807058C0: mov         qword ptr [rsp+00000000000000C8h],rdi
+  00000001807058C8: movaps      xmmword ptr [rsp+00000000000000A0h],xmm6
+  00000001807058D0: movaps      xmmword ptr [rsp+0000000000000090h],xmm7
+  00000001807058D8: mov         rdx,qword ptr [rax+00000000000000B8h]
+  00000001807058DF: mov         rcx,qword ptr [rdx+00000000000000B0h]
+  00000001807058E6: test        rcx,rcx
+  00000001807058E9: je          0000000180705A33
+  00000001807058EF: xor         edx,edx
+  00000001807058F1: call        00000001805DBB60 ; UnityGameFramework.Scripts.InputMgrComponent::ClampedMousePosition
+  00000001807058F6: cmp         byte ptr [0000000183368447h],0
+  00000001807058FD: mov         qword ptr [rsp+00000000000000C0h],rax
+  0000000180705905: jne         000000018070591A
+  0000000180705907: lea         rcx,[000000018318DD78h]
+  000000018070590E: call        00000001803F2920
+  0000000180705913: mov         byte ptr [0000000183368447h],1
+  000000018070591A: mov         rax,qword ptr [000000018318DD78h]
+  0000000180705921: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180705928: mov         rdi,qword ptr [rcx+00000000000000B0h]
+  000000018070592F: mov         r8,qword ptr [00000001831C7F98h]
+  0000000180705936: lea         rdx,[rsp+40h]
+  000000018070593B: movss       xmm6,dword ptr [rsp+00000000000000C4h]
+  0000000180705944: lea         rcx,[rsp+50h]
+  0000000180705949: xorps       xmm0,xmm0
+  000000018070594C: xor         eax,eax
+  000000018070594E: movups      xmmword ptr [rsp+50h],xmm0
+  0000000180705953: mov         dword ptr [rsp+60h],eax
+  0000000180705957: movups      xmm0,xmmword ptr [rbx+00000000000001F4h]
+  000000018070595E: xorps       xmm7,xmm7
+  0000000180705961: movaps      xmmword ptr [rsp+40h],xmm0
+  0000000180705966: call        0000000180E13AB0
+  000000018070596B: test        rdi,rdi
+  000000018070596E: je          0000000180705A33
+  0000000180705974: movups      xmm0,xmmword ptr [rsp+50h]
+  0000000180705979: mov         eax,dword ptr [rsp+60h]
+  000000018070597D: lea         r9,[rsp+70h]
+  0000000180705982: lea         r8,[rsp+30h]
+  0000000180705987: movss       dword ptr [rsp+38h],xmm7
+  000000018070598D: movaps      xmmword ptr [rsp+70h],xmm0
+  0000000180705992: lea         rcx,[rsp+40h]
+  0000000180705997: movss       xmm0,dword ptr [rsp+00000000000000C0h]
+  00000001807059A0: mov         rdx,rdi
+  00000001807059A3: unpcklps    xmm0,xmm6
+  00000001807059A6: movsd       mmword ptr [rsp+30h],xmm0
+  00000001807059AC: mov         dword ptr [rsp+0000000000000080h],eax
+  00000001807059B3: mov         qword ptr [rsp+20h],0
+  00000001807059BC: call        00000001805DDB40 ; UnityGameFramework.Scripts.InputMgrComponent::ScreenPosToWorldPos
+  00000001807059C1: movsd       xmm1,mmword ptr [rbx+00000000000001DCh]
+  00000001807059C9: movsd       xmm0,mmword ptr [rax]
+  00000001807059CD: mov         ecx,dword ptr [rax+8]
+  00000001807059D0: movaps      xmm4,xmm0
+  00000001807059D3: movaps      xmm3,xmm0
+  00000001807059D6: mov         dword ptr [rbx+0000000000000204h],0
+  00000001807059E0: movaps      xmm0,xmm1
+  00000001807059E3: shufps      xmm3,xmm3,55h
+  00000001807059E7: shufps      xmm0,xmm0,55h
+  00000001807059EB: addss       xmm4,xmm1
+  00000001807059EF: movd        xmm2,ecx
+  00000001807059F3: addss       xmm3,xmm0
+  00000001807059F7: addss       xmm2,dword ptr [rbx+00000000000001E4h]
+  00000001807059FF: movaps      xmm6,xmmword ptr [rsp+00000000000000A0h]
+  0000000180705A07: mov         rdi,qword ptr [rsp+00000000000000C8h]
+  0000000180705A0F: movaps      xmm7,xmmword ptr [rsp+0000000000000090h]
+  0000000180705A17: unpcklps    xmm4,xmm3
+  0000000180705A1A: movsd       mmword ptr [rbx+00000000000001C0h],xmm4
+  0000000180705A22: movss       dword ptr [rbx+00000000000001C8h],xmm2
+  0000000180705A2A: add         rsp,0B0h
+  0000000180705A31: pop         rbx
+  0000000180705A32: ret
+  0000000180705A33: call        00000001803F2AC0
+  0000000180705A38: int         3
+  0000000180705A39: int         3
+  0000000180705A3A: int         3
+  0000000180705A3B: int         3
+  0000000180705A3C: int         3
+  0000000180705A3D: int         3
+  0000000180705A3E: int         3
+  0000000180705A3F: int         3
+
+  Summary
+
+     2294000 il2cpp

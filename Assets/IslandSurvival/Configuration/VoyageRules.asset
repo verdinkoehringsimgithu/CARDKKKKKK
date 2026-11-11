@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe25c00e524d82ac49576a983c59a9, type: 3}
   m_Name: "孤岛出航规则"
   m_EditorClassIdentifier: ""
+  Tabletop: {fileID: 11400000, guid: a74fc672df4144e8a77723d488c1475b, type: 2}
   Rules:
     Cards:
     - Id: "item_1"

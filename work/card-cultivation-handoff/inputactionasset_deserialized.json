@@ -1,0 +1,1975 @@
+{
+  "m_GameObject": {
+    "fileID": 0,
+    "pathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "fileID": 0,
+    "pathID": -6728147195383298198
+  },
+  "m_Name": "InputControls",
+  "m_ActionMaps": [
+    {
+      "m_Name": "gameplay",
+      "m_Id": "d1dd48c5-a947-460e-91d2-d46c51b07e69",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "PointerLeft",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "7343c798-02f8-4e3c-ac8d-65bebc4878d8",
+          "m_Processors": "",
+          "m_Interactions": "Press",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "DragDrop",
+          "m_Type": 0,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "f414aa16-7dc9-4e70-b220-dede4eda330b",
+          "m_Processors": "",
+          "m_Interactions": "Press(pressPoint=1.1)",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 1
+        },
+        {
+          "m_Name": "Scroll",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Axis",
+          "m_Id": "4e6b5bba-f020-4ca0-88f1-ab2c4866d999",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "ScrollNegPos",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "04e1b57f-b89c-4167-bb07-c12320294fa2",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "PointerPos",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "2710a32e-805f-4159-977e-9eb27ad702d4",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "PointerRight",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "7a3d4343-dff7-42a8-ab97-8f726f286062",
+          "m_Processors": "",
+          "m_Interactions": "Press",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "AltBtn",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "aa421988-05dc-4d39-941c-e219166c4964",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "CtrlBtn",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "4e775b4f-f9d4-45dc-95ce-e53b5faf535a",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "97dd3944-403e-442c-b977-7ac42b33d18f",
+          "m_Path": "<Mouse>/leftButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "PointerLeft",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "f38ca943-2b46-4e85-b0dd-ac390c135858",
+          "m_Path": "<Mouse>/delta",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "DragDrop",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "0d8bc430-6869-4bcf-b5be-d9a768f51bf4",
+          "m_Path": "<Mouse>/scroll/y",
+          "m_Interactions": "",
+          "m_Processors": "Invert",
+          "m_Groups": "",
+          "m_Action": "Scroll",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "5e68c10e-c322-4d32-a167-e492174ef239",
+          "m_Path": "<Mouse>/position",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "PointerPos",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "1D Axis",
+          "m_Id": "9842eddc-2d6c-49cc-9cc8-d89a14bceabf",
+          "m_Path": "1DAxis",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "ScrollNegPos",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "negative",
+          "m_Id": "390e9a0e-8281-4e05-b51d-1f4423da4f4f",
+          "m_Path": "<Keyboard>/minus",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "ScrollNegPos",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "positive",
+          "m_Id": "f72dec87-36aa-43c9-8a61-f723e8179772",
+          "m_Path": "<Keyboard>/equals",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "ScrollNegPos",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "c16f42a7-285c-4e40-a1fd-878af325dd6f",
+          "m_Path": "<Mouse>/rightButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "PointerRight",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "9d536928-3c8a-4bc4-bf72-a88d498b47d8",
+          "m_Path": "<Keyboard>/alt",
+          "m_Interactions": "Press",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "AltBtn",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "3b6a92d8-e4d0-46ff-8706-58195fc3dd4a",
+          "m_Path": "<Keyboard>/ctrl",
+          "m_Interactions": "Press",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "CtrlBtn",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameFormKeyboard",
+      "m_Id": "46d7f0d9-40d9-490f-9166-2b57f1e2916c",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "C",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "07ded9fa-854f-461a-9b29-0c908eb2f081",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "1c3fd551-9819-44d4-9fb5-13cdd4cd8b83",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "3331aea7-9428-4c94-b3d1-0513c3b2c600",
+          "m_Path": "<Keyboard>/c",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "C",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "23fc8f7c-4598-445c-9a3b-105008f25e62",
+          "m_Path": "<Keyboard>/f",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameStoryFormKeyboard",
+      "m_Id": "dcfbdb76-249b-485b-9048-a11800e0c25e",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "C",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "902ef47e-960d-40ff-9e39-5877ce56ab8f",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Z",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "7b86a6d2-02c0-4275-b5fb-dde410835ddc",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "X",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "0e459663-5855-4e4a-a898-06ac48a879ac",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "8f9f701c-638f-4c56-acdb-2f5162ad70f5",
+          "m_Path": "<Keyboard>/c",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "C",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "04d6a4d0-0a3a-4eee-b8d1-824bf64cff76",
+          "m_Path": "<Keyboard>/z",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Z",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "95ba51be-9959-4f5c-ae37-cd899d1a639f",
+          "m_Path": "<Keyboard>/x",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "X",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameBagFormKeyboard",
+      "m_Id": "e2d62672-ea26-4b8f-ac19-147144920ae4",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Alpha1",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "53ca6de7-2c55-4fd0-a957-ef4209024519",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha2",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "9e799a92-3d6d-45b7-a2cd-1522851d9008",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha3",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "efb823c9-bf74-4b17-a20a-2f566807d22b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha4",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "58e6fb5d-5746-44f1-868f-ed765aded47c",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha5",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "a9139b13-8bfe-473b-85f6-e5bd848c33bf",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "c98a2a32-94dc-47ea-8cb9-7baca87e3db6",
+          "m_Path": "<Keyboard>/1",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha1",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "2ca1ab2b-f9e6-4069-8f58-fce6450e59e6",
+          "m_Path": "<Keyboard>/2",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha2",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "2d997b66-49ff-4bd9-87e4-bfc024bb458b",
+          "m_Path": "<Keyboard>/3",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha3",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "48c025b3-6d43-4eec-becd-40c618e12147",
+          "m_Path": "<Keyboard>/4",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha4",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "d41c8812-7bf8-4ee3-a089-c0e5ff2dc197",
+          "m_Path": "<Keyboard>/5",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha5",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameUIKeyboard",
+      "m_Id": "16ebd453-9dc6-47bc-aaa9-de8553a754d3",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Tab",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "82bb00d4-6c52-478f-a823-f0f4bb8b29aa",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F1",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "60a896a5-5170-49ad-9212-9b13353a7a6e",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F2",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "cd23b688-6581-48fe-ba9f-4c086744af10",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F3",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "54776ca7-2130-4e57-a449-ee0018d83d16",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F4",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "6dcec2c7-c986-4dbe-9219-085440111c2b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F5",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "8da73435-80ed-4875-a659-bddcfba03cff",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F6",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "b3821590-3790-42cf-84b5-12b6520dbdbb",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "F8",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "f20e96a2-c06f-41d0-8939-a6df3e7e47bb",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "B",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "9c471736-ff0a-43d6-a452-5a727e122144",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "R",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "cafc8788-5ad1-4d35-9ae1-d2698003e52b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "H",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "9af75a73-ef25-4da4-958b-13edac57b03f",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "K",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "a96c9e84-8535-4c90-bf71-5bcd08e907e4",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "P",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "dc85c54d-9ae0-465b-96d0-dae1e97b27c6",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "M",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "75ce03b6-c7bb-4ef2-81bb-86c70c5da974",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Esc",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "bae0d6d0-2f1f-4570-93e7-5dc61ca181cc",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Space",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "c5f7854f-c0f6-4650-b652-4f270621c27b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "GM",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "1e59a382-293e-4d31-9ad5-e153144989b0",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "DebugInfo",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "3c7759ab-10a6-4ff2-b71a-bebd7007ff5b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "HideAllUI",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "a3aa3c9e-3f46-4217-893b-1b6a54032ebf",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha1",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "e2498114-3bba-4d6e-ba27-00dfb5bca675",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha2",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "0e4cf9aa-aee1-42f9-9fa0-efd41bc741f4",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha3",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "32cce20b-0e2f-4503-a18a-39fc79f95061",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha4",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "cc510535-2f57-40b4-99fc-f76c2e823c8d",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alpha5",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "caa59dab-2044-42b7-8198-b8a7f7997f12",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Move",
+          "m_Type": 0,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "618322bd-3121-4d40-aac2-31d60636030e",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 1
+        },
+        {
+          "m_Name": "SnapGrid",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "31f9f76d-0a05-4d8b-a6b9-c30cd32dc36b",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "b607d118-80f7-48e5-a440-4c338fabaefe",
+          "m_Path": "<Keyboard>/tab",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Tab",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "ee5f1dec-6f54-42be-a2f2-cd07ad19039c",
+          "m_Path": "<Keyboard>/escape",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Esc",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "7941a81e-c6d1-48c3-853a-ac9820ea0975",
+          "m_Path": "<Keyboard>/space",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Space",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Alt+O",
+          "m_Id": "d0e96b82-8d9d-4091-b5e1-3d60f7d242c6",
+          "m_Path": "OneModifier",
+          "m_Interactions": "MultiTap",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "GM",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "modifier",
+          "m_Id": "e79bafc9-5bbd-4654-a098-420b9b5b0d2b",
+          "m_Path": "<Keyboard>/rightAlt",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "GM",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "binding",
+          "m_Id": "7486f080-5a80-42a2-909d-c3495acc42d8",
+          "m_Path": "<Keyboard>/o",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "GM",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "Alt+I",
+          "m_Id": "ad99a87e-4ac8-409c-8900-475b6bb105d4",
+          "m_Path": "OneModifier",
+          "m_Interactions": "MultiTap",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "DebugInfo",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "modifier",
+          "m_Id": "9293bc5a-fb1e-4db5-b68d-57069289e33f",
+          "m_Path": "<Keyboard>/rightAlt",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "DebugInfo",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "binding",
+          "m_Id": "1ff9f28d-45bd-4785-a898-8207d1c191be",
+          "m_Path": "<Keyboard>/i",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "DebugInfo",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "Alt+v",
+          "m_Id": "72c4544a-209d-4dfa-b3eb-ed3da9276067",
+          "m_Path": "OneModifier",
+          "m_Interactions": "MultiTap",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "HideAllUI",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "modifier",
+          "m_Id": "00aeef02-d932-4a5b-9ccb-ccaca3f3be2a",
+          "m_Path": "<Keyboard>/rightAlt",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "HideAllUI",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "binding",
+          "m_Id": "34e7c182-3a43-40d6-8343-393814f71b04",
+          "m_Path": "<Keyboard>/v",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "HideAllUI",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "a0811ab0-3a58-4422-82b2-1f6eaf71d77a",
+          "m_Path": "<Keyboard>/b",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "B",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "dcd5fe38-ee15-4ed8-a6bf-07b4eba60f8e",
+          "m_Path": "<Keyboard>/f5",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F5",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "0691cf61-1710-4b85-88e7-a2e999b29c3d",
+          "m_Path": "<Keyboard>/5",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha5",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "aef0cf8d-ccad-4dc0-a437-9a6be48c8670",
+          "m_Path": "<Keyboard>/4",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha4",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "5b8952a7-3fe5-4304-9627-0651196b8251",
+          "m_Path": "<Keyboard>/3",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha3",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "f7a28282-dc55-4624-ad1c-9592a837c949",
+          "m_Path": "<Keyboard>/2",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha2",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "0028686c-ec46-4b96-8aa6-20aa1bb82d68",
+          "m_Path": "<Keyboard>/1",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Alpha1",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "1e638910-d577-4b0a-a855-b90a3f12ae4d",
+          "m_Path": "<Keyboard>/h",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "H",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "9d97eae0-e9bb-405a-adc8-061aa5e7d9c2",
+          "m_Path": "<Keyboard>/r",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "R",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "DPad",
+          "m_Id": "3466e4f6-2c0a-40e6-8462-a56ea59c0bc9",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "f64b117b-e906-4646-95e6-abe086e3afaf",
+          "m_Path": "<Keyboard>/w",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "2f0ce330-947a-4bea-9113-a65e49445e4b",
+          "m_Path": "<Keyboard>/s",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "f9ba087b-aeff-4b1a-a39b-ad2948ab8e7b",
+          "m_Path": "<Keyboard>/a",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "11b9b86f-192b-46f0-8a72-21ca704be7a8",
+          "m_Path": "<Keyboard>/d",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "APad",
+          "m_Id": "7eaa0898-dfd5-4e5e-bac6-711cdac75638",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "3540cf4a-a9de-40f2-92a7-961d743849c3",
+          "m_Path": "<Keyboard>/upArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "2a454401-60ba-4652-83ab-2f8cb167284c",
+          "m_Path": "<Keyboard>/downArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "1f56a790-e1c4-4e97-aa59-4c91cffb8132",
+          "m_Path": "<Keyboard>/leftArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "f941da49-ce8d-4b74-a91f-deb723b07ca3",
+          "m_Path": "<Keyboard>/rightArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "14aebda7-0609-4b37-83e7-c6c20fdaeab9",
+          "m_Path": "<Keyboard>/f8",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F8",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "fe33f6c2-ab0f-4a51-9242-9be342d39678",
+          "m_Path": "<Keyboard>/e",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "SnapGrid",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "ca377104-e6e8-480a-99bf-195f95915e54",
+          "m_Path": "<Keyboard>/k",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "K",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "17b93b7e-6909-4f46-be55-1859416f1359",
+          "m_Path": "<Keyboard>/f6",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F6",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "627a313b-d2e2-4fe6-8b68-1a91d426c7eb",
+          "m_Path": "<Keyboard>/p",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "P",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "63fbd332-77ca-4b05-bc2e-e84e99ea0fe5",
+          "m_Path": "<Keyboard>/m",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "M",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "a2da6529-caa9-4e8b-bd95-b189edbc5e75",
+          "m_Path": "<Keyboard>/f1",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F1",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "9c3f92e1-0e4d-442d-8e6b-aee424b391c1",
+          "m_Path": "<Keyboard>/f2",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F2",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "4ecbd721-f7fc-4c33-ac0f-5118f8c1d6ab",
+          "m_Path": "<Keyboard>/f3",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F3",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "bef378b2-c53c-40cd-9dfc-fcd4f82ea2bd",
+          "m_Path": "<Keyboard>/f4",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "F4",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameUISettingKeyboard",
+      "m_Id": "326d663b-2253-4c77-b417-bd11bbf2338a",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Esc",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "1188ea06-eb16-4bdb-b30a-6155a873f528",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "82c94c55-461a-4a2a-8d1c-91e7b65abee0",
+          "m_Path": "<Keyboard>/escape",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Esc",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameMapFormKeyboard",
+      "m_Id": "15bee59c-0712-478f-a4fc-edc3e92d25a9",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "M",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "71d86de9-62cd-4f18-b7c4-383931ee20bd",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "34dd771b-1888-4540-b3d6-cf3baa30187e",
+          "m_Path": "<Keyboard>/m",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "M",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameUITaskKeyboard",
+      "m_Id": "fda5abdb-0040-4d6d-b993-18b8393a1b85",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Q",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "1bdf035b-368b-458c-8822-0d70ac132dbd",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "",
+          "m_Id": "8836f091-99c9-46b5-9626-158b60f3f081",
+          "m_Path": "<Keyboard>/q",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Q",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "gameWorld",
+      "m_Id": "d664816f-fdb4-4dfc-8dfb-11c374fe467f",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Move",
+          "m_Type": 0,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "799e6c02-ceed-4c30-be24-2bea24baf25f",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 1
+        },
+        {
+          "m_Name": "C",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "d5c79670-3db5-4acf-aaee-cf5dff77f2af",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "M",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "aa6c5203-11b2-4fd2-9bb3-b5f8bc051331",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Round",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "5b2f79bb-313b-468a-a396-4900f7834b71",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Look",
+          "m_Type": 0,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "61f654a8-ec90-4737-a6c3-7e0f3e3027ea",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 1
+        },
+        {
+          "m_Name": "Pointer",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "9bd0252a-3725-4d53-8f8f-94259149504a",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Space",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "8a0907ca-f3e9-4ae2-95b1-e51c9ed83e89",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "DPad",
+          "m_Id": "20eb2f65-c3cc-4d5f-a157-fa43ad786cad",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "5bef2907-9c9b-4081-a373-3fc07114b0f2",
+          "m_Path": "<Keyboard>/w",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "7cf374fb-01c2-46b2-99d0-ad2177a3d4bc",
+          "m_Path": "<Keyboard>/s",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "0afc61cc-2dea-40d1-a182-8be7db5d5229",
+          "m_Path": "<Keyboard>/a",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "00e58c82-e6b9-40a4-baff-55ade21f40fb",
+          "m_Path": "<Keyboard>/d",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "APad",
+          "m_Id": "4e0638a1-2532-4913-b7ba-33b009f41ec2",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "5ffe115c-8040-47a2-847a-cde857535d4f",
+          "m_Path": "<Keyboard>/upArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "22f3d372-f0cc-4f02-84f3-3b63dc60861e",
+          "m_Path": "<Keyboard>/downArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "1fdb1b2b-1334-43cf-b240-c77473ca48ee",
+          "m_Path": "<Keyboard>/leftArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "dc835ae7-271c-4a2f-a45c-45ebc5a16948",
+          "m_Path": "<Keyboard>/rightArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Move",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "LR",
+          "m_Id": "02a07f55-155f-41bf-a377-1c3d3dbd350f",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Round",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "1bcc0036-d587-4921-b56f-442fbfa898b8",
+          "m_Path": "<Keyboard>/q",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Round",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "ed255378-07c0-4b93-a950-4eb2fd2bc3b5",
+          "m_Path": "<Keyboard>/e",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Round",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "f790947c-e5c5-4cd0-960a-4649edb1f1f5",
+          "m_Path": "<Mouse>/scroll",
+          "m_Interactions": "",
+          "m_Processors": "NormalizeVector2",
+          "m_Groups": "",
+          "m_Action": "Look",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "d74da14b-4397-497c-898e-ba198676c668",
+          "m_Path": "<Mouse>/leftButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Pointer",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "5ff699bc-4cb6-4345-83b3-3de271b6d42f",
+          "m_Path": "<Keyboard>/space",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Space",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "ef13ea71-d5c9-4aec-b51b-c4d6b2d90ef7",
+          "m_Path": "<Keyboard>/c",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "C",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "3de60856-121c-4a2e-be16-93ed8def8042",
+          "m_Path": "<Keyboard>/m",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "M",
+          "m_Flags": 0
+        }
+      ]
+    },
+    {
+      "m_Name": "UI",
+      "m_Id": "e652ed47-0395-44b3-892b-3be479897c94",
+      "m_Asset": {
+        "fileID": 0,
+        "pathID": 418656196238816513
+      },
+      "m_Actions": [
+        {
+          "m_Name": "Navigate",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "c2c998ce-8aa3-4133-a54c-3da33ce4ea38",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Submit",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "a0ffb084-d2fe-40a9-b4fc-5aae76b1ae69",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Cancel",
+          "m_Type": 1,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "67568221-e5ad-4ab2-81ea-e0d04e3093c8",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Point",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "4b4c0d77-d0cb-4f0c-9077-82f14c459083",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Click",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "02c2d6e6-0da9-4393-9990-1ff24d24873c",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "ScrollWheel",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Vector2",
+          "m_Id": "07977216-2351-40c9-9ec1-6b0136f3727d",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "MiddleClick",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "4ee40fc6-fa11-4613-a287-e8a2f4c21d89",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "RightClick",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Button",
+          "m_Id": "84dfa85d-4e0f-4b8e-95fd-b5fd30ccb054",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "TrackedDevicePosition",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Vector3",
+          "m_Id": "6430e64b-0168-4f78-99a0-330efcf46cf8",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "TrackedDeviceOrientation",
+          "m_Type": 2,
+          "m_ExpectedControlType": "Quaternion",
+          "m_Id": "374bec63-b781-41c0-ad81-fc82cc2c0a67",
+          "m_Processors": "",
+          "m_Interactions": "",
+          "m_SingletonActionBindings": [],
+          "m_Flags": 0
+        }
+      ],
+      "m_Bindings": [
+        {
+          "m_Name": "Gamepad",
+          "m_Id": "68b72375-4791-4737-9b1b-dc04bff30aab",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Navigate",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "cfb5d734-8fb5-48fe-a210-9b7b504e0a9d",
+          "m_Path": "<Gamepad>/leftStick/up",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "51bec143-852c-4292-8f99-4b59fd27a9c0",
+          "m_Path": "<Gamepad>/rightStick/up",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "2218530d-16d0-4bdc-b389-c654d5f2b8f3",
+          "m_Path": "<Gamepad>/leftStick/down",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "1a3c1096-6bfb-41e7-a351-0ce3f4e45b8e",
+          "m_Path": "<Gamepad>/rightStick/down",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "a43e5f8e-f3f1-4d2f-a984-e24573296a0e",
+          "m_Path": "<Gamepad>/leftStick/left",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "308c1e4c-fddd-4ece-bd6f-7d72707185e8",
+          "m_Path": "<Gamepad>/rightStick/left",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "65519d2a-9dc7-4908-b845-8bfc9bfff695",
+          "m_Path": "<Gamepad>/leftStick/right",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "a8e36890-a846-4c04-b80c-f938f95a4326",
+          "m_Path": "<Gamepad>/rightStick/right",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "7a41cae7-5191-4e76-be06-6ac23a1d24ed",
+          "m_Path": "<Gamepad>/dpad",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Gamepad",
+          "m_Action": "Navigate",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "Joystick",
+          "m_Id": "ecffefce-e4f4-46a6-8932-01e1f2092991",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Navigate",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "d6991d4e-e2c7-47d2-8183-cb5a05d63415",
+          "m_Path": "<Joystick>/stick/up",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Joystick",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "521e9ee8-aeb2-4897-9959-415e2ad7840f",
+          "m_Path": "<Joystick>/stick/down",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Joystick",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "7dbe639a-0f2a-4c4b-8562-be06e0835a3b",
+          "m_Path": "<Joystick>/stick/left",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Joystick",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "d07a07cb-f04f-4fbb-be55-7373694709b0",
+          "m_Path": "<Joystick>/stick/right",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Joystick",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "Keyboard",
+          "m_Id": "f89cf135-b549-45d6-9434-cba26366fbb2",
+          "m_Path": "2DVector",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "",
+          "m_Action": "Navigate",
+          "m_Flags": 4
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "5fa12bdf-5639-47b4-b15c-149293d611c3",
+          "m_Path": "<Keyboard>/w",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "up",
+          "m_Id": "8840585a-3e31-4ce3-a864-cacb5b9f5c00",
+          "m_Path": "<Keyboard>/upArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "ff0f719d-5114-43b8-85d1-cc61b37cd55a",
+          "m_Path": "<Keyboard>/s",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "down",
+          "m_Id": "807cac83-c7bd-486a-936d-dcc1cd879dda",
+          "m_Path": "<Keyboard>/downArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "7c114a8f-23aa-47bf-b94a-da050772cda0",
+          "m_Path": "<Keyboard>/a",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "left",
+          "m_Id": "7b0af4aa-e0d9-4c1b-98b8-3b47fa95fa77",
+          "m_Path": "<Keyboard>/leftArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "9200cafc-794a-42ac-aca5-3bd418843829",
+          "m_Path": "<Keyboard>/d",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "right",
+          "m_Id": "faa0d4d5-040a-4eaa-abdb-c579b7369121",
+          "m_Path": "<Keyboard>/rightArrow",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Navigate",
+          "m_Flags": 8
+        },
+        {
+          "m_Name": "",
+          "m_Id": "9008808b-21ff-4f15-8cce-b80c5523d7d0",
+          "m_Path": "*/{Submit}",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+          "m_Action": "Submit",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "52d6a0b1-c710-41aa-9d7a-8892aa6bc397",
+          "m_Path": "*/{Cancel}",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+          "m_Action": "Cancel",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "d1278059-4d87-477a-9a06-375c291eee77",
+          "m_Path": "<Mouse>/position",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Point",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "5a0ba64c-130d-4af8-a140-49ee4d12ff46",
+          "m_Path": "<Pen>/position",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Keyboard&Mouse",
+          "m_Action": "Point",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "23224ac0-d4ff-471e-8ce7-ea2146165de4",
+          "m_Path": "<Touchscreen>/touch*/position",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Touch",
+          "m_Action": "Point",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "14fed556-9f7d-46b2-a4b9-d59b9888d096",
+          "m_Path": "<Mouse>/leftButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Keyboard&Mouse",
+          "m_Action": "Click",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "14706a31-fdb7-49df-b5ff-73b1902bee9c",
+          "m_Path": "<Pen>/tip",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Keyboard&Mouse",
+          "m_Action": "Click",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "b999e746-f036-4de7-a303-4bb2e8d89fe7",
+          "m_Path": "<Touchscreen>/touch*/press",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "Touch",
+          "m_Action": "Click",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "38cbc01a-f283-4c7a-aac9-07409f97657f",
+          "m_Path": "<XRController>/trigger",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "XR",
+          "m_Action": "Click",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "ad12b044-ecc6-41c9-bcf3-641894dd5609",
+          "m_Path": "<Mouse>/scroll",
+          "m_Interactions": "",
+          "m_Processors": "ScaleVector2(x=5,y=5)",
+          "m_Groups": ";Keyboard&Mouse",
+          "m_Action": "ScrollWheel",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "92c81dec-4b52-42c4-8adb-1c94ac2b4342",
+          "m_Path": "<Mouse>/middleButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Keyboard&Mouse",
+          "m_Action": "MiddleClick",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "bfbcd05d-957e-4393-8a54-f00369067a73",
+          "m_Path": "<Mouse>/rightButton",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": ";Keyboard&Mouse",
+          "m_Action": "RightClick",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "9bb3d95b-c2ce-4c55-ae4a-790731aa5b68",
+          "m_Path": "<XRController>/devicePosition",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "XR",
+          "m_Action": "TrackedDevicePosition",
+          "m_Flags": 0
+        },
+        {
+          "m_Name": "",
+          "m_Id": "1279af93-74ae-4619-9c26-8f06b68fcc3a",
+          "m_Path": "<XRController>/deviceRotation",
+          "m_Interactions": "",
+          "m_Processors": "",
+          "m_Groups": "XR",
+          "m_Action": "TrackedDeviceOrientation",
+          "m_Flags": 0
+        }
+      ]
+    }
+  ],
+  "m_ControlSchemes": []
+}

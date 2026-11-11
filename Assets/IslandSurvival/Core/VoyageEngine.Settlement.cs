@@ -15,7 +15,12 @@ namespace CardKKK.IslandSurvival.Core
                 Id = s.NextJobId++, RecipeId = recipe.Id, Location = plan.Location, Inputs = plan.Inputs,
                 AuxiliaryIds = lines, Duration = duration, Remaining = duration
             };
-            foreach (VoyageJobInput input in job.Inputs) Find(s, input.CardId).JobId = job.Id;
+            foreach (VoyageJobInput input in job.Inputs)
+            {
+                DetachStack(s, input.CardId, true);
+                RemoveFromSlots(s, input.CardId);
+                Find(s, input.CardId).JobId = job.Id;
+            }
             if (job.Location != 0) Find(s, job.Location).JobId = job.Id;
             s.Jobs.Add(job);
         }
@@ -23,11 +28,12 @@ namespace CardKKK.IslandSurvival.Core
         private int Duration(VoyageRecipeRule recipe, IEnumerable<string> lines) =>
             (int)Math.Max(1, Math.Min(int.MaxValue, recipe.Minutes + lines.Sum(id => (long)auxiliaries[id].MinutesDelta)));
 
-        private static void Release(VoyageState s, VoyageJobState job)
+        private void Release(VoyageState s, VoyageJobState job)
         {
             foreach (VoyageJobInput input in job.Inputs) Find(s, input.CardId).JobId = 0;
             if (job.Location != 0) Find(s, job.Location).JobId = 0;
             s.Jobs.Remove(job);
+            foreach (VoyageJobInput input in job.Inputs) PlaceReturned(s, Find(s, input.CardId));
         }
 
         private string Settle(VoyageState s, VoyageJobState job)
@@ -36,6 +42,7 @@ namespace CardKKK.IslandSurvival.Core
             VoyageRecipeRule recipe = recipes[job.RecipeId];
             VoyageCardState location = job.Location == 0 ? null : Find(s, job.Location);
             VoyageCardState anchor = location ?? Find(s, job.Inputs[0].CardId);
+            anchor = new VoyageCardState { X = anchor.X, Y = anchor.Y };
             List<VoyageCardState> bodies = job.Inputs.Where(input => input.Slot >= 0).Select(input => Find(s, input.CardId))
                 .Where(card => cards[card.CardId].Kind == VoyageCardKind.Body).OrderBy(card => card.Id).ToList();
             VoyageJobInput care = job.Inputs.FirstOrDefault(input => input.Slot >= 0 && recipe.Inputs[input.Slot].MatchLimb);
@@ -155,7 +162,21 @@ namespace CardKKK.IslandSurvival.Core
             if (rule.Kind == VoyageCardKind.Injury && limb == null) return;
             DropPoint(s, anchor.X, anchor.Y, out float x, out float y);
             if (rule.InjuryLevel == 3) ApplySevereInjury(s, rule, limb, x, y);
-            else Spawn(s, id, x, y, limb?.Id ?? 0);
+            else
+            {
+                VoyageCardState produced = Spawn(s, id, x, y, limb?.Id ?? 0);
+                bool stacked = false;
+                if (rules.Desk.AutoStackOnSpawn)
+                    foreach (VoyageCardState target in s.Cards.ToArray())
+                    {
+                        if (!CanStack(s, produced.Id, target.Id, false, out _)) continue;
+                        if (!PlanStack(Copy(s), produced.Id, target.Id, false).Success) continue;
+                        PlanStack(s, produced.Id, target.Id, false);
+                        stacked = true;
+                        break;
+                    }
+                if (!stacked) PlaceReturned(s, produced);
+            }
         }
 
         public VoyageResult Merge(int sourceId, int targetId) => Commit(s =>

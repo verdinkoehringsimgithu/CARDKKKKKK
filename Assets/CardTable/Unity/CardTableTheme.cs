@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CardKKK.Tabletop.Unity
 {
-    [CreateAssetMenu(menuName = "卡牌桌面/美术主题", fileName = "CardTableTheme")]
+    [CreateAssetMenu(menuName = "孤岛生存/历史演示/自由牌桌/美术主题", fileName = "CardTableTheme")]
     public sealed class CardTableTheme : ScriptableObject
     {
         [Header("字体与通用图像")]

@@ -11,6 +11,7 @@ namespace CardKKK.IslandSurvival.Unity
     {
         [InspectorName("出航规则")] public VoyageDefinition Rules = new VoyageDefinition();
         [InspectorName("卡牌资产")] public List<CardDefinition> Cards = new List<CardDefinition>();
+        [InspectorName("牌桌交互规则")] public CardTableConfiguration Tabletop;
 
         private static readonly Dictionary<string, VoyageCardKind> Kinds = new Dictionary<string, VoyageCardKind>(StringComparer.Ordinal)
         {
@@ -24,6 +25,16 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (Rules == null || Rules.Cards == null || Cards == null) throw new InvalidOperationException("缺少出航规则或卡牌目录。");
             VoyageDefinition definition = JsonUtility.FromJson<VoyageDefinition>(JsonUtility.ToJson(Rules));
+            if (Tabletop == null || Tabletop.Rules == null) throw new InvalidOperationException("未绑定牌桌交互规则。");
+            TableRuleSettings desk = Tabletop.Rules;
+            definition.Desk = new VoyageDeskRules
+            {
+                MaxStackSize = desk.MaxPileSize, StackMode = (int)desk.StackRule,
+                AllowStacking = desk.AllowStacking, AllowWholePileDrag = desk.AllowWholePileDrag,
+                AllowSingleCardDrag = desk.AllowSingleCardDrag, StackOffset = desk.PileOffset, SnapDistance = desk.SnapDistance,
+                AutoStackOnSpawn = desk.AutoMergeOnSpawn,
+                Width = desk.Width, Height = desk.Height, CardWidth = desk.CardWidth, CardHeight = desk.CardHeight, Gap = desk.Gap
+            };
             var assets = new Dictionary<string, CardDefinition>(StringComparer.Ordinal);
             foreach (CardDefinition card in Cards)
             {
@@ -38,6 +49,7 @@ namespace CardKKK.IslandSurvival.Unity
                 if (!Kinds.TryGetValue(card.Family ?? "", out VoyageCardKind kind))
                     throw new InvalidOperationException(card.DisplayName + "的卡牌分类不适用于出航规则：" + card.Family);
                 rule.Kind = kind;
+                rule.Family = card.Family;
                 rule.Name = card.DisplayName;
                 rule.SortRank = card.SortRank;
                 rule.Durability = InitialDurability(card);

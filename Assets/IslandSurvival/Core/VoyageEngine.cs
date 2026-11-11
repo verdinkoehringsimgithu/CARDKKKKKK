@@ -11,17 +11,23 @@ namespace CardKKK.IslandSurvival.Core
         private readonly Dictionary<string, VoyageRecipeRule> recipes;
         private readonly Dictionary<string, VoyageAuxiliaryRule> auxiliaries;
         private readonly HashSet<int> heldCards = new HashSet<int>();
+        private readonly VoyageDeskGeometry geometry;
         private VoyageState state;
 
         public VoyageState Snapshot => Copy(state);
         public IReadOnlyList<int> PreparedFollowers => state.Cards.Where(card => card.JobId == 0 &&
-            IsFollowingPreparedLimb(state, card) && !state.Staged.Contains(card.Id)).Select(card => card.Id).ToArray();
+            state.Staged.Contains(card.Limb) && IsFollowingPreparedLimb(state, card) && !state.Staged.Contains(card.Id)).Select(card => card.Id).ToArray();
 
-        public VoyageEngine(VoyageDefinition definition)
+        public VoyageEngine(VoyageDefinition definition, VoyageDeskGeometry measuredGeometry = null)
         {
             string error = ValidateDefinition(definition);
             if (error != "") throw new ArgumentException(error, nameof(definition));
             rules = Copy(definition);
+            geometry = measuredGeometry ?? new VoyageDeskGeometry(rules.Desk.Width, rules.Desk.Height, rules.Desk.CardWidth, rules.Desk.CardHeight);
+            if (!Finite(geometry.Width) || !Finite(geometry.Height) || !Finite(geometry.CardWidth) || !Finite(geometry.CardHeight) ||
+                geometry.Width <= 0 || geometry.Height <= 0 || geometry.CardWidth <= 0 || geometry.CardHeight <= 0 ||
+                geometry.CardWidth > geometry.Width || geometry.CardHeight > geometry.Height)
+                throw new ArgumentException("牌桌显示尺寸无效。", nameof(measuredGeometry));
             cards = rules.Cards.ToDictionary(card => card.Id, StringComparer.Ordinal);
             recipes = rules.Recipes.ToDictionary(recipe => recipe.Id, StringComparer.Ordinal);
             auxiliaries = rules.AuxiliaryLines.ToDictionary(line => line.Id, StringComparer.Ordinal);
@@ -31,6 +37,7 @@ namespace CardKKK.IslandSurvival.Core
             foreach (VoyageStartCard start in rules.StartCards)
                 Spawn(state, start.CardId, start.X, start.Y);
             ResolveEnd(state);
+            MigrateDesktop(state);
             error = ValidateState(state);
             if (error != "") throw new ArgumentException(error, nameof(definition));
         }
@@ -42,6 +49,7 @@ namespace CardKKK.IslandSurvival.Core
             VoyageResult result = change(candidate);
             if (!result.Success || !result.Changed) return result;
             ResolveEnd(candidate);
+            NormalizeDesktop(candidate);
             string error = ValidateState(candidate);
             if (error != "") return Fail(error);
             state = candidate;
@@ -52,7 +60,11 @@ namespace CardKKK.IslandSurvival.Core
         {
             string error = ValidateState(saved);
             if (error != "") return Fail(error);
-            state = Copy(saved);
+            VoyageState candidate = Copy(saved);
+            if (candidate.DeskVersion == 0) MigrateDesktop(candidate);
+            error = ValidateState(candidate);
+            if (error != "") return Fail(error);
+            state = candidate;
             state.Paused = true;
             heldCards.Clear();
             return Ok("已读档，时间暂停。");
@@ -64,53 +76,63 @@ namespace CardKKK.IslandSurvival.Core
             return Commit(s => { s.Paused = paused; return Ok(); });
         }
 
-        public VoyageResult Stage(int cardId) => Commit(s =>
+        public VoyageResult OpenPreparation(int locationId) => Commit(s =>
         {
-            VoyageCardState card = Find(s, cardId);
-            if (card == null) return Fail("这张牌已经离开桌面。");
-            if (card.JobId != 0) return Fail("这张牌正在使用。");
-            if (s.Staged.Contains(cardId)) return Unchanged();
-            if (s.Staged.Count >= MaxStageSize) return Fail("这个组合放不下更多牌。");
-            s.Staged.Add(cardId);
+            VoyageCardState location = Find(s, locationId);
+            if (locationId != 0 && !IsLocation(s, locationId))
+                return Fail("这张牌不是场所。");
+            if (location != null && location.JobId == 0)
+            {
+                RemoveFromSlots(s, locationId);
+                DetachStack(s, locationId, true);
+            }
+            EnsureWorkspace(s, locationId);
+            if (s.PreparationLocation == locationId) return Ok();
+            s.PreparationLocation = locationId;
             return Ok();
         });
+
+        private static bool ReservedElsewhere(VoyageState s, int id) => s.Preparations != null &&
+            s.Preparations.Any(draft => draft.Cards.Contains(id));
+
+        private VoyageResult PutAutomatically(VoyageState s, int id, int location)
+        {
+            VoyageWorkspace workspace = EnsureWorkspace(s, location);
+            foreach (VoyageSlotState slot in workspace.Slots)
+                if (slot.CardId == 0 && CanPut(s, id, location, slot.Index, out _))
+                    return PutIntoSlot(s, id, location, slot.Index);
+            return Fail("这里没有适合这张牌的空槽。");
+        }
+
+        public VoyageResult Stage(int cardId) => Commit(s => PutAutomatically(s, cardId, s.PreparationLocation));
 
         public VoyageResult StagePair(int firstId, int secondId) => Commit(s =>
         {
-            VoyageCardState first = Find(s, firstId);
-            VoyageCardState second = Find(s, secondId);
-            if (first == null || second == null) return Fail("卡牌已离开桌面。");
-            if (first.JobId != 0 || second.JobId != 0) return Fail("卡牌正在使用中。");
-
-            int toAdd = (s.Staged.Contains(firstId) ? 0 : 1) + (firstId != secondId && !s.Staged.Contains(secondId) ? 1 : 0);
-            if (s.Staged.Count + toAdd > MaxStageSize) return Fail("这个组合放不下更多牌。");
-
-            bool changed = false;
-            if (!s.Staged.Contains(firstId)) { s.Staged.Add(firstId); changed = true; }
-            if (firstId != secondId && !s.Staged.Contains(secondId)) { s.Staged.Add(secondId); changed = true; }
-            return changed ? Ok() : Unchanged();
+            VoyageResult first = PutAutomatically(s, firstId, s.PreparationLocation);
+            if (!first.Success) return first;
+            return firstId == secondId ? first : PutAutomatically(s, secondId, s.PreparationLocation);
         });
 
-        public VoyageResult Unstage(int cardId) => Commit(s => s.Staged.Remove(cardId) ? Ok() : Unchanged());
+        public VoyageResult Unstage(int cardId) => Commit(s =>
+        {
+            bool present = s.Workspaces.Any(workspace => workspace.Slots.Any(slot => slot.CardId == cardId));
+            if (!present) return Unchanged();
+            RemoveFromSlots(s, cardId);
+            PlaceReturned(s, Find(s, cardId));
+            return Ok();
+        });
 
         public VoyageResult ClearStage() => Commit(s =>
         {
-            if (s.Staged.Count == 0) return Unchanged();
-            s.Staged.Clear();
+            VoyageWorkspace workspace = EnsureWorkspace(s, s.PreparationLocation);
+            if (workspace.Slots.All(slot => slot.CardId == 0)) return Unchanged();
+            int[] returning = workspace.Slots.Where(slot => slot.CardId != 0).Select(slot => slot.CardId).ToArray();
+            foreach (VoyageSlotState slot in workspace.Slots) slot.CardId = 0;
+            foreach (int id in returning) PlaceReturned(s, Find(s, id));
             return Ok();
         });
 
-        public VoyageResult Move(int cardId, float x, float y) => Commit(s =>
-        {
-            VoyageCardState card = Find(s, cardId);
-            if (!Available(s, card)) return Fail("请先把这张牌移回桌面。");
-            if (IsFollowingPreparedLimb(s, card)) return Fail("这张伤势正随身体牌准备配方。");
-            if (!OnDesk(x, y)) return Fail("这个位置超出了桌面。");
-            if (card.X == x && card.Y == y) return Unchanged();
-            card.X = x;
-            card.Y = y;
-            return Ok();
-        });
+        public VoyageResult Move(int cardId, float x, float y) => DropOnDesk(cardId, x, y, false);
 
         public void Hold(int cardId, bool held)
         {
@@ -118,7 +140,7 @@ namespace CardKKK.IslandSurvival.Core
             else
             {
                 VoyageCardState card = Find(state, cardId);
-                if (Available(state, card) && !IsFollowingPreparedLimb(state, card)) heldCards.Add(cardId);
+                if (card != null && card.JobId == 0 && !IsFollowingPreparedLimb(state, card)) heldCards.Add(cardId);
             }
         }
 
@@ -225,7 +247,18 @@ namespace CardKKK.IslandSurvival.Core
 
         private static void Remove(VoyageState s, VoyageCardState card)
         {
+            DetachStack(s, card.Id, true);
+            RemoveFromSlots(s, card.Id);
+            s.Workspaces.RemoveAll(workspace => workspace.Location == card.Id);
             s.Staged.Remove(card.Id);
+            foreach (VoyagePreparation draft in s.Preparations) draft.Cards.Remove(card.Id);
+            s.Preparations.RemoveAll(draft => draft.Location == card.Id);
+            if (s.PreparationLocation == card.Id)
+            {
+                s.PreparationLocation = 0;
+                VoyagePreparation general = s.Preparations.Find(draft => draft.Location == 0);
+                if (general != null) { s.Staged.AddRange(general.Cards); s.Preparations.Remove(general); }
+            }
             s.Cards.Remove(card);
         }
 
@@ -240,9 +273,9 @@ namespace CardKKK.IslandSurvival.Core
         }
 
         private static VoyageCardState Find(VoyageState s, int id) => s.Cards.Find(card => card.Id == id);
-        private static bool Available(VoyageState s, VoyageCardState card) => card != null && card.JobId == 0 && !s.Staged.Contains(card.Id);
+        private static bool Available(VoyageState s, VoyageCardState card) => card != null && card.JobId == 0 && !s.Staged.Contains(card.Id) && !ReservedElsewhere(s, card.Id);
         private bool IsFollowingPreparedLimb(VoyageState s, VoyageCardState card) => card.Limb != 0 &&
-            cards[card.CardId].Kind == VoyageCardKind.Injury && s.Staged.Contains(card.Limb);
+            cards[card.CardId].Kind == VoyageCardKind.Injury && (s.Staged.Contains(card.Limb) || ReservedElsewhere(s, card.Limb));
         private static bool OnDesk(float x, float y) => x >= 0 && x <= 1 && y >= 0 && y <= 1;
         private static bool Finite(double value) => !double.IsInfinity(value) && !double.IsNaN(value);
         private static double Level(double value) => Math.Max(0, Math.Min(100, value));

@@ -1,0 +1,50 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180555CD0: mov         qword ptr [rsp+8],rbx
+  0000000180555CD5: push        rdi
+  0000000180555CD6: sub         rsp,20h
+  0000000180555CDA: cmp         byte ptr [00000001833688CAh],0
+  0000000180555CE1: mov         rdi,rcx
+  0000000180555CE4: jne         0000000180555CF9
+  0000000180555CE6: lea         rcx,[00000001831C99A8h]
+  0000000180555CED: call        00000001803F2920
+  0000000180555CF2: mov         byte ptr [00000001833688CAh],1
+  0000000180555CF9: cmp         byte ptr [000000018336826Ch],0
+  0000000180555D00: jne         0000000180555D15
+  0000000180555D02: lea         rcx,[000000018318DD78h]
+  0000000180555D09: call        00000001803F2920
+  0000000180555D0E: mov         byte ptr [000000018336826Ch],1
+  0000000180555D15: mov         rax,qword ptr [000000018318DD78h]
+  0000000180555D1C: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180555D23: mov         rbx,qword ptr [rcx+38h]
+  0000000180555D27: mov         rcx,qword ptr [00000001831C99A8h]
+  0000000180555D2E: cmp         dword ptr [rcx+00000000000000E0h],0
+  0000000180555D35: jne         0000000180555D3C
+  0000000180555D37: call        0000000180380F00
+  0000000180555D3C: xor         edx,edx
+  0000000180555D3E: mov         cl,1
+  0000000180555D40: call        00000001805A0590 ; UnityGameFramework.Scripts.PlayerSelectEventArgs::Create
+  0000000180555D45: test        rbx,rbx
+  0000000180555D48: je          0000000180555D65
+  0000000180555D4A: xor         r9d,r9d
+  0000000180555D4D: mov         r8,rax
+  0000000180555D50: mov         rdx,rdi
+  0000000180555D53: mov         rcx,rbx
+  0000000180555D56: mov         rbx,qword ptr [rsp+30h]
+  0000000180555D5B: add         rsp,20h
+  0000000180555D5F: pop         rdi
+  0000000180555D60: jmp         000000018269B9B0
+  0000000180555D65: call        00000001803F2AC0
+  0000000180555D6A: int         3
+  0000000180555D6B: int         3
+  0000000180555D6C: int         3
+  0000000180555D6D: int         3
+  0000000180555D6E: int         3
+  0000000180555D6F: int         3
+
+  Summary
+
+     2294000 il2cpp

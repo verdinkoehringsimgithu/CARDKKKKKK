@@ -1,0 +1,50 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001806FFD50: mov         qword ptr [rsp+8],rbx
+  00000001806FFD55: push        rdi
+  00000001806FFD56: sub         rsp,20h
+  00000001806FFD5A: cmp         byte ptr [000000018336967Ah],0
+  00000001806FFD61: mov         rdi,rcx
+  00000001806FFD64: jne         00000001806FFD79
+  00000001806FFD66: lea         rcx,[00000001831C99A8h]
+  00000001806FFD6D: call        00000001803F2920
+  00000001806FFD72: mov         byte ptr [000000018336967Ah],1
+  00000001806FFD79: cmp         byte ptr [000000018336826Ch],0
+  00000001806FFD80: jne         00000001806FFD95
+  00000001806FFD82: lea         rcx,[000000018318DD78h]
+  00000001806FFD89: call        00000001803F2920
+  00000001806FFD8E: mov         byte ptr [000000018336826Ch],1
+  00000001806FFD95: mov         rax,qword ptr [000000018318DD78h]
+  00000001806FFD9C: mov         rcx,qword ptr [rax+00000000000000B8h]
+  00000001806FFDA3: mov         rbx,qword ptr [rcx+38h]
+  00000001806FFDA7: mov         rcx,qword ptr [00000001831C99A8h]
+  00000001806FFDAE: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001806FFDB5: jne         00000001806FFDBC
+  00000001806FFDB7: call        0000000180380F00
+  00000001806FFDBC: xor         edx,edx
+  00000001806FFDBE: mov         cl,1
+  00000001806FFDC0: call        00000001805A0590
+  00000001806FFDC5: test        rbx,rbx
+  00000001806FFDC8: je          00000001806FFDE5
+  00000001806FFDCA: xor         r9d,r9d
+  00000001806FFDCD: mov         r8,rax
+  00000001806FFDD0: mov         rdx,rdi
+  00000001806FFDD3: mov         rcx,rbx
+  00000001806FFDD6: mov         rbx,qword ptr [rsp+30h]
+  00000001806FFDDB: add         rsp,20h
+  00000001806FFDDF: pop         rdi
+  00000001806FFDE0: jmp         000000018269B9B0
+  00000001806FFDE5: call        00000001803F2AC0
+  00000001806FFDEA: int         3
+  00000001806FFDEB: int         3
+  00000001806FFDEC: int         3
+  00000001806FFDED: int         3
+  00000001806FFDEE: int         3
+  00000001806FFDEF: int         3
+
+  Summary
+
+     2294000 il2cpp

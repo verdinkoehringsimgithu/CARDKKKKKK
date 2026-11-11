@@ -1,0 +1,18 @@
+{
+  "bundle": "work/card-cultivation-handoff/decoded/Entities/Map.bundle",
+  "engine": "2021.3.45f1",
+  "nodes": [
+    {
+      "name": "CAB-11fdcf5bb48f3d3a2ef67134636d2a74",
+      "size": 134002308,
+      "flags": 4,
+      "sha256": "004dd41d1b9bd07f58304870cff538587756503878fd8520bebcc7dee30a6053"
+    },
+    {
+      "name": "CAB-11fdcf5bb48f3d3a2ef67134636d2a74.resS",
+      "size": 16831840,
+      "flags": 0,
+      "sha256": "86f23a9b2ac496e58b66ef77502f828f0311f9aeebb2280e1f353cf2ed9fb09e"
+    }
+  ]
+}

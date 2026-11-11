@@ -1,0 +1,1682 @@
+{
+  "WidgetForm": {
+    "va": 6447060672,
+    "va_hex": "0x1804656c0",
+    "token": "0x60012f2"
+  },
+  "WidgetShowForm": {
+    "va": 6447188992,
+    "va_hex": "0x180484c00",
+    "token": "0x60012f6"
+  },
+  "MapTileShowForm": {
+    "va": 6447177376,
+    "va_hex": "0x180481ea0",
+    "token": "0x60012fa"
+  },
+  "MapTileTrigger": {
+    "va": 6447221040,
+    "va_hex": "0x18048c930",
+    "token": "0x60012fe"
+  },
+  "DungeonForm": {
+    "va": 6447196400,
+    "va_hex": "0x1804868f0",
+    "token": "0x6001302"
+  },
+  "DungeonExitForm": {
+    "va": 6447238688,
+    "va_hex": "0x180490e20",
+    "token": "0x6001306"
+  },
+  "WeaponBagForm": {
+    "va": 6447196336,
+    "va_hex": "0x1804868b0",
+    "token": "0x600130a"
+  },
+  "BagForm": {
+    "va": 6447238656,
+    "va_hex": "0x180490e00",
+    "token": "0x600130e"
+  },
+  "RoleForm": {
+    "va": 6447196352,
+    "va_hex": "0x1804868c0",
+    "token": "0x6001312"
+  },
+  "ThunderForm": {
+    "va": 6447238768,
+    "va_hex": "0x180490e70",
+    "token": "0x6001316"
+  },
+  "FlyForm": {
+    "va": 6447238592,
+    "va_hex": "0x180490dc0",
+    "token": "0x600131a"
+  },
+  "FlyControlForm": {
+    "va": 6447279856,
+    "va_hex": "0x18049aef0",
+    "token": "0x600131e"
+  },
+  "AdverseTimer": {
+    "va": 6447280160,
+    "va_hex": "0x18049b020",
+    "token": "0x6001322"
+  },
+  "NpcGiftTimer": {
+    "va": 6447279968,
+    "va_hex": "0x18049af60",
+    "token": "0x6001326"
+  },
+  "CardPackTimer": {
+    "va": 6447280288,
+    "va_hex": "0x18049b0a0",
+    "token": "0x600132a"
+  },
+  "CardPackForm": {
+    "va": 6447279888,
+    "va_hex": "0x18049af10",
+    "token": "0x600132e"
+  },
+  "BaseFormNormalName": {
+    "va": 6447112256,
+    "va_hex": "0x180472040",
+    "token": "0x6001332"
+  },
+  "BaseFormNormalName_l10n_key": {
+    "va": 6447112240,
+    "va_hex": "0x180472030",
+    "token": "0x6001334"
+  },
+  "BaseFormRunningName": {
+    "va": 6447112288,
+    "va_hex": "0x180472060",
+    "token": "0x6001335"
+  },
+  "BaseFormRunningName_l10n_key": {
+    "va": 6447112224,
+    "va_hex": "0x180472020",
+    "token": "0x6001337"
+  },
+  "BaseFormDoneName": {
+    "va": 6447112400,
+    "va_hex": "0x1804720d0",
+    "token": "0x6001338"
+  },
+  "BaseFormDoneName_l10n_key": {
+    "va": 6447112368,
+    "va_hex": "0x1804720b0",
+    "token": "0x600133a"
+  },
+  "BaseFormResetName": {
+    "va": 6447112384,
+    "va_hex": "0x1804720c0",
+    "token": "0x600133b"
+  },
+  "BaseFormResetName_l10n_key": {
+    "va": 6447112320,
+    "va_hex": "0x180472080",
+    "token": "0x600133d"
+  },
+  "DungeonFormNormalName": {
+    "va": 6447112336,
+    "va_hex": "0x180472090",
+    "token": "0x600133e"
+  },
+  "DungeonFormNormalName_l10n_key": {
+    "va": 6447112080,
+    "va_hex": "0x180471f90",
+    "token": "0x6001340"
+  },
+  "TeleportFormNormalName": {
+    "va": 6447112128,
+    "va_hex": "0x180471fc0",
+    "token": "0x6001341"
+  },
+  "TeleportFormNormalName_l10n_key": {
+    "va": 6447112112,
+    "va_hex": "0x180471fb0",
+    "token": "0x6001343"
+  },
+  "TeleportFormDoneName": {
+    "va": 6447112192,
+    "va_hex": "0x180472000",
+    "token": "0x6001344"
+  },
+  "TeleportFormDoneName_l10n_key": {
+    "va": 6447112208,
+    "va_hex": "0x180472010",
+    "token": "0x6001346"
+  },
+  "BaseTextTimeNumFormat": {
+    "va": 6447112176,
+    "va_hex": "0x180471ff0",
+    "token": "0x6001347"
+  },
+  "BaseTextTimeNumFormat_l10n_key": {
+    "va": 6447112144,
+    "va_hex": "0x180471fd0",
+    "token": "0x6001349"
+  },
+  "BaseTextYearNumFormat": {
+    "va": 6447112160,
+    "va_hex": "0x180471fe0",
+    "token": "0x600134a"
+  },
+  "BaseTextYearNumFormat_l10n_key": {
+    "va": 6447112096,
+    "va_hex": "0x180471fa0",
+    "token": "0x600134c"
+  },
+  "BaseTextTimeFormat": {
+    "va": 6447112272,
+    "va_hex": "0x180472050",
+    "token": "0x600134d"
+  },
+  "BaseTextTimeFormat_l10n_key": {
+    "va": 6447112064,
+    "va_hex": "0x180471f80",
+    "token": "0x600134f"
+  },
+  "BaseTextYearFormat": {
+    "va": 6447112352,
+    "va_hex": "0x1804720a0",
+    "token": "0x6001350"
+  },
+  "BaseTextYearFormat_l10n_key": {
+    "va": 6447111696,
+    "va_hex": "0x180471e10",
+    "token": "0x6001352"
+  },
+  "DungeonTextTimeFormat": {
+    "va": 6447111680,
+    "va_hex": "0x180471e00",
+    "token": "0x6001353"
+  },
+  "DungeonTextTimeFormat_l10n_key": {
+    "va": 6447110496,
+    "va_hex": "0x180471960",
+    "token": "0x6001355"
+  },
+  "DungeonTextYearFormat": {
+    "va": 6447110480,
+    "va_hex": "0x180471950",
+    "token": "0x6001356"
+  },
+  "DungeonTextYearFormat_l10n_key": {
+    "va": 6447110672,
+    "va_hex": "0x180471a10",
+    "token": "0x6001358"
+  },
+  "DungeonTextCloseTimeFormat": {
+    "va": 6447110112,
+    "va_hex": "0x1804717e0",
+    "token": "0x6001359"
+  },
+  "DungeonTextCloseTimeFormat_l10n_key": {
+    "va": 6447110576,
+    "va_hex": "0x1804719b0",
+    "token": "0x600135b"
+  },
+  "DungeonTextCloseYearFormat": {
+    "va": 6447110784,
+    "va_hex": "0x180471a80",
+    "token": "0x600135c"
+  },
+  "DungeonTextCloseYearFormat_l10n_key": {
+    "va": 6447110528,
+    "va_hex": "0x180471980",
+    "token": "0x600135e"
+  },
+  "WeaponBagNumTextForm": {
+    "va": 6447110704,
+    "va_hex": "0x180471a30",
+    "token": "0x600135f"
+  },
+  "WeaponBagNumTextForm_l10n_key": {
+    "va": 6447110720,
+    "va_hex": "0x180471a40",
+    "token": "0x6001361"
+  },
+  "WeaponBagNumRedTextForm": {
+    "va": 6447111136,
+    "va_hex": "0x180471be0",
+    "token": "0x6001362"
+  },
+  "WeaponBagNumRedTextForm_l10n_key": {
+    "va": 6447111504,
+    "va_hex": "0x180471d50",
+    "token": "0x6001364"
+  },
+  "EnergyZeroTipsName": {
+    "va": 6447110208,
+    "va_hex": "0x180471840",
+    "token": "0x6001365"
+  },
+  "EnergyZeroTipsName_l10n_key": {
+    "va": 6447110080,
+    "va_hex": "0x1804717c0",
+    "token": "0x6001367"
+  },
+  "BagFullTipsName": {
+    "va": 6447112048,
+    "va_hex": "0x180471f70",
+    "token": "0x6001368"
+  },
+  "BagFullTipsName_l10n_key": {
+    "va": 6447110512,
+    "va_hex": "0x180471970",
+    "token": "0x600136a"
+  },
+  "BagCreateTipsName": {
+    "va": 6447110032,
+    "va_hex": "0x180471790",
+    "token": "0x600136b"
+  },
+  "BagCreateTipsName_l10n_key": {
+    "va": 6447110128,
+    "va_hex": "0x1804717f0",
+    "token": "0x600136d"
+  },
+  "RecordFormSaveName": {
+    "va": 6447110160,
+    "va_hex": "0x180471810",
+    "token": "0x600136e"
+  },
+  "RecordFormSaveName_l10n_key": {
+    "va": 6447110176,
+    "va_hex": "0x180471820",
+    "token": "0x6001370"
+  },
+  "RecordFormCoverName": {
+    "va": 6447111120,
+    "va_hex": "0x180471bd0",
+    "token": "0x6001371"
+  },
+  "RecordFormCoverName_l10n_key": {
+    "va": 6447111488,
+    "va_hex": "0x180471d40",
+    "token": "0x6001373"
+  },
+  "RecordFormLoadName": {
+    "va": 6447110592,
+    "va_hex": "0x1804719c0",
+    "token": "0x6001374"
+  },
+  "RecordFormLoadName_l10n_key": {
+    "va": 6447110608,
+    "va_hex": "0x1804719d0",
+    "token": "0x6001376"
+  },
+  "RecordFormFullName": {
+    "va": 6447110064,
+    "va_hex": "0x1804717b0",
+    "token": "0x6001377"
+  },
+  "RecordFormFullName_l10n_key": {
+    "va": 6447110688,
+    "va_hex": "0x180471a20",
+    "token": "0x6001379"
+  },
+  "RecordFormDelName": {
+    "va": 6447110016,
+    "va_hex": "0x180471780",
+    "token": "0x600137a"
+  },
+  "RecordFormDelName_l10n_key": {
+    "va": 6447110096,
+    "va_hex": "0x1804717d0",
+    "token": "0x600137c"
+  },
+  "NewbieRestartName": {
+    "va": 6447110048,
+    "va_hex": "0x1804717a0",
+    "token": "0x600137d"
+  },
+  "NewbieRestartName_l10n_key": {
+    "va": 6447110240,
+    "va_hex": "0x180471860",
+    "token": "0x600137f"
+  },
+  "NewbieNotSaveName": {
+    "va": 6447110144,
+    "va_hex": "0x180471800",
+    "token": "0x6001380"
+  },
+  "NewbieNotSaveName_l10n_key": {
+    "va": 6447110192,
+    "va_hex": "0x180471830",
+    "token": "0x6001382"
+  },
+  "NewbieGameEndName": {
+    "va": 6447110224,
+    "va_hex": "0x180471850",
+    "token": "0x6001383"
+  },
+  "NewbieGameEndName_l10n_key": {
+    "va": 6447110256,
+    "va_hex": "0x180471870",
+    "token": "0x6001385"
+  },
+  "NewGamePauseName": {
+    "va": 6447110272,
+    "va_hex": "0x180471880",
+    "token": "0x6001386"
+  },
+  "NewGamePauseName_l10n_key": {
+    "va": 6447110288,
+    "va_hex": "0x180471890",
+    "token": "0x6001388"
+  },
+  "LoadGamePauseName": {
+    "va": 6447110320,
+    "va_hex": "0x1804718b0",
+    "token": "0x6001389"
+  },
+  "LoadGamePauseName_l10n_key": {
+    "va": 6447110304,
+    "va_hex": "0x1804718a0",
+    "token": "0x600138b"
+  },
+  "NewFreeGamePauseName": {
+    "va": 6447112448,
+    "va_hex": "0x180472100",
+    "token": "0x600138c"
+  },
+  "NewFreeGamePauseName_l10n_key": {
+    "va": 6447110896,
+    "va_hex": "0x180471af0",
+    "token": "0x600138e"
+  },
+  "LoadFreeGamePauseName": {
+    "va": 6447110464,
+    "va_hex": "0x180471940",
+    "token": "0x600138f"
+  },
+  "LoadFreeGamePauseName_l10n_key": {
+    "va": 6447110864,
+    "va_hex": "0x180471ad0",
+    "token": "0x6001391"
+  },
+  "NewbieGameSkipName": {
+    "va": 6447110848,
+    "va_hex": "0x180471ac0",
+    "token": "0x6001392"
+  },
+  "NewbieGameSkipName_l10n_key": {
+    "va": 6447110832,
+    "va_hex": "0x180471ab0",
+    "token": "0x6001394"
+  },
+  "SpawnMonsterSkipName": {
+    "va": 6447110880,
+    "va_hex": "0x180471ae0",
+    "token": "0x6001395"
+  },
+  "SpawnMonsterSkipName_l10n_key": {
+    "va": 6447110448,
+    "va_hex": "0x180471930",
+    "token": "0x6001397"
+  },
+  "ExitDungeonItemName": {
+    "va": 6447109904,
+    "va_hex": "0x180471710",
+    "token": "0x6001398"
+  },
+  "ExitDungeonItemName_l10n_key": {
+    "va": 6447111536,
+    "va_hex": "0x180471d70",
+    "token": "0x600139a"
+  },
+  "FlyFormCreateTipsName": {
+    "va": 6447111472,
+    "va_hex": "0x180471d30",
+    "token": "0x600139b"
+  },
+  "FlyFormCreateTipsName_l10n_key": {
+    "va": 6447110336,
+    "va_hex": "0x1804718c0",
+    "token": "0x600139d"
+  },
+  "EnergyCostName": {
+    "va": 6447110560,
+    "va_hex": "0x1804719a0",
+    "token": "0x600139e"
+  },
+  "EnergyCostName_l10n_key": {
+    "va": 6447111728,
+    "va_hex": "0x180471e30",
+    "token": "0x60013a0"
+  },
+  "CoreEmptyFormNormalName": {
+    "va": 6447112016,
+    "va_hex": "0x180471f50",
+    "token": "0x60013a1"
+  },
+  "CoreEmptyFormNormalName_l10n_key": {
+    "va": 6447111552,
+    "va_hex": "0x180471d80",
+    "token": "0x60013a3"
+  },
+  "SpiritFarmFormNormalName": {
+    "va": 6447110544,
+    "va_hex": "0x180471990",
+    "token": "0x60013a4"
+  },
+  "SpiritFarmFormNormalName_l10n_key": {
+    "va": 6447111376,
+    "va_hex": "0x180471cd0",
+    "token": "0x60013a6"
+  },
+  "GameEndingFormNormalName": {
+    "va": 6447110416,
+    "va_hex": "0x180471910",
+    "token": "0x60013a7"
+  },
+  "GameEndingFormNormalName_l10n_key": {
+    "va": 6447110384,
+    "va_hex": "0x1804718f0",
+    "token": "0x60013a9"
+  },
+  "KeyboardNormalName": {
+    "va": 6447110400,
+    "va_hex": "0x180471900",
+    "token": "0x60013aa"
+  },
+  "KeyboardNormalName_l10n_key": {
+    "va": 6447110352,
+    "va_hex": "0x1804718d0",
+    "token": "0x60013ac"
+  },
+  "FarmCardSlotExName": {
+    "va": 6447111168,
+    "va_hex": "0x180471c00",
+    "token": "0x60013ad"
+  },
+  "FarmCardSlotExName_l10n_key": {
+    "va": 6447111152,
+    "va_hex": "0x180471bf0",
+    "token": "0x60013af"
+  },
+  "TalentNumName": {
+    "va": 6447111520,
+    "va_hex": "0x180471d60",
+    "token": "0x60013b0"
+  },
+  "TalentNumName_l10n_key": {
+    "va": 6447110368,
+    "va_hex": "0x1804718e0",
+    "token": "0x60013b2"
+  },
+  "ShopCardStoneName": {
+    "va": 6447109952,
+    "va_hex": "0x180471740",
+    "token": "0x60013b3"
+  },
+  "ShopCardStoneName_l10n_key": {
+    "va": 6447111904,
+    "va_hex": "0x180471ee0",
+    "token": "0x60013b5"
+  },
+  "ShopCardPriceName": {
+    "va": 6447111856,
+    "va_hex": "0x180471eb0",
+    "token": "0x60013b6"
+  },
+  "ShopCardPriceName_l10n_key": {
+    "va": 6447111760,
+    "va_hex": "0x180471e50",
+    "token": "0x60013b8"
+  },
+  "TalkShowNumName": {
+    "va": 6447110432,
+    "va_hex": "0x180471920",
+    "token": "0x60013b9"
+  },
+  "TalkShowNumName_l10n_key": {
+    "va": 6447111744,
+    "va_hex": "0x180471e40",
+    "token": "0x60013bb"
+  },
+  "MapExitNumName": {
+    "va": 6447111776,
+    "va_hex": "0x180471e60",
+    "token": "0x60013bc"
+  },
+  "MapExitNumName_l10n_key": {
+    "va": 6447109968,
+    "va_hex": "0x180471750",
+    "token": "0x60013be"
+  },
+  "TipsSecShowNumName": {
+    "va": 6447109984,
+    "va_hex": "0x180471760",
+    "token": "0x60013bf"
+  },
+  "TipsSecShowNumName_l10n_key": {
+    "va": 6447111952,
+    "va_hex": "0x180471f10",
+    "token": "0x60013c1"
+  },
+  "UiScaleNumName": {
+    "va": 6447111920,
+    "va_hex": "0x180471ef0",
+    "token": "0x60013c2"
+  },
+  "UiScaleNumName_l10n_key": {
+    "va": 6447111936,
+    "va_hex": "0x180471f00",
+    "token": "0x60013c4"
+  },
+  "CollectCardDescName": {
+    "va": 6447111792,
+    "va_hex": "0x180471e70",
+    "token": "0x60013c5"
+  },
+  "CollectCardDescName_l10n_key": {
+    "va": 6447111824,
+    "va_hex": "0x180471e90",
+    "token": "0x60013c7"
+  },
+  "BaseTagNumErrorName": {
+    "va": 6447111808,
+    "va_hex": "0x180471e80",
+    "token": "0x60013c8"
+  },
+  "BaseTagNumErrorName_l10n_key": {
+    "va": 6447111840,
+    "va_hex": "0x180471ea0",
+    "token": "0x60013ca"
+  },
+  "NeedFlyDownName": {
+    "va": 6447111008,
+    "va_hex": "0x180471b60",
+    "token": "0x60013cb"
+  },
+  "NeedFlyDownName_l10n_key": {
+    "va": 6447110976,
+    "va_hex": "0x180471b40",
+    "token": "0x60013cd"
+  },
+  "RoleNewName": {
+    "va": 6447110912,
+    "va_hex": "0x180471b00",
+    "token": "0x60013ce"
+  },
+  "RoleNewName_l10n_key": {
+    "va": 6447110960,
+    "va_hex": "0x180471b30",
+    "token": "0x60013d0"
+  },
+  "RoleAgeTimeNewbie": {
+    "va": 6449535216,
+    "va_hex": "0x1806c18f0",
+    "token": "0x60013d1"
+  },
+  "RoleAgeFormat": {
+    "va": 6447111024,
+    "va_hex": "0x180471b70",
+    "token": "0x60013d3"
+  },
+  "RoleAgeFormat_l10n_key": {
+    "va": 6447110928,
+    "va_hex": "0x180471b10",
+    "token": "0x60013d5"
+  },
+  "RoleAgeMaxFormat": {
+    "va": 6447111040,
+    "va_hex": "0x180471b80",
+    "token": "0x60013d6"
+  },
+  "RoleAgeMaxFormat_l10n_key": {
+    "va": 6447111104,
+    "va_hex": "0x180471bc0",
+    "token": "0x60013d8"
+  },
+  "RoleAgeYearFormat": {
+    "va": 6447110992,
+    "va_hex": "0x180471b50",
+    "token": "0x60013d9"
+  },
+  "RoleAgeYearFormat_l10n_key": {
+    "va": 6447110944,
+    "va_hex": "0x180471b20",
+    "token": "0x60013db"
+  },
+  "RoleAgeTimeFree": {
+    "va": 6449535200,
+    "va_hex": "0x1806c18e0",
+    "token": "0x60013dc"
+  },
+  "RoleFreeMapId": {
+    "va": 6449535232,
+    "va_hex": "0x1806c1900",
+    "token": "0x60013de"
+  },
+  "AgeYearEndFormat": {
+    "va": 6447111872,
+    "va_hex": "0x180471ec0",
+    "token": "0x60013e2"
+  },
+  "AgeYearEndFormat_l10n_key": {
+    "va": 6447111984,
+    "va_hex": "0x180471f30",
+    "token": "0x60013e4"
+  },
+  "AgeYearStartFormat": {
+    "va": 6447112000,
+    "va_hex": "0x180471f40",
+    "token": "0x60013e5"
+  },
+  "AgeYearStartFormat_l10n_key": {
+    "va": 6447111200,
+    "va_hex": "0x180471c20",
+    "token": "0x60013e7"
+  },
+  "SoulNumInit": {
+    "va": 6449535328,
+    "va_hex": "0x1806c1960",
+    "token": "0x60013e8"
+  },
+  "SpeedNumInit": {
+    "va": 6449536352,
+    "va_hex": "0x1806c1d60",
+    "token": "0x60013ea"
+  },
+  "SkillSlotNumInit": {
+    "va": 6449535280,
+    "va_hex": "0x1806c1930",
+    "token": "0x60013ec"
+  },
+  "SpellSlotNumInit": {
+    "va": 6449536368,
+    "va_hex": "0x1806c1d70",
+    "token": "0x60013ee"
+  },
+  "MapResourceShowNum": {
+    "va": 6449534864,
+    "va_hex": "0x1806c1790",
+    "token": "0x60013f0"
+  },
+  "BaseMapEventInfoList": {
+    "va": 6447111216,
+    "va_hex": "0x180471c30",
+    "token": "0x60013f2"
+  },
+  "ArenaOpenTime": {
+    "va": 6449531664,
+    "va_hex": "0x1806c0b10",
+    "token": "0x60013f4"
+  },
+  "ArenaOpenWidgetId": {
+    "va": 6449531680,
+    "va_hex": "0x1806c0b20",
+    "token": "0x60013f6"
+  },
+  "WallOpenNum": {
+    "va": 6449536784,
+    "va_hex": "0x1806c1f10",
+    "token": "0x60013fa"
+  },
+  "WallOpenWidgetId": {
+    "va": 6449536800,
+    "va_hex": "0x1806c1f20",
+    "token": "0x60013fc"
+  },
+  "WallMapEventInfoId": {
+    "va": 6449536752,
+    "va_hex": "0x1806c1ef0",
+    "token": "0x6001400"
+  },
+  "WallMapEventNum": {
+    "va": 6449536768,
+    "va_hex": "0x1806c1f00",
+    "token": "0x6001404"
+  },
+  "FlyShowWidgetSystemNum": {
+    "va": 6447111456,
+    "va_hex": "0x180471d20",
+    "token": "0x6001406"
+  },
+  "BaseCanFightCheckSoul": {
+    "va": 6447111264,
+    "va_hex": "0x180471c60",
+    "token": "0x6001408"
+  },
+  "MakeTimerCopyCardNum": {
+    "va": 6449534800,
+    "va_hex": "0x1806c1750",
+    "token": "0x600140a"
+  },
+  "CardSlot": {
+    "va": 6449532416,
+    "va_hex": "0x1806c0e00",
+    "token": "0x600140c"
+  },
+  "CardSlotResourceWidget": {
+    "va": 6449532352,
+    "va_hex": "0x1806c0dc0",
+    "token": "0x6001410"
+  },
+  "CardSlotSeal": {
+    "va": 6449532384,
+    "va_hex": "0x1806c0de0",
+    "token": "0x6001414"
+  },
+  "CardSlotRecipeWidget": {
+    "va": 6449532320,
+    "va_hex": "0x1806c0da0",
+    "token": "0x6001418"
+  },
+  "CardSlotBed": {
+    "va": 6449532192,
+    "va_hex": "0x1806c0d20",
+    "token": "0x600141c"
+  },
+  "CardSlotLeave": {
+    "va": 6449532288,
+    "va_hex": "0x1806c0d80",
+    "token": "0x6001420"
+  },
+  "CardSlotBox": {
+    "va": 6449532224,
+    "va_hex": "0x1806c0d40",
+    "token": "0x6001424"
+  },
+  "CardSlotFly": {
+    "va": 6449532256,
+    "va_hex": "0x1806c0d60",
+    "token": "0x6001428"
+  },
+  "TimerProgress": {
+    "va": 6449536512,
+    "va_hex": "0x1806c1e00",
+    "token": "0x600142c"
+  },
+  "TimerProgressAdverse": {
+    "va": 6449536480,
+    "va_hex": "0x1806c1de0",
+    "token": "0x6001430"
+  },
+  "CardGrid": {
+    "va": 6449532128,
+    "va_hex": "0x1806c0ce0",
+    "token": "0x6001434"
+  },
+  "CardBag": {
+    "va": 6449532032,
+    "va_hex": "0x1806c0c80",
+    "token": "0x6001438"
+  },
+  "CardLook": {
+    "va": 6449532160,
+    "va_hex": "0x1806c0d00",
+    "token": "0x600143c"
+  },
+  "CardBoxForm": {
+    "va": 6449532064,
+    "va_hex": "0x1806c0ca0",
+    "token": "0x6001440"
+  },
+  "CardBox": {
+    "va": 6449532096,
+    "va_hex": "0x1806c0cc0",
+    "token": "0x6001444"
+  },
+  "WorkBaseNum": {
+    "va": 6449536896,
+    "va_hex": "0x1806c1f80",
+    "token": "0x6001448"
+  },
+  "WorkAddNum": {
+    "va": 6449536880,
+    "va_hex": "0x1806c1f70",
+    "token": "0x600144a"
+  },
+  "WidgetBaseNum": {
+    "va": 6449536832,
+    "va_hex": "0x1806c1f40",
+    "token": "0x600144c"
+  },
+  "WidgetAddNum": {
+    "va": 6449536816,
+    "va_hex": "0x1806c1f30",
+    "token": "0x600144e"
+  },
+  "FightArea": {
+    "va": 6449534496,
+    "va_hex": "0x1806c1620",
+    "token": "0x6001450"
+  },
+  "CloudZone": {
+    "va": 6449532576,
+    "va_hex": "0x1806c0ea0",
+    "token": "0x6001454"
+  },
+  "CloudShow": {
+    "va": 6449532544,
+    "va_hex": "0x1806c0e80",
+    "token": "0x6001458"
+  },
+  "EntityTopNum": {
+    "va": 6449534320,
+    "va_hex": "0x1806c1570",
+    "token": "0x600145c"
+  },
+  "EntityHeight": {
+    "va": 6449534272,
+    "va_hex": "0x1806c1540",
+    "token": "0x600145e"
+  },
+  "EntityBoxHeight": {
+    "va": 6449534192,
+    "va_hex": "0x1806c14f0",
+    "token": "0x6001460"
+  },
+  "EntityFlyHeight": {
+    "va": 6449534224,
+    "va_hex": "0x1806c1510",
+    "token": "0x6001462"
+  },
+  "EntityFormHeight": {
+    "va": 6449534256,
+    "va_hex": "0x1806c1530",
+    "token": "0x6001464"
+  },
+  "EntityFormBoxHeight": {
+    "va": 6449534240,
+    "va_hex": "0x1806c1520",
+    "token": "0x6001466"
+  },
+  "EntityOverlayHeightOffset": {
+    "va": 6449534288,
+    "va_hex": "0x1806c1550",
+    "token": "0x6001468"
+  },
+  "EntityOverlayOffset": {
+    "va": 6449534304,
+    "va_hex": "0x1806c1560",
+    "token": "0x600146a"
+  },
+  "EntityCollapsedOverlayOffset": {
+    "va": 6449534208,
+    "va_hex": "0x1806c1500",
+    "token": "0x600146c"
+  },
+  "EffectDamage": {
+    "va": 6449533248,
+    "va_hex": "0x1806c1140",
+    "token": "0x600146e"
+  },
+  "EffectDamageArmor": {
+    "va": 6449533152,
+    "va_hex": "0x1806c10e0",
+    "token": "0x6001472"
+  },
+  "EffectAttack": {
+    "va": 6449532896,
+    "va_hex": "0x1806c0fe0",
+    "token": "0x6001476"
+  },
+  "EffectHealth": {
+    "va": 6449533376,
+    "va_hex": "0x1806c11c0",
+    "token": "0x600147a"
+  },
+  "EffectArmor": {
+    "va": 6449532800,
+    "va_hex": "0x1806c0f80",
+    "token": "0x600147e"
+  },
+  "EffectDeath": {
+    "va": 6449533280,
+    "va_hex": "0x1806c1160",
+    "token": "0x6001482"
+  },
+  "EffectSelect": {
+    "va": 6449533728,
+    "va_hex": "0x1806c1320",
+    "token": "0x6001486"
+  },
+  "EffectUnusable": {
+    "va": 6449534176,
+    "va_hex": "0x1806c14e0",
+    "token": "0x600148a"
+  },
+  "EffectRefresh": {
+    "va": 6449533664,
+    "va_hex": "0x1806c12e0",
+    "token": "0x600148e"
+  },
+  "EffectBroken": {
+    "va": 6449532960,
+    "va_hex": "0x1806c1020",
+    "token": "0x6001492"
+  },
+  "EffectThunder": {
+    "va": 6449534048,
+    "va_hex": "0x1806c1460",
+    "token": "0x6001496"
+  },
+  "EffectAlert": {
+    "va": 6449532768,
+    "va_hex": "0x1806c0f60",
+    "token": "0x600149a"
+  },
+  "EffectTimerSelect": {
+    "va": 6449534112,
+    "va_hex": "0x1806c14a0",
+    "token": "0x600149e"
+  },
+  "EffectDissolve": {
+    "va": 6449533312,
+    "va_hex": "0x1806c1180",
+    "token": "0x60014a2"
+  },
+  "EffectTimerDisappear": {
+    "va": 6449534080,
+    "va_hex": "0x1806c1480",
+    "token": "0x60014a6"
+  },
+  "EffectRoleLevelRefresh": {
+    "va": 6449533696,
+    "va_hex": "0x1806c1300",
+    "token": "0x60014aa"
+  },
+  "EffectPetEating": {
+    "va": 6449533600,
+    "va_hex": "0x1806c12a0",
+    "token": "0x60014ae"
+  },
+  "EffectSoulSee": {
+    "va": 6449533856,
+    "va_hex": "0x1806c13a0",
+    "token": "0x60014b2"
+  },
+  "EffectShield": {
+    "va": 6449533760,
+    "va_hex": "0x1806c1340",
+    "token": "0x60014b6"
+  },
+  "EffectTaunt": {
+    "va": 6449533920,
+    "va_hex": "0x1806c13e0",
+    "token": "0x60014ba"
+  },
+  "EffectBan": {
+    "va": 6449532928,
+    "va_hex": "0x1806c1000",
+    "token": "0x60014be"
+  },
+  "EffectImmobilize": {
+    "va": 6449533440,
+    "va_hex": "0x1806c1200",
+    "token": "0x60014c2"
+  },
+  "EffectChaos": {
+    "va": 6449533056,
+    "va_hex": "0x1806c1080",
+    "token": "0x60014c6"
+  },
+  "EffectIcon": {
+    "va": 6449533408,
+    "va_hex": "0x1806c11e0",
+    "token": "0x60014ca"
+  },
+  "EffectLine": {
+    "va": 6449533536,
+    "va_hex": "0x1806c1260",
+    "token": "0x60014ce"
+  },
+  "EffectCardFly": {
+    "va": 6449533024,
+    "va_hex": "0x1806c1060",
+    "token": "0x60014d2"
+  },
+  "EffectCardCatch": {
+    "va": 6449532992,
+    "va_hex": "0x1806c1040",
+    "token": "0x60014d6"
+  },
+  "EffectPoison": {
+    "va": 6449533632,
+    "va_hex": "0x1806c12c0",
+    "token": "0x60014da"
+  },
+  "EffectDamagePoison": {
+    "va": 6449533216,
+    "va_hex": "0x1806c1120",
+    "token": "0x60014de"
+  },
+  "EffectSummon": {
+    "va": 6449533888,
+    "va_hex": "0x1806c13c0",
+    "token": "0x60014e2"
+  },
+  "EffectAttackNum": {
+    "va": 6449532864,
+    "va_hex": "0x1806c0fc0",
+    "token": "0x60014e6"
+  },
+  "EffectLifeTimeRed": {
+    "va": 6449533504,
+    "va_hex": "0x1806c1240",
+    "token": "0x60014ea"
+  },
+  "EffectFlyGift": {
+    "va": 6449533344,
+    "va_hex": "0x1806c11a0",
+    "token": "0x60014ee"
+  },
+  "EffectTimerShow": {
+    "va": 6449534144,
+    "va_hex": "0x1806c14c0",
+    "token": "0x60014f2"
+  },
+  "EffectCoreGoldenEat": {
+    "va": 6449533120,
+    "va_hex": "0x1806c10c0",
+    "token": "0x60014f6"
+  },
+  "EffectCoreGoldenDone": {
+    "va": 6449533088,
+    "va_hex": "0x1806c10a0",
+    "token": "0x60014fa"
+  },
+  "EffectThunderArray": {
+    "va": 6449533952,
+    "va_hex": "0x1806c1400",
+    "token": "0x60014fe"
+  },
+  "EffectLevelUpTips": {
+    "va": 6449533472,
+    "va_hex": "0x1806c1220",
+    "token": "0x6001502"
+  },
+  "EffectThunderTips": {
+    "va": 6449534016,
+    "va_hex": "0x1806c1440",
+    "token": "0x6001506"
+  },
+  "EffectThunderPower": {
+    "va": 6449533984,
+    "va_hex": "0x1806c1420",
+    "token": "0x600150a"
+  },
+  "EffectDamageCastle": {
+    "va": 6449533184,
+    "va_hex": "0x1806c1100",
+    "token": "0x600150e"
+  },
+  "EffectShopForm": {
+    "va": 6449533824,
+    "va_hex": "0x1806c1380",
+    "token": "0x6001512"
+  },
+  "EffectShopCard": {
+    "va": 6449533792,
+    "va_hex": "0x1806c1360",
+    "token": "0x6001516"
+  },
+  "EffectLock": {
+    "va": 6449533568,
+    "va_hex": "0x1806c1280",
+    "token": "0x600151a"
+  },
+  "EffectArrayLock": {
+    "va": 6449532832,
+    "va_hex": "0x1806c0fa0",
+    "token": "0x600151e"
+  },
+  "RoleLevelUpTips": {
+    "va": 6449535264,
+    "va_hex": "0x1806c1920",
+    "token": "0x6001522"
+  },
+  "NewWidgetTips": {
+    "va": 6449534896,
+    "va_hex": "0x1806c17b0",
+    "token": "0x6001526"
+  },
+  "SoulLevelUpTips": {
+    "va": 6449535312,
+    "va_hex": "0x1806c1950",
+    "token": "0x600152a"
+  },
+  "MapAreaExpandTips": {
+    "va": 6449534848,
+    "va_hex": "0x1806c1780",
+    "token": "0x600152e"
+  },
+  "NpcWishTips": {
+    "va": 6449535088,
+    "va_hex": "0x1806c1870",
+    "token": "0x6001532"
+  },
+  "CoreGoldenWishTips": {
+    "va": 6449532736,
+    "va_hex": "0x1806c0f40",
+    "token": "0x6001536"
+  },
+  "QuaUpgradeTips": {
+    "va": 6449535184,
+    "va_hex": "0x1806c18d0",
+    "token": "0x600153a"
+  },
+  "NpcTalkTips": {
+    "va": 6449535056,
+    "va_hex": "0x1806c1850",
+    "token": "0x600153e"
+  },
+  "BaseCanNpcEnemyCard": {
+    "va": 6449531872,
+    "va_hex": "0x1806c0be0",
+    "token": "0x6001542"
+  },
+  "BaseCanFightEnemyCard": {
+    "va": 6449531776,
+    "va_hex": "0x1806c0b80",
+    "token": "0x6001544"
+  },
+  "BaseCanEatEnemyCard": {
+    "va": 6449531696,
+    "va_hex": "0x1806c0b30",
+    "token": "0x6001546"
+  },
+  "BaseCanEatPetCard": {
+    "va": 6449531712,
+    "va_hex": "0x1806c0b40",
+    "token": "0x6001548"
+  },
+  "BaseCanRoleForm": {
+    "va": 6449531936,
+    "va_hex": "0x1806c0c20",
+    "token": "0x600154a"
+  },
+  "BaseCanMapCheckCard": {
+    "va": 6449531840,
+    "va_hex": "0x1806c0bc0",
+    "token": "0x600154e"
+  },
+  "BaseCanMapNeedCard": {
+    "va": 6449531856,
+    "va_hex": "0x1806c0bd0",
+    "token": "0x6001550"
+  },
+  "BaseCanEnergyCostCard": {
+    "va": 6449531728,
+    "va_hex": "0x1806c0b50",
+    "token": "0x6001552"
+  },
+  "BaseCanFightDeathTalent": {
+    "va": 6449531760,
+    "va_hex": "0x1806c0b70",
+    "token": "0x6001554"
+  },
+  "BaseCanFightDeathPrize": {
+    "va": 6449531744,
+    "va_hex": "0x1806c0b60",
+    "token": "0x6001556"
+  },
+  "BaseCanStackCard": {
+    "va": 6449531984,
+    "va_hex": "0x1806c0c50",
+    "token": "0x6001558"
+  },
+  "BaseCanFightWinRecoverHealth": {
+    "va": 6449531792,
+    "va_hex": "0x1806c0b90",
+    "token": "0x600155a"
+  },
+  "BaseCanShowLevel": {
+    "va": 6449531968,
+    "va_hex": "0x1806c0c40",
+    "token": "0x600155c"
+  },
+  "BaseCanPriceCard": {
+    "va": 6449531904,
+    "va_hex": "0x1806c0c00",
+    "token": "0x600155e"
+  },
+  "BaseCanFlyDownDelCard": {
+    "va": 6449531824,
+    "va_hex": "0x1806c0bb0",
+    "token": "0x6001562"
+  },
+  "BaseCanFlyCheckCard": {
+    "va": 6449531808,
+    "va_hex": "0x1806c0ba0",
+    "token": "0x6001564"
+  },
+  "BaseCanRoleHeadIcon": {
+    "va": 6449531952,
+    "va_hex": "0x1806c0c30",
+    "token": "0x6001566"
+  },
+  "BaseMagicNumber": {
+    "va": 6449532000,
+    "va_hex": "0x1806c0c60",
+    "token": "0x6001568"
+  },
+  "MakeTimerInit": {
+    "va": 6449534816,
+    "va_hex": "0x1806c1760",
+    "token": "0x600156a"
+  },
+  "ProduceTimerInit": {
+    "va": 6449535152,
+    "va_hex": "0x1806c18b0",
+    "token": "0x600156c"
+  },
+  "ExploreTimerInit": {
+    "va": 6449534464,
+    "va_hex": "0x1806c1600",
+    "token": "0x600156e"
+  },
+  "OnceTimerHide": {
+    "va": 6449535104,
+    "va_hex": "0x1806c1880",
+    "token": "0x6001570"
+  },
+  "ExpLevelUp": {
+    "va": 6449534416,
+    "va_hex": "0x1806c15d0",
+    "token": "0x6001572"
+  },
+  "ExpLevelUpPet": {
+    "va": 6449534384,
+    "va_hex": "0x1806c15b0",
+    "token": "0x6001576"
+  },
+  "WidgetEmpty": {
+    "va": 6449536864,
+    "va_hex": "0x1806c1f60",
+    "token": "0x600157a"
+  },
+  "NpcHighLevelPeep": {
+    "va": 6449534992,
+    "va_hex": "0x1806c1810",
+    "token": "0x600157e"
+  },
+  "NpcLevelPeep": {
+    "va": 6449535024,
+    "va_hex": "0x1806c1830",
+    "token": "0x6001582"
+  },
+  "Guide9004": {
+    "va": 6449534560,
+    "va_hex": "0x1806c1660",
+    "token": "0x6001586"
+  },
+  "MakePotionFail": {
+    "va": 6449534784,
+    "va_hex": "0x1806c1740",
+    "token": "0x600158a"
+  },
+  "AdverseFunc": {
+    "va": 6449531648,
+    "va_hex": "0x1806c0b00",
+    "token": "0x600158e"
+  },
+  "ExpPrizeId": {
+    "va": 6449534448,
+    "va_hex": "0x1806c15f0",
+    "token": "0x6001592"
+  },
+  "InsightFunc": {
+    "va": 6449534656,
+    "va_hex": "0x1806c16c0",
+    "token": "0x6001596"
+  },
+  "KillCardId": {
+    "va": 6449534720,
+    "va_hex": "0x1806c1700",
+    "token": "0x600159a"
+  },
+  "KillCardFunc": {
+    "va": 6449534688,
+    "va_hex": "0x1806c16e0",
+    "token": "0x600159e"
+  },
+  "PinCardId": {
+    "va": 6449535136,
+    "va_hex": "0x1806c18a0",
+    "token": "0x60015a2"
+  },
+  "LuckyPrizeId": {
+    "va": 6449534752,
+    "va_hex": "0x1806c1720",
+    "token": "0x60015a6"
+  },
+  "GhostPrizeId": {
+    "va": 6449534528,
+    "va_hex": "0x1806c1640",
+    "token": "0x60015aa"
+  },
+  "NewbieSplashEndTalk": {
+    "va": 6449534944,
+    "va_hex": "0x1806c17e0",
+    "token": "0x60015ae"
+  },
+  "NewbieRoleShakeEndNarration": {
+    "va": 6449534928,
+    "va_hex": "0x1806c17d0",
+    "token": "0x60015b0"
+  },
+  "NewbieTimerStartTalk": {
+    "va": 6449534960,
+    "va_hex": "0x1806c17f0",
+    "token": "0x60015b2"
+  },
+  "NewbieRoleFirstDungeon": {
+    "va": 6449534912,
+    "va_hex": "0x1806c17c0",
+    "token": "0x60015b4"
+  },
+  "SpiritStoneId": {
+    "va": 6449536400,
+    "va_hex": "0x1806c1d90",
+    "token": "0x60015b6"
+  },
+  "CatchHighLevel": {
+    "va": 6449532512,
+    "va_hex": "0x1806c0e60",
+    "token": "0x60015ba"
+  },
+  "CatchFail": {
+    "va": 6449532480,
+    "va_hex": "0x1806c0e40",
+    "token": "0x60015be"
+  },
+  "CatchCanNot": {
+    "va": 6449532448,
+    "va_hex": "0x1806c0e20",
+    "token": "0x60015c2"
+  },
+  "CoreEmptyId": {
+    "va": 6449532608,
+    "va_hex": "0x1806c0ec0",
+    "token": "0x60015c6"
+  },
+  "CoreGoldenWishNum": {
+    "va": 6449532704,
+    "va_hex": "0x1806c0f20",
+    "token": "0x60015ca"
+  },
+  "CoreGoldenThunderWin": {
+    "va": 6449532688,
+    "va_hex": "0x1806c0f10",
+    "token": "0x60015cc"
+  },
+  "CoreGoldenThunderLose": {
+    "va": 6449532672,
+    "va_hex": "0x1806c0f00",
+    "token": "0x60015ce"
+  },
+  "ThunderPowerId": {
+    "va": 6449536432,
+    "va_hex": "0x1806c1db0",
+    "token": "0x60015d0"
+  },
+  "ThunderPowerPrize": {
+    "va": 6449536448,
+    "va_hex": "0x1806c1dc0",
+    "token": "0x60015d4"
+  },
+  "CoreGoldenFlyConf": {
+    "va": 6449532624,
+    "va_hex": "0x1806c0ed0",
+    "token": "0x60015d6"
+  },
+  "CoreGoldenFlyPrize": {
+    "va": 6449532656,
+    "va_hex": "0x1806c0ef0",
+    "token": "0x60015d8"
+  },
+  "SpawnMonsterWin": {
+    "va": 6449536336,
+    "va_hex": "0x1806c1d50",
+    "token": "0x60015dc"
+  },
+  "ExpLevelUpErrorTips": {
+    "va": 6449534352,
+    "va_hex": "0x1806c1590",
+    "token": "0x60015de"
+  },
+  "InsightFight": {
+    "va": 6449534624,
+    "va_hex": "0x1806c16a0",
+    "token": "0x60015e2"
+  },
+  "InsightFightSword": {
+    "va": 6449534592,
+    "va_hex": "0x1806c1680",
+    "token": "0x60015e6"
+  },
+  "SoundCardFly": {
+    "va": 6449535456,
+    "va_hex": "0x1806c19e0",
+    "token": "0x60015ea"
+  },
+  "SoundCardShake": {
+    "va": 6449535552,
+    "va_hex": "0x1806c1a40",
+    "token": "0x60015ee"
+  },
+  "SoundCardDead": {
+    "va": 6449535392,
+    "va_hex": "0x1806c19a0",
+    "token": "0x60015f2"
+  },
+  "SoundCardPickUp": {
+    "va": 6449535520,
+    "va_hex": "0x1806c1a20",
+    "token": "0x60015f6"
+  },
+  "SoundCardStack": {
+    "va": 6449535584,
+    "va_hex": "0x1806c1a60",
+    "token": "0x60015fa"
+  },
+  "SoundCardHit": {
+    "va": 6449535488,
+    "va_hex": "0x1806c1a00",
+    "token": "0x60015fe"
+  },
+  "SoundCardFlyDeath": {
+    "va": 6449535424,
+    "va_hex": "0x1806c19c0",
+    "token": "0x6001602"
+  },
+  "SoundCardTalk": {
+    "va": 6449535616,
+    "va_hex": "0x1806c1a80",
+    "token": "0x6001606"
+  },
+  "SoundConflictStart": {
+    "va": 6449535712,
+    "va_hex": "0x1806c1ae0",
+    "token": "0x600160a"
+  },
+  "SoundConflictJoin": {
+    "va": 6449535680,
+    "va_hex": "0x1806c1ac0",
+    "token": "0x600160e"
+  },
+  "SoundCardBuy": {
+    "va": 6449535360,
+    "va_hex": "0x1806c1980",
+    "token": "0x6001612"
+  },
+  "SoundCardUse": {
+    "va": 6449535648,
+    "va_hex": "0x1806c1aa0",
+    "token": "0x6001616"
+  },
+  "SoundRoleAddEnergy": {
+    "va": 6449535872,
+    "va_hex": "0x1806c1b80",
+    "token": "0x600161a"
+  },
+  "SoundNpcAddRoleWish": {
+    "va": 6449535776,
+    "va_hex": "0x1806c1b20",
+    "token": "0x600161e"
+  },
+  "SoundNpcAddStone": {
+    "va": 6449535808,
+    "va_hex": "0x1806c1b40",
+    "token": "0x6001622"
+  },
+  "SoundNpcAddWish": {
+    "va": 6449535840,
+    "va_hex": "0x1806c1b60",
+    "token": "0x6001626"
+  },
+  "SoundEnterWidget": {
+    "va": 6449535744,
+    "va_hex": "0x1806c1b00",
+    "token": "0x600162a"
+  },
+  "SoundUiButtonDown": {
+    "va": 6449535968,
+    "va_hex": "0x1806c1be0",
+    "token": "0x600162e"
+  },
+  "SoundUiButtonMainDown": {
+    "va": 6449536032,
+    "va_hex": "0x1806c1c20",
+    "token": "0x6001632"
+  },
+  "SoundUiButtonEnter": {
+    "va": 6449536000,
+    "va_hex": "0x1806c1c00",
+    "token": "0x6001636"
+  },
+  "SoundUiOpenTips": {
+    "va": 6449536224,
+    "va_hex": "0x1806c1ce0",
+    "token": "0x600163a"
+  },
+  "SoundUiTaskCollect": {
+    "va": 6449536288,
+    "va_hex": "0x1806c1d20",
+    "token": "0x600163e"
+  },
+  "SoundUiOpenForm": {
+    "va": 6449536192,
+    "va_hex": "0x1806c1cc0",
+    "token": "0x6001642"
+  },
+  "SoundUiGameAgeEnd": {
+    "va": 6449536096,
+    "va_hex": "0x1806c1c60",
+    "token": "0x6001646"
+  },
+  "SoundUiCutSceneForm": {
+    "va": 6449536064,
+    "va_hex": "0x1806c1c40",
+    "token": "0x600164a"
+  },
+  "SoundUiNarrationClick": {
+    "va": 6449536160,
+    "va_hex": "0x1806c1ca0",
+    "token": "0x600164e"
+  },
+  "SoundUiGuideClick": {
+    "va": 6449536128,
+    "va_hex": "0x1806c1c80",
+    "token": "0x6001652"
+  },
+  "SoundUiSplashPat": {
+    "va": 6449536256,
+    "va_hex": "0x1806c1d00",
+    "token": "0x6001656"
+  },
+  "SoundTimerPutCard": {
+    "va": 6449535936,
+    "va_hex": "0x1806c1bc0",
+    "token": "0x600165a"
+  },
+  "SoundTimerPrizeEnd": {
+    "va": 6449535904,
+    "va_hex": "0x1806c1ba0",
+    "token": "0x600165e"
+  },
+  "SoundWidgetNewTips": {
+    "va": 6449536320,
+    "va_hex": "0x1806c1d40",
+    "token": "0x6001662"
+  },
+  "UiSettingScreenFullName": {
+    "va": 6449536640,
+    "va_hex": "0x1806c1e80",
+    "token": "0x6001666"
+  },
+  "UiSettingScreenFullName_l10n_key": {
+    "va": 6449536624,
+    "va_hex": "0x1806c1e70",
+    "token": "0x6001668"
+  },
+  "UiSettingScreenHalfName": {
+    "va": 6449536672,
+    "va_hex": "0x1806c1ea0",
+    "token": "0x6001669"
+  },
+  "UiSettingScreenHalfName_l10n_key": {
+    "va": 6449536656,
+    "va_hex": "0x1806c1e90",
+    "token": "0x600166b"
+  },
+  "UiRecordNoneName": {
+    "va": 6449536608,
+    "va_hex": "0x1806c1e60",
+    "token": "0x600166c"
+  },
+  "UiRecordNoneName_l10n_key": {
+    "va": 6449536592,
+    "va_hex": "0x1806c1e50",
+    "token": "0x600166e"
+  },
+  "UiMenuFormVersion": {
+    "va": 6449536544,
+    "va_hex": "0x1806c1e20",
+    "token": "0x600166f"
+  },
+  "UiMenuFormVersion_l10n_key": {
+    "va": 6449536528,
+    "va_hex": "0x1806c1e10",
+    "token": "0x6001671"
+  },
+  "UiShopStoneNumTipsName": {
+    "va": 6449536704,
+    "va_hex": "0x1806c1ec0",
+    "token": "0x6001672"
+  },
+  "UiShopStoneNumTipsName_l10n_key": {
+    "va": 6449536688,
+    "va_hex": "0x1806c1eb0",
+    "token": "0x6001674"
+  },
+  "UiStoneNumTipsName": {
+    "va": 6449536736,
+    "va_hex": "0x1806c1ee0",
+    "token": "0x6001675"
+  },
+  "UiStoneNumTipsName_l10n_key": {
+    "va": 6449536720,
+    "va_hex": "0x1806c1ed0",
+    "token": "0x6001677"
+  },
+  "UiMenuRecoverSuccessName": {
+    "va": 6449536576,
+    "va_hex": "0x1806c1e40",
+    "token": "0x6001678"
+  },
+  "UiMenuRecoverSuccessName_l10n_key": {
+    "va": 6449536560,
+    "va_hex": "0x1806c1e30",
+    "token": "0x600167a"
+  }
+}

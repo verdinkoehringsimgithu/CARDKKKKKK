@@ -1,0 +1,31 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001805450E0: sub         rsp,38h
+  00000001805450E4: cmp         byte ptr [rcx+00000000000000A8h],0
+  00000001805450EB: je          000000018054511F
+  00000001805450ED: mov         rcx,qword ptr [rcx+00000000000000C0h]
+  00000001805450F4: test        rcx,rcx
+  00000001805450F7: je          0000000180545126
+  00000001805450F9: mov         rax,qword ptr [rcx]
+  00000001805450FC: mov         r10,qword ptr [rax+00000000000003A8h]
+  0000000180545103: mov         rax,qword ptr [rax+00000000000003B0h]
+  000000018054510A: mov         qword ptr [rsp+68h],rax
+  000000018054510F: mov         qword ptr [rsp+60h],0
+  0000000180545118: add         rsp,38h
+  000000018054511C: jmp         r10
+  000000018054511F: xor         al,al
+  0000000180545121: add         rsp,38h
+  0000000180545125: ret
+  0000000180545126: call        00000001803F2AC0
+  000000018054512B: int         3
+  000000018054512C: int         3
+  000000018054512D: int         3
+  000000018054512E: int         3
+  000000018054512F: int         3
+
+  Summary
+
+     2294000 il2cpp

@@ -117,5 +117,7 @@
       "action": "产物卡从 cardGrid 槽位解除 Transform 父子绑定 (Detach)，播放抛物线飞向桌面目标落点 (Fly2Target / JumpTowards)。落桌后调用 ResetGridPos，卡牌进入普通桌面拖放与避让管线",
       "state": "产物落桌并成为可交互桌面卡牌实体"
     }
-  ]
+  ],
+  "_audit_status_20261110": "部分撤回：结构可以保留；所谓调用严格印证不成立，硬编码流程不作为原作事实。",
+  "_audit_report": "../07-拆解质量复核与缺口.md"
 }

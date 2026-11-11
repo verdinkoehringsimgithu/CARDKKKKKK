@@ -231,7 +231,7 @@ MonoBehaviour:
   playButton: {fileID: 9104}
   label: {fileID: 9105}
   chineseFont: {fileID: 12800000, guid: e629089c69d84961a5cc29dd704f6301, type: 3}
-  gameplayScenePath: Assets/TestGameplay/Spellcraft/Scenes/Spellcraft.unity
+  gameplayScenePath: Assets/Archives/Scenes/Spellcraft.unity
   islandButton: {fileID: 9106}
   islandLabel: {fileID: 9107}
   islandScenePath: Assets/IslandSurvival/Scenes/IslandSurvival.unity

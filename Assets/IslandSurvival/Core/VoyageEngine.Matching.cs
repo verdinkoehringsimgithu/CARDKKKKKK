@@ -175,7 +175,7 @@ namespace CardKKK.IslandSurvival.Core
                     VoyageAuxiliaryRule line = lines.FirstOrDefault(item => LineCardMatches(item, attached) &&
                         (string.IsNullOrEmpty(item.RequiredInputId) || main.Any(card => card.CardId == item.RequiredInputId)));
                     if (line == null && cards[attached.CardId].Kind != VoyageCardKind.Injury) continue;
-                    if (attached.JobId != 0 || s.Staged.Contains(attached.Id) && !ids.Contains(attached.Id)) return false;
+                    if (ReservedElsewhere(s, attached.Id) || attached.JobId != 0 || s.Staged.Contains(attached.Id) && !ids.Contains(attached.Id)) return false;
                     extra.Add(new VoyageJobInput { CardId = attached.Id, Slot = AttachedSlot, AuxiliaryId = line?.Id ?? "" });
                 }
                 candidate.Inputs.AddRange(extra);

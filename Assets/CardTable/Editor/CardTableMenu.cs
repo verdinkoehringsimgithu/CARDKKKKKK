@@ -7,66 +7,73 @@ namespace CardKKK.Tabletop.Editor
     [InitializeOnLoad]
     public static class CardTableMenu
     {
-        private const string ScenePath = "Assets/CardTable/Scenes/CardTableDemo.unity";
-        private static string CurrentScenePreference => "CardKKK.PlayCurrentScene." + Application.dataPath;
+        private const string ScenePath = "Assets/Archives/Scenes/CardTableDemo.unity";
+        private const string IslandPath = "Assets/IslandSurvival/Scenes/IslandSurvival.unity";
+        private const string IslandMode = "孤岛生存/运行入口/默认进入孤岛";
+        private const string CurrentMode = "孤岛生存/运行入口/进入当前场景";
+        private const string DemoMode = "孤岛生存/历史演示/自由牌桌/设为运行入口";
+        private static string EntryPreference => "CardKKK.PlayEntry.v2." + Application.dataPath;
 
-        static CardTableMenu()
-        {
-            EditorApplication.delayCall += ConfigurePlayEntry;
-        }
+        static CardTableMenu() { EditorApplication.delayCall += ConfigurePlayEntry; }
 
         private static void ConfigurePlayEntry()
         {
-            if (EditorApplication.isPlayingOrWillChangePlaymode || EditorPrefs.GetBool(CurrentScenePreference, false))
-                return;
-            SceneAsset scene = AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath);
-            if (scene != null)
-                EditorSceneManager.playModeStartScene = scene;
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            int mode = EditorPrefs.GetInt(EntryPreference, 0);
+            EditorSceneManager.playModeStartScene = mode == 1 ? null :
+                AssetDatabase.LoadAssetAtPath<SceneAsset>(mode == 2 ? ScenePath : IslandPath);
         }
 
-        [MenuItem("卡牌桌面/打开卡牌桌面")]
-        public static void OpenDemo()
+        private static void Open(string path)
         {
-            if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-            {
-                EditorSceneManager.OpenScene(ScenePath);
-                EditorApplication.ExecuteMenuItem("Window/General/Game");
-            }
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+            EditorSceneManager.OpenScene(path);
+            EditorApplication.ExecuteMenuItem("Window/General/Game");
         }
 
-        [MenuItem("卡牌桌面/选择美术主题")]
+        [MenuItem("孤岛生存/打开孤岛场景", priority = 0)]
+        public static void OpenIsland()
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            Open(IslandPath);
+            EditorPrefs.SetInt(EntryPreference, 0);
+            ConfigurePlayEntry();
+        }
+
+        [MenuItem("孤岛生存/历史演示/自由牌桌/打开场景")]
+        public static void OpenDemo() { Open(ScenePath); }
+
+        [MenuItem("孤岛生存/历史演示/自由牌桌/选择美术主题")]
         public static void SelectTheme()
         {
             Selection.activeObject = AssetDatabase.LoadMainAssetAtPath("Assets/CardTable/Art/CardTableTheme.asset");
             EditorGUIUtility.PingObject(Selection.activeObject);
         }
 
-        [MenuItem("卡牌桌面/运行时进入卡牌桌面")]
-        public static void PlayDemoByDefault()
+        [MenuItem(IslandMode)]
+        public static void PlayIslandByDefault() { SetMode(0); }
+        [MenuItem(DemoMode)]
+        public static void PlayDemoByDefault() { SetMode(2); }
+        [MenuItem(CurrentMode)]
+        public static void PlayCurrentScene() { SetMode(1); }
+
+        private static void SetMode(int mode)
         {
-            EditorPrefs.SetBool(CurrentScenePreference, false);
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            EditorPrefs.SetInt(EntryPreference, mode);
             ConfigurePlayEntry();
         }
-
-        [MenuItem("卡牌桌面/运行时进入卡牌桌面", true)]
-        private static bool ValidatePlayDemo()
+        private static bool ValidateMode(string menu, int mode)
         {
-            Menu.SetChecked("卡牌桌面/运行时进入卡牌桌面", !EditorPrefs.GetBool(CurrentScenePreference, false));
+            Menu.SetChecked(menu, EditorPrefs.GetInt(EntryPreference, 0) == mode);
             return !EditorApplication.isPlayingOrWillChangePlaymode;
         }
-
-        [MenuItem("卡牌桌面/运行时进入当前场景")]
-        public static void PlayCurrentScene()
-        {
-            EditorPrefs.SetBool(CurrentScenePreference, true);
-            EditorSceneManager.playModeStartScene = null;
-        }
-
-        [MenuItem("卡牌桌面/运行时进入当前场景", true)]
-        private static bool ValidatePlayCurrentScene()
-        {
-            Menu.SetChecked("卡牌桌面/运行时进入当前场景", EditorPrefs.GetBool(CurrentScenePreference, false));
-            return !EditorApplication.isPlayingOrWillChangePlaymode;
-        }
+        [MenuItem(IslandMode, true)]
+        private static bool ValidateIsland() => ValidateMode(IslandMode, 0);
+        [MenuItem(DemoMode, true)]
+        private static bool ValidatePlayDemo() => ValidateMode(DemoMode, 2);
+        [MenuItem(CurrentMode, true)]
+        private static bool ValidatePlayCurrentScene() => ValidateMode(CurrentMode, 1);
     }
 }

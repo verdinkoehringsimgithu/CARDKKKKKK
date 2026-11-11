@@ -7,13 +7,19 @@ namespace CardKKK.IslandSurvival.Core
     {
         private static VoyageState Copy(VoyageState source) => new VoyageState
         {
+            DeskVersion = source.DeskVersion,
+            Workspaces = (source.DeskVersion == 0 ? new List<VoyageWorkspace>() : source.Workspaces ?? new List<VoyageWorkspace>()).Select(workspace => new VoyageWorkspace
+            { Location = workspace.Location, Slots = workspace.Slots.Select(slot => new VoyageSlotState { Index = slot.Index, CardId = slot.CardId }).ToList() }).ToList(),
             Minute = source.Minute, NextCardId = source.NextCardId, NextJobId = source.NextJobId, RandomState = source.RandomState,
             Paused = source.Paused, Dead = source.Dead, Won = source.Won, EndReason = source.EndReason,
             Hunger = source.Hunger, San = source.San, Known = new List<string>(source.Known), Staged = new List<int>(source.Staged),
+            PreparationLocation = source.PreparationLocation,
+            Preparations = (source.Preparations ?? new List<VoyagePreparation>()).Select(draft => new VoyagePreparation
+            { Location = draft.Location, Cards = new List<int>(draft.Cards) }).ToList(),
             Cards = source.Cards.Select(card => new VoyageCardState
             {
                 Id = card.Id, CardId = card.CardId, Durability = card.Durability, Charges = card.Charges, RechargeRemaining = card.RechargeRemaining,
-                TimerRemaining = card.TimerRemaining, Limb = card.Limb, JobId = card.JobId, X = card.X, Y = card.Y,
+                TimerRemaining = card.TimerRemaining, Limb = card.Limb, JobId = card.JobId, X = card.X, Y = card.Y, StackParent = card.StackParent,
                 ProducedByJobId = card.ProducedByJobId, ProducedFromX = card.ProducedFromX, ProducedFromY = card.ProducedFromY
             }).ToList(),
             Jobs = source.Jobs.Select(job => new VoyageJobState
@@ -28,11 +34,19 @@ namespace CardKKK.IslandSurvival.Core
 
         private static VoyageDefinition Copy(VoyageDefinition source) => new VoyageDefinition
         {
+            Desk = new VoyageDeskRules
+            {
+                MaxStackSize = source.Desk.MaxStackSize, StackMode = source.Desk.StackMode,
+                AllowStacking = source.Desk.AllowStacking, AllowWholePileDrag = source.Desk.AllowWholePileDrag,
+                AllowSingleCardDrag = source.Desk.AllowSingleCardDrag, StackOffset = source.Desk.StackOffset, SnapDistance = source.Desk.SnapDistance,
+                AutoStackOnSpawn = source.Desk.AutoStackOnSpawn,
+                Width = source.Desk.Width, Height = source.Desk.Height, CardWidth = source.Desk.CardWidth, CardHeight = source.Desk.CardHeight, Gap = source.Desk.Gap
+            },
             HungerPerMinute = source.HungerPerMinute, RealSecondsPerMinute = source.RealSecondsPerMinute, Seed = source.Seed,
             BirdStep = source.BirdStep, BirdRange = source.BirdRange, BirdReach = source.BirdReach,
             Cards = source.Cards.Select(card => new VoyageCardRule
             {
-                Id = card.Id, Name = card.Name, Description = card.Description, SortRank = card.SortRank, Kind = card.Kind,
+                Id = card.Id, Name = card.Name, Description = card.Description, SortRank = card.SortRank, Kind = card.Kind, Family = card.Family,
                 Durability = card.Durability, Charges = card.Charges, RechargeMinutes = card.RechargeMinutes,
                 TimerMinutes = card.TimerMinutes, TransformId = card.TransformId, SeekRecipeId = card.SeekRecipeId,
                 InjuryLevel = card.InjuryLevel, NextInjuryId = card.NextInjuryId, LimbId = card.LimbId, LimbDamage = card.LimbDamage,

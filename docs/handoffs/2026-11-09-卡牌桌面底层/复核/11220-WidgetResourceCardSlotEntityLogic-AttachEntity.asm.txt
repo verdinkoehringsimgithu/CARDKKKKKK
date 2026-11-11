@@ -1,0 +1,57 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001805551D0: mov         qword ptr [rsp+8],rbx
+  00000001805551D5: mov         qword ptr [rsp+10h],rbp
+  00000001805551DA: mov         qword ptr [rsp+18h],rsi
+  00000001805551DF: push        rdi
+  00000001805551E0: sub         rsp,30h
+  00000001805551E4: cmp         byte ptr [000000018336843Eh],0
+  00000001805551EB: mov         ebx,edx
+  00000001805551ED: mov         rdi,rcx
+  00000001805551F0: jne         0000000180555205
+  00000001805551F2: lea         rcx,[000000018318DD78h]
+  00000001805551F9: call        00000001803F2920
+  00000001805551FE: mov         byte ptr [000000018336843Eh],1
+  0000000180555205: mov         rax,qword ptr [000000018318DD78h]
+  000000018055520C: xor         edx,edx
+  000000018055520E: mov         rcx,rdi
+  0000000180555211: mov         r8,qword ptr [rax+00000000000000B8h]
+  0000000180555218: mov         rsi,qword ptr [r8+30h]
+  000000018055521C: call        000000018056DFF0
+  0000000180555221: xor         edx,edx
+  0000000180555223: mov         rcx,rdi
+  0000000180555226: mov         ebp,eax
+  0000000180555228: call        0000000182418FC0
+  000000018055522D: test        rsi,rsi
+  0000000180555230: je          0000000180555260
+  0000000180555232: mov         r9,rax
+  0000000180555235: mov         qword ptr [rsp+20h],0
+  000000018055523E: mov         r8d,ebp
+  0000000180555241: mov         edx,ebx
+  0000000180555243: mov         rcx,rsi
+  0000000180555246: call        00000001826962E0
+  000000018055524B: mov         rbx,qword ptr [rsp+40h]
+  0000000180555250: mov         rbp,qword ptr [rsp+48h]
+  0000000180555255: mov         rsi,qword ptr [rsp+50h]
+  000000018055525A: add         rsp,30h
+  000000018055525E: pop         rdi
+  000000018055525F: ret
+  0000000180555260: call        00000001803F2AC0
+  0000000180555265: int         3
+  0000000180555266: int         3
+  0000000180555267: int         3
+  0000000180555268: int         3
+  0000000180555269: int         3
+  000000018055526A: int         3
+  000000018055526B: int         3
+  000000018055526C: int         3
+  000000018055526D: int         3
+  000000018055526E: int         3
+  000000018055526F: int         3
+
+  Summary
+
+     2294000 il2cpp

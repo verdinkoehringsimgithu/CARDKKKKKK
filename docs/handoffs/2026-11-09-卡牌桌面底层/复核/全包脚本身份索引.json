@@ -1,0 +1,1927 @@
+[
+  {
+    "name": "SpineAtlasAsset",
+    "class_name": "SpineAtlasAsset",
+    "namespace": "Spine.Unity",
+    "assembly": "spine-unity.dll",
+    "full_name": "Spine.Unity.SpineAtlasAsset"
+  },
+  {
+    "name": "SkeletonDataAsset",
+    "class_name": "SkeletonDataAsset",
+    "namespace": "Spine.Unity",
+    "assembly": "spine-unity.dll",
+    "full_name": "Spine.Unity.SkeletonDataAsset"
+  },
+  {
+    "name": "InputActionAsset",
+    "class_name": "InputActionAsset",
+    "namespace": "UnityEngine.InputSystem",
+    "assembly": "Unity.InputSystem.dll",
+    "full_name": "UnityEngine.InputSystem.InputActionAsset"
+  },
+  {
+    "name": "Bloom",
+    "class_name": "Bloom",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.Bloom"
+  },
+  {
+    "name": "Tonemapping",
+    "class_name": "Tonemapping",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.Tonemapping"
+  },
+  {
+    "name": "Vignette",
+    "class_name": "Vignette",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.Vignette"
+  },
+  {
+    "name": "InputActionReference",
+    "class_name": "InputActionReference",
+    "namespace": "UnityEngine.InputSystem",
+    "assembly": "Unity.InputSystem.dll",
+    "full_name": "UnityEngine.InputSystem.InputActionReference"
+  },
+  {
+    "name": "ColorAdjustments",
+    "class_name": "ColorAdjustments",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.ColorAdjustments"
+  },
+  {
+    "name": "ChromaticAberration",
+    "class_name": "ChromaticAberration",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.ChromaticAberration"
+  },
+  {
+    "name": "VolumeProfile",
+    "class_name": "VolumeProfile",
+    "namespace": "UnityEngine.Rendering",
+    "assembly": "Unity.RenderPipelines.Core.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.VolumeProfile"
+  },
+  {
+    "name": "DepthOfField",
+    "class_name": "DepthOfField",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.DepthOfField"
+  },
+  {
+    "name": "Image",
+    "class_name": "Image",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Image"
+  },
+  {
+    "name": "ControlTrack",
+    "class_name": "ControlTrack",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.ControlTrack"
+  },
+  {
+    "name": "AnimationTrack",
+    "class_name": "AnimationTrack",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.AnimationTrack"
+  },
+  {
+    "name": "TimelineAsset",
+    "class_name": "TimelineAsset",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.TimelineAsset"
+  },
+  {
+    "name": "AnimationPlayableAsset",
+    "class_name": "AnimationPlayableAsset",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.AnimationPlayableAsset"
+  },
+  {
+    "name": "EffectAnimationEvent",
+    "class_name": "EffectAnimationEvent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EffectAnimationEvent"
+  },
+  {
+    "name": "ControlPlayableAsset",
+    "class_name": "ControlPlayableAsset",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.ControlPlayableAsset"
+  },
+  {
+    "name": "ActivationPlayableAsset",
+    "class_name": "ActivationPlayableAsset",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.ActivationPlayableAsset"
+  },
+  {
+    "name": "ActivationTrack",
+    "class_name": "ActivationTrack",
+    "namespace": "UnityEngine.Timeline",
+    "assembly": "Unity.Timeline.dll",
+    "full_name": "UnityEngine.Timeline.ActivationTrack"
+  },
+  {
+    "name": "TextMeshPro",
+    "class_name": "TextMeshPro",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TextMeshPro"
+  },
+  {
+    "name": "TextMeshProUGUI",
+    "class_name": "TextMeshProUGUI",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TextMeshProUGUI"
+  },
+  {
+    "name": "CanvasScaler",
+    "class_name": "CanvasScaler",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.CanvasScaler"
+  },
+  {
+    "name": "ContentSizeFitter",
+    "class_name": "ContentSizeFitter",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.ContentSizeFitter"
+  },
+  {
+    "name": "TMP_FontAsset",
+    "class_name": "TMP_FontAsset",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TMP_FontAsset"
+  },
+  {
+    "name": "BoneFollower",
+    "class_name": "BoneFollower",
+    "namespace": "Spine.Unity",
+    "assembly": "spine-unity.dll",
+    "full_name": "Spine.Unity.BoneFollower"
+  },
+  {
+    "name": "BossBodyCard",
+    "class_name": "BossBodyCard",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BossBodyCard"
+  },
+  {
+    "name": "SkeletonAnimationControl",
+    "class_name": "SkeletonAnimationControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SkeletonAnimationControl"
+  },
+  {
+    "name": "BaseAnimationEvent",
+    "class_name": "BaseAnimationEvent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BaseAnimationEvent"
+  },
+  {
+    "name": "DOTweenAnimation",
+    "class_name": "DOTweenAnimation",
+    "namespace": "DG.Tweening",
+    "assembly": "DOTweenPro.Scripts.dll",
+    "full_name": "DG.Tweening.DOTweenAnimation"
+  },
+  {
+    "name": "CardBehaviourControl",
+    "class_name": "CardBehaviourControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CardBehaviourControl"
+  },
+  {
+    "name": "BaseAnimationParams",
+    "class_name": "BaseAnimationParams",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BaseAnimationParams"
+  },
+  {
+    "name": "CardSkillSystem",
+    "class_name": "CardSkillSystem",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CardSkillSystem"
+  },
+  {
+    "name": "QuaColorControl",
+    "class_name": "QuaColorControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.QuaColorControl"
+  },
+  {
+    "name": "TimerTickControl",
+    "class_name": "TimerTickControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TimerTickControl"
+  },
+  {
+    "name": "SortingLayerOrderControl",
+    "class_name": "SortingLayerOrderControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SortingLayerOrderControl"
+  },
+  {
+    "name": "BossHeadCard",
+    "class_name": "BossHeadCard",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BossHeadCard"
+  },
+  {
+    "name": "SkeletonAnimation",
+    "class_name": "SkeletonAnimation",
+    "namespace": "Spine.Unity",
+    "assembly": "spine-unity.dll",
+    "full_name": "Spine.Unity.SkeletonAnimation"
+  },
+  {
+    "name": "HorizontalLayoutGroup",
+    "class_name": "HorizontalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.HorizontalLayoutGroup"
+  },
+  {
+    "name": "EatCoreListControl",
+    "class_name": "EatCoreListControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EatCoreListControl"
+  },
+  {
+    "name": "CommonButtonSound",
+    "class_name": "CommonButtonSound",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CommonButtonSound"
+  },
+  {
+    "name": "RepairCrackControl",
+    "class_name": "RepairCrackControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RepairCrackControl"
+  },
+  {
+    "name": "LineRendererDrawRect",
+    "class_name": "LineRendererDrawRect",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.LineRendererDrawRect"
+  },
+  {
+    "name": "ExpControl",
+    "class_name": "ExpControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ExpControl"
+  },
+  {
+    "name": "EntityLocalizationControl",
+    "class_name": "EntityLocalizationControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EntityLocalizationControl"
+  },
+  {
+    "name": "CoreSoulIconControl",
+    "class_name": "CoreSoulIconControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreSoulIconControl"
+  },
+  {
+    "name": "Button",
+    "class_name": "Button",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Button"
+  },
+  {
+    "name": "EatCoreControl",
+    "class_name": "EatCoreControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EatCoreControl"
+  },
+  {
+    "name": "UICNSControl",
+    "class_name": "UICNSControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.UICNSControl"
+  },
+  {
+    "name": "TimerFormBtnColorControl",
+    "class_name": "TimerFormBtnColorControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TimerFormBtnColorControl"
+  },
+  {
+    "name": "EntityCNSControl",
+    "class_name": "EntityCNSControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EntityCNSControl"
+  },
+  {
+    "name": "GraphicRaycaster",
+    "class_name": "GraphicRaycaster",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.GraphicRaycaster"
+  },
+  {
+    "name": "CanvasShowControl",
+    "class_name": "CanvasShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CanvasShowControl"
+  },
+  {
+    "name": "GateStyle",
+    "class_name": "GateStyle",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GateStyle"
+  },
+  {
+    "name": "EffectIconControl",
+    "class_name": "EffectIconControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EffectIconControl"
+  },
+  {
+    "name": "TMP_SpriteAsset",
+    "class_name": "TMP_SpriteAsset",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TMP_SpriteAsset"
+  },
+  {
+    "name": "GridLayoutGroup",
+    "class_name": "GridLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.GridLayoutGroup"
+  },
+  {
+    "name": "GateMain",
+    "class_name": "GateMain",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GateMain"
+  },
+  {
+    "name": "TimerProgressControl",
+    "class_name": "TimerProgressControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TimerProgressControl"
+  },
+  {
+    "name": "SpawnWidget",
+    "class_name": "SpawnWidget",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnWidget"
+  },
+  {
+    "name": "DungeonClearPrizeControl",
+    "class_name": "DungeonClearPrizeControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.DungeonClearPrizeControl"
+  },
+  {
+    "name": "CloudShowControl",
+    "class_name": "CloudShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CloudShowControl"
+  },
+  {
+    "name": "FogControl",
+    "class_name": "FogControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.FogControl"
+  },
+  {
+    "name": "MapAreaControl",
+    "class_name": "MapAreaControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapAreaControl"
+  },
+  {
+    "name": "MapTileControl",
+    "class_name": "MapTileControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapTileControl"
+  },
+  {
+    "name": "VerticalLayoutGroup",
+    "class_name": "VerticalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.VerticalLayoutGroup"
+  },
+  {
+    "name": "SpawnCard",
+    "class_name": "SpawnCard",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnCard"
+  },
+  {
+    "name": "SpawnGateLock",
+    "class_name": "SpawnGateLock",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnGateLock"
+  },
+  {
+    "name": "SpawnWidgetRand",
+    "class_name": "SpawnWidgetRand",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnWidgetRand"
+  },
+  {
+    "name": "CloudHeadControl",
+    "class_name": "CloudHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CloudHeadControl"
+  },
+  {
+    "name": "MapControl",
+    "class_name": "MapControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapControl"
+  },
+  {
+    "name": "SpawnWidgetSystem",
+    "class_name": "SpawnWidgetSystem",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnWidgetSystem"
+  },
+  {
+    "name": "WidgetShowControl",
+    "class_name": "WidgetShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.WidgetShowControl"
+  },
+  {
+    "name": "ArenaPrizeControl",
+    "class_name": "ArenaPrizeControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ArenaPrizeControl"
+  },
+  {
+    "name": "SpawnWidgetBase",
+    "class_name": "SpawnWidgetBase",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnWidgetBase"
+  },
+  {
+    "name": "SpawnGate",
+    "class_name": "SpawnGate",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnGate"
+  },
+  {
+    "name": "ScrollRect",
+    "class_name": "ScrollRect",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.ScrollRect"
+  },
+  {
+    "name": "StoryDialogControl",
+    "class_name": "StoryDialogControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.StoryDialogControl"
+  },
+  {
+    "name": "Mask",
+    "class_name": "Mask",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Mask"
+  },
+  {
+    "name": "MakeQuaProgressControl",
+    "class_name": "MakeQuaProgressControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MakeQuaProgressControl"
+  },
+  {
+    "name": "TeleportCollectControl",
+    "class_name": "TeleportCollectControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TeleportCollectControl"
+  },
+  {
+    "name": "BagQuaControl",
+    "class_name": "BagQuaControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BagQuaControl"
+  },
+  {
+    "name": "ElemControl",
+    "class_name": "ElemControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ElemControl"
+  },
+  {
+    "name": "MakeLevelUpProgressControl",
+    "class_name": "MakeLevelUpProgressControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MakeLevelUpProgressControl"
+  },
+  {
+    "name": "CardPackToggleControl",
+    "class_name": "CardPackToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CardPackToggleControl"
+  },
+  {
+    "name": "RoleFormSpellHeadControl",
+    "class_name": "RoleFormSpellHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFormSpellHeadControl"
+  },
+  {
+    "name": "Scrollbar",
+    "class_name": "Scrollbar",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Scrollbar"
+  },
+  {
+    "name": "BagToggleControl",
+    "class_name": "BagToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BagToggleControl"
+  },
+  {
+    "name": "BaseSlotInfo",
+    "class_name": "BaseSlotInfo",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BaseSlotInfo"
+  },
+  {
+    "name": "BagElemControl",
+    "class_name": "BagElemControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BagElemControl"
+  },
+  {
+    "name": "RoleFormSkillHeadControl",
+    "class_name": "RoleFormSkillHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFormSkillHeadControl"
+  },
+  {
+    "name": "RecoverRotateControl",
+    "class_name": "RecoverRotateControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecoverRotateControl"
+  },
+  {
+    "name": "ElemColorControl",
+    "class_name": "ElemColorControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ElemColorControl"
+  },
+  {
+    "name": "ToggleGroup",
+    "class_name": "ToggleGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.ToggleGroup"
+  },
+  {
+    "name": "Toggle",
+    "class_name": "Toggle",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Toggle"
+  },
+  {
+    "name": "NpcWishControl",
+    "class_name": "NpcWishControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NpcWishControl"
+  },
+  {
+    "name": "ShowPrizeControl",
+    "class_name": "ShowPrizeControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ShowPrizeControl"
+  },
+  {
+    "name": "UniversalAdditionalLightData",
+    "class_name": "UniversalAdditionalLightData",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.UniversalAdditionalLightData"
+  },
+  {
+    "name": "InputSystemUIInputModule",
+    "class_name": "InputSystemUIInputModule",
+    "namespace": "UnityEngine.InputSystem.UI",
+    "assembly": "Unity.InputSystem.dll",
+    "full_name": "UnityEngine.InputSystem.UI.InputSystemUIInputModule"
+  },
+  {
+    "name": "WebRequestComponent",
+    "class_name": "WebRequestComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.WebRequestComponent"
+  },
+  {
+    "name": "Volume",
+    "class_name": "Volume",
+    "namespace": "UnityEngine.Rendering",
+    "assembly": "Unity.RenderPipelines.Core.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Volume"
+  },
+  {
+    "name": "ObjectPoolComponent",
+    "class_name": "ObjectPoolComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.ObjectPoolComponent"
+  },
+  {
+    "name": "UIInstanceMgrComponent",
+    "class_name": "UIInstanceMgrComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.UIInstanceMgrComponent"
+  },
+  {
+    "name": "SettingComponent",
+    "class_name": "SettingComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.SettingComponent"
+  },
+  {
+    "name": "GameEntry",
+    "class_name": "GameEntry",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameEntry"
+  },
+  {
+    "name": "UpdateResourceForm",
+    "class_name": "UpdateResourceForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.UpdateResourceForm"
+  },
+  {
+    "name": "ConfigComponent",
+    "class_name": "ConfigComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.ConfigComponent"
+  },
+  {
+    "name": "CameraActionComponent",
+    "class_name": "CameraActionComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CameraActionComponent"
+  },
+  {
+    "name": "UIComponent",
+    "class_name": "UIComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.UIComponent"
+  },
+  {
+    "name": "AchievementMgrComponent",
+    "class_name": "AchievementMgrComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.AchievementMgrComponent"
+  },
+  {
+    "name": "DataTableComponent",
+    "class_name": "DataTableComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.DataTableComponent"
+  },
+  {
+    "name": "EntityComponent",
+    "class_name": "EntityComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.EntityComponent"
+  },
+  {
+    "name": "Text",
+    "class_name": "Text",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Text"
+  },
+  {
+    "name": "DataNodeComponent",
+    "class_name": "DataNodeComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.DataNodeComponent"
+  },
+  {
+    "name": "Slider",
+    "class_name": "Slider",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.Slider"
+  },
+  {
+    "name": "LocalizationComponent",
+    "class_name": "LocalizationComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.LocalizationComponent"
+  },
+  {
+    "name": "EventSystem",
+    "class_name": "EventSystem",
+    "namespace": "UnityEngine.EventSystems",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.EventSystems.EventSystem"
+  },
+  {
+    "name": "NetworkComponent",
+    "class_name": "NetworkComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.NetworkComponent"
+  },
+  {
+    "name": "ResourceComponent",
+    "class_name": "ResourceComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.ResourceComponent"
+  },
+  {
+    "name": "ReferencePoolComponent",
+    "class_name": "ReferencePoolComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.ReferencePoolComponent"
+  },
+  {
+    "name": "DownloadComponent",
+    "class_name": "DownloadComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.DownloadComponent"
+  },
+  {
+    "name": "ProcedureComponent",
+    "class_name": "ProcedureComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.ProcedureComponent"
+  },
+  {
+    "name": "LubanTableComponent",
+    "class_name": "LubanTableComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.LubanTableComponent"
+  },
+  {
+    "name": "UniversalAdditionalCameraData",
+    "class_name": "UniversalAdditionalCameraData",
+    "namespace": "UnityEngine.Rendering.Universal",
+    "assembly": "Unity.RenderPipelines.Universal.Runtime.dll",
+    "full_name": "UnityEngine.Rendering.Universal.UniversalAdditionalCameraData"
+  },
+  {
+    "name": "FsmComponent",
+    "class_name": "FsmComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.FsmComponent"
+  },
+  {
+    "name": "SceneComponent",
+    "class_name": "SceneComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.SceneComponent"
+  },
+  {
+    "name": "InputMgrComponent",
+    "class_name": "InputMgrComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.InputMgrComponent"
+  },
+  {
+    "name": "EditorResourceComponent",
+    "class_name": "EditorResourceComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.EditorResourceComponent"
+  },
+  {
+    "name": "BuiltinDataComponent",
+    "class_name": "BuiltinDataComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BuiltinDataComponent"
+  },
+  {
+    "name": "GameMgrComponent",
+    "class_name": "GameMgrComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameMgrComponent"
+  },
+  {
+    "name": "EventComponent",
+    "class_name": "EventComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.EventComponent"
+  },
+  {
+    "name": "SoundComponent",
+    "class_name": "SoundComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.SoundComponent"
+  },
+  {
+    "name": "DebuggerComponent",
+    "class_name": "DebuggerComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.DebuggerComponent"
+  },
+  {
+    "name": "BaseComponent",
+    "class_name": "BaseComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.BaseComponent"
+  },
+  {
+    "name": "RecordMgrComponent",
+    "class_name": "RecordMgrComponent",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecordMgrComponent"
+  },
+  {
+    "name": "FileSystemComponent",
+    "class_name": "FileSystemComponent",
+    "namespace": "UnityGameFramework.Runtime",
+    "assembly": "UnityGameFramework.Runtime.dll",
+    "full_name": "UnityGameFramework.Runtime.FileSystemComponent"
+  },
+  {
+    "name": "NewbieGameForm",
+    "class_name": "NewbieGameForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NewbieGameForm"
+  },
+  {
+    "name": "CollectStoryToggleControl",
+    "class_name": "CollectStoryToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectStoryToggleControl"
+  },
+  {
+    "name": "CollectBookForm",
+    "class_name": "CollectBookForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookForm"
+  },
+  {
+    "name": "CollectBookItemsForm",
+    "class_name": "CollectBookItemsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookItemsForm"
+  },
+  {
+    "name": "TheWayToggleControl",
+    "class_name": "TheWayToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TheWayToggleControl"
+  },
+  {
+    "name": "SummonCardTipsForm",
+    "class_name": "SummonCardTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SummonCardTipsForm"
+  },
+  {
+    "name": "RoleCardControl",
+    "class_name": "RoleCardControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleCardControl"
+  },
+  {
+    "name": "RoleTagControl",
+    "class_name": "RoleTagControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleTagControl"
+  },
+  {
+    "name": "TaskHeadControl",
+    "class_name": "TaskHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TaskHeadControl"
+  },
+  {
+    "name": "ShortcutKeysForm",
+    "class_name": "ShortcutKeysForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ShortcutKeysForm"
+  },
+  {
+    "name": "BluePrintsTipsForm",
+    "class_name": "BluePrintsTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BluePrintsTipsForm"
+  },
+  {
+    "name": "CardInfoShowControl",
+    "class_name": "CardInfoShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CardInfoShowControl"
+  },
+  {
+    "name": "NoticeForm",
+    "class_name": "NoticeForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NoticeForm"
+  },
+  {
+    "name": "GameAgeTimeEndForm",
+    "class_name": "GameAgeTimeEndForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameAgeTimeEndForm"
+  },
+  {
+    "name": "CoreGoldenTipsForm",
+    "class_name": "CoreGoldenTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreGoldenTipsForm"
+  },
+  {
+    "name": "SkeletonGraphic",
+    "class_name": "SkeletonGraphic",
+    "namespace": "Spine.Unity",
+    "assembly": "spine-unity.dll",
+    "full_name": "Spine.Unity.SkeletonGraphic"
+  },
+  {
+    "name": "BookToggleControl",
+    "class_name": "BookToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BookToggleControl"
+  },
+  {
+    "name": "EffectInfoShowControl",
+    "class_name": "EffectInfoShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EffectInfoShowControl"
+  },
+  {
+    "name": "TheWayTipsFormControl",
+    "class_name": "TheWayTipsFormControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TheWayTipsFormControl"
+  },
+  {
+    "name": "SettingToggleHeadControl",
+    "class_name": "SettingToggleHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SettingToggleHeadControl"
+  },
+  {
+    "name": "ItemFlyEffect",
+    "class_name": "ItemFlyEffect",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ItemFlyEffect"
+  },
+  {
+    "name": "SpawnMonsterForm",
+    "class_name": "SpawnMonsterForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpawnMonsterForm"
+  },
+  {
+    "name": "CollectToggleHeadControl",
+    "class_name": "CollectToggleHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectToggleHeadControl"
+  },
+  {
+    "name": "GameWidgetEventForm",
+    "class_name": "GameWidgetEventForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameWidgetEventForm"
+  },
+  {
+    "name": "MapShowFlyForm",
+    "class_name": "MapShowFlyForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapShowFlyForm"
+  },
+  {
+    "name": "GameLoadingForm",
+    "class_name": "GameLoadingForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameLoadingForm"
+  },
+  {
+    "name": "DataTipsForm",
+    "class_name": "DataTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.DataTipsForm"
+  },
+  {
+    "name": "CollectToggleNpcHeadControl",
+    "class_name": "CollectToggleNpcHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectToggleNpcHeadControl"
+  },
+  {
+    "name": "ConfirmTipsForm",
+    "class_name": "ConfirmTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ConfirmTipsForm"
+  },
+  {
+    "name": "CollectToggleBossHeadControl",
+    "class_name": "CollectToggleBossHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectToggleBossHeadControl"
+  },
+  {
+    "name": "PlayToggleControl",
+    "class_name": "PlayToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PlayToggleControl"
+  },
+  {
+    "name": "ReputationTipsForm",
+    "class_name": "ReputationTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ReputationTipsForm"
+  },
+  {
+    "name": "CollectBookBossForm",
+    "class_name": "CollectBookBossForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookBossForm"
+  },
+  {
+    "name": "PotionTipsForm",
+    "class_name": "PotionTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PotionTipsForm"
+  },
+  {
+    "name": "RoleShowGameEasyForm",
+    "class_name": "RoleShowGameEasyForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleShowGameEasyForm"
+  },
+  {
+    "name": "GamePatchForm",
+    "class_name": "GamePatchForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GamePatchForm"
+  },
+  {
+    "name": "MenuForm",
+    "class_name": "MenuForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MenuForm"
+  },
+  {
+    "name": "VehicleTipsForm",
+    "class_name": "VehicleTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.VehicleTipsForm"
+  },
+  {
+    "name": "RoleFreeGameStartForm",
+    "class_name": "RoleFreeGameStartForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFreeGameStartForm"
+  },
+  {
+    "name": "SpellShowUIControl",
+    "class_name": "SpellShowUIControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpellShowUIControl"
+  },
+  {
+    "name": "TaskContentControl",
+    "class_name": "TaskContentControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TaskContentControl"
+  },
+  {
+    "name": "ExpTipsForm",
+    "class_name": "ExpTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ExpTipsForm"
+  },
+  {
+    "name": "TheWayForm",
+    "class_name": "TheWayForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TheWayForm"
+  },
+  {
+    "name": "GameDeveloperListForm",
+    "class_name": "GameDeveloperListForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameDeveloperListForm"
+  },
+  {
+    "name": "GameForm",
+    "class_name": "GameForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameForm"
+  },
+  {
+    "name": "GuideTipsForm",
+    "class_name": "GuideTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GuideTipsForm"
+  },
+  {
+    "name": "RoleFreeHeadToggleControl",
+    "class_name": "RoleFreeHeadToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFreeHeadToggleControl"
+  },
+  {
+    "name": "RoleFreeForm",
+    "class_name": "RoleFreeForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFreeForm"
+  },
+  {
+    "name": "SpiritStoneTipsForm",
+    "class_name": "SpiritStoneTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpiritStoneTipsForm"
+  },
+  {
+    "name": "SkillTipsForm",
+    "class_name": "SkillTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SkillTipsForm"
+  },
+  {
+    "name": "TMP_InputField",
+    "class_name": "TMP_InputField",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TMP_InputField"
+  },
+  {
+    "name": "CollectCardInfoToggleControl",
+    "class_name": "CollectCardInfoToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectCardInfoToggleControl"
+  },
+  {
+    "name": "RoleAttributesControl",
+    "class_name": "RoleAttributesControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleAttributesControl"
+  },
+  {
+    "name": "RoleModeForm",
+    "class_name": "RoleModeForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleModeForm"
+  },
+  {
+    "name": "WidgetTypeToggleControl",
+    "class_name": "WidgetTypeToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.WidgetTypeToggleControl"
+  },
+  {
+    "name": "NarrationForm",
+    "class_name": "NarrationForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NarrationForm"
+  },
+  {
+    "name": "RoleTagTypeControl",
+    "class_name": "RoleTagTypeControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleTagTypeControl"
+  },
+  {
+    "name": "HowToPlayForm",
+    "class_name": "HowToPlayForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.HowToPlayForm"
+  },
+  {
+    "name": "MapWidgetShowControl",
+    "class_name": "MapWidgetShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapWidgetShowControl"
+  },
+  {
+    "name": "NewbieGuideForm",
+    "class_name": "NewbieGuideForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NewbieGuideForm"
+  },
+  {
+    "name": "RecordLoadForm",
+    "class_name": "RecordLoadForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecordLoadForm"
+  },
+  {
+    "name": "NeutralTipsForm",
+    "class_name": "NeutralTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.NeutralTipsForm"
+  },
+  {
+    "name": "SkillInfoShowControl",
+    "class_name": "SkillInfoShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SkillInfoShowControl"
+  },
+  {
+    "name": "UIScaleControl",
+    "class_name": "UIScaleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.UIScaleControl"
+  },
+  {
+    "name": "CutSceneForm",
+    "class_name": "CutSceneForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CutSceneForm"
+  },
+  {
+    "name": "AboutForm",
+    "class_name": "AboutForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.AboutForm"
+  },
+  {
+    "name": "WeaponTipsForm",
+    "class_name": "WeaponTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.WeaponTipsForm"
+  },
+  {
+    "name": "WakeUpForm",
+    "class_name": "WakeUpForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.WakeUpForm"
+  },
+  {
+    "name": "CoreGoldenShowControl",
+    "class_name": "CoreGoldenShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreGoldenShowControl"
+  },
+  {
+    "name": "EventTriggerControl",
+    "class_name": "EventTriggerControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EventTriggerControl"
+  },
+  {
+    "name": "UILocalizationControl",
+    "class_name": "UILocalizationControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.UILocalizationControl"
+  },
+  {
+    "name": "SpiritBeastTipsForm",
+    "class_name": "SpiritBeastTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpiritBeastTipsForm"
+  },
+  {
+    "name": "LayoutElement",
+    "class_name": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.LayoutElement"
+  },
+  {
+    "name": "StackTypeToggleControl",
+    "class_name": "StackTypeToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.StackTypeToggleControl"
+  },
+  {
+    "name": "RecordSaveForm",
+    "class_name": "RecordSaveForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecordSaveForm"
+  },
+  {
+    "name": "SpellTipsForm",
+    "class_name": "SpellTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpellTipsForm"
+  },
+  {
+    "name": "GameNoticeForm",
+    "class_name": "GameNoticeForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameNoticeForm"
+  },
+  {
+    "name": "PopupShowMessageTipsForm",
+    "class_name": "PopupShowMessageTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PopupShowMessageTipsForm"
+  },
+  {
+    "name": "RoleTipsForm",
+    "class_name": "RoleTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleTipsForm"
+  },
+  {
+    "name": "FullScreenCrackForm",
+    "class_name": "FullScreenCrackForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.FullScreenCrackForm"
+  },
+  {
+    "name": "PotionSystemTipsForm",
+    "class_name": "PotionSystemTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PotionSystemTipsForm"
+  },
+  {
+    "name": "SteamURLControl",
+    "class_name": "SteamURLControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SteamURLControl"
+  },
+  {
+    "name": "RoleNpcTipsForm",
+    "class_name": "RoleNpcTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleNpcTipsForm"
+  },
+  {
+    "name": "TaskToggleControl",
+    "class_name": "TaskToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TaskToggleControl"
+  },
+  {
+    "name": "TMP_Dropdown",
+    "class_name": "TMP_Dropdown",
+    "namespace": "TMPro",
+    "assembly": "Unity.TextMeshPro.dll",
+    "full_name": "TMPro.TMP_Dropdown"
+  },
+  {
+    "name": "GameEndingForm",
+    "class_name": "GameEndingForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameEndingForm"
+  },
+  {
+    "name": "ShowNameTipsForm",
+    "class_name": "ShowNameTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ShowNameTipsForm"
+  },
+  {
+    "name": "HerbTipsForm",
+    "class_name": "HerbTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.HerbTipsForm"
+  },
+  {
+    "name": "AttributeTagForm",
+    "class_name": "AttributeTagForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.AttributeTagForm"
+  },
+  {
+    "name": "SliderOnPointerUp",
+    "class_name": "SliderOnPointerUp",
+    "namespace": "",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "SliderOnPointerUp"
+  },
+  {
+    "name": "GMForm",
+    "class_name": "GMForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GMForm"
+  },
+  {
+    "name": "LifeBoundTipsForm",
+    "class_name": "LifeBoundTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.LifeBoundTipsForm"
+  },
+  {
+    "name": "GhostTipsForm",
+    "class_name": "GhostTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GhostTipsForm"
+  },
+  {
+    "name": "DialogForm",
+    "class_name": "DialogForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.DialogForm"
+  },
+  {
+    "name": "RecordSaveShowControl",
+    "class_name": "RecordSaveShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecordSaveShowControl"
+  },
+  {
+    "name": "SoulTipsForm",
+    "class_name": "SoulTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SoulTipsForm"
+  },
+  {
+    "name": "RoleHeadStorylineControl",
+    "class_name": "RoleHeadStorylineControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleHeadStorylineControl"
+  },
+  {
+    "name": "TipsForm",
+    "class_name": "TipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TipsForm"
+  },
+  {
+    "name": "TalentBtnControl",
+    "class_name": "TalentBtnControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TalentBtnControl"
+  },
+  {
+    "name": "PopupTipsForm",
+    "class_name": "PopupTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PopupTipsForm"
+  },
+  {
+    "name": "RectMask2D",
+    "class_name": "RectMask2D",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.UI.RectMask2D"
+  },
+  {
+    "name": "GameTaskForm",
+    "class_name": "GameTaskForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameTaskForm"
+  },
+  {
+    "name": "CollectToggleSubNameControl",
+    "class_name": "CollectToggleSubNameControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectToggleSubNameControl"
+  },
+  {
+    "name": "MaterialTipsForm",
+    "class_name": "MaterialTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MaterialTipsForm"
+  },
+  {
+    "name": "EventTrigger",
+    "class_name": "EventTrigger",
+    "namespace": "UnityEngine.EventSystems",
+    "assembly": "UnityEngine.UI.dll",
+    "full_name": "UnityEngine.EventSystems.EventTrigger"
+  },
+  {
+    "name": "RoleEasyControl",
+    "class_name": "RoleEasyControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleEasyControl"
+  },
+  {
+    "name": "CommonTipsForm",
+    "class_name": "CommonTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CommonTipsForm"
+  },
+  {
+    "name": "CoreTipsForm",
+    "class_name": "CoreTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreTipsForm"
+  },
+  {
+    "name": "MapShowForm",
+    "class_name": "MapShowForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.MapShowForm"
+  },
+  {
+    "name": "TipsTagForm",
+    "class_name": "TipsTagForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.TipsTagForm"
+  },
+  {
+    "name": "BaseStorylineControl",
+    "class_name": "BaseStorylineControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BaseStorylineControl"
+  },
+  {
+    "name": "GameOverForm",
+    "class_name": "GameOverForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameOverForm"
+  },
+  {
+    "name": "StoryForm",
+    "class_name": "StoryForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.StoryForm"
+  },
+  {
+    "name": "FlyTipsForm",
+    "class_name": "FlyTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.FlyTipsForm"
+  },
+  {
+    "name": "RecordRoleHeadToggleControl",
+    "class_name": "RecordRoleHeadToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RecordRoleHeadToggleControl"
+  },
+  {
+    "name": "EnemyTipsForm",
+    "class_name": "EnemyTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.EnemyTipsForm"
+  },
+  {
+    "name": "CollectBookFormNone",
+    "class_name": "CollectBookFormNone",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookFormNone"
+  },
+  {
+    "name": "SaveRecordTipsForm",
+    "class_name": "SaveRecordTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SaveRecordTipsForm"
+  },
+  {
+    "name": "CollectBookNpcForm",
+    "class_name": "CollectBookNpcForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookNpcForm"
+  },
+  {
+    "name": "CollectBookStoryForm",
+    "class_name": "CollectBookStoryForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookStoryForm"
+  },
+  {
+    "name": "RoleFreeGameEasyForm",
+    "class_name": "RoleFreeGameEasyForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.RoleFreeGameEasyForm"
+  },
+  {
+    "name": "BookItemToggleControl",
+    "class_name": "BookItemToggleControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BookItemToggleControl"
+  },
+  {
+    "name": "CollectBookSpiritBeastForm",
+    "class_name": "CollectBookSpiritBeastForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookSpiritBeastForm"
+  },
+  {
+    "name": "SettingForm",
+    "class_name": "SettingForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SettingForm"
+  },
+  {
+    "name": "GameAgeTimeStartForm",
+    "class_name": "GameAgeTimeStartForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.GameAgeTimeStartForm"
+  },
+  {
+    "name": "CollectBookWeaponForm",
+    "class_name": "CollectBookWeaponForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookWeaponForm"
+  },
+  {
+    "name": "ScrollRectControlControl",
+    "class_name": "ScrollRectControlControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ScrollRectControlControl"
+  },
+  {
+    "name": "CollectBookMonsterForm",
+    "class_name": "CollectBookMonsterForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CollectBookMonsterForm"
+  },
+  {
+    "name": "CoreSoulIconUIControl",
+    "class_name": "CoreSoulIconUIControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreSoulIconUIControl"
+  },
+  {
+    "name": "WidgetInfoShowControl",
+    "class_name": "WidgetInfoShowControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.WidgetInfoShowControl"
+  },
+  {
+    "name": "SplashForm",
+    "class_name": "SplashForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SplashForm"
+  },
+  {
+    "name": "CoreEmptyTipsForm",
+    "class_name": "CoreEmptyTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CoreEmptyTipsForm"
+  },
+  {
+    "name": "BookTipsForm",
+    "class_name": "BookTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.BookTipsForm"
+  },
+  {
+    "name": "StackTypeHeadControl",
+    "class_name": "StackTypeHeadControl",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.StackTypeHeadControl"
+  },
+  {
+    "name": "PuppetTipsForm",
+    "class_name": "PuppetTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.PuppetTipsForm"
+  },
+  {
+    "name": "SpiritBeastSystemTipsForm",
+    "class_name": "SpiritBeastSystemTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.SpiritBeastSystemTipsForm"
+  },
+  {
+    "name": "AdverseTipsForm",
+    "class_name": "AdverseTipsForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.AdverseTipsForm"
+  },
+  {
+    "name": "ThunderForm",
+    "class_name": "ThunderForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.ThunderForm"
+  },
+  {
+    "name": "CutSceneGotoForm",
+    "class_name": "CutSceneGotoForm",
+    "namespace": "UnityGameFramework.Scripts",
+    "assembly": "Assembly-CSharp.dll",
+    "full_name": "UnityGameFramework.Scripts.CutSceneGotoForm"
+  }
+]

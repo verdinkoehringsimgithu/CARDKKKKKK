@@ -1,0 +1,65 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018070AA20: mov         qword ptr [rsp+10h],rbx
+  000000018070AA25: push        rsi
+  000000018070AA26: sub         rsp,20h
+  000000018070AA2A: movzx       esi,dl
+  000000018070AA2D: mov         qword ptr [rsp+30h],rdi
+  000000018070AA32: mov         rbx,rcx
+  000000018070AA35: cmp         byte ptr [00000001833696B8h],0
+  000000018070AA3C: jne         000000018070AA5D
+  000000018070AA3E: lea         rcx,[00000001831C2AF8h]
+  000000018070AA45: call        00000001803F2920
+  000000018070AA4A: lea         rcx,[00000001831D3780h]
+  000000018070AA51: call        00000001803F2920
+  000000018070AA56: mov         byte ptr [00000001833696B8h],1
+  000000018070AA5D: test        sil,sil
+  000000018070AA60: jne         000000018070AA84
+  000000018070AA62: mov         rdx,qword ptr [rbx+0000000000000138h]
+  000000018070AA69: test        rdx,rdx
+  000000018070AA6C: je          000000018070AAF7
+  000000018070AA72: mov         rcx,qword ptr [rbx+0000000000000088h]
+  000000018070AA79: test        rcx,rcx
+  000000018070AA7C: je          000000018070AAF7
+  000000018070AA7E: mov         rdx,qword ptr [rdx+30h]
+  000000018070AA82: jmp         000000018070AA97
+  000000018070AA84: mov         rcx,qword ptr [rbx+0000000000000088h]
+  000000018070AA8B: test        rcx,rcx
+  000000018070AA8E: je          000000018070AAF7
+  000000018070AA90: mov         rdx,qword ptr [00000001831D3780h]
+  000000018070AA97: xor         r8d,r8d
+  000000018070AA9A: call        0000000180588F30 ; UnityGameFramework.Scripts.SortingLayerOrderControl::SetSortingLayerName
+  000000018070AA9F: mov         rdi,qword ptr [rbx+00000000000001B8h]
+  000000018070AAA6: mov         byte ptr [rbx+0000000000000167h],sil
+  000000018070AAAD: mov         rcx,qword ptr [00000001831C2AF8h]
+  000000018070AAB4: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018070AABB: jne         000000018070AAC2
+  000000018070AABD: call        0000000180380F00
+  000000018070AAC2: xor         r8d,r8d
+  000000018070AAC5: xor         edx,edx
+  000000018070AAC7: mov         rcx,rdi
+  000000018070AACA: call        0000000182421BB0
+  000000018070AACF: test        al,al
+  000000018070AAD1: jne         000000018070AAE7
+  000000018070AAD3: mov         rax,qword ptr [rbx+00000000000001B8h]
+  000000018070AADA: mov         rbx,rax
+  000000018070AADD: test        rax,rax
+  000000018070AAE0: je          000000018070AAF7
+  000000018070AAE2: jmp         000000018070AA35
+  000000018070AAE7: mov         rdi,qword ptr [rsp+30h]
+  000000018070AAEC: mov         rbx,qword ptr [rsp+38h]
+  000000018070AAF1: add         rsp,20h
+  000000018070AAF5: pop         rsi
+  000000018070AAF6: ret
+  000000018070AAF7: call        00000001803F2AC0
+  000000018070AAFC: int         3
+  000000018070AAFD: int         3
+  000000018070AAFE: int         3
+  000000018070AAFF: int         3
+
+  Summary
+
+     2294000 il2cpp

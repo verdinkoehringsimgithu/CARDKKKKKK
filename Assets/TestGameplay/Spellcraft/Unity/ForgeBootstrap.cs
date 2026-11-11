@@ -135,7 +135,7 @@ namespace CardKKK.Spellcraft.Unity
             SaveAutomatically();
             leaving = true;
             if (TestGameplayEntry.TryReturnToTable()) return;
-            try { SceneManager.LoadSceneAsync("Assets/CardTable/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
+            try { SceneManager.LoadSceneAsync("Assets/Archives/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
             catch (Exception exception)
             { leaving = false; view.ShowMessage("未能返回牌桌。", true); Debug.LogException(exception, this); }
         }

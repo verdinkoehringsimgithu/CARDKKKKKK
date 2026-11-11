@@ -285,7 +285,7 @@ namespace CardKKK.IslandSurvival.Editor
         private SurvivalConfiguration configuration;
         private UnityEditor.Editor inspector;
         private Vector2 scroll;
-        [MenuItem("孤岛生存/旧版营地/规则配置")]
+        [MenuItem("孤岛生存/历史演示/营地版/规则配置")]
         public static void Open()
         {
             var window = GetWindow<SurvivalConfigurationWindow>("孤岛生存规则");

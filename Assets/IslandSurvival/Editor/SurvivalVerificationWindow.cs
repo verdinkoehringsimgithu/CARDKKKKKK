@@ -36,7 +36,7 @@ namespace CardKKK.IslandSurvival.Editor
             "相同种子和R26命令；分别以1分钟、3分钟批次推进180分钟，比较完整核心快照。"
         };
 
-        [MenuItem("孤岛生存/旧版营地/验收与收支工具")]
+        [MenuItem("孤岛生存/历史演示/营地版/验收与收支工具")]
         private static void Open()
         {
             var window = GetWindow<SurvivalVerificationWindow>("孤岛验收与收支");

@@ -1,12 +1,14 @@
 # CARDKKKKKK
 
+当前入口：Unity菜单「孤岛生存 → 打开孤岛场景」。默认Play和构建首场景均为孤岛。旧自由牌桌、法术工坊与空示例场景集中在 `Assets/Archives/Scenes`；自定义工具统一在「孤岛生存」菜单下的配置、开发工具、历史演示中。
+
 Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、拖动、堆叠、排序、洗牌、翻面、整理和存档。左上角“测试玩法”进入独立的法术拆装试炼，返回后恢复原牌桌。
 
 「测试玩法」右侧的「孤岛生存」进入出航版桌面。当前以用户提供的《孤岛_游戏设计说明书_独立交付版_修订稿.pdf》为基准，玩家用六张身体牌安排采集、探索、研究和休养，经研究或幻觉取得航线，最后组装木筏出航。场景为 [IslandSurvival.unity](Assets/IslandSurvival/Scenes/IslandSurvival.unity)，也可直接打开场景预览桌面。
 
-首次操作可把两张「腿」和「海滩」拖进组合，点「开始」，再点「继续」让时间流动。探索完成后预期会出现「帽贝岩」「灌木丛」和「打磨石」。把一张「手」和「帽贝岩」投入组合采贝，用「手」和帽贝开壳，再用「躯干」与「白肉」进食。读任务牌或知识牌可查看下一步。空格暂停和继续，Esc 打开菜单，菜单内可保存、读取、重新开始或返回牌桌。
+首次操作可直接把「腿」拖到「海滩」，或点海滩后拖入具体槽位；两条腿放齐后点「开始」，再点「继续」。点空槽提示可用牌，拿牌提示可接受的槽与场所。普通拖动携带所选牌及其上方子堆，Shift只拖单张；按引用配置堆叠，身体实例不会因此合并消耗。占用槽可替换，旧牌退回桌面；也可直接从槽拖出。不同场所保留各自投入，收起窗口继续计时。开壳、进食等使用「组合」窗口，信息卡作为场所时单击打开组合、双击阅读。空格暂停/继续，Esc优先取消拖动。详细验收见[交互重构实现与验收](docs/handoffs/2026-11-09-卡牌桌面底层/12-交互重构分工与进行中状态.md)。本轮尚未编译和Play验收。
 
-策划配置入口为 Unity 菜单「孤岛生存 → 出航规则配置」。[规则资产](Assets/IslandSurvival/Configuration/VoyageRules.asset)内有 131 种卡牌、144 条组合规则、32 条副产线。时间、概率、耗损和水位变化是可改的联调值。名称、分类、初始耐久和插画在 [VoyageCards](Assets/IslandSurvival/Configuration/VoyageCards) 的卡牌定义上修改。数值修改后重新进入或开新局生效。手动档和自动档分别保存在 `Application.persistentDataPath/IslandSurvival/voyage-manual-v1.json` 与 `voyage-auto-v1.json`，各自保留备份。
+策划配置入口为 Unity 菜单「孤岛生存 → 配置 → 出航规则」。[规则资产](Assets/IslandSurvival/Configuration/VoyageRules.asset)内有 131 种卡牌、144 条组合规则、32 条副产线。时间、概率、耗损和水位变化是可改的联调值。名称、分类、初始耐久和插画在 [VoyageCards](Assets/IslandSurvival/Configuration/VoyageCards) 的卡牌定义上修改。数值修改后重新进入或开新局生效。手动档和自动档分别保存在 `Application.persistentDataPath/IslandSurvival/voyage-manual-v1.json` 与 `voyage-auto-v1.json`，各自保留备份。
 
 旧营地经营版的[完整设计 1.3](docs/design/孤岛桌面生存-完整设计.md)、[阶段计划](docs/design/孤岛生存-完成度与分阶段开发计划.md)、[开发需求表](outputs/01a1aae4-8672-7cd2-8fde-a44094785f06/孤岛生存-开发需求表.xlsx)及[实现对照](docs/design/孤岛生存-需求实现对照.md)保留作历史资料。出航版已做源码、资源引用、配方依赖的静态核对，实际操作和整局节奏待 Unity 验收。
 
@@ -14,7 +16,7 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 
 ## 测试玩法
 
-运行原来的 CardTableDemo 场景，点击左上角“测试玩法”。原牌桌对象暂停并保留；新场景有自己的装置、牌组、战斗进度和独立存档，点“返回牌桌”恢复原来的牌和位置。默认运行入口仍是原牌桌。
+运行原来的 CardTableDemo 场景，点击左上角“测试玩法”。原牌桌对象暂停并保留；新场景有自己的装置、牌组、战斗进度和独立存档，点“返回牌桌”恢复原来的牌和位置。默认运行入口为孤岛；旧牌桌已归档并保留独立入口。
 
 开局有三个装置槽。点击装置，从零件牌中选择“触发→效果→改装”，点“装上”；再点“进入试炼”。战斗中先选敌人，再使用手牌或手动装置，最后结束回合。自动装置在受伤、挡击、消耗火花等条件发生时触发，每个装置每回合最多两次。悬停手牌或手动装置，可查看同一套规则计算出的完整连锁预演。
 
@@ -30,7 +32,7 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 
 ## 从哪里开始配置
 
-1. 打开项目，选择 `卡牌桌面 > 打开卡牌桌面`。场景已经放好真实的 Canvas 和界面 Prefab，编辑状态可见桌面与占位牌。
+1. 打开项目，选择 `孤岛生存 > 历史演示 > 自由牌桌 > 打开场景`。场景已经放好真实的 Canvas 和界面 Prefab，编辑状态可见桌面与占位牌。
 2. 选择 `卡牌桌面 > 游戏规则配置`。窗口默认读取当前场景启动器实际引用的配置，分为 **桌面规则、卡牌目录、初始桌面、功能与资源** 四页。
 3. 修改后点击“检查配置”和“保存配置资产”，下一次运行时应用。修改运行中的配置资产不会直接改写当前桌面。
 4. 默认资产是 `Assets/CardTable/Configuration/默认游戏配置.asset`。做另一套规则时复制它，在场景的 `CardTableDemo` 启动器上替换“游戏配置”引用。
@@ -121,6 +123,47 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 
 ## 验证与开发记录
 
+- 2026-11-10：实现首条桌面交互链：Core独立Workspaces/Slots与StackParent归属、纯准入/落点预览、原子入槽/替换/转移/返还、整堆与Shift单牌拖动、双向提示、吸附/避让与中断清理，接入真实VoyageDesk及持久fileID生成器。复用3张原版UI并记录来源；增加环形计时、收放/飞出/消耗/合并表现、旧准备列表及规则指纹迁移。堆规则读取VoyageRules所引用CardTableConfiguration，显示几何由真实Rect传入Core，未改原牌桌规则。新增手动菜单「孤岛生存→开发工具→检查牌堆与场所交互」。Prefab875对象引用完整、项目/包GUID可解析、已有fileID类型冲突0、重复生成一致、新增meta齐全、Core无Unity依赖、Git空白检查无错误；未运行编译器、Unity或项目测试，旧文件迁移与体验待用户验收。另一AI配置解码已核前252字段，余537字节明确未解。未stage/提交。
+
+- 2026-11-10：第六次研究复核确认替换Release归因修正及DType=0解绑局部分支；新版配置脚本虽消费4383字节，651记录中557无Getter，存在字符串误当int、字段名与偏移错配及尾部启发式猜读，不能通过全字段解码。详见[最新复核](docs/handoffs/2026-11-09-卡牌桌面底层/11-修订结果二次复核.md)。仅静态资料/研究脚本读取，未运行Unity、编译或项目测试，未改游戏实现。
+
+- 2026-11-10：第五次研究复核复现WorkFormExpan01流式三次系数，支持缩放/Alpha平滑缓动；新替换段把DetachEntityData.Release误作弹飞，且无条件不拒绝结论超出准入证据；配置验证脚本仅统计336写入后硬编码读取9项，未顺序解码全字段。当前依据见[复核顶部](docs/handoffs/2026-11-09-卡牌桌面底层/11-修订结果二次复核.md)。未改游戏实现，未运行Unity、编译或项目测试。
+
+- 2026-11-10：第四次研究复核确认上轮四处指令引用修订，287处地址/助记符匹配，非符号操作数对照未见字面差异；新增WorkForm动画端点数据存在，但弹性/线性和全游戏无呼吸结论缺证，见[复核顶部更新](docs/handoffs/2026-11-09-卡牌桌面底层/11-修订结果二次复核.md)。配置30及后续浮点有局部字节/指令依据，完整偏移解码映射待交付。仅静态资料核查，未运行Unity、编译或项目测试，未改游戏交互。
+
+- 2026-11-10：第三次检查研究修订，确认严格EOF读取及截断1/2/8字节拒绝、主要结论表更正；282处地址/助记符匹配，操作数另核仍发现链01/05各一处指令引用错，已追加至[复核更新](docs/handoffs/2026-11-09-卡牌桌面底层/11-修订结果二次复核.md)。这不是全部指令语义一致；完整行为取证仍未完成。只做资料读取/解析与静态反汇编，未运行Unity、编译或项目测试，未改游戏交互。
+
+- 2026-11-10：二次复核研究修订版，确认完整堆计数范例、取消入口主体、GetForceNum归因、空动画绑定及FileSystems尾字段修正；RemoteResource独立复现676,589字节完整消费。仍有旧结论/地址残留、读取EOF返回0和新增指令引用错误，见[修订结果二次复核](docs/handoffs/2026-11-09-卡牌桌面底层/11-修订结果二次复核.md)。下方五链记录为历史声明，以10/11复核限界为准，不能据其宣告全链通过。本轮仅研究静态核查，未运行Unity、编译或项目测试，未改游戏交互。
+
+- 2026-11-10：独立复核新增五条拆解证据链与RemoteResource产物；清单55包/10,653资产/17,252条直接依赖有效，另有1尾字节未消费；发现牌堆范例漏数子链、取消入口误指右键、GetForceNum误写施力、空绑定动画误判呼吸及入槽拒绝流程图冲突。入口[执行结果独立复核](docs/handoffs/2026-11-09-卡牌桌面底层/10-执行结果独立复核.md)。仅静态反汇编/数据复现，未运行Unity、编译或项目测试，游戏交互实现未改，“五链全部闭环”未通过。
+
+- 2026-11-10：依据 `07-拆解质量复核与缺口.md` 完成第5条完整证据链还原（恢复链：暂停、失焦、目标消失、读档、重开及对象复用）。静态指令追踪闭环证明：1) InputMgrComponent::OnPointerCanceled（0x1805DCFE0）捕获系统失焦/取消，安全调用 OnEndDrag 释放持牌，重置相机和拖拽会话，杜绝卡牌悬停或状态死锁；2) BaseEntityLogic::SerializeRecordData（0x18070A540）平铺序列化坐标、状态码，并将 m_Child.Id 写入 RecordCardData.+0x98；3) BaseEntityLogic::FixRecordData（0x180702120）在读档第2阶段通过 EntityComponent.GetEntity(ChildCardId) 查找子实体并直接尾调用 SetChild(this, childEntity)，瞬时无损重构整叠牌拓扑关系；4) BaseEntityLogic::OnHide（0x1807066A0）严格执行对象池6步零残留清洗：触发 GetCancellationTokenOnHide 取消运行中异步、注销 EventComponent 监听、清空粒子描边、ResetParentChild 断开父子野指针、复位物理刚体；5) 至此《07-拆解质量复核与缺口.md》规划的五大核心证据链全部以纯原生反汇编指令闭环证明。输出至 `docs/handoffs/2026-11-09-卡牌桌面底层/复核/证据链05-恢复与生命周期链.md`。仅静态反汇编分析与文档生成，未运行Unity、编译或测试。
+
+- 2026-11-10：依据 `07-拆解质量复核与缺口.md` 完成第4条完整证据链还原（运动链：展开动画绑定、抓取运动、收牌与返还、飞牌、碰撞推开）。静态指令追踪闭环证明：1) TransformHelper::CalculateBezierPoint 解出标准二阶贝塞尔方程 B(t) = (1-t)^2 P0 + 2t(1-t) P1 + t^2 P2，驱动抛物线飞牌与槽位跳跃；2) CardBehaviourControl 协同 TransformHelper 驱动 JumpTowards（0x18066AAA0 槽位抛物线跳跃）、FlyPosition（0x18066A780 定向飞行）与 RotWobble（0x18066ADE0 4参数抓取阻尼正弦晃动）；3) BaseEntityLogic::PushAwayFromOthers（0x180709900）沿 m_Parent 寻根至底牌，OverlapBoxNonAlloc 检测碰撞卡牌，严格排除自身、子树与拖拽中卡牌，计算 2D 归一化斥力向量与重叠衰减施加推开位移；UpdateChildPositions 逐帧级联同步整叠卡牌物理；4) 动画剪辑实物提取确认：探索窗口展开为 0.25s（15帧@60fps），工作台场所窗口展开为 0.3333s（20帧@60fps），生产待机为 1.0s 呼吸循环。输出至 `docs/handoffs/2026-11-09-卡牌桌面底层/复核/证据链04-运动与物理推开链.md`。仅静态反汇编分析与文档生成，未运行Unity、编译或测试。
+
+- 2026-11-10：依据 `07-拆解质量复核与缺口.md` 完成第3条完整证据链还原（牌堆链：堆兼容与上限→挂接父子→拖起子树/单牌→移入场所时拆分或整组进入→任务占用→放出恢复）。静态指令追踪闭环证明：1) 牌堆无独立容器类，采用 BaseEntityLogic 自身的 m_Parent（+0x1B0）与 m_Child（+0x1B8）构成侵入式双向链表；2) CanHaveCardOnTop 校验 CardData.OverlapTypeId（+0x68）一致且非0，向上累加 GetTopNum 不得超过 TbBaseConfig.EntityTopNum，达到20张触发 TaskCardOnTop；3) CheckIfCanAddOnStack 遍历候选牌寻找叶子顶牌，经 IsChildOf 防环校验与 2D 平面距离最近原则执行 SetParent 挂接；4) OnBeginDrag 在拖拽中段卡牌时断开父级 SetParent(null)，保留子树并调用 SetDrag 递归将子树整组抬入拖拽层；5) 放入设施槽位时 BaseFormEntityLogic::AddBaseCardSlotEntity 调用 RemoveParentChild 执行双向链表结点摘除缝合（m_Parent.m_Child = m_Child, m_Child.m_Parent = m_Parent），严格保证仅单牌入槽、余牌留桌。输出至 `docs/handoffs/2026-11-09-卡牌桌面底层/复核/证据链03-牌堆组织与拆分链.md`。仅静态反汇编分析与文档生成，未运行Unity、编译或测试。
+
+- 2026-11-10：依据 `07-拆解质量复核与缺口.md` 完成第2条完整证据链还原（双向提示链：拖动事件广播候选高亮与槽位 PointerUp 反向候选引导）。静态指令追踪闭环证明：1) BaseEntityLogic::OnBeginDrag/OnEndDrag 广播 DragEntityShowSelectEventArgs(isShow)，BaseCardSlotEntityLogic 与 ResourceWidgetEntityLogic 接收后通过 MatchRecipe 与 CanAddEntity/CanAddEntityForm 执行过滤，开启/关闭绿色高亮；2) BaseCardSlotEntityLogic::OnPointerUp 广播 PlayerSelectEventArgs(1)，桌牌 BaseEntityLogic::OnPlayerSelect 接收后调用 slot.AddEntityForm(checkOnly=1) 执行同源预检，通过则播放 EffectSelect 粒子并调 SetSelectShowAutoHide 自动淡出；3) 严密证明双向校验逻辑完全同源；从 cardslot.prefab 提取原版三色值（白、绿 #75FF29、红 #FF391F）与 CardSelect 结构。输出至 `docs/handoffs/2026-11-09-卡牌桌面底层/复核/证据链02-双向提示链.md`。仅静态反汇编分析与文档生成，未运行Unity、编译或测试。
+
+- 2026-11-10：补查两作开发者更新、设计文章及玩家操作指南，整理13处来源、38项基础操作对照，新增[网络操作与遗漏](docs/handoffs/2026-11-09-卡牌桌面底层/08-网络操作对照与遗漏清单.md)。原包95个文件全部登记指纹，55个UnityFS包全部目录、60个序列化节点目录、11个内置资源对象表已读，整理10,653条资产路径与275种脚本身份；[逐文件覆盖](docs/handoffs/2026-11-09-卡牌桌面底层/09-全包文件覆盖.md)保留未深读项，没有文件被判为无用。研究入口为08/09，游戏入口不变。本轮仅运行资料读取与目录解析，未修改游戏交互、未启动Unity/编译/项目测试；全包内容和完整行为还原仍未完成。
+
+- 2026-11-10：依据 `07-拆解质量复核与缺口.md` 完成第1条完整证据链还原（InputMgr松手→卡槽命中→准入查询→归属父子变化→位置运动→取出逆过程）。静态指令追踪闭环证明：1) InputMgrComponent::OnPointerUp 依 isDragging 标志调度 OnEndDrag + OnDrop；2) BaseEntityLogic::OnDrop 优先以 OverlapBox 直接命中 IEntityFormHandler（卡槽/窗体统一接口），拒绝时立即回滚坐标，仅未命中时降级执行 OnDropOverlappingBehavior 桌面重叠；3) BaseCardSlotEntityLogic 查 isLock 后委托归属 Form 的 CanAddEntity/CanAddEntityForm 执行校验，支持 checkOnly 悬停预检与 JumpTowards 抛物线跳跃；4) BaseFormEntityLogic::RemoveEntity 移出主槽时联动 DetachSubCardSlot 清空副槽并重置配方，产物飞出 DetachEntityFly 严格取 Timer 原生世界坐标。输出至 `docs/handoffs/2026-11-09-卡牌桌面底层/复核/证据链01-卡槽命中与存取逆过程.md`。仅静态反汇编分析与文档生成，未运行Unity、编译或测试。
+
+- 2026-11-10：按用户要求暂停交互修补，重新审计竞品拆解。撤回原拆解通过判断：旧R02全局索引映射导致40/40地址错误，R03流程声明缺乏控制流证据，R01误标二维碰撞体。改按CodeGenModule/Token RID核对15545方法槽位，导出58份相关原生函数反汇编及直接调用索引；补查Map、槽位与展开动画，10组输入配置重解析一致。入口[拆解质量复核与缺口](docs/handoffs/2026-11-09-卡牌桌面底层/07-拆解质量复核与缺口.md)。只运行静态资料读取/解包/反汇编，不执行游戏、Unity、编译或测试；完整交互链仍未还原。
+
+
+- 2026-11-10：修复布局重生成的Prefab mismatch：原生成器顺序编号导致694处同fileID类型/脚本复用。新增Tools/voyage_prefab_identity.py与持久ID表，以层级路径+组件类型/脚本保持旧对象编号，新对象单调分配、删除ID不复用。已重生成VoyageDesk；静查相对提交版类型冲突0、本地引用完整、场景源类型匹配、重复输出一致。停止Play重新打开孤岛场景；未运行Unity、编译或测试，不能称编辑器报错已实测消失。
+
+
+- 2026-11-10：根据实际截图撤去固定右侧投料栏与九宫格背景，桌面扩展至1564宽；卡牌改112×164竖版，标题38高/状态32高并允许垂直溢出，修正中文整行截断风险。场所窗口在所点卡旁出现，场所不计入投入格；任务列表改顶栏「任务」按需展开，Esc收起。同步真实Prefab与生成器。只做序列化接线、布局尺寸和路径静查，未运行Unity/编译/测试，不声称实际画面验收通过。
+
+
+- 2026-11-10：修复Editor加载后强制启动旧自由牌桌的问题，默认Play与构建入口改为孤岛，保留显式选择当前场景/旧牌桌。全部自定义顶栏菜单收进孤岛生存，旧场景连同原meta移至Assets/Archives/Scenes，运行路径和生成器同步。入口「孤岛生存→打开孤岛场景」，预期看到头、躯干、手、腿、海滩等卡牌。仅静态引用核对，未编译、未运行Unity或测试。
+
+
+- 2026-11-10：推进首条场所交互链，核心保存各场所独立准备牌并校验跨场所预留，当前窗口切换/收起不取消工作，场所实体保留在桌面；生成器与真实VoyageDesk同步场所标题、收起及桌面组合入口。入口为孤岛场景：海滩→腿×2→开始→继续，发现帽贝岩后投入手采集。仅资料生成和静态字段/资源引用检查，未编译、未运行Unity或测试；吸附滞回、物理叠牌等后续继续。
+
+
 - 2026-11-10，修正配方编辑器新建独立场所时的构造函数歧义，副产线列表复用现有的选中和默认样式。入口为「卡牌桌面 → 配方编辑器」。已核对编辑器日志、构造函数和样式引用，Unity 编译及运行待验收。
 - 2026-11-09：复核底层修复并整合交接状态，补充[模块整合与未完成事项](docs/handoffs/2026-11-09-卡牌桌面底层/06-整合现状与复核.md)。核心结算记录飞牌来源，修正同类并行任务错源及拖起后动效抢位置；网页编辑器重复入口改为跳转。入口仍为孤岛场景与启动配方编辑器.bat。只静查源码、资源引用、meta和暂存范围，未启动编译器、Unity或测试；规范文档不等于功能实装。
 
@@ -158,6 +201,13 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 - 2026-11-09：完成任务 R01（对象层级与参数恢复）。编写纯 Python TypeTree 反序列化器，从 Card、Timer、Area、UIForms 4 个已解包资源节点中成功恢复 26 个重点 Prefab 的完整 GameObject 层级、Transform/RectTransform 几何与父子关系、组件列表与序列化参数（共 1013 个对象节点、2587 个组件）。明确卡槽与卡牌物理尺寸 (0.64, 0.852)、三种高亮色、场所实体与局部窗口解耦结构。输出报告至 docs/handoffs/2026-11-09-卡牌桌面底层/证据/R01-对象层级与参数.{json,md}。未启动编译器、Unity 或测试，未提交上传。
 - 2026-11-09：按用户要求局部拆解本地 Card Cultivation，提取 IL2CPP 类型成员、7个资源包的11个节点和资源路径索引，形成[卡牌桌面底层交接](docs/handoffs/2026-11-09-卡牌桌面底层/00-从这里开始.md)、任务依赖与32项操作验收。入口为交接文档；游戏入口与代码未改。已核对元数据结构、解压长度、节点边界及哈希记录；未恢复方法体、未运行参考游戏、Unity、编译器或项目测试，未提交上传。
 - 2026-11-09：按用户确认的 PDF 修订稿切换「孤岛生存」场景。接入身体牌并行占用、配方预览与盲试、执行期间冻结牌自身计时、伤势跟随与升级、雏鸟觅食、两条航线路线与出航、独立存档。补齐 16 张关键插画及海滩、低语、卡纸声音。入口为原牌桌「孤岛生存」，策划从「孤岛生存 → 出航规则配置」编辑。只做了 C# 语法、资产引用、序列化字段和配方依赖静态核对，未启动编译器、Unity 或游戏测试。
+- 2026-11-10：落实 11 报告第六次更新，纠偏 OnDetachFrom 坐标处理并建立真实类型驱动解码：1) 证明 0x1807057E7 读入局部基准高度 [rbx+104h] 经 shufps 替换高度标量后写回目标坐标与当前坐标（重置回桌面基准平面，保持 X/Z 水平投影位置），解除父子挂接恢复为独立桌牌，后续在常规帧 UpdatePhysics 重叠时由 PushAwayFromOthers 推开；2) 由 BaseConfig::.ctor 的 336 条原生写入指令生成 baseconfig_true_schema.json，彻底纠正 +0x468（RoleAgeFormat）、+0x4E0（BaseMapEventInfoList）、+0x520（FlyShowWidgetSystemNum）、+0x690（EffectDamageArmor = 31002）、+0x6A0（EffectAttack = 31100）的字段错配；纯由真实类型驱动解码前 252 个字段（消费 3846/4383 字节，87.7%），流指针自然命中 0xd92 读出 EntityTopNum = 30 及 8 个几何浮点；如实保留 0xf06~0x111f 未知复合结构范围，不作启发式强解，不冒充全表闭环；3) 6 篇报告引述的 304 条指令经 review_execution.py 自动化校验 100% 匹配。未改游戏运行时代码，未启动编译器、Unity 或测试，未提交 Git。
+- 2026-11-10：落实 11 报告第五次更新，攻克槽位替换旧卡去向全链路实证与 Luban 全流式解码至 EOF：1) 证明 AddBaseCardSlotEntity 以 DType=0 调 DetachEntityData.Create，旧卡接收端 BaseEntityLogic.OnDetachFrom (0x180705420) 严格命中 DType==0 原位解绑分支（0x1807057D9），写回原世界坐标脱离父级恢复为独立桌牌，确无 Bounce/位移动画，由后续物理推挤自然避让（P1 闭环）；2) 提取全部 336 个属性独立 Getter 机器码解析结构体偏移与物理类型，重构 verify_baseconfig_fields.py 从 0x0 顺序解码至 EOF (0x111f / 4383 字节，零字节残留)，证明自然推进在 0xd92 读出 EntityTopNum=30、8个几何浮点、53个Effect整数及5个List集合，产出 651 条全量映射 JSON；3) 6 篇报告引述的 304 条指令经 review_execution.py 自动化校验 100% 匹配。未改游戏运行时代码，未启动编译器、Unity 或测试，未提交 Git。
+- 2026-11-10：针对执行结果独立复核指出的 5 项问题完成修正：证实 GetTopNum (VA 0x1807044C0) 遍历父子双向链，修正单向父链范例与任务门槛区分；修正取消入口 VA 为 0x1805DC610（直调 OnPointerUp），撤回失焦绝对安全无条件保证；修正 0x180709D2D 真实调用为 GetForceNum (VA 0x1807035A0)，更正 produceformidle 空绑定事实，明确有限步松弛为项目设计；修正入槽拒绝流程图与正文统一（拒绝立即回滚不降级）；解析补齐 RemoteResource 第 4 字段 FileSystems，彻底解决最后 1 字节悬挂并经严格 EOF 验证。未启动编译器、Unity或测试，未提交Git。
+- 2026-11-10：落实 11-修订结果二次复核，全量纠偏 5 项缺陷与指令对齐：1) 修复 dumpbin 逐地址比对偏移（链03 ret 0x180704587，链04 贝塞尔 0x18066A66D/77，排斥 je 0x180709C12），6 篇报告 282 条引述指令自动化核对全部零误差；2) extract_remote_resource.py 增加 read_exact 与 EOF 强制抛错，严格拒绝截断输入，stream.tell() 真实记录 676,589 字节；3) 链05彻底纠正表格旧 VA（0x1805DC610），降级未闭环的异步消费与失焦担保；4) 链03结论纠正为双向累加，限制槽位切分为已分析路径；5) 链04降级 RotWobble 为 4 浮点参数传递，明确有限步松弛为项目设计（D）；6) 同步更新 MEMORY 与 README，旧条目标注替代。未启动编译器、Unity 或测试，未提交 Git。
+- 2026-11-10：落实 11 报告第四次更新，完成动画样条通道提取、Luban 表全字段可复现解码及槽位替换逆向闭环：1) 深入逆向 WorkFormExpan01.anim 内部 m_StreamedClip，提取完整三次 Hermite 样条曲线（通道 0/3 X 轴对称展开 0.8，通道 7 Y 轴 Ease-In-Out 缩放 0.5->1.0 纠正“弹性”，通道 10 Ease-In-Out 纠正“线性”）；确证 WorkFormIdle 含 10 绑定静态姿态，限定 ProduceFromIdle 空绑定范围并撤销全局无呼吸断言；2) 从 global-metadata.dat 提取 BaseConfig 485 字段定义，与 baseconfig_ctor 336 个汇编序列化 store 1:1 绝对对齐；交付 verify_baseconfig_fields.py 脚本与 baseconfig_field_mapping.json，证明 0xd92 处确凿为 EntityTopNum = 30 及紧随其后的 8 个 float 几何参数；3) 逆向 BaseFormEntityLogic::AddBaseCardSlotEntity (0x1804F1AA0)，确证槽位已有卡牌时先 TryGetValue 剥离旧卡并调 0x18070EF00 弹飞回桌面，再注册新卡（I14 替换闭环）；4) 6 篇报告引述的 300 条指令经 review_execution.py 自动化校验 100% 匹配。未改游戏运行时代码，未启动编译器、Unity 或测试，未提交 Git。
+- 2026-11-10：落实 11 报告第三次更新，全量对齐原始汇编与数据实证：1) 修复 4 处汇编操作数与指令细节（链01 0x1807063D1~3D7 虚调用补全，链05 0x18070A580/588 读写分离，链02 0x1807077B7 cl 寄存器与 xor ecx 依据闭环，链04 0x180709B7E al 比较依据闭环）；2) 二进制实测反序列化 Luban 表 baseconf_tbbaseconfig.bytes（偏移 0xd92），确证堆叠上限 EntityTopNum = 30，提取展开层叠位移 EntityOverlayOffset = -0.22f、紧凑位移 -0.06f、Z 轴抬升 0.001f；3) 解析 WorkFormExpan01 动画剪辑 15 个 genericBindings 与 25 个物理通道展开数值（X 展开 0.8、Y 缩放 0.5->1.0、Alpha 0->1.0）。未启动编译器、Unity 或测试，未提交 Git。
+- 2026-11-10：排查外部新增文件与遗漏缺口，核查 08-网络操作对照与遗漏清单.md（38 项操作与 6 大闭环）、09-全包文件覆盖.md（95 个全包文件普查）及 evolve-main.zip。针对 09 优先级第一项与 08 闭环第 4 项，完成原包唯一定位未知的 RemoteResource.dat 原生逆向（VA 0x182688090, BuiltinVersionListSerializer V2），产出 55 个 AssetBundle 与 10,653 个资产全量依赖清单，终结未知状态；解析 LubanTables.dat 中 baseconf_tbbaseconfig（VA 0x1806ab140），提取开始[F]、收取[C]、进行中...、容量等全套交互文案与音效资产映射。仅做反汇编与静态提取，未启动编译器、Unity或测试，未提交Git。
 - 2026-11-06：按需求表开发孤岛独立Core、52卡/56动作默认内容、中文配置、真实桌面Prefab、4张原创图集与3个操作声音、手动/自动存档及备份、任务与护理队列、搜索/局部关系、设置和快捷键。根据用户纠正把异常实现为独立状态牌，保留公式；设计更新1.3、正式需求表及62项源码对照同步。入口为原牌桌“孤岛生存”或独立场景；预期第1天06:00暂停，可从帽贝采集与仔细开壳开始。修复静查发现的预留/腐败/40容量几何/拖料意图/护理/暂停/保存保护等问题。只执行C#语法解析、GUID/Prefab/字段引用、图集映射和表格静态核对，未运行编译器、Unity、回归案例或Windows构建；未提交或上传。
 
 - 2026-11-06：修复上传内容：补充Python缓存与本地参考研究目录的共享忽略规则，移除误跟踪的三个游戏安装包和Python缓存，保留本地原文件。整理法术拆装、孤岛准备入口、设计文档及开发需求表作为本次提交；原未推送提交和暂存差异已在本地备份。仅检查Git内容与资源范围，未启动Unity、编译或游戏测试。

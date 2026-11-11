@@ -10,7 +10,7 @@ namespace CardKKK.Island.Editor
     [CustomEditor(typeof(IslandConfiguration))]
     public sealed class IslandConfigurationEditor : UnityEditor.Editor
     {
-        [MenuItem("孤岛底层/在当前场景创建会话（使用选中配置）")]
+        [MenuItem("孤岛生存/开发工具/底层样例/在当前场景创建会话（使用选中配置）")]
         private static void CreateSession()
         {
             var configuration = Selection.activeObject as IslandConfiguration;

@@ -1,0 +1,124 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180555040: mov         qword ptr [rsp+8],rbx
+  0000000180555045: mov         qword ptr [rsp+10h],rbp
+  000000018055504A: mov         qword ptr [rsp+18h],rsi
+  000000018055504F: push        rdi
+  0000000180555050: sub         rsp,50h
+  0000000180555054: cmp         byte ptr [rcx+6Ch],0
+  0000000180555058: movzx       ebp,r9b
+  000000018055505C: mov         rdi,rdx
+  000000018055505F: mov         rbx,rcx
+  0000000180555062: jne         00000001805551A6
+  0000000180555068: mov         rsi,qword ptr [rcx+0000000000000090h]
+  000000018055506F: test        rsi,rsi
+  0000000180555072: je          00000001805551BD
+  0000000180555078: test        rdx,rdx
+  000000018055507B: je          00000001805551BD
+  0000000180555081: xor         edx,edx
+  0000000180555083: mov         rcx,rdi
+  0000000180555086: call        0000000180704870 ; UnityGameFramework.Scripts.BaseEntityLogic::IsNormalAndNotSub
+  000000018055508B: test        al,al
+  000000018055508D: je          00000001805551A6
+  0000000180555093: mov         rax,qword ptr [rsi+0000000000000148h]
+  000000018055509A: test        rax,rax
+  000000018055509D: je          00000001805551BD
+  00000001805550A3: cmp         byte ptr [rax+70h],0
+  00000001805550A7: jne         00000001805551A6
+  00000001805550AD: mov         rcx,qword ptr [rbx+0000000000000090h]
+  00000001805550B4: test        rcx,rcx
+  00000001805550B7: je          00000001805551BD
+  00000001805550BD: cmp         byte ptr [rbx+64h],0
+  00000001805550C1: mov         rdx,rdi
+  00000001805550C4: jne         00000001805550E5
+  00000001805550C6: mov         r8d,dword ptr [rbx+60h]
+  00000001805550CA: xor         r9d,r9d
+  00000001805550CD: call        00000001805590A0 ; UnityGameFramework.Scripts.WidgetResourceFormEntityLogic::MatchSubSlots
+  00000001805550D2: test        al,al
+  00000001805550D4: je          00000001805551A6
+  00000001805550DA: test        bpl,bpl
+  00000001805550DD: jne         00000001805551A2
+  00000001805550E3: jmp         0000000180555101
+  00000001805550E5: xor         r8d,r8d
+  00000001805550E8: call        0000000180558F40 ; UnityGameFramework.Scripts.WidgetResourceFormEntityLogic::MatchRecipe
+  00000001805550ED: test        eax,eax
+  00000001805550EF: je          00000001805551A6
+  00000001805550F5: test        bpl,bpl
+  00000001805550F8: jne         00000001805551A2
+  00000001805550FE: mov         dword ptr [rbx+68h],eax
+  0000000180555101: xor         edx,edx
+  0000000180555103: mov         rcx,rdi
+  0000000180555106: call        000000018070A090 ; UnityGameFramework.Scripts.BaseEntityLogic::ResetChildShowPos
+  000000018055510B: xor         edx,edx
+  000000018055510D: mov         rcx,rdi
+  0000000180555110: call        000000018056DFF0 ; UnityGameFramework.Scripts.EntityLogicWithData::get_Id
+  0000000180555115: xor         r8d,r8d
+  0000000180555118: mov         edx,eax
+  000000018055511A: mov         rcx,rbx
+  000000018055511D: call        00000001805551D0 ; UnityGameFramework.Scripts.WidgetResourceCardSlotEntityLogic::AttachEntity
+  0000000180555122: xor         ecx,ecx
+  0000000180555124: call        000000018049F2D0
+  0000000180555129: xor         ecx,ecx
+  000000018055512B: mov         rsi,rax
+  000000018055512E: call        000000018049F250
+  0000000180555133: test        rax,rax
+  0000000180555136: je          00000001805551BD
+  000000018055513C: xor         edx,edx
+  000000018055513E: mov         rcx,rax
+  0000000180555141: call        000000018059E720 ; UnityGameFramework.Scripts.LubanTableComponent::get_BaseConfig
+  0000000180555146: test        rax,rax
+  0000000180555149: je          00000001805551BD
+  000000018055514B: xor         edx,edx
+  000000018055514D: mov         rcx,rax
+  0000000180555150: call        00000001806D3A10 ; cfg.baseConf.TbBaseConfig::get_SoundTimerPutCard
+  0000000180555155: xor         edx,edx
+  0000000180555157: mov         rcx,rbx
+  000000018055515A: mov         edi,eax
+  000000018055515C: call        0000000182418FC0
+  0000000180555161: test        rax,rax
+  0000000180555164: je          00000001805551BD
+  0000000180555166: xor         r8d,r8d
+  0000000180555169: lea         rcx,[rsp+40h]
+  000000018055516E: mov         rdx,rax
+  0000000180555171: call        0000000182446090
+  0000000180555176: xor         r9d,r9d
+  0000000180555179: mov         qword ptr [rsp+20h],0
+  0000000180555182: lea         r8,[rsp+30h]
+  0000000180555187: mov         edx,edi
+  0000000180555189: mov         rcx,rsi
+  000000018055518C: movsd       xmm0,mmword ptr [rax]
+  0000000180555190: mov         eax,dword ptr [rax+8]
+  0000000180555193: movsd       mmword ptr [rsp+30h],xmm0
+  0000000180555199: mov         dword ptr [rsp+38h],eax
+  000000018055519D: call        00000001805FE460 ; UnityGameFramework.Scripts.SoundExtension::PlaySound
+  00000001805551A2: mov         al,1
+  00000001805551A4: jmp         00000001805551A8
+  00000001805551A6: xor         al,al
+  00000001805551A8: mov         rbx,qword ptr [rsp+60h]
+  00000001805551AD: mov         rbp,qword ptr [rsp+68h]
+  00000001805551B2: mov         rsi,qword ptr [rsp+70h]
+  00000001805551B7: add         rsp,50h
+  00000001805551BB: pop         rdi
+  00000001805551BC: ret
+  00000001805551BD: call        00000001803F2AC0
+  00000001805551C2: int         3
+  00000001805551C3: int         3
+  00000001805551C4: int         3
+  00000001805551C5: int         3
+  00000001805551C6: int         3
+  00000001805551C7: int         3
+  00000001805551C8: int         3
+  00000001805551C9: int         3
+  00000001805551CA: int         3
+  00000001805551CB: int         3
+  00000001805551CC: int         3
+  00000001805551CD: int         3
+  00000001805551CE: int         3
+  00000001805551CF: int         3
+
+  Summary
+
+     2294000 il2cpp

@@ -1,0 +1,56 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804F21F0: mov         qword ptr [rsp+8],rbx
+  00000001804F21F5: push        rdi
+  00000001804F21F6: sub         rsp,20h
+  00000001804F21FA: cmp         byte ptr [0000000183368669h],0
+  00000001804F2201: mov         rdi,rdx
+  00000001804F2204: mov         rbx,rcx
+  00000001804F2207: jne         00000001804F221C
+  00000001804F2209: lea         rcx,[00000001831CBF48h]
+  00000001804F2210: call        00000001803F2920
+  00000001804F2215: mov         byte ptr [0000000183368669h],1
+  00000001804F221C: mov         rax,qword ptr [rbx+70h]
+  00000001804F2220: test        rax,rax
+  00000001804F2223: je          00000001804F226F
+  00000001804F2225: mov         rcx,qword ptr [rax+0000000000000260h]
+  00000001804F222C: test        rcx,rcx
+  00000001804F222F: je          00000001804F226F
+  00000001804F2231: cmp         byte ptr [rcx+00000000000000C0h],0
+  00000001804F2238: je          00000001804F2247
+  00000001804F223A: xor         al,al
+  00000001804F223C: mov         rbx,qword ptr [rsp+30h]
+  00000001804F2241: add         rsp,20h
+  00000001804F2245: pop         rdi
+  00000001804F2246: ret
+  00000001804F2247: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  00000001804F224E: test        rcx,rcx
+  00000001804F2251: je          00000001804F226F
+  00000001804F2253: mov         r8,qword ptr [00000001831CBF48h]
+  00000001804F225A: mov         rdx,rdi
+  00000001804F225D: call        000000018155A920
+  00000001804F2262: mov         rbx,qword ptr [rsp+30h]
+  00000001804F2267: xor         al,1
+  00000001804F2269: add         rsp,20h
+  00000001804F226D: pop         rdi
+  00000001804F226E: ret
+  00000001804F226F: call        00000001803F2AC0
+  00000001804F2274: int         3
+  00000001804F2275: int         3
+  00000001804F2276: int         3
+  00000001804F2277: int         3
+  00000001804F2278: int         3
+  00000001804F2279: int         3
+  00000001804F227A: int         3
+  00000001804F227B: int         3
+  00000001804F227C: int         3
+  00000001804F227D: int         3
+  00000001804F227E: int         3
+  00000001804F227F: int         3
+
+  Summary
+
+     2294000 il2cpp

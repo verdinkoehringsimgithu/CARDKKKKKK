@@ -1,0 +1,40 @@
+{
+  "source": "Card Cultivation/CardCultivation_Data/StreamingAssets/UI/UISprites/Guide.dat",
+  "source_sha256": "e77ac4301d3eeec1e49611a65bfead084cb5d244c605b4787a0253c1569c2182",
+  "usage": "用户授权先复用原版UI，后续通过Prefab/主题替换；不作为原创资产。",
+  "assets": [
+    {
+      "asset": "assets/gamemain/ui/uisprites/guide/card_slot.png",
+      "sprite_pathID": -1241215133963415752,
+      "texture_pathID": -1817780058547166325,
+      "size": [
+        138,
+        173
+      ],
+      "output": "Assets/IslandSurvival/Art/ReferenceUI/card_slot.png",
+      "sha256": "2c293580afe3d0eb6ed50e4598e21800956962b68ec160005ee818d20fd3f6bc"
+    },
+    {
+      "asset": "assets/gamemain/ui/uisprites/guide/card_select.png",
+      "sprite_pathID": 5064847253962557305,
+      "texture_pathID": 2219195040802968852,
+      "size": [
+        151,
+        193
+      ],
+      "output": "Assets/IslandSurvival/Art/ReferenceUI/card_select.png",
+      "sha256": "c83c7ce09fa5406e97960ddc80c5b9664cfc6d188579489bb0fbcc49c1bf6724"
+    },
+    {
+      "asset": "assets/gamemain/ui/uisprites/guide/timer_progress.png",
+      "sprite_pathID": 8605369828238566591,
+      "texture_pathID": -599440136499120028,
+      "size": [
+        308,
+        309
+      ],
+      "output": "Assets/IslandSurvival/Art/ReferenceUI/timer_progress.png",
+      "sha256": "3752dd051ebb970d28fc0484e5f0fc7db9ab67d2cc102405fc5206de6799960f"
+    }
+  ]
+}

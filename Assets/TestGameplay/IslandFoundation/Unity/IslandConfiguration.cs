@@ -15,7 +15,7 @@ namespace CardKKK.Island.Unity
         public Vector2 Position;
     }
 
-    [CreateAssetMenu(menuName = "孤岛底层/玩法配置", fileName = "孤岛玩法配置")]
+    [CreateAssetMenu(menuName = "孤岛生存/开发工具/底层样例/玩法配置", fileName = "孤岛玩法配置")]
     public sealed class IslandConfiguration : ScriptableObject
     {
         public IslandDefinition Definition = new IslandDefinition();

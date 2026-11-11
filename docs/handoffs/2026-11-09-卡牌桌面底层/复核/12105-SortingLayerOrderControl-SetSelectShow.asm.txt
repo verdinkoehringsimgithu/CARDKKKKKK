@@ -1,0 +1,51 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180588EB0: mov         qword ptr [rsp+8],rbx
+  0000000180588EB5: push        rdi
+  0000000180588EB6: sub         rsp,30h
+  0000000180588EBA: mov         rdi,r8
+  0000000180588EBD: mov         rbx,rcx
+  0000000180588EC0: mov         rcx,qword ptr [rcx+18h]
+  0000000180588EC4: xor         r8d,r8d
+  0000000180588EC7: call        000000018065F450
+  0000000180588ECC: mov         rcx,qword ptr [rbx+18h]
+  0000000180588ED0: test        rcx,rcx
+  0000000180588ED3: je          0000000180588F0D
+  0000000180588ED5: xor         edx,edx
+  0000000180588ED7: call        000000018241A980
+  0000000180588EDC: test        rax,rax
+  0000000180588EDF: je          0000000180588F0D
+  0000000180588EE1: mov         ecx,dword ptr [rdi+8]
+  0000000180588EE4: lea         rdx,[rsp+20h]
+  0000000180588EE9: movsd       xmm0,mmword ptr [rdi]
+  0000000180588EED: xor         r8d,r8d
+  0000000180588EF0: mov         dword ptr [rsp+28h],ecx
+  0000000180588EF4: mov         rcx,rax
+  0000000180588EF7: movsd       mmword ptr [rsp+20h],xmm0
+  0000000180588EFD: call        0000000182446680
+  0000000180588F02: mov         rbx,qword ptr [rsp+40h]
+  0000000180588F07: add         rsp,30h
+  0000000180588F0B: pop         rdi
+  0000000180588F0C: ret
+  0000000180588F0D: call        00000001803F2AC0
+  0000000180588F12: int         3
+  0000000180588F13: int         3
+  0000000180588F14: int         3
+  0000000180588F15: int         3
+  0000000180588F16: int         3
+  0000000180588F17: int         3
+  0000000180588F18: int         3
+  0000000180588F19: int         3
+  0000000180588F1A: int         3
+  0000000180588F1B: int         3
+  0000000180588F1C: int         3
+  0000000180588F1D: int         3
+  0000000180588F1E: int         3
+  0000000180588F1F: int         3
+
+  Summary
+
+     2294000 il2cpp

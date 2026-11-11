@@ -93,7 +93,7 @@ namespace CardKKK.IslandSurvival.Unity
             if (returning) return;
             if (allowSave) AutoSave(); returning = true;
             if (TestGameplayEntry.TryReturnToTable()) return;
-            try { SceneManager.LoadSceneAsync("Assets/CardTable/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
+            try { SceneManager.LoadSceneAsync("Assets/Archives/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
             catch (Exception exception) { returning = false; Debug.LogException(exception); view.Message("返回牌桌失败：" + exception.Message); }
         }
         private void Quit()

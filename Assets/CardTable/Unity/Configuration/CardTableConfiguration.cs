@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CardKKK.Tabletop.Unity
 {
-    [CreateAssetMenu(menuName = "卡牌桌面/游戏规则配置", fileName = "新游戏配置")]
+    [CreateAssetMenu(menuName = "孤岛生存/历史演示/自由牌桌/游戏规则配置", fileName = "新游戏配置")]
     public sealed class CardTableConfiguration : ScriptableObject
     {
         [InspectorName("桌面与交互规则")] public TableRuleSettings Rules = new TableRuleSettings();

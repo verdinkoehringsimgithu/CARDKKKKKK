@@ -1,0 +1,111 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018055F2A0: push        rbp
+  000000018055F2A2: push        rdi
+  000000018055F2A3: sub         rsp,58h
+  000000018055F2A7: cmp         byte ptr [000000018336891Bh],0
+  000000018055F2AE: mov         rbp,rdx
+  000000018055F2B1: mov         rdi,rcx
+  000000018055F2B4: jne         000000018055F2ED
+  000000018055F2B6: lea         rcx,[00000001831CA050h]
+  000000018055F2BD: call        00000001803F2920
+  000000018055F2C2: lea         rcx,[000000018319D550h]
+  000000018055F2C9: call        00000001803F2920
+  000000018055F2CE: lea         rcx,[000000018319E698h]
+  000000018055F2D5: call        00000001803F2920
+  000000018055F2DA: lea         rcx,[00000001831A05D8h]
+  000000018055F2E1: call        00000001803F2920
+  000000018055F2E6: mov         byte ptr [000000018336891Bh],1
+  000000018055F2ED: mov         rax,qword ptr [rdi+78h]
+  000000018055F2F1: mov         qword ptr [rsp+78h],rbx
+  000000018055F2F6: mov         qword ptr [rsp+0000000000000080h],rsi
+  000000018055F2FE: mov         qword ptr [rsp+50h],r14
+  000000018055F303: movaps      xmmword ptr [rsp+40h],xmm6
+  000000018055F308: mov         byte ptr [rsp+70h],0
+  000000018055F30D: test        rax,rax
+  000000018055F310: je          000000018055F453
+  000000018055F316: mov         byte ptr [rax+0000000000000161h],1
+  000000018055F31D: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F324: mov         r14,qword ptr [rdi+78h]
+  000000018055F328: movss       xmm6,dword ptr [rdi+2Ch]
+  000000018055F32D: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018055F334: jne         000000018055F342
+  000000018055F336: call        0000000180380F00
+  000000018055F33B: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F342: mov         rax,qword ptr [rcx+00000000000000B8h]
+  000000018055F349: mov         rbx,qword ptr [rax+10h]
+  000000018055F34D: test        rbx,rbx
+  000000018055F350: jne         000000018055F3C9
+  000000018055F352: cmp         dword ptr [rcx+00000000000000E0h],ebx
+  000000018055F358: jne         000000018055F366
+  000000018055F35A: call        0000000180380F00
+  000000018055F35F: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F366: mov         rax,qword ptr [rcx+00000000000000B8h]
+  000000018055F36D: mov         rcx,qword ptr [00000001831CA050h]
+  000000018055F374: mov         rsi,qword ptr [rax]
+  000000018055F377: call        00000001803F2A70
+  000000018055F37C: mov         rbx,rax
+  000000018055F37F: test        rax,rax
+  000000018055F382: je          000000018055F453
+  000000018055F388: mov         r8,qword ptr [000000018319E698h]
+  000000018055F38F: xor         r9d,r9d
+  000000018055F392: mov         rdx,rsi
+  000000018055F395: mov         rcx,rax
+  000000018055F398: call        000000018078EB90
+  000000018055F39D: mov         rax,qword ptr [00000001831A05D8h]
+  000000018055F3A4: mov         rdx,rbx
+  000000018055F3A7: mov         rcx,qword ptr [rax+00000000000000B8h]
+  000000018055F3AE: mov         qword ptr [rcx+10h],rbx
+  000000018055F3B2: mov         rax,qword ptr [00000001831A05D8h]
+  000000018055F3B9: mov         rcx,qword ptr [rax+00000000000000B8h]
+  000000018055F3C0: add         rcx,10h
+  000000018055F3C4: call        00000001803F2310
+  000000018055F3C9: mov         rcx,qword ptr [00000001831CA050h]
+  000000018055F3D0: call        00000001803F2A70
+  000000018055F3D5: mov         rsi,rax
+  000000018055F3D8: test        rax,rax
+  000000018055F3DB: je          000000018055F453
+  000000018055F3DD: mov         r8,qword ptr [000000018319D550h]
+  000000018055F3E4: xor         r9d,r9d
+  000000018055F3E7: mov         rdx,rdi
+  000000018055F3EA: mov         rcx,rax
+  000000018055F3ED: call        000000018078EB90
+  000000018055F3F2: mov         edx,dword ptr [rbp+8]
+  000000018055F3F5: mov         r9,rbx
+  000000018055F3F8: movsd       xmm0,mmword ptr [rbp]
+  000000018055F3FD: movaps      xmm2,xmm6
+  000000018055F400: mov         dword ptr [rsp+38h],edx
+  000000018055F404: mov         rcx,r14
+  000000018055F407: lea         rdx,[rsp+30h]
+  000000018055F40C: mov         qword ptr [rsp+28h],0
+  000000018055F415: movsd       mmword ptr [rsp+30h],xmm0
+  000000018055F41B: mov         qword ptr [rsp+20h],rsi
+  000000018055F420: call        000000018066A780 ; UnityGameFramework.Scripts.TransformHelper::FlyPosition
+  000000018055F425: xor         edx,edx
+  000000018055F427: mov         byte ptr [rsp+70h],al
+  000000018055F42B: lea         rcx,[rsp+70h]
+  000000018055F430: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  000000018055F435: movaps      xmm6,xmmword ptr [rsp+40h]
+  000000018055F43A: mov         r14,qword ptr [rsp+50h]
+  000000018055F43F: mov         rsi,qword ptr [rsp+0000000000000080h]
+  000000018055F447: mov         rbx,qword ptr [rsp+78h]
+  000000018055F44C: add         rsp,58h
+  000000018055F450: pop         rdi
+  000000018055F451: pop         rbp
+  000000018055F452: ret
+  000000018055F453: call        00000001803F2AC0
+  000000018055F458: int         3
+  000000018055F459: int         3
+  000000018055F45A: int         3
+  000000018055F45B: int         3
+  000000018055F45C: int         3
+  000000018055F45D: int         3
+  000000018055F45E: int         3
+  000000018055F45F: int         3
+
+  Summary
+
+     2294000 il2cpp

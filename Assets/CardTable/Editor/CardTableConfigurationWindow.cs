@@ -16,7 +16,7 @@ namespace CardKKK.Tabletop.Editor
         private bool valid;
         private static readonly string[] Tabs = { "桌面规则", "卡牌目录", "初始桌面", "功能与资源" };
 
-        [MenuItem("卡牌桌面/游戏规则配置", priority = 20)]
+        [MenuItem("孤岛生存/历史演示/自由牌桌/游戏规则配置", priority = 20)]
         public static void Open()
         {
             var window = GetWindow<CardTableConfigurationWindow>("游戏规则配置");
@@ -34,7 +34,7 @@ namespace CardKKK.Tabletop.Editor
             window.Show();
         }
 
-        [MenuItem("卡牌桌面/补齐缺少的默认配置", priority = 21)]
+        [MenuItem("孤岛生存/历史演示/自由牌桌/补齐缺少的默认配置", priority = 21)]
         public static void CreateMissingDefaults()
         {
             CardTableConfiguration created = CardTableDefaults.CreateMissing();

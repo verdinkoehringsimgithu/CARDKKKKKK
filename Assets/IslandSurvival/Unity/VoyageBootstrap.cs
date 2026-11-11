@@ -52,7 +52,7 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (configuration == null || view == null) throw new InvalidOperationException("未绑定出航规则或桌面。");
             VoyageDefinition definition = configuration.BuildDefinition();
-            var newEngine = new VoyageEngine(definition);
+            var newEngine = new VoyageEngine(definition, view.MeasureDesk());
             string directory = Path.Combine(Application.persistentDataPath, "IslandSurvival");
             automatic = new VoyageSaveStore(Path.Combine(directory, "voyage-auto-v1.json"), definition);
             manual = new VoyageSaveStore(Path.Combine(directory, "voyage-manual-v1.json"), definition);
@@ -172,7 +172,7 @@ namespace CardKKK.IslandSurvival.Unity
             if (dirty && allowAutosave) SaveAutomatic();
             returning = true;
             if (TestGameplayEntry.TryReturnToTable()) return;
-            try { SceneManager.LoadSceneAsync("Assets/CardTable/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
+            try { SceneManager.LoadSceneAsync("Assets/Archives/Scenes/CardTableDemo.unity", LoadSceneMode.Single); }
             catch (Exception exception)
             {
                 returning = false;

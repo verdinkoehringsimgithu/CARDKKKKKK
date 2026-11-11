@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CardKKK.Tabletop.Unity
 {
     /// <summary>设计时的卡牌定义；运行中的实例属性由核心目录深拷贝。</summary>
-    [CreateAssetMenu(menuName = "卡牌桌面/卡牌定义", fileName = "新卡牌")]
+    [CreateAssetMenu(menuName = "孤岛生存/历史演示/自由牌桌/卡牌定义", fileName = "新卡牌")]
     public sealed class CardDefinition : ScriptableObject
     {
         [InspectorName("定义 ID"), Tooltip("稳定且唯一的技术标识。存档通过它查找卡牌，发布后不要随意改名。")]

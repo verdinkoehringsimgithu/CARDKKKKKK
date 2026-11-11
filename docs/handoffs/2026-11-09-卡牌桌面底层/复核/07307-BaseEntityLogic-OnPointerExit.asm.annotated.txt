@@ -1,0 +1,125 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180707C90: push        rbx
+  0000000180707C92: sub         rsp,60h
+  0000000180707C96: mov         rbx,rcx
+  0000000180707C99: cmp         byte ptr [00000001833696C1h],0
+  0000000180707CA0: jne         0000000180707CE5
+  0000000180707CA2: lea         rcx,[00000001831D4588h]
+  0000000180707CA9: call        00000001803F2920
+  0000000180707CAE: lea         rcx,[00000001831D4638h]
+  0000000180707CB5: call        00000001803F2920
+  0000000180707CBA: lea         rcx,[00000001831D46E8h]
+  0000000180707CC1: call        00000001803F2920
+  0000000180707CC6: lea         rcx,[00000001831BBE40h]
+  0000000180707CCD: call        00000001803F2920
+  0000000180707CD2: lea         rcx,[00000001831BBFA0h]
+  0000000180707CD9: call        00000001803F2920
+  0000000180707CDE: mov         byte ptr [00000001833696C1h],1
+  0000000180707CE5: xorps       xmm0,xmm0
+  0000000180707CE8: xor         eax,eax
+  0000000180707CEA: movups      xmmword ptr [rsp+40h],xmm0
+  0000000180707CEF: mov         qword ptr [rsp+50h],rax
+  0000000180707CF4: cmp         byte ptr [rbx+0000000000000167h],al
+  0000000180707CFA: jne         0000000180707D57
+  0000000180707CFC: cmp         byte ptr [0000000183368447h],al
+  0000000180707D02: jne         0000000180707D17
+  0000000180707D04: lea         rcx,[000000018318DD78h]
+  0000000180707D0B: call        00000001803F2920
+  0000000180707D10: mov         byte ptr [0000000183368447h],1
+  0000000180707D17: mov         rax,qword ptr [000000018318DD78h]
+  0000000180707D1E: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180707D25: mov         rcx,qword ptr [rcx+00000000000000B0h]
+  0000000180707D2C: test        rcx,rcx
+  0000000180707D2F: je          0000000180707E86
+  0000000180707D35: xor         r8d,r8d
+  0000000180707D38: xor         edx,edx
+  0000000180707D3A: call        00000001805DDCE0 ; UnityGameFramework.Scripts.InputMgrComponent::SetCursor
+  0000000180707D3F: mov         r8,qword ptr [rbx]
+  0000000180707D42: mov         rax,qword ptr [r8+0000000000000448h]
+  0000000180707D49: mov         r8,qword ptr [r8+0000000000000450h]
+  0000000180707D50: xor         edx,edx
+  0000000180707D52: mov         rcx,rbx
+  0000000180707D55: call        rax
+  0000000180707D57: cmp         byte ptr [rbx+00000000000001A8h],0
+  0000000180707D5E: je          0000000180707D84
+  0000000180707D60: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  0000000180707D67: test        rcx,rcx
+  0000000180707D6A: je          0000000180707E86
+  0000000180707D70: xor         edx,edx
+  0000000180707D72: call        0000000182418F80
+  0000000180707D77: xor         r8d,r8d
+  0000000180707D7A: xor         edx,edx
+  0000000180707D7C: mov         rcx,rax
+  0000000180707D7F: call        000000018065F450 ; UnityGameFramework.Scripts.GameObjectHelper::SetActiveEx
+  0000000180707D84: movss       xmm0,dword ptr [rbx+00000000000000D0h]
+  0000000180707D8C: comiss      xmm0,dword ptr [00000001826F9C38h]
+  0000000180707D93: jbe         0000000180707DC0
+  0000000180707D95: mov         byte ptr [rbx+00000000000000CCh],0
+  0000000180707D9C: mov         rcx,qword ptr [rbx+00000000000000A8h]
+  0000000180707DA3: test        rcx,rcx
+  0000000180707DA6: je          0000000180707E86
+  0000000180707DAC: xor         edx,edx
+  0000000180707DAE: call        0000000182418F80
+  0000000180707DB3: xor         r8d,r8d
+  0000000180707DB6: xor         edx,edx
+  0000000180707DB8: mov         rcx,rax
+  0000000180707DBB: call        000000018065F450 ; UnityGameFramework.Scripts.GameObjectHelper::SetActiveEx
+  0000000180707DC0: mov         rax,qword ptr [rbx+0000000000000140h]
+  0000000180707DC7: test        rax,rax
+  0000000180707DCA: je          0000000180707E86
+  0000000180707DD0: cmp         dword ptr [rax+18h],0
+  0000000180707DD4: jle         0000000180707E74
+  0000000180707DDA: mov         r8,qword ptr [00000001831BBE40h]
+  0000000180707DE1: mov         rdx,rax
+  0000000180707DE4: lea         rcx,[rsp+28h]
+  0000000180707DE9: call        00000001819B59A0
+  0000000180707DEE: movups      xmm0,xmmword ptr [rsp+28h]
+  0000000180707DF3: movups      xmmword ptr [rsp+40h],xmm0
+  0000000180707DF8: movsd       xmm1,mmword ptr [rsp+38h]
+  0000000180707DFE: movsd       mmword ptr [rsp+50h],xmm1
+  0000000180707E04: mov         qword ptr [rsp+28h],0
+  0000000180707E0D: lea         rbx,[rsp+40h]
+  0000000180707E12: mov         qword ptr [rsp+30h],rbx
+  0000000180707E17: nop         word ptr [rax+rax+0000000000000000h]
+  0000000180707E20: mov         rdx,qword ptr [00000001831D4638h]
+  0000000180707E27: lea         rcx,[rsp+40h]
+  0000000180707E2C: call        00000001816499B0
+  0000000180707E31: test        al,al
+  0000000180707E33: je          0000000180707E48
+  0000000180707E35: mov         rcx,qword ptr [rsp+50h]
+  0000000180707E3A: test        rcx,rcx
+  0000000180707E3D: je          0000000180707E7A
+  0000000180707E3F: xor         edx,edx
+  0000000180707E41: call        000000018055F5C0 ; UnityGameFramework.Scripts.CardBehaviourControl::HideLine
+  0000000180707E46: jmp         0000000180707E20
+  0000000180707E48: mov         rdx,qword ptr [00000001831D4588h]
+  0000000180707E4F: mov         rcx,rbx
+  0000000180707E52: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  0000000180707E57: jmp         0000000180707E74
+  0000000180707E59: mov         rdx,qword ptr [00000001831D4588h]
+  0000000180707E60: mov         rcx,qword ptr [rsp+30h]
+  0000000180707E65: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  0000000180707E6A: mov         rcx,qword ptr [rsp+28h]
+  0000000180707E6F: test        rcx,rcx
+  0000000180707E72: jne         0000000180707E80
+  0000000180707E74: add         rsp,60h
+  0000000180707E78: pop         rbx
+  0000000180707E79: ret
+  0000000180707E7A: call        00000001803F2AC0
+  0000000180707E7F: nop
+  0000000180707E80: call        000000018038B5B0
+  0000000180707E85: int         3
+  0000000180707E86: call        00000001803F2AC0
+  0000000180707E8B: int         3
+  0000000180707E8C: int         3
+  0000000180707E8D: int         3
+  0000000180707E8E: int         3
+  0000000180707E8F: int         3
+
+  Summary
+
+     2294000 il2cpp

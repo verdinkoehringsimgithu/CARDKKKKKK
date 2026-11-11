@@ -1,0 +1,76 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018070BA60: push        rbx
+  000000018070BA62: sub         rsp,40h
+  000000018070BA66: cmp         byte ptr [00000001833696CDh],0
+  000000018070BA6D: mov         rbx,rcx
+  000000018070BA70: jne         000000018070BA85
+  000000018070BA72: lea         rcx,[0000000183176D20h]
+  000000018070BA79: call        00000001803F2920
+  000000018070BA7E: mov         byte ptr [00000001833696CDh],1
+  000000018070BA85: mov         rcx,qword ptr [rbx+0000000000000120h]
+  000000018070BA8C: mov         qword ptr [rsp+60h],rsi
+  000000018070BA91: mov         qword ptr [rsp+68h],rdi
+  000000018070BA96: test        rcx,rcx
+  000000018070BA99: je          000000018070BB63
+  000000018070BA9F: xor         edx,edx
+  000000018070BAA1: call        00000001806D2C50
+  000000018070BAA6: xor         edx,edx
+  000000018070BAA8: mov         rcx,rbx
+  000000018070BAAB: mov         esi,eax
+  000000018070BAAD: call        0000000182418FC0
+  000000018070BAB2: test        rax,rax
+  000000018070BAB5: je          000000018070BB63
+  000000018070BABB: xor         r8d,r8d
+  000000018070BABE: mov         qword ptr [rsp+58h],rbp
+  000000018070BAC3: mov         rdx,rax
+  000000018070BAC6: lea         rcx,[rsp+30h]
+  000000018070BACB: call        0000000182446090
+  000000018070BAD0: cmp         byte ptr [000000018336843Fh],0
+  000000018070BAD7: movsd       xmm0,mmword ptr [rax]
+  000000018070BADB: mov         ebp,dword ptr [rax+8]
+  000000018070BADE: movsd       mmword ptr [rsp+50h],xmm0
+  000000018070BAE4: jne         000000018070BAFF
+  000000018070BAE6: lea         rcx,[000000018318DD78h]
+  000000018070BAED: call        00000001803F2920
+  000000018070BAF2: movsd       xmm0,mmword ptr [rsp+50h]
+  000000018070BAF8: mov         byte ptr [000000018336843Fh],1
+  000000018070BAFF: mov         rax,qword ptr [000000018318DD78h]
+  000000018070BB06: lea         r8,[rsp+30h]
+  000000018070BB0B: mov         edx,dword ptr [rbx+58h]
+  000000018070BB0E: xor         r9d,r9d
+  000000018070BB11: movsd       mmword ptr [rsp+30h],xmm0
+  000000018070BB17: mov         dword ptr [rsp+38h],ebp
+  000000018070BB1B: mov         rcx,qword ptr [rax+00000000000000B8h]
+  000000018070BB22: mov         rax,qword ptr [0000000183176D20h]
+  000000018070BB29: mov         qword ptr [rsp+20h],rax
+  000000018070BB2E: mov         rdi,qword ptr [rcx+00000000000000B8h]
+  000000018070BB35: mov         ecx,esi
+  000000018070BB37: call        0000000180C2ACF0
+  000000018070BB3C: mov         rbp,qword ptr [rsp+58h]
+  000000018070BB41: test        rdi,rdi
+  000000018070BB44: je          000000018070BB63
+  000000018070BB46: xor         r8d,r8d
+  000000018070BB49: mov         rdx,rax
+  000000018070BB4C: mov         rcx,rdi
+  000000018070BB4F: mov         rdi,qword ptr [rsp+68h]
+  000000018070BB54: mov         rsi,qword ptr [rsp+60h]
+  000000018070BB59: add         rsp,40h
+  000000018070BB5D: pop         rbx
+  000000018070BB5E: jmp         00000001805971F0
+  000000018070BB63: call        00000001803F2AC0
+  000000018070BB68: int         3
+  000000018070BB69: int         3
+  000000018070BB6A: int         3
+  000000018070BB6B: int         3
+  000000018070BB6C: int         3
+  000000018070BB6D: int         3
+  000000018070BB6E: int         3
+  000000018070BB6F: int         3
+
+  Summary
+
+     2294000 il2cpp

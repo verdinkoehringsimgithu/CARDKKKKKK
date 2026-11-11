@@ -7,7 +7,7 @@ namespace CardKKK.IslandSurvival.Unity
     public sealed class VoyageCardView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [SerializeField] private Image face, inner, artwork, liquidFill, wearLeft, wearRight;
+        [SerializeField] private Image face, inner, artwork, liquidFill, wearLeft, wearRight, jobFill;
         [SerializeField] private Text glyph, title, status;
         [SerializeField] private GameObject liquid;
         private VoyageView owner;
@@ -16,6 +16,15 @@ namespace CardKKK.IslandSurvival.Unity
         private Vector2 wearLeftSize, wearRightSize;
         private bool hasSize;
         private Sprite previousSprite;
+        private Color normalFrame;
+        private Vector2 motionFrom, motionTo;
+        private float motionTime, motionArc;
+        private bool moving;
+        private float pickupTime;
+        private bool retiring;
+        private Vector3 retireFrom, retireTo;
+        private CanvasGroup retireFade;
+        private float retireTime;
 
         public int CardId { get; private set; }
         public RectTransform Rect => (RectTransform)transform;
@@ -41,6 +50,7 @@ namespace CardKKK.IslandSurvival.Unity
             }
             if (artwork.material != artMaterial) artwork.material = artMaterial;
             face.color = frame;
+            normalFrame = frame;
             inner.color = color;
             liquid.SetActive(water >= 0);
             if (water >= 0)
@@ -86,7 +96,11 @@ namespace CardKKK.IslandSurvival.Unity
         public void OnDrag(PointerEventData eventData)
         {
             if (Dragging && RectTransformUtility.ScreenPointToWorldPointInRectangle(owner.DragLayer,
-                eventData.position, eventData.pressEventCamera, out Vector3 point)) Rect.position = point + grabOffset;
+                eventData.position, eventData.pressEventCamera, out Vector3 point))
+            {
+                Rect.position = point + grabOffset;
+                owner.DragMoved(this, eventData);
+            }
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -101,6 +115,95 @@ namespace CardKKK.IslandSurvival.Unity
             Dragging = false;
             lastDrop = Time.unscaledTime;
             face.raycastTarget = true;
+            Rect.localScale = Vector3.one;
+            Rect.localRotation = Quaternion.identity;
+        }
+
+        public void SetHeld(bool held)
+        {
+            StopMotion();
+            Dragging = held;
+            if (held) pickupTime = 0;
+            face.raycastTarget = !held;
+        }
+
+        public void Guide(bool candidate) => face.color = candidate ? new Color(.46f, 1f, .16f) : normalFrame;
+
+        public void SetProgress(float progress)
+        {
+            if (jobFill == null) return;
+            jobFill.gameObject.SetActive(progress >= 0);
+            jobFill.fillAmount = Mathf.Clamp01(progress);
+        }
+
+        public void SnapTo(RectTransform parent, Vector2 position)
+        {
+            moving = false;
+            Rect.SetParent(parent, false);
+            Rect.localScale = Vector3.one;
+            Rect.anchoredPosition = motionTo = position;
+        }
+
+        public void LayoutTo(RectTransform parent, Vector2 position, bool animate, float arc)
+        {
+            if (Dragging) return;
+            bool changedParent = Rect.parent != parent;
+            if (!changedParent && moving && (motionTo - position).sqrMagnitude < .01f) return;
+            if (!changedParent && !moving && (Rect.anchoredPosition - position).sqrMagnitude < .01f) return;
+            if (!animate || !gameObject.activeInHierarchy) { SnapTo(parent, position); return; }
+            if (changedParent) Rect.SetParent(parent, true);
+            Rect.localScale = Vector3.one;
+            motionFrom = Rect.anchoredPosition;
+            motionTo = position;
+            motionArc = arc;
+            motionTime = 0;
+            moving = true;
+        }
+
+        public void StopMotion() => moving = false;
+
+        public void RetireTo(Vector3 destination)
+        {
+            StopMotion();
+            FinishVisualDrag();
+            face.raycastTarget = false;
+            owner = null;
+            retiring = true;
+            retireTime = 0;
+            retireFrom = Rect.position;
+            retireTo = destination;
+            retireFade = GetComponent<CanvasGroup>();
+            if (retireFade == null) retireFade = gameObject.AddComponent<CanvasGroup>();
+            retireFade.interactable = retireFade.blocksRaycasts = false;
+        }
+
+        private void Update()
+        {
+            if (retiring)
+            {
+                retireTime = Mathf.Min(1, retireTime + Time.unscaledDeltaTime / .22f);
+                float t = Mathf.SmoothStep(0, 1, retireTime);
+                Rect.position = Vector3.LerpUnclamped(retireFrom, retireTo, t);
+                Rect.localScale = Vector3.one * Mathf.Lerp(1, .25f, t);
+                retireFade.alpha = 1 - t;
+                if (retireTime >= 1) Destroy(gameObject);
+                return;
+            }
+            if (Dragging)
+            {
+                pickupTime = Mathf.Min(1, pickupTime + Time.unscaledDeltaTime / .15f);
+                Rect.localScale = Vector3.one * Mathf.Lerp(1, 1.04f, pickupTime);
+                Rect.localRotation = Quaternion.Euler(0, 0, Mathf.Sin(pickupTime * Mathf.PI * 2) * 3 * (1 - pickupTime));
+                return;
+            }
+            if (!moving) return;
+            motionTime += Time.unscaledDeltaTime / .30f;
+            float t = Mathf.Clamp01(motionTime);
+            float smooth = t * t * (3 - 2 * t);
+            Vector2 position = Vector2.LerpUnclamped(motionFrom, motionTo, smooth);
+            position.y += Mathf.Sin(t * Mathf.PI) * motionArc;
+            Rect.anchoredPosition = position;
+            if (t >= 1) { moving = false; Rect.anchoredPosition = motionTo; }
         }
     }
 }

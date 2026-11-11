@@ -1,0 +1,107 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001805DD880: mov         qword ptr [rsp+8],rbx
+  00000001805DD885: push        rdi
+  00000001805DD886: sub         rsp,30h
+  00000001805DD88A: cmp         byte ptr [0000000183368D67h],0
+  00000001805DD891: mov         rbx,rcx
+  00000001805DD894: mov         qword ptr [rsp+20h],rdx
+  00000001805DD899: jne         00000001805DD8D2
+  00000001805DD89B: lea         rcx,[0000000183186230h]
+  00000001805DD8A2: call        00000001803F2920
+  00000001805DD8A7: lea         rcx,[0000000183178B48h]
+  00000001805DD8AE: call        00000001803F2920
+  00000001805DD8B3: lea         rcx,[0000000183178D50h]
+  00000001805DD8BA: call        00000001803F2920
+  00000001805DD8BF: lea         rcx,[00000001831C2AF8h]
+  00000001805DD8C6: call        00000001803F2920
+  00000001805DD8CB: mov         byte ptr [0000000183368D67h],1
+  00000001805DD8D2: mov         rcx,qword ptr [0000000183186230h]
+  00000001805DD8D9: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001805DD8E0: jne         00000001805DD8E7
+  00000001805DD8E2: call        0000000180380F00
+  00000001805DD8E7: xor         ecx,ecx
+  00000001805DD8E9: call        0000000182650E30
+  00000001805DD8EE: mov         rcx,qword ptr [00000001831C2AF8h]
+  00000001805DD8F5: mov         rdi,rax
+  00000001805DD8F8: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001805DD8FF: jne         00000001805DD906
+  00000001805DD901: call        0000000180380F00
+  00000001805DD906: xor         r8d,r8d
+  00000001805DD909: xor         edx,edx
+  00000001805DD90B: mov         rcx,rdi
+  00000001805DD90E: call        0000000182421BB0
+  00000001805DD913: test        al,al
+  00000001805DD915: jne         00000001805DD9F3
+  00000001805DD91B: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  00000001805DD922: test        rcx,rcx
+  00000001805DD925: je          00000001805DDA00
+  00000001805DD92B: mov         rdx,qword ptr [rcx]
+  00000001805DD92E: mov         rax,qword ptr [rdx+0000000000000178h]
+  00000001805DD935: mov         rdx,qword ptr [rdx+0000000000000180h]
+  00000001805DD93C: call        rax
+  00000001805DD93E: mov         rax,qword ptr [rbx+00000000000000A0h]
+  00000001805DD945: test        rax,rax
+  00000001805DD948: je          00000001805DDA00
+  00000001805DD94E: movss       xmm0,dword ptr [rsp+20h]
+  00000001805DD954: movss       xmm1,dword ptr [rsp+24h]
+  00000001805DD95A: movss       dword ptr [rax+0000000000000100h],xmm0
+  00000001805DD962: movss       dword ptr [rax+0000000000000104h],xmm1
+  00000001805DD96A: mov         rcx,qword ptr [rbx+00000000000000A8h]
+  00000001805DD971: test        rcx,rcx
+  00000001805DD974: je          00000001805DDA00
+  00000001805DD97A: mov         r8d,dword ptr [rcx+18h]
+  00000001805DD97E: inc         dword ptr [rcx+1Ch]
+  00000001805DD981: mov         dword ptr [rcx+18h],0
+  00000001805DD988: test        r8d,r8d
+  00000001805DD98B: jle         00000001805DD99B
+  00000001805DD98D: mov         rcx,qword ptr [rcx+10h]
+  00000001805DD991: xor         r9d,r9d
+  00000001805DD994: xor         edx,edx
+  00000001805DD996: call        0000000181C7FD40
+  00000001805DD99B: mov         rcx,qword ptr [0000000183186230h]
+  00000001805DD9A2: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001805DD9A9: jne         00000001805DD9B0
+  00000001805DD9AB: call        0000000180380F00
+  00000001805DD9B0: xor         ecx,ecx
+  00000001805DD9B2: call        0000000182650E30
+  00000001805DD9B7: test        rax,rax
+  00000001805DD9BA: je          00000001805DDA00
+  00000001805DD9BC: mov         r8,qword ptr [rbx+00000000000000A8h]
+  00000001805DD9C3: xor         r9d,r9d
+  00000001805DD9C6: mov         rdx,qword ptr [rbx+00000000000000A0h]
+  00000001805DD9CD: mov         rcx,rax
+  00000001805DD9D0: call        000000018264F7B0
+  00000001805DD9D5: mov         rax,qword ptr [rbx+00000000000000A8h]
+  00000001805DD9DC: test        rax,rax
+  00000001805DD9DF: je          00000001805DDA00
+  00000001805DD9E1: cmp         dword ptr [rax+18h],0
+  00000001805DD9E5: setg        al
+  00000001805DD9E8: mov         rbx,qword ptr [rsp+40h]
+  00000001805DD9ED: add         rsp,30h
+  00000001805DD9F1: pop         rdi
+  00000001805DD9F2: ret
+  00000001805DD9F3: mov         rbx,qword ptr [rsp+40h]
+  00000001805DD9F8: xor         al,al
+  00000001805DD9FA: add         rsp,30h
+  00000001805DD9FE: pop         rdi
+  00000001805DD9FF: ret
+  00000001805DDA00: call        00000001803F2AC0
+  00000001805DDA05: int         3
+  00000001805DDA06: int         3
+  00000001805DDA07: int         3
+  00000001805DDA08: int         3
+  00000001805DDA09: int         3
+  00000001805DDA0A: int         3
+  00000001805DDA0B: int         3
+  00000001805DDA0C: int         3
+  00000001805DDA0D: int         3
+  00000001805DDA0E: int         3
+  00000001805DDA0F: int         3
+
+  Summary
+
+     2294000 il2cpp

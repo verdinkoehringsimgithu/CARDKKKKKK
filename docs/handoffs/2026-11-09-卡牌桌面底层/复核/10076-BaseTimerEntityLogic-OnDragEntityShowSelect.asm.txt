@@ -1,0 +1,106 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804FA3C0: mov         qword ptr [rsp+8],rbx
+  00000001804FA3C5: mov         qword ptr [rsp+10h],rbp
+  00000001804FA3CA: mov         qword ptr [rsp+18h],rsi
+  00000001804FA3CF: push        rdi
+  00000001804FA3D0: sub         rsp,20h
+  00000001804FA3D4: cmp         byte ptr [0000000183368687h],0
+  00000001804FA3DB: mov         rdi,r8
+  00000001804FA3DE: mov         rsi,rdx
+  00000001804FA3E1: mov         rbx,rcx
+  00000001804FA3E4: jne         00000001804FA411
+  00000001804FA3E6: lea         rcx,[00000001831D1320h]
+  00000001804FA3ED: call        00000001803F2920
+  00000001804FA3F2: lea         rcx,[0000000183178688h]
+  00000001804FA3F9: call        00000001803F2920
+  00000001804FA3FE: lea         rcx,[00000001831C2AF8h]
+  00000001804FA405: call        00000001803F2920
+  00000001804FA40A: mov         byte ptr [0000000183368687h],1
+  00000001804FA411: mov         rcx,qword ptr [00000001831C2AF8h]
+  00000001804FA418: mov         rbp,qword ptr [rbx+0000000000000258h]
+  00000001804FA41F: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001804FA426: jne         00000001804FA42D
+  00000001804FA428: call        0000000180380F00
+  00000001804FA42D: xor         r8d,r8d
+  00000001804FA430: xor         edx,edx
+  00000001804FA432: mov         rcx,rbp
+  00000001804FA435: call        0000000182421BB0
+  00000001804FA43A: test        al,al
+  00000001804FA43C: jne         00000001804FA4C7
+  00000001804FA442: test        rdi,rdi
+  00000001804FA445: je          00000001804FA558
+  00000001804FA44B: mov         r10,qword ptr [0000000183178688h]
+  00000001804FA452: mov         rdx,qword ptr [rdi]
+  00000001804FA455: movzx       eax,byte ptr [r10+000000000000012Ch]
+  00000001804FA45D: cmp         byte ptr [rdx+000000000000012Ch],al
+  00000001804FA463: jb          00000001804FA558
+  00000001804FA469: movzx       ecx,al
+  00000001804FA46C: mov         rax,qword ptr [rdx+00000000000000C8h]
+  00000001804FA473: cmp         qword ptr [rax+rcx*8-8],r10
+  00000001804FA478: jne         00000001804FA558
+  00000001804FA47E: mov         rax,qword ptr [rdi]
+  00000001804FA481: xor         r9d,r9d
+  00000001804FA484: movzx       edx,byte ptr [r10+000000000000012Ch]
+  00000001804FA48C: mov         r8d,r9d
+  00000001804FA48F: mov         rcx,qword ptr [rax+00000000000000C8h]
+  00000001804FA496: mov         eax,r9d
+  00000001804FA499: cmp         qword ptr [rcx+rdx*8-8],r10
+  00000001804FA49E: sete        r8b
+  00000001804FA4A2: test        r8d,r8d
+  00000001804FA4A5: cmovne      rax,rdi
+  00000001804FA4A9: cmp         byte ptr [rax+10h],r9b
+  00000001804FA4AD: jne         00000001804FA4DC
+  00000001804FA4AF: mov         r8,qword ptr [rbx]
+  00000001804FA4B2: xor         edx,edx
+  00000001804FA4B4: mov         rax,qword ptr [r8+0000000000000448h]
+  00000001804FA4BB: mov         r8,qword ptr [r8+0000000000000450h]
+  00000001804FA4C2: mov         rcx,rbx
+  00000001804FA4C5: call        rax
+  00000001804FA4C7: mov         rbx,qword ptr [rsp+30h]
+  00000001804FA4CC: mov         rbp,qword ptr [rsp+38h]
+  00000001804FA4D1: mov         rsi,qword ptr [rsp+40h]
+  00000001804FA4D6: add         rsp,20h
+  00000001804FA4DA: pop         rdi
+  00000001804FA4DB: ret
+  00000001804FA4DC: test        rsi,rsi
+  00000001804FA4DF: je          00000001804FA51A
+  00000001804FA4E1: mov         rdx,qword ptr [00000001831D1320h]
+  00000001804FA4E8: mov         r8,qword ptr [rsi]
+  00000001804FA4EB: movzx       eax,byte ptr [rdx+000000000000012Ch]
+  00000001804FA4F2: cmp         byte ptr [r8+000000000000012Ch],al
+  00000001804FA4F9: jb          00000001804FA511
+  00000001804FA4FB: movzx       ecx,al
+  00000001804FA4FE: mov         rax,qword ptr [r8+00000000000000C8h]
+  00000001804FA505: cmp         qword ptr [rax+rcx*8-8],rdx
+  00000001804FA50A: mov         eax,1
+  00000001804FA50F: je          00000001804FA514
+  00000001804FA511: mov         eax,r9d
+  00000001804FA514: test        eax,eax
+  00000001804FA516: cmovne      r9,rsi
+  00000001804FA51A: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FA521: test        rcx,rcx
+  00000001804FA524: je          00000001804FA558
+  00000001804FA526: mov         r8,qword ptr [rcx]
+  00000001804FA529: mov         rdx,r9
+  00000001804FA52C: mov         rax,qword ptr [r8+00000000000003D8h]
+  00000001804FA533: mov         r8,qword ptr [r8+00000000000003E0h]
+  00000001804FA53A: call        rax
+  00000001804FA53C: test        eax,eax
+  00000001804FA53E: je          00000001804FA4C7
+  00000001804FA540: mov         r8,qword ptr [rbx]
+  00000001804FA543: mov         dl,1
+  00000001804FA545: mov         rax,qword ptr [r8+0000000000000448h]
+  00000001804FA54C: mov         r8,qword ptr [r8+0000000000000450h]
+  00000001804FA553: jmp         00000001804FA4C2
+  00000001804FA558: call        00000001803F2AC0
+  00000001804FA55D: int         3
+  00000001804FA55E: int         3
+  00000001804FA55F: int         3
+
+  Summary
+
+     2294000 il2cpp

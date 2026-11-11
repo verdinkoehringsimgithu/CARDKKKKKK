@@ -1,0 +1,179 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804F68F0: push        rbx
+  00000001804F68F2: push        rdi
+  00000001804F68F3: sub         rsp,28h
+  00000001804F68F7: cmp         byte ptr [0000000183368667h],0
+  00000001804F68FE: mov         rdi,rdx
+  00000001804F6901: mov         rbx,rcx
+  00000001804F6904: jne         00000001804F6931
+  00000001804F6906: lea         rcx,[00000001831CC0A8h]
+  00000001804F690D: call        00000001803F2920
+  00000001804F6912: lea         rcx,[00000001831CC158h]
+  00000001804F6919: call        00000001803F2920
+  00000001804F691E: lea         rcx,[00000001831C2AF8h]
+  00000001804F6925: call        00000001803F2920
+  00000001804F692A: mov         byte ptr [0000000183368667h],1
+  00000001804F6931: xor         r8d,r8d
+  00000001804F6934: mov         qword ptr [rsp+48h],0
+  00000001804F693D: mov         rdx,rdi
+  00000001804F6940: mov         rcx,rbx
+  00000001804F6943: call        00000001804F3D20 ; UnityGameFramework.Scripts.BaseFormEntityLogic::GetIndexByEntityLogic
+  00000001804F6948: movsxd      rdi,eax
+  00000001804F694B: cmp         edi,0FFFFFFFFh
+  00000001804F694E: je          00000001804F6B94
+  00000001804F6954: mov         qword ptr [rsp+40h],rbp
+  00000001804F6959: mov         qword ptr [rsp+50h],rsi
+  00000001804F695E: mov         qword ptr [rsp+20h],r14
+  00000001804F6963: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  00000001804F696A: test        rcx,rcx
+  00000001804F696D: je          00000001804F6B9B
+  00000001804F6973: mov         r8,qword ptr [00000001831CC0A8h]
+  00000001804F697A: mov         edx,edi
+  00000001804F697C: call        0000000181588070
+  00000001804F6981: mov         rsi,qword ptr [rbx+0000000000000080h]
+  00000001804F6988: test        rsi,rsi
+  00000001804F698B: je          00000001804F6B9B
+  00000001804F6991: cmp         edi,dword ptr [rsi+18h]
+  00000001804F6994: jae         00000001804F6BA1
+  00000001804F699A: mov         rcx,qword ptr [00000001831C2AF8h]
+  00000001804F69A1: mov         rsi,qword ptr [rsi+rdi*8+20h]
+  00000001804F69A6: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001804F69AD: jne         00000001804F69B4
+  00000001804F69AF: call        0000000180380F00
+  00000001804F69B4: xor         r8d,r8d
+  00000001804F69B7: xor         edx,edx
+  00000001804F69B9: mov         rcx,rsi
+  00000001804F69BC: call        0000000182421BB0
+  00000001804F69C1: test        al,al
+  00000001804F69C3: jne         00000001804F6B85
+  00000001804F69C9: test        rsi,rsi
+  00000001804F69CC: je          00000001804F6B9B
+  00000001804F69D2: cmp         byte ptr [rsi+0000000000000080h],al
+  00000001804F69D8: jne         00000001804F6B30
+  00000001804F69DE: mov         rax,qword ptr [rbx+70h]
+  00000001804F69E2: test        rax,rax
+  00000001804F69E5: je          00000001804F6B9B
+  00000001804F69EB: mov         rdx,qword ptr [rax+0000000000000260h]
+  00000001804F69F2: test        rdx,rdx
+  00000001804F69F5: je          00000001804F6B9B
+  00000001804F69FB: mov         edx,dword ptr [rdx+00000000000000D4h]
+  00000001804F6A01: xor         r8d,r8d
+  00000001804F6A04: mov         rcx,rbx
+  00000001804F6A07: call        00000001804F3C60 ; UnityGameFramework.Scripts.BaseFormEntityLogic::GetBaseRecipe
+  00000001804F6A0C: test        rax,rax
+  00000001804F6A0F: je          00000001804F6B9B
+  00000001804F6A15: mov         rax,qword ptr [rax+18h]
+  00000001804F6A19: test        rax,rax
+  00000001804F6A1C: je          00000001804F6B9B
+  00000001804F6A22: cmp         byte ptr [rax+0000000000000080h],0
+  00000001804F6A29: je          00000001804F6B6F
+  00000001804F6A2F: xor         edx,edx
+  00000001804F6A31: xor         ecx,ecx
+  00000001804F6A33: call        000000018070EE10 ; UnityGameFramework.Scripts.DetachEntityData::Create
+  00000001804F6A38: inc         edi
+  00000001804F6A3A: mov         r14,rax
+  00000001804F6A3D: cmp         edi,dword ptr [rbx+00000000000000B0h]
+  00000001804F6A43: jge         00000001804F6B1F
+  00000001804F6A49: movsxd      rcx,edi
+  00000001804F6A4C: lea         rsi,[rcx*8+0000000000000020h]
+  00000001804F6A54: nop         dword ptr [rax]
+  00000001804F6A58: nop         dword ptr [rax+rax+0000000000000000h]
+  00000001804F6A60: mov         rcx,qword ptr [rbx+0000000000000080h]
+  00000001804F6A67: test        rcx,rcx
+  00000001804F6A6A: je          00000001804F6B9B
+  00000001804F6A70: cmp         edi,dword ptr [rcx+18h]
+  00000001804F6A73: jae         00000001804F6BA1
+  00000001804F6A79: mov         rcx,qword ptr [rsi+rcx]
+  00000001804F6A7D: test        rcx,rcx
+  00000001804F6A80: je          00000001804F6B9B
+  00000001804F6A86: xor         r8d,r8d
+  00000001804F6A89: mov         dl,1
+  00000001804F6A8B: call        0000000180700110 ; UnityGameFramework.Scripts.BaseCardSlotEntityLogic::SetIsLock
+  00000001804F6A90: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  00000001804F6A97: test        rcx,rcx
+  00000001804F6A9A: je          00000001804F6B9B
+  00000001804F6AA0: mov         r9,qword ptr [00000001831CC158h]
+  00000001804F6AA7: lea         r8,[rsp+48h]
+  00000001804F6AAC: mov         edx,edi
+  00000001804F6AAE: call        0000000181566D30
+  00000001804F6AB3: test        al,al
+  00000001804F6AB5: je          00000001804F6B0D
+  00000001804F6AB7: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  00000001804F6ABE: test        rcx,rcx
+  00000001804F6AC1: je          00000001804F6B9B
+  00000001804F6AC7: mov         r8,qword ptr [00000001831CC0A8h]
+  00000001804F6ACE: mov         edx,edi
+  00000001804F6AD0: call        0000000181588070
+  00000001804F6AD5: xor         ecx,ecx
+  00000001804F6AD7: call        000000018049F190
+  00000001804F6ADC: mov         rcx,qword ptr [rsp+48h]
+  00000001804F6AE1: mov         rbp,rax
+  00000001804F6AE4: test        rcx,rcx
+  00000001804F6AE7: je          00000001804F6B9B
+  00000001804F6AED: xor         edx,edx
+  00000001804F6AEF: call        000000018056DFF0 ; UnityGameFramework.Scripts.EntityLogicWithData::get_Id
+  00000001804F6AF4: test        rbp,rbp
+  00000001804F6AF7: je          00000001804F6B9B
+  00000001804F6AFD: xor         r9d,r9d
+  00000001804F6B00: mov         r8,r14
+  00000001804F6B03: mov         edx,eax
+  00000001804F6B05: mov         rcx,rbp
+  00000001804F6B08: call        0000000182697360
+  00000001804F6B0D: inc         edi
+  00000001804F6B0F: add         rsi,8
+  00000001804F6B13: cmp         edi,dword ptr [rbx+00000000000000B0h]
+  00000001804F6B19: jl          00000001804F6A60
+  00000001804F6B1F: test        r14,r14
+  00000001804F6B22: je          00000001804F6B9B
+  00000001804F6B24: xor         edx,edx
+  00000001804F6B26: mov         rcx,r14
+  00000001804F6B29: call        000000018070EF00 ; UnityGameFramework.Scripts.DetachEntityData::Release
+  00000001804F6B2E: jmp         00000001804F6B6F
+  00000001804F6B30: xor         edx,edx
+  00000001804F6B32: mov         rcx,rbx
+  00000001804F6B35: call        00000001804F3530 ; UnityGameFramework.Scripts.BaseFormEntityLogic::DetachSubCardSlot
+  00000001804F6B3A: mov         rax,qword ptr [rbx+70h]
+  00000001804F6B3E: test        rax,rax
+  00000001804F6B41: je          00000001804F6B9B
+  00000001804F6B43: mov         rax,qword ptr [rax+0000000000000260h]
+  00000001804F6B4A: test        rax,rax
+  00000001804F6B4D: je          00000001804F6B9B
+  00000001804F6B4F: mov         dword ptr [rax+00000000000000D4h],0FFFFFFFFh
+  00000001804F6B59: mov         rcx,rbx
+  00000001804F6B5C: mov         rdx,qword ptr [rbx]
+  00000001804F6B5F: mov         rax,qword ptr [rdx+00000000000003F8h]
+  00000001804F6B66: mov         rdx,qword ptr [rdx+0000000000000400h]
+  00000001804F6B6D: call        rax
+  00000001804F6B6F: mov         rdx,qword ptr [rbx]
+  00000001804F6B72: mov         rcx,rbx
+  00000001804F6B75: mov         rax,qword ptr [rdx+0000000000000408h]
+  00000001804F6B7C: mov         rdx,qword ptr [rdx+0000000000000410h]
+  00000001804F6B83: call        rax
+  00000001804F6B85: mov         rsi,qword ptr [rsp+50h]
+  00000001804F6B8A: mov         rbp,qword ptr [rsp+40h]
+  00000001804F6B8F: mov         r14,qword ptr [rsp+20h]
+  00000001804F6B94: add         rsp,28h
+  00000001804F6B98: pop         rdi
+  00000001804F6B99: pop         rbx
+  00000001804F6B9A: ret
+  00000001804F6B9B: call        00000001803F2AC0
+  00000001804F6BA0: int         3
+  00000001804F6BA1: call        00000001803F2AB0
+  00000001804F6BA6: int         3
+  00000001804F6BA7: int         3
+  00000001804F6BA8: int         3
+  00000001804F6BA9: int         3
+  00000001804F6BAA: int         3
+  00000001804F6BAB: int         3
+  00000001804F6BAC: int         3
+  00000001804F6BAD: int         3
+  00000001804F6BAE: int         3
+  00000001804F6BAF: int         3
+
+  Summary
+
+     2294000 il2cpp

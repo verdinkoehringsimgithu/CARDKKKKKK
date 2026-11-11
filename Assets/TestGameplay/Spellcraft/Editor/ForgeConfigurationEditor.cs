@@ -110,7 +110,7 @@ namespace CardKKK.Spellcraft.Editor
             else EditorGUILayout.PropertyField(property, new GUIContent(label), false);
         }
 
-        [MenuItem("测试玩法/法术工坊规则")]
+        [MenuItem("孤岛生存/历史演示/法术工坊/法术工坊规则")]
         private static void SelectConfiguration()
         {
             Object asset = AssetDatabase.LoadAssetAtPath<ForgeConfiguration>("Assets/TestGameplay/Spellcraft/Configuration/法术工坊配置.asset");
@@ -118,11 +118,11 @@ namespace CardKKK.Spellcraft.Editor
             if (asset != null) EditorGUIUtility.PingObject(asset);
         }
 
-        [MenuItem("测试玩法/打开法术工坊")]
+        [MenuItem("孤岛生存/历史演示/法术工坊/打开法术工坊")]
         private static void OpenScene()
         {
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                EditorSceneManager.OpenScene("Assets/TestGameplay/Spellcraft/Scenes/Spellcraft.unity");
+                EditorSceneManager.OpenScene("Assets/Archives/Scenes/Spellcraft.unity");
         }
     }
 }

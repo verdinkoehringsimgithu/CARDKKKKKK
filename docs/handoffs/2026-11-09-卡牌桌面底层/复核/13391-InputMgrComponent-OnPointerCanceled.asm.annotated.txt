@@ -1,0 +1,64 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001805DC610: mov         qword ptr [rsp+8],rbx
+  00000001805DC615: mov         qword ptr [rsp+10h],rbp
+  00000001805DC61A: mov         qword ptr [rsp+18h],rsi
+  00000001805DC61F: push        rdi
+  00000001805DC620: sub         rsp,30h
+  00000001805DC624: cmp         byte ptr [0000000183368D6Dh],0
+  00000001805DC62B: mov         rbp,rdx
+  00000001805DC62E: mov         rbx,rcx
+  00000001805DC631: jne         00000001805DC652
+  00000001805DC633: lea         rcx,[00000001831CD2F0h]
+  00000001805DC63A: call        00000001803F2920
+  00000001805DC63F: lea         rcx,[00000001831BED48h]
+  00000001805DC646: call        00000001803F2920
+  00000001805DC64B: mov         byte ptr [0000000183368D6Dh],1
+  00000001805DC652: mov         rcx,qword ptr [00000001831CD2F0h]
+  00000001805DC659: mov         rsi,qword ptr [rbx+58h]
+  00000001805DC65D: call        00000001803F2A70
+  00000001805DC662: mov         rdi,rax
+  00000001805DC665: test        rax,rax
+  00000001805DC668: je          00000001805DC6C0
+  00000001805DC66A: mov         r8,qword ptr [00000001831BED48h]
+  00000001805DC671: xor         r9d,r9d
+  00000001805DC674: mov         rdx,rbx
+  00000001805DC677: mov         rcx,rax
+  00000001805DC67A: call        0000000180F52D70
+  00000001805DC67F: test        rsi,rsi
+  00000001805DC682: je          00000001805DC6C0
+  00000001805DC684: xor         r8d,r8d
+  00000001805DC687: mov         rdx,rdi
+  00000001805DC68A: mov         rcx,rsi
+  00000001805DC68D: call        000000018209CCB0
+  00000001805DC692: movups      xmm0,xmmword ptr [rbp]
+  00000001805DC696: xor         r8d,r8d
+  00000001805DC699: lea         rdx,[rsp+20h]
+  00000001805DC69E: mov         rcx,rbx
+  00000001805DC6A1: movaps      xmmword ptr [rsp+20h],xmm0
+  00000001805DC6A6: call        00000001805DD2F0 ; UnityGameFramework.Scripts.InputMgrComponent::OnPointerUp
+  00000001805DC6AB: mov         rbx,qword ptr [rsp+40h]
+  00000001805DC6B0: mov         rbp,qword ptr [rsp+48h]
+  00000001805DC6B5: mov         rsi,qword ptr [rsp+50h]
+  00000001805DC6BA: add         rsp,30h
+  00000001805DC6BE: pop         rdi
+  00000001805DC6BF: ret
+  00000001805DC6C0: call        00000001803F2AC0
+  00000001805DC6C5: int         3
+  00000001805DC6C6: int         3
+  00000001805DC6C7: int         3
+  00000001805DC6C8: int         3
+  00000001805DC6C9: int         3
+  00000001805DC6CA: int         3
+  00000001805DC6CB: int         3
+  00000001805DC6CC: int         3
+  00000001805DC6CD: int         3
+  00000001805DC6CE: int         3
+  00000001805DC6CF: int         3
+
+  Summary
+
+     2294000 il2cpp

@@ -1,0 +1,131 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180707A70: push        rbx
+  0000000180707A72: sub         rsp,60h
+  0000000180707A76: mov         rbx,rcx
+  0000000180707A79: cmp         byte ptr [00000001833696C0h],0
+  0000000180707A80: jne         0000000180707AC5
+  0000000180707A82: lea         rcx,[00000001831D4588h]
+  0000000180707A89: call        00000001803F2920
+  0000000180707A8E: lea         rcx,[00000001831D4638h]
+  0000000180707A95: call        00000001803F2920
+  0000000180707A9A: lea         rcx,[00000001831D46E8h]
+  0000000180707AA1: call        00000001803F2920
+  0000000180707AA6: lea         rcx,[00000001831BBE40h]
+  0000000180707AAD: call        00000001803F2920
+  0000000180707AB2: lea         rcx,[00000001831BBFA0h]
+  0000000180707AB9: call        00000001803F2920
+  0000000180707ABE: mov         byte ptr [00000001833696C0h],1
+  0000000180707AC5: xorps       xmm0,xmm0
+  0000000180707AC8: xor         eax,eax
+  0000000180707ACA: movups      xmmword ptr [rsp+40h],xmm0
+  0000000180707ACF: mov         qword ptr [rsp+50h],rax
+  0000000180707AD4: cmp         byte ptr [rbx+0000000000000167h],al
+  0000000180707ADA: jne         0000000180707B3A
+  0000000180707ADC: cmp         byte ptr [0000000183368447h],al
+  0000000180707AE2: jne         0000000180707AF7
+  0000000180707AE4: lea         rcx,[000000018318DD78h]
+  0000000180707AEB: call        00000001803F2920
+  0000000180707AF0: mov         byte ptr [0000000183368447h],1
+  0000000180707AF7: mov         rax,qword ptr [000000018318DD78h]
+  0000000180707AFE: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180707B05: mov         rcx,qword ptr [rcx+00000000000000B0h]
+  0000000180707B0C: test        rcx,rcx
+  0000000180707B0F: je          0000000180707C86
+  0000000180707B15: xor         r8d,r8d
+  0000000180707B18: mov         edx,1
+  0000000180707B1D: call        00000001805DDCE0
+  0000000180707B22: mov         r8,qword ptr [rbx]
+  0000000180707B25: mov         rax,qword ptr [r8+0000000000000448h]
+  0000000180707B2C: mov         r8,qword ptr [r8+0000000000000450h]
+  0000000180707B33: mov         dl,1
+  0000000180707B35: mov         rcx,rbx
+  0000000180707B38: call        rax
+  0000000180707B3A: cmp         byte ptr [rbx+00000000000001A8h],0
+  0000000180707B41: je          0000000180707B67
+  0000000180707B43: mov         rcx,qword ptr [rbx+00000000000000A0h]
+  0000000180707B4A: test        rcx,rcx
+  0000000180707B4D: je          0000000180707C86
+  0000000180707B53: xor         edx,edx
+  0000000180707B55: call        0000000182418F80
+  0000000180707B5A: xor         r8d,r8d
+  0000000180707B5D: mov         dl,1
+  0000000180707B5F: mov         rcx,rax
+  0000000180707B62: call        000000018065F450
+  0000000180707B67: movss       xmm0,dword ptr [rbx+00000000000000D0h]
+  0000000180707B6F: comiss      xmm0,dword ptr [00000001826F9C38h]
+  0000000180707B76: jbe         0000000180707BC3
+  0000000180707B78: mov         byte ptr [rbx+00000000000000CCh],1
+  0000000180707B7F: cmp         byte ptr [rbx+0000000000000166h],0
+  0000000180707B86: je          0000000180707BC3
+  0000000180707B88: mov         rcx,qword ptr [rbx+00000000000000A8h]
+  0000000180707B8F: test        rcx,rcx
+  0000000180707B92: je          0000000180707C86
+  0000000180707B98: xor         edx,edx
+  0000000180707B9A: call        0000000182418F80
+  0000000180707B9F: xor         r8d,r8d
+  0000000180707BA2: mov         dl,1
+  0000000180707BA4: mov         rcx,rax
+  0000000180707BA7: call        000000018065F450
+  0000000180707BAC: xor         r8d,r8d
+  0000000180707BAF: movss       xmm1,dword ptr [rbx+00000000000000D0h]
+  0000000180707BB7: mov         rcx,qword ptr [rbx+00000000000000B0h]
+  0000000180707BBE: call        000000018065D900
+  0000000180707BC3: mov         rax,qword ptr [rbx+0000000000000140h]
+  0000000180707BCA: test        rax,rax
+  0000000180707BCD: je          0000000180707C86
+  0000000180707BD3: cmp         dword ptr [rax+18h],0
+  0000000180707BD7: jle         0000000180707C74
+  0000000180707BDD: mov         r8,qword ptr [00000001831BBE40h]
+  0000000180707BE4: mov         rdx,rax
+  0000000180707BE7: lea         rcx,[rsp+28h]
+  0000000180707BEC: call        00000001819B59A0
+  0000000180707BF1: movups      xmm0,xmmword ptr [rsp+28h]
+  0000000180707BF6: movups      xmmword ptr [rsp+40h],xmm0
+  0000000180707BFB: movsd       xmm1,mmword ptr [rsp+38h]
+  0000000180707C01: movsd       mmword ptr [rsp+50h],xmm1
+  0000000180707C07: mov         qword ptr [rsp+28h],0
+  0000000180707C10: lea         rbx,[rsp+40h]
+  0000000180707C15: mov         qword ptr [rsp+30h],rbx
+  0000000180707C1A: nop         word ptr [rax+rax]
+  0000000180707C20: mov         rdx,qword ptr [00000001831D4638h]
+  0000000180707C27: lea         rcx,[rsp+40h]
+  0000000180707C2C: call        00000001816499B0
+  0000000180707C31: test        al,al
+  0000000180707C33: je          0000000180707C48
+  0000000180707C35: mov         rcx,qword ptr [rsp+50h]
+  0000000180707C3A: test        rcx,rcx
+  0000000180707C3D: je          0000000180707C7A
+  0000000180707C3F: xor         edx,edx
+  0000000180707C41: call        0000000180562360
+  0000000180707C46: jmp         0000000180707C20
+  0000000180707C48: mov         rdx,qword ptr [00000001831D4588h]
+  0000000180707C4F: mov         rcx,rbx
+  0000000180707C52: call        00000001804652B0
+  0000000180707C57: jmp         0000000180707C74
+  0000000180707C59: mov         rdx,qword ptr [00000001831D4588h]
+  0000000180707C60: mov         rcx,qword ptr [rsp+30h]
+  0000000180707C65: call        00000001804652B0
+  0000000180707C6A: mov         rcx,qword ptr [rsp+28h]
+  0000000180707C6F: test        rcx,rcx
+  0000000180707C72: jne         0000000180707C80
+  0000000180707C74: add         rsp,60h
+  0000000180707C78: pop         rbx
+  0000000180707C79: ret
+  0000000180707C7A: call        00000001803F2AC0
+  0000000180707C7F: nop
+  0000000180707C80: call        000000018038B5B0
+  0000000180707C85: int         3
+  0000000180707C86: call        00000001803F2AC0
+  0000000180707C8B: int         3
+  0000000180707C8C: int         3
+  0000000180707C8D: int         3
+  0000000180707C8E: int         3
+  0000000180707C8F: int         3
+
+  Summary
+
+     2294000 il2cpp

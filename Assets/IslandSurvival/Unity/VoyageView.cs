@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace CardKKK.IslandSurvival.Unity
 {
-    public sealed class VoyageView : MonoBehaviour
+    public sealed partial class VoyageView : MonoBehaviour
     {
         [SerializeField] private RectTransform tabletop, tabletopViewport, stageCards, stageDrop, taskRows, dragLayer;
         [SerializeField] private ScrollRect tableScroll, stageScroll, taskScroll, readScroll;
@@ -26,6 +26,39 @@ namespace CardKKK.IslandSurvival.Unity
         [SerializeField] private AudioSource feedback;
         [SerializeField] private AudioClip dragPaper;
         [SerializeField] private CanvasGroup playInteraction;
+
+        [SerializeField] private Text preparationTitle;
+        [SerializeField] private Button closePreparation, generalPreparation, tasksButton;
+        [SerializeField] private GameObject tasksPanel;
+        [SerializeField] private GameObject preparationPanel;
+        private bool preparationVisible;
+        private bool InOtherPreparation(int id) => state.Workspaces.Any(workspace => workspace.Location != state.PreparationLocation &&
+            workspace.Slots.Any(slot => slot.CardId == id));
+
+        private void OpenPreparation(int id)
+        {
+            preparationVisible = true;
+            guidanceSlot = -1;
+            tasksPanel.SetActive(false);
+            Command(value => value.OpenPreparation(id));
+            Render();
+            PositionPreparation(id);
+        }
+
+        private void PositionPreparation(int id)
+        {
+            RectTransform panel = (RectTransform)preparationPanel.transform;
+            RectTransform parent = (RectTransform)panel.parent;
+            Vector2 point = new Vector2(780, 160);
+            if (cardViews.TryGetValue(id, out VoyageCardView card))
+            {
+                Vector3 local = parent.InverseTransformPoint(card.Rect.TransformPoint(card.Rect.rect.center));
+                point = new Vector2(local.x - parent.rect.xMin + 76, parent.rect.yMax - local.y - 70);
+            }
+            panel.anchoredPosition = new Vector2(
+                Mathf.Clamp(point.x, 18, 1600 - panel.rect.width - 18),
+                -Mathf.Clamp(point.y, 88, 810 - panel.rect.height));
+        }
 
         private static readonly Color Selection = new Color(.98f, .81f, .48f);
         private static readonly Color Related = new Color(.46f, .78f, .61f);
@@ -45,7 +78,6 @@ namespace CardKKK.IslandSurvival.Unity
         private readonly Dictionary<int, VoyageCardView> cardViews = new Dictionary<int, VoyageCardView>();
         private readonly Dictionary<int, VoyageTaskView> taskViews = new Dictionary<int, VoyageTaskView>();
         private readonly Dictionary<string, Sprite> artwork = new Dictionary<string, Sprite>(StringComparer.Ordinal);
-        private readonly Dictionary<int, Coroutine> flyingCards = new Dictionary<int, Coroutine>();
         private Dictionary<int, VoyageCardState> cardById = new Dictionary<int, VoyageCardState>();
         private readonly HashSet<int> preparedFollowers = new HashSet<int>();
         private Dictionary<string, VoyageCardRule> cards;
@@ -69,9 +101,19 @@ namespace CardKKK.IslandSurvival.Unity
             pauseLabel = pauseButton.GetComponentInChildren<Text>();
             startLabel = startButton.GetComponentInChildren<Text>();
             boardColor = tableTone.color;
+            tableScroll.onValueChanged.AddListener(_ => { if (dragging != null && dragPointer != null) PreviewDrop(dragging, dragPointer); });
+            stageScroll.onValueChanged.AddListener(_ => { if (dragging != null && dragPointer != null) PreviewDrop(dragging, dragPointer); });
             if (desaturateShader != null) subduedArtwork = new Material(desaturateShader) { hideFlags = HideFlags.HideAndDontSave };
             pauseButton.onClick.AddListener(TogglePause);
             menuButton.onClick.AddListener(OpenMenu);
+            tasksButton.onClick.AddListener(() =>
+            {
+                bool show = !tasksPanel.activeSelf;
+                tasksPanel.SetActive(show);
+                if (show) { preparationVisible = false; preparationPanel.SetActive(false); guidanceSlot = -1; RefreshGuidance(); }
+            });
+            generalPreparation.onClick.AddListener(() => OpenPreparation(0));
+            closePreparation.onClick.AddListener(() => { preparationVisible = false; guidanceSlot = -1; Render(); });
             clearButton.onClick.AddListener(() => Command(value => value.ClearStage()));
             startButton.onClick.AddListener(() => Command(value => value.Start()));
             readClose.onClick.AddListener(CloseRead);
@@ -97,14 +139,23 @@ namespace CardKKK.IslandSurvival.Unity
             cards = rules.Cards.ToDictionary(card => card.Id, StringComparer.Ordinal);
             recipes = rules.Recipes.ToDictionary(recipe => recipe.Id, StringComparer.Ordinal);
             auxiliaries = rules.AuxiliaryLines.ToDictionary(line => line.Id, StringComparer.Ordinal);
+            deskRules = rules.Desk;
             artwork.Clear();
             foreach (VoyageCardRule rule in rules.Cards) artwork.Add(rule.Id, configuration.FindArtwork(rule.Id));
             foreach (VoyageCardView card in cardViews.Values) { card.gameObject.SetActive(false); Destroy(card.gameObject); }
             foreach (VoyageTaskView job in taskViews.Values) { job.gameObject.SetActive(false); Destroy(job.gameObject); }
             cardViews.Clear();
             taskViews.Clear();
+            foreach (VoyageSlotView slot in slotViews.Values) Destroy(slot.gameObject);
+            slotViews.Clear();
+            guidanceSlot = -1;
+            panelTime = 0;
+            if (preparationFade != null) preparationFade.alpha = 0;
+            preparationPanel.SetActive(false);
             state = null;
             selected = hovered = 0;
+            preparationVisible = false;
+            tasksPanel.SetActive(false);
             resumeAfterMenu = false;
             editorPreview.SetActive(false);
             readPanel.SetActive(false);
@@ -122,6 +173,7 @@ namespace CardKKK.IslandSurvival.Unity
             if (engine == null) return;
             VoyageState previous = state;
             state = engine.Snapshot;
+            if (dragOffsets.Count > 0 && dragging == null) FinishDragSession();
             cardById = state.Cards.ToDictionary(card => card.Id);
             IReadOnlyList<int> followers = engine.PreparedFollowers;
             preparedFollowers.Clear();
@@ -132,14 +184,17 @@ namespace CardKKK.IslandSurvival.Unity
                 || dragged.JobId != 0 || preparedFollowers.Contains(dragging.CardId) || state.Dead || state.Won))
                 AbortDrag();
 
+            ShowPreparation();
+            preparationTitle.text = state.PreparationLocation == 0 ? "桌面组合" : CardName(state.PreparationLocation);
             bool ended = state.Dead || state.Won;
             int minuteOfDay = state.Minute % 1440;
             clockText.text = $"第 {state.Minute / 1440 + 1} 天  {minuteOfDay / 60:00}:{minuteOfDay % 60:00}";
             pauseLabel.text = state.Paused ? "继续" : "暂停";
             pauseButton.interactable = !ended;
-            clearButton.interactable = !ended && state.Staged.Count > 0;
-            startButton.interactable = !ended && state.Staged.Count > 0;
-            stageCount.text = (state.Staged.Count + followers.Count) + " 张";
+            bool hasInputs = engine.Slots(state.PreparationLocation).Any(slot => slot.CardId != 0);
+            clearButton.interactable = !ended && hasInputs;
+            startButton.interactable = !ended && hasInputs;
+            stageCount.text = (state.Staged.Count(id => id != state.PreparationLocation) + followers.Count) + " 张";
             taskCount.text = state.Jobs.Count.ToString();
             emptyTasks.SetActive(state.Jobs.Count == 0);
 
@@ -147,7 +202,9 @@ namespace CardKKK.IslandSurvival.Unity
             VoyageOffer hint = state.Staged.Count == 0 && IsAvailable(selected) ? engine.Preview(selected) : staged;
             startLabel.text = staged.Match == VoyageMatch.Ready || state.Staged.Count == 0 ? "开始" : "试一试";
             DisplayStage(hint);
-            DisplayCards(new HashSet<int>(hint.RelatedCardIds), followers);
+            DisplaySlots();
+            DisplayCards(new HashSet<int>(hint.RelatedCardIds), followers, previous);
+            RefreshGuidance();
             DisplayJobs();
             DisplayDetails();
 
@@ -186,6 +243,12 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (state == null || menuPanel.activeSelf || readPanel.activeSelf || !cardById.TryGetValue(id, out VoyageCardState card)) return;
             selected = id;
+            VoyageCardKind selectedKind = cards[card.CardId].Kind;
+            if (engine.IsLocation(id) && (selectedKind != VoyageCardKind.Information || clicks < 2 && !engine.IsInSlot(id)))
+            {
+                OpenPreparation(id);
+                return;
+            }
             if (preparedFollowers.Contains(id))
             {
                 Command(value => value.Stage(id));
@@ -209,122 +272,23 @@ namespace CardKKK.IslandSurvival.Unity
         internal void QuickAction(int id)
         {
             if (state == null || !cardById.TryGetValue(id, out VoyageCardState card) || card.JobId != 0) return;
-            if (state.Staged.Contains(id)) Command(value => value.Unstage(id));
+            preparationVisible = true;
+            if (engine.IsInSlot(id)) Command(value => value.Unstage(id));
             else if (IsAvailable(id)) Command(value => value.Stage(id));
         }
 
         internal void RemoveFromStage(int id) => QuickAction(id);
 
-        internal bool BeginDrag(VoyageCardView card)
-        {
-            if (state == null || state.Dead || state.Won || dragging != null || menuPanel.activeSelf || readPanel.activeSelf || preparedFollowers.Contains(card.CardId)
-                || !cardById.TryGetValue(card.CardId, out VoyageCardState source) || source.JobId != 0) return false;
-            dragging = card;
-            selected = card.CardId;
-            engine.Hold(card.CardId, true);
-            PlayFeedback(dragPaper);
-            return true;
-        }
-
-        internal void Drop(VoyageCardView card, PointerEventData pointer)
-        {
-            if (dragging != card) return;
-            dragging = null;
-            int id = card.CardId;
-            engine.Hold(id, false);
-            if (RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera))
-            {
-                Command(value => value.Stage(id));
-            }
-            else if (RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, pointer.position, pointer.pressEventCamera))
-            {
-                int merge = FindMergeTarget(id, pointer);
-                int dropTarget = FindDropTargetCard(id, pointer);
-                Vector3 local = tabletop.InverseTransformPoint(card.Rect.TransformPoint(card.Rect.rect.center));
-                Vector2 size = tabletop.rect.size;
-                float x = Mathf.Clamp01(local.x / size.x);
-                float y = Mathf.Clamp01(-local.y / size.y);
-                if (merge != 0)
-                {
-                    Command(value => value.Merge(id, merge));
-                }
-                else if (dropTarget != 0 && CanCombineOnDesk(id, dropTarget))
-                {
-                    Command(value => value.StagePair(dropTarget, id));
-                }
-                else
-                {
-                    if (state.Staged.Contains(id)) Command(value => value.Unstage(id));
-                    EnsureClearDropPoint(ref x, ref y, id);
-                    Command(value => value.Move(id, x, y));
-                }
-            }
-            Render();
-        }
-
-        private int FindDropTargetCard(int id, PointerEventData pointer)
-        {
-            foreach (RaycastResult hit in RaycastCards(pointer))
-            {
-                VoyageCardView view = hit.gameObject.GetComponentInParent<VoyageCardView>();
-                if (view == null || view.CardId == id || !IsAvailable(view.CardId)) continue;
-                return view.CardId;
-            }
-            return 0;
-        }
-
-        private bool CanCombineOnDesk(int sourceId, int targetId)
-        {
-            if (!cardById.TryGetValue(sourceId, out VoyageCardState src) || !cardById.TryGetValue(targetId, out VoyageCardState tgt)) return false;
-            if (src.JobId != 0 || tgt.JobId != 0) return false;
-            VoyageCardRule tgtRule = cards[tgt.CardId];
-            return tgtRule.Kind == VoyageCardKind.Facility || tgtRule.Kind == VoyageCardKind.Resource || tgtRule.Kind == VoyageCardKind.Material;
-        }
-
-        private void EnsureClearDropPoint(ref float x, ref float y, int selfId)
-        {
-            const float threshold = 0.035f;
-            foreach (VoyageCardState other in state.Cards)
-            {
-                if (other.Id == selfId || other.JobId != 0 || state.Staged.Contains(other.Id)) continue;
-                if (Mathf.Abs(other.X - x) < threshold && Mathf.Abs(other.Y - y) < threshold)
-                {
-                    x = Mathf.Clamp(x + 0.045f, 0.05f, 0.95f);
-                    y = Mathf.Clamp(y + 0.035f, 0.05f, 0.95f);
-                }
-            }
-        }
-
-        private int FindMergeTarget(int id, PointerEventData pointer)
-        {
-            if (!cardById.TryGetValue(id, out VoyageCardState source) || cards[source.CardId].Kind != VoyageCardKind.Injury) return 0;
-            foreach (RaycastResult hit in RaycastCards(pointer))
-            {
-                VoyageCardView view = hit.gameObject.GetComponentInParent<VoyageCardView>();
-                if (view == null || view.CardId == id || !IsAvailable(view.CardId)) continue;
-                VoyageCardState target = cardById[view.CardId];
-                return target.CardId == source.CardId && target.Limb == source.Limb ? view.CardId : 0;
-            }
-            return 0;
-        }
-
-        private static List<RaycastResult> RaycastCards(PointerEventData pointer)
-        {
-            var results = new List<RaycastResult>();
-            if (EventSystem.current != null) EventSystem.current.RaycastAll(pointer, results);
-            return results;
-        }
-
-        private void AbortDrag()
-        {
-            if (dragging == null) return;
-            engine?.Hold(dragging.CardId, false);
-            dragging.FinishVisualDrag();
-            dragging = null;
-        }
-
         private void DisplayStage(VoyageOffer offer)
         {
+            int busyJob = cardById.TryGetValue(state.PreparationLocation, out VoyageCardState place) ? place.JobId : 0;
+            VoyageJobState running = busyJob == 0 ? null : state.Jobs.FirstOrDefault(job => job.Id == busyJob);
+            if (running != null)
+            {
+                stageStatus.color = InJobBorder;
+                stageStatus.text = recipes[running.RecipeId].Name + " · 剩余 " + running.Remaining + " 分钟";
+                return;
+            }
             stageStatus.color = NormalText;
             if (offer.Match == VoyageMatch.Ready)
             {
@@ -340,44 +304,56 @@ namespace CardKKK.IslandSurvival.Unity
             else stageStatus.text = "未发现已知组合";
         }
 
-        private void DisplayCards(HashSet<int> related, IReadOnlyList<int> followers)
+        private void DisplayCards(HashSet<int> related, IReadOnlyList<int> followers, VoyageState previous)
         {
             float dread = Mathf.InverseLerp(75, 5, (float)state.San);
             tableTone.color = Fade(boardColor, dread);
             if (subduedArtwork != null) subduedArtwork.SetFloat("_Desaturation", dread * .9f);
             var stagedIndex = new Dictionary<int, int>();
-            for (int i = 0; i < state.Staged.Count; i++) stagedIndex.Add(state.Staged[i], i);
-            for (int i = 0; i < followers.Count; i++) stagedIndex.Add(followers[i], state.Staged.Count + i);
+            foreach (VoyageSlotOffer slot in engine.Slots(state.PreparationLocation))
+                if (slot.CardId != 0) stagedIndex.Add(slot.CardId, slot.Index);
+            int followerIndex = engine.Slots(state.PreparationLocation).Count;
+            foreach (int id in followers) stagedIndex.Add(id, followerIndex++);
             int linkedLimb = cardById.TryGetValue(selected, out VoyageCardState selectedCard) ? selectedCard.Limb : 0;
-            SetHeight(stageCards, Mathf.Max(334, Mathf.CeilToInt(stagedIndex.Count / 3f) * 110 + 4));
+            SetHeight(stageCards, Mathf.Max(190, Mathf.CeilToInt((engine.Slots(state.PreparationLocation).Count + followers.Count) / 3f) * 180 + 8));
             foreach (int id in cardViews.Keys.Where(id => !cardById.ContainsKey(id)).ToArray())
             {
-                cardViews[id].gameObject.SetActive(false);
-                Destroy(cardViews[id].gameObject);
+                VoyageCardView leaving = cardViews[id];
+                if (leaving != null && leaving.gameObject.activeInHierarchy)
+                {
+                    Vector3 destination = mergeTarget != 0 && cardViews.TryGetValue(mergeTarget, out VoyageCardView target) && target != null
+                        ? target.Rect.position : leaving.Rect.position;
+                    leaving.RetireTo(destination);
+                    retiredCards.Add(leaving);
+                }
+                else if (leaving != null) Destroy(leaving.gameObject);
                 cardViews.Remove(id);
             }
+            retiredCards.RemoveAll(card => card == null);
 
             var jobById = state.Jobs.ToDictionary(job => job.Id);
 
-            foreach (VoyageCardState card in state.Cards)
+            foreach (VoyageCardState card in state.Cards.OrderBy(StackDepth).ThenBy(card => card.Id))
             {
                 cardViews.TryGetValue(card.Id, out VoyageCardView view);
                 VoyageJobState job = null;
                 bool inJob = card.JobId != 0 && jobById.TryGetValue(card.JobId, out job);
-                bool staged = stagedIndex.TryGetValue(card.Id, out int index);
+                bool staged = stagedIndex.TryGetValue(card.Id, out int index) && card.Id != state.PreparationLocation;
+                bool parked = InOtherPreparation(card.Id);
                 RectTransform parent = staged ? stageCards : tabletop;
+                bool created = view == null;
                 if (view == null)
                 {
                     view = Instantiate(cardTemplate, parent, false);
-                    cardViews.Add(card.Id, view);
+                    cardViews[card.Id] = view;
                 }
                 if (!view.Dragging)
                 {
-                    if (view.Rect.parent != parent) view.Rect.SetParent(parent, false);
+
                     Vector2 position;
                     if (staged)
                     {
-                        position = new Vector2(8 + index % 3 * 144, -5 - index / 3 * 110);
+                        position = SlotPosition(index);
                     }
                     else if (inJob && job.Location != 0 && job.Location != card.Id)
                     {
@@ -390,18 +366,17 @@ namespace CardKKK.IslandSurvival.Unity
                         }
                         else
                         {
-                            position = TablePosition(card, view.Rect);
+                            position = DesktopPosition(card, view.Rect);
                         }
                     }
                     else
                     {
-                        position = TablePosition(card, view.Rect);
+                        position = DesktopPosition(card, view.Rect);
                     }
 
-                    if (!flyingCards.ContainsKey(card.Id))
-                    {
-                        if (view.Rect.anchoredPosition != position) view.Rect.anchoredPosition = position;
-                    }
+                    bool returning = view.Rect.parent != parent || card.JobId == 0 && previous != null && previous.Cards.Any(old => old.Id == card.Id && old.JobId != 0);
+                    view.LayoutTo(parent, position, !created, staged ? 24f : returning ? 32f : 0f);
+                    if (!view.Dragging) view.transform.SetAsLastSibling();
                 }
                 VoyageCardRule rule = cards[card.CardId];
                 bool head = rule.Kind == VoyageCardKind.Body && rule.Tags.Contains("head");
@@ -412,7 +387,7 @@ namespace CardKKK.IslandSurvival.Unity
 
                 Color frame;
                 if (selected == card.Id) frame = Selection;
-                else if (inJob) frame = InJobBorder;
+                else if (inJob || parked) frame = InJobBorder;
                 else if (related.Contains(card.Id)) frame = Related;
                 else if (card.Id == linkedLimb) frame = LinkedLimb;
                 else if (staged) frame = StageBorder;
@@ -427,12 +402,22 @@ namespace CardKKK.IslandSurvival.Unity
 
                 string statusText = inJob
                     ? (job.Location == card.Id ? $"进行中 · {job.Remaining}分" : $"工作 · {job.Remaining}分")
-                    : ShortStatus(card, rule, head, torso, followsLimb);
+                    : parked ? "已放入别处" : ShortStatus(card, rule, head, torso, followsLimb);
+                if (!inJob && rule.Kind == VoyageCardKind.Information && card.TimerRemaining == 0 && engine.IsLocation(card.Id)) statusText = "双击查看";
+                if (!state.Cards.Any(member => member.StackParent == card.Id))
+                {
+                    int root = card.Id;
+                    while (cardById[root].StackParent != 0) root = cardById[root].StackParent;
+                    int stackCount = engine.DragCards(root, false).Count;
+                    if (stackCount > 1) statusText = stackCount + " 张  " + statusText;
+                }
 
                 view.Display(this, card.Id, rule.Name, mark, statusText, textCard, artwork[rule.Id],
                     vivid || dread == 0 ? null : subduedArtwork, color, frame, water,
                     head ? new Color(.25f, .68f, .66f) : new Color(.86f, .55f, .25f), wear);
-                if (!view.gameObject.activeSelf) view.gameObject.SetActive(true);
+                view.SetProgress(inJob ? 1f - (float)job.Remaining / job.Duration : -1);
+                bool visible = !parked && (!staged || preparationVisible);
+                if (view.gameObject.activeSelf != visible) view.gameObject.SetActive(visible);
             }
         }
 
@@ -446,59 +431,21 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void TriggerFlyoutAnimations(VoyageState previous, VoyageState current)
         {
-            var newCards = current.Cards.Where(c => !previous.Cards.Any(old => old.Id == c.Id)).ToList();
-            if (newCards.Count == 0) return;
-
-            foreach (VoyageCardState newCard in newCards)
+            foreach (VoyageCardState produced in current.Cards.Where(card => card.ProducedByJobId != 0 && !previous.Cards.Any(old => old.Id == card.Id)))
             {
-                if (!cardViews.TryGetValue(newCard.Id, out VoyageCardView view)) continue;
-                Vector2 targetPos = TablePosition(newCard, view.Rect);
-                Vector2 anchorPos = targetPos + new Vector2(0, 30);
-                if (newCard.ProducedByJobId != 0)
-                {
-                    var origin = new VoyageCardState { X = newCard.ProducedFromX, Y = newCard.ProducedFromY };
-                    anchorPos = TablePosition(origin, view.Rect);
-                }
-                if (flyingCards.ContainsKey(newCard.Id))
-                {
-                    if (flyingCards[newCard.Id] != null) StopCoroutine(flyingCards[newCard.Id]);
-                    flyingCards.Remove(newCard.Id);
-                }
-                Coroutine routine = StartCoroutine(FlyCard(newCard.Id, view, anchorPos, targetPos, 0.30f));
-                flyingCards.Add(newCard.Id, routine);
+                if (!cardViews.TryGetValue(produced.Id, out VoyageCardView view) || view.Dragging) continue;
+                Vector2 destination = DesktopPosition(produced, view.Rect);
+                var origin = new VoyageCardState { X = produced.ProducedFromX, Y = produced.ProducedFromY };
+                view.SnapTo(tabletop, TablePosition(origin, view.Rect));
+                view.LayoutTo(tabletop, destination, true, 45f);
             }
-        }
-
-        private IEnumerator FlyCard(int cardId, VoyageCardView view, Vector2 from, Vector2 to, float duration)
-        {
-            float elapsed = 0f;
-            view.Rect.anchoredPosition = from;
-            while (elapsed < duration)
-            {
-                if (view == null || view.Dragging || state.Staged.Contains(cardId)) break;
-                elapsed += Time.unscaledDeltaTime;
-                float t = Mathf.Clamp01(elapsed / duration);
-                float curvedT = Mathf.Sin(t * Mathf.PI * 0.5f);
-                Vector2 pos = Vector2.Lerp(from, to, curvedT);
-                pos.y += 45f * Mathf.Sin(t * Mathf.PI);
-                if (view != null) view.Rect.anchoredPosition = pos;
-                yield return null;
-            }
-            if (view != null && !view.Dragging && !state.Staged.Contains(cardId)) view.Rect.anchoredPosition = to;
-            flyingCards.Remove(cardId);
         }
 
         private void StopAllFlightAnimations()
         {
-            foreach (var pair in flyingCards)
-            {
-                if (pair.Value != null) StopCoroutine(pair.Value);
-                if (cardViews.TryGetValue(pair.Key, out VoyageCardView v) && cardById.TryGetValue(pair.Key, out VoyageCardState s))
-                {
-                    v.Rect.anchoredPosition = TablePosition(s, v.Rect);
-                }
-            }
-            flyingCards.Clear();
+            foreach (VoyageCardView card in cardViews.Values) if (card != null) card.StopMotion();
+            foreach (VoyageCardView card in retiredCards) if (card != null) Destroy(card.gameObject);
+            retiredCards.Clear();
         }
 
         private void DisplayJobs()
@@ -562,7 +509,7 @@ namespace CardKKK.IslandSurvival.Unity
             if (card.RechargeRemaining > 0) parts.Add($"恢复 {card.RechargeRemaining} 分钟");
             else if (rule.Charges > 0) parts.Add($"可采集 {card.Charges} 次");
             if (card.TimerRemaining > 0) parts.Add($"剩余 {card.TimerRemaining} 分钟");
-            if (rule.Kind == VoyageCardKind.Information || rule.Kind == VoyageCardKind.Ending) parts.Add("点击查看");
+            if (rule.Kind == VoyageCardKind.Information || rule.Kind == VoyageCardKind.Ending) parts.Add(engine.IsLocation(card.Id) ? "双击查看" : "点击查看");
             else if (!string.IsNullOrEmpty(rule.Description)) parts.Add(Shorten(rule.Description.Replace('\n', ' '), 24));
             cardDetail.text = string.Join("　·　", parts);
         }
@@ -669,11 +616,14 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void Update()
         {
+            TickDesktop();
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (dragging != null) { AbortDrag(); Render(); }
                 else if (readPanel.activeSelf) CloseRead();
                 else if (menuPanel.activeSelf) CloseMenu();
+                else if (tasksPanel.activeSelf) tasksPanel.SetActive(false);
+                else if (preparationVisible) { preparationVisible = false; guidanceSlot = -1; Render(); }
                 else OpenMenu();
             }
             if (Input.GetKeyDown(KeyCode.Space)) TogglePause();
@@ -682,7 +632,13 @@ namespace CardKKK.IslandSurvival.Unity
         private void OnApplicationFocus(bool focused)
         {
             if (!focused && dragging != null) { AbortDrag(); Render(); }
-            if (!focused) resumeAfterMenu = false;
+            if (!focused) { resumeAfterMenu = false; guidanceSlot = -1; RefreshGuidance(); }
+        }
+
+        private void OnDisable()
+        {
+            AbortDrag();
+            StopAllFlightAnimations();
         }
 
         private void OnDestroy()
@@ -700,7 +656,7 @@ namespace CardKKK.IslandSurvival.Unity
         }
 
         private bool IsAvailable(int id) => id != 0 && cardById.TryGetValue(id, out VoyageCardState card)
-            && card.JobId == 0 && !state.Staged.Contains(id) && !preparedFollowers.Contains(id);
+            && card.JobId == 0 && !engine.IsInSlot(id) && !preparedFollowers.Contains(id);
 
         private string CardName(int id) => cardById.TryGetValue(id, out VoyageCardState card) ? cards[card.CardId].Name : "";
         private static string Shorten(string text, int limit) => text.Length <= limit ? text : text.Substring(0, limit) + "…";

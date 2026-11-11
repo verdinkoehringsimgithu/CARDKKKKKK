@@ -1,0 +1,166 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018070CCA0: mov         rax,rsp
+  000000018070CCA3: mov         qword ptr [rax+10h],rdi
+  000000018070CCA7: push        rbp
+  000000018070CCA8: lea         rbp,[rax-5Fh]
+  000000018070CCAC: sub         rsp,0D0h
+  000000018070CCB3: cmp         byte ptr [00000001833696B5h],0
+  000000018070CCBA: mov         rdi,rcx
+  000000018070CCBD: movaps      xmmword ptr [rax-48h],xmm9
+  000000018070CCC2: movaps      xmm9,xmm1
+  000000018070CCC6: movaps      xmmword ptr [rax-78h],xmm12
+  000000018070CCCB: jne         000000018070CCF8
+  000000018070CCCD: lea         rcx,[00000001831C9908h]
+  000000018070CCD4: call        00000001803F2920
+  000000018070CCD9: lea         rcx,[00000001831C9B18h]
+  000000018070CCE0: call        00000001803F2920
+  000000018070CCE5: lea         rcx,[00000001831C9BC8h]
+  000000018070CCEC: call        00000001803F2920
+  000000018070CCF1: mov         byte ptr [00000001833696B5h],1
+  000000018070CCF8: cmp         byte ptr [rdi+00000000000001CCh],0
+  000000018070CCFF: xorps       xmm12,xmm12
+  000000018070CD03: mov         qword ptr [rbp-59h],0
+  000000018070CD0B: mov         dword ptr [rbp-51h],0
+  000000018070CD12: je          000000018070CE7C
+  000000018070CD18: movaps      xmmword ptr [rsp+00000000000000C0h],xmm6
+  000000018070CD20: movaps      xmmword ptr [rsp+00000000000000B0h],xmm7
+  000000018070CD28: movaps      xmmword ptr [rsp+00000000000000A0h],xmm8
+  000000018070CD31: movaps      xmmword ptr [rsp+0000000000000080h],xmm10
+  000000018070CD3A: movaps      xmmword ptr [rsp+50h],xmm13
+  000000018070CD40: movaps      xmmword ptr [rsp+40h],xmm14
+  000000018070CD46: movaps      xmmword ptr [rsp+70h],xmm11
+  000000018070CD4C: movsd       xmm8,mmword ptr [rdi+00000000000001C0h]
+  000000018070CD55: lea         rdx,[rdi+00000000000001CCh]
+  000000018070CD5C: mov         r8,qword ptr [00000001831C9BC8h]
+  000000018070CD63: lea         rcx,[rbp-59h]
+  000000018070CD67: movss       xmm7,dword ptr [rdi+00000000000001C8h]
+  000000018070CD6F: movaps      xmm6,xmm8
+  000000018070CD73: shufps      xmm6,xmm6,55h
+  000000018070CD77: movsd       mmword ptr [rbp-59h],xmm8
+  000000018070CD7D: call        0000000180E19300
+  000000018070CD82: movss       xmm10,dword ptr [rbp-55h]
+  000000018070CD88: mulss       xmm10,xmm9
+  000000018070CD8D: addss       xmm10,xmm6
+  000000018070CD92: movss       xmm13,dword ptr [rbp-59h]
+  000000018070CD98: lea         rdx,[rdi+00000000000001CCh]
+  000000018070CD9F: movss       xmm14,dword ptr [rbp-51h]
+  000000018070CDA5: lea         rcx,[rbp-59h]
+  000000018070CDA9: mov         r8,qword ptr [00000001831C9BC8h]
+  000000018070CDB0: mulss       xmm13,xmm9
+  000000018070CDB5: mulss       xmm14,xmm9
+  000000018070CDBA: addss       xmm13,xmm8
+  000000018070CDBF: addss       xmm14,xmm7
+  000000018070CDC4: call        0000000180E19300
+  000000018070CDC9: mov         rcx,qword ptr [rdi+0000000000000120h]
+  000000018070CDD0: movss       xmm6,dword ptr [rbp-55h]
+  000000018070CDD5: movss       dword ptr [rbp-45h],xmm6
+  000000018070CDDA: test        rcx,rcx
+  000000018070CDDD: je          000000018070CFC3
+  000000018070CDE3: xor         edx,edx
+  000000018070CDE5: call        00000001806D2F10 ; cfg.baseConf.TbBaseConfig::get_EntityHeight
+  000000018070CDEA: movaps      xmm11,xmm0
+  000000018070CDEE: comiss      xmm11,xmm10
+  000000018070CDF2: jb          000000018070CE97
+  000000018070CDF8: comiss      xmm12,xmm6
+  000000018070CDFC: jbe         000000018070CE97
+  000000018070CE02: movss       xmm7,dword ptr [rbp-59h]
+  000000018070CE07: xor         edx,edx
+  000000018070CE09: movss       xmm8,dword ptr [rbp-51h]
+  000000018070CE0F: mov         rcx,rdi
+  000000018070CE12: mulss       xmm7,dword ptr [00000001826F9C80h]
+  000000018070CE1A: movaps      xmm10,xmm0
+  000000018070CE1E: mulss       xmm8,dword ptr [00000001826F9C80h]
+  000000018070CE27: mulss       xmm6,dword ptr [00000001826F9F28h]
+  000000018070CE2F: call        00000001807008E0 ; UnityGameFramework.Scripts.BaseEntityLogic::Bounce
+  000000018070CE34: cmp         byte ptr [rdi+00000000000001CCh],0
+  000000018070CE3B: jne         000000018070CEC1
+  000000018070CE41: mov         byte ptr [rdi+0000000000000184h],0
+  000000018070CE48: movaps      xmm11,xmmword ptr [rsp+70h]
+  000000018070CE4E: movaps      xmm13,xmmword ptr [rsp+50h]
+  000000018070CE54: movaps      xmm10,xmmword ptr [rsp+0000000000000080h]
+  000000018070CE5D: movaps      xmm8,xmmword ptr [rsp+00000000000000A0h]
+  000000018070CE66: movaps      xmm7,xmmword ptr [rsp+00000000000000B0h]
+  000000018070CE6E: movaps      xmm6,xmmword ptr [rsp+00000000000000C0h]
+  000000018070CE76: movaps      xmm14,xmmword ptr [rsp+40h]
+  000000018070CE7C: lea         r11,[rsp+00000000000000D0h]
+  000000018070CE84: mov         rdi,qword ptr [r11+18h]
+  000000018070CE88: movaps      xmm9,xmmword ptr [r11-40h]
+  000000018070CE8D: movaps      xmm12,xmmword ptr [r11-70h]
+  000000018070CE92: mov         rsp,r11
+  000000018070CE95: pop         rbp
+  000000018070CE96: ret
+  000000018070CE97: mulss       xmm9,dword ptr [00000001826F9E14h]
+  000000018070CEA0: movss       xmm7,dword ptr [rbp-59h]
+  000000018070CEA5: movss       xmm8,dword ptr [rbp-51h]
+  000000018070CEAB: mulss       xmm7,dword ptr [00000001826F9F14h]
+  000000018070CEB3: subss       xmm6,xmm9
+  000000018070CEB8: mulss       xmm8,dword ptr [00000001826F9F14h]
+  000000018070CEC1: comiss      xmm11,xmm10
+  000000018070CEC5: jb          000000018070CEE0
+  000000018070CEC7: movss       xmm0,dword ptr [00000001826F9C58h]
+  000000018070CECF: comiss      xmm0,xmm6
+  000000018070CED2: jb          000000018070CEE0
+  000000018070CED4: mov         byte ptr [rdi+0000000000000184h],0
+  000000018070CEDB: xorps       xmm0,xmm0
+  000000018070CEDE: jmp         000000018070CF0D
+  000000018070CEE0: mov         r8,qword ptr [00000001831C9908h]
+  000000018070CEE7: lea         rdx,[rbp-59h]
+  000000018070CEEB: xorps       xmm0,xmm0
+  000000018070CEEE: unpcklps    xmm7,xmm6
+  000000018070CEF1: lea         rcx,[rbp-49h]
+  000000018070CEF5: movsd       mmword ptr [rbp-59h],xmm7
+  000000018070CEFA: movups      xmmword ptr [rbp-49h],xmm0
+  000000018070CEFE: movss       dword ptr [rbp-51h],xmm8
+  000000018070CF04: call        0000000180E19180
+  000000018070CF09: movups      xmm0,xmmword ptr [rbp-49h]
+  000000018070CF0D: movups      xmmword ptr [rdi+00000000000001CCh],xmm0
+  000000018070CF14: xor         edx,edx
+  000000018070CF16: mov         rcx,rdi
+  000000018070CF19: call        0000000182418FC0
+  000000018070CF1E: test        rax,rax
+  000000018070CF21: je          000000018070CFC3
+  000000018070CF27: movaps      xmm6,xmm13
+  000000018070CF2B: movss       dword ptr [rbp-51h],xmm14
+  000000018070CF31: unpcklps    xmm6,xmm10
+  000000018070CF35: lea         rdx,[rbp-59h]
+  000000018070CF39: xor         r8d,r8d
+  000000018070CF3C: movsd       mmword ptr [rbp-59h],xmm6
+  000000018070CF41: mov         rcx,rax
+  000000018070CF44: mov         qword ptr [rsp+00000000000000E0h],rbx
+  000000018070CF4C: call        00000001824467E0
+  000000018070CF51: mov         rcx,qword ptr [rdi+0000000000000120h]
+  000000018070CF58: mov         rbx,qword ptr [rsp+00000000000000E0h]
+  000000018070CF60: movsd       mmword ptr [rdi+00000000000001C0h],xmm6
+  000000018070CF68: movsd       mmword ptr [rdi+0000000000000100h],xmm6
+  000000018070CF70: movss       dword ptr [rdi+00000000000001C8h],xmm14
+  000000018070CF79: movss       dword ptr [rdi+0000000000000108h],xmm14
+  000000018070CF82: test        rcx,rcx
+  000000018070CF85: je          000000018070CFC3
+  000000018070CF87: xor         edx,edx
+  000000018070CF89: call        00000001806D2F10 ; cfg.baseConf.TbBaseConfig::get_EntityHeight
+  000000018070CF8E: movsd       xmm1,mmword ptr [rdi+0000000000000100h]
+  000000018070CF96: shufps      xmm1,xmm1,0E1h
+  000000018070CF9A: movss       xmm1,xmm0
+  000000018070CF9E: shufps      xmm1,xmm1,0E1h
+  000000018070CFA2: movsd       mmword ptr [rdi+0000000000000100h],xmm1
+  000000018070CFAA: mov         eax,dword ptr [rdi+0000000000000108h]
+  000000018070CFB0: movsd       mmword ptr [rdi+000000000000010Ch],xmm1
+  000000018070CFB8: mov         dword ptr [rdi+0000000000000114h],eax
+  000000018070CFBE: jmp         000000018070CE48
+  000000018070CFC3: call        00000001803F2AC0
+  000000018070CFC8: int         3
+  000000018070CFC9: int         3
+  000000018070CFCA: int         3
+  000000018070CFCB: int         3
+  000000018070CFCC: int         3
+  000000018070CFCD: int         3
+  000000018070CFCE: int         3
+  000000018070CFCF: int         3
+
+  Summary
+
+     2294000 il2cpp

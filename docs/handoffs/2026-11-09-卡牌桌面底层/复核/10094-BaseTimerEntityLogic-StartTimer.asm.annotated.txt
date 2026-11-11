@@ -1,0 +1,148 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804FC030: push        rbx
+  00000001804FC032: sub         rsp,30h
+  00000001804FC036: cmp         byte ptr [000000018336868Dh],0
+  00000001804FC03D: mov         rbx,rcx
+  00000001804FC040: jne         00000001804FC06D
+  00000001804FC042: lea         rcx,[00000001831852D0h]
+  00000001804FC049: call        00000001803F2920
+  00000001804FC04E: lea         rcx,[00000001831DB090h]
+  00000001804FC055: call        00000001803F2920
+  00000001804FC05A: lea         rcx,[00000001831E40B8h]
+  00000001804FC061: call        00000001803F2920
+  00000001804FC066: mov         byte ptr [000000018336868Dh],1
+  00000001804FC06D: mov         rcx,qword ptr [rbx+0000000000000260h]
+  00000001804FC074: mov         qword ptr [rsp+40h],rdi
+  00000001804FC079: test        rcx,rcx
+  00000001804FC07C: je          00000001804FC27F
+  00000001804FC082: xor         edx,edx
+  00000001804FC084: call        0000000180715C80 ; UnityGameFramework.Scripts.BaseTimerEntityData::CanStartTimer
+  00000001804FC089: test        al,al
+  00000001804FC08B: je          00000001804FC274
+  00000001804FC091: mov         rdx,qword ptr [rbx+0000000000000260h]
+  00000001804FC098: test        rdx,rdx
+  00000001804FC09B: je          00000001804FC27F
+  00000001804FC0A1: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FC0A8: test        rcx,rcx
+  00000001804FC0AB: je          00000001804FC27F
+  00000001804FC0B1: mov         edx,dword ptr [rdx+00000000000000D4h]
+  00000001804FC0B7: xor         r8d,r8d
+  00000001804FC0BA: call        00000001804F3C60 ; UnityGameFramework.Scripts.BaseFormEntityLogic::GetBaseRecipe
+  00000001804FC0BF: test        rax,rax
+  00000001804FC0C2: je          00000001804FC27F
+  00000001804FC0C8: mov         rax,qword ptr [rax+18h]
+  00000001804FC0CC: test        rax,rax
+  00000001804FC0CF: je          00000001804FC27F
+  00000001804FC0D5: mov         rdx,qword ptr [rbx+0000000000000260h]
+  00000001804FC0DC: test        rdx,rdx
+  00000001804FC0DF: je          00000001804FC27F
+  00000001804FC0E5: mov         rcx,qword ptr [rax+0000000000000088h]
+  00000001804FC0EC: test        rcx,rcx
+  00000001804FC0EF: je          00000001804FC27F
+  00000001804FC0F5: mov         r8,qword ptr [00000001831852D0h]
+  00000001804FC0FC: mov         edx,dword ptr [rdx+00000000000000D8h]
+  00000001804FC102: call        00000001819B8800
+  00000001804FC107: test        rax,rax
+  00000001804FC10A: je          00000001804FC27F
+  00000001804FC110: cmp         byte ptr [rax+20h],0
+  00000001804FC114: jne         00000001804FC274
+  00000001804FC11A: lea         rcx,[rbx+0000000000000280h]
+  00000001804FC121: mov         qword ptr [rbx+0000000000000280h],rax
+  00000001804FC128: mov         rdx,rax
+  00000001804FC12B: call        00000001803F2310
+  00000001804FC130: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FC137: test        rcx,rcx
+  00000001804FC13A: je          00000001804FC27F
+  00000001804FC140: xor         r8d,r8d
+  00000001804FC143: mov         dl,1
+  00000001804FC145: call        00000001804F71E0 ; UnityGameFramework.Scripts.BaseFormEntityLogic::SetFormStatus
+  00000001804FC14A: mov         rcx,qword ptr [rbx+0000000000000290h]
+  00000001804FC151: test        rcx,rcx
+  00000001804FC154: je          00000001804FC164
+  00000001804FC156: mov         rax,qword ptr [rcx+18h]
+  00000001804FC15A: mov         rdx,qword ptr [rcx+28h]
+  00000001804FC15E: mov         rcx,qword ptr [rcx+40h]
+  00000001804FC162: call        rax
+  00000001804FC164: mov         rax,qword ptr [rbx+0000000000000280h]
+  00000001804FC16B: mov         rdi,qword ptr [rbx+0000000000000260h]
+  00000001804FC172: test        rax,rax
+  00000001804FC175: je          00000001804FC27F
+  00000001804FC17B: mov         rcx,qword ptr [rax+0000000000000088h]
+  00000001804FC182: test        rcx,rcx
+  00000001804FC185: je          00000001804FC27F
+  00000001804FC18B: mov         r8,qword ptr [00000001831DB090h]
+  00000001804FC192: xor         edx,edx
+  00000001804FC194: call        00000001819D1190
+  00000001804FC199: test        rdi,rdi
+  00000001804FC19C: je          00000001804FC27F
+  00000001804FC1A2: mov         dword ptr [rdi+00000000000000D0h],eax
+  00000001804FC1A8: mov         rcx,qword ptr [rbx+0000000000000280h]
+  00000001804FC1AF: test        rcx,rcx
+  00000001804FC1B2: je          00000001804FC27F
+  00000001804FC1B8: mov         rax,qword ptr [rbx]
+  00000001804FC1BB: xorps       xmm3,xmm3
+  00000001804FC1BE: movd        xmm1,dword ptr [rcx+0000000000000080h]
+  00000001804FC1C6: xor         r8d,r8d
+  00000001804FC1C9: cvtdq2ps    xmm1,xmm1
+  00000001804FC1CC: mov         rcx,rbx
+  00000001804FC1CF: mov         rdx,qword ptr [rax+0000000000000578h]
+  00000001804FC1D6: mov         rax,qword ptr [rax+0000000000000580h]
+  00000001804FC1DD: mov         qword ptr [rsp+20h],rax
+  00000001804FC1E2: call        rdx
+  00000001804FC1E4: mov         rcx,qword ptr [rbx+00000000000002A0h]
+  00000001804FC1EB: test        rcx,rcx
+  00000001804FC1EE: je          00000001804FC27F
+  00000001804FC1F4: xor         edx,edx
+  00000001804FC1F6: call        0000000181CC4400
+  00000001804FC1FB: xor         r8d,r8d
+  00000001804FC1FE: xor         edx,edx
+  00000001804FC200: mov         rcx,rax
+  00000001804FC203: call        000000018065F450 ; UnityGameFramework.Scripts.GameObjectHelper::SetActiveEx
+  00000001804FC208: cmp         byte ptr [000000018336843Dh],0
+  00000001804FC20F: jne         00000001804FC224
+  00000001804FC211: lea         rcx,[000000018318DD78h]
+  00000001804FC218: call        00000001803F2920
+  00000001804FC21D: mov         byte ptr [000000018336843Dh],1
+  00000001804FC224: mov         rax,qword ptr [000000018318DD78h]
+  00000001804FC22B: mov         rcx,qword ptr [rax+00000000000000B8h]
+  00000001804FC232: mov         rcx,qword ptr [rcx+0000000000000080h]
+  00000001804FC239: test        rcx,rcx
+  00000001804FC23C: je          00000001804FC27F
+  00000001804FC23E: mov         rdx,qword ptr [00000001831E40B8h]
+  00000001804FC245: xor         r9d,r9d
+  00000001804FC248: xor         r8d,r8d
+  00000001804FC24B: call        00000001826B48A0
+  00000001804FC250: cmp         eax,1
+  00000001804FC253: jne         00000001804FC274
+  00000001804FC255: mov         rcx,qword ptr [rbx+0000000000000258h]
+  00000001804FC25C: test        rcx,rcx
+  00000001804FC25F: je          00000001804FC27F
+  00000001804FC261: mov         rdx,qword ptr [rcx]
+  00000001804FC264: mov         rax,qword ptr [rdx+0000000000000378h]
+  00000001804FC26B: mov         rdx,qword ptr [rdx+0000000000000380h]
+  00000001804FC272: call        rax
+  00000001804FC274: mov         rdi,qword ptr [rsp+40h]
+  00000001804FC279: add         rsp,30h
+  00000001804FC27D: pop         rbx
+  00000001804FC27E: ret
+  00000001804FC27F: call        00000001803F2AC0
+  00000001804FC284: int         3
+  00000001804FC285: int         3
+  00000001804FC286: int         3
+  00000001804FC287: int         3
+  00000001804FC288: int         3
+  00000001804FC289: int         3
+  00000001804FC28A: int         3
+  00000001804FC28B: int         3
+  00000001804FC28C: int         3
+  00000001804FC28D: int         3
+  00000001804FC28E: int         3
+  00000001804FC28F: int         3
+
+  Summary
+
+     2294000 il2cpp

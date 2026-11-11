@@ -1,0 +1,103 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180700BC0: mov         qword ptr [rsp+10h],rsi
+  0000000180700BC5: push        rdi
+  0000000180700BC6: sub         rsp,20h
+  0000000180700BCA: test        dword ptr [rcx+000000000000022Ch],1E2h
+  0000000180700BD4: mov         rsi,rdx
+  0000000180700BD7: mov         rdi,rcx
+  0000000180700BDA: ja          0000000180700CF6
+  0000000180700BE0: cmp         dword ptr [rcx+0000000000000180h],0
+  0000000180700BE7: jne         0000000180700CF6
+  0000000180700BED: cmp         byte ptr [rcx+5Ch],0
+  0000000180700BF1: jne         0000000180700CF6
+  0000000180700BF7: cmp         qword ptr [rcx+0000000000000170h],0
+  0000000180700BFF: ja          0000000180700CF6
+  0000000180700C05: mov         qword ptr [rsp+30h],rbx
+  0000000180700C0A: mov         rax,qword ptr [rcx+0000000000000128h]
+  0000000180700C11: test        rax,rax
+  0000000180700C14: je          0000000180700D03
+  0000000180700C1A: cmp         dword ptr [rax+68h],0
+  0000000180700C1E: je          0000000180700CE4
+  0000000180700C24: test        rdx,rdx
+  0000000180700C27: je          0000000180700D03
+  0000000180700C2D: mov         rdx,qword ptr [rdx+0000000000000128h]
+  0000000180700C34: test        rdx,rdx
+  0000000180700C37: je          0000000180700D03
+  0000000180700C3D: mov         ecx,dword ptr [rax+68h]
+  0000000180700C40: cmp         dword ptr [rdx+68h],ecx
+  0000000180700C43: jne         0000000180700CE4
+  0000000180700C49: xor         edx,edx
+  0000000180700C4B: mov         rcx,rdi
+  0000000180700C4E: call        00000001807044C0 ; UnityGameFramework.Scripts.BaseEntityLogic::GetTopNum
+  0000000180700C53: xor         edx,edx
+  0000000180700C55: mov         rcx,rsi
+  0000000180700C58: mov         ebx,eax
+  0000000180700C5A: call        00000001807044C0 ; UnityGameFramework.Scripts.BaseEntityLogic::GetTopNum
+  0000000180700C5F: mov         rcx,qword ptr [rdi+0000000000000120h]
+  0000000180700C66: lea         esi,[rbx+rax]
+  0000000180700C69: test        rcx,rcx
+  0000000180700C6C: je          0000000180700D03
+  0000000180700C72: xor         edx,edx
+  0000000180700C74: call        00000001806D2F70 ; cfg.baseConf.TbBaseConfig::get_EntityTopNum
+  0000000180700C79: cmp         esi,eax
+  0000000180700C7B: jg          0000000180700CE4
+  0000000180700C7D: cmp         esi,14h
+  0000000180700C80: jl          0000000180700CD2
+  0000000180700C82: xor         ecx,ecx
+  0000000180700C84: call        000000018049F1D0
+  0000000180700C89: test        rax,rax
+  0000000180700C8C: je          0000000180700D03
+  0000000180700C8E: mov         rbx,qword ptr [rax+00000000000000D8h]
+  0000000180700C95: xor         ecx,ecx
+  0000000180700C97: call        000000018049F250
+  0000000180700C9C: test        rax,rax
+  0000000180700C9F: je          0000000180700D03
+  0000000180700CA1: xor         edx,edx
+  0000000180700CA3: mov         rcx,rax
+  0000000180700CA6: call        000000018059F760 ; UnityGameFramework.Scripts.LubanTableComponent::get_TaskName2TaskId
+  0000000180700CAB: test        rax,rax
+  0000000180700CAE: je          0000000180700D03
+  0000000180700CB0: xor         edx,edx
+  0000000180700CB2: mov         rcx,rax
+  0000000180700CB5: call        00000001804959F0 ; cfg.task.TbTaskName2TaskId::get_TaskCardOnTop
+  0000000180700CBA: test        rbx,rbx
+  0000000180700CBD: je          0000000180700D03
+  0000000180700CBF: xor         r9d,r9d
+  0000000180700CC2: mov         r8d,1
+  0000000180700CC8: mov         edx,eax
+  0000000180700CCA: mov         rcx,rbx
+  0000000180700CCD: call        0000000180580C40 ; UnityGameFramework.Scripts.GameData::AddTaskIdNum
+  0000000180700CD2: mov         rbx,qword ptr [rsp+30h]
+  0000000180700CD7: mov         al,1
+  0000000180700CD9: mov         rsi,qword ptr [rsp+38h]
+  0000000180700CDE: add         rsp,20h
+  0000000180700CE2: pop         rdi
+  0000000180700CE3: ret
+  0000000180700CE4: mov         rbx,qword ptr [rsp+30h]
+  0000000180700CE9: xor         al,al
+  0000000180700CEB: mov         rsi,qword ptr [rsp+38h]
+  0000000180700CF0: add         rsp,20h
+  0000000180700CF4: pop         rdi
+  0000000180700CF5: ret
+  0000000180700CF6: mov         rsi,qword ptr [rsp+38h]
+  0000000180700CFB: xor         al,al
+  0000000180700CFD: add         rsp,20h
+  0000000180700D01: pop         rdi
+  0000000180700D02: ret
+  0000000180700D03: call        00000001803F2AC0
+  0000000180700D08: int         3
+  0000000180700D09: int         3
+  0000000180700D0A: int         3
+  0000000180700D0B: int         3
+  0000000180700D0C: int         3
+  0000000180700D0D: int         3
+  0000000180700D0E: int         3
+  0000000180700D0F: int         3
+
+  Summary
+
+     2294000 il2cpp

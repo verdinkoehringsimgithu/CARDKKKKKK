@@ -14,7 +14,7 @@ namespace CardKKK.IslandSurvival.Editor
         private int tab;
         private string search = "", validation;
 
-        [MenuItem("孤岛生存/出航规则配置")]
+        [MenuItem("孤岛生存/配置/出航规则")]
         private static void SelectRules()
         {
             var rules = AssetDatabase.LoadAssetAtPath<VoyageConfiguration>("Assets/IslandSurvival/Configuration/VoyageRules.asset");
@@ -34,6 +34,7 @@ namespace CardKKK.IslandSurvival.Editor
             switch (tab)
             {
                 case 0:
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Tabletop"), new GUIContent("牌桌交互规则"));
                     Field(rules, "RealSecondsPerMinute", "每游戏分钟的现实秒数");
                     Field(rules, "HungerPerMinute", "每分钟饥饿水位损耗");
                     Field(rules, "Seed", "新局随机种子");

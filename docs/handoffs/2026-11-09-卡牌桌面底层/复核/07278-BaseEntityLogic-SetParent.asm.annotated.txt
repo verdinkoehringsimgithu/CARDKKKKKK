@@ -1,0 +1,143 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018070ABB0: mov         qword ptr [rsp+18h],rbx
+  000000018070ABB5: push        rdi
+  000000018070ABB6: sub         rsp,50h
+  000000018070ABBA: cmp         byte ptr [00000001833696AEh],0
+  000000018070ABC1: mov         rbx,rdx
+  000000018070ABC4: mov         rdi,rcx
+  000000018070ABC7: jne         000000018070ABF4
+  000000018070ABC9: lea         rcx,[00000001831D2768h]
+  000000018070ABD0: call        00000001803F2920
+  000000018070ABD5: lea         rcx,[00000001831C2AF8h]
+  000000018070ABDC: call        00000001803F2920
+  000000018070ABE1: lea         rcx,[000000018317E8F0h]
+  000000018070ABE8: call        00000001803F2920
+  000000018070ABED: mov         byte ptr [00000001833696AEh],1
+  000000018070ABF4: mov         rcx,qword ptr [00000001831C2AF8h]
+  000000018070ABFB: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018070AC02: jne         000000018070AC09
+  000000018070AC04: call        0000000180380F00
+  000000018070AC09: mov         qword ptr [rsp+60h],rbp
+  000000018070AC0E: xor         r8d,r8d
+  000000018070AC11: mov         rdx,rdi
+  000000018070AC14: mov         qword ptr [rsp+68h],rsi
+  000000018070AC19: mov         rcx,rbx
+  000000018070AC1C: call        0000000182421BB0
+  000000018070AC21: test        al,al
+  000000018070AC23: jne         000000018070AD9B
+  000000018070AC29: mov         rcx,qword ptr [00000001831C2AF8h]
+  000000018070AC30: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018070AC37: jne         000000018070AC3E
+  000000018070AC39: call        0000000180380F00
+  000000018070AC3E: xor         r8d,r8d
+  000000018070AC41: xor         edx,edx
+  000000018070AC43: mov         rcx,rbx
+  000000018070AC46: call        0000000182421BB0
+  000000018070AC4B: test        al,al
+  000000018070AC4D: jne         000000018070AD34
+  000000018070AC53: lea         rcx,[rdi+00000000000001B0h]
+  000000018070AC5A: mov         qword ptr [rdi+00000000000001B0h],rbx
+  000000018070AC61: mov         rdx,rbx
+  000000018070AC64: call        00000001803F2310
+  000000018070AC69: test        rbx,rbx
+  000000018070AC6C: je          000000018070ADD3
+  000000018070AC72: lea         rcx,[rbx+00000000000001B8h]
+  000000018070AC79: mov         qword ptr [rbx+00000000000001B8h],rdi
+  000000018070AC80: mov         rdx,rdi
+  000000018070AC83: call        00000001803F2310
+  000000018070AC88: cmp         byte ptr [0000000183368448h],0
+  000000018070AC8F: jne         000000018070ACA4
+  000000018070AC91: lea         rcx,[000000018318DD78h]
+  000000018070AC98: call        00000001803F2920
+  000000018070AC9D: mov         byte ptr [0000000183368448h],1
+  000000018070ACA4: mov         rax,qword ptr [000000018318DD78h]
+  000000018070ACAB: mov         rcx,qword ptr [rax+00000000000000B8h]
+  000000018070ACB2: mov         rsi,qword ptr [rcx+0000000000000088h]
+  000000018070ACB9: mov         rcx,qword ptr [rdi+0000000000000120h]
+  000000018070ACC0: test        rcx,rcx
+  000000018070ACC3: je          000000018070ADD3
+  000000018070ACC9: xor         edx,edx
+  000000018070ACCB: call        00000001806D38B0 ; cfg.baseConf.TbBaseConfig::get_SoundCardStack
+  000000018070ACD0: xor         edx,edx
+  000000018070ACD2: mov         rcx,rdi
+  000000018070ACD5: mov         ebp,eax
+  000000018070ACD7: call        0000000182418FC0
+  000000018070ACDC: test        rax,rax
+  000000018070ACDF: je          000000018070ADD3
+  000000018070ACE5: xor         r8d,r8d
+  000000018070ACE8: lea         rcx,[rsp+40h]
+  000000018070ACED: mov         rdx,rax
+  000000018070ACF0: call        0000000182446090
+  000000018070ACF5: xor         ebx,ebx
+  000000018070ACF7: lea         r8,[rsp+30h]
+  000000018070ACFC: xor         r9d,r9d
+  000000018070ACFF: mov         qword ptr [rsp+20h],rbx
+  000000018070AD04: mov         edx,ebp
+  000000018070AD06: mov         rcx,rsi
+  000000018070AD09: movsd       xmm0,mmword ptr [rax]
+  000000018070AD0D: mov         eax,dword ptr [rax+8]
+  000000018070AD10: movsd       mmword ptr [rsp+30h],xmm0
+  000000018070AD16: mov         dword ptr [rsp+38h],eax
+  000000018070AD1A: call        00000001805FE460 ; UnityGameFramework.Scripts.SoundExtension::PlaySound
+  000000018070AD1F: mov         rsi,qword ptr [rsp+68h]
+  000000018070AD24: mov         rbp,qword ptr [rsp+60h]
+  000000018070AD29: mov         rbx,qword ptr [rsp+70h]
+  000000018070AD2E: add         rsp,50h
+  000000018070AD32: pop         rdi
+  000000018070AD33: ret
+  000000018070AD34: mov         rcx,qword ptr [00000001831C2AF8h]
+  000000018070AD3B: mov         rbx,qword ptr [rdi+00000000000001B0h]
+  000000018070AD42: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018070AD49: jne         000000018070AD50
+  000000018070AD4B: call        0000000180380F00
+  000000018070AD50: xor         r8d,r8d
+  000000018070AD53: xor         edx,edx
+  000000018070AD55: mov         rcx,rbx
+  000000018070AD58: call        0000000182421DE0
+  000000018070AD5D: xor         ebx,ebx
+  000000018070AD5F: test        al,al
+  000000018070AD61: je          000000018070AD84
+  000000018070AD63: mov         rcx,qword ptr [rdi+00000000000001B0h]
+  000000018070AD6A: test        rcx,rcx
+  000000018070AD6D: je          000000018070ADD3
+  000000018070AD6F: mov         qword ptr [rcx+00000000000001B8h],rbx
+  000000018070AD76: xor         edx,edx
+  000000018070AD78: add         rcx,1B8h
+  000000018070AD7F: call        00000001803F2310
+  000000018070AD84: lea         rcx,[rdi+00000000000001B0h]
+  000000018070AD8B: mov         qword ptr [rdi+00000000000001B0h],rbx
+  000000018070AD92: xor         edx,edx
+  000000018070AD94: call        00000001803F2310
+  000000018070AD99: jmp         000000018070AD1F
+  000000018070AD9B: test        rbx,rbx
+  000000018070AD9E: je          000000018070ADD3
+  000000018070ADA0: xor         edx,edx
+  000000018070ADA2: mov         rcx,rbx
+  000000018070ADA5: call        000000018056DFF0 ; UnityGameFramework.Scripts.EntityLogicWithData::get_Id
+  000000018070ADAA: xor         edx,edx
+  000000018070ADAC: mov         rcx,rdi
+  000000018070ADAF: mov         ebx,eax
+  000000018070ADB1: call        000000018056DFF0 ; UnityGameFramework.Scripts.EntityLogicWithData::get_Id
+  000000018070ADB6: mov         r9,qword ptr [00000001831D2768h]
+  000000018070ADBD: mov         r8d,eax
+  000000018070ADC0: mov         rcx,qword ptr [000000018317E8F0h]
+  000000018070ADC7: mov         edx,ebx
+  000000018070ADC9: call        0000000180C681C0
+  000000018070ADCE: jmp         000000018070AD1F
+  000000018070ADD3: call        00000001803F2AC0
+  000000018070ADD8: int         3
+  000000018070ADD9: int         3
+  000000018070ADDA: int         3
+  000000018070ADDB: int         3
+  000000018070ADDC: int         3
+  000000018070ADDD: int         3
+  000000018070ADDE: int         3
+  000000018070ADDF: int         3
+
+  Summary
+
+     2294000 il2cpp

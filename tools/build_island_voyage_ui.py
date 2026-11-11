@@ -3,6 +3,7 @@ from pathlib import Path
 import ast
 import json
 import re
+from voyage_prefab_identity import stabilize
 
 ROOT = Path(__file__).resolve().parents[1]
 MODULE = ROOT / 'Assets/IslandSurvival'
@@ -11,6 +12,7 @@ GUID = {
     'view': '6eb55c3f436a4052ad84447c39fdacb5',
     'card': '48f5208832354aa98f75a2adb5b41dbc',
     'task': 'd4dc806215514befb40c1a3f1d2bbda0',
+    'slot': '5b829d8dcd454ec5ad131bca6290f291',
     'bootstrap': 'a6913fb482da426db27b58125b1dddb4',
     'configuration': 'f94aa48e2c8643519334a2bd41a7d064',
     'layout': 'be52be55958055669406d034e94fb665',
@@ -41,7 +43,7 @@ WHITE = (.98, .94, .83, 1)
 MUTED = (.66, .76, .69, 1)
 GOLD = (.93, .75, .45, 1)
 BOARD = (.23, .34, .32, 1)
-CARD = (126, 104)
+CARD = (112, 164)
 
 
 def fields(values):
@@ -88,24 +90,46 @@ def liquid(ui, node):
 
 def card(ui, parent, name, x, y, *, active=True, preview_kind=''):
     node = ui.box(parent, name, x, y, *CARD, active)
-    face = ui.image(node, BUTTON, ray=not preview_kind)
-    frame = ui.box(node, '卡边', 3, 3, 120, 98)
-    inner = ui.image(frame, (.11, .23, .23, 1))
-    art = ui.image(ui.box(node, '图案', 31, 31, 64, 50))
-    _, glyph = ui.txt(node, '类别印记', '', 12, 30, 96, 50, 28, MUTED, 4)
-    _, title = ui.txt(node, '牌名', name if preview_kind else '', 8, 5, 110, 24, 17, WHITE, 4)
-    _, status = ui.txt(node, '状态', '', 6, 83, 114, 17, 12, WHITE, 4)
-    liquid_go, liquid_fill = liquid(ui, node)
-    wear_left = ui.image(ui.box(node, '左边缘磨损', 1, 23, 4, 49), RUST)
-    wear_right = ui.image(ui.box(node, '右边缘磨损', 121, 28, 4, 49), RUST)
+    face = ui.image(node, (.58, .57, .47, 1), ray=not preview_kind)
+    inner = ui.image(ui.box(node, '卡纸', 3, 3, 106, 158), (.16, .23, .22, 1))
+    art = ui.image(ui.box(node, '图案', 14, 46, 84, 76))
+    _, glyph = ui.txt(node, '类别印记', '', 10, 44, 92, 74, 23, MUTED, 4)
+    _, title = ui.txt(node, '牌名', name if preview_kind else '', 6, 2, 100, 40, 16, WHITE, 1)
+    _, status = ui.txt(node, '状态', '', 6, 125, 100, 32, 12, WHITE, 4)
+    vial = ui.box(node, '水位槽', 92, 49, 10, 67)
+    ui.image(vial, (.52, .62, .59, 1))
+    inside = ui.box(vial, '槽内', 2, 2, 6, 63)
+    ui.image(inside, DARK)
+    fill = ui.node('液面', inside, (0, 0), (1, 1), (0, 0), (0, 0), (0, 0))
+    liquid_fill = ui.image(fill, (.24, .68, .66, 1))
+    wear_left = ui.image(ui.box(node, '左边缘磨损', 1, 43, 3, 100), RUST)
+    wear_right = ui.image(ui.box(node, '右边缘磨损', 108, 43, 3, 100), RUST)
+    job_fill = ui.image(ui.box(node, '任务环形进度', 86, 37, 21, 21, False), (1, 1, 1, 1),
+                        sprite=ext('f8c48055781b4e5baa7cbd18943373a3', 21300000))
+    for i, entry in enumerate(ui.components):
+        kind, fid, owner, body = entry
+        if fid == job_fill:
+            ui.components[i] = (kind, fid, owner, body.replace('m_Type: 0', 'm_Type: 3'))
+    # 中文行高不得因卡面框尺寸被整行裁掉；仅卡面文本使用垂直溢出。
+    for i, entry in enumerate(ui.components):
+        kind, fid, owner, body = entry
+        if fid in (title, status):
+            ui.components[i] = (kind, fid, owner, body.replace('m_VerticalOverflow: 0', 'm_VerticalOverflow: 1'))
     if preview_kind:
-        ui.txt(node, '预览印记', preview_kind, 8, 31, 88 if name in ('头', '躯干') else 110, 48, 28, MUTED, 4)
+        ui.txt(node, '预览印记', preview_kind, 10, 46, 92, 74, 24, MUTED, 4)
         for child in node['children']:
             if child['name'] in ('图案', '左边缘磨损', '右边缘磨损') or child['name'] == '水位槽' and name not in ('头', '躯干'):
                 child['active'] = 0
         return node
     return ui.mono(node, GUID['card'], fields(dict(face=face, inner=inner, artwork=art, glyph=glyph,
-        title=title, status=status, liquid=liquid_go, liquidFill=liquid_fill, wearLeft=wear_left, wearRight=wear_right)))
+        title=title, status=status, liquid=vial['go'], liquidFill=liquid_fill, wearLeft=wear_left, wearRight=wear_right, jobFill=job_fill)))
+
+
+def slot(ui, parent):
+    node = ui.box(parent, '场所槽位模板', 0, 0, *CARD, False)
+    frame = ui.image(node, (1, 1, 1, 1), sprite=ext('c7a8100cb2674801b96a909d3cbfc321', 21300000), ray=True)
+    _, label = ui.txt(node, '槽位状态', '+', 8, 40, 96, 80, 26, WHITE, 4)
+    return ui.mono(node, GUID['slot'], fields(dict(frame=frame, label=label)))
 
 
 def task(ui, parent):
@@ -202,13 +226,15 @@ def build():
     ui.txt(top, '游戏名', '孤岛生存', 14, 5, 230, 47, 30, WHITE, 3)
     _, refs['clockText'] = ui.txt(top, '时间', '第 1 天  00:00', 236, 7, 320, 43, 22, MUTED, 3)
     _, refs['pauseButton'] = ui.pxbutton(top, '时间控制', '继续', 1270, 8, 134, 41, RUST, 20)
+    _, refs['tasksButton'] = ui.pxbutton(top, '任务入口', '任务', 1120, 8, 134, 41, BUTTON, 20)
     _, refs['menuButton'] = ui.pxbutton(top, '菜单入口', '菜单', 1416, 8, 134, 41, BUTTON, 20)
 
-    main = ui.box(play, '桌面区域', 18, 80, 1080, 726)
+    main = ui.box(play, '桌面区域', 18, 80, 1564, 726)
     refs['tableTone'] = ui.image(main, BOARD)
-    ui.txt(main, '区域标题', '海滩桌面', 14, 4, 252, 34, 21, WHITE, 3)
-    ui.txt(main, '滚动操作', '滚轮查看', 885, 6, 171, 28, 14, MUTED, 5)
-    refs['tableScroll'], viewport, world = scroll(ui, main, '桌面滚动区', 10, 43, 1056, 674, 1700)
+    ui.txt(main, '区域标题', '海滩', 14, 4, 252, 34, 21, WHITE, 3)
+    _, refs['generalPreparation'] = ui.pxbutton(main, '桌面组合入口', '组合', 1220, 4, 140, 32, BUTTON, 16)
+    ui.txt(main, '滚动操作', '滚轮查看', 1380, 6, 160, 28, 14, MUTED, 5)
+    refs['tableScroll'], viewport, world = scroll(ui, main, '桌面滚动区', 10, 43, 1540, 674, 1400)
     refs['tabletopViewport'] = viewport['rect']
     refs['tabletop'] = world['rect']
     ui.image(world, (.028, .081, .083, .26))
@@ -217,24 +243,23 @@ def build():
     for i, (name, mark) in enumerate([('头', '头'), ('躯干', '身'), ('手', '手'), ('手', '手'), ('腿', '腿'), ('腿', '腿'),
                                       ('全家福', '照'), ('海滩', '滩'), ('黑藻', '藻')]):
         x, y = ((.08 + .13*i), .10) if i < 6 else ((.08 + .13*(i - 6)), .22)
-        card(ui, preview, name, max(4, int(x * 1056) - 63), int(y * 1700) - 52, preview_kind=mark)
+        card(ui, preview, name, max(4, int(x * 1540) - 56), int(y * 1400) - 82, preview_kind=mark)
 
-    tray = ui.box(play, '组合面板', 1110, 80, 472, 493)
+    tray = ui.box(play, '场所操作浮窗', 920, 160, 456, 348)
     ui.image(tray, PANEL)
-    ui.txt(tray, '面板标题', '组合', 17, 7, 140, 36, 24, WHITE, 3)
-    _, refs['stageCount'] = ui.txt(tray, '已放入数量', '0 张', 296, 8, 153, 36, 17, MUTED, 5)
-    refs['stageScroll'], stage_viewport, stage = scroll(ui, tray, '组合卡槽', 16, 47, 438, 334, 334)
+    refs['preparationPanel'] = tray['go']
+    _, refs['preparationTitle'] = ui.txt(tray, '面板标题', '桌面组合', 17, 7, 240, 36, 24, WHITE, 3)
+    _, refs['closePreparation'] = ui.pxbutton(tray, '关闭场所窗口', '收起', 382, 9, 70, 30, BUTTON, 16)
+    _, refs['stageCount'] = ui.txt(tray, '已放入数量', '0 张', 260, 8, 112, 36, 17, MUTED, 5)
+    refs['stageScroll'], stage_viewport, stage = scroll(ui, tray, '投入卡牌', 16, 49, 424, 190, 190)
     refs['stageDrop'] = stage_viewport['rect']
     refs['stageCards'] = stage['rect']
-    for i in range(9):
-        slot = ui.box(stage, '空槽 ' + str(i+1), 8 + i % 3 * 144, 5 + i // 3 * 110, *CARD)
-        ui.image(slot, (.12, .26, .255, .7))
-        ui.txt(slot, '加号', '＋', 1, 1, 124, 102, 19, MUTED, 4)
-    _, refs['stageStatus'] = ui.txt(tray, '匹配状态', '将卡牌拖入组合。', 16, 386, 440, 48, 16, MUTED, 3)
-    _, refs['clearButton'] = ui.pxbutton(tray, '退回卡牌', '全部退回', 16, 442, 132, 39, BUTTON, 18)
-    _, refs['startButton'] = ui.pxbutton(tray, '开始组合', '开始', 310, 442, 144, 39, RUST, 20)
+    _, refs['stageStatus'] = ui.txt(tray, '匹配状态', '将卡牌拖入组合。', 16, 242, 424, 47, 16, MUTED, 3)
+    _, refs['clearButton'] = ui.pxbutton(tray, '退回卡牌', '全部退回', 16, 298, 132, 38, BUTTON, 18)
+    _, refs['startButton'] = ui.pxbutton(tray, '开始组合', '开始', 294, 298, 144, 38, RUST, 20)
 
-    tasks = ui.box(play, '进行中的任务', 1110, 585, 472, 296)
+    tasks = ui.box(play, '任务浮窗', 1100, 112, 472, 296, False)
+    refs['tasksPanel'] = tasks['go']
     ui.image(tasks, PANEL)
     ui.txt(tasks, '面板标题', '进行中', 17, 5, 240, 37, 22, WHITE, 3)
     _, refs['taskCount'] = ui.txt(tasks, '任务数量', '0', 296, 7, 151, 34, 17, MUTED, 5)
@@ -243,15 +268,19 @@ def build():
     ui.txt(rows, '空任务提示', '没有正在执行的组合。', 8, 8, 407, 25, 16, MUTED, 3)
     refs['emptyTasks'] = rows['children'][-1]['go']
 
-    bottom = ui.box(play, '牌面信息与操作通知', 18, 818, 1080, 63)
+    bottom = ui.box(play, '牌面信息与操作通知', 18, 818, 1564, 63)
     ui.image(bottom, PANEL)
     _, refs['cardTitle'] = ui.txt(bottom, '当前卡牌', '', 13, 4, 226, 28, 20, WHITE, 3)
-    _, refs['cardDetail'] = ui.txt(bottom, '卡牌状态', '', 240, 5, 822, 26, 16, MUTED, 3)
-    _, refs['noticeText'] = ui.txt(bottom, '通知', '', 13, 31, 1052, 25, 16, GOLD, 3)
+    _, refs['cardDetail'] = ui.txt(bottom, '卡牌状态', '', 240, 5, 1306, 32, 16, MUTED, 3)
+    _, refs['noticeText'] = ui.txt(bottom, '通知', '', 13, 31, 1536, 30, 16, GOLD, 3)
 
     refs['cardTemplate'] = card(ui, play, '牌面模板', 0, 0, active=False)
+    refs['slotTemplate'] = slot(ui, play)
     refs['taskTemplate'] = task(ui, play)
     refs['dragLayer'] = ui.node('拖动显示层', play)['rect']
+    ghost = ui.box(play, '落点预览', 0, 0, *CARD, False)
+    ui.image(ghost, (.46, 1, .16, .25), sprite=ext('a6f4ceba673741a5bf3e7cff02cb8842', 21300000))
+    refs['dropGhost'] = ghost['rect']
     read = ui.node('阅读卡牌', desk, active=False)
     refs['readPanel'] = read['go']
     ui.image(read, (.025, .055, .054, .84), ray=True)
@@ -318,7 +347,7 @@ def dump(ui):
 def main():
     ui = build()
     target = MODULE / 'Prefabs/VoyageDesk.prefab'
-    target.write_text(dump(ui), encoding='utf-8')
+    target.write_text(stabilize(dump(ui)), encoding='utf-8')
     write_meta(target, GUID['prefab'], 'PrefabImporter')
     for name, key in [('VoyageView', 'view'), ('VoyageCardView', 'card'), ('VoyageTaskView', 'task')]:
         write_meta(MODULE / 'Unity' / (name + '.cs'), GUID[key], 'MonoImporter')

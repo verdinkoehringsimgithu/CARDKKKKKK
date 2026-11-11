@@ -1,0 +1,118 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180555790: mov         qword ptr [rsp+8],rbx
+  0000000180555795: mov         qword ptr [rsp+10h],rbp
+  000000018055579A: mov         qword ptr [rsp+18h],rsi
+  000000018055579F: push        rdi
+  00000001805557A0: sub         rsp,30h
+  00000001805557A4: cmp         byte ptr [00000001833688C8h],0
+  00000001805557AB: mov         rdi,r8
+  00000001805557AE: mov         rsi,rdx
+  00000001805557B1: mov         rbx,rcx
+  00000001805557B4: jne         00000001805557E1
+  00000001805557B6: lea         rcx,[00000001831D1320h]
+  00000001805557BD: call        00000001803F2920
+  00000001805557C2: lea         rcx,[0000000183178688h]
+  00000001805557C9: call        00000001803F2920
+  00000001805557CE: lea         rcx,[00000001831C2AF8h]
+  00000001805557D5: call        00000001803F2920
+  00000001805557DA: mov         byte ptr [00000001833688C8h],1
+  00000001805557E1: mov         rcx,qword ptr [00000001831C2AF8h]
+  00000001805557E8: mov         rbp,qword ptr [rbx+0000000000000090h]
+  00000001805557EF: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001805557F6: jne         00000001805557FD
+  00000001805557F8: call        0000000180380F00
+  00000001805557FD: xor         r8d,r8d
+  0000000180555800: xor         edx,edx
+  0000000180555802: mov         rcx,rbp
+  0000000180555805: call        0000000182421BB0
+  000000018055580A: test        al,al
+  000000018055580C: jne         00000001805558B8
+  0000000180555812: mov         rcx,qword ptr [rbx+0000000000000090h]
+  0000000180555819: test        rcx,rcx
+  000000018055581C: je          0000000180555945
+  0000000180555822: xor         edx,edx
+  0000000180555824: call        000000018269AB70
+  0000000180555829: test        al,al
+  000000018055582B: je          00000001805558B8
+  0000000180555831: test        rdi,rdi
+  0000000180555834: je          0000000180555945
+  000000018055583A: mov         r9,qword ptr [0000000183178688h]
+  0000000180555841: mov         rdx,qword ptr [rdi]
+  0000000180555844: movzx       eax,byte ptr [r9+000000000000012Ch]
+  000000018055584C: cmp         byte ptr [rdx+000000000000012Ch],al
+  0000000180555852: jb          0000000180555945
+  0000000180555858: movzx       ecx,al
+  000000018055585B: mov         rax,qword ptr [rdx+00000000000000C8h]
+  0000000180555862: cmp         qword ptr [rax+rcx*8-8],r9
+  0000000180555867: jne         0000000180555945
+  000000018055586D: mov         rax,qword ptr [rdi]
+  0000000180555870: xor         r10d,r10d
+  0000000180555873: movzx       edx,byte ptr [r9+000000000000012Ch]
+  000000018055587B: mov         r8d,r10d
+  000000018055587E: mov         rcx,qword ptr [rax+00000000000000C8h]
+  0000000180555885: mov         eax,r10d
+  0000000180555888: cmp         qword ptr [rcx+rdx*8-8],r9
+  000000018055588D: sete        r8b
+  0000000180555891: test        r8d,r8d
+  0000000180555894: cmovne      rax,rdi
+  0000000180555898: cmp         byte ptr [rax+10h],r10b
+  000000018055589C: jne         00000001805558CD
+  000000018055589E: mov         rcx,qword ptr [rbx+0000000000000098h]
+  00000001805558A5: test        rcx,rcx
+  00000001805558A8: je          0000000180555945
+  00000001805558AE: xor         r8d,r8d
+  00000001805558B1: xor         edx,edx
+  00000001805558B3: call        0000000180588F20 ; UnityGameFramework.Scripts.SortingLayerOrderControl::SetSelectShow
+  00000001805558B8: mov         rbx,qword ptr [rsp+40h]
+  00000001805558BD: mov         rbp,qword ptr [rsp+48h]
+  00000001805558C2: mov         rsi,qword ptr [rsp+50h]
+  00000001805558C7: add         rsp,30h
+  00000001805558CB: pop         rdi
+  00000001805558CC: ret
+  00000001805558CD: test        rsi,rsi
+  00000001805558D0: jne         00000001805558D7
+  00000001805558D2: mov         rdx,r10
+  00000001805558D5: jmp         0000000180555913
+  00000001805558D7: mov         rdx,qword ptr [00000001831D1320h]
+  00000001805558DE: mov         r8,qword ptr [rsi]
+  00000001805558E1: movzx       eax,byte ptr [rdx+000000000000012Ch]
+  00000001805558E8: cmp         byte ptr [r8+000000000000012Ch],al
+  00000001805558EF: jb          0000000180555907
+  00000001805558F1: movzx       ecx,al
+  00000001805558F4: mov         rax,qword ptr [r8+00000000000000C8h]
+  00000001805558FB: cmp         qword ptr [rax+rcx*8-8],rdx
+  0000000180555900: mov         eax,1
+  0000000180555905: je          000000018055590A
+  0000000180555907: mov         eax,r10d
+  000000018055590A: test        eax,eax
+  000000018055590C: mov         rdx,r10
+  000000018055590F: cmovne      rdx,rsi
+  0000000180555913: mov         qword ptr [rsp+28h],r10
+  0000000180555918: mov         r9b,1
+  000000018055591B: xor         r8d,r8d
+  000000018055591E: mov         qword ptr [rsp+20h],r10
+  0000000180555923: mov         rcx,rbx
+  0000000180555926: call        0000000180555040 ; UnityGameFramework.Scripts.WidgetResourceCardSlotEntityLogic::AddEntityForm
+  000000018055592B: test        al,al
+  000000018055592D: je          00000001805558B8
+  000000018055592F: mov         rcx,qword ptr [rbx+0000000000000098h]
+  0000000180555936: test        rcx,rcx
+  0000000180555939: je          0000000180555945
+  000000018055593B: xor         r8d,r8d
+  000000018055593E: mov         dl,1
+  0000000180555940: jmp         00000001805558B3
+  0000000180555945: call        00000001803F2AC0
+  000000018055594A: int         3
+  000000018055594B: int         3
+  000000018055594C: int         3
+  000000018055594D: int         3
+  000000018055594E: int         3
+  000000018055594F: int         3
+
+  Summary
+
+     2294000 il2cpp

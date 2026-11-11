@@ -1,0 +1,2462 @@
+{
+  "summary": {
+    "证据链-RemoteResource解析与全包资源依赖.md": {
+      "quoted_instructions": 19,
+      "missing_or_wrong_mnemonic": 0
+    },
+    "证据链01-卡槽命中与存取逆过程.md": {
+      "quoted_instructions": 81,
+      "missing_or_wrong_mnemonic": 0
+    },
+    "证据链02-双向提示链.md": {
+      "quoted_instructions": 44,
+      "missing_or_wrong_mnemonic": 0
+    },
+    "证据链03-牌堆组织与拆分链.md": {
+      "quoted_instructions": 103,
+      "missing_or_wrong_mnemonic": 0
+    },
+    "证据链04-运动与物理推开链.md": {
+      "quoted_instructions": 33,
+      "missing_or_wrong_mnemonic": 0
+    },
+    "证据链05-恢复与生命周期链.md": {
+      "quoted_instructions": 24,
+      "missing_or_wrong_mnemonic": 0
+    }
+  },
+  "claims": [
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 24,
+      "address": 6482854329,
+      "claim": "mov   edx,4",
+      "actual": "mov         edx,4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 25,
+      "address": 6482854334,
+      "claim": "call  rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 26,
+      "address": 6482854379,
+      "claim": "call  000000018266BAC0",
+      "actual": "call        000000018266BAC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 27,
+      "address": 6482854399,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 28,
+      "address": 6482854415,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 31,
+      "address": 6482854524,
+      "claim": "call  000000018266BAC0",
+      "actual": "call        000000018266BAC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 32,
+      "address": 6482854539,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 34,
+      "address": 6482854612,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 37,
+      "address": 6482854779,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 38,
+      "address": 6482854892,
+      "claim": "call  000000018266BAC0",
+      "actual": "call        000000018266BAC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 39,
+      "address": 6482854913,
+      "claim": "call  000000018266BAC0",
+      "actual": "call        000000018266BAC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 40,
+      "address": 6482854937,
+      "claim": "call  000000018266BAC0",
+      "actual": "call        000000018266BAC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 41,
+      "address": 6482854987,
+      "claim": "call  rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 42,
+      "address": 6482855027,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 43,
+      "address": 6482855067,
+      "claim": "call  r8",
+      "actual": "call        r8",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 44,
+      "address": 6482855081,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 46,
+      "address": 6482855156,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 49,
+      "address": 6482855430,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链-RemoteResource解析与全包资源依赖.md",
+      "line": 52,
+      "address": 6482855803,
+      "claim": "call  000000018266B760",
+      "actual": "call        000000018266B760",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 85,
+      "address": 6448599928,
+      "claim": "mov r8d, 3",
+      "actual": "mov         r8d,3",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 86,
+      "address": 6448599968,
+      "claim": "call r9",
+      "actual": "call        r9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 87,
+      "address": 6448599975,
+      "claim": "cmp byte ptr [rdi+80h], bpl",
+      "actual": "cmp         byte ptr [rdi+0000000000000080h],bpl",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 88,
+      "address": 6448599982,
+      "claim": "jne 00000001805DD434",
+      "actual": "jne         00000001805DD434",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 90,
+      "address": 6448600052,
+      "claim": "mov r8d, 2",
+      "actual": "mov         r8d,2",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 91,
+      "address": 6448600058,
+      "claim": "jmp 00000001805DD4FA",
+      "actual": "jmp         00000001805DD4FA",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 93,
+      "address": 6448600116,
+      "claim": "mov byte ptr [rdi+80h], bpl",
+      "actual": "mov         byte ptr [rdi+0000000000000080h],bpl",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 94,
+      "address": 6448600200,
+      "claim": "mov r8d, 6",
+      "actual": "mov         r8d,6",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 95,
+      "address": 6448600240,
+      "claim": "call r9",
+      "actual": "call        r9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 96,
+      "address": 6448600308,
+      "claim": "mov r8d, 7",
+      "actual": "mov         r8d,7",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 97,
+      "address": 6448600348,
+      "claim": "call r9",
+      "actual": "call        r9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 98,
+      "address": 6448600355,
+      "claim": "mov qword ptr [rdi+68h], rbp",
+      "actual": "mov         qword ptr [rdi+68h],rbp",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 105,
+      "address": 6449816150,
+      "claim": "test dword ptr [rcx+22Ch], 1E2h",
+      "actual": "test        dword ptr [rcx+000000000000022Ch],1E2h",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 106,
+      "address": 6449816160,
+      "claim": "mov  rbx, rcx",
+      "actual": "mov         rbx,rcx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 107,
+      "address": 6449816163,
+      "claim": "ja   000000018070644D",
+      "actual": "ja          000000018070644D",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 108,
+      "address": 6449816260,
+      "claim": "mov byte ptr [rbx+168h], 1",
+      "actual": "mov         byte ptr [rbx+0000000000000168h],1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 109,
+      "address": 6449816375,
+      "claim": "call 0000000180A68930",
+      "actual": "call        0000000180A68930",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 110,
+      "address": 6449816431,
+      "claim": "call 00000001803F2320",
+      "actual": "call        00000001803F2320",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 111,
+      "address": 6449816436,
+      "claim": "test rax, rax",
+      "actual": "test        rax,rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 112,
+      "address": 6449816439,
+      "claim": "je 00000001807063D1",
+      "actual": "je          00000001807063D1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 113,
+      "address": 6449816470,
+      "claim": "call 000000018000C460",
+      "actual": "call        000000018000C460",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 114,
+      "address": 6449816475,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 115,
+      "address": 6449816477,
+      "claim": "jne 0000000180706441",
+      "actual": "jne         0000000180706441",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 117,
+      "address": 6449816483,
+      "claim": "movsd xmm0, mmword ptr [rbx+10Ch]",
+      "actual": "movsd       xmm0,mmword ptr [rbx+000000000000010Ch]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 118,
+      "address": 6449816497,
+      "claim": "movsd mmword ptr [rbx+1C0h], xmm0",
+      "actual": "movsd       mmword ptr [rbx+00000000000001C0h],xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 120,
+      "address": 6449816529,
+      "claim": "mov  rdx, qword ptr [rbx]",
+      "actual": "mov         rdx,qword ptr [rbx]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 121,
+      "address": 6449816532,
+      "claim": "mov  rcx, rbx",
+      "actual": "mov         rcx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 122,
+      "address": 6449816535,
+      "claim": "mov  rax, qword ptr [rdx+4B8h]",
+      "actual": "mov         rax,qword ptr [rdx+00000000000004B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 123,
+      "address": 6449816549,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 124,
+      "address": 6449816551,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 125,
+      "address": 6449816553,
+      "claim": "je 00000001807063A3",
+      "actual": "je          00000001807063A3",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 126,
+      "address": 6449816581,
+      "claim": "call 0000000182446090",
+      "actual": "call        0000000182446090",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 127,
+      "address": 6449816613,
+      "claim": "movsd mmword ptr [rbx+1C0h], xmm1",
+      "actual": "movsd       mmword ptr [rbx+00000000000001C0h],xmm1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 128,
+      "address": 6449816621,
+      "claim": "movsd mmword ptr [rbx+10Ch], xmm1",
+      "actual": "movsd       mmword ptr [rbx+000000000000010Ch],xmm1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 138,
+      "address": 6449788239,
+      "claim": "cmp byte ptr [rcx+90h], 0",
+      "actual": "cmp         byte ptr [rcx+0000000000000090h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 139,
+      "address": 6449788256,
+      "claim": "jne 00000001806FF5CD",
+      "actual": "jne         00000001806FF5CD",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 140,
+      "address": 6449788258,
+      "claim": "mov rcx, qword ptr [rcx+98h]",
+      "actual": "mov         rcx,qword ptr [rcx+0000000000000098h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 141,
+      "address": 6449788277,
+      "claim": "mov rax, qword ptr [r8+3B8h]",
+      "actual": "mov         rax,qword ptr [r8+00000000000003B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 142,
+      "address": 6449788291,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 143,
+      "address": 6449788293,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 144,
+      "address": 6449788295,
+      "claim": "je 00000001806FF5CD",
+      "actual": "je          00000001806FF5CD",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 145,
+      "address": 6449788297,
+      "claim": "cmp byte ptr [rbx+80h], 0",
+      "actual": "cmp         byte ptr [rbx+0000000000000080h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 146,
+      "address": 6449788321,
+      "claim": "jne 00000001806FF5DF",
+      "actual": "jne         00000001806FF5DF",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 148,
+      "address": 6449788338,
+      "claim": "mov r8d, dword ptr [rbx+88h]",
+      "actual": "mov         r8d,dword ptr [rbx+0000000000000088h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 149,
+      "address": 6449788345,
+      "claim": "mov rax, qword ptr [r9+3E8h]",
+      "actual": "mov         rax,qword ptr [r9+00000000000003E8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 150,
+      "address": 6449788359,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 152,
+      "address": 6449788420,
+      "claim": "test sil, sil",
+      "actual": "test        sil,sil",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 153,
+      "address": 6449788423,
+      "claim": "jne 00000001806FF62E",
+      "actual": "jne         00000001806FF62E",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 154,
+      "address": 6449788446,
+      "claim": "mov rax, qword ptr [r9+398h]",
+      "actual": "mov         rax,qword ptr [r9+0000000000000398h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 155,
+      "address": 6449788460,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 156,
+      "address": 6449788467,
+      "claim": "mov al, 1",
+      "actual": "mov         al,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 165,
+      "address": 6447655235,
+      "claim": "call 00000001804F3D20",
+      "actual": "call        00000001804F3D20",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 166,
+      "address": 6447655243,
+      "claim": "cmp edi, 0FFFFFFFFh",
+      "actual": "cmp         edi,0FFFFFFFFh",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 167,
+      "address": 6447655292,
+      "claim": "call 0000000181588070",
+      "actual": "call        0000000181588070",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 169,
+      "address": 6447655384,
+      "claim": "jne 00000001804F6B30",
+      "actual": "jne         00000001804F6B30",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 171,
+      "address": 6447655733,
+      "claim": "call 00000001804F3530",
+      "actual": "call        00000001804F3530",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 172,
+      "address": 6447655759,
+      "claim": "mov dword ptr [rax+0D4h], 0FFFFFFFFh",
+      "actual": "mov         dword ptr [rax+00000000000000D4h],0FFFFFFFFh",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 173,
+      "address": 6447655789,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 174,
+      "address": 6447655811,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 178,
+      "address": 6447666013,
+      "claim": "call 0000000182446090",
+      "actual": "call        0000000182446090",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 179,
+      "address": 6447666048,
+      "claim": "call 000000018070EE80",
+      "actual": "call        000000018070EE80",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 180,
+      "address": 6447666112,
+      "claim": "call 000000018056DFF0",
+      "actual": "call        000000018056DFF0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 181,
+      "address": 6447666133,
+      "claim": "call 0000000182697360",
+      "actual": "call        0000000182697360",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 182,
+      "address": 6447666163,
+      "claim": "jmp 000000018070EF00",
+      "actual": "jmp         000000018070EF00",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 191,
+      "address": 6447635187,
+      "claim": "call 0000000180709F80",
+      "actual": "call        0000000180709F80",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 193,
+      "address": 6447635363,
+      "claim": "mov r15d, dword ptr [rbp+84h]",
+      "actual": "mov         r15d,dword ptr [rbp+0000000000000084h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 194,
+      "address": 6447635370,
+      "claim": "lea r8, [rsp+58h]",
+      "actual": "lea         r8,[rsp+58h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 195,
+      "address": 6447635385,
+      "claim": "call 0000000181566D30",
+      "actual": "call        0000000181566D30",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 196,
+      "address": 6447635390,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 197,
+      "address": 6447635392,
+      "claim": "je 00000001804F1C3D",
+      "actual": "je          00000001804F1C3D",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 199,
+      "address": 6447635398,
+      "claim": "call 000000018070EE10",
+      "actual": "call        000000018070EE10",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 200,
+      "address": 6447635410,
+      "claim": "mov rsi, rax",
+      "actual": "mov         rsi,rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 201,
+      "address": 6447635448,
+      "claim": "mov rcx, qword ptr [rsp+58h]",
+      "actual": "mov         rcx,qword ptr [rsp+58h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 202,
+      "address": 6447635468,
+      "claim": "call 000000018056DFF0",
+      "actual": "call        000000018056DFF0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 203,
+      "address": 6447635485,
+      "claim": "mov r8, rsi",
+      "actual": "mov         r8,rsi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 204,
+      "address": 6447635493,
+      "claim": "call 0000000182697360",
+      "actual": "call        0000000182697360",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 205,
+      "address": 6447635509,
+      "claim": "mov rcx, rsi",
+      "actual": "mov         rcx,rsi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 206,
+      "address": 6447635512,
+      "claim": "call 000000018070EF00",
+      "actual": "call        000000018070EF00",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 208,
+      "address": 6447635568,
+      "claim": "mov r8, rdi",
+      "actual": "mov         r8,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 209,
+      "address": 6447635571,
+      "claim": "mov edx, r15d",
+      "actual": "mov         edx,r15d",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链01-卡槽命中与存取逆过程.md",
+      "line": 210,
+      "address": 6447635574,
+      "claim": "call 000000018155A7F0",
+      "actual": "call        000000018155A7F0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 96,
+      "address": 6449812044,
+      "claim": "call 00000001805FE460",
+      "actual": "call        00000001805FE460",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 97,
+      "address": 6449812118,
+      "claim": "mov  cl, 1",
+      "actual": "mov         cl,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 98,
+      "address": 6449812120,
+      "claim": "call 0000000180578430",
+      "actual": "call        0000000180578430",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 99,
+      "address": 6449812140,
+      "claim": "mov  rdx, rbx",
+      "actual": "mov         rdx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 100,
+      "address": 6449812143,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 101,
+      "address": 6449812146,
+      "claim": "call 000000018269B9B0",
+      "actual": "call        000000018269B9B0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 106,
+      "address": 6449789018,
+      "claim": "mov r9, qword ptr [0000000183178688h]",
+      "actual": "mov         r9,qword ptr [0000000183178688h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 107,
+      "address": 6449789108,
+      "claim": "cmp byte ptr [rax+10h], 0",
+      "actual": "cmp         byte ptr [rax+10h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 108,
+      "address": 6449789112,
+      "claim": "jne 00000001806FF8E9",
+      "actual": "jne         00000001806FF8E9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 110,
+      "address": 6449789114,
+      "claim": "mov rcx, qword ptr [rbx+0A0h]",
+      "actual": "mov         rcx,qword ptr [rbx+00000000000000A0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 111,
+      "address": 6449789135,
+      "claim": "call 0000000180588F20",
+      "actual": "call        0000000180588F20",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 112,
+      "address": 6449789160,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 114,
+      "address": 6449789230,
+      "claim": "cmp byte ptr [rbx+90h], 0",
+      "actual": "cmp         byte ptr [rbx+0000000000000090h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 115,
+      "address": 6449789237,
+      "claim": "jne 00000001806FF8D4",
+      "actual": "jne         00000001806FF8D4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 116,
+      "address": 6449789261,
+      "claim": "mov rax, qword ptr [r8+3B8h]",
+      "actual": "mov         rax,qword ptr [r8+00000000000003B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 117,
+      "address": 6449789275,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 118,
+      "address": 6449789277,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 119,
+      "address": 6449789279,
+      "claim": "je  00000001806FF8D4",
+      "actual": "je          00000001806FF8D4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 120,
+      "address": 6449789285,
+      "claim": "cmp byte ptr [rbx+80h], 0",
+      "actual": "cmp         byte ptr [rbx+0000000000000080h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 121,
+      "address": 6449789329,
+      "claim": "mov rax, qword ptr [r9+3E8h]",
+      "actual": "mov         rax,qword ptr [r9+00000000000003E8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 122,
+      "address": 6449789343,
+      "claim": "call rax",
+      "actual": "call        rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 123,
+      "address": 6449789345,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 124,
+      "address": 6449789347,
+      "claim": "jne 00000001806FF9D3",
+      "actual": "jne         00000001806FF9D3",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 126,
+      "address": 6449789395,
+      "claim": "mov rcx, qword ptr [rbx+0A0h]",
+      "actual": "mov         rcx,qword ptr [rbx+00000000000000A0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 127,
+      "address": 6449789407,
+      "claim": "xor r8d, r8d",
+      "actual": "xor         r8d,r8d",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 128,
+      "address": 6449789410,
+      "claim": "mov dl, 1",
+      "actual": "mov         dl,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 129,
+      "address": 6449789412,
+      "claim": "jmp 00000001806FF8CF",
+      "actual": "jmp         00000001806FF8CF",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 148,
+      "address": 6449790398,
+      "claim": "mov  cl, 1",
+      "actual": "mov         cl,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 149,
+      "address": 6449790400,
+      "claim": "call 00000001805A0590",
+      "actual": "call        00000001805A0590",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 150,
+      "address": 6449790416,
+      "claim": "mov  rdx, rdi",
+      "actual": "mov         rdx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 151,
+      "address": 6449790419,
+      "claim": "mov  rcx, rbx",
+      "actual": "mov         rcx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 152,
+      "address": 6449790432,
+      "claim": "jmp  000000018269B9B0",
+      "actual": "jmp         000000018269B9B0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 158,
+      "address": 6449821566,
+      "claim": "mov rcx, rsi",
+      "actual": "mov         rcx,rsi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 159,
+      "address": 6449821569,
+      "claim": "call 00000001803F2320",
+      "actual": "call        00000001803F2320",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 160,
+      "address": 6449821605,
+      "claim": "xor  ecx, ecx",
+      "actual": "xor         ecx,ecx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 161,
+      "address": 6449821615,
+      "claim": "mov  byte ptr [rsp+28h], 1",
+      "actual": "mov         byte ptr [rsp+28h],1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 162,
+      "address": 6449821620,
+      "claim": "mov  r8, rax",
+      "actual": "mov         r8,rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 163,
+      "address": 6449821623,
+      "claim": "mov  byte ptr [rsp+20h], cl",
+      "actual": "mov         byte ptr [rsp+20h],cl",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 164,
+      "address": 6449821627,
+      "claim": "call 000000018000C460",
+      "actual": "call        000000018000C460",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 165,
+      "address": 6449821632,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 166,
+      "address": 6449821634,
+      "claim": "je  00000001807078BC",
+      "actual": "je          00000001807078BC",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 168,
+      "address": 6449821686,
+      "claim": "call 00000001806D2C50",
+      "actual": "call        00000001806D2C50",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 169,
+      "address": 6449821860,
+      "claim": "call 00000001805971F0",
+      "actual": "call        00000001805971F0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链02-双向提示链.md",
+      "line": 170,
+      "address": 6449821879,
+      "claim": "call 0000000180588DE0",
+      "actual": "call        0000000180588DE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 52,
+      "address": 6449793994,
+      "claim": "test dword ptr [rcx+22Ch], 1E2h",
+      "actual": "test        dword ptr [rcx+000000000000022Ch],1E2h",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 53,
+      "address": 6449794010,
+      "claim": "ja   REJECT",
+      "actual": "ja          0000000180700CF6",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 54,
+      "address": 6449794016,
+      "claim": "cmp  dword ptr [rcx+180h], 0",
+      "actual": "cmp         dword ptr [rcx+0000000000000180h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 55,
+      "address": 6449794023,
+      "claim": "jne  REJECT",
+      "actual": "jne         0000000180700CF6",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 58,
+      "address": 6449794058,
+      "claim": "mov  rax, qword ptr [rcx+128h]",
+      "actual": "mov         rax,qword ptr [rcx+0000000000000128h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 59,
+      "address": 6449794074,
+      "claim": "cmp  dword ptr [rax+68h], 0",
+      "actual": "cmp         dword ptr [rax+68h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 60,
+      "address": 6449794078,
+      "claim": "je   REJECT",
+      "actual": "je          0000000180700CE4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 61,
+      "address": 6449794093,
+      "claim": "mov  rdx, qword ptr [rdx+128h]",
+      "actual": "mov         rdx,qword ptr [rdx+0000000000000128h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 62,
+      "address": 6449794109,
+      "claim": "mov  ecx, dword ptr [rax+68h]",
+      "actual": "mov         ecx,dword ptr [rax+68h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 63,
+      "address": 6449794112,
+      "claim": "cmp  dword ptr [rdx+68h], ecx",
+      "actual": "cmp         dword ptr [rdx+68h],ecx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 64,
+      "address": 6449794115,
+      "claim": "jne  REJECT",
+      "actual": "jne         0000000180700CE4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 67,
+      "address": 6449794123,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 68,
+      "address": 6449794126,
+      "claim": "call BaseEntityLogic::GetTopNum",
+      "actual": "call        00000001807044C0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 69,
+      "address": 6449794136,
+      "claim": "mov  ebx, eax",
+      "actual": "mov         ebx,eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 70,
+      "address": 6449794138,
+      "claim": "call BaseEntityLogic::GetTopNum",
+      "actual": "call        00000001807044C0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 71,
+      "address": 6449794150,
+      "claim": "lea  esi, [rbx+rax]",
+      "actual": "lea         esi,[rbx+rax]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 72,
+      "address": 6449794164,
+      "claim": "call TbBaseConfig::get_EntityTopNum",
+      "actual": "call        00000001806D2F70",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 73,
+      "address": 6449794169,
+      "claim": "cmp  esi, eax",
+      "actual": "cmp         esi,eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 74,
+      "address": 6449794171,
+      "claim": "jg   REJECT",
+      "actual": "jg          0000000180700CE4",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 77,
+      "address": 6449794173,
+      "claim": "cmp  esi, 14h",
+      "actual": "cmp         esi,14h",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 78,
+      "address": 6449794176,
+      "claim": "jl   ACCEPT",
+      "actual": "jl          0000000180700CD2",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 79,
+      "address": 6449794229,
+      "claim": "call TbTaskName2TaskId::get_TaskCardOnTop",
+      "actual": "call        00000001804959F0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 80,
+      "address": 6449794253,
+      "claim": "call GameData::AddTaskIdNum",
+      "actual": "call        0000000180580C40",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 82,
+      "address": 6449794263,
+      "claim": "mov  al, 1",
+      "actual": "mov         al,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 83,
+      "address": 6449794275,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 85,
+      "address": 6449794281,
+      "claim": "xor  al, al",
+      "actual": "xor         al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 86,
+      "address": 6449794293,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 92,
+      "address": 6449808622,
+      "claim": "mov  rdi, qword ptr [rsi+1B0h]",
+      "actual": "mov         rdi,qword ptr [rsi+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 93,
+      "address": 6449808629,
+      "claim": "mov  ebx, 1",
+      "actual": "mov         ebx,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 96,
+      "address": 6449808666,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 97,
+      "address": 6449808669,
+      "claim": "call UnityEngine.Object::op_Implicit",
+      "actual": "call        0000000182421DE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 98,
+      "address": 6449808674,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 99,
+      "address": 6449808676,
+      "claim": "je   0000000180704536",
+      "actual": "je          0000000180704536",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 100,
+      "address": 6449808678,
+      "claim": "inc  ebx",
+      "actual": "inc         ebx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 101,
+      "address": 6449808685,
+      "claim": "mov  rdi, qword ptr [rdi+1B0h]",
+      "actual": "mov         rdi,qword ptr [rdi+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 102,
+      "address": 6449808692,
+      "claim": "jmp  0000000180704500",
+      "actual": "jmp         0000000180704500",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 105,
+      "address": 6449808694,
+      "claim": "mov  rdi, qword ptr [rsi+1B8h]",
+      "actual": "mov         rdi,qword ptr [rsi+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 106,
+      "address": 6449808730,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 107,
+      "address": 6449808733,
+      "claim": "call UnityEngine.Object::op_Implicit",
+      "actual": "call        0000000182421DE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 108,
+      "address": 6449808738,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 109,
+      "address": 6449808740,
+      "claim": "je   0000000180704576",
+      "actual": "je          0000000180704576",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 110,
+      "address": 6449808742,
+      "claim": "inc  ebx",
+      "actual": "inc         ebx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 111,
+      "address": 6449808749,
+      "claim": "mov  rdi, qword ptr [rdi+1B8h]",
+      "actual": "mov         rdi,qword ptr [rdi+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 112,
+      "address": 6449808756,
+      "claim": "jmp  0000000180704540",
+      "actual": "jmp         0000000180704540",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 114,
+      "address": 6449808758,
+      "claim": "mov  rsi, qword ptr [rsp+38h]",
+      "actual": "mov         rsi,qword ptr [rsp+38h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 115,
+      "address": 6449808763,
+      "claim": "mov  eax, ebx",
+      "actual": "mov         eax,ebx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 116,
+      "address": 6449808775,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 137,
+      "address": 6449794791,
+      "claim": "lea  rcx, [rsp+48h]",
+      "actual": "lea         rcx,[rsp+48h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 138,
+      "address": 6449794796,
+      "claim": "call MoveNext",
+      "actual": "call        00000001816499B0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 139,
+      "address": 6449794801,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 140,
+      "address": 6449794803,
+      "claim": "je   LOOP_END",
+      "actual": "je          000000018070106E",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 143,
+      "address": 6449794863,
+      "claim": "mov  rsi, qword ptr [rdi+1B8h]",
+      "actual": "mov         rsi,qword ptr [rdi+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 144,
+      "address": 6449794899,
+      "claim": "call op_Inequality(rsi, null)",
+      "actual": "call        0000000182421DE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 145,
+      "address": 6449794904,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 146,
+      "address": 6449794906,
+      "claim": "je   LEAF_FOUND",
+      "actual": "je          0000000180700F65",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 147,
+      "address": 6449794908,
+      "claim": "mov  rdi, qword ptr [rdi+1B8h]",
+      "actual": "mov         rdi,qword ptr [rdi+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 148,
+      "address": 6449794915,
+      "claim": "jmp  0000000180700F26",
+      "actual": "jmp         0000000180700F26",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 152,
+      "address": 6449794944,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 153,
+      "address": 6449794947,
+      "claim": "call op_Equality(candidateTop, this)",
+      "actual": "call        0000000182421BB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 154,
+      "address": 6449794952,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 155,
+      "address": 6449794954,
+      "claim": "jne  NEXT_CANDIDATE",
+      "actual": "jne         0000000180700EE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 156,
+      "address": 6449794966,
+      "claim": "mov  rcx, rdi",
+      "actual": "mov         rcx,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 157,
+      "address": 6449794969,
+      "claim": "call BaseEntityLogic::IsChildOf",
+      "actual": "call        0000000180704780",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 158,
+      "address": 6449794974,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 159,
+      "address": 6449794976,
+      "claim": "jne  NEXT_CANDIDATE",
+      "actual": "jne         0000000180700EE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 162,
+      "address": 6449794991,
+      "claim": "call BaseEntityLogic::CanHaveCardOnTop",
+      "actual": "call        0000000180700BC0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 163,
+      "address": 6449794996,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 164,
+      "address": 6449794998,
+      "claim": "je   NEXT_CANDIDATE",
+      "actual": "je          0000000180700EE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 167,
+      "address": 6449795149,
+      "claim": "call Vector3::Distance",
+      "actual": "call        00000001806E2730",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 168,
+      "address": 6449795154,
+      "claim": "comiss xmm6, xmm0",
+      "actual": "comiss      xmm6,xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 169,
+      "address": 6449795157,
+      "claim": "jbe  NEXT_CANDIDATE",
+      "actual": "jbe         0000000180700EE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 170,
+      "address": 6449795163,
+      "claim": "mov  r12, rdi",
+      "actual": "mov         r12,rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 171,
+      "address": 6449795174,
+      "claim": "movaps xmm6, xmm0",
+      "actual": "movaps      xmm6,xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 176,
+      "address": 6449795289,
+      "claim": "mov  rcx, r15",
+      "actual": "mov         rcx,r15",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 177,
+      "address": 6449795292,
+      "claim": "call BaseEntityLogic::SetParent(null)",
+      "actual": "call        000000018070ABB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 178,
+      "address": 6449795300,
+      "claim": "mov  rdx, r12",
+      "actual": "mov         rdx,r12",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 179,
+      "address": 6449795303,
+      "claim": "mov  rcx, r15",
+      "actual": "mov         rcx,r15",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 180,
+      "address": 6449795306,
+      "claim": "call BaseEntityLogic::SetParent(r12)",
+      "actual": "call        000000018070ABB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 181,
+      "address": 6449795311,
+      "claim": "mov  al, 1",
+      "actual": "mov         al,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 182,
+      "address": 6449795344,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 197,
+      "address": 6449811394,
+      "claim": "test sil, sil",
+      "actual": "test        sil,sil",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 198,
+      "address": 6449811397,
+      "claim": "jne  FROM_FACILITY",
+      "actual": "jne         0000000180704FD1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 199,
+      "address": 6449811399,
+      "claim": "xor  r8d, r8d",
+      "actual": "xor         r8d,r8d",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 200,
+      "address": 6449811402,
+      "claim": "call BaseEntityLogic::SetParent(null)",
+      "actual": "call        000000018070ABB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 203,
+      "address": 6449811870,
+      "claim": "mov  rcx, qword ptr [rbx+1B8h]",
+      "actual": "mov         rcx,qword ptr [rbx+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 204,
+      "address": 6449811877,
+      "claim": "test rcx, rcx",
+      "actual": "test        rcx,rcx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 205,
+      "address": 6449811880,
+      "claim": "je   0000000180705418",
+      "actual": "je          0000000180705418",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 206,
+      "address": 6449811886,
+      "claim": "xor  r8d, r8d",
+      "actual": "xor         r8d,r8d",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 207,
+      "address": 6449811889,
+      "claim": "mov  dl, 1",
+      "actual": "mov         dl,1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 208,
+      "address": 6449811891,
+      "claim": "call BaseEntityLogic::SetDrag",
+      "actual": "call        000000018070AA20",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 224,
+      "address": 6449831856,
+      "claim": "mov  rdi, qword ptr [rbx+1B0h]",
+      "actual": "mov         rdi,qword ptr [rbx+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 225,
+      "address": 6449831890,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 226,
+      "address": 6449831892,
+      "claim": "je   CHECK_CHILD",
+      "actual": "je          000000018070A000",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 227,
+      "address": 6449831910,
+      "claim": "mov  rdx, qword ptr [rbx+1B8h]",
+      "actual": "mov         rdx,qword ptr [rbx+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 228,
+      "address": 6449831917,
+      "claim": "mov  qword ptr [rcx+1B8h], rdx",
+      "actual": "mov         qword ptr [rcx+00000000000001B8h],rdx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 231,
+      "address": 6449831943,
+      "claim": "mov  rdi, qword ptr [rbx+1B8h]",
+      "actual": "mov         rdi,qword ptr [rbx+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 232,
+      "address": 6449831977,
+      "claim": "test al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 233,
+      "address": 6449831979,
+      "claim": "je   CLEAN_SELF",
+      "actual": "je          000000018070A053",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 234,
+      "address": 6449831993,
+      "claim": "mov  rdx, qword ptr [rbx+1B0h]",
+      "actual": "mov         rdx,qword ptr [rbx+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 235,
+      "address": 6449832000,
+      "claim": "mov  qword ptr [rcx+1B0h], rdx",
+      "actual": "mov         qword ptr [rcx+00000000000001B0h],rdx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 238,
+      "address": 6449832030,
+      "claim": "mov  qword ptr [rbx+1B0h], rdi",
+      "actual": "mov         qword ptr [rbx+00000000000001B0h],rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 239,
+      "address": 6449832049,
+      "claim": "mov  qword ptr [rbx+1B8h], rdi",
+      "actual": "mov         qword ptr [rbx+00000000000001B8h],rdi",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链03-牌堆组织与拆分链.md",
+      "line": 240,
+      "address": 6449832068,
+      "claim": "jmp  00000001803F2310",
+      "actual": "jmp         00000001803F2310",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 43,
+      "address": 6449178202,
+      "claim": "movss   xmm9, dword ptr [00000001826F9B8Ch]",
+      "actual": "movss       xmm9,dword ptr [00000001826F9B8Ch]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 44,
+      "address": 6449178211,
+      "claim": "movaps  xmmword ptr [rsp+10h], xmm10",
+      "actual": "movaps      xmmword ptr [rsp+10h],xmm10",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 45,
+      "address": 6449178217,
+      "claim": "movaps  xmm3, xmm9",
+      "actual": "movaps      xmm3,xmm9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 46,
+      "address": 6449178221,
+      "claim": "movss   xmm10, dword ptr [rsp+90h]",
+      "actual": "movss       xmm10,dword ptr [rsp+0000000000000090h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 47,
+      "address": 6449178231,
+      "claim": "subss   xmm3, xmm10",
+      "actual": "subss       xmm3,xmm10",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 80,
+      "address": 6449830328,
+      "claim": "mov  rbx, qword ptr [rax+1B0h]",
+      "actual": "mov         rbx,qword ptr [rax+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 81,
+      "address": 6449830354,
+      "claim": "mov  rcx, rbx",
+      "actual": "mov         rcx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 82,
+      "address": 6449830357,
+      "claim": "call op_Inequality(rcx, null)",
+      "actual": "call        0000000182421DE0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 83,
+      "address": 6449830373,
+      "claim": "je   ROOT_FOUND",
+      "actual": "je          00000001807099FC",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 84,
+      "address": 6449830375,
+      "claim": "mov  rdi, qword ptr [rdi+1B0h]",
+      "actual": "mov         rdi,qword ptr [rdi+00000000000001B0h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 85,
+      "address": 6449830394,
+      "claim": "jmp  00000001807099B1",
+      "actual": "jmp         00000001807099B1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 89,
+      "address": 6449830396,
+      "claim": "cmp  byte ptr [rdi+208h], 0",
+      "actual": "cmp         byte ptr [rdi+0000000000000208h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 90,
+      "address": 6449830403,
+      "claim": "jne  EXIT",
+      "actual": "jne         0000000180709BD9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 93,
+      "address": 6449830576,
+      "claim": "call Physics::OverlapBoxNonAlloc",
+      "actual": "call        0000000180662D60",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 94,
+      "address": 6449830581,
+      "claim": "test eax, eax",
+      "actual": "test        eax,eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 95,
+      "address": 6449830583,
+      "claim": "jle  EXIT",
+      "actual": "jle         0000000180709BD9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 98,
+      "address": 6449830764,
+      "claim": "call  UnityEngine.Object::op_Equality",
+      "actual": "call        0000000182421BB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 99,
+      "address": 6449830769,
+      "claim": "test  al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 100,
+      "address": 6449830771,
+      "claim": "jne   NEXT",
+      "actual": "jne         0000000180709BC7",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 101,
+      "address": 6449830782,
+      "claim": "cmp   byte ptr [rbx+167h], al",
+      "actual": "cmp         byte ptr [rbx+0000000000000167h],al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 102,
+      "address": 6449830788,
+      "claim": "jne   NEXT",
+      "actual": "jne         0000000180709BC7",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 103,
+      "address": 6449830846,
+      "claim": "call  BaseEntityLogic::IsChildOf",
+      "actual": "call        0000000180704780",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 104,
+      "address": 6449830851,
+      "claim": "test  al, al",
+      "actual": "test        al,al",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 105,
+      "address": 6449830853,
+      "claim": "je    0000000180709C12",
+      "actual": "je          0000000180709C12",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 108,
+      "address": 6449831094,
+      "claim": "movss xmm0, dword ptr [rsp+40h]",
+      "actual": "movss       xmm0,dword ptr [rsp+40h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 109,
+      "address": 6449831100,
+      "claim": "subss xmm0, xmm1",
+      "actual": "subss       xmm0,xmm1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 110,
+      "address": 6449831112,
+      "claim": "movd  xmm1, ebx",
+      "actual": "movd        xmm1,ebx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 111,
+      "address": 6449831116,
+      "claim": "subss xmm1, dword ptr [rax+8]",
+      "actual": "subss       xmm1,dword ptr [rax+8]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 112,
+      "address": 6449831165,
+      "claim": "call  Vector2::Normalize",
+      "actual": "call        000000018049F510",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 113,
+      "address": 6449831194,
+      "claim": "divss xmm9, xmm1",
+      "actual": "divss       xmm9,xmm1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 114,
+      "address": 6449831199,
+      "claim": "subss xmm8, xmm9",
+      "actual": "subss       xmm8,xmm9",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 115,
+      "address": 6449831213,
+      "claim": "call  BaseEntityLogic::GetForceNum",
+      "actual": "call        00000001807035A0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链04-运动与物理推开链.md",
+      "line": 116,
+      "address": 6449831218,
+      "claim": "movaps xmm6, xmm0",
+      "actual": "movaps      xmm6,xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 50,
+      "address": 6449833344,
+      "claim": "movsd xmm0, mmword ptr [rbx+10Ch]",
+      "actual": "movsd       xmm0,mmword ptr [rbx+000000000000010Ch]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 51,
+      "address": 6449833352,
+      "claim": "movsd mmword ptr [rcx+38h], xmm0",
+      "actual": "movsd       mmword ptr [rcx+38h],xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 52,
+      "address": 6449833357,
+      "claim": "mov   dword ptr [rcx+40h], eax",
+      "actual": "mov         dword ptr [rcx+40h],eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 55,
+      "address": 6449833521,
+      "claim": "mov   eax, dword ptr [rbx+22Ch]",
+      "actual": "mov         eax,dword ptr [rbx+000000000000022Ch]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 56,
+      "address": 6449833527,
+      "claim": "mov   dword ptr [rcx+80h], eax",
+      "actual": "mov         dword ptr [rcx+0000000000000080h],eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 59,
+      "address": 6449833671,
+      "claim": "mov   rcx, qword ptr [rbx+1B8h]",
+      "actual": "mov         rcx,qword ptr [rbx+00000000000001B8h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 60,
+      "address": 6449833678,
+      "claim": "test  rcx, rcx",
+      "actual": "test        rcx,rcx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 61,
+      "address": 6449833681,
+      "claim": "je    WRITE_ZERO",
+      "actual": "je          000000018070A6F7",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 62,
+      "address": 6449833685,
+      "claim": "call  EntityLogicWithData::get_Id",
+      "actual": "call        000000018056DFF0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 64,
+      "address": 6449833695,
+      "claim": "mov   dword ptr [rdi+98h], eax",
+      "actual": "mov         dword ptr [rdi+0000000000000098h],eax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 71,
+      "address": 6449799505,
+      "claim": "cmp   dword ptr [rax+98h], 0",
+      "actual": "cmp         dword ptr [rax+0000000000000098h],0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 72,
+      "address": 6449799512,
+      "claim": "je    RETURN",
+      "actual": "je          00000001807021C1",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 75,
+      "address": 6449799587,
+      "claim": "mov   edx, dword ptr [rax+98h]",
+      "actual": "mov         edx,dword ptr [rax+0000000000000098h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 76,
+      "address": 6449799593,
+      "claim": "call  EntityComponent::GetEntity",
+      "actual": "call        0000000180C446C0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 79,
+      "address": 6449799601,
+      "claim": "mov   rdx, rax",
+      "actual": "mov         rdx,rax",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 80,
+      "address": 6449799604,
+      "claim": "mov   rcx, rbx",
+      "actual": "mov         rcx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 81,
+      "address": 6449799612,
+      "claim": "jmp   BaseEntityLogic::SetChild",
+      "actual": "jmp         000000018070A890",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 95,
+      "address": 6448596621,
+      "claim": "call 000000018209CCB0",
+      "actual": "call        000000018209CCB0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 96,
+      "address": 6448596626,
+      "claim": "movups xmm0, xmmword ptr [rbp]",
+      "actual": "movups      xmm0,xmmword ptr [rbp]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 97,
+      "address": 6448596633,
+      "claim": "lea    rdx, [rsp+20h]",
+      "actual": "lea         rdx,[rsp+20h]",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 98,
+      "address": 6448596638,
+      "claim": "mov    rcx, rbx",
+      "actual": "mov         rcx,rbx",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 99,
+      "address": 6448596641,
+      "claim": "movaps xmmword ptr [rsp+20h], xmm0",
+      "actual": "movaps      xmmword ptr [rsp+20h],xmm0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 100,
+      "address": 6448596646,
+      "claim": "call   00000001805DD2F0",
+      "actual": "call        00000001805DD2F0",
+      "mnemonic_matches": true
+    },
+    {
+      "report": "证据链05-恢复与生命周期链.md",
+      "line": 101,
+      "address": 6448596671,
+      "claim": "ret",
+      "actual": "ret",
+      "mnemonic_matches": true
+    }
+  ]
+}

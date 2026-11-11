@@ -1,0 +1,3362 @@
+[
+  {
+    "field_index": 0,
+    "prop_name": "WidgetForm",
+    "struct_offset": "+0x10",
+    "struct_offset_dec": 16,
+    "type": "int",
+    "getter_va": "0x1804656c0",
+    "store_va": "0x1806bd7f4",
+    "call_va": "0x1806bd7ed"
+  },
+  {
+    "field_index": 1,
+    "prop_name": "WidgetShowForm",
+    "struct_offset": "+0x20",
+    "struct_offset_dec": 32,
+    "type": "int",
+    "getter_va": "0x180484c00",
+    "store_va": "0x1806bd801",
+    "call_va": "0x1806bd7fa"
+  },
+  {
+    "field_index": 2,
+    "prop_name": "MapTileShowForm",
+    "struct_offset": "+0x30",
+    "struct_offset_dec": 48,
+    "type": "int",
+    "getter_va": "0x180481ea0",
+    "store_va": "0x1806bd80e",
+    "call_va": "0x1806bd807"
+  },
+  {
+    "field_index": 3,
+    "prop_name": "MapTileTrigger",
+    "struct_offset": "+0x40",
+    "struct_offset_dec": 64,
+    "type": "int",
+    "getter_va": "0x18048c930",
+    "store_va": "0x1806bd81b",
+    "call_va": "0x1806bd814"
+  },
+  {
+    "field_index": 4,
+    "prop_name": "DungeonForm",
+    "struct_offset": "+0x50",
+    "struct_offset_dec": 80,
+    "type": "int",
+    "getter_va": "0x1804868f0",
+    "store_va": "0x1806bd828",
+    "call_va": "0x1806bd821"
+  },
+  {
+    "field_index": 5,
+    "prop_name": "DungeonExitForm",
+    "struct_offset": "+0x60",
+    "struct_offset_dec": 96,
+    "type": "int",
+    "getter_va": "0x180490e20",
+    "store_va": "0x1806bd835",
+    "call_va": "0x1806bd82e"
+  },
+  {
+    "field_index": 6,
+    "prop_name": "WeaponBagForm",
+    "struct_offset": "+0x70",
+    "struct_offset_dec": 112,
+    "type": "int",
+    "getter_va": "0x1804868b0",
+    "store_va": "0x1806bd842",
+    "call_va": "0x1806bd83b"
+  },
+  {
+    "field_index": 7,
+    "prop_name": "BagForm",
+    "struct_offset": "+0x80",
+    "struct_offset_dec": 128,
+    "type": "int",
+    "getter_va": "0x180490e00",
+    "store_va": "0x1806bd84f",
+    "call_va": "0x1806bd848"
+  },
+  {
+    "field_index": 8,
+    "prop_name": "RoleForm",
+    "struct_offset": "+0x90",
+    "struct_offset_dec": 144,
+    "type": "int",
+    "getter_va": "0x1804868c0",
+    "store_va": "0x1806bd85f",
+    "call_va": "0x1806bd858"
+  },
+  {
+    "field_index": 9,
+    "prop_name": "ThunderForm",
+    "struct_offset": "+0xa0",
+    "struct_offset_dec": 160,
+    "type": "int",
+    "getter_va": "0x180490e70",
+    "store_va": "0x1806bd86f",
+    "call_va": "0x1806bd868"
+  },
+  {
+    "field_index": 10,
+    "prop_name": "FlyForm",
+    "struct_offset": "+0xb0",
+    "struct_offset_dec": 176,
+    "type": "int",
+    "getter_va": "0x180490dc0",
+    "store_va": "0x1806bd87f",
+    "call_va": "0x1806bd878"
+  },
+  {
+    "field_index": 11,
+    "prop_name": "FlyControlForm",
+    "struct_offset": "+0xc0",
+    "struct_offset_dec": 192,
+    "type": "int",
+    "getter_va": "0x18049aef0",
+    "store_va": "0x1806bd88f",
+    "call_va": "0x1806bd888"
+  },
+  {
+    "field_index": 12,
+    "prop_name": "AdverseTimer",
+    "struct_offset": "+0xd0",
+    "struct_offset_dec": 208,
+    "type": "int",
+    "getter_va": "0x18049b020",
+    "store_va": "0x1806bd89f",
+    "call_va": "0x1806bd898"
+  },
+  {
+    "field_index": 13,
+    "prop_name": "NpcGiftTimer",
+    "struct_offset": "+0xe0",
+    "struct_offset_dec": 224,
+    "type": "int",
+    "getter_va": "0x18049af60",
+    "store_va": "0x1806bd8af",
+    "call_va": "0x1806bd8a8"
+  },
+  {
+    "field_index": 14,
+    "prop_name": "CardPackTimer",
+    "struct_offset": "+0xf0",
+    "struct_offset_dec": 240,
+    "type": "int",
+    "getter_va": "0x18049b0a0",
+    "store_va": "0x1806bd8bf",
+    "call_va": "0x1806bd8b8"
+  },
+  {
+    "field_index": 15,
+    "prop_name": "CardPackForm",
+    "struct_offset": "+0x100",
+    "struct_offset_dec": 256,
+    "type": "int",
+    "getter_va": "0x18049af10",
+    "store_va": "0x1806bd8cf",
+    "call_va": "0x1806bd8c8"
+  },
+  {
+    "field_index": 16,
+    "prop_name": "BaseFormNormalName_l10n_key",
+    "struct_offset": "+0x118",
+    "struct_offset_dec": 280,
+    "type": "string",
+    "getter_va": "0x180472030",
+    "store_va": "0x1806bd8e4",
+    "call_va": "0x1806bd8d8"
+  },
+  {
+    "field_index": 17,
+    "prop_name": "BaseFormNormalName",
+    "struct_offset": "+0x110",
+    "struct_offset_dec": 272,
+    "type": "string",
+    "getter_va": "0x180472040",
+    "store_va": "0x1806bd904",
+    "call_va": "0x1806bd8f8"
+  },
+  {
+    "field_index": 18,
+    "prop_name": "BaseFormRunningName_l10n_key",
+    "struct_offset": "+0x128",
+    "struct_offset_dec": 296,
+    "type": "string",
+    "getter_va": "0x180472020",
+    "store_va": "0x1806bd924",
+    "call_va": "0x1806bd918"
+  },
+  {
+    "field_index": 19,
+    "prop_name": "BaseFormRunningName",
+    "struct_offset": "+0x120",
+    "struct_offset_dec": 288,
+    "type": "string",
+    "getter_va": "0x180472060",
+    "store_va": "0x1806bd944",
+    "call_va": "0x1806bd938"
+  },
+  {
+    "field_index": 20,
+    "prop_name": "BaseFormDoneName_l10n_key",
+    "struct_offset": "+0x138",
+    "struct_offset_dec": 312,
+    "type": "string",
+    "getter_va": "0x1804720b0",
+    "store_va": "0x1806bd964",
+    "call_va": "0x1806bd958"
+  },
+  {
+    "field_index": 21,
+    "prop_name": "BaseFormDoneName",
+    "struct_offset": "+0x130",
+    "struct_offset_dec": 304,
+    "type": "string",
+    "getter_va": "0x1804720d0",
+    "store_va": "0x1806bd984",
+    "call_va": "0x1806bd978"
+  },
+  {
+    "field_index": 22,
+    "prop_name": "BaseFormResetName_l10n_key",
+    "struct_offset": "+0x148",
+    "struct_offset_dec": 328,
+    "type": "string",
+    "getter_va": "0x180472080",
+    "store_va": "0x1806bd9a4",
+    "call_va": "0x1806bd998"
+  },
+  {
+    "field_index": 23,
+    "prop_name": "BaseFormResetName",
+    "struct_offset": "+0x140",
+    "struct_offset_dec": 320,
+    "type": "string",
+    "getter_va": "0x1804720c0",
+    "store_va": "0x1806bd9c4",
+    "call_va": "0x1806bd9b8"
+  },
+  {
+    "field_index": 24,
+    "prop_name": "DungeonFormNormalName_l10n_key",
+    "struct_offset": "+0x158",
+    "struct_offset_dec": 344,
+    "type": "string",
+    "getter_va": "0x180471f90",
+    "store_va": "0x1806bd9e4",
+    "call_va": "0x1806bd9d8"
+  },
+  {
+    "field_index": 25,
+    "prop_name": "DungeonFormNormalName",
+    "struct_offset": "+0x150",
+    "struct_offset_dec": 336,
+    "type": "string",
+    "getter_va": "0x180472090",
+    "store_va": "0x1806bda04",
+    "call_va": "0x1806bd9f8"
+  },
+  {
+    "field_index": 26,
+    "prop_name": "TeleportFormNormalName_l10n_key",
+    "struct_offset": "+0x168",
+    "struct_offset_dec": 360,
+    "type": "string",
+    "getter_va": "0x180471fb0",
+    "store_va": "0x1806bda24",
+    "call_va": "0x1806bda18"
+  },
+  {
+    "field_index": 27,
+    "prop_name": "TeleportFormNormalName",
+    "struct_offset": "+0x160",
+    "struct_offset_dec": 352,
+    "type": "string",
+    "getter_va": "0x180471fc0",
+    "store_va": "0x1806bda44",
+    "call_va": "0x1806bda38"
+  },
+  {
+    "field_index": 28,
+    "prop_name": "TeleportFormDoneName_l10n_key",
+    "struct_offset": "+0x178",
+    "struct_offset_dec": 376,
+    "type": "string",
+    "getter_va": "0x180472010",
+    "store_va": "0x1806bda64",
+    "call_va": "0x1806bda58"
+  },
+  {
+    "field_index": 29,
+    "prop_name": "TeleportFormDoneName",
+    "struct_offset": "+0x170",
+    "struct_offset_dec": 368,
+    "type": "string",
+    "getter_va": "0x180472000",
+    "store_va": "0x1806bda84",
+    "call_va": "0x1806bda78"
+  },
+  {
+    "field_index": 30,
+    "prop_name": "BaseTextTimeNumFormat_l10n_key",
+    "struct_offset": "+0x188",
+    "struct_offset_dec": 392,
+    "type": "string",
+    "getter_va": "0x180471fd0",
+    "store_va": "0x1806bdaa4",
+    "call_va": "0x1806bda98"
+  },
+  {
+    "field_index": 31,
+    "prop_name": "BaseTextTimeNumFormat",
+    "struct_offset": "+0x180",
+    "struct_offset_dec": 384,
+    "type": "string",
+    "getter_va": "0x180471ff0",
+    "store_va": "0x1806bdac4",
+    "call_va": "0x1806bdab8"
+  },
+  {
+    "field_index": 32,
+    "prop_name": "BaseTextYearNumFormat_l10n_key",
+    "struct_offset": "+0x198",
+    "struct_offset_dec": 408,
+    "type": "string",
+    "getter_va": "0x180471fa0",
+    "store_va": "0x1806bdae4",
+    "call_va": "0x1806bdad8"
+  },
+  {
+    "field_index": 33,
+    "prop_name": "BaseTextYearNumFormat",
+    "struct_offset": "+0x190",
+    "struct_offset_dec": 400,
+    "type": "string",
+    "getter_va": "0x180471fe0",
+    "store_va": "0x1806bdb04",
+    "call_va": "0x1806bdaf8"
+  },
+  {
+    "field_index": 34,
+    "prop_name": "BaseTextTimeFormat_l10n_key",
+    "struct_offset": "+0x1a8",
+    "struct_offset_dec": 424,
+    "type": "string",
+    "getter_va": "0x180471f80",
+    "store_va": "0x1806bdb24",
+    "call_va": "0x1806bdb18"
+  },
+  {
+    "field_index": 35,
+    "prop_name": "BaseTextTimeFormat",
+    "struct_offset": "+0x1a0",
+    "struct_offset_dec": 416,
+    "type": "string",
+    "getter_va": "0x180472050",
+    "store_va": "0x1806bdb44",
+    "call_va": "0x1806bdb38"
+  },
+  {
+    "field_index": 36,
+    "prop_name": "BaseTextYearFormat_l10n_key",
+    "struct_offset": "+0x1b8",
+    "struct_offset_dec": 440,
+    "type": "string",
+    "getter_va": "0x180471e10",
+    "store_va": "0x1806bdb64",
+    "call_va": "0x1806bdb58"
+  },
+  {
+    "field_index": 37,
+    "prop_name": "BaseTextYearFormat",
+    "struct_offset": "+0x1b0",
+    "struct_offset_dec": 432,
+    "type": "string",
+    "getter_va": "0x1804720a0",
+    "store_va": "0x1806bdb84",
+    "call_va": "0x1806bdb78"
+  },
+  {
+    "field_index": 38,
+    "prop_name": "DungeonTextTimeFormat_l10n_key",
+    "struct_offset": "+0x1c8",
+    "struct_offset_dec": 456,
+    "type": "string",
+    "getter_va": "0x180471960",
+    "store_va": "0x1806bdba4",
+    "call_va": "0x1806bdb98"
+  },
+  {
+    "field_index": 39,
+    "prop_name": "DungeonTextTimeFormat",
+    "struct_offset": "+0x1c0",
+    "struct_offset_dec": 448,
+    "type": "string",
+    "getter_va": "0x180471e00",
+    "store_va": "0x1806bdbc4",
+    "call_va": "0x1806bdbb8"
+  },
+  {
+    "field_index": 40,
+    "prop_name": "DungeonTextYearFormat_l10n_key",
+    "struct_offset": "+0x1d8",
+    "struct_offset_dec": 472,
+    "type": "string",
+    "getter_va": "0x180471a10",
+    "store_va": "0x1806bdbe4",
+    "call_va": "0x1806bdbd8"
+  },
+  {
+    "field_index": 41,
+    "prop_name": "DungeonTextYearFormat",
+    "struct_offset": "+0x1d0",
+    "struct_offset_dec": 464,
+    "type": "string",
+    "getter_va": "0x180471950",
+    "store_va": "0x1806bdbfd",
+    "call_va": "0x1806bdbf8"
+  },
+  {
+    "field_index": 42,
+    "prop_name": "DungeonTextCloseTimeFormat_l10n_key",
+    "struct_offset": "+0x1e8",
+    "struct_offset_dec": 488,
+    "type": "string",
+    "getter_va": "0x1804719b0",
+    "store_va": "0x1806bdc24",
+    "call_va": "0x1806bdc18"
+  },
+  {
+    "field_index": 43,
+    "prop_name": "DungeonTextCloseTimeFormat",
+    "struct_offset": "+0x1e0",
+    "struct_offset_dec": 480,
+    "type": "string",
+    "getter_va": "0x1804717e0",
+    "store_va": "0x1806bdc44",
+    "call_va": "0x1806bdc38"
+  },
+  {
+    "field_index": 44,
+    "prop_name": "DungeonTextCloseYearFormat_l10n_key",
+    "struct_offset": "+0x1f8",
+    "struct_offset_dec": 504,
+    "type": "string",
+    "getter_va": "0x180471980",
+    "store_va": "0x1806bdc64",
+    "call_va": "0x1806bdc58"
+  },
+  {
+    "field_index": 45,
+    "prop_name": "DungeonTextCloseYearFormat",
+    "struct_offset": "+0x1f0",
+    "struct_offset_dec": 496,
+    "type": "string",
+    "getter_va": "0x180471a80",
+    "store_va": "0x1806bdc84",
+    "call_va": "0x1806bdc78"
+  },
+  {
+    "field_index": 46,
+    "prop_name": "WeaponBagNumTextForm_l10n_key",
+    "struct_offset": "+0x208",
+    "struct_offset_dec": 520,
+    "type": "string",
+    "getter_va": "0x180471a40",
+    "store_va": "0x1806bdca4",
+    "call_va": "0x1806bdc98"
+  },
+  {
+    "field_index": 47,
+    "prop_name": "WeaponBagNumTextForm",
+    "struct_offset": "+0x200",
+    "struct_offset_dec": 512,
+    "type": "string",
+    "getter_va": "0x180471a30",
+    "store_va": "0x1806bdcc4",
+    "call_va": "0x1806bdcb8"
+  },
+  {
+    "field_index": 48,
+    "prop_name": "WeaponBagNumRedTextForm_l10n_key",
+    "struct_offset": "+0x218",
+    "struct_offset_dec": 536,
+    "type": "string",
+    "getter_va": "0x180471d50",
+    "store_va": "0x1806bdce4",
+    "call_va": "0x1806bdcd8"
+  },
+  {
+    "field_index": 49,
+    "prop_name": "WeaponBagNumRedTextForm",
+    "struct_offset": "+0x210",
+    "struct_offset_dec": 528,
+    "type": "string",
+    "getter_va": "0x180471be0",
+    "store_va": "0x1806bdd04",
+    "call_va": "0x1806bdcf8"
+  },
+  {
+    "field_index": 50,
+    "prop_name": "EnergyZeroTipsName_l10n_key",
+    "struct_offset": "+0x228",
+    "struct_offset_dec": 552,
+    "type": "string",
+    "getter_va": "0x1804717c0",
+    "store_va": "0x1806bdd24",
+    "call_va": "0x1806bdd18"
+  },
+  {
+    "field_index": 51,
+    "prop_name": "EnergyZeroTipsName",
+    "struct_offset": "+0x220",
+    "struct_offset_dec": 544,
+    "type": "string",
+    "getter_va": "0x180471840",
+    "store_va": "0x1806bdd44",
+    "call_va": "0x1806bdd38"
+  },
+  {
+    "field_index": 52,
+    "prop_name": "BagFullTipsName_l10n_key",
+    "struct_offset": "+0x238",
+    "struct_offset_dec": 568,
+    "type": "string",
+    "getter_va": "0x180471970",
+    "store_va": "0x1806bdd64",
+    "call_va": "0x1806bdd58"
+  },
+  {
+    "field_index": 53,
+    "prop_name": "BagFullTipsName",
+    "struct_offset": "+0x230",
+    "struct_offset_dec": 560,
+    "type": "string",
+    "getter_va": "0x180471f70",
+    "store_va": "0x1806bdd84",
+    "call_va": "0x1806bdd78"
+  },
+  {
+    "field_index": 54,
+    "prop_name": "BagCreateTipsName_l10n_key",
+    "struct_offset": "+0x248",
+    "struct_offset_dec": 584,
+    "type": "string",
+    "getter_va": "0x1804717f0",
+    "store_va": "0x1806bdda4",
+    "call_va": "0x1806bdd98"
+  },
+  {
+    "field_index": 55,
+    "prop_name": "BagCreateTipsName",
+    "struct_offset": "+0x240",
+    "struct_offset_dec": 576,
+    "type": "string",
+    "getter_va": "0x180471790",
+    "store_va": "0x1806bddc4",
+    "call_va": "0x1806bddb8"
+  },
+  {
+    "field_index": 56,
+    "prop_name": "RecordFormSaveName_l10n_key",
+    "struct_offset": "+0x258",
+    "struct_offset_dec": 600,
+    "type": "string",
+    "getter_va": "0x180471820",
+    "store_va": "0x1806bdde4",
+    "call_va": "0x1806bddd8"
+  },
+  {
+    "field_index": 57,
+    "prop_name": "RecordFormSaveName",
+    "struct_offset": "+0x250",
+    "struct_offset_dec": 592,
+    "type": "string",
+    "getter_va": "0x180471810",
+    "store_va": "0x1806bde04",
+    "call_va": "0x1806bddf8"
+  },
+  {
+    "field_index": 58,
+    "prop_name": "RecordFormCoverName_l10n_key",
+    "struct_offset": "+0x268",
+    "struct_offset_dec": 616,
+    "type": "string",
+    "getter_va": "0x180471d40",
+    "store_va": "0x1806bde24",
+    "call_va": "0x1806bde18"
+  },
+  {
+    "field_index": 59,
+    "prop_name": "RecordFormCoverName",
+    "struct_offset": "+0x260",
+    "struct_offset_dec": 608,
+    "type": "string",
+    "getter_va": "0x180471bd0",
+    "store_va": "0x1806bde44",
+    "call_va": "0x1806bde38"
+  },
+  {
+    "field_index": 60,
+    "prop_name": "RecordFormLoadName_l10n_key",
+    "struct_offset": "+0x278",
+    "struct_offset_dec": 632,
+    "type": "string",
+    "getter_va": "0x1804719d0",
+    "store_va": "0x1806bde64",
+    "call_va": "0x1806bde58"
+  },
+  {
+    "field_index": 61,
+    "prop_name": "RecordFormLoadName",
+    "struct_offset": "+0x270",
+    "struct_offset_dec": 624,
+    "type": "string",
+    "getter_va": "0x1804719c0",
+    "store_va": "0x1806bde84",
+    "call_va": "0x1806bde78"
+  },
+  {
+    "field_index": 62,
+    "prop_name": "RecordFormFullName_l10n_key",
+    "struct_offset": "+0x288",
+    "struct_offset_dec": 648,
+    "type": "string",
+    "getter_va": "0x180471a20",
+    "store_va": "0x1806bdea4",
+    "call_va": "0x1806bde98"
+  },
+  {
+    "field_index": 63,
+    "prop_name": "RecordFormFullName",
+    "struct_offset": "+0x280",
+    "struct_offset_dec": 640,
+    "type": "string",
+    "getter_va": "0x1804717b0",
+    "store_va": "0x1806bdec4",
+    "call_va": "0x1806bdeb8"
+  },
+  {
+    "field_index": 64,
+    "prop_name": "RecordFormDelName_l10n_key",
+    "struct_offset": "+0x298",
+    "struct_offset_dec": 664,
+    "type": "string",
+    "getter_va": "0x1804717d0",
+    "store_va": "0x1806bdedd",
+    "call_va": "0x1806bded8"
+  },
+  {
+    "field_index": 65,
+    "prop_name": "RecordFormDelName",
+    "struct_offset": "+0x290",
+    "struct_offset_dec": 656,
+    "type": "string",
+    "getter_va": "0x180471780",
+    "store_va": "0x1806bdf04",
+    "call_va": "0x1806bdef8"
+  },
+  {
+    "field_index": 66,
+    "prop_name": "NewbieRestartName_l10n_key",
+    "struct_offset": "+0x2a8",
+    "struct_offset_dec": 680,
+    "type": "string",
+    "getter_va": "0x180471860",
+    "store_va": "0x1806bdf24",
+    "call_va": "0x1806bdf18"
+  },
+  {
+    "field_index": 67,
+    "prop_name": "NewbieRestartName",
+    "struct_offset": "+0x2a0",
+    "struct_offset_dec": 672,
+    "type": "string",
+    "getter_va": "0x1804717a0",
+    "store_va": "0x1806bdf44",
+    "call_va": "0x1806bdf38"
+  },
+  {
+    "field_index": 68,
+    "prop_name": "NewbieNotSaveName_l10n_key",
+    "struct_offset": "+0x2b8",
+    "struct_offset_dec": 696,
+    "type": "string",
+    "getter_va": "0x180471830",
+    "store_va": "0x1806bdf64",
+    "call_va": "0x1806bdf58"
+  },
+  {
+    "field_index": 69,
+    "prop_name": "NewbieNotSaveName",
+    "struct_offset": "+0x2b0",
+    "struct_offset_dec": 688,
+    "type": "string",
+    "getter_va": "0x180471800",
+    "store_va": "0x1806bdf84",
+    "call_va": "0x1806bdf78"
+  },
+  {
+    "field_index": 70,
+    "prop_name": "NewbieGameEndName_l10n_key",
+    "struct_offset": "+0x2c8",
+    "struct_offset_dec": 712,
+    "type": "string",
+    "getter_va": "0x180471870",
+    "store_va": "0x1806bdfa4",
+    "call_va": "0x1806bdf98"
+  },
+  {
+    "field_index": 71,
+    "prop_name": "NewbieGameEndName",
+    "struct_offset": "+0x2c0",
+    "struct_offset_dec": 704,
+    "type": "string",
+    "getter_va": "0x180471850",
+    "store_va": "0x1806bdfc4",
+    "call_va": "0x1806bdfb8"
+  },
+  {
+    "field_index": 72,
+    "prop_name": "NewGamePauseName_l10n_key",
+    "struct_offset": "+0x2d8",
+    "struct_offset_dec": 728,
+    "type": "string",
+    "getter_va": "0x180471890",
+    "store_va": "0x1806bdfe4",
+    "call_va": "0x1806bdfd8"
+  },
+  {
+    "field_index": 73,
+    "prop_name": "NewGamePauseName",
+    "struct_offset": "+0x2d0",
+    "struct_offset_dec": 720,
+    "type": "string",
+    "getter_va": "0x180471880",
+    "store_va": "0x1806be004",
+    "call_va": "0x1806bdff8"
+  },
+  {
+    "field_index": 74,
+    "prop_name": "LoadGamePauseName_l10n_key",
+    "struct_offset": "+0x2e8",
+    "struct_offset_dec": 744,
+    "type": "string",
+    "getter_va": "0x1804718a0",
+    "store_va": "0x1806be024",
+    "call_va": "0x1806be018"
+  },
+  {
+    "field_index": 75,
+    "prop_name": "LoadGamePauseName",
+    "struct_offset": "+0x2e0",
+    "struct_offset_dec": 736,
+    "type": "string",
+    "getter_va": "0x1804718b0",
+    "store_va": "0x1806be044",
+    "call_va": "0x1806be038"
+  },
+  {
+    "field_index": 76,
+    "prop_name": "NewFreeGamePauseName_l10n_key",
+    "struct_offset": "+0x2f8",
+    "struct_offset_dec": 760,
+    "type": "string",
+    "getter_va": "0x180471af0",
+    "store_va": "0x1806be064",
+    "call_va": "0x1806be058"
+  },
+  {
+    "field_index": 77,
+    "prop_name": "NewFreeGamePauseName",
+    "struct_offset": "+0x2f0",
+    "struct_offset_dec": 752,
+    "type": "string",
+    "getter_va": "0x180472100",
+    "store_va": "0x1806be084",
+    "call_va": "0x1806be078"
+  },
+  {
+    "field_index": 78,
+    "prop_name": "LoadFreeGamePauseName_l10n_key",
+    "struct_offset": "+0x308",
+    "struct_offset_dec": 776,
+    "type": "string",
+    "getter_va": "0x180471ad0",
+    "store_va": "0x1806be0a4",
+    "call_va": "0x1806be098"
+  },
+  {
+    "field_index": 79,
+    "prop_name": "LoadFreeGamePauseName",
+    "struct_offset": "+0x300",
+    "struct_offset_dec": 768,
+    "type": "string",
+    "getter_va": "0x180471940",
+    "store_va": "0x1806be0c4",
+    "call_va": "0x1806be0b8"
+  },
+  {
+    "field_index": 80,
+    "prop_name": "NewbieGameSkipName_l10n_key",
+    "struct_offset": "+0x318",
+    "struct_offset_dec": 792,
+    "type": "string",
+    "getter_va": "0x180471ab0",
+    "store_va": "0x1806be0e4",
+    "call_va": "0x1806be0d8"
+  },
+  {
+    "field_index": 81,
+    "prop_name": "NewbieGameSkipName",
+    "struct_offset": "+0x310",
+    "struct_offset_dec": 784,
+    "type": "string",
+    "getter_va": "0x180471ac0",
+    "store_va": "0x1806be104",
+    "call_va": "0x1806be0f8"
+  },
+  {
+    "field_index": 82,
+    "prop_name": "SpawnMonsterSkipName_l10n_key",
+    "struct_offset": "+0x328",
+    "struct_offset_dec": 808,
+    "type": "string",
+    "getter_va": "0x180471930",
+    "store_va": "0x1806be124",
+    "call_va": "0x1806be118"
+  },
+  {
+    "field_index": 83,
+    "prop_name": "SpawnMonsterSkipName",
+    "struct_offset": "+0x320",
+    "struct_offset_dec": 800,
+    "type": "string",
+    "getter_va": "0x180471ae0",
+    "store_va": "0x1806be144",
+    "call_va": "0x1806be138"
+  },
+  {
+    "field_index": 84,
+    "prop_name": "ExitDungeonItemName_l10n_key",
+    "struct_offset": "+0x338",
+    "struct_offset_dec": 824,
+    "type": "string",
+    "getter_va": "0x180471d70",
+    "store_va": "0x1806be164",
+    "call_va": "0x1806be158"
+  },
+  {
+    "field_index": 85,
+    "prop_name": "ExitDungeonItemName",
+    "struct_offset": "+0x330",
+    "struct_offset_dec": 816,
+    "type": "string",
+    "getter_va": "0x180471710",
+    "store_va": "0x1806be184",
+    "call_va": "0x1806be178"
+  },
+  {
+    "field_index": 86,
+    "prop_name": "FlyFormCreateTipsName_l10n_key",
+    "struct_offset": "+0x348",
+    "struct_offset_dec": 840,
+    "type": "string",
+    "getter_va": "0x1804718c0",
+    "store_va": "0x1806be1a4",
+    "call_va": "0x1806be198"
+  },
+  {
+    "field_index": 87,
+    "prop_name": "FlyFormCreateTipsName",
+    "struct_offset": "+0x340",
+    "struct_offset_dec": 832,
+    "type": "string",
+    "getter_va": "0x180471d30",
+    "store_va": "0x1806be1bd",
+    "call_va": "0x1806be1b8"
+  },
+  {
+    "field_index": 88,
+    "prop_name": "EnergyCostName_l10n_key",
+    "struct_offset": "+0x358",
+    "struct_offset_dec": 856,
+    "type": "string",
+    "getter_va": "0x180471e30",
+    "store_va": "0x1806be1e4",
+    "call_va": "0x1806be1d8"
+  },
+  {
+    "field_index": 89,
+    "prop_name": "EnergyCostName",
+    "struct_offset": "+0x350",
+    "struct_offset_dec": 848,
+    "type": "string",
+    "getter_va": "0x1804719a0",
+    "store_va": "0x1806be204",
+    "call_va": "0x1806be1f8"
+  },
+  {
+    "field_index": 90,
+    "prop_name": "CoreEmptyFormNormalName_l10n_key",
+    "struct_offset": "+0x368",
+    "struct_offset_dec": 872,
+    "type": "string",
+    "getter_va": "0x180471d80",
+    "store_va": "0x1806be224",
+    "call_va": "0x1806be218"
+  },
+  {
+    "field_index": 91,
+    "prop_name": "CoreEmptyFormNormalName",
+    "struct_offset": "+0x360",
+    "struct_offset_dec": 864,
+    "type": "string",
+    "getter_va": "0x180471f50",
+    "store_va": "0x1806be244",
+    "call_va": "0x1806be238"
+  },
+  {
+    "field_index": 92,
+    "prop_name": "SpiritFarmFormNormalName_l10n_key",
+    "struct_offset": "+0x378",
+    "struct_offset_dec": 888,
+    "type": "string",
+    "getter_va": "0x180471cd0",
+    "store_va": "0x1806be264",
+    "call_va": "0x1806be258"
+  },
+  {
+    "field_index": 93,
+    "prop_name": "SpiritFarmFormNormalName",
+    "struct_offset": "+0x370",
+    "struct_offset_dec": 880,
+    "type": "string",
+    "getter_va": "0x180471990",
+    "store_va": "0x1806be284",
+    "call_va": "0x1806be278"
+  },
+  {
+    "field_index": 94,
+    "prop_name": "GameEndingFormNormalName_l10n_key",
+    "struct_offset": "+0x388",
+    "struct_offset_dec": 904,
+    "type": "string",
+    "getter_va": "0x1804718f0",
+    "store_va": "0x1806be2a4",
+    "call_va": "0x1806be298"
+  },
+  {
+    "field_index": 95,
+    "prop_name": "GameEndingFormNormalName",
+    "struct_offset": "+0x380",
+    "struct_offset_dec": 896,
+    "type": "string",
+    "getter_va": "0x180471910",
+    "store_va": "0x1806be2c4",
+    "call_va": "0x1806be2b8"
+  },
+  {
+    "field_index": 96,
+    "prop_name": "KeyboardNormalName_l10n_key",
+    "struct_offset": "+0x398",
+    "struct_offset_dec": 920,
+    "type": "string",
+    "getter_va": "0x1804718d0",
+    "store_va": "0x1806be2e4",
+    "call_va": "0x1806be2d8"
+  },
+  {
+    "field_index": 97,
+    "prop_name": "KeyboardNormalName",
+    "struct_offset": "+0x390",
+    "struct_offset_dec": 912,
+    "type": "string",
+    "getter_va": "0x180471900",
+    "store_va": "0x1806be304",
+    "call_va": "0x1806be2f8"
+  },
+  {
+    "field_index": 98,
+    "prop_name": "FarmCardSlotExName_l10n_key",
+    "struct_offset": "+0x3a8",
+    "struct_offset_dec": 936,
+    "type": "string",
+    "getter_va": "0x180471bf0",
+    "store_va": "0x1806be324",
+    "call_va": "0x1806be318"
+  },
+  {
+    "field_index": 99,
+    "prop_name": "FarmCardSlotExName",
+    "struct_offset": "+0x3a0",
+    "struct_offset_dec": 928,
+    "type": "string",
+    "getter_va": "0x180471c00",
+    "store_va": "0x1806be344",
+    "call_va": "0x1806be338"
+  },
+  {
+    "field_index": 100,
+    "prop_name": "TalentNumName_l10n_key",
+    "struct_offset": "+0x3b8",
+    "struct_offset_dec": 952,
+    "type": "string",
+    "getter_va": "0x1804718e0",
+    "store_va": "0x1806be364",
+    "call_va": "0x1806be358"
+  },
+  {
+    "field_index": 101,
+    "prop_name": "TalentNumName",
+    "struct_offset": "+0x3b0",
+    "struct_offset_dec": 944,
+    "type": "string",
+    "getter_va": "0x180471d60",
+    "store_va": "0x1806be384",
+    "call_va": "0x1806be378"
+  },
+  {
+    "field_index": 102,
+    "prop_name": "ShopCardStoneName_l10n_key",
+    "struct_offset": "+0x3c8",
+    "struct_offset_dec": 968,
+    "type": "string",
+    "getter_va": "0x180471ee0",
+    "store_va": "0x1806be3a4",
+    "call_va": "0x1806be398"
+  },
+  {
+    "field_index": 103,
+    "prop_name": "ShopCardStoneName",
+    "struct_offset": "+0x3c0",
+    "struct_offset_dec": 960,
+    "type": "string",
+    "getter_va": "0x180471740",
+    "store_va": "0x1806be3c4",
+    "call_va": "0x1806be3b8"
+  },
+  {
+    "field_index": 104,
+    "prop_name": "ShopCardPriceName_l10n_key",
+    "struct_offset": "+0x3d8",
+    "struct_offset_dec": 984,
+    "type": "string",
+    "getter_va": "0x180471e50",
+    "store_va": "0x1806be3e4",
+    "call_va": "0x1806be3d8"
+  },
+  {
+    "field_index": 105,
+    "prop_name": "ShopCardPriceName",
+    "struct_offset": "+0x3d0",
+    "struct_offset_dec": 976,
+    "type": "string",
+    "getter_va": "0x180471eb0",
+    "store_va": "0x1806be404",
+    "call_va": "0x1806be3f8"
+  },
+  {
+    "field_index": 106,
+    "prop_name": "TalkShowNumName_l10n_key",
+    "struct_offset": "+0x3e8",
+    "struct_offset_dec": 1000,
+    "type": "string",
+    "getter_va": "0x180471e40",
+    "store_va": "0x1806be424",
+    "call_va": "0x1806be418"
+  },
+  {
+    "field_index": 107,
+    "prop_name": "TalkShowNumName",
+    "struct_offset": "+0x3e0",
+    "struct_offset_dec": 992,
+    "type": "string",
+    "getter_va": "0x180471920",
+    "store_va": "0x1806be444",
+    "call_va": "0x1806be438"
+  },
+  {
+    "field_index": 108,
+    "prop_name": "MapExitNumName_l10n_key",
+    "struct_offset": "+0x3f8",
+    "struct_offset_dec": 1016,
+    "type": "string",
+    "getter_va": "0x180471750",
+    "store_va": "0x1806be464",
+    "call_va": "0x1806be458"
+  },
+  {
+    "field_index": 109,
+    "prop_name": "MapExitNumName",
+    "struct_offset": "+0x3f0",
+    "struct_offset_dec": 1008,
+    "type": "string",
+    "getter_va": "0x180471e60",
+    "store_va": "0x1806be484",
+    "call_va": "0x1806be478"
+  },
+  {
+    "field_index": 110,
+    "prop_name": "TipsSecShowNumName_l10n_key",
+    "struct_offset": "+0x408",
+    "struct_offset_dec": 1032,
+    "type": "string",
+    "getter_va": "0x180471f10",
+    "store_va": "0x1806be4a4",
+    "call_va": "0x1806be498"
+  },
+  {
+    "field_index": 111,
+    "prop_name": "TipsSecShowNumName",
+    "struct_offset": "+0x400",
+    "struct_offset_dec": 1024,
+    "type": "string",
+    "getter_va": "0x180471760",
+    "store_va": "0x1806be4c4",
+    "call_va": "0x1806be4b8"
+  },
+  {
+    "field_index": 112,
+    "prop_name": "UiScaleNumName_l10n_key",
+    "struct_offset": "+0x418",
+    "struct_offset_dec": 1048,
+    "type": "string",
+    "getter_va": "0x180471f00",
+    "store_va": "0x1806be4e4",
+    "call_va": "0x1806be4d8"
+  },
+  {
+    "field_index": 113,
+    "prop_name": "UiScaleNumName",
+    "struct_offset": "+0x410",
+    "struct_offset_dec": 1040,
+    "type": "string",
+    "getter_va": "0x180471ef0",
+    "store_va": "0x1806be504",
+    "call_va": "0x1806be4f8"
+  },
+  {
+    "field_index": 114,
+    "prop_name": "CollectCardDescName_l10n_key",
+    "struct_offset": "+0x428",
+    "struct_offset_dec": 1064,
+    "type": "string",
+    "getter_va": "0x180471e90",
+    "store_va": "0x1806be524",
+    "call_va": "0x1806be518"
+  },
+  {
+    "field_index": 115,
+    "prop_name": "CollectCardDescName",
+    "struct_offset": "+0x420",
+    "struct_offset_dec": 1056,
+    "type": "string",
+    "getter_va": "0x180471e70",
+    "store_va": "0x1806be544",
+    "call_va": "0x1806be538"
+  },
+  {
+    "field_index": 116,
+    "prop_name": "BaseTagNumErrorName_l10n_key",
+    "struct_offset": "+0x438",
+    "struct_offset_dec": 1080,
+    "type": "string",
+    "getter_va": "0x180471ea0",
+    "store_va": "0x1806be564",
+    "call_va": "0x1806be558"
+  },
+  {
+    "field_index": 117,
+    "prop_name": "BaseTagNumErrorName",
+    "struct_offset": "+0x430",
+    "struct_offset_dec": 1072,
+    "type": "string",
+    "getter_va": "0x180471e80",
+    "store_va": "0x1806be584",
+    "call_va": "0x1806be578"
+  },
+  {
+    "field_index": 118,
+    "prop_name": "NeedFlyDownName_l10n_key",
+    "struct_offset": "+0x448",
+    "struct_offset_dec": 1096,
+    "type": "string",
+    "getter_va": "0x180471b40",
+    "store_va": "0x1806be5a4",
+    "call_va": "0x1806be598"
+  },
+  {
+    "field_index": 119,
+    "prop_name": "NeedFlyDownName",
+    "struct_offset": "+0x440",
+    "struct_offset_dec": 1088,
+    "type": "string",
+    "getter_va": "0x180471b60",
+    "store_va": "0x1806be5c4",
+    "call_va": "0x1806be5b8"
+  },
+  {
+    "field_index": 120,
+    "prop_name": "RoleNewName_l10n_key",
+    "struct_offset": "+0x458",
+    "struct_offset_dec": 1112,
+    "type": "string",
+    "getter_va": "0x180471b30",
+    "store_va": "0x1806be5e4",
+    "call_va": "0x1806be5d8"
+  },
+  {
+    "field_index": 121,
+    "prop_name": "RoleNewName",
+    "struct_offset": "+0x450",
+    "struct_offset_dec": 1104,
+    "type": "string",
+    "getter_va": "0x180471b00",
+    "store_va": "0x1806be604",
+    "call_va": "0x1806be5f8"
+  },
+  {
+    "field_index": 122,
+    "prop_name": "RoleAgeTimeNewbie",
+    "struct_offset": "+0x460",
+    "struct_offset_dec": 1120,
+    "type": "int",
+    "getter_va": "0x1806c18f0",
+    "store_va": "0x1806be61d",
+    "call_va": "0x1806be618"
+  },
+  {
+    "field_index": 123,
+    "prop_name": "RoleAgeFormat_l10n_key",
+    "struct_offset": "+0x470",
+    "struct_offset_dec": 1136,
+    "type": "string",
+    "getter_va": "0x180471b10",
+    "store_va": "0x1806be634",
+    "call_va": "0x1806be628"
+  },
+  {
+    "field_index": 124,
+    "prop_name": "RoleAgeFormat",
+    "struct_offset": "+0x468",
+    "struct_offset_dec": 1128,
+    "type": "string",
+    "getter_va": "0x180471b70",
+    "store_va": "0x1806be654",
+    "call_va": "0x1806be648"
+  },
+  {
+    "field_index": 125,
+    "prop_name": "RoleAgeMaxFormat_l10n_key",
+    "struct_offset": "+0x480",
+    "struct_offset_dec": 1152,
+    "type": "string",
+    "getter_va": "0x180471bc0",
+    "store_va": "0x1806be674",
+    "call_va": "0x1806be668"
+  },
+  {
+    "field_index": 126,
+    "prop_name": "RoleAgeMaxFormat",
+    "struct_offset": "+0x478",
+    "struct_offset_dec": 1144,
+    "type": "string",
+    "getter_va": "0x180471b80",
+    "store_va": "0x1806be694",
+    "call_va": "0x1806be688"
+  },
+  {
+    "field_index": 127,
+    "prop_name": "RoleAgeYearFormat_l10n_key",
+    "struct_offset": "+0x490",
+    "struct_offset_dec": 1168,
+    "type": "string",
+    "getter_va": "0x180471b20",
+    "store_va": "0x1806be6b4",
+    "call_va": "0x1806be6a8"
+  },
+  {
+    "field_index": 128,
+    "prop_name": "RoleAgeYearFormat",
+    "struct_offset": "+0x488",
+    "struct_offset_dec": 1160,
+    "type": "string",
+    "getter_va": "0x180471b50",
+    "store_va": "0x1806be6d4",
+    "call_va": "0x1806be6c8"
+  },
+  {
+    "field_index": 129,
+    "prop_name": "RoleAgeTimeFree",
+    "struct_offset": "+0x498",
+    "struct_offset_dec": 1176,
+    "type": "int",
+    "getter_va": "0x1806c18e0",
+    "store_va": "0x1806be6ef",
+    "call_va": "0x1806be6e8"
+  },
+  {
+    "field_index": 130,
+    "prop_name": "RoleFreeMapId",
+    "struct_offset": "+0x49c",
+    "struct_offset_dec": 1180,
+    "type": "int",
+    "getter_va": "0x1806c1900",
+    "store_va": "0x1806be6ff",
+    "call_va": "0x1806be6f8"
+  },
+  {
+    "field_index": 131,
+    "prop_name": "AgeYearEndFormat_l10n_key",
+    "struct_offset": "+0x4b0",
+    "struct_offset_dec": 1200,
+    "type": "string",
+    "getter_va": "0x180471f30",
+    "store_va": "0x1806be714",
+    "call_va": "0x1806be708"
+  },
+  {
+    "field_index": 132,
+    "prop_name": "AgeYearEndFormat",
+    "struct_offset": "+0x4a8",
+    "struct_offset_dec": 1192,
+    "type": "string",
+    "getter_va": "0x180471ec0",
+    "store_va": "0x1806be734",
+    "call_va": "0x1806be728"
+  },
+  {
+    "field_index": 133,
+    "prop_name": "AgeYearStartFormat_l10n_key",
+    "struct_offset": "+0x4c0",
+    "struct_offset_dec": 1216,
+    "type": "string",
+    "getter_va": "0x180471c20",
+    "store_va": "0x1806be754",
+    "call_va": "0x1806be748"
+  },
+  {
+    "field_index": 134,
+    "prop_name": "AgeYearStartFormat",
+    "struct_offset": "+0x4b8",
+    "struct_offset_dec": 1208,
+    "type": "string",
+    "getter_va": "0x180471f40",
+    "store_va": "0x1806be774",
+    "call_va": "0x1806be768"
+  },
+  {
+    "field_index": 135,
+    "prop_name": "SoulNumInit",
+    "struct_offset": "+0x4c8",
+    "struct_offset_dec": 1224,
+    "type": "int",
+    "getter_va": "0x1806c1960",
+    "store_va": "0x1806be78f",
+    "call_va": "0x1806be788"
+  },
+  {
+    "field_index": 136,
+    "prop_name": "SpeedNumInit",
+    "struct_offset": "+0x4cc",
+    "struct_offset_dec": 1228,
+    "type": "int",
+    "getter_va": "0x1806c1d60",
+    "store_va": "0x1806be79f",
+    "call_va": "0x1806be798"
+  },
+  {
+    "field_index": 137,
+    "prop_name": "SkillSlotNumInit",
+    "struct_offset": "+0x4d0",
+    "struct_offset_dec": 1232,
+    "type": "int",
+    "getter_va": "0x1806c1930",
+    "store_va": "0x1806be7af",
+    "call_va": "0x1806be7a8"
+  },
+  {
+    "field_index": 138,
+    "prop_name": "SpellSlotNumInit",
+    "struct_offset": "+0x4d4",
+    "struct_offset_dec": 1236,
+    "type": "int",
+    "getter_va": "0x1806c1d70",
+    "store_va": "0x1806be7bf",
+    "call_va": "0x1806be7b8"
+  },
+  {
+    "field_index": 139,
+    "prop_name": "MapResourceShowNum",
+    "struct_offset": "+0x4d8",
+    "struct_offset_dec": 1240,
+    "type": "int",
+    "getter_va": "0x1806c1790",
+    "store_va": "0x1806be7cf",
+    "call_va": "0x1806be7c8"
+  },
+  {
+    "field_index": 140,
+    "prop_name": "BaseMapEventInfoList",
+    "struct_offset": "+0x4e0",
+    "struct_offset_dec": 1248,
+    "type": "list_composite",
+    "getter_va": "0x180471c30",
+    "store_va": "0x1806be840",
+    "call_va": null
+  },
+  {
+    "field_index": 141,
+    "prop_name": "ArenaOpenTime",
+    "struct_offset": "+0x4e8",
+    "struct_offset_dec": 1256,
+    "type": "int",
+    "getter_va": "0x1806c0b10",
+    "store_va": "0x1806be89c",
+    "call_va": "0x1806be895"
+  },
+  {
+    "field_index": 142,
+    "prop_name": "ArenaOpenWidgetId",
+    "struct_offset": "+0x4ec",
+    "struct_offset_dec": 1260,
+    "type": "int",
+    "getter_va": "0x1806c0b20",
+    "store_va": "0x1806be8ac",
+    "call_va": "0x1806be8a5"
+  },
+  {
+    "field_index": 143,
+    "prop_name": "WallOpenNum",
+    "struct_offset": "+0x4f8",
+    "struct_offset_dec": 1272,
+    "type": "int",
+    "getter_va": "0x1806c1f10",
+    "store_va": "0x1806be8bc",
+    "call_va": "0x1806be8b5"
+  },
+  {
+    "field_index": 144,
+    "prop_name": "WallOpenWidgetId",
+    "struct_offset": "+0x4fc",
+    "struct_offset_dec": 1276,
+    "type": "int",
+    "getter_va": "0x1806c1f20",
+    "store_va": "0x1806be8cc",
+    "call_va": "0x1806be8c5"
+  },
+  {
+    "field_index": 145,
+    "prop_name": "WallMapEventInfoId",
+    "struct_offset": "+0x508",
+    "struct_offset_dec": 1288,
+    "type": "int",
+    "getter_va": "0x1806c1ef0",
+    "store_va": "0x1806be8dc",
+    "call_va": "0x1806be8d5"
+  },
+  {
+    "field_index": 146,
+    "prop_name": "WallMapEventNum",
+    "struct_offset": "+0x518",
+    "struct_offset_dec": 1304,
+    "type": "int",
+    "getter_va": "0x1806c1f00",
+    "store_va": "0x1806be8ec",
+    "call_va": "0x1806be8e5"
+  },
+  {
+    "field_index": 147,
+    "prop_name": "FlyShowWidgetSystemNum",
+    "struct_offset": "+0x520",
+    "struct_offset_dec": 1312,
+    "type": "list_int",
+    "getter_va": "0x180471d20",
+    "store_va": "0x1806be95e",
+    "call_va": null
+  },
+  {
+    "field_index": 148,
+    "prop_name": "BaseCanFightCheckSoul",
+    "struct_offset": "+0x528",
+    "struct_offset_dec": 1320,
+    "type": "list_bool",
+    "getter_va": "0x180471c60",
+    "store_va": "0x1806bea5d",
+    "call_va": null
+  },
+  {
+    "field_index": 149,
+    "prop_name": "MakeTimerCopyCardNum",
+    "struct_offset": "+0x530",
+    "struct_offset_dec": 1328,
+    "type": "int",
+    "getter_va": "0x1806c1750",
+    "store_va": "0x1806beafc",
+    "call_va": "0x1806beaf5"
+  },
+  {
+    "field_index": 150,
+    "prop_name": "CardSlot",
+    "struct_offset": "+0x534",
+    "struct_offset_dec": 1332,
+    "type": "int",
+    "getter_va": "0x1806c0e00",
+    "store_va": "0x1806beb0c",
+    "call_va": "0x1806beb05"
+  },
+  {
+    "field_index": 151,
+    "prop_name": "CardSlotResourceWidget",
+    "struct_offset": "+0x540",
+    "struct_offset_dec": 1344,
+    "type": "int",
+    "getter_va": "0x1806c0dc0",
+    "store_va": "0x1806beb1c",
+    "call_va": "0x1806beb15"
+  },
+  {
+    "field_index": 152,
+    "prop_name": "CardSlotSeal",
+    "struct_offset": "+0x550",
+    "struct_offset_dec": 1360,
+    "type": "int",
+    "getter_va": "0x1806c0de0",
+    "store_va": "0x1806beb2c",
+    "call_va": "0x1806beb25"
+  },
+  {
+    "field_index": 153,
+    "prop_name": "CardSlotRecipeWidget",
+    "struct_offset": "+0x560",
+    "struct_offset_dec": 1376,
+    "type": "int",
+    "getter_va": "0x1806c0da0",
+    "store_va": "0x1806beb3c",
+    "call_va": "0x1806beb35"
+  },
+  {
+    "field_index": 154,
+    "prop_name": "CardSlotBed",
+    "struct_offset": "+0x570",
+    "struct_offset_dec": 1392,
+    "type": "int",
+    "getter_va": "0x1806c0d20",
+    "store_va": "0x1806beb4c",
+    "call_va": "0x1806beb45"
+  },
+  {
+    "field_index": 155,
+    "prop_name": "CardSlotLeave",
+    "struct_offset": "+0x580",
+    "struct_offset_dec": 1408,
+    "type": "int",
+    "getter_va": "0x1806c0d80",
+    "store_va": "0x1806beb5c",
+    "call_va": "0x1806beb55"
+  },
+  {
+    "field_index": 156,
+    "prop_name": "CardSlotBox",
+    "struct_offset": "+0x590",
+    "struct_offset_dec": 1424,
+    "type": "int",
+    "getter_va": "0x1806c0d40",
+    "store_va": "0x1806beb6c",
+    "call_va": "0x1806beb65"
+  },
+  {
+    "field_index": 157,
+    "prop_name": "CardSlotFly",
+    "struct_offset": "+0x5a0",
+    "struct_offset_dec": 1440,
+    "type": "int",
+    "getter_va": "0x1806c0d60",
+    "store_va": "0x1806beb7c",
+    "call_va": "0x1806beb75"
+  },
+  {
+    "field_index": 158,
+    "prop_name": "TimerProgress",
+    "struct_offset": "+0x5b0",
+    "struct_offset_dec": 1456,
+    "type": "int",
+    "getter_va": "0x1806c1e00",
+    "store_va": "0x1806beb8c",
+    "call_va": "0x1806beb85"
+  },
+  {
+    "field_index": 159,
+    "prop_name": "TimerProgressAdverse",
+    "struct_offset": "+0x5c0",
+    "struct_offset_dec": 1472,
+    "type": "int",
+    "getter_va": "0x1806c1de0",
+    "store_va": "0x1806beb9c",
+    "call_va": "0x1806beb95"
+  },
+  {
+    "field_index": 160,
+    "prop_name": "CardGrid",
+    "struct_offset": "+0x5d0",
+    "struct_offset_dec": 1488,
+    "type": "int",
+    "getter_va": "0x1806c0ce0",
+    "store_va": "0x1806bebac",
+    "call_va": "0x1806beba5"
+  },
+  {
+    "field_index": 161,
+    "prop_name": "CardBag",
+    "struct_offset": "+0x5e0",
+    "struct_offset_dec": 1504,
+    "type": "int",
+    "getter_va": "0x1806c0c80",
+    "store_va": "0x1806bebbc",
+    "call_va": "0x1806bebb5"
+  },
+  {
+    "field_index": 162,
+    "prop_name": "CardLook",
+    "struct_offset": "+0x5f0",
+    "struct_offset_dec": 1520,
+    "type": "int",
+    "getter_va": "0x1806c0d00",
+    "store_va": "0x1806bebcc",
+    "call_va": "0x1806bebc5"
+  },
+  {
+    "field_index": 163,
+    "prop_name": "CardBoxForm",
+    "struct_offset": "+0x600",
+    "struct_offset_dec": 1536,
+    "type": "int",
+    "getter_va": "0x1806c0ca0",
+    "store_va": "0x1806bebdc",
+    "call_va": "0x1806bebd5"
+  },
+  {
+    "field_index": 164,
+    "prop_name": "CardBox",
+    "struct_offset": "+0x610",
+    "struct_offset_dec": 1552,
+    "type": "int",
+    "getter_va": "0x1806c0cc0",
+    "store_va": "0x1806bebec",
+    "call_va": "0x1806bebe5"
+  },
+  {
+    "field_index": 165,
+    "prop_name": "WorkBaseNum",
+    "struct_offset": "+0x620",
+    "struct_offset_dec": 1568,
+    "type": "int",
+    "getter_va": "0x1806c1f80",
+    "store_va": "0x1806bebfc",
+    "call_va": "0x1806bebf5"
+  },
+  {
+    "field_index": 166,
+    "prop_name": "WorkAddNum",
+    "struct_offset": "+0x624",
+    "struct_offset_dec": 1572,
+    "type": "int",
+    "getter_va": "0x1806c1f70",
+    "store_va": "0x1806bec0c",
+    "call_va": "0x1806bec05"
+  },
+  {
+    "field_index": 167,
+    "prop_name": "WidgetBaseNum",
+    "struct_offset": "+0x628",
+    "struct_offset_dec": 1576,
+    "type": "int",
+    "getter_va": "0x1806c1f40",
+    "store_va": "0x1806bec1c",
+    "call_va": "0x1806bec15"
+  },
+  {
+    "field_index": 168,
+    "prop_name": "WidgetAddNum",
+    "struct_offset": "+0x62c",
+    "struct_offset_dec": 1580,
+    "type": "int",
+    "getter_va": "0x1806c1f30",
+    "store_va": "0x1806bec2a",
+    "call_va": "0x1806bec25"
+  },
+  {
+    "field_index": 169,
+    "prop_name": "FightArea",
+    "struct_offset": "+0x630",
+    "struct_offset_dec": 1584,
+    "type": "int",
+    "getter_va": "0x1806c1620",
+    "store_va": "0x1806bec3c",
+    "call_va": "0x1806bec35"
+  },
+  {
+    "field_index": 170,
+    "prop_name": "CloudZone",
+    "struct_offset": "+0x640",
+    "struct_offset_dec": 1600,
+    "type": "int",
+    "getter_va": "0x1806c0ea0",
+    "store_va": "0x1806bec4c",
+    "call_va": "0x1806bec45"
+  },
+  {
+    "field_index": 171,
+    "prop_name": "CloudShow",
+    "struct_offset": "+0x650",
+    "struct_offset_dec": 1616,
+    "type": "int",
+    "getter_va": "0x1806c0e80",
+    "store_va": "0x1806bec5c",
+    "call_va": "0x1806bec55"
+  },
+  {
+    "field_index": 172,
+    "prop_name": "EntityTopNum",
+    "struct_offset": "+0x660",
+    "struct_offset_dec": 1632,
+    "type": "int",
+    "getter_va": "0x1806c1570",
+    "store_va": "0x1806bec6c",
+    "call_va": "0x1806bec65"
+  },
+  {
+    "field_index": 173,
+    "prop_name": "EntityHeight",
+    "struct_offset": "+0x664",
+    "struct_offset_dec": 1636,
+    "type": "float",
+    "getter_va": "0x1806c1540",
+    "store_va": "0x1806bec7c",
+    "call_va": "0x1806bec75"
+  },
+  {
+    "field_index": 174,
+    "prop_name": "EntityBoxHeight",
+    "struct_offset": "+0x668",
+    "struct_offset_dec": 1640,
+    "type": "float",
+    "getter_va": "0x1806c14f0",
+    "store_va": "0x1806bec8e",
+    "call_va": "0x1806bec87"
+  },
+  {
+    "field_index": 175,
+    "prop_name": "EntityFlyHeight",
+    "struct_offset": "+0x66c",
+    "struct_offset_dec": 1644,
+    "type": "float",
+    "getter_va": "0x1806c1510",
+    "store_va": "0x1806beca0",
+    "call_va": "0x1806bec99"
+  },
+  {
+    "field_index": 176,
+    "prop_name": "EntityFormHeight",
+    "struct_offset": "+0x670",
+    "struct_offset_dec": 1648,
+    "type": "float",
+    "getter_va": "0x1806c1530",
+    "store_va": "0x1806becb2",
+    "call_va": "0x1806becab"
+  },
+  {
+    "field_index": 177,
+    "prop_name": "EntityFormBoxHeight",
+    "struct_offset": "+0x674",
+    "struct_offset_dec": 1652,
+    "type": "float",
+    "getter_va": "0x1806c1520",
+    "store_va": "0x1806becc4",
+    "call_va": "0x1806becbd"
+  },
+  {
+    "field_index": 178,
+    "prop_name": "EntityOverlayHeightOffset",
+    "struct_offset": "+0x678",
+    "struct_offset_dec": 1656,
+    "type": "float",
+    "getter_va": "0x1806c1550",
+    "store_va": "0x1806becd6",
+    "call_va": "0x1806beccf"
+  },
+  {
+    "field_index": 179,
+    "prop_name": "EntityOverlayOffset",
+    "struct_offset": "+0x67c",
+    "struct_offset_dec": 1660,
+    "type": "float",
+    "getter_va": "0x1806c1560",
+    "store_va": "0x1806bece8",
+    "call_va": "0x1806bece1"
+  },
+  {
+    "field_index": 180,
+    "prop_name": "EntityCollapsedOverlayOffset",
+    "struct_offset": "+0x680",
+    "struct_offset_dec": 1664,
+    "type": "float",
+    "getter_va": "0x1806c1500",
+    "store_va": "0x1806becfa",
+    "call_va": "0x1806becf3"
+  },
+  {
+    "field_index": 181,
+    "prop_name": "EffectDamage",
+    "struct_offset": "+0x684",
+    "struct_offset_dec": 1668,
+    "type": "int",
+    "getter_va": "0x1806c1140",
+    "store_va": "0x1806bed0c",
+    "call_va": "0x1806bed05"
+  },
+  {
+    "field_index": 182,
+    "prop_name": "EffectDamageArmor",
+    "struct_offset": "+0x690",
+    "struct_offset_dec": 1680,
+    "type": "int",
+    "getter_va": "0x1806c10e0",
+    "store_va": "0x1806bed1c",
+    "call_va": "0x1806bed15"
+  },
+  {
+    "field_index": 183,
+    "prop_name": "EffectAttack",
+    "struct_offset": "+0x6a0",
+    "struct_offset_dec": 1696,
+    "type": "int",
+    "getter_va": "0x1806c0fe0",
+    "store_va": "0x1806bed2c",
+    "call_va": "0x1806bed25"
+  },
+  {
+    "field_index": 184,
+    "prop_name": "EffectHealth",
+    "struct_offset": "+0x6b0",
+    "struct_offset_dec": 1712,
+    "type": "int",
+    "getter_va": "0x1806c11c0",
+    "store_va": "0x1806bed3c",
+    "call_va": "0x1806bed35"
+  },
+  {
+    "field_index": 185,
+    "prop_name": "EffectArmor",
+    "struct_offset": "+0x6c0",
+    "struct_offset_dec": 1728,
+    "type": "int",
+    "getter_va": "0x1806c0f80",
+    "store_va": "0x1806bed4c",
+    "call_va": "0x1806bed45"
+  },
+  {
+    "field_index": 186,
+    "prop_name": "EffectDeath",
+    "struct_offset": "+0x6d0",
+    "struct_offset_dec": 1744,
+    "type": "int",
+    "getter_va": "0x1806c1160",
+    "store_va": "0x1806bed5c",
+    "call_va": "0x1806bed55"
+  },
+  {
+    "field_index": 187,
+    "prop_name": "EffectSelect",
+    "struct_offset": "+0x6e0",
+    "struct_offset_dec": 1760,
+    "type": "int",
+    "getter_va": "0x1806c1320",
+    "store_va": "0x1806bed6c",
+    "call_va": "0x1806bed65"
+  },
+  {
+    "field_index": 188,
+    "prop_name": "EffectUnusable",
+    "struct_offset": "+0x6f0",
+    "struct_offset_dec": 1776,
+    "type": "int",
+    "getter_va": "0x1806c14e0",
+    "store_va": "0x1806bed7a",
+    "call_va": "0x1806bed75"
+  },
+  {
+    "field_index": 189,
+    "prop_name": "EffectRefresh",
+    "struct_offset": "+0x700",
+    "struct_offset_dec": 1792,
+    "type": "int",
+    "getter_va": "0x1806c12e0",
+    "store_va": "0x1806bed8c",
+    "call_va": "0x1806bed85"
+  },
+  {
+    "field_index": 190,
+    "prop_name": "EffectBroken",
+    "struct_offset": "+0x710",
+    "struct_offset_dec": 1808,
+    "type": "int",
+    "getter_va": "0x1806c1020",
+    "store_va": "0x1806bed9c",
+    "call_va": "0x1806bed95"
+  },
+  {
+    "field_index": 191,
+    "prop_name": "EffectThunder",
+    "struct_offset": "+0x720",
+    "struct_offset_dec": 1824,
+    "type": "int",
+    "getter_va": "0x1806c1460",
+    "store_va": "0x1806bedac",
+    "call_va": "0x1806beda5"
+  },
+  {
+    "field_index": 192,
+    "prop_name": "EffectAlert",
+    "struct_offset": "+0x730",
+    "struct_offset_dec": 1840,
+    "type": "int",
+    "getter_va": "0x1806c0f60",
+    "store_va": "0x1806bedbc",
+    "call_va": "0x1806bedb5"
+  },
+  {
+    "field_index": 193,
+    "prop_name": "EffectTimerSelect",
+    "struct_offset": "+0x740",
+    "struct_offset_dec": 1856,
+    "type": "int",
+    "getter_va": "0x1806c14a0",
+    "store_va": "0x1806bedcc",
+    "call_va": "0x1806bedc5"
+  },
+  {
+    "field_index": 194,
+    "prop_name": "EffectDissolve",
+    "struct_offset": "+0x750",
+    "struct_offset_dec": 1872,
+    "type": "int",
+    "getter_va": "0x1806c1180",
+    "store_va": "0x1806beddc",
+    "call_va": "0x1806bedd5"
+  },
+  {
+    "field_index": 195,
+    "prop_name": "EffectTimerDisappear",
+    "struct_offset": "+0x760",
+    "struct_offset_dec": 1888,
+    "type": "int",
+    "getter_va": "0x1806c1480",
+    "store_va": "0x1806bedec",
+    "call_va": "0x1806bede5"
+  },
+  {
+    "field_index": 196,
+    "prop_name": "EffectRoleLevelRefresh",
+    "struct_offset": "+0x770",
+    "struct_offset_dec": 1904,
+    "type": "int",
+    "getter_va": "0x1806c1300",
+    "store_va": "0x1806bedfc",
+    "call_va": "0x1806bedf5"
+  },
+  {
+    "field_index": 197,
+    "prop_name": "EffectPetEating",
+    "struct_offset": "+0x780",
+    "struct_offset_dec": 1920,
+    "type": "int",
+    "getter_va": "0x1806c12a0",
+    "store_va": "0x1806bee0c",
+    "call_va": "0x1806bee05"
+  },
+  {
+    "field_index": 198,
+    "prop_name": "EffectSoulSee",
+    "struct_offset": "+0x790",
+    "struct_offset_dec": 1936,
+    "type": "int",
+    "getter_va": "0x1806c13a0",
+    "store_va": "0x1806bee1c",
+    "call_va": "0x1806bee15"
+  },
+  {
+    "field_index": 199,
+    "prop_name": "EffectShield",
+    "struct_offset": "+0x7a0",
+    "struct_offset_dec": 1952,
+    "type": "int",
+    "getter_va": "0x1806c1340",
+    "store_va": "0x1806bee2c",
+    "call_va": "0x1806bee25"
+  },
+  {
+    "field_index": 200,
+    "prop_name": "EffectTaunt",
+    "struct_offset": "+0x7b0",
+    "struct_offset_dec": 1968,
+    "type": "int",
+    "getter_va": "0x1806c13e0",
+    "store_va": "0x1806bee3c",
+    "call_va": "0x1806bee35"
+  },
+  {
+    "field_index": 201,
+    "prop_name": "EffectBan",
+    "struct_offset": "+0x7c0",
+    "struct_offset_dec": 1984,
+    "type": "int",
+    "getter_va": "0x1806c1000",
+    "store_va": "0x1806bee4c",
+    "call_va": "0x1806bee45"
+  },
+  {
+    "field_index": 202,
+    "prop_name": "EffectImmobilize",
+    "struct_offset": "+0x7d0",
+    "struct_offset_dec": 2000,
+    "type": "int",
+    "getter_va": "0x1806c1200",
+    "store_va": "0x1806bee5c",
+    "call_va": "0x1806bee55"
+  },
+  {
+    "field_index": 203,
+    "prop_name": "EffectChaos",
+    "struct_offset": "+0x7e0",
+    "struct_offset_dec": 2016,
+    "type": "int",
+    "getter_va": "0x1806c1080",
+    "store_va": "0x1806bee6c",
+    "call_va": "0x1806bee65"
+  },
+  {
+    "field_index": 204,
+    "prop_name": "EffectIcon",
+    "struct_offset": "+0x7f0",
+    "struct_offset_dec": 2032,
+    "type": "int",
+    "getter_va": "0x1806c11e0",
+    "store_va": "0x1806bee7c",
+    "call_va": "0x1806bee75"
+  },
+  {
+    "field_index": 205,
+    "prop_name": "EffectLine",
+    "struct_offset": "+0x800",
+    "struct_offset_dec": 2048,
+    "type": "int",
+    "getter_va": "0x1806c1260",
+    "store_va": "0x1806bee8c",
+    "call_va": "0x1806bee85"
+  },
+  {
+    "field_index": 206,
+    "prop_name": "EffectCardFly",
+    "struct_offset": "+0x810",
+    "struct_offset_dec": 2064,
+    "type": "int",
+    "getter_va": "0x1806c1060",
+    "store_va": "0x1806bee9c",
+    "call_va": "0x1806bee95"
+  },
+  {
+    "field_index": 207,
+    "prop_name": "EffectCardCatch",
+    "struct_offset": "+0x820",
+    "struct_offset_dec": 2080,
+    "type": "int",
+    "getter_va": "0x1806c1040",
+    "store_va": "0x1806beeac",
+    "call_va": "0x1806beea5"
+  },
+  {
+    "field_index": 208,
+    "prop_name": "EffectPoison",
+    "struct_offset": "+0x830",
+    "struct_offset_dec": 2096,
+    "type": "int",
+    "getter_va": "0x1806c12c0",
+    "store_va": "0x1806beebc",
+    "call_va": "0x1806beeb5"
+  },
+  {
+    "field_index": 209,
+    "prop_name": "EffectDamagePoison",
+    "struct_offset": "+0x840",
+    "struct_offset_dec": 2112,
+    "type": "int",
+    "getter_va": "0x1806c1120",
+    "store_va": "0x1806beecc",
+    "call_va": "0x1806beec5"
+  },
+  {
+    "field_index": 210,
+    "prop_name": "EffectSummon",
+    "struct_offset": "+0x850",
+    "struct_offset_dec": 2128,
+    "type": "int",
+    "getter_va": "0x1806c13c0",
+    "store_va": "0x1806beedc",
+    "call_va": "0x1806beed5"
+  },
+  {
+    "field_index": 211,
+    "prop_name": "EffectAttackNum",
+    "struct_offset": "+0x860",
+    "struct_offset_dec": 2144,
+    "type": "int",
+    "getter_va": "0x1806c0fc0",
+    "store_va": "0x1806beeec",
+    "call_va": "0x1806beee5"
+  },
+  {
+    "field_index": 212,
+    "prop_name": "EffectLifeTimeRed",
+    "struct_offset": "+0x870",
+    "struct_offset_dec": 2160,
+    "type": "int",
+    "getter_va": "0x1806c1240",
+    "store_va": "0x1806beefc",
+    "call_va": "0x1806beef5"
+  },
+  {
+    "field_index": 213,
+    "prop_name": "EffectFlyGift",
+    "struct_offset": "+0x880",
+    "struct_offset_dec": 2176,
+    "type": "int",
+    "getter_va": "0x1806c11a0",
+    "store_va": "0x1806bef0c",
+    "call_va": "0x1806bef05"
+  },
+  {
+    "field_index": 214,
+    "prop_name": "EffectTimerShow",
+    "struct_offset": "+0x890",
+    "struct_offset_dec": 2192,
+    "type": "int",
+    "getter_va": "0x1806c14c0",
+    "store_va": "0x1806bef1c",
+    "call_va": "0x1806bef15"
+  },
+  {
+    "field_index": 215,
+    "prop_name": "EffectCoreGoldenEat",
+    "struct_offset": "+0x8a0",
+    "struct_offset_dec": 2208,
+    "type": "int",
+    "getter_va": "0x1806c10c0",
+    "store_va": "0x1806bef2c",
+    "call_va": "0x1806bef25"
+  },
+  {
+    "field_index": 216,
+    "prop_name": "EffectCoreGoldenDone",
+    "struct_offset": "+0x8b0",
+    "struct_offset_dec": 2224,
+    "type": "int",
+    "getter_va": "0x1806c10a0",
+    "store_va": "0x1806bef3c",
+    "call_va": "0x1806bef35"
+  },
+  {
+    "field_index": 217,
+    "prop_name": "EffectThunderArray",
+    "struct_offset": "+0x8c0",
+    "struct_offset_dec": 2240,
+    "type": "int",
+    "getter_va": "0x1806c1400",
+    "store_va": "0x1806bef4c",
+    "call_va": "0x1806bef45"
+  },
+  {
+    "field_index": 218,
+    "prop_name": "EffectLevelUpTips",
+    "struct_offset": "+0x8d0",
+    "struct_offset_dec": 2256,
+    "type": "int",
+    "getter_va": "0x1806c1220",
+    "store_va": "0x1806bef5c",
+    "call_va": "0x1806bef55"
+  },
+  {
+    "field_index": 219,
+    "prop_name": "EffectThunderTips",
+    "struct_offset": "+0x8e0",
+    "struct_offset_dec": 2272,
+    "type": "int",
+    "getter_va": "0x1806c1440",
+    "store_va": "0x1806bef6c",
+    "call_va": "0x1806bef65"
+  },
+  {
+    "field_index": 220,
+    "prop_name": "EffectThunderPower",
+    "struct_offset": "+0x8f0",
+    "struct_offset_dec": 2288,
+    "type": "int",
+    "getter_va": "0x1806c1420",
+    "store_va": "0x1806bef7c",
+    "call_va": "0x1806bef75"
+  },
+  {
+    "field_index": 221,
+    "prop_name": "EffectDamageCastle",
+    "struct_offset": "+0x900",
+    "struct_offset_dec": 2304,
+    "type": "int",
+    "getter_va": "0x1806c1100",
+    "store_va": "0x1806bef8c",
+    "call_va": "0x1806bef85"
+  },
+  {
+    "field_index": 222,
+    "prop_name": "EffectShopForm",
+    "struct_offset": "+0x910",
+    "struct_offset_dec": 2320,
+    "type": "int",
+    "getter_va": "0x1806c1380",
+    "store_va": "0x1806bef9c",
+    "call_va": "0x1806bef95"
+  },
+  {
+    "field_index": 223,
+    "prop_name": "EffectShopCard",
+    "struct_offset": "+0x920",
+    "struct_offset_dec": 2336,
+    "type": "int",
+    "getter_va": "0x1806c1360",
+    "store_va": "0x1806befac",
+    "call_va": "0x1806befa5"
+  },
+  {
+    "field_index": 224,
+    "prop_name": "EffectLock",
+    "struct_offset": "+0x930",
+    "struct_offset_dec": 2352,
+    "type": "int",
+    "getter_va": "0x1806c1280",
+    "store_va": "0x1806befbc",
+    "call_va": "0x1806befb5"
+  },
+  {
+    "field_index": 225,
+    "prop_name": "EffectArrayLock",
+    "struct_offset": "+0x940",
+    "struct_offset_dec": 2368,
+    "type": "int",
+    "getter_va": "0x1806c0fa0",
+    "store_va": "0x1806befcc",
+    "call_va": "0x1806befc5"
+  },
+  {
+    "field_index": 226,
+    "prop_name": "RoleLevelUpTips",
+    "struct_offset": "+0x950",
+    "struct_offset_dec": 2384,
+    "type": "int",
+    "getter_va": "0x1806c1920",
+    "store_va": "0x1806befdc",
+    "call_va": "0x1806befd5"
+  },
+  {
+    "field_index": 227,
+    "prop_name": "NewWidgetTips",
+    "struct_offset": "+0x960",
+    "struct_offset_dec": 2400,
+    "type": "int",
+    "getter_va": "0x1806c17b0",
+    "store_va": "0x1806befec",
+    "call_va": "0x1806befe5"
+  },
+  {
+    "field_index": 228,
+    "prop_name": "SoulLevelUpTips",
+    "struct_offset": "+0x970",
+    "struct_offset_dec": 2416,
+    "type": "int",
+    "getter_va": "0x1806c1950",
+    "store_va": "0x1806beffc",
+    "call_va": "0x1806beff5"
+  },
+  {
+    "field_index": 229,
+    "prop_name": "MapAreaExpandTips",
+    "struct_offset": "+0x980",
+    "struct_offset_dec": 2432,
+    "type": "int",
+    "getter_va": "0x1806c1780",
+    "store_va": "0x1806bf00a",
+    "call_va": "0x1806bf005"
+  },
+  {
+    "field_index": 230,
+    "prop_name": "NpcWishTips",
+    "struct_offset": "+0x990",
+    "struct_offset_dec": 2448,
+    "type": "int",
+    "getter_va": "0x1806c1870",
+    "store_va": "0x1806bf01c",
+    "call_va": "0x1806bf015"
+  },
+  {
+    "field_index": 231,
+    "prop_name": "CoreGoldenWishTips",
+    "struct_offset": "+0x9a0",
+    "struct_offset_dec": 2464,
+    "type": "int",
+    "getter_va": "0x1806c0f40",
+    "store_va": "0x1806bf02c",
+    "call_va": "0x1806bf025"
+  },
+  {
+    "field_index": 232,
+    "prop_name": "QuaUpgradeTips",
+    "struct_offset": "+0x9b0",
+    "struct_offset_dec": 2480,
+    "type": "int",
+    "getter_va": "0x1806c18d0",
+    "store_va": "0x1806bf03c",
+    "call_va": "0x1806bf035"
+  },
+  {
+    "field_index": 233,
+    "prop_name": "NpcTalkTips",
+    "struct_offset": "+0x9c0",
+    "struct_offset_dec": 2496,
+    "type": "int",
+    "getter_va": "0x1806c1850",
+    "store_va": "0x1806bf04c",
+    "call_va": "0x1806bf045"
+  },
+  {
+    "field_index": 234,
+    "prop_name": "BaseCanNpcEnemyCard",
+    "struct_offset": "+0x9d0",
+    "struct_offset_dec": 2512,
+    "type": "list_int",
+    "getter_va": "0x1806c0be0",
+    "store_va": "0x1806bf0bb",
+    "call_va": null
+  },
+  {
+    "field_index": 235,
+    "prop_name": "BaseCanFightEnemyCard",
+    "struct_offset": "+0x9d8",
+    "struct_offset_dec": 2520,
+    "type": "list_int",
+    "getter_va": "0x1806c0b80",
+    "store_va": "0x1806bf16b",
+    "call_va": null
+  },
+  {
+    "field_index": 236,
+    "prop_name": "BaseCanEatEnemyCard",
+    "struct_offset": "+0x9e0",
+    "struct_offset_dec": 2528,
+    "type": "list_int",
+    "getter_va": "0x1806c0b30",
+    "store_va": "0x1806bf21b",
+    "call_va": null
+  },
+  {
+    "field_index": 237,
+    "prop_name": "BaseCanEatPetCard",
+    "struct_offset": "+0x9e8",
+    "struct_offset_dec": 2536,
+    "type": "list_int",
+    "getter_va": "0x1806c0b40",
+    "store_va": "0x1806bf2cb",
+    "call_va": null
+  },
+  {
+    "field_index": 238,
+    "prop_name": "BaseCanRoleForm",
+    "struct_offset": "+0x9f0",
+    "struct_offset_dec": 2544,
+    "type": "list_int",
+    "getter_va": "0x1806c0c20",
+    "store_va": "0x1806bf37b",
+    "call_va": null
+  },
+  {
+    "field_index": 239,
+    "prop_name": "BaseCanMapCheckCard",
+    "struct_offset": "+0xa00",
+    "struct_offset_dec": 2560,
+    "type": "list_int",
+    "getter_va": "0x1806c0bc0",
+    "store_va": "0x1806bf42b",
+    "call_va": null
+  },
+  {
+    "field_index": 240,
+    "prop_name": "BaseCanMapNeedCard",
+    "struct_offset": "+0xa08",
+    "struct_offset_dec": 2568,
+    "type": "list_int",
+    "getter_va": "0x1806c0bd0",
+    "store_va": "0x1806bf4db",
+    "call_va": null
+  },
+  {
+    "field_index": 241,
+    "prop_name": "BaseCanEnergyCostCard",
+    "struct_offset": "+0xa10",
+    "struct_offset_dec": 2576,
+    "type": "list_int",
+    "getter_va": "0x1806c0b50",
+    "store_va": "0x1806bf58b",
+    "call_va": null
+  },
+  {
+    "field_index": 242,
+    "prop_name": "BaseCanFightDeathTalent",
+    "struct_offset": "+0xa18",
+    "struct_offset_dec": 2584,
+    "type": "list_int",
+    "getter_va": "0x1806c0b70",
+    "store_va": "0x1806bf63b",
+    "call_va": null
+  },
+  {
+    "field_index": 243,
+    "prop_name": "BaseCanFightDeathPrize",
+    "struct_offset": "+0xa20",
+    "struct_offset_dec": 2592,
+    "type": "list_int",
+    "getter_va": "0x1806c0b60",
+    "store_va": "0x1806bf6eb",
+    "call_va": null
+  },
+  {
+    "field_index": 244,
+    "prop_name": "BaseCanStackCard",
+    "struct_offset": "+0xa28",
+    "struct_offset_dec": 2600,
+    "type": "list_int",
+    "getter_va": "0x1806c0c50",
+    "store_va": "0x1806bf79b",
+    "call_va": null
+  },
+  {
+    "field_index": 245,
+    "prop_name": "BaseCanFightWinRecoverHealth",
+    "struct_offset": "+0xa30",
+    "struct_offset_dec": 2608,
+    "type": "list_int",
+    "getter_va": "0x1806c0b90",
+    "store_va": "0x1806bf84b",
+    "call_va": null
+  },
+  {
+    "field_index": 246,
+    "prop_name": "BaseCanShowLevel",
+    "struct_offset": "+0xa38",
+    "struct_offset_dec": 2616,
+    "type": "list_int",
+    "getter_va": "0x1806c0c40",
+    "store_va": "0x1806bf8ff",
+    "call_va": null
+  },
+  {
+    "field_index": 247,
+    "prop_name": "BaseCanPriceCard",
+    "struct_offset": "+0xa40",
+    "struct_offset_dec": 2624,
+    "type": "list_int",
+    "getter_va": "0x1806c0c00",
+    "store_va": "0x1806bf9ba",
+    "call_va": null
+  },
+  {
+    "field_index": 248,
+    "prop_name": "BaseCanFlyDownDelCard",
+    "struct_offset": "+0xa50",
+    "struct_offset_dec": 2640,
+    "type": "list_int",
+    "getter_va": "0x1806c0bb0",
+    "store_va": "0x1806bfa6a",
+    "call_va": null
+  },
+  {
+    "field_index": 249,
+    "prop_name": "BaseCanFlyCheckCard",
+    "struct_offset": "+0xa58",
+    "struct_offset_dec": 2648,
+    "type": "list_int",
+    "getter_va": "0x1806c0ba0",
+    "store_va": "0x1806bfb1a",
+    "call_va": null
+  },
+  {
+    "field_index": 250,
+    "prop_name": "BaseCanRoleHeadIcon",
+    "struct_offset": "+0xa60",
+    "struct_offset_dec": 2656,
+    "type": "list_int",
+    "getter_va": "0x1806c0c30",
+    "store_va": "0x1806bfbca",
+    "call_va": null
+  },
+  {
+    "field_index": 251,
+    "prop_name": "BaseMagicNumber",
+    "struct_offset": "+0xa68",
+    "struct_offset_dec": 2664,
+    "type": "string",
+    "getter_va": "0x1806c0c60",
+    "store_va": "0x1806bfc20",
+    "call_va": "0x1806bfc14"
+  },
+  {
+    "field_index": 252,
+    "prop_name": "MakeTimerInit",
+    "struct_offset": "+0xa70",
+    "struct_offset_dec": 2672,
+    "type": "string",
+    "getter_va": "0x1806c1760",
+    "store_va": "0x1806bfc40",
+    "call_va": "0x1806bfc14"
+  },
+  {
+    "field_index": 253,
+    "prop_name": "ProduceTimerInit",
+    "struct_offset": "+0xa78",
+    "struct_offset_dec": 2680,
+    "type": "string",
+    "getter_va": "0x1806c18b0",
+    "store_va": "0x1806bfc60",
+    "call_va": "0x1806bfc14"
+  },
+  {
+    "field_index": 254,
+    "prop_name": "ExploreTimerInit",
+    "struct_offset": "+0xa80",
+    "struct_offset_dec": 2688,
+    "type": "list_int",
+    "getter_va": "0x1806c1600",
+    "store_va": "0x1806bfc80",
+    "call_va": null
+  },
+  {
+    "field_index": 255,
+    "prop_name": "OnceTimerHide",
+    "struct_offset": "+0xa88",
+    "struct_offset_dec": 2696,
+    "type": "list_int",
+    "getter_va": "0x1806c1880",
+    "store_va": "0x1806bfcfd",
+    "call_va": null
+  },
+  {
+    "field_index": 256,
+    "prop_name": "ExpLevelUp",
+    "struct_offset": "+0xa90",
+    "struct_offset_dec": 2704,
+    "type": "int",
+    "getter_va": "0x1806c15d0",
+    "store_va": "0x1806bfd4f",
+    "call_va": "0x1806bfd48"
+  },
+  {
+    "field_index": 257,
+    "prop_name": "ExpLevelUpPet",
+    "struct_offset": "+0xaa0",
+    "struct_offset_dec": 2720,
+    "type": "int",
+    "getter_va": "0x1806c15b0",
+    "store_va": "0x1806bfd5f",
+    "call_va": "0x1806bfd58"
+  },
+  {
+    "field_index": 258,
+    "prop_name": "WidgetEmpty",
+    "struct_offset": "+0xab0",
+    "struct_offset_dec": 2736,
+    "type": "int",
+    "getter_va": "0x1806c1f60",
+    "store_va": "0x1806bfd6f",
+    "call_va": "0x1806bfd68"
+  },
+  {
+    "field_index": 259,
+    "prop_name": "NpcHighLevelPeep",
+    "struct_offset": "+0xac0",
+    "struct_offset_dec": 2752,
+    "type": "int",
+    "getter_va": "0x1806c1810",
+    "store_va": "0x1806bfd7f",
+    "call_va": "0x1806bfd78"
+  },
+  {
+    "field_index": 260,
+    "prop_name": "NpcLevelPeep",
+    "struct_offset": "+0xad0",
+    "struct_offset_dec": 2768,
+    "type": "int",
+    "getter_va": "0x1806c1830",
+    "store_va": "0x1806bfd8f",
+    "call_va": "0x1806bfd88"
+  },
+  {
+    "field_index": 261,
+    "prop_name": "Guide9004",
+    "struct_offset": "+0xae0",
+    "struct_offset_dec": 2784,
+    "type": "int",
+    "getter_va": "0x1806c1660",
+    "store_va": "0x1806bfd9f",
+    "call_va": "0x1806bfd98"
+  },
+  {
+    "field_index": 262,
+    "prop_name": "MakePotionFail",
+    "struct_offset": "+0xaf0",
+    "struct_offset_dec": 2800,
+    "type": "int",
+    "getter_va": "0x1806c1740",
+    "store_va": "0x1806bfdaf",
+    "call_va": "0x1806bfda8"
+  },
+  {
+    "field_index": 263,
+    "prop_name": "AdverseFunc",
+    "struct_offset": "+0xb00",
+    "struct_offset_dec": 2816,
+    "type": "int",
+    "getter_va": "0x1806c0b00",
+    "store_va": "0x1806bfdbf",
+    "call_va": "0x1806bfdb8"
+  },
+  {
+    "field_index": 264,
+    "prop_name": "ExpPrizeId",
+    "struct_offset": "+0xb10",
+    "struct_offset_dec": 2832,
+    "type": "int",
+    "getter_va": "0x1806c15f0",
+    "store_va": "0x1806bfdcf",
+    "call_va": "0x1806bfdc8"
+  },
+  {
+    "field_index": 265,
+    "prop_name": "InsightFunc",
+    "struct_offset": "+0xb20",
+    "struct_offset_dec": 2848,
+    "type": "int",
+    "getter_va": "0x1806c16c0",
+    "store_va": "0x1806bfddf",
+    "call_va": "0x1806bfdd8"
+  },
+  {
+    "field_index": 266,
+    "prop_name": "KillCardId",
+    "struct_offset": "+0xb30",
+    "struct_offset_dec": 2864,
+    "type": "int",
+    "getter_va": "0x1806c1700",
+    "store_va": "0x1806bfdef",
+    "call_va": "0x1806bfde8"
+  },
+  {
+    "field_index": 267,
+    "prop_name": "KillCardFunc",
+    "struct_offset": "+0xb40",
+    "struct_offset_dec": 2880,
+    "type": "int",
+    "getter_va": "0x1806c16e0",
+    "store_va": "0x1806bfdff",
+    "call_va": "0x1806bfdf8"
+  },
+  {
+    "field_index": 268,
+    "prop_name": "PinCardId",
+    "struct_offset": "+0xb50",
+    "struct_offset_dec": 2896,
+    "type": "int",
+    "getter_va": "0x1806c18a0",
+    "store_va": "0x1806bfe0f",
+    "call_va": "0x1806bfe08"
+  },
+  {
+    "field_index": 269,
+    "prop_name": "LuckyPrizeId",
+    "struct_offset": "+0xb60",
+    "struct_offset_dec": 2912,
+    "type": "int",
+    "getter_va": "0x1806c1720",
+    "store_va": "0x1806bfe1f",
+    "call_va": "0x1806bfe18"
+  },
+  {
+    "field_index": 270,
+    "prop_name": "GhostPrizeId",
+    "struct_offset": "+0xb70",
+    "struct_offset_dec": 2928,
+    "type": "int",
+    "getter_va": "0x1806c1640",
+    "store_va": "0x1806bfe2f",
+    "call_va": "0x1806bfe28"
+  },
+  {
+    "field_index": 271,
+    "prop_name": "NewbieSplashEndTalk",
+    "struct_offset": "+0xb80",
+    "struct_offset_dec": 2944,
+    "type": "list_int",
+    "getter_va": "0x1806c17e0",
+    "store_va": "0x1806bfea1",
+    "call_va": null
+  },
+  {
+    "field_index": 272,
+    "prop_name": "NewbieRoleShakeEndNarration",
+    "struct_offset": "+0xb88",
+    "struct_offset_dec": 2952,
+    "type": "list_int",
+    "getter_va": "0x1806c17d0",
+    "store_va": "0x1806bff01",
+    "call_va": null
+  },
+  {
+    "field_index": 273,
+    "prop_name": "NewbieTimerStartTalk",
+    "struct_offset": "+0xb90",
+    "struct_offset_dec": 2960,
+    "type": "list_int",
+    "getter_va": "0x1806c17f0",
+    "store_va": "0x1806bff7e",
+    "call_va": null
+  },
+  {
+    "field_index": 274,
+    "prop_name": "NewbieRoleFirstDungeon",
+    "struct_offset": "+0xb98",
+    "struct_offset_dec": 2968,
+    "type": "list_int",
+    "getter_va": "0x1806c17c0",
+    "store_va": "0x1806bffd5",
+    "call_va": null
+  },
+  {
+    "field_index": 275,
+    "prop_name": "SpiritStoneId",
+    "struct_offset": "+0xba0",
+    "struct_offset_dec": 2976,
+    "type": "int",
+    "getter_va": "0x1806c1d90",
+    "store_va": "0x1806bfff0",
+    "call_va": "0x1806bffe9"
+  },
+  {
+    "field_index": 276,
+    "prop_name": "CatchHighLevel",
+    "struct_offset": "+0xbb0",
+    "struct_offset_dec": 2992,
+    "type": "int",
+    "getter_va": "0x1806c0e60",
+    "store_va": "0x1806c0000",
+    "call_va": "0x1806bfff9"
+  },
+  {
+    "field_index": 277,
+    "prop_name": "CatchFail",
+    "struct_offset": "+0xbc0",
+    "struct_offset_dec": 3008,
+    "type": "int",
+    "getter_va": "0x1806c0e40",
+    "store_va": "0x1806c0010",
+    "call_va": "0x1806c0009"
+  },
+  {
+    "field_index": 278,
+    "prop_name": "CatchCanNot",
+    "struct_offset": "+0xbd0",
+    "struct_offset_dec": 3024,
+    "type": "int",
+    "getter_va": "0x1806c0e20",
+    "store_va": "0x1806c0020",
+    "call_va": "0x1806c0019"
+  },
+  {
+    "field_index": 279,
+    "prop_name": "CoreEmptyId",
+    "struct_offset": "+0xbe0",
+    "struct_offset_dec": 3040,
+    "type": "int",
+    "getter_va": "0x1806c0ec0",
+    "store_va": "0x1806c0030",
+    "call_va": "0x1806c0029"
+  },
+  {
+    "field_index": 280,
+    "prop_name": "CoreGoldenWishNum",
+    "struct_offset": "+0xbf0",
+    "struct_offset_dec": 3056,
+    "type": "list_int",
+    "getter_va": "0x1806c0f20",
+    "store_va": "0x1806c00aa",
+    "call_va": null
+  },
+  {
+    "field_index": 281,
+    "prop_name": "CoreGoldenThunderWin",
+    "struct_offset": "+0xbf8",
+    "struct_offset_dec": 3064,
+    "type": "list_int",
+    "getter_va": "0x1806c0f10",
+    "store_va": "0x1806c016e",
+    "call_va": null
+  },
+  {
+    "field_index": 282,
+    "prop_name": "CoreGoldenThunderLose",
+    "struct_offset": "+0xc00",
+    "struct_offset_dec": 3072,
+    "type": "list_int",
+    "getter_va": "0x1806c0f00",
+    "store_va": "0x1806c0222",
+    "call_va": null
+  },
+  {
+    "field_index": 283,
+    "prop_name": "ThunderPowerId",
+    "struct_offset": "+0xc08",
+    "struct_offset_dec": 3080,
+    "type": "int",
+    "getter_va": "0x1806c1db0",
+    "store_va": "0x1806c027c",
+    "call_va": "0x1806c0275"
+  },
+  {
+    "field_index": 284,
+    "prop_name": "ThunderPowerPrize",
+    "struct_offset": "+0xc18",
+    "struct_offset_dec": 3096,
+    "type": "list_int",
+    "getter_va": "0x1806c1dc0",
+    "store_va": "0x1806c02ee",
+    "call_va": null
+  },
+  {
+    "field_index": 285,
+    "prop_name": "CoreGoldenFlyConf",
+    "struct_offset": "+0xc20",
+    "struct_offset_dec": 3104,
+    "type": "list_int",
+    "getter_va": "0x1806c0ed0",
+    "store_va": "0x1806c03a2",
+    "call_va": null
+  },
+  {
+    "field_index": 286,
+    "prop_name": "CoreGoldenFlyPrize",
+    "struct_offset": "+0xc28",
+    "struct_offset_dec": 3112,
+    "type": "int",
+    "getter_va": "0x1806c0ef0",
+    "store_va": "0x1806c0447",
+    "call_va": "0x1806c0440"
+  },
+  {
+    "field_index": 287,
+    "prop_name": "SpawnMonsterWin",
+    "struct_offset": "+0xc38",
+    "struct_offset_dec": 3128,
+    "type": "list_int",
+    "getter_va": "0x1806c1d50",
+    "store_va": "0x1806c04b9",
+    "call_va": null
+  },
+  {
+    "field_index": 288,
+    "prop_name": "ExpLevelUpErrorTips",
+    "struct_offset": "+0xc40",
+    "struct_offset_dec": 3136,
+    "type": "int",
+    "getter_va": "0x1806c1590",
+    "store_va": "0x1806c050c",
+    "call_va": "0x1806c0505"
+  },
+  {
+    "field_index": 289,
+    "prop_name": "InsightFight",
+    "struct_offset": "+0xc50",
+    "struct_offset_dec": 3152,
+    "type": "list_int",
+    "getter_va": "0x1806c16a0",
+    "store_va": "0x1806c057e",
+    "call_va": null
+  },
+  {
+    "field_index": 290,
+    "prop_name": "InsightFightSword",
+    "struct_offset": "+0xc60",
+    "struct_offset_dec": 3168,
+    "type": "list_int",
+    "getter_va": "0x1806c1680",
+    "store_va": "0x1806c067b",
+    "call_va": null
+  },
+  {
+    "field_index": 291,
+    "prop_name": "SoundCardFly",
+    "struct_offset": "+0xc70",
+    "struct_offset_dec": 3184,
+    "type": "int",
+    "getter_va": "0x1806c19e0",
+    "store_va": "0x1806c0716",
+    "call_va": "0x1806c070f"
+  },
+  {
+    "field_index": 292,
+    "prop_name": "SoundCardShake",
+    "struct_offset": "+0xc80",
+    "struct_offset_dec": 3200,
+    "type": "int",
+    "getter_va": "0x1806c1a40",
+    "store_va": "0x1806c0726",
+    "call_va": "0x1806c071f"
+  },
+  {
+    "field_index": 293,
+    "prop_name": "SoundCardDead",
+    "struct_offset": "+0xc90",
+    "struct_offset_dec": 3216,
+    "type": "int",
+    "getter_va": "0x1806c19a0",
+    "store_va": "0x1806c0736",
+    "call_va": "0x1806c072f"
+  },
+  {
+    "field_index": 294,
+    "prop_name": "SoundCardPickUp",
+    "struct_offset": "+0xca0",
+    "struct_offset_dec": 3232,
+    "type": "int",
+    "getter_va": "0x1806c1a20",
+    "store_va": "0x1806c0746",
+    "call_va": "0x1806c073f"
+  },
+  {
+    "field_index": 295,
+    "prop_name": "SoundCardStack",
+    "struct_offset": "+0xcb0",
+    "struct_offset_dec": 3248,
+    "type": "int",
+    "getter_va": "0x1806c1a60",
+    "store_va": "0x1806c0756",
+    "call_va": "0x1806c074f"
+  },
+  {
+    "field_index": 296,
+    "prop_name": "SoundCardHit",
+    "struct_offset": "+0xcc0",
+    "struct_offset_dec": 3264,
+    "type": "int",
+    "getter_va": "0x1806c1a00",
+    "store_va": "0x1806c0766",
+    "call_va": "0x1806c075f"
+  },
+  {
+    "field_index": 297,
+    "prop_name": "SoundCardFlyDeath",
+    "struct_offset": "+0xcd0",
+    "struct_offset_dec": 3280,
+    "type": "int",
+    "getter_va": "0x1806c19c0",
+    "store_va": "0x1806c0776",
+    "call_va": "0x1806c076f"
+  },
+  {
+    "field_index": 298,
+    "prop_name": "SoundCardTalk",
+    "struct_offset": "+0xce0",
+    "struct_offset_dec": 3296,
+    "type": "int",
+    "getter_va": "0x1806c1a80",
+    "store_va": "0x1806c0786",
+    "call_va": "0x1806c077f"
+  },
+  {
+    "field_index": 299,
+    "prop_name": "SoundConflictStart",
+    "struct_offset": "+0xcf0",
+    "struct_offset_dec": 3312,
+    "type": "int",
+    "getter_va": "0x1806c1ae0",
+    "store_va": "0x1806c0796",
+    "call_va": "0x1806c078f"
+  },
+  {
+    "field_index": 300,
+    "prop_name": "SoundConflictJoin",
+    "struct_offset": "+0xd00",
+    "struct_offset_dec": 3328,
+    "type": "int",
+    "getter_va": "0x1806c1ac0",
+    "store_va": "0x1806c07a6",
+    "call_va": "0x1806c079f"
+  },
+  {
+    "field_index": 301,
+    "prop_name": "SoundCardBuy",
+    "struct_offset": "+0xd10",
+    "struct_offset_dec": 3344,
+    "type": "int",
+    "getter_va": "0x1806c1980",
+    "store_va": "0x1806c07b6",
+    "call_va": "0x1806c07af"
+  },
+  {
+    "field_index": 302,
+    "prop_name": "SoundCardUse",
+    "struct_offset": "+0xd20",
+    "struct_offset_dec": 3360,
+    "type": "int",
+    "getter_va": "0x1806c1aa0",
+    "store_va": "0x1806c07c6",
+    "call_va": "0x1806c07bf"
+  },
+  {
+    "field_index": 303,
+    "prop_name": "SoundRoleAddEnergy",
+    "struct_offset": "+0xd30",
+    "struct_offset_dec": 3376,
+    "type": "int",
+    "getter_va": "0x1806c1b80",
+    "store_va": "0x1806c07d6",
+    "call_va": "0x1806c07cf"
+  },
+  {
+    "field_index": 304,
+    "prop_name": "SoundNpcAddRoleWish",
+    "struct_offset": "+0xd40",
+    "struct_offset_dec": 3392,
+    "type": "int",
+    "getter_va": "0x1806c1b20",
+    "store_va": "0x1806c07e6",
+    "call_va": "0x1806c07df"
+  },
+  {
+    "field_index": 305,
+    "prop_name": "SoundNpcAddStone",
+    "struct_offset": "+0xd50",
+    "struct_offset_dec": 3408,
+    "type": "int",
+    "getter_va": "0x1806c1b40",
+    "store_va": "0x1806c07f6",
+    "call_va": "0x1806c07ef"
+  },
+  {
+    "field_index": 306,
+    "prop_name": "SoundNpcAddWish",
+    "struct_offset": "+0xd60",
+    "struct_offset_dec": 3424,
+    "type": "int",
+    "getter_va": "0x1806c1b60",
+    "store_va": "0x1806c0806",
+    "call_va": "0x1806c07ff"
+  },
+  {
+    "field_index": 307,
+    "prop_name": "SoundEnterWidget",
+    "struct_offset": "+0xd70",
+    "struct_offset_dec": 3440,
+    "type": "int",
+    "getter_va": "0x1806c1b00",
+    "store_va": "0x1806c0816",
+    "call_va": "0x1806c080f"
+  },
+  {
+    "field_index": 308,
+    "prop_name": "SoundUiButtonDown",
+    "struct_offset": "+0xd80",
+    "struct_offset_dec": 3456,
+    "type": "int",
+    "getter_va": "0x1806c1be0",
+    "store_va": "0x1806c0826",
+    "call_va": "0x1806c081f"
+  },
+  {
+    "field_index": 309,
+    "prop_name": "SoundUiButtonMainDown",
+    "struct_offset": "+0xd90",
+    "struct_offset_dec": 3472,
+    "type": "int",
+    "getter_va": "0x1806c1c20",
+    "store_va": "0x1806c0836",
+    "call_va": "0x1806c082f"
+  },
+  {
+    "field_index": 310,
+    "prop_name": "SoundUiButtonEnter",
+    "struct_offset": "+0xda0",
+    "struct_offset_dec": 3488,
+    "type": "int",
+    "getter_va": "0x1806c1c00",
+    "store_va": "0x1806c0844",
+    "call_va": "0x1806c083f"
+  },
+  {
+    "field_index": 311,
+    "prop_name": "SoundUiOpenTips",
+    "struct_offset": "+0xdb0",
+    "struct_offset_dec": 3504,
+    "type": "int",
+    "getter_va": "0x1806c1ce0",
+    "store_va": "0x1806c0856",
+    "call_va": "0x1806c084f"
+  },
+  {
+    "field_index": 312,
+    "prop_name": "SoundUiTaskCollect",
+    "struct_offset": "+0xdc0",
+    "struct_offset_dec": 3520,
+    "type": "int",
+    "getter_va": "0x1806c1d20",
+    "store_va": "0x1806c0866",
+    "call_va": "0x1806c085f"
+  },
+  {
+    "field_index": 313,
+    "prop_name": "SoundUiOpenForm",
+    "struct_offset": "+0xdd0",
+    "struct_offset_dec": 3536,
+    "type": "int",
+    "getter_va": "0x1806c1cc0",
+    "store_va": "0x1806c0876",
+    "call_va": "0x1806c086f"
+  },
+  {
+    "field_index": 314,
+    "prop_name": "SoundUiGameAgeEnd",
+    "struct_offset": "+0xde0",
+    "struct_offset_dec": 3552,
+    "type": "int",
+    "getter_va": "0x1806c1c60",
+    "store_va": "0x1806c0886",
+    "call_va": "0x1806c087f"
+  },
+  {
+    "field_index": 315,
+    "prop_name": "SoundUiCutSceneForm",
+    "struct_offset": "+0xdf0",
+    "struct_offset_dec": 3568,
+    "type": "int",
+    "getter_va": "0x1806c1c40",
+    "store_va": "0x1806c0896",
+    "call_va": "0x1806c088f"
+  },
+  {
+    "field_index": 316,
+    "prop_name": "SoundUiNarrationClick",
+    "struct_offset": "+0xe00",
+    "struct_offset_dec": 3584,
+    "type": "int",
+    "getter_va": "0x1806c1ca0",
+    "store_va": "0x1806c08a6",
+    "call_va": "0x1806c089f"
+  },
+  {
+    "field_index": 317,
+    "prop_name": "SoundUiGuideClick",
+    "struct_offset": "+0xe10",
+    "struct_offset_dec": 3600,
+    "type": "int",
+    "getter_va": "0x1806c1c80",
+    "store_va": "0x1806c08b6",
+    "call_va": "0x1806c08af"
+  },
+  {
+    "field_index": 318,
+    "prop_name": "SoundUiSplashPat",
+    "struct_offset": "+0xe20",
+    "struct_offset_dec": 3616,
+    "type": "int",
+    "getter_va": "0x1806c1d00",
+    "store_va": "0x1806c08c6",
+    "call_va": "0x1806c08bf"
+  },
+  {
+    "field_index": 319,
+    "prop_name": "SoundTimerPutCard",
+    "struct_offset": "+0xe30",
+    "struct_offset_dec": 3632,
+    "type": "int",
+    "getter_va": "0x1806c1bc0",
+    "store_va": "0x1806c08d6",
+    "call_va": "0x1806c08cf"
+  },
+  {
+    "field_index": 320,
+    "prop_name": "SoundTimerPrizeEnd",
+    "struct_offset": "+0xe40",
+    "struct_offset_dec": 3648,
+    "type": "int",
+    "getter_va": "0x1806c1ba0",
+    "store_va": "0x1806c08e6",
+    "call_va": "0x1806c08df"
+  },
+  {
+    "field_index": 321,
+    "prop_name": "SoundWidgetNewTips",
+    "struct_offset": "+0xe50",
+    "struct_offset_dec": 3664,
+    "type": "int",
+    "getter_va": "0x1806c1d40",
+    "store_va": "0x1806c08f6",
+    "call_va": "0x1806c08ef"
+  },
+  {
+    "field_index": 322,
+    "prop_name": "UiSettingScreenFullName_l10n_key",
+    "struct_offset": "+0xe68",
+    "struct_offset_dec": 3688,
+    "type": "string",
+    "getter_va": "0x1806c1e70",
+    "store_va": "0x1806c090b",
+    "call_va": "0x1806c08ff"
+  },
+  {
+    "field_index": 323,
+    "prop_name": "UiSettingScreenFullName",
+    "struct_offset": "+0xe60",
+    "struct_offset_dec": 3680,
+    "type": "string",
+    "getter_va": "0x1806c1e80",
+    "store_va": "0x1806c092b",
+    "call_va": "0x1806c091f"
+  },
+  {
+    "field_index": 324,
+    "prop_name": "UiSettingScreenHalfName_l10n_key",
+    "struct_offset": "+0xe78",
+    "struct_offset_dec": 3704,
+    "type": "string",
+    "getter_va": "0x1806c1e90",
+    "store_va": "0x1806c094b",
+    "call_va": "0x1806c093f"
+  },
+  {
+    "field_index": 325,
+    "prop_name": "UiSettingScreenHalfName",
+    "struct_offset": "+0xe70",
+    "struct_offset_dec": 3696,
+    "type": "string",
+    "getter_va": "0x1806c1ea0",
+    "store_va": "0x1806c096b",
+    "call_va": "0x1806c095f"
+  },
+  {
+    "field_index": 326,
+    "prop_name": "UiRecordNoneName_l10n_key",
+    "struct_offset": "+0xe88",
+    "struct_offset_dec": 3720,
+    "type": "string",
+    "getter_va": "0x1806c1e50",
+    "store_va": "0x1806c098b",
+    "call_va": "0x1806c097f"
+  },
+  {
+    "field_index": 327,
+    "prop_name": "UiRecordNoneName",
+    "struct_offset": "+0xe80",
+    "struct_offset_dec": 3712,
+    "type": "string",
+    "getter_va": "0x1806c1e60",
+    "store_va": "0x1806c09ab",
+    "call_va": "0x1806c099f"
+  },
+  {
+    "field_index": 328,
+    "prop_name": "UiMenuFormVersion_l10n_key",
+    "struct_offset": "+0xe98",
+    "struct_offset_dec": 3736,
+    "type": "string",
+    "getter_va": "0x1806c1e10",
+    "store_va": "0x1806c09cb",
+    "call_va": "0x1806c09bf"
+  },
+  {
+    "field_index": 329,
+    "prop_name": "UiMenuFormVersion",
+    "struct_offset": "+0xe90",
+    "struct_offset_dec": 3728,
+    "type": "string",
+    "getter_va": "0x1806c1e20",
+    "store_va": "0x1806c09eb",
+    "call_va": "0x1806c09df"
+  },
+  {
+    "field_index": 330,
+    "prop_name": "UiShopStoneNumTipsName_l10n_key",
+    "struct_offset": "+0xea8",
+    "struct_offset_dec": 3752,
+    "type": "string",
+    "getter_va": "0x1806c1eb0",
+    "store_va": "0x1806c0a0b",
+    "call_va": "0x1806c09ff"
+  },
+  {
+    "field_index": 331,
+    "prop_name": "UiShopStoneNumTipsName",
+    "struct_offset": "+0xea0",
+    "struct_offset_dec": 3744,
+    "type": "string",
+    "getter_va": "0x1806c1ec0",
+    "store_va": "0x1806c0a2b",
+    "call_va": "0x1806c0a1f"
+  },
+  {
+    "field_index": 332,
+    "prop_name": "UiStoneNumTipsName_l10n_key",
+    "struct_offset": "+0xeb8",
+    "struct_offset_dec": 3768,
+    "type": "string",
+    "getter_va": "0x1806c1ed0",
+    "store_va": "0x1806c0a4b",
+    "call_va": "0x1806c0a3f"
+  },
+  {
+    "field_index": 333,
+    "prop_name": "UiStoneNumTipsName",
+    "struct_offset": "+0xeb0",
+    "struct_offset_dec": 3760,
+    "type": "string",
+    "getter_va": "0x1806c1ee0",
+    "store_va": "0x1806c0a6b",
+    "call_va": "0x1806c0a5f"
+  },
+  {
+    "field_index": 334,
+    "prop_name": "UiMenuRecoverSuccessName_l10n_key",
+    "struct_offset": "+0xec8",
+    "struct_offset_dec": 3784,
+    "type": "string",
+    "getter_va": "0x1806c1e30",
+    "store_va": "0x1806c0a8b",
+    "call_va": "0x1806c0a7f"
+  },
+  {
+    "field_index": 335,
+    "prop_name": "UiMenuRecoverSuccessName",
+    "struct_offset": "+0xec0",
+    "struct_offset_dec": 3776,
+    "type": "string",
+    "getter_va": "0x1806c1e40",
+    "store_va": "0x1806c0aab",
+    "call_va": "0x1806c0a9f"
+  }
+]

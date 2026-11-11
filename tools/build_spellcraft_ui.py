@@ -340,7 +340,7 @@ if __name__=='__main__':
         if not Path(str(path)+'.meta').exists():meta(path,uuid.uuid5(uuid.NAMESPACE_URL,'cardkkk/spellcraft/'+name).hex,True)
     ui,root,view=build()
     prefab=OUT/'Prefabs/ForgeView.prefab';prefab.write_text(ui.dump(),encoding='utf-8');meta(prefab,GUID['prefab'])
-    level=OUT/'Scenes/Spellcraft.unity';level.write_text(scene(root,view),encoding='utf-8');meta(level,GUID['scene'])
+    level=ROOT/'Assets/Archives/Scenes/Spellcraft.unity';level.write_text(scene(root,view),encoding='utf-8');meta(level,GUID['scene'])
     for name,key in [('ForgeView','view'),('ForgeCardView','card'),('ForgeDeviceView','device')]:meta(OUT/'Unity'/str(name+'.cs'),GUID[key])
     print('Prefab根GameObject:',root['go'],'RectTransform:',root['rect'],'Canvas:',1002,'ForgeView:',view)
     print('序列化对象:',len(ui.nodes),'组件:',len(ui.components),'下一个ID:',ui.next)

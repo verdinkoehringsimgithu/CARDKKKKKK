@@ -1,0 +1,104 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804F2B90: mov         qword ptr [rsp+10h],rbx
+  00000001804F2B95: mov         qword ptr [rsp+18h],rsi
+  00000001804F2B9A: push        rdi
+  00000001804F2B9B: sub         rsp,30h
+  00000001804F2B9F: mov         rax,qword ptr [rcx+70h]
+  00000001804F2BA3: xor         bl,bl
+  00000001804F2BA5: mov         byte ptr [rsp+40h],bl
+  00000001804F2BA9: mov         rdi,rcx
+  00000001804F2BAC: mov         esi,0FFFFFFFFh
+  00000001804F2BB1: test        rax,rax
+  00000001804F2BB4: je          00000001804F2CE0
+  00000001804F2BBA: mov         rdx,qword ptr [rax+0000000000000260h]
+  00000001804F2BC1: test        rdx,rdx
+  00000001804F2BC4: je          00000001804F2CE0
+  00000001804F2BCA: mov         edx,dword ptr [rdx+00000000000000D4h]
+  00000001804F2BD0: xor         r8d,r8d
+  00000001804F2BD3: call        00000001804F3C60 ; UnityGameFramework.Scripts.BaseFormEntityLogic::GetBaseRecipe
+  00000001804F2BD8: mov         rcx,rdi
+  00000001804F2BDB: test        rax,rax
+  00000001804F2BDE: jne         00000001804F2BE9
+  00000001804F2BE0: xor         edx,edx
+  00000001804F2BE2: call        00000001804F47A0 ; UnityGameFramework.Scripts.BaseFormEntityLogic::InitTitleDesc
+  00000001804F2BE7: jmp         00000001804F2C00
+  00000001804F2BE9: xor         r9d,r9d
+  00000001804F2BEC: lea         r8,[rsp+40h]
+  00000001804F2BF1: mov         rdx,rax
+  00000001804F2BF4: call        00000001804F40B0 ; UnityGameFramework.Scripts.BaseFormEntityLogic::GetSlotIndex
+  00000001804F2BF9: movzx       ebx,byte ptr [rsp+40h]
+  00000001804F2BFE: mov         esi,eax
+  00000001804F2C00: mov         rcx,qword ptr [rdi+70h]
+  00000001804F2C04: test        rcx,rcx
+  00000001804F2C07: je          00000001804F2CE0
+  00000001804F2C0D: mov         rdx,qword ptr [rcx+0000000000000260h]
+  00000001804F2C14: test        rdx,rdx
+  00000001804F2C17: je          00000001804F2CE0
+  00000001804F2C1D: mov         dword ptr [rdx+00000000000000D8h],esi
+  00000001804F2C23: mov         rax,qword ptr [rdi+70h]
+  00000001804F2C27: test        rax,rax
+  00000001804F2C2A: je          00000001804F2CE0
+  00000001804F2C30: mov         rax,qword ptr [rax+0000000000000260h]
+  00000001804F2C37: test        rax,rax
+  00000001804F2C3A: je          00000001804F2CE0
+  00000001804F2C40: cmp         byte ptr [rax+00000000000000C0h],0
+  00000001804F2C47: jne         00000001804F2CD0
+  00000001804F2C4D: test        bl,bl
+  00000001804F2C4F: je          00000001804F2C55
+  00000001804F2C51: xor         ebx,ebx
+  00000001804F2C53: jmp         00000001804F2C5B
+  00000001804F2C55: cmp         esi,0FFFFFFFFh
+  00000001804F2C58: setne       bl
+  00000001804F2C5B: mov         rcx,qword ptr [rdi+0000000000000110h]
+  00000001804F2C62: test        rcx,rcx
+  00000001804F2C65: je          00000001804F2CE0
+  00000001804F2C67: xor         r8d,r8d
+  00000001804F2C6A: movzx       edx,bl
+  00000001804F2C6D: call        0000000182644760
+  00000001804F2C72: mov         rax,qword ptr [rdi+00000000000000F0h]
+  00000001804F2C79: mov         rcx,qword ptr [rdi+0000000000000108h]
+  00000001804F2C80: test        rax,rax
+  00000001804F2C83: je          00000001804F2CE0
+  00000001804F2C85: mov         rax,qword ptr [rax+18h]
+  00000001804F2C89: test        bl,bl
+  00000001804F2C8B: je          00000001804F2C9E
+  00000001804F2C8D: test        rax,rax
+  00000001804F2C90: je          00000001804F2CE0
+  00000001804F2C92: cmp         dword ptr [rax+18h],0
+  00000001804F2C96: jbe         00000001804F2CE6
+  00000001804F2C98: movups      xmm0,xmmword ptr [rax+20h]
+  00000001804F2C9C: jmp         00000001804F2CAD
+  00000001804F2C9E: test        rax,rax
+  00000001804F2CA1: je          00000001804F2CE0
+  00000001804F2CA3: cmp         dword ptr [rax+18h],1
+  00000001804F2CA7: jbe         00000001804F2CE6
+  00000001804F2CA9: movups      xmm0,xmmword ptr [rax+30h]
+  00000001804F2CAD: test        rcx,rcx
+  00000001804F2CB0: je          00000001804F2CE0
+  00000001804F2CB2: mov         r8,qword ptr [rcx]
+  00000001804F2CB5: lea         rdx,[rsp+20h]
+  00000001804F2CBA: movdqa      xmmword ptr [rsp+20h],xmm0
+  00000001804F2CC0: mov         rax,qword ptr [r8+00000000000002A8h]
+  00000001804F2CC7: mov         r8,qword ptr [r8+00000000000002B0h]
+  00000001804F2CCE: call        rax
+  00000001804F2CD0: mov         rbx,qword ptr [rsp+48h]
+  00000001804F2CD5: mov         rsi,qword ptr [rsp+50h]
+  00000001804F2CDA: add         rsp,30h
+  00000001804F2CDE: pop         rdi
+  00000001804F2CDF: ret
+  00000001804F2CE0: call        00000001803F2AC0
+  00000001804F2CE5: int         3
+  00000001804F2CE6: call        00000001803F2AB0
+  00000001804F2CEB: int         3
+  00000001804F2CEC: int         3
+  00000001804F2CED: int         3
+  00000001804F2CEE: int         3
+  00000001804F2CEF: int         3
+
+  Summary
+
+     2294000 il2cpp

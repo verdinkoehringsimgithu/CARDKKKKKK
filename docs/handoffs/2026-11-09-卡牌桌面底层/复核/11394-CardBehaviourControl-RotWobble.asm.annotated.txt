@@ -1,0 +1,31 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180561F30: sub         rsp,38h
+  0000000180561F34: movss       xmm0,dword ptr [rcx+44h]
+  0000000180561F39: movss       xmm3,dword ptr [rcx+40h]
+  0000000180561F3E: movss       xmm2,dword ptr [rcx+3Ch]
+  0000000180561F43: movss       xmm1,dword ptr [rcx+48h]
+  0000000180561F48: mov         rcx,qword ptr [rcx+78h]
+  0000000180561F4C: mov         qword ptr [rsp+28h],0
+  0000000180561F55: movss       dword ptr [rsp+20h],xmm0
+  0000000180561F5B: mov         byte ptr [rsp+40h],0
+  0000000180561F60: call        000000018066ADE0 ; UnityGameFramework.Scripts.TransformHelper::RotWobble
+  0000000180561F65: xor         edx,edx
+  0000000180561F67: mov         byte ptr [rsp+40h],al
+  0000000180561F6B: lea         rcx,[rsp+40h]
+  0000000180561F70: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  0000000180561F75: add         rsp,38h
+  0000000180561F79: ret
+  0000000180561F7A: int         3
+  0000000180561F7B: int         3
+  0000000180561F7C: int         3
+  0000000180561F7D: int         3
+  0000000180561F7E: int         3
+  0000000180561F7F: int         3
+
+  Summary
+
+     2294000 il2cpp

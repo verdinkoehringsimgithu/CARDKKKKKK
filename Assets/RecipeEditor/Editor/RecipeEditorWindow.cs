@@ -15,8 +15,7 @@ namespace CardKKK.RecipeEditor.Editor
     /// </summary>
     public sealed class RecipeEditorWindow : EditorWindow
     {
-        [MenuItem("卡牌桌面/配方编辑器", priority = 200)]
-        [MenuItem("工具/配方编辑器", priority = 100)]
+        [MenuItem("孤岛生存/配置/配方编辑器", priority = 100)]
         public static void OpenWindow()
         {
             var window = GetWindow<RecipeEditorWindow>("配方编辑器");

@@ -1,0 +1,16 @@
+{
+  "type_label_corrections": [
+    {
+      "class_id": 65,
+      "old": "BoxCollider2D",
+      "actual": "BoxCollider",
+      "bundle": "Entities/Card"
+    }
+  ],
+  "input": {
+    "pathID": 418656196238816513,
+    "decoded": true,
+    "action_maps_equal": true,
+    "action_map_count": 10
+  }
+}

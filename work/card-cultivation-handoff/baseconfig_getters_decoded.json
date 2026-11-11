@@ -1,0 +1,2690 @@
+{
+  "WidgetForm": {
+    "prop_name": "WidgetForm",
+    "va": "0x1804656c0",
+    "bytes_hex": "8b4110c3cccccccc",
+    "struct_offset": "+0x10",
+    "struct_offset_dec": 16,
+    "detected_type": "int"
+  },
+  "WidgetShowForm": {
+    "prop_name": "WidgetShowForm",
+    "va": "0x180484c00",
+    "bytes_hex": "8b4120c3cccccccc",
+    "struct_offset": "+0x20",
+    "struct_offset_dec": 32,
+    "detected_type": "int"
+  },
+  "MapTileShowForm": {
+    "prop_name": "MapTileShowForm",
+    "va": "0x180481ea0",
+    "bytes_hex": "8b4130c3cccccccc",
+    "struct_offset": "+0x30",
+    "struct_offset_dec": 48,
+    "detected_type": "int"
+  },
+  "MapTileTrigger": {
+    "prop_name": "MapTileTrigger",
+    "va": "0x18048c930",
+    "bytes_hex": "8b4140c3cccccccc",
+    "struct_offset": "+0x40",
+    "struct_offset_dec": 64,
+    "detected_type": "int"
+  },
+  "DungeonForm": {
+    "prop_name": "DungeonForm",
+    "va": "0x1804868f0",
+    "bytes_hex": "8b4150c3cccccccc",
+    "struct_offset": "+0x50",
+    "struct_offset_dec": 80,
+    "detected_type": "int"
+  },
+  "DungeonExitForm": {
+    "prop_name": "DungeonExitForm",
+    "va": "0x180490e20",
+    "bytes_hex": "8b4160c3cccccccc",
+    "struct_offset": "+0x60",
+    "struct_offset_dec": 96,
+    "detected_type": "int"
+  },
+  "WeaponBagForm": {
+    "prop_name": "WeaponBagForm",
+    "va": "0x1804868b0",
+    "bytes_hex": "8b4170c3cccccccc",
+    "struct_offset": "+0x70",
+    "struct_offset_dec": 112,
+    "detected_type": "int"
+  },
+  "BagForm": {
+    "prop_name": "BagForm",
+    "va": "0x180490e00",
+    "bytes_hex": "8b8180000000c3cc",
+    "struct_offset": "+0x80",
+    "struct_offset_dec": 128,
+    "detected_type": "int"
+  },
+  "RoleForm": {
+    "prop_name": "RoleForm",
+    "va": "0x1804868c0",
+    "bytes_hex": "8b8190000000c3cc",
+    "struct_offset": "+0x90",
+    "struct_offset_dec": 144,
+    "detected_type": "int"
+  },
+  "ThunderForm": {
+    "prop_name": "ThunderForm",
+    "va": "0x180490e70",
+    "bytes_hex": "8b81a0000000c3cc",
+    "struct_offset": "+0xa0",
+    "struct_offset_dec": 160,
+    "detected_type": "int"
+  },
+  "FlyForm": {
+    "prop_name": "FlyForm",
+    "va": "0x180490dc0",
+    "bytes_hex": "8b81b0000000c3cc",
+    "struct_offset": "+0xb0",
+    "struct_offset_dec": 176,
+    "detected_type": "int"
+  },
+  "FlyControlForm": {
+    "prop_name": "FlyControlForm",
+    "va": "0x18049aef0",
+    "bytes_hex": "8b81c0000000c3cc",
+    "struct_offset": "+0xc0",
+    "struct_offset_dec": 192,
+    "detected_type": "int"
+  },
+  "AdverseTimer": {
+    "prop_name": "AdverseTimer",
+    "va": "0x18049b020",
+    "bytes_hex": "8b81d0000000c3cc",
+    "struct_offset": "+0xd0",
+    "struct_offset_dec": 208,
+    "detected_type": "int"
+  },
+  "NpcGiftTimer": {
+    "prop_name": "NpcGiftTimer",
+    "va": "0x18049af60",
+    "bytes_hex": "8b81e0000000c3cc",
+    "struct_offset": "+0xe0",
+    "struct_offset_dec": 224,
+    "detected_type": "int"
+  },
+  "CardPackTimer": {
+    "prop_name": "CardPackTimer",
+    "va": "0x18049b0a0",
+    "bytes_hex": "8b81f0000000c3cc",
+    "struct_offset": "+0xf0",
+    "struct_offset_dec": 240,
+    "detected_type": "int"
+  },
+  "CardPackForm": {
+    "prop_name": "CardPackForm",
+    "va": "0x18049af10",
+    "bytes_hex": "8b8100010000c3cc",
+    "struct_offset": "+0x100",
+    "struct_offset_dec": 256,
+    "detected_type": "int"
+  },
+  "BaseFormNormalName": {
+    "prop_name": "BaseFormNormalName",
+    "va": "0x180472040",
+    "bytes_hex": "488b8110010000c3",
+    "struct_offset": "+0x110",
+    "struct_offset_dec": 272,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormNormalName_l10n_key": {
+    "prop_name": "BaseFormNormalName_l10n_key",
+    "va": "0x180472030",
+    "bytes_hex": "488b8118010000c3",
+    "struct_offset": "+0x118",
+    "struct_offset_dec": 280,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormRunningName": {
+    "prop_name": "BaseFormRunningName",
+    "va": "0x180472060",
+    "bytes_hex": "488b8120010000c3",
+    "struct_offset": "+0x120",
+    "struct_offset_dec": 288,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormRunningName_l10n_key": {
+    "prop_name": "BaseFormRunningName_l10n_key",
+    "va": "0x180472020",
+    "bytes_hex": "488b8128010000c3",
+    "struct_offset": "+0x128",
+    "struct_offset_dec": 296,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormDoneName": {
+    "prop_name": "BaseFormDoneName",
+    "va": "0x1804720d0",
+    "bytes_hex": "488b8130010000c3",
+    "struct_offset": "+0x130",
+    "struct_offset_dec": 304,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormDoneName_l10n_key": {
+    "prop_name": "BaseFormDoneName_l10n_key",
+    "va": "0x1804720b0",
+    "bytes_hex": "488b8138010000c3",
+    "struct_offset": "+0x138",
+    "struct_offset_dec": 312,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormResetName": {
+    "prop_name": "BaseFormResetName",
+    "va": "0x1804720c0",
+    "bytes_hex": "488b8140010000c3",
+    "struct_offset": "+0x140",
+    "struct_offset_dec": 320,
+    "detected_type": "string_or_obj"
+  },
+  "BaseFormResetName_l10n_key": {
+    "prop_name": "BaseFormResetName_l10n_key",
+    "va": "0x180472080",
+    "bytes_hex": "488b8148010000c3",
+    "struct_offset": "+0x148",
+    "struct_offset_dec": 328,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonFormNormalName": {
+    "prop_name": "DungeonFormNormalName",
+    "va": "0x180472090",
+    "bytes_hex": "488b8150010000c3",
+    "struct_offset": "+0x150",
+    "struct_offset_dec": 336,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonFormNormalName_l10n_key": {
+    "prop_name": "DungeonFormNormalName_l10n_key",
+    "va": "0x180471f90",
+    "bytes_hex": "488b8158010000c3",
+    "struct_offset": "+0x158",
+    "struct_offset_dec": 344,
+    "detected_type": "string_or_obj"
+  },
+  "TeleportFormNormalName": {
+    "prop_name": "TeleportFormNormalName",
+    "va": "0x180471fc0",
+    "bytes_hex": "488b8160010000c3",
+    "struct_offset": "+0x160",
+    "struct_offset_dec": 352,
+    "detected_type": "string_or_obj"
+  },
+  "TeleportFormNormalName_l10n_key": {
+    "prop_name": "TeleportFormNormalName_l10n_key",
+    "va": "0x180471fb0",
+    "bytes_hex": "488b8168010000c3",
+    "struct_offset": "+0x168",
+    "struct_offset_dec": 360,
+    "detected_type": "string_or_obj"
+  },
+  "TeleportFormDoneName": {
+    "prop_name": "TeleportFormDoneName",
+    "va": "0x180472000",
+    "bytes_hex": "488b8170010000c3",
+    "struct_offset": "+0x170",
+    "struct_offset_dec": 368,
+    "detected_type": "string_or_obj"
+  },
+  "TeleportFormDoneName_l10n_key": {
+    "prop_name": "TeleportFormDoneName_l10n_key",
+    "va": "0x180472010",
+    "bytes_hex": "488b8178010000c3",
+    "struct_offset": "+0x178",
+    "struct_offset_dec": 376,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextTimeNumFormat": {
+    "prop_name": "BaseTextTimeNumFormat",
+    "va": "0x180471ff0",
+    "bytes_hex": "488b8180010000c3",
+    "struct_offset": "+0x180",
+    "struct_offset_dec": 384,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextTimeNumFormat_l10n_key": {
+    "prop_name": "BaseTextTimeNumFormat_l10n_key",
+    "va": "0x180471fd0",
+    "bytes_hex": "488b8188010000c3",
+    "struct_offset": "+0x188",
+    "struct_offset_dec": 392,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextYearNumFormat": {
+    "prop_name": "BaseTextYearNumFormat",
+    "va": "0x180471fe0",
+    "bytes_hex": "488b8190010000c3",
+    "struct_offset": "+0x190",
+    "struct_offset_dec": 400,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextYearNumFormat_l10n_key": {
+    "prop_name": "BaseTextYearNumFormat_l10n_key",
+    "va": "0x180471fa0",
+    "bytes_hex": "488b8198010000c3",
+    "struct_offset": "+0x198",
+    "struct_offset_dec": 408,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextTimeFormat": {
+    "prop_name": "BaseTextTimeFormat",
+    "va": "0x180472050",
+    "bytes_hex": "488b81a0010000c3",
+    "struct_offset": "+0x1a0",
+    "struct_offset_dec": 416,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextTimeFormat_l10n_key": {
+    "prop_name": "BaseTextTimeFormat_l10n_key",
+    "va": "0x180471f80",
+    "bytes_hex": "488b81a8010000c3",
+    "struct_offset": "+0x1a8",
+    "struct_offset_dec": 424,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextYearFormat": {
+    "prop_name": "BaseTextYearFormat",
+    "va": "0x1804720a0",
+    "bytes_hex": "488b81b0010000c3",
+    "struct_offset": "+0x1b0",
+    "struct_offset_dec": 432,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTextYearFormat_l10n_key": {
+    "prop_name": "BaseTextYearFormat_l10n_key",
+    "va": "0x180471e10",
+    "bytes_hex": "488b81b8010000c3",
+    "struct_offset": "+0x1b8",
+    "struct_offset_dec": 440,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextTimeFormat": {
+    "prop_name": "DungeonTextTimeFormat",
+    "va": "0x180471e00",
+    "bytes_hex": "488b81c0010000c3",
+    "struct_offset": "+0x1c0",
+    "struct_offset_dec": 448,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextTimeFormat_l10n_key": {
+    "prop_name": "DungeonTextTimeFormat_l10n_key",
+    "va": "0x180471960",
+    "bytes_hex": "488b81c8010000c3",
+    "struct_offset": "+0x1c8",
+    "struct_offset_dec": 456,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextYearFormat": {
+    "prop_name": "DungeonTextYearFormat",
+    "va": "0x180471950",
+    "bytes_hex": "488b81d0010000c3",
+    "struct_offset": "+0x1d0",
+    "struct_offset_dec": 464,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextYearFormat_l10n_key": {
+    "prop_name": "DungeonTextYearFormat_l10n_key",
+    "va": "0x180471a10",
+    "bytes_hex": "488b81d8010000c3",
+    "struct_offset": "+0x1d8",
+    "struct_offset_dec": 472,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextCloseTimeFormat": {
+    "prop_name": "DungeonTextCloseTimeFormat",
+    "va": "0x1804717e0",
+    "bytes_hex": "488b81e0010000c3",
+    "struct_offset": "+0x1e0",
+    "struct_offset_dec": 480,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextCloseTimeFormat_l10n_key": {
+    "prop_name": "DungeonTextCloseTimeFormat_l10n_key",
+    "va": "0x1804719b0",
+    "bytes_hex": "488b81e8010000c3",
+    "struct_offset": "+0x1e8",
+    "struct_offset_dec": 488,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextCloseYearFormat": {
+    "prop_name": "DungeonTextCloseYearFormat",
+    "va": "0x180471a80",
+    "bytes_hex": "488b81f0010000c3",
+    "struct_offset": "+0x1f0",
+    "struct_offset_dec": 496,
+    "detected_type": "string_or_obj"
+  },
+  "DungeonTextCloseYearFormat_l10n_key": {
+    "prop_name": "DungeonTextCloseYearFormat_l10n_key",
+    "va": "0x180471980",
+    "bytes_hex": "488b81f8010000c3",
+    "struct_offset": "+0x1f8",
+    "struct_offset_dec": 504,
+    "detected_type": "string_or_obj"
+  },
+  "WeaponBagNumTextForm": {
+    "prop_name": "WeaponBagNumTextForm",
+    "va": "0x180471a30",
+    "bytes_hex": "488b8100020000c3",
+    "struct_offset": "+0x200",
+    "struct_offset_dec": 512,
+    "detected_type": "string_or_obj"
+  },
+  "WeaponBagNumTextForm_l10n_key": {
+    "prop_name": "WeaponBagNumTextForm_l10n_key",
+    "va": "0x180471a40",
+    "bytes_hex": "488b8108020000c3",
+    "struct_offset": "+0x208",
+    "struct_offset_dec": 520,
+    "detected_type": "string_or_obj"
+  },
+  "WeaponBagNumRedTextForm": {
+    "prop_name": "WeaponBagNumRedTextForm",
+    "va": "0x180471be0",
+    "bytes_hex": "488b8110020000c3",
+    "struct_offset": "+0x210",
+    "struct_offset_dec": 528,
+    "detected_type": "string_or_obj"
+  },
+  "WeaponBagNumRedTextForm_l10n_key": {
+    "prop_name": "WeaponBagNumRedTextForm_l10n_key",
+    "va": "0x180471d50",
+    "bytes_hex": "488b8118020000c3",
+    "struct_offset": "+0x218",
+    "struct_offset_dec": 536,
+    "detected_type": "string_or_obj"
+  },
+  "EnergyZeroTipsName": {
+    "prop_name": "EnergyZeroTipsName",
+    "va": "0x180471840",
+    "bytes_hex": "488b8120020000c3",
+    "struct_offset": "+0x220",
+    "struct_offset_dec": 544,
+    "detected_type": "string_or_obj"
+  },
+  "EnergyZeroTipsName_l10n_key": {
+    "prop_name": "EnergyZeroTipsName_l10n_key",
+    "va": "0x1804717c0",
+    "bytes_hex": "488b8128020000c3",
+    "struct_offset": "+0x228",
+    "struct_offset_dec": 552,
+    "detected_type": "string_or_obj"
+  },
+  "BagFullTipsName": {
+    "prop_name": "BagFullTipsName",
+    "va": "0x180471f70",
+    "bytes_hex": "488b8130020000c3",
+    "struct_offset": "+0x230",
+    "struct_offset_dec": 560,
+    "detected_type": "string_or_obj"
+  },
+  "BagFullTipsName_l10n_key": {
+    "prop_name": "BagFullTipsName_l10n_key",
+    "va": "0x180471970",
+    "bytes_hex": "488b8138020000c3",
+    "struct_offset": "+0x238",
+    "struct_offset_dec": 568,
+    "detected_type": "string_or_obj"
+  },
+  "BagCreateTipsName": {
+    "prop_name": "BagCreateTipsName",
+    "va": "0x180471790",
+    "bytes_hex": "488b8140020000c3",
+    "struct_offset": "+0x240",
+    "struct_offset_dec": 576,
+    "detected_type": "string_or_obj"
+  },
+  "BagCreateTipsName_l10n_key": {
+    "prop_name": "BagCreateTipsName_l10n_key",
+    "va": "0x1804717f0",
+    "bytes_hex": "488b8148020000c3",
+    "struct_offset": "+0x248",
+    "struct_offset_dec": 584,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormSaveName": {
+    "prop_name": "RecordFormSaveName",
+    "va": "0x180471810",
+    "bytes_hex": "488b8150020000c3",
+    "struct_offset": "+0x250",
+    "struct_offset_dec": 592,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormSaveName_l10n_key": {
+    "prop_name": "RecordFormSaveName_l10n_key",
+    "va": "0x180471820",
+    "bytes_hex": "488b8158020000c3",
+    "struct_offset": "+0x258",
+    "struct_offset_dec": 600,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormCoverName": {
+    "prop_name": "RecordFormCoverName",
+    "va": "0x180471bd0",
+    "bytes_hex": "488b8160020000c3",
+    "struct_offset": "+0x260",
+    "struct_offset_dec": 608,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormCoverName_l10n_key": {
+    "prop_name": "RecordFormCoverName_l10n_key",
+    "va": "0x180471d40",
+    "bytes_hex": "488b8168020000c3",
+    "struct_offset": "+0x268",
+    "struct_offset_dec": 616,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormLoadName": {
+    "prop_name": "RecordFormLoadName",
+    "va": "0x1804719c0",
+    "bytes_hex": "488b8170020000c3",
+    "struct_offset": "+0x270",
+    "struct_offset_dec": 624,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormLoadName_l10n_key": {
+    "prop_name": "RecordFormLoadName_l10n_key",
+    "va": "0x1804719d0",
+    "bytes_hex": "488b8178020000c3",
+    "struct_offset": "+0x278",
+    "struct_offset_dec": 632,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormFullName": {
+    "prop_name": "RecordFormFullName",
+    "va": "0x1804717b0",
+    "bytes_hex": "488b8180020000c3",
+    "struct_offset": "+0x280",
+    "struct_offset_dec": 640,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormFullName_l10n_key": {
+    "prop_name": "RecordFormFullName_l10n_key",
+    "va": "0x180471a20",
+    "bytes_hex": "488b8188020000c3",
+    "struct_offset": "+0x288",
+    "struct_offset_dec": 648,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormDelName": {
+    "prop_name": "RecordFormDelName",
+    "va": "0x180471780",
+    "bytes_hex": "488b8190020000c3",
+    "struct_offset": "+0x290",
+    "struct_offset_dec": 656,
+    "detected_type": "string_or_obj"
+  },
+  "RecordFormDelName_l10n_key": {
+    "prop_name": "RecordFormDelName_l10n_key",
+    "va": "0x1804717d0",
+    "bytes_hex": "488b8198020000c3",
+    "struct_offset": "+0x298",
+    "struct_offset_dec": 664,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieRestartName": {
+    "prop_name": "NewbieRestartName",
+    "va": "0x1804717a0",
+    "bytes_hex": "488b81a0020000c3",
+    "struct_offset": "+0x2a0",
+    "struct_offset_dec": 672,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieRestartName_l10n_key": {
+    "prop_name": "NewbieRestartName_l10n_key",
+    "va": "0x180471860",
+    "bytes_hex": "488b81a8020000c3",
+    "struct_offset": "+0x2a8",
+    "struct_offset_dec": 680,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieNotSaveName": {
+    "prop_name": "NewbieNotSaveName",
+    "va": "0x180471800",
+    "bytes_hex": "488b81b0020000c3",
+    "struct_offset": "+0x2b0",
+    "struct_offset_dec": 688,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieNotSaveName_l10n_key": {
+    "prop_name": "NewbieNotSaveName_l10n_key",
+    "va": "0x180471830",
+    "bytes_hex": "488b81b8020000c3",
+    "struct_offset": "+0x2b8",
+    "struct_offset_dec": 696,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieGameEndName": {
+    "prop_name": "NewbieGameEndName",
+    "va": "0x180471850",
+    "bytes_hex": "488b81c0020000c3",
+    "struct_offset": "+0x2c0",
+    "struct_offset_dec": 704,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieGameEndName_l10n_key": {
+    "prop_name": "NewbieGameEndName_l10n_key",
+    "va": "0x180471870",
+    "bytes_hex": "488b81c8020000c3",
+    "struct_offset": "+0x2c8",
+    "struct_offset_dec": 712,
+    "detected_type": "string_or_obj"
+  },
+  "NewGamePauseName": {
+    "prop_name": "NewGamePauseName",
+    "va": "0x180471880",
+    "bytes_hex": "488b81d0020000c3",
+    "struct_offset": "+0x2d0",
+    "struct_offset_dec": 720,
+    "detected_type": "string_or_obj"
+  },
+  "NewGamePauseName_l10n_key": {
+    "prop_name": "NewGamePauseName_l10n_key",
+    "va": "0x180471890",
+    "bytes_hex": "488b81d8020000c3",
+    "struct_offset": "+0x2d8",
+    "struct_offset_dec": 728,
+    "detected_type": "string_or_obj"
+  },
+  "LoadGamePauseName": {
+    "prop_name": "LoadGamePauseName",
+    "va": "0x1804718b0",
+    "bytes_hex": "488b81e0020000c3",
+    "struct_offset": "+0x2e0",
+    "struct_offset_dec": 736,
+    "detected_type": "string_or_obj"
+  },
+  "LoadGamePauseName_l10n_key": {
+    "prop_name": "LoadGamePauseName_l10n_key",
+    "va": "0x1804718a0",
+    "bytes_hex": "488b81e8020000c3",
+    "struct_offset": "+0x2e8",
+    "struct_offset_dec": 744,
+    "detected_type": "string_or_obj"
+  },
+  "NewFreeGamePauseName": {
+    "prop_name": "NewFreeGamePauseName",
+    "va": "0x180472100",
+    "bytes_hex": "488b81f0020000c3",
+    "struct_offset": "+0x2f0",
+    "struct_offset_dec": 752,
+    "detected_type": "string_or_obj"
+  },
+  "NewFreeGamePauseName_l10n_key": {
+    "prop_name": "NewFreeGamePauseName_l10n_key",
+    "va": "0x180471af0",
+    "bytes_hex": "488b81f8020000c3",
+    "struct_offset": "+0x2f8",
+    "struct_offset_dec": 760,
+    "detected_type": "string_or_obj"
+  },
+  "LoadFreeGamePauseName": {
+    "prop_name": "LoadFreeGamePauseName",
+    "va": "0x180471940",
+    "bytes_hex": "488b8100030000c3",
+    "struct_offset": "+0x300",
+    "struct_offset_dec": 768,
+    "detected_type": "string_or_obj"
+  },
+  "LoadFreeGamePauseName_l10n_key": {
+    "prop_name": "LoadFreeGamePauseName_l10n_key",
+    "va": "0x180471ad0",
+    "bytes_hex": "488b8108030000c3",
+    "struct_offset": "+0x308",
+    "struct_offset_dec": 776,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieGameSkipName": {
+    "prop_name": "NewbieGameSkipName",
+    "va": "0x180471ac0",
+    "bytes_hex": "488b8110030000c3",
+    "struct_offset": "+0x310",
+    "struct_offset_dec": 784,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieGameSkipName_l10n_key": {
+    "prop_name": "NewbieGameSkipName_l10n_key",
+    "va": "0x180471ab0",
+    "bytes_hex": "488b8118030000c3",
+    "struct_offset": "+0x318",
+    "struct_offset_dec": 792,
+    "detected_type": "string_or_obj"
+  },
+  "SpawnMonsterSkipName": {
+    "prop_name": "SpawnMonsterSkipName",
+    "va": "0x180471ae0",
+    "bytes_hex": "488b8120030000c3",
+    "struct_offset": "+0x320",
+    "struct_offset_dec": 800,
+    "detected_type": "string_or_obj"
+  },
+  "SpawnMonsterSkipName_l10n_key": {
+    "prop_name": "SpawnMonsterSkipName_l10n_key",
+    "va": "0x180471930",
+    "bytes_hex": "488b8128030000c3",
+    "struct_offset": "+0x328",
+    "struct_offset_dec": 808,
+    "detected_type": "string_or_obj"
+  },
+  "ExitDungeonItemName": {
+    "prop_name": "ExitDungeonItemName",
+    "va": "0x180471710",
+    "bytes_hex": "488b8130030000c3",
+    "struct_offset": "+0x330",
+    "struct_offset_dec": 816,
+    "detected_type": "string_or_obj"
+  },
+  "ExitDungeonItemName_l10n_key": {
+    "prop_name": "ExitDungeonItemName_l10n_key",
+    "va": "0x180471d70",
+    "bytes_hex": "488b8138030000c3",
+    "struct_offset": "+0x338",
+    "struct_offset_dec": 824,
+    "detected_type": "string_or_obj"
+  },
+  "FlyFormCreateTipsName": {
+    "prop_name": "FlyFormCreateTipsName",
+    "va": "0x180471d30",
+    "bytes_hex": "488b8140030000c3",
+    "struct_offset": "+0x340",
+    "struct_offset_dec": 832,
+    "detected_type": "string_or_obj"
+  },
+  "FlyFormCreateTipsName_l10n_key": {
+    "prop_name": "FlyFormCreateTipsName_l10n_key",
+    "va": "0x1804718c0",
+    "bytes_hex": "488b8148030000c3",
+    "struct_offset": "+0x348",
+    "struct_offset_dec": 840,
+    "detected_type": "string_or_obj"
+  },
+  "EnergyCostName": {
+    "prop_name": "EnergyCostName",
+    "va": "0x1804719a0",
+    "bytes_hex": "488b8150030000c3",
+    "struct_offset": "+0x350",
+    "struct_offset_dec": 848,
+    "detected_type": "string_or_obj"
+  },
+  "EnergyCostName_l10n_key": {
+    "prop_name": "EnergyCostName_l10n_key",
+    "va": "0x180471e30",
+    "bytes_hex": "488b8158030000c3",
+    "struct_offset": "+0x358",
+    "struct_offset_dec": 856,
+    "detected_type": "string_or_obj"
+  },
+  "CoreEmptyFormNormalName": {
+    "prop_name": "CoreEmptyFormNormalName",
+    "va": "0x180471f50",
+    "bytes_hex": "488b8160030000c3",
+    "struct_offset": "+0x360",
+    "struct_offset_dec": 864,
+    "detected_type": "string_or_obj"
+  },
+  "CoreEmptyFormNormalName_l10n_key": {
+    "prop_name": "CoreEmptyFormNormalName_l10n_key",
+    "va": "0x180471d80",
+    "bytes_hex": "488b8168030000c3",
+    "struct_offset": "+0x368",
+    "struct_offset_dec": 872,
+    "detected_type": "string_or_obj"
+  },
+  "SpiritFarmFormNormalName": {
+    "prop_name": "SpiritFarmFormNormalName",
+    "va": "0x180471990",
+    "bytes_hex": "488b8170030000c3",
+    "struct_offset": "+0x370",
+    "struct_offset_dec": 880,
+    "detected_type": "string_or_obj"
+  },
+  "SpiritFarmFormNormalName_l10n_key": {
+    "prop_name": "SpiritFarmFormNormalName_l10n_key",
+    "va": "0x180471cd0",
+    "bytes_hex": "488b8178030000c3",
+    "struct_offset": "+0x378",
+    "struct_offset_dec": 888,
+    "detected_type": "string_or_obj"
+  },
+  "GameEndingFormNormalName": {
+    "prop_name": "GameEndingFormNormalName",
+    "va": "0x180471910",
+    "bytes_hex": "488b8180030000c3",
+    "struct_offset": "+0x380",
+    "struct_offset_dec": 896,
+    "detected_type": "string_or_obj"
+  },
+  "GameEndingFormNormalName_l10n_key": {
+    "prop_name": "GameEndingFormNormalName_l10n_key",
+    "va": "0x1804718f0",
+    "bytes_hex": "488b8188030000c3",
+    "struct_offset": "+0x388",
+    "struct_offset_dec": 904,
+    "detected_type": "string_or_obj"
+  },
+  "KeyboardNormalName": {
+    "prop_name": "KeyboardNormalName",
+    "va": "0x180471900",
+    "bytes_hex": "488b8190030000c3",
+    "struct_offset": "+0x390",
+    "struct_offset_dec": 912,
+    "detected_type": "string_or_obj"
+  },
+  "KeyboardNormalName_l10n_key": {
+    "prop_name": "KeyboardNormalName_l10n_key",
+    "va": "0x1804718d0",
+    "bytes_hex": "488b8198030000c3",
+    "struct_offset": "+0x398",
+    "struct_offset_dec": 920,
+    "detected_type": "string_or_obj"
+  },
+  "FarmCardSlotExName": {
+    "prop_name": "FarmCardSlotExName",
+    "va": "0x180471c00",
+    "bytes_hex": "488b81a0030000c3",
+    "struct_offset": "+0x3a0",
+    "struct_offset_dec": 928,
+    "detected_type": "string_or_obj"
+  },
+  "FarmCardSlotExName_l10n_key": {
+    "prop_name": "FarmCardSlotExName_l10n_key",
+    "va": "0x180471bf0",
+    "bytes_hex": "488b81a8030000c3",
+    "struct_offset": "+0x3a8",
+    "struct_offset_dec": 936,
+    "detected_type": "string_or_obj"
+  },
+  "TalentNumName": {
+    "prop_name": "TalentNumName",
+    "va": "0x180471d60",
+    "bytes_hex": "488b81b0030000c3",
+    "struct_offset": "+0x3b0",
+    "struct_offset_dec": 944,
+    "detected_type": "string_or_obj"
+  },
+  "TalentNumName_l10n_key": {
+    "prop_name": "TalentNumName_l10n_key",
+    "va": "0x1804718e0",
+    "bytes_hex": "488b81b8030000c3",
+    "struct_offset": "+0x3b8",
+    "struct_offset_dec": 952,
+    "detected_type": "string_or_obj"
+  },
+  "ShopCardStoneName": {
+    "prop_name": "ShopCardStoneName",
+    "va": "0x180471740",
+    "bytes_hex": "488b81c0030000c3",
+    "struct_offset": "+0x3c0",
+    "struct_offset_dec": 960,
+    "detected_type": "string_or_obj"
+  },
+  "ShopCardStoneName_l10n_key": {
+    "prop_name": "ShopCardStoneName_l10n_key",
+    "va": "0x180471ee0",
+    "bytes_hex": "488b81c8030000c3",
+    "struct_offset": "+0x3c8",
+    "struct_offset_dec": 968,
+    "detected_type": "string_or_obj"
+  },
+  "ShopCardPriceName": {
+    "prop_name": "ShopCardPriceName",
+    "va": "0x180471eb0",
+    "bytes_hex": "488b81d0030000c3",
+    "struct_offset": "+0x3d0",
+    "struct_offset_dec": 976,
+    "detected_type": "string_or_obj"
+  },
+  "ShopCardPriceName_l10n_key": {
+    "prop_name": "ShopCardPriceName_l10n_key",
+    "va": "0x180471e50",
+    "bytes_hex": "488b81d8030000c3",
+    "struct_offset": "+0x3d8",
+    "struct_offset_dec": 984,
+    "detected_type": "string_or_obj"
+  },
+  "TalkShowNumName": {
+    "prop_name": "TalkShowNumName",
+    "va": "0x180471920",
+    "bytes_hex": "488b81e0030000c3",
+    "struct_offset": "+0x3e0",
+    "struct_offset_dec": 992,
+    "detected_type": "string_or_obj"
+  },
+  "TalkShowNumName_l10n_key": {
+    "prop_name": "TalkShowNumName_l10n_key",
+    "va": "0x180471e40",
+    "bytes_hex": "488b81e8030000c3",
+    "struct_offset": "+0x3e8",
+    "struct_offset_dec": 1000,
+    "detected_type": "string_or_obj"
+  },
+  "MapExitNumName": {
+    "prop_name": "MapExitNumName",
+    "va": "0x180471e60",
+    "bytes_hex": "488b81f0030000c3",
+    "struct_offset": "+0x3f0",
+    "struct_offset_dec": 1008,
+    "detected_type": "string_or_obj"
+  },
+  "MapExitNumName_l10n_key": {
+    "prop_name": "MapExitNumName_l10n_key",
+    "va": "0x180471750",
+    "bytes_hex": "488b81f8030000c3",
+    "struct_offset": "+0x3f8",
+    "struct_offset_dec": 1016,
+    "detected_type": "string_or_obj"
+  },
+  "TipsSecShowNumName": {
+    "prop_name": "TipsSecShowNumName",
+    "va": "0x180471760",
+    "bytes_hex": "488b8100040000c3",
+    "struct_offset": "+0x400",
+    "struct_offset_dec": 1024,
+    "detected_type": "string_or_obj"
+  },
+  "TipsSecShowNumName_l10n_key": {
+    "prop_name": "TipsSecShowNumName_l10n_key",
+    "va": "0x180471f10",
+    "bytes_hex": "488b8108040000c3",
+    "struct_offset": "+0x408",
+    "struct_offset_dec": 1032,
+    "detected_type": "string_or_obj"
+  },
+  "UiScaleNumName": {
+    "prop_name": "UiScaleNumName",
+    "va": "0x180471ef0",
+    "bytes_hex": "488b8110040000c3",
+    "struct_offset": "+0x410",
+    "struct_offset_dec": 1040,
+    "detected_type": "string_or_obj"
+  },
+  "UiScaleNumName_l10n_key": {
+    "prop_name": "UiScaleNumName_l10n_key",
+    "va": "0x180471f00",
+    "bytes_hex": "488b8118040000c3",
+    "struct_offset": "+0x418",
+    "struct_offset_dec": 1048,
+    "detected_type": "string_or_obj"
+  },
+  "CollectCardDescName": {
+    "prop_name": "CollectCardDescName",
+    "va": "0x180471e70",
+    "bytes_hex": "488b8120040000c3",
+    "struct_offset": "+0x420",
+    "struct_offset_dec": 1056,
+    "detected_type": "string_or_obj"
+  },
+  "CollectCardDescName_l10n_key": {
+    "prop_name": "CollectCardDescName_l10n_key",
+    "va": "0x180471e90",
+    "bytes_hex": "488b8128040000c3",
+    "struct_offset": "+0x428",
+    "struct_offset_dec": 1064,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTagNumErrorName": {
+    "prop_name": "BaseTagNumErrorName",
+    "va": "0x180471e80",
+    "bytes_hex": "488b8130040000c3",
+    "struct_offset": "+0x430",
+    "struct_offset_dec": 1072,
+    "detected_type": "string_or_obj"
+  },
+  "BaseTagNumErrorName_l10n_key": {
+    "prop_name": "BaseTagNumErrorName_l10n_key",
+    "va": "0x180471ea0",
+    "bytes_hex": "488b8138040000c3",
+    "struct_offset": "+0x438",
+    "struct_offset_dec": 1080,
+    "detected_type": "string_or_obj"
+  },
+  "NeedFlyDownName": {
+    "prop_name": "NeedFlyDownName",
+    "va": "0x180471b60",
+    "bytes_hex": "488b8140040000c3",
+    "struct_offset": "+0x440",
+    "struct_offset_dec": 1088,
+    "detected_type": "string_or_obj"
+  },
+  "NeedFlyDownName_l10n_key": {
+    "prop_name": "NeedFlyDownName_l10n_key",
+    "va": "0x180471b40",
+    "bytes_hex": "488b8148040000c3",
+    "struct_offset": "+0x448",
+    "struct_offset_dec": 1096,
+    "detected_type": "string_or_obj"
+  },
+  "RoleNewName": {
+    "prop_name": "RoleNewName",
+    "va": "0x180471b00",
+    "bytes_hex": "488b8150040000c3",
+    "struct_offset": "+0x450",
+    "struct_offset_dec": 1104,
+    "detected_type": "string_or_obj"
+  },
+  "RoleNewName_l10n_key": {
+    "prop_name": "RoleNewName_l10n_key",
+    "va": "0x180471b30",
+    "bytes_hex": "488b8158040000c3",
+    "struct_offset": "+0x458",
+    "struct_offset_dec": 1112,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeTimeNewbie": {
+    "prop_name": "RoleAgeTimeNewbie",
+    "va": "0x1806c18f0",
+    "bytes_hex": "8b8160040000c3cc",
+    "struct_offset": "+0x460",
+    "struct_offset_dec": 1120,
+    "detected_type": "int"
+  },
+  "RoleAgeFormat": {
+    "prop_name": "RoleAgeFormat",
+    "va": "0x180471b70",
+    "bytes_hex": "488b8168040000c3",
+    "struct_offset": "+0x468",
+    "struct_offset_dec": 1128,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeFormat_l10n_key": {
+    "prop_name": "RoleAgeFormat_l10n_key",
+    "va": "0x180471b10",
+    "bytes_hex": "488b8170040000c3",
+    "struct_offset": "+0x470",
+    "struct_offset_dec": 1136,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeMaxFormat": {
+    "prop_name": "RoleAgeMaxFormat",
+    "va": "0x180471b80",
+    "bytes_hex": "488b8178040000c3",
+    "struct_offset": "+0x478",
+    "struct_offset_dec": 1144,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeMaxFormat_l10n_key": {
+    "prop_name": "RoleAgeMaxFormat_l10n_key",
+    "va": "0x180471bc0",
+    "bytes_hex": "488b8180040000c3",
+    "struct_offset": "+0x480",
+    "struct_offset_dec": 1152,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeYearFormat": {
+    "prop_name": "RoleAgeYearFormat",
+    "va": "0x180471b50",
+    "bytes_hex": "488b8188040000c3",
+    "struct_offset": "+0x488",
+    "struct_offset_dec": 1160,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeYearFormat_l10n_key": {
+    "prop_name": "RoleAgeYearFormat_l10n_key",
+    "va": "0x180471b20",
+    "bytes_hex": "488b8190040000c3",
+    "struct_offset": "+0x490",
+    "struct_offset_dec": 1168,
+    "detected_type": "string_or_obj"
+  },
+  "RoleAgeTimeFree": {
+    "prop_name": "RoleAgeTimeFree",
+    "va": "0x1806c18e0",
+    "bytes_hex": "8b8198040000c3cc",
+    "struct_offset": "+0x498",
+    "struct_offset_dec": 1176,
+    "detected_type": "int"
+  },
+  "RoleFreeMapId": {
+    "prop_name": "RoleFreeMapId",
+    "va": "0x1806c1900",
+    "bytes_hex": "8b819c040000c3cc",
+    "struct_offset": "+0x49c",
+    "struct_offset_dec": 1180,
+    "detected_type": "int"
+  },
+  "AgeYearEndFormat": {
+    "prop_name": "AgeYearEndFormat",
+    "va": "0x180471ec0",
+    "bytes_hex": "488b81a8040000c3",
+    "struct_offset": "+0x4a8",
+    "struct_offset_dec": 1192,
+    "detected_type": "string_or_obj"
+  },
+  "AgeYearEndFormat_l10n_key": {
+    "prop_name": "AgeYearEndFormat_l10n_key",
+    "va": "0x180471f30",
+    "bytes_hex": "488b81b0040000c3",
+    "struct_offset": "+0x4b0",
+    "struct_offset_dec": 1200,
+    "detected_type": "string_or_obj"
+  },
+  "AgeYearStartFormat": {
+    "prop_name": "AgeYearStartFormat",
+    "va": "0x180471f40",
+    "bytes_hex": "488b81b8040000c3",
+    "struct_offset": "+0x4b8",
+    "struct_offset_dec": 1208,
+    "detected_type": "string_or_obj"
+  },
+  "AgeYearStartFormat_l10n_key": {
+    "prop_name": "AgeYearStartFormat_l10n_key",
+    "va": "0x180471c20",
+    "bytes_hex": "488b81c0040000c3",
+    "struct_offset": "+0x4c0",
+    "struct_offset_dec": 1216,
+    "detected_type": "string_or_obj"
+  },
+  "SoulNumInit": {
+    "prop_name": "SoulNumInit",
+    "va": "0x1806c1960",
+    "bytes_hex": "8b81c8040000c3cc",
+    "struct_offset": "+0x4c8",
+    "struct_offset_dec": 1224,
+    "detected_type": "int"
+  },
+  "SpeedNumInit": {
+    "prop_name": "SpeedNumInit",
+    "va": "0x1806c1d60",
+    "bytes_hex": "8b81cc040000c3cc",
+    "struct_offset": "+0x4cc",
+    "struct_offset_dec": 1228,
+    "detected_type": "int"
+  },
+  "SkillSlotNumInit": {
+    "prop_name": "SkillSlotNumInit",
+    "va": "0x1806c1930",
+    "bytes_hex": "8b81d0040000c3cc",
+    "struct_offset": "+0x4d0",
+    "struct_offset_dec": 1232,
+    "detected_type": "int"
+  },
+  "SpellSlotNumInit": {
+    "prop_name": "SpellSlotNumInit",
+    "va": "0x1806c1d70",
+    "bytes_hex": "8b81d4040000c3cc",
+    "struct_offset": "+0x4d4",
+    "struct_offset_dec": 1236,
+    "detected_type": "int"
+  },
+  "MapResourceShowNum": {
+    "prop_name": "MapResourceShowNum",
+    "va": "0x1806c1790",
+    "bytes_hex": "8b81d8040000c3cc",
+    "struct_offset": "+0x4d8",
+    "struct_offset_dec": 1240,
+    "detected_type": "int"
+  },
+  "BaseMapEventInfoList": {
+    "prop_name": "BaseMapEventInfoList",
+    "va": "0x180471c30",
+    "bytes_hex": "488b81e0040000c3",
+    "struct_offset": "+0x4e0",
+    "struct_offset_dec": 1248,
+    "detected_type": "string_or_obj"
+  },
+  "ArenaOpenTime": {
+    "prop_name": "ArenaOpenTime",
+    "va": "0x1806c0b10",
+    "bytes_hex": "8b81e8040000c3cc",
+    "struct_offset": "+0x4e8",
+    "struct_offset_dec": 1256,
+    "detected_type": "int"
+  },
+  "ArenaOpenWidgetId": {
+    "prop_name": "ArenaOpenWidgetId",
+    "va": "0x1806c0b20",
+    "bytes_hex": "8b81ec040000c3cc",
+    "struct_offset": "+0x4ec",
+    "struct_offset_dec": 1260,
+    "detected_type": "int"
+  },
+  "WallOpenNum": {
+    "prop_name": "WallOpenNum",
+    "va": "0x1806c1f10",
+    "bytes_hex": "8b81f8040000c3cc",
+    "struct_offset": "+0x4f8",
+    "struct_offset_dec": 1272,
+    "detected_type": "int"
+  },
+  "WallOpenWidgetId": {
+    "prop_name": "WallOpenWidgetId",
+    "va": "0x1806c1f20",
+    "bytes_hex": "8b81fc040000c3cc",
+    "struct_offset": "+0x4fc",
+    "struct_offset_dec": 1276,
+    "detected_type": "int"
+  },
+  "WallMapEventInfoId": {
+    "prop_name": "WallMapEventInfoId",
+    "va": "0x1806c1ef0",
+    "bytes_hex": "8b8108050000c3cc",
+    "struct_offset": "+0x508",
+    "struct_offset_dec": 1288,
+    "detected_type": "int"
+  },
+  "WallMapEventNum": {
+    "prop_name": "WallMapEventNum",
+    "va": "0x1806c1f00",
+    "bytes_hex": "8b8118050000c3cc",
+    "struct_offset": "+0x518",
+    "struct_offset_dec": 1304,
+    "detected_type": "int"
+  },
+  "FlyShowWidgetSystemNum": {
+    "prop_name": "FlyShowWidgetSystemNum",
+    "va": "0x180471d20",
+    "bytes_hex": "488b8120050000c3",
+    "struct_offset": "+0x520",
+    "struct_offset_dec": 1312,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFightCheckSoul": {
+    "prop_name": "BaseCanFightCheckSoul",
+    "va": "0x180471c60",
+    "bytes_hex": "488b8128050000c3",
+    "struct_offset": "+0x528",
+    "struct_offset_dec": 1320,
+    "detected_type": "string_or_obj"
+  },
+  "MakeTimerCopyCardNum": {
+    "prop_name": "MakeTimerCopyCardNum",
+    "va": "0x1806c1750",
+    "bytes_hex": "8b8130050000c3cc",
+    "struct_offset": "+0x530",
+    "struct_offset_dec": 1328,
+    "detected_type": "int"
+  },
+  "CardSlot": {
+    "prop_name": "CardSlot",
+    "va": "0x1806c0e00",
+    "bytes_hex": "8b8134050000c3cc",
+    "struct_offset": "+0x534",
+    "struct_offset_dec": 1332,
+    "detected_type": "int"
+  },
+  "CardSlotResourceWidget": {
+    "prop_name": "CardSlotResourceWidget",
+    "va": "0x1806c0dc0",
+    "bytes_hex": "8b8140050000c3cc",
+    "struct_offset": "+0x540",
+    "struct_offset_dec": 1344,
+    "detected_type": "int"
+  },
+  "CardSlotSeal": {
+    "prop_name": "CardSlotSeal",
+    "va": "0x1806c0de0",
+    "bytes_hex": "8b8150050000c3cc",
+    "struct_offset": "+0x550",
+    "struct_offset_dec": 1360,
+    "detected_type": "int"
+  },
+  "CardSlotRecipeWidget": {
+    "prop_name": "CardSlotRecipeWidget",
+    "va": "0x1806c0da0",
+    "bytes_hex": "8b8160050000c3cc",
+    "struct_offset": "+0x560",
+    "struct_offset_dec": 1376,
+    "detected_type": "int"
+  },
+  "CardSlotBed": {
+    "prop_name": "CardSlotBed",
+    "va": "0x1806c0d20",
+    "bytes_hex": "8b8170050000c3cc",
+    "struct_offset": "+0x570",
+    "struct_offset_dec": 1392,
+    "detected_type": "int"
+  },
+  "CardSlotLeave": {
+    "prop_name": "CardSlotLeave",
+    "va": "0x1806c0d80",
+    "bytes_hex": "8b8180050000c3cc",
+    "struct_offset": "+0x580",
+    "struct_offset_dec": 1408,
+    "detected_type": "int"
+  },
+  "CardSlotBox": {
+    "prop_name": "CardSlotBox",
+    "va": "0x1806c0d40",
+    "bytes_hex": "8b8190050000c3cc",
+    "struct_offset": "+0x590",
+    "struct_offset_dec": 1424,
+    "detected_type": "int"
+  },
+  "CardSlotFly": {
+    "prop_name": "CardSlotFly",
+    "va": "0x1806c0d60",
+    "bytes_hex": "8b81a0050000c3cc",
+    "struct_offset": "+0x5a0",
+    "struct_offset_dec": 1440,
+    "detected_type": "int"
+  },
+  "TimerProgress": {
+    "prop_name": "TimerProgress",
+    "va": "0x1806c1e00",
+    "bytes_hex": "8b81b0050000c3cc",
+    "struct_offset": "+0x5b0",
+    "struct_offset_dec": 1456,
+    "detected_type": "int"
+  },
+  "TimerProgressAdverse": {
+    "prop_name": "TimerProgressAdverse",
+    "va": "0x1806c1de0",
+    "bytes_hex": "8b81c0050000c3cc",
+    "struct_offset": "+0x5c0",
+    "struct_offset_dec": 1472,
+    "detected_type": "int"
+  },
+  "CardGrid": {
+    "prop_name": "CardGrid",
+    "va": "0x1806c0ce0",
+    "bytes_hex": "8b81d0050000c3cc",
+    "struct_offset": "+0x5d0",
+    "struct_offset_dec": 1488,
+    "detected_type": "int"
+  },
+  "CardBag": {
+    "prop_name": "CardBag",
+    "va": "0x1806c0c80",
+    "bytes_hex": "8b81e0050000c3cc",
+    "struct_offset": "+0x5e0",
+    "struct_offset_dec": 1504,
+    "detected_type": "int"
+  },
+  "CardLook": {
+    "prop_name": "CardLook",
+    "va": "0x1806c0d00",
+    "bytes_hex": "8b81f0050000c3cc",
+    "struct_offset": "+0x5f0",
+    "struct_offset_dec": 1520,
+    "detected_type": "int"
+  },
+  "CardBoxForm": {
+    "prop_name": "CardBoxForm",
+    "va": "0x1806c0ca0",
+    "bytes_hex": "8b8100060000c3cc",
+    "struct_offset": "+0x600",
+    "struct_offset_dec": 1536,
+    "detected_type": "int"
+  },
+  "CardBox": {
+    "prop_name": "CardBox",
+    "va": "0x1806c0cc0",
+    "bytes_hex": "8b8110060000c3cc",
+    "struct_offset": "+0x610",
+    "struct_offset_dec": 1552,
+    "detected_type": "int"
+  },
+  "WorkBaseNum": {
+    "prop_name": "WorkBaseNum",
+    "va": "0x1806c1f80",
+    "bytes_hex": "8b8120060000c3cc",
+    "struct_offset": "+0x620",
+    "struct_offset_dec": 1568,
+    "detected_type": "int"
+  },
+  "WorkAddNum": {
+    "prop_name": "WorkAddNum",
+    "va": "0x1806c1f70",
+    "bytes_hex": "8b8124060000c3cc",
+    "struct_offset": "+0x624",
+    "struct_offset_dec": 1572,
+    "detected_type": "int"
+  },
+  "WidgetBaseNum": {
+    "prop_name": "WidgetBaseNum",
+    "va": "0x1806c1f40",
+    "bytes_hex": "8b8128060000c3cc",
+    "struct_offset": "+0x628",
+    "struct_offset_dec": 1576,
+    "detected_type": "int"
+  },
+  "WidgetAddNum": {
+    "prop_name": "WidgetAddNum",
+    "va": "0x1806c1f30",
+    "bytes_hex": "8b812c060000c3cc",
+    "struct_offset": "+0x62c",
+    "struct_offset_dec": 1580,
+    "detected_type": "int"
+  },
+  "FightArea": {
+    "prop_name": "FightArea",
+    "va": "0x1806c1620",
+    "bytes_hex": "8b8130060000c3cc",
+    "struct_offset": "+0x630",
+    "struct_offset_dec": 1584,
+    "detected_type": "int"
+  },
+  "CloudZone": {
+    "prop_name": "CloudZone",
+    "va": "0x1806c0ea0",
+    "bytes_hex": "8b8140060000c3cc",
+    "struct_offset": "+0x640",
+    "struct_offset_dec": 1600,
+    "detected_type": "int"
+  },
+  "CloudShow": {
+    "prop_name": "CloudShow",
+    "va": "0x1806c0e80",
+    "bytes_hex": "8b8150060000c3cc",
+    "struct_offset": "+0x650",
+    "struct_offset_dec": 1616,
+    "detected_type": "int"
+  },
+  "EntityTopNum": {
+    "prop_name": "EntityTopNum",
+    "va": "0x1806c1570",
+    "bytes_hex": "8b8160060000c3cc",
+    "struct_offset": "+0x660",
+    "struct_offset_dec": 1632,
+    "detected_type": "int"
+  },
+  "EntityHeight": {
+    "prop_name": "EntityHeight",
+    "va": "0x1806c1540",
+    "bytes_hex": "f30f108164060000",
+    "struct_offset": "+0x664",
+    "struct_offset_dec": 1636,
+    "detected_type": "float"
+  },
+  "EntityBoxHeight": {
+    "prop_name": "EntityBoxHeight",
+    "va": "0x1806c14f0",
+    "bytes_hex": "f30f108168060000",
+    "struct_offset": "+0x668",
+    "struct_offset_dec": 1640,
+    "detected_type": "float"
+  },
+  "EntityFlyHeight": {
+    "prop_name": "EntityFlyHeight",
+    "va": "0x1806c1510",
+    "bytes_hex": "f30f10816c060000",
+    "struct_offset": "+0x66c",
+    "struct_offset_dec": 1644,
+    "detected_type": "float"
+  },
+  "EntityFormHeight": {
+    "prop_name": "EntityFormHeight",
+    "va": "0x1806c1530",
+    "bytes_hex": "f30f108170060000",
+    "struct_offset": "+0x670",
+    "struct_offset_dec": 1648,
+    "detected_type": "float"
+  },
+  "EntityFormBoxHeight": {
+    "prop_name": "EntityFormBoxHeight",
+    "va": "0x1806c1520",
+    "bytes_hex": "f30f108174060000",
+    "struct_offset": "+0x674",
+    "struct_offset_dec": 1652,
+    "detected_type": "float"
+  },
+  "EntityOverlayHeightOffset": {
+    "prop_name": "EntityOverlayHeightOffset",
+    "va": "0x1806c1550",
+    "bytes_hex": "f30f108178060000",
+    "struct_offset": "+0x678",
+    "struct_offset_dec": 1656,
+    "detected_type": "float"
+  },
+  "EntityOverlayOffset": {
+    "prop_name": "EntityOverlayOffset",
+    "va": "0x1806c1560",
+    "bytes_hex": "f30f10817c060000",
+    "struct_offset": "+0x67c",
+    "struct_offset_dec": 1660,
+    "detected_type": "float"
+  },
+  "EntityCollapsedOverlayOffset": {
+    "prop_name": "EntityCollapsedOverlayOffset",
+    "va": "0x1806c1500",
+    "bytes_hex": "f30f108180060000",
+    "struct_offset": "+0x680",
+    "struct_offset_dec": 1664,
+    "detected_type": "float"
+  },
+  "EffectDamage": {
+    "prop_name": "EffectDamage",
+    "va": "0x1806c1140",
+    "bytes_hex": "8b8184060000c3cc",
+    "struct_offset": "+0x684",
+    "struct_offset_dec": 1668,
+    "detected_type": "int"
+  },
+  "EffectDamageArmor": {
+    "prop_name": "EffectDamageArmor",
+    "va": "0x1806c10e0",
+    "bytes_hex": "8b8190060000c3cc",
+    "struct_offset": "+0x690",
+    "struct_offset_dec": 1680,
+    "detected_type": "int"
+  },
+  "EffectAttack": {
+    "prop_name": "EffectAttack",
+    "va": "0x1806c0fe0",
+    "bytes_hex": "8b81a0060000c3cc",
+    "struct_offset": "+0x6a0",
+    "struct_offset_dec": 1696,
+    "detected_type": "int"
+  },
+  "EffectHealth": {
+    "prop_name": "EffectHealth",
+    "va": "0x1806c11c0",
+    "bytes_hex": "8b81b0060000c3cc",
+    "struct_offset": "+0x6b0",
+    "struct_offset_dec": 1712,
+    "detected_type": "int"
+  },
+  "EffectArmor": {
+    "prop_name": "EffectArmor",
+    "va": "0x1806c0f80",
+    "bytes_hex": "8b81c0060000c3cc",
+    "struct_offset": "+0x6c0",
+    "struct_offset_dec": 1728,
+    "detected_type": "int"
+  },
+  "EffectDeath": {
+    "prop_name": "EffectDeath",
+    "va": "0x1806c1160",
+    "bytes_hex": "8b81d0060000c3cc",
+    "struct_offset": "+0x6d0",
+    "struct_offset_dec": 1744,
+    "detected_type": "int"
+  },
+  "EffectSelect": {
+    "prop_name": "EffectSelect",
+    "va": "0x1806c1320",
+    "bytes_hex": "8b81e0060000c3cc",
+    "struct_offset": "+0x6e0",
+    "struct_offset_dec": 1760,
+    "detected_type": "int"
+  },
+  "EffectUnusable": {
+    "prop_name": "EffectUnusable",
+    "va": "0x1806c14e0",
+    "bytes_hex": "8b81f0060000c3cc",
+    "struct_offset": "+0x6f0",
+    "struct_offset_dec": 1776,
+    "detected_type": "int"
+  },
+  "EffectRefresh": {
+    "prop_name": "EffectRefresh",
+    "va": "0x1806c12e0",
+    "bytes_hex": "8b8100070000c3cc",
+    "struct_offset": "+0x700",
+    "struct_offset_dec": 1792,
+    "detected_type": "int"
+  },
+  "EffectBroken": {
+    "prop_name": "EffectBroken",
+    "va": "0x1806c1020",
+    "bytes_hex": "8b8110070000c3cc",
+    "struct_offset": "+0x710",
+    "struct_offset_dec": 1808,
+    "detected_type": "int"
+  },
+  "EffectThunder": {
+    "prop_name": "EffectThunder",
+    "va": "0x1806c1460",
+    "bytes_hex": "8b8120070000c3cc",
+    "struct_offset": "+0x720",
+    "struct_offset_dec": 1824,
+    "detected_type": "int"
+  },
+  "EffectAlert": {
+    "prop_name": "EffectAlert",
+    "va": "0x1806c0f60",
+    "bytes_hex": "8b8130070000c3cc",
+    "struct_offset": "+0x730",
+    "struct_offset_dec": 1840,
+    "detected_type": "int"
+  },
+  "EffectTimerSelect": {
+    "prop_name": "EffectTimerSelect",
+    "va": "0x1806c14a0",
+    "bytes_hex": "8b8140070000c3cc",
+    "struct_offset": "+0x740",
+    "struct_offset_dec": 1856,
+    "detected_type": "int"
+  },
+  "EffectDissolve": {
+    "prop_name": "EffectDissolve",
+    "va": "0x1806c1180",
+    "bytes_hex": "8b8150070000c3cc",
+    "struct_offset": "+0x750",
+    "struct_offset_dec": 1872,
+    "detected_type": "int"
+  },
+  "EffectTimerDisappear": {
+    "prop_name": "EffectTimerDisappear",
+    "va": "0x1806c1480",
+    "bytes_hex": "8b8160070000c3cc",
+    "struct_offset": "+0x760",
+    "struct_offset_dec": 1888,
+    "detected_type": "int"
+  },
+  "EffectRoleLevelRefresh": {
+    "prop_name": "EffectRoleLevelRefresh",
+    "va": "0x1806c1300",
+    "bytes_hex": "8b8170070000c3cc",
+    "struct_offset": "+0x770",
+    "struct_offset_dec": 1904,
+    "detected_type": "int"
+  },
+  "EffectPetEating": {
+    "prop_name": "EffectPetEating",
+    "va": "0x1806c12a0",
+    "bytes_hex": "8b8180070000c3cc",
+    "struct_offset": "+0x780",
+    "struct_offset_dec": 1920,
+    "detected_type": "int"
+  },
+  "EffectSoulSee": {
+    "prop_name": "EffectSoulSee",
+    "va": "0x1806c13a0",
+    "bytes_hex": "8b8190070000c3cc",
+    "struct_offset": "+0x790",
+    "struct_offset_dec": 1936,
+    "detected_type": "int"
+  },
+  "EffectShield": {
+    "prop_name": "EffectShield",
+    "va": "0x1806c1340",
+    "bytes_hex": "8b81a0070000c3cc",
+    "struct_offset": "+0x7a0",
+    "struct_offset_dec": 1952,
+    "detected_type": "int"
+  },
+  "EffectTaunt": {
+    "prop_name": "EffectTaunt",
+    "va": "0x1806c13e0",
+    "bytes_hex": "8b81b0070000c3cc",
+    "struct_offset": "+0x7b0",
+    "struct_offset_dec": 1968,
+    "detected_type": "int"
+  },
+  "EffectBan": {
+    "prop_name": "EffectBan",
+    "va": "0x1806c1000",
+    "bytes_hex": "8b81c0070000c3cc",
+    "struct_offset": "+0x7c0",
+    "struct_offset_dec": 1984,
+    "detected_type": "int"
+  },
+  "EffectImmobilize": {
+    "prop_name": "EffectImmobilize",
+    "va": "0x1806c1200",
+    "bytes_hex": "8b81d0070000c3cc",
+    "struct_offset": "+0x7d0",
+    "struct_offset_dec": 2000,
+    "detected_type": "int"
+  },
+  "EffectChaos": {
+    "prop_name": "EffectChaos",
+    "va": "0x1806c1080",
+    "bytes_hex": "8b81e0070000c3cc",
+    "struct_offset": "+0x7e0",
+    "struct_offset_dec": 2016,
+    "detected_type": "int"
+  },
+  "EffectIcon": {
+    "prop_name": "EffectIcon",
+    "va": "0x1806c11e0",
+    "bytes_hex": "8b81f0070000c3cc",
+    "struct_offset": "+0x7f0",
+    "struct_offset_dec": 2032,
+    "detected_type": "int"
+  },
+  "EffectLine": {
+    "prop_name": "EffectLine",
+    "va": "0x1806c1260",
+    "bytes_hex": "8b8100080000c3cc",
+    "struct_offset": "+0x800",
+    "struct_offset_dec": 2048,
+    "detected_type": "int"
+  },
+  "EffectCardFly": {
+    "prop_name": "EffectCardFly",
+    "va": "0x1806c1060",
+    "bytes_hex": "8b8110080000c3cc",
+    "struct_offset": "+0x810",
+    "struct_offset_dec": 2064,
+    "detected_type": "int"
+  },
+  "EffectCardCatch": {
+    "prop_name": "EffectCardCatch",
+    "va": "0x1806c1040",
+    "bytes_hex": "8b8120080000c3cc",
+    "struct_offset": "+0x820",
+    "struct_offset_dec": 2080,
+    "detected_type": "int"
+  },
+  "EffectPoison": {
+    "prop_name": "EffectPoison",
+    "va": "0x1806c12c0",
+    "bytes_hex": "8b8130080000c3cc",
+    "struct_offset": "+0x830",
+    "struct_offset_dec": 2096,
+    "detected_type": "int"
+  },
+  "EffectDamagePoison": {
+    "prop_name": "EffectDamagePoison",
+    "va": "0x1806c1120",
+    "bytes_hex": "8b8140080000c3cc",
+    "struct_offset": "+0x840",
+    "struct_offset_dec": 2112,
+    "detected_type": "int"
+  },
+  "EffectSummon": {
+    "prop_name": "EffectSummon",
+    "va": "0x1806c13c0",
+    "bytes_hex": "8b8150080000c3cc",
+    "struct_offset": "+0x850",
+    "struct_offset_dec": 2128,
+    "detected_type": "int"
+  },
+  "EffectAttackNum": {
+    "prop_name": "EffectAttackNum",
+    "va": "0x1806c0fc0",
+    "bytes_hex": "8b8160080000c3cc",
+    "struct_offset": "+0x860",
+    "struct_offset_dec": 2144,
+    "detected_type": "int"
+  },
+  "EffectLifeTimeRed": {
+    "prop_name": "EffectLifeTimeRed",
+    "va": "0x1806c1240",
+    "bytes_hex": "8b8170080000c3cc",
+    "struct_offset": "+0x870",
+    "struct_offset_dec": 2160,
+    "detected_type": "int"
+  },
+  "EffectFlyGift": {
+    "prop_name": "EffectFlyGift",
+    "va": "0x1806c11a0",
+    "bytes_hex": "8b8180080000c3cc",
+    "struct_offset": "+0x880",
+    "struct_offset_dec": 2176,
+    "detected_type": "int"
+  },
+  "EffectTimerShow": {
+    "prop_name": "EffectTimerShow",
+    "va": "0x1806c14c0",
+    "bytes_hex": "8b8190080000c3cc",
+    "struct_offset": "+0x890",
+    "struct_offset_dec": 2192,
+    "detected_type": "int"
+  },
+  "EffectCoreGoldenEat": {
+    "prop_name": "EffectCoreGoldenEat",
+    "va": "0x1806c10c0",
+    "bytes_hex": "8b81a0080000c3cc",
+    "struct_offset": "+0x8a0",
+    "struct_offset_dec": 2208,
+    "detected_type": "int"
+  },
+  "EffectCoreGoldenDone": {
+    "prop_name": "EffectCoreGoldenDone",
+    "va": "0x1806c10a0",
+    "bytes_hex": "8b81b0080000c3cc",
+    "struct_offset": "+0x8b0",
+    "struct_offset_dec": 2224,
+    "detected_type": "int"
+  },
+  "EffectThunderArray": {
+    "prop_name": "EffectThunderArray",
+    "va": "0x1806c1400",
+    "bytes_hex": "8b81c0080000c3cc",
+    "struct_offset": "+0x8c0",
+    "struct_offset_dec": 2240,
+    "detected_type": "int"
+  },
+  "EffectLevelUpTips": {
+    "prop_name": "EffectLevelUpTips",
+    "va": "0x1806c1220",
+    "bytes_hex": "8b81d0080000c3cc",
+    "struct_offset": "+0x8d0",
+    "struct_offset_dec": 2256,
+    "detected_type": "int"
+  },
+  "EffectThunderTips": {
+    "prop_name": "EffectThunderTips",
+    "va": "0x1806c1440",
+    "bytes_hex": "8b81e0080000c3cc",
+    "struct_offset": "+0x8e0",
+    "struct_offset_dec": 2272,
+    "detected_type": "int"
+  },
+  "EffectThunderPower": {
+    "prop_name": "EffectThunderPower",
+    "va": "0x1806c1420",
+    "bytes_hex": "8b81f0080000c3cc",
+    "struct_offset": "+0x8f0",
+    "struct_offset_dec": 2288,
+    "detected_type": "int"
+  },
+  "EffectDamageCastle": {
+    "prop_name": "EffectDamageCastle",
+    "va": "0x1806c1100",
+    "bytes_hex": "8b8100090000c3cc",
+    "struct_offset": "+0x900",
+    "struct_offset_dec": 2304,
+    "detected_type": "int"
+  },
+  "EffectShopForm": {
+    "prop_name": "EffectShopForm",
+    "va": "0x1806c1380",
+    "bytes_hex": "8b8110090000c3cc",
+    "struct_offset": "+0x910",
+    "struct_offset_dec": 2320,
+    "detected_type": "int"
+  },
+  "EffectShopCard": {
+    "prop_name": "EffectShopCard",
+    "va": "0x1806c1360",
+    "bytes_hex": "8b8120090000c3cc",
+    "struct_offset": "+0x920",
+    "struct_offset_dec": 2336,
+    "detected_type": "int"
+  },
+  "EffectLock": {
+    "prop_name": "EffectLock",
+    "va": "0x1806c1280",
+    "bytes_hex": "8b8130090000c3cc",
+    "struct_offset": "+0x930",
+    "struct_offset_dec": 2352,
+    "detected_type": "int"
+  },
+  "EffectArrayLock": {
+    "prop_name": "EffectArrayLock",
+    "va": "0x1806c0fa0",
+    "bytes_hex": "8b8140090000c3cc",
+    "struct_offset": "+0x940",
+    "struct_offset_dec": 2368,
+    "detected_type": "int"
+  },
+  "RoleLevelUpTips": {
+    "prop_name": "RoleLevelUpTips",
+    "va": "0x1806c1920",
+    "bytes_hex": "8b8150090000c3cc",
+    "struct_offset": "+0x950",
+    "struct_offset_dec": 2384,
+    "detected_type": "int"
+  },
+  "NewWidgetTips": {
+    "prop_name": "NewWidgetTips",
+    "va": "0x1806c17b0",
+    "bytes_hex": "8b8160090000c3cc",
+    "struct_offset": "+0x960",
+    "struct_offset_dec": 2400,
+    "detected_type": "int"
+  },
+  "SoulLevelUpTips": {
+    "prop_name": "SoulLevelUpTips",
+    "va": "0x1806c1950",
+    "bytes_hex": "8b8170090000c3cc",
+    "struct_offset": "+0x970",
+    "struct_offset_dec": 2416,
+    "detected_type": "int"
+  },
+  "MapAreaExpandTips": {
+    "prop_name": "MapAreaExpandTips",
+    "va": "0x1806c1780",
+    "bytes_hex": "8b8180090000c3cc",
+    "struct_offset": "+0x980",
+    "struct_offset_dec": 2432,
+    "detected_type": "int"
+  },
+  "NpcWishTips": {
+    "prop_name": "NpcWishTips",
+    "va": "0x1806c1870",
+    "bytes_hex": "8b8190090000c3cc",
+    "struct_offset": "+0x990",
+    "struct_offset_dec": 2448,
+    "detected_type": "int"
+  },
+  "CoreGoldenWishTips": {
+    "prop_name": "CoreGoldenWishTips",
+    "va": "0x1806c0f40",
+    "bytes_hex": "8b81a0090000c3cc",
+    "struct_offset": "+0x9a0",
+    "struct_offset_dec": 2464,
+    "detected_type": "int"
+  },
+  "QuaUpgradeTips": {
+    "prop_name": "QuaUpgradeTips",
+    "va": "0x1806c18d0",
+    "bytes_hex": "8b81b0090000c3cc",
+    "struct_offset": "+0x9b0",
+    "struct_offset_dec": 2480,
+    "detected_type": "int"
+  },
+  "NpcTalkTips": {
+    "prop_name": "NpcTalkTips",
+    "va": "0x1806c1850",
+    "bytes_hex": "8b81c0090000c3cc",
+    "struct_offset": "+0x9c0",
+    "struct_offset_dec": 2496,
+    "detected_type": "int"
+  },
+  "BaseCanNpcEnemyCard": {
+    "prop_name": "BaseCanNpcEnemyCard",
+    "va": "0x1806c0be0",
+    "bytes_hex": "488b81d0090000c3",
+    "struct_offset": "+0x9d0",
+    "struct_offset_dec": 2512,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFightEnemyCard": {
+    "prop_name": "BaseCanFightEnemyCard",
+    "va": "0x1806c0b80",
+    "bytes_hex": "488b81d8090000c3",
+    "struct_offset": "+0x9d8",
+    "struct_offset_dec": 2520,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanEatEnemyCard": {
+    "prop_name": "BaseCanEatEnemyCard",
+    "va": "0x1806c0b30",
+    "bytes_hex": "488b81e0090000c3",
+    "struct_offset": "+0x9e0",
+    "struct_offset_dec": 2528,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanEatPetCard": {
+    "prop_name": "BaseCanEatPetCard",
+    "va": "0x1806c0b40",
+    "bytes_hex": "488b81e8090000c3",
+    "struct_offset": "+0x9e8",
+    "struct_offset_dec": 2536,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanRoleForm": {
+    "prop_name": "BaseCanRoleForm",
+    "va": "0x1806c0c20",
+    "bytes_hex": "488b81f0090000c3",
+    "struct_offset": "+0x9f0",
+    "struct_offset_dec": 2544,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanMapCheckCard": {
+    "prop_name": "BaseCanMapCheckCard",
+    "va": "0x1806c0bc0",
+    "bytes_hex": "488b81000a0000c3",
+    "struct_offset": "+0xa00",
+    "struct_offset_dec": 2560,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanMapNeedCard": {
+    "prop_name": "BaseCanMapNeedCard",
+    "va": "0x1806c0bd0",
+    "bytes_hex": "488b81080a0000c3",
+    "struct_offset": "+0xa08",
+    "struct_offset_dec": 2568,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanEnergyCostCard": {
+    "prop_name": "BaseCanEnergyCostCard",
+    "va": "0x1806c0b50",
+    "bytes_hex": "488b81100a0000c3",
+    "struct_offset": "+0xa10",
+    "struct_offset_dec": 2576,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFightDeathTalent": {
+    "prop_name": "BaseCanFightDeathTalent",
+    "va": "0x1806c0b70",
+    "bytes_hex": "488b81180a0000c3",
+    "struct_offset": "+0xa18",
+    "struct_offset_dec": 2584,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFightDeathPrize": {
+    "prop_name": "BaseCanFightDeathPrize",
+    "va": "0x1806c0b60",
+    "bytes_hex": "488b81200a0000c3",
+    "struct_offset": "+0xa20",
+    "struct_offset_dec": 2592,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanStackCard": {
+    "prop_name": "BaseCanStackCard",
+    "va": "0x1806c0c50",
+    "bytes_hex": "488b81280a0000c3",
+    "struct_offset": "+0xa28",
+    "struct_offset_dec": 2600,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFightWinRecoverHealth": {
+    "prop_name": "BaseCanFightWinRecoverHealth",
+    "va": "0x1806c0b90",
+    "bytes_hex": "488b81300a0000c3",
+    "struct_offset": "+0xa30",
+    "struct_offset_dec": 2608,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanShowLevel": {
+    "prop_name": "BaseCanShowLevel",
+    "va": "0x1806c0c40",
+    "bytes_hex": "488b81380a0000c3",
+    "struct_offset": "+0xa38",
+    "struct_offset_dec": 2616,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanPriceCard": {
+    "prop_name": "BaseCanPriceCard",
+    "va": "0x1806c0c00",
+    "bytes_hex": "488b81400a0000c3",
+    "struct_offset": "+0xa40",
+    "struct_offset_dec": 2624,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFlyDownDelCard": {
+    "prop_name": "BaseCanFlyDownDelCard",
+    "va": "0x1806c0bb0",
+    "bytes_hex": "488b81500a0000c3",
+    "struct_offset": "+0xa50",
+    "struct_offset_dec": 2640,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanFlyCheckCard": {
+    "prop_name": "BaseCanFlyCheckCard",
+    "va": "0x1806c0ba0",
+    "bytes_hex": "488b81580a0000c3",
+    "struct_offset": "+0xa58",
+    "struct_offset_dec": 2648,
+    "detected_type": "string_or_obj"
+  },
+  "BaseCanRoleHeadIcon": {
+    "prop_name": "BaseCanRoleHeadIcon",
+    "va": "0x1806c0c30",
+    "bytes_hex": "488b81600a0000c3",
+    "struct_offset": "+0xa60",
+    "struct_offset_dec": 2656,
+    "detected_type": "string_or_obj"
+  },
+  "BaseMagicNumber": {
+    "prop_name": "BaseMagicNumber",
+    "va": "0x1806c0c60",
+    "bytes_hex": "488b81680a0000c3",
+    "struct_offset": "+0xa68",
+    "struct_offset_dec": 2664,
+    "detected_type": "string_or_obj"
+  },
+  "MakeTimerInit": {
+    "prop_name": "MakeTimerInit",
+    "va": "0x1806c1760",
+    "bytes_hex": "488b81700a0000c3",
+    "struct_offset": "+0xa70",
+    "struct_offset_dec": 2672,
+    "detected_type": "string_or_obj"
+  },
+  "ProduceTimerInit": {
+    "prop_name": "ProduceTimerInit",
+    "va": "0x1806c18b0",
+    "bytes_hex": "488b81780a0000c3",
+    "struct_offset": "+0xa78",
+    "struct_offset_dec": 2680,
+    "detected_type": "string_or_obj"
+  },
+  "ExploreTimerInit": {
+    "prop_name": "ExploreTimerInit",
+    "va": "0x1806c1600",
+    "bytes_hex": "488b81800a0000c3",
+    "struct_offset": "+0xa80",
+    "struct_offset_dec": 2688,
+    "detected_type": "string_or_obj"
+  },
+  "OnceTimerHide": {
+    "prop_name": "OnceTimerHide",
+    "va": "0x1806c1880",
+    "bytes_hex": "488b81880a0000c3",
+    "struct_offset": "+0xa88",
+    "struct_offset_dec": 2696,
+    "detected_type": "string_or_obj"
+  },
+  "ExpLevelUp": {
+    "prop_name": "ExpLevelUp",
+    "va": "0x1806c15d0",
+    "bytes_hex": "8b81900a0000c3cc",
+    "struct_offset": "+0xa90",
+    "struct_offset_dec": 2704,
+    "detected_type": "int"
+  },
+  "ExpLevelUpPet": {
+    "prop_name": "ExpLevelUpPet",
+    "va": "0x1806c15b0",
+    "bytes_hex": "8b81a00a0000c3cc",
+    "struct_offset": "+0xaa0",
+    "struct_offset_dec": 2720,
+    "detected_type": "int"
+  },
+  "WidgetEmpty": {
+    "prop_name": "WidgetEmpty",
+    "va": "0x1806c1f60",
+    "bytes_hex": "8b81b00a0000c3cc",
+    "struct_offset": "+0xab0",
+    "struct_offset_dec": 2736,
+    "detected_type": "int"
+  },
+  "NpcHighLevelPeep": {
+    "prop_name": "NpcHighLevelPeep",
+    "va": "0x1806c1810",
+    "bytes_hex": "8b81c00a0000c3cc",
+    "struct_offset": "+0xac0",
+    "struct_offset_dec": 2752,
+    "detected_type": "int"
+  },
+  "NpcLevelPeep": {
+    "prop_name": "NpcLevelPeep",
+    "va": "0x1806c1830",
+    "bytes_hex": "8b81d00a0000c3cc",
+    "struct_offset": "+0xad0",
+    "struct_offset_dec": 2768,
+    "detected_type": "int"
+  },
+  "Guide9004": {
+    "prop_name": "Guide9004",
+    "va": "0x1806c1660",
+    "bytes_hex": "8b81e00a0000c3cc",
+    "struct_offset": "+0xae0",
+    "struct_offset_dec": 2784,
+    "detected_type": "int"
+  },
+  "MakePotionFail": {
+    "prop_name": "MakePotionFail",
+    "va": "0x1806c1740",
+    "bytes_hex": "8b81f00a0000c3cc",
+    "struct_offset": "+0xaf0",
+    "struct_offset_dec": 2800,
+    "detected_type": "int"
+  },
+  "AdverseFunc": {
+    "prop_name": "AdverseFunc",
+    "va": "0x1806c0b00",
+    "bytes_hex": "8b81000b0000c3cc",
+    "struct_offset": "+0xb00",
+    "struct_offset_dec": 2816,
+    "detected_type": "int"
+  },
+  "ExpPrizeId": {
+    "prop_name": "ExpPrizeId",
+    "va": "0x1806c15f0",
+    "bytes_hex": "8b81100b0000c3cc",
+    "struct_offset": "+0xb10",
+    "struct_offset_dec": 2832,
+    "detected_type": "int"
+  },
+  "InsightFunc": {
+    "prop_name": "InsightFunc",
+    "va": "0x1806c16c0",
+    "bytes_hex": "8b81200b0000c3cc",
+    "struct_offset": "+0xb20",
+    "struct_offset_dec": 2848,
+    "detected_type": "int"
+  },
+  "KillCardId": {
+    "prop_name": "KillCardId",
+    "va": "0x1806c1700",
+    "bytes_hex": "8b81300b0000c3cc",
+    "struct_offset": "+0xb30",
+    "struct_offset_dec": 2864,
+    "detected_type": "int"
+  },
+  "KillCardFunc": {
+    "prop_name": "KillCardFunc",
+    "va": "0x1806c16e0",
+    "bytes_hex": "8b81400b0000c3cc",
+    "struct_offset": "+0xb40",
+    "struct_offset_dec": 2880,
+    "detected_type": "int"
+  },
+  "PinCardId": {
+    "prop_name": "PinCardId",
+    "va": "0x1806c18a0",
+    "bytes_hex": "8b81500b0000c3cc",
+    "struct_offset": "+0xb50",
+    "struct_offset_dec": 2896,
+    "detected_type": "int"
+  },
+  "LuckyPrizeId": {
+    "prop_name": "LuckyPrizeId",
+    "va": "0x1806c1720",
+    "bytes_hex": "8b81600b0000c3cc",
+    "struct_offset": "+0xb60",
+    "struct_offset_dec": 2912,
+    "detected_type": "int"
+  },
+  "GhostPrizeId": {
+    "prop_name": "GhostPrizeId",
+    "va": "0x1806c1640",
+    "bytes_hex": "8b81700b0000c3cc",
+    "struct_offset": "+0xb70",
+    "struct_offset_dec": 2928,
+    "detected_type": "int"
+  },
+  "NewbieSplashEndTalk": {
+    "prop_name": "NewbieSplashEndTalk",
+    "va": "0x1806c17e0",
+    "bytes_hex": "488b81800b0000c3",
+    "struct_offset": "+0xb80",
+    "struct_offset_dec": 2944,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieRoleShakeEndNarration": {
+    "prop_name": "NewbieRoleShakeEndNarration",
+    "va": "0x1806c17d0",
+    "bytes_hex": "488b81880b0000c3",
+    "struct_offset": "+0xb88",
+    "struct_offset_dec": 2952,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieTimerStartTalk": {
+    "prop_name": "NewbieTimerStartTalk",
+    "va": "0x1806c17f0",
+    "bytes_hex": "488b81900b0000c3",
+    "struct_offset": "+0xb90",
+    "struct_offset_dec": 2960,
+    "detected_type": "string_or_obj"
+  },
+  "NewbieRoleFirstDungeon": {
+    "prop_name": "NewbieRoleFirstDungeon",
+    "va": "0x1806c17c0",
+    "bytes_hex": "488b81980b0000c3",
+    "struct_offset": "+0xb98",
+    "struct_offset_dec": 2968,
+    "detected_type": "string_or_obj"
+  },
+  "SpiritStoneId": {
+    "prop_name": "SpiritStoneId",
+    "va": "0x1806c1d90",
+    "bytes_hex": "8b81a00b0000c3cc",
+    "struct_offset": "+0xba0",
+    "struct_offset_dec": 2976,
+    "detected_type": "int"
+  },
+  "CatchHighLevel": {
+    "prop_name": "CatchHighLevel",
+    "va": "0x1806c0e60",
+    "bytes_hex": "8b81b00b0000c3cc",
+    "struct_offset": "+0xbb0",
+    "struct_offset_dec": 2992,
+    "detected_type": "int"
+  },
+  "CatchFail": {
+    "prop_name": "CatchFail",
+    "va": "0x1806c0e40",
+    "bytes_hex": "8b81c00b0000c3cc",
+    "struct_offset": "+0xbc0",
+    "struct_offset_dec": 3008,
+    "detected_type": "int"
+  },
+  "CatchCanNot": {
+    "prop_name": "CatchCanNot",
+    "va": "0x1806c0e20",
+    "bytes_hex": "8b81d00b0000c3cc",
+    "struct_offset": "+0xbd0",
+    "struct_offset_dec": 3024,
+    "detected_type": "int"
+  },
+  "CoreEmptyId": {
+    "prop_name": "CoreEmptyId",
+    "va": "0x1806c0ec0",
+    "bytes_hex": "8b81e00b0000c3cc",
+    "struct_offset": "+0xbe0",
+    "struct_offset_dec": 3040,
+    "detected_type": "int"
+  },
+  "CoreGoldenWishNum": {
+    "prop_name": "CoreGoldenWishNum",
+    "va": "0x1806c0f20",
+    "bytes_hex": "488b81f00b0000c3",
+    "struct_offset": "+0xbf0",
+    "struct_offset_dec": 3056,
+    "detected_type": "string_or_obj"
+  },
+  "CoreGoldenThunderWin": {
+    "prop_name": "CoreGoldenThunderWin",
+    "va": "0x1806c0f10",
+    "bytes_hex": "488b81f80b0000c3",
+    "struct_offset": "+0xbf8",
+    "struct_offset_dec": 3064,
+    "detected_type": "string_or_obj"
+  },
+  "CoreGoldenThunderLose": {
+    "prop_name": "CoreGoldenThunderLose",
+    "va": "0x1806c0f00",
+    "bytes_hex": "488b81000c0000c3",
+    "struct_offset": "+0xc00",
+    "struct_offset_dec": 3072,
+    "detected_type": "string_or_obj"
+  },
+  "ThunderPowerId": {
+    "prop_name": "ThunderPowerId",
+    "va": "0x1806c1db0",
+    "bytes_hex": "8b81080c0000c3cc",
+    "struct_offset": "+0xc08",
+    "struct_offset_dec": 3080,
+    "detected_type": "int"
+  },
+  "ThunderPowerPrize": {
+    "prop_name": "ThunderPowerPrize",
+    "va": "0x1806c1dc0",
+    "bytes_hex": "488b81180c0000c3",
+    "struct_offset": "+0xc18",
+    "struct_offset_dec": 3096,
+    "detected_type": "string_or_obj"
+  },
+  "CoreGoldenFlyConf": {
+    "prop_name": "CoreGoldenFlyConf",
+    "va": "0x1806c0ed0",
+    "bytes_hex": "488b81200c0000c3",
+    "struct_offset": "+0xc20",
+    "struct_offset_dec": 3104,
+    "detected_type": "string_or_obj"
+  },
+  "CoreGoldenFlyPrize": {
+    "prop_name": "CoreGoldenFlyPrize",
+    "va": "0x1806c0ef0",
+    "bytes_hex": "8b81280c0000c3cc",
+    "struct_offset": "+0xc28",
+    "struct_offset_dec": 3112,
+    "detected_type": "int"
+  },
+  "SpawnMonsterWin": {
+    "prop_name": "SpawnMonsterWin",
+    "va": "0x1806c1d50",
+    "bytes_hex": "488b81380c0000c3",
+    "struct_offset": "+0xc38",
+    "struct_offset_dec": 3128,
+    "detected_type": "string_or_obj"
+  },
+  "ExpLevelUpErrorTips": {
+    "prop_name": "ExpLevelUpErrorTips",
+    "va": "0x1806c1590",
+    "bytes_hex": "8b81400c0000c3cc",
+    "struct_offset": "+0xc40",
+    "struct_offset_dec": 3136,
+    "detected_type": "int"
+  },
+  "InsightFight": {
+    "prop_name": "InsightFight",
+    "va": "0x1806c16a0",
+    "bytes_hex": "488b81500c0000c3",
+    "struct_offset": "+0xc50",
+    "struct_offset_dec": 3152,
+    "detected_type": "string_or_obj"
+  },
+  "InsightFightSword": {
+    "prop_name": "InsightFightSword",
+    "va": "0x1806c1680",
+    "bytes_hex": "488b81600c0000c3",
+    "struct_offset": "+0xc60",
+    "struct_offset_dec": 3168,
+    "detected_type": "string_or_obj"
+  },
+  "SoundCardFly": {
+    "prop_name": "SoundCardFly",
+    "va": "0x1806c19e0",
+    "bytes_hex": "8b81700c0000c3cc",
+    "struct_offset": "+0xc70",
+    "struct_offset_dec": 3184,
+    "detected_type": "int"
+  },
+  "SoundCardShake": {
+    "prop_name": "SoundCardShake",
+    "va": "0x1806c1a40",
+    "bytes_hex": "8b81800c0000c3cc",
+    "struct_offset": "+0xc80",
+    "struct_offset_dec": 3200,
+    "detected_type": "int"
+  },
+  "SoundCardDead": {
+    "prop_name": "SoundCardDead",
+    "va": "0x1806c19a0",
+    "bytes_hex": "8b81900c0000c3cc",
+    "struct_offset": "+0xc90",
+    "struct_offset_dec": 3216,
+    "detected_type": "int"
+  },
+  "SoundCardPickUp": {
+    "prop_name": "SoundCardPickUp",
+    "va": "0x1806c1a20",
+    "bytes_hex": "8b81a00c0000c3cc",
+    "struct_offset": "+0xca0",
+    "struct_offset_dec": 3232,
+    "detected_type": "int"
+  },
+  "SoundCardStack": {
+    "prop_name": "SoundCardStack",
+    "va": "0x1806c1a60",
+    "bytes_hex": "8b81b00c0000c3cc",
+    "struct_offset": "+0xcb0",
+    "struct_offset_dec": 3248,
+    "detected_type": "int"
+  },
+  "SoundCardHit": {
+    "prop_name": "SoundCardHit",
+    "va": "0x1806c1a00",
+    "bytes_hex": "8b81c00c0000c3cc",
+    "struct_offset": "+0xcc0",
+    "struct_offset_dec": 3264,
+    "detected_type": "int"
+  },
+  "SoundCardFlyDeath": {
+    "prop_name": "SoundCardFlyDeath",
+    "va": "0x1806c19c0",
+    "bytes_hex": "8b81d00c0000c3cc",
+    "struct_offset": "+0xcd0",
+    "struct_offset_dec": 3280,
+    "detected_type": "int"
+  },
+  "SoundCardTalk": {
+    "prop_name": "SoundCardTalk",
+    "va": "0x1806c1a80",
+    "bytes_hex": "8b81e00c0000c3cc",
+    "struct_offset": "+0xce0",
+    "struct_offset_dec": 3296,
+    "detected_type": "int"
+  },
+  "SoundConflictStart": {
+    "prop_name": "SoundConflictStart",
+    "va": "0x1806c1ae0",
+    "bytes_hex": "8b81f00c0000c3cc",
+    "struct_offset": "+0xcf0",
+    "struct_offset_dec": 3312,
+    "detected_type": "int"
+  },
+  "SoundConflictJoin": {
+    "prop_name": "SoundConflictJoin",
+    "va": "0x1806c1ac0",
+    "bytes_hex": "8b81000d0000c3cc",
+    "struct_offset": "+0xd00",
+    "struct_offset_dec": 3328,
+    "detected_type": "int"
+  },
+  "SoundCardBuy": {
+    "prop_name": "SoundCardBuy",
+    "va": "0x1806c1980",
+    "bytes_hex": "8b81100d0000c3cc",
+    "struct_offset": "+0xd10",
+    "struct_offset_dec": 3344,
+    "detected_type": "int"
+  },
+  "SoundCardUse": {
+    "prop_name": "SoundCardUse",
+    "va": "0x1806c1aa0",
+    "bytes_hex": "8b81200d0000c3cc",
+    "struct_offset": "+0xd20",
+    "struct_offset_dec": 3360,
+    "detected_type": "int"
+  },
+  "SoundRoleAddEnergy": {
+    "prop_name": "SoundRoleAddEnergy",
+    "va": "0x1806c1b80",
+    "bytes_hex": "8b81300d0000c3cc",
+    "struct_offset": "+0xd30",
+    "struct_offset_dec": 3376,
+    "detected_type": "int"
+  },
+  "SoundNpcAddRoleWish": {
+    "prop_name": "SoundNpcAddRoleWish",
+    "va": "0x1806c1b20",
+    "bytes_hex": "8b81400d0000c3cc",
+    "struct_offset": "+0xd40",
+    "struct_offset_dec": 3392,
+    "detected_type": "int"
+  },
+  "SoundNpcAddStone": {
+    "prop_name": "SoundNpcAddStone",
+    "va": "0x1806c1b40",
+    "bytes_hex": "8b81500d0000c3cc",
+    "struct_offset": "+0xd50",
+    "struct_offset_dec": 3408,
+    "detected_type": "int"
+  },
+  "SoundNpcAddWish": {
+    "prop_name": "SoundNpcAddWish",
+    "va": "0x1806c1b60",
+    "bytes_hex": "8b81600d0000c3cc",
+    "struct_offset": "+0xd60",
+    "struct_offset_dec": 3424,
+    "detected_type": "int"
+  },
+  "SoundEnterWidget": {
+    "prop_name": "SoundEnterWidget",
+    "va": "0x1806c1b00",
+    "bytes_hex": "8b81700d0000c3cc",
+    "struct_offset": "+0xd70",
+    "struct_offset_dec": 3440,
+    "detected_type": "int"
+  },
+  "SoundUiButtonDown": {
+    "prop_name": "SoundUiButtonDown",
+    "va": "0x1806c1be0",
+    "bytes_hex": "8b81800d0000c3cc",
+    "struct_offset": "+0xd80",
+    "struct_offset_dec": 3456,
+    "detected_type": "int"
+  },
+  "SoundUiButtonMainDown": {
+    "prop_name": "SoundUiButtonMainDown",
+    "va": "0x1806c1c20",
+    "bytes_hex": "8b81900d0000c3cc",
+    "struct_offset": "+0xd90",
+    "struct_offset_dec": 3472,
+    "detected_type": "int"
+  },
+  "SoundUiButtonEnter": {
+    "prop_name": "SoundUiButtonEnter",
+    "va": "0x1806c1c00",
+    "bytes_hex": "8b81a00d0000c3cc",
+    "struct_offset": "+0xda0",
+    "struct_offset_dec": 3488,
+    "detected_type": "int"
+  },
+  "SoundUiOpenTips": {
+    "prop_name": "SoundUiOpenTips",
+    "va": "0x1806c1ce0",
+    "bytes_hex": "8b81b00d0000c3cc",
+    "struct_offset": "+0xdb0",
+    "struct_offset_dec": 3504,
+    "detected_type": "int"
+  },
+  "SoundUiTaskCollect": {
+    "prop_name": "SoundUiTaskCollect",
+    "va": "0x1806c1d20",
+    "bytes_hex": "8b81c00d0000c3cc",
+    "struct_offset": "+0xdc0",
+    "struct_offset_dec": 3520,
+    "detected_type": "int"
+  },
+  "SoundUiOpenForm": {
+    "prop_name": "SoundUiOpenForm",
+    "va": "0x1806c1cc0",
+    "bytes_hex": "8b81d00d0000c3cc",
+    "struct_offset": "+0xdd0",
+    "struct_offset_dec": 3536,
+    "detected_type": "int"
+  },
+  "SoundUiGameAgeEnd": {
+    "prop_name": "SoundUiGameAgeEnd",
+    "va": "0x1806c1c60",
+    "bytes_hex": "8b81e00d0000c3cc",
+    "struct_offset": "+0xde0",
+    "struct_offset_dec": 3552,
+    "detected_type": "int"
+  },
+  "SoundUiCutSceneForm": {
+    "prop_name": "SoundUiCutSceneForm",
+    "va": "0x1806c1c40",
+    "bytes_hex": "8b81f00d0000c3cc",
+    "struct_offset": "+0xdf0",
+    "struct_offset_dec": 3568,
+    "detected_type": "int"
+  },
+  "SoundUiNarrationClick": {
+    "prop_name": "SoundUiNarrationClick",
+    "va": "0x1806c1ca0",
+    "bytes_hex": "8b81000e0000c3cc",
+    "struct_offset": "+0xe00",
+    "struct_offset_dec": 3584,
+    "detected_type": "int"
+  },
+  "SoundUiGuideClick": {
+    "prop_name": "SoundUiGuideClick",
+    "va": "0x1806c1c80",
+    "bytes_hex": "8b81100e0000c3cc",
+    "struct_offset": "+0xe10",
+    "struct_offset_dec": 3600,
+    "detected_type": "int"
+  },
+  "SoundUiSplashPat": {
+    "prop_name": "SoundUiSplashPat",
+    "va": "0x1806c1d00",
+    "bytes_hex": "8b81200e0000c3cc",
+    "struct_offset": "+0xe20",
+    "struct_offset_dec": 3616,
+    "detected_type": "int"
+  },
+  "SoundTimerPutCard": {
+    "prop_name": "SoundTimerPutCard",
+    "va": "0x1806c1bc0",
+    "bytes_hex": "8b81300e0000c3cc",
+    "struct_offset": "+0xe30",
+    "struct_offset_dec": 3632,
+    "detected_type": "int"
+  },
+  "SoundTimerPrizeEnd": {
+    "prop_name": "SoundTimerPrizeEnd",
+    "va": "0x1806c1ba0",
+    "bytes_hex": "8b81400e0000c3cc",
+    "struct_offset": "+0xe40",
+    "struct_offset_dec": 3648,
+    "detected_type": "int"
+  },
+  "SoundWidgetNewTips": {
+    "prop_name": "SoundWidgetNewTips",
+    "va": "0x1806c1d40",
+    "bytes_hex": "8b81500e0000c3cc",
+    "struct_offset": "+0xe50",
+    "struct_offset_dec": 3664,
+    "detected_type": "int"
+  },
+  "UiSettingScreenFullName": {
+    "prop_name": "UiSettingScreenFullName",
+    "va": "0x1806c1e80",
+    "bytes_hex": "488b81600e0000c3",
+    "struct_offset": "+0xe60",
+    "struct_offset_dec": 3680,
+    "detected_type": "string_or_obj"
+  },
+  "UiSettingScreenFullName_l10n_key": {
+    "prop_name": "UiSettingScreenFullName_l10n_key",
+    "va": "0x1806c1e70",
+    "bytes_hex": "488b81680e0000c3",
+    "struct_offset": "+0xe68",
+    "struct_offset_dec": 3688,
+    "detected_type": "string_or_obj"
+  },
+  "UiSettingScreenHalfName": {
+    "prop_name": "UiSettingScreenHalfName",
+    "va": "0x1806c1ea0",
+    "bytes_hex": "488b81700e0000c3",
+    "struct_offset": "+0xe70",
+    "struct_offset_dec": 3696,
+    "detected_type": "string_or_obj"
+  },
+  "UiSettingScreenHalfName_l10n_key": {
+    "prop_name": "UiSettingScreenHalfName_l10n_key",
+    "va": "0x1806c1e90",
+    "bytes_hex": "488b81780e0000c3",
+    "struct_offset": "+0xe78",
+    "struct_offset_dec": 3704,
+    "detected_type": "string_or_obj"
+  },
+  "UiRecordNoneName": {
+    "prop_name": "UiRecordNoneName",
+    "va": "0x1806c1e60",
+    "bytes_hex": "488b81800e0000c3",
+    "struct_offset": "+0xe80",
+    "struct_offset_dec": 3712,
+    "detected_type": "string_or_obj"
+  },
+  "UiRecordNoneName_l10n_key": {
+    "prop_name": "UiRecordNoneName_l10n_key",
+    "va": "0x1806c1e50",
+    "bytes_hex": "488b81880e0000c3",
+    "struct_offset": "+0xe88",
+    "struct_offset_dec": 3720,
+    "detected_type": "string_or_obj"
+  },
+  "UiMenuFormVersion": {
+    "prop_name": "UiMenuFormVersion",
+    "va": "0x1806c1e20",
+    "bytes_hex": "488b81900e0000c3",
+    "struct_offset": "+0xe90",
+    "struct_offset_dec": 3728,
+    "detected_type": "string_or_obj"
+  },
+  "UiMenuFormVersion_l10n_key": {
+    "prop_name": "UiMenuFormVersion_l10n_key",
+    "va": "0x1806c1e10",
+    "bytes_hex": "488b81980e0000c3",
+    "struct_offset": "+0xe98",
+    "struct_offset_dec": 3736,
+    "detected_type": "string_or_obj"
+  },
+  "UiShopStoneNumTipsName": {
+    "prop_name": "UiShopStoneNumTipsName",
+    "va": "0x1806c1ec0",
+    "bytes_hex": "488b81a00e0000c3",
+    "struct_offset": "+0xea0",
+    "struct_offset_dec": 3744,
+    "detected_type": "string_or_obj"
+  },
+  "UiShopStoneNumTipsName_l10n_key": {
+    "prop_name": "UiShopStoneNumTipsName_l10n_key",
+    "va": "0x1806c1eb0",
+    "bytes_hex": "488b81a80e0000c3",
+    "struct_offset": "+0xea8",
+    "struct_offset_dec": 3752,
+    "detected_type": "string_or_obj"
+  },
+  "UiStoneNumTipsName": {
+    "prop_name": "UiStoneNumTipsName",
+    "va": "0x1806c1ee0",
+    "bytes_hex": "488b81b00e0000c3",
+    "struct_offset": "+0xeb0",
+    "struct_offset_dec": 3760,
+    "detected_type": "string_or_obj"
+  },
+  "UiStoneNumTipsName_l10n_key": {
+    "prop_name": "UiStoneNumTipsName_l10n_key",
+    "va": "0x1806c1ed0",
+    "bytes_hex": "488b81b80e0000c3",
+    "struct_offset": "+0xeb8",
+    "struct_offset_dec": 3768,
+    "detected_type": "string_or_obj"
+  },
+  "UiMenuRecoverSuccessName": {
+    "prop_name": "UiMenuRecoverSuccessName",
+    "va": "0x1806c1e40",
+    "bytes_hex": "488b81c00e0000c3",
+    "struct_offset": "+0xec0",
+    "struct_offset_dec": 3776,
+    "detected_type": "string_or_obj"
+  },
+  "UiMenuRecoverSuccessName_l10n_key": {
+    "prop_name": "UiMenuRecoverSuccessName_l10n_key",
+    "va": "0x1806c1e30",
+    "bytes_hex": "488b81c80e0000c3",
+    "struct_offset": "+0xec8",
+    "struct_offset_dec": 3784,
+    "detected_type": "string_or_obj"
+  }
+}

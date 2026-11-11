@@ -1,0 +1,17 @@
+{
+  "m_GameObject": {
+    "fileID": 0,
+    "pathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "fileID": 0,
+    "pathID": -3715968051201937949
+  },
+  "m_Name": "UI/TrackedDevicePosition",
+  "m_Asset": {
+    "fileID": 0,
+    "pathID": 418656196238816513
+  },
+  "m_ActionId": "6430e64b-0168-4f78-99a0-330efcf46cf8"
+}

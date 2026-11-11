@@ -1,0 +1,172 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001807072C0: mov         qword ptr [rsp+10h],rbx
+  00000001807072C5: mov         qword ptr [rsp+18h],rsi
+  00000001807072CA: mov         qword ptr [rsp+8],rcx
+  00000001807072CF: push        rdi
+  00000001807072D0: sub         rsp,80h
+  00000001807072D7: mov         rsi,rcx
+  00000001807072DA: cmp         byte ptr [00000001833696BBh],0
+  00000001807072E1: jne         000000018070734A
+  00000001807072E3: lea         rcx,[000000018318FBE0h]
+  00000001807072EA: call        00000001803F2920
+  00000001807072EF: lea         rcx,[00000001831D9240h]
+  00000001807072F6: call        00000001803F2920
+  00000001807072FB: lea         rcx,[00000001831D1F10h]
+  0000000180707302: call        00000001803F2920
+  0000000180707307: lea         rcx,[00000001831D1FC0h]
+  000000018070730E: call        00000001803F2920
+  0000000180707313: lea         rcx,[00000001831D2070h]
+  000000018070731A: call        00000001803F2920
+  000000018070731F: lea         rcx,[00000001831ADFF0h]
+  0000000180707326: call        00000001803F2920
+  000000018070732B: lea         rcx,[00000001831B64B0h]
+  0000000180707332: call        00000001803F2920
+  0000000180707337: lea         rcx,[00000001831C2AF8h]
+  000000018070733E: call        00000001803F2920
+  0000000180707343: mov         byte ptr [00000001833696BBh],1
+  000000018070734A: xorps       xmm0,xmm0
+  000000018070734D: xor         eax,eax
+  000000018070734F: movups      xmmword ptr [rsp+68h],xmm0
+  0000000180707354: mov         qword ptr [rsp+78h],rax
+  0000000180707359: cmp         dword ptr [rsi+000000000000022Ch],1
+  0000000180707360: jne         0000000180707564
+  0000000180707366: cmp         qword ptr [rsi+0000000000000170h],rax
+  000000018070736D: ja          0000000180707564
+  0000000180707373: mov         rdx,qword ptr [00000001831ADFF0h]
+  000000018070737A: cmp         dword ptr [rdx+00000000000000E0h],eax
+  0000000180707380: jne         0000000180707391
+  0000000180707382: mov         rcx,rdx
+  0000000180707385: call        0000000180380F00
+  000000018070738A: mov         rdx,qword ptr [00000001831ADFF0h]
+  0000000180707391: mov         rdx,qword ptr [rdx+00000000000000B8h]
+  0000000180707398: mov         r8,qword ptr [000000018318FBE0h]
+  000000018070739F: mov         edx,dword ptr [rdx+10h]
+  00000001807073A2: mov         rcx,rsi
+  00000001807073A5: call        0000000180A683C0
+  00000001807073AA: mov         rbx,rax
+  00000001807073AD: xor         r8d,r8d
+  00000001807073B0: mov         rdx,rax
+  00000001807073B3: mov         rcx,rsi
+  00000001807073B6: call        0000000180700E00 ; UnityGameFramework.Scripts.BaseEntityLogic::CheckIfCanAddOnStack
+  00000001807073BB: test        al,al
+  00000001807073BD: jne         0000000180707564
+  00000001807073C3: test        rbx,rbx
+  00000001807073C6: je          0000000180707579
+  00000001807073CC: mov         r8,qword ptr [00000001831B64B0h]
+  00000001807073D3: mov         rdx,rbx
+  00000001807073D6: lea         rcx,[rsp+50h]
+  00000001807073DB: call        00000001819B59A0
+  00000001807073E0: movups      xmm0,xmmword ptr [rsp+50h]
+  00000001807073E5: movups      xmmword ptr [rsp+68h],xmm0
+  00000001807073EA: movsd       xmm1,mmword ptr [rsp+60h]
+  00000001807073F0: movsd       mmword ptr [rsp+78h],xmm1
+  00000001807073F6: mov         qword ptr [rsp+50h],0
+  00000001807073FF: lea         rbx,[rsp+68h]
+  0000000180707404: mov         qword ptr [rsp+58h],rbx
+  0000000180707409: nop         dword ptr [rax+0000000000000000h]
+  0000000180707410: mov         rdx,qword ptr [00000001831D1FC0h]
+  0000000180707417: lea         rcx,[rsp+68h]
+  000000018070741C: call        00000001816499B0
+  0000000180707421: test        al,al
+  0000000180707423: je          00000001807074D1
+  0000000180707429: mov         rdx,qword ptr [rsp+78h]
+  000000018070742E: test        rdx,rdx
+  0000000180707431: jne         0000000180707437
+  0000000180707433: xor         edi,edi
+  0000000180707435: jmp         0000000180707474
+  0000000180707437: mov         r9,qword ptr [rdx]
+  000000018070743A: mov         r8,qword ptr [00000001831D9240h]
+  0000000180707441: movzx       eax,byte ptr [r8+000000000000012Ch]
+  0000000180707449: cmp         byte ptr [r9+000000000000012Ch],al
+  0000000180707450: jb          000000018070746A
+  0000000180707452: movzx       ecx,al
+  0000000180707455: mov         rax,qword ptr [r9+00000000000000C8h]
+  000000018070745C: cmp         qword ptr [rax+rcx*8-8],r8
+  0000000180707461: jne         000000018070746A
+  0000000180707463: mov         eax,1
+  0000000180707468: jmp         000000018070746C
+  000000018070746A: xor         eax,eax
+  000000018070746C: xor         edi,edi
+  000000018070746E: test        eax,eax
+  0000000180707470: cmovne      rdi,rdx
+  0000000180707474: mov         rcx,qword ptr [00000001831C2AF8h]
+  000000018070747B: cmp         dword ptr [rcx+00000000000000E0h],0
+  0000000180707482: jne         0000000180707489
+  0000000180707484: call        0000000180380F00
+  0000000180707489: xor         r8d,r8d
+  000000018070748C: xor         edx,edx
+  000000018070748E: mov         rcx,rdi
+  0000000180707491: call        0000000182421DE0
+  0000000180707496: test        al,al
+  0000000180707498: je          0000000180707410
+  000000018070749E: test        rdi,rdi
+  00000001807074A1: je          000000018070757F
+  00000001807074A7: xor         r8d,r8d
+  00000001807074AA: mov         rdx,rsi
+  00000001807074AD: mov         rcx,rdi
+  00000001807074B0: call        00000001804A31D0 ; UnityGameFramework.Scripts.CardFightFSMEntityLogic::CheckAttack
+  00000001807074B5: test        al,al
+  00000001807074B7: je          0000000180707410
+  00000001807074BD: mov         rdx,qword ptr [00000001831D1F10h]
+  00000001807074C4: mov         rcx,rbx
+  00000001807074C7: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  00000001807074CC: jmp         0000000180707564
+  00000001807074D1: mov         rdx,qword ptr [00000001831D1F10h]
+  00000001807074D8: mov         rcx,rbx
+  00000001807074DB: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  00000001807074E0: jmp         0000000180707509
+  00000001807074E2: mov         rdx,qword ptr [00000001831D1F10h]
+  00000001807074E9: mov         rcx,qword ptr [rsp+58h]
+  00000001807074EE: call        00000001804652B0 ; 共享地址（637个别名），不唯一归因
+  00000001807074F3: mov         rcx,qword ptr [rsp+50h]
+  00000001807074F8: test        rcx,rcx
+  00000001807074FB: jne         0000000180707585
+  0000000180707501: mov         rsi,qword ptr [rsp+0000000000000090h]
+  0000000180707509: xor         ecx,ecx
+  000000018070750B: call        000000018049F2D0
+  0000000180707510: mov         rbx,rax
+  0000000180707513: mov         edi,dword ptr [rsi+0000000000000188h]
+  0000000180707519: xor         edx,edx
+  000000018070751B: mov         rcx,rsi
+  000000018070751E: call        0000000182418FC0
+  0000000180707523: test        rax,rax
+  0000000180707526: je          0000000180707579
+  0000000180707528: xor         r8d,r8d
+  000000018070752B: mov         rdx,rax
+  000000018070752E: lea         rcx,[rsp+50h]
+  0000000180707533: call        0000000182446090
+  0000000180707538: movsd       xmm0,mmword ptr [rax]
+  000000018070753C: movsd       mmword ptr [rsp+40h],xmm0
+  0000000180707542: mov         eax,dword ptr [rax+8]
+  0000000180707545: mov         dword ptr [rsp+48h],eax
+  0000000180707549: mov         qword ptr [rsp+20h],0
+  0000000180707552: xor         r9d,r9d
+  0000000180707555: lea         r8,[rsp+40h]
+  000000018070755A: mov         edx,edi
+  000000018070755C: mov         rcx,rbx
+  000000018070755F: call        00000001805FE460 ; UnityGameFramework.Scripts.SoundExtension::PlaySound
+  0000000180707564: lea         r11,[rsp+0000000000000080h]
+  000000018070756C: mov         rbx,qword ptr [r11+18h]
+  0000000180707570: mov         rsi,qword ptr [r11+20h]
+  0000000180707574: mov         rsp,r11
+  0000000180707577: pop         rdi
+  0000000180707578: ret
+  0000000180707579: call        00000001803F2AC0
+  000000018070757E: nop
+  000000018070757F: call        00000001803F2AC0
+  0000000180707584: nop
+  0000000180707585: call        000000018038B5B0
+  000000018070758A: int         3
+  000000018070758B: int         3
+  000000018070758C: int         3
+  000000018070758D: int         3
+  000000018070758E: int         3
+  000000018070758F: int         3
+
+  Summary
+
+     2294000 il2cpp

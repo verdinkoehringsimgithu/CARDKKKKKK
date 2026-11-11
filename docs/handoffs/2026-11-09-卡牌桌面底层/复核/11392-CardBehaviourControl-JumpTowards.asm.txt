@@ -1,0 +1,131 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  000000018055F790: push        rbx
+  000000018055F792: sub         rsp,0D0h
+  000000018055F799: cmp         byte ptr [000000018336891Ah],0
+  000000018055F7A0: mov         rbx,rcx
+  000000018055F7A3: mov         qword ptr [rsp+40h],rdx
+  000000018055F7A8: jne         000000018055F7E1
+  000000018055F7AA: lea         rcx,[00000001831CA050h]
+  000000018055F7B1: call        00000001803F2920
+  000000018055F7B6: lea         rcx,[000000018319D608h]
+  000000018055F7BD: call        00000001803F2920
+  000000018055F7C2: lea         rcx,[000000018319E750h]
+  000000018055F7C9: call        00000001803F2920
+  000000018055F7CE: lea         rcx,[00000001831A05D8h]
+  000000018055F7D5: call        00000001803F2920
+  000000018055F7DA: mov         byte ptr [000000018336891Ah],1
+  000000018055F7E1: mov         rax,qword ptr [rbx+78h]
+  000000018055F7E5: mov         qword ptr [rsp+00000000000000F0h],rbp
+  000000018055F7ED: mov         qword ptr [rsp+00000000000000C8h],rsi
+  000000018055F7F5: mov         qword ptr [rsp+00000000000000C0h],rdi
+  000000018055F7FD: movaps      xmmword ptr [rsp+00000000000000B0h],xmm6
+  000000018055F805: movaps      xmmword ptr [rsp+00000000000000A0h],xmm7
+  000000018055F80D: movaps      xmmword ptr [rsp+0000000000000090h],xmm8
+  000000018055F816: movaps      xmmword ptr [rsp+0000000000000080h],xmm9
+  000000018055F81F: movaps      xmmword ptr [rsp+70h],xmm10
+  000000018055F825: movaps      xmmword ptr [rsp+60h],xmm11
+  000000018055F82B: mov         byte ptr [rsp+00000000000000E0h],0
+  000000018055F833: test        rax,rax
+  000000018055F836: je          000000018055F9DD
+  000000018055F83C: mov         byte ptr [rax+0000000000000161h],1
+  000000018055F843: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F84A: mov         rbp,qword ptr [rbx+78h]
+  000000018055F84E: movss       xmm9,dword ptr [rbx+30h]
+  000000018055F854: movss       xmm10,dword ptr [rbx+34h]
+  000000018055F85A: cmp         dword ptr [rcx+00000000000000E0h],0
+  000000018055F861: movss       xmm11,dword ptr [rbx+38h]
+  000000018055F867: jne         000000018055F875
+  000000018055F869: call        0000000180380F00
+  000000018055F86E: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F875: mov         rax,qword ptr [rcx+00000000000000B8h]
+  000000018055F87C: mov         rdi,qword ptr [rax+8]
+  000000018055F880: test        rdi,rdi
+  000000018055F883: jne         000000018055F8FC
+  000000018055F885: cmp         dword ptr [rcx+00000000000000E0h],edi
+  000000018055F88B: jne         000000018055F899
+  000000018055F88D: call        0000000180380F00
+  000000018055F892: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F899: mov         rax,qword ptr [rcx+00000000000000B8h]
+  000000018055F8A0: mov         rcx,qword ptr [00000001831CA050h]
+  000000018055F8A7: mov         rsi,qword ptr [rax]
+  000000018055F8AA: call        00000001803F2A70
+  000000018055F8AF: mov         rdi,rax
+  000000018055F8B2: test        rax,rax
+  000000018055F8B5: je          000000018055F9DD
+  000000018055F8BB: mov         r8,qword ptr [000000018319E750h]
+  000000018055F8C2: xor         r9d,r9d
+  000000018055F8C5: mov         rdx,rsi
+  000000018055F8C8: mov         rcx,rax
+  000000018055F8CB: call        000000018078EB90
+  000000018055F8D0: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F8D7: mov         rdx,qword ptr [rcx+00000000000000B8h]
+  000000018055F8DE: mov         qword ptr [rdx+8],rdi
+  000000018055F8E2: mov         rdx,rdi
+  000000018055F8E5: mov         rcx,qword ptr [00000001831A05D8h]
+  000000018055F8EC: mov         rcx,qword ptr [rcx+00000000000000B8h]
+  000000018055F8F3: add         rcx,8
+  000000018055F8F7: call        00000001803F2310
+  000000018055F8FC: movss       xmm8,dword ptr [rsp+44h]
+  000000018055F903: xorps       xmm7,xmm7
+  000000018055F906: movss       xmm6,dword ptr [rsp+40h]
+  000000018055F90C: mov         rcx,qword ptr [00000001831CA050h]
+  000000018055F913: call        00000001803F2A70
+  000000018055F918: mov         rsi,rax
+  000000018055F91B: test        rax,rax
+  000000018055F91E: je          000000018055F9DD
+  000000018055F924: mov         r8,qword ptr [000000018319D608h]
+  000000018055F92B: xor         r9d,r9d
+  000000018055F92E: mov         rdx,rbx
+  000000018055F931: mov         rcx,rax
+  000000018055F934: call        000000018078EB90
+  000000018055F939: mov         qword ptr [rsp+38h],0
+  000000018055F942: lea         rdx,[rsp+50h]
+  000000018055F947: mov         qword ptr [rsp+30h],rsi
+  000000018055F94C: movaps      xmm3,xmm10
+  000000018055F950: unpcklps    xmm6,xmm7
+  000000018055F953: movaps      xmm2,xmm9
+  000000018055F957: mov         qword ptr [rsp+28h],rdi
+  000000018055F95C: mov         rcx,rbp
+  000000018055F95F: movss       dword ptr [rsp+20h],xmm11
+  000000018055F966: movss       dword ptr [rsp+58h],xmm8
+  000000018055F96D: movsd       mmword ptr [rsp+50h],xmm6
+  000000018055F973: call        000000018066AAA0
+  000000018055F978: xor         edx,edx
+  000000018055F97A: mov         byte ptr [rsp+00000000000000E0h],al
+  000000018055F981: lea         rcx,[rsp+00000000000000E0h]
+  000000018055F989: call        00000001804652B0
+  000000018055F98E: movaps      xmm11,xmmword ptr [rsp+60h]
+  000000018055F994: movaps      xmm10,xmmword ptr [rsp+70h]
+  000000018055F99A: movaps      xmm9,xmmword ptr [rsp+0000000000000080h]
+  000000018055F9A3: movaps      xmm8,xmmword ptr [rsp+0000000000000090h]
+  000000018055F9AC: movaps      xmm7,xmmword ptr [rsp+00000000000000A0h]
+  000000018055F9B4: movaps      xmm6,xmmword ptr [rsp+00000000000000B0h]
+  000000018055F9BC: mov         rdi,qword ptr [rsp+00000000000000C0h]
+  000000018055F9C4: mov         rsi,qword ptr [rsp+00000000000000C8h]
+  000000018055F9CC: mov         rbp,qword ptr [rsp+00000000000000F0h]
+  000000018055F9D4: add         rsp,0D0h
+  000000018055F9DB: pop         rbx
+  000000018055F9DC: ret
+  000000018055F9DD: call        00000001803F2AC0
+  000000018055F9E2: int         3
+  000000018055F9E3: int         3
+  000000018055F9E4: int         3
+  000000018055F9E5: int         3
+  000000018055F9E6: int         3
+  000000018055F9E7: int         3
+  000000018055F9E8: int         3
+  000000018055F9E9: int         3
+  000000018055F9EA: int         3
+  000000018055F9EB: int         3
+  000000018055F9EC: int         3
+  000000018055F9ED: int         3
+  000000018055F9EE: int         3
+  000000018055F9EF: int         3
+
+  Summary
+
+     2294000 il2cpp

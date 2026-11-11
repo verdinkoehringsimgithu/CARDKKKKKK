@@ -8,6 +8,15 @@ namespace CardKKK.IslandSurvival.Core
     {
         public static string ValidateDefinition(VoyageDefinition definition)
         {
+            if (definition?.Desk == null || definition.Desk.MaxStackSize < 1 || definition.Desk.MaxStackSize > 10000 ||
+                definition.Desk.StackMode < 0 || definition.Desk.StackMode > 2 || !Finite(definition.Desk.StackOffset) ||
+                definition.Desk.StackOffset <= 0 || !Finite(definition.Desk.SnapDistance) || definition.Desk.SnapDistance < 0)
+                return "牌桌堆叠与吸附配置无效。";
+            if (!Finite(definition.Desk.Width) || !Finite(definition.Desk.Height) || !Finite(definition.Desk.CardWidth) ||
+                !Finite(definition.Desk.CardHeight) || !Finite(definition.Desk.Gap) || definition.Desk.Width <= 0 || definition.Desk.Height <= 0 ||
+                definition.Desk.CardWidth <= 0 || definition.Desk.CardHeight <= 0 || definition.Desk.Gap < 0 ||
+                definition.Desk.CardWidth > definition.Desk.Width || definition.Desk.CardHeight > definition.Desk.Height)
+                return "牌桌尺寸配置无效。";
             if (definition == null || definition.Cards == null || definition.Cards.Count == 0 ||
                 definition.Recipes == null || definition.Recipes.Count == 0 || definition.AuxiliaryLines == null ||
                 definition.StartCards == null || definition.StartCards.Count == 0)
@@ -178,6 +187,18 @@ namespace CardKKK.IslandSurvival.Core
                 return "已知配方或准备中的组合槽无效。";
 
             var jobIds = new HashSet<int>();
+            if (s.Preparations == null) s.Preparations = new List<VoyagePreparation>();
+            var reserved = new HashSet<int>(s.Staged);
+            var draftLocations = new HashSet<int> { s.PreparationLocation };
+            if (s.PreparationLocation != 0 && !instances.ContainsKey(s.PreparationLocation)) return "当前场所不存在。";
+            foreach (VoyagePreparation draft in s.Preparations)
+            {
+                if (draft == null || draft.Cards == null || !draftLocations.Add(draft.Location) || draft.Cards.Count > MaxStageSize ||
+                    draft.Location != 0 && !instances.ContainsKey(draft.Location)) return "场所准备记录无效。";
+                foreach (int id in draft.Cards)
+                    if (!instances.TryGetValue(id, out VoyageCardState held) || held.JobId != 0 || !reserved.Add(id))
+                        return "卡牌被多个场所重复预留。";
+            }
             var locked = new HashSet<int>();
             foreach (VoyageJobState job in s.Jobs)
             {
@@ -237,7 +258,8 @@ namespace CardKKK.IslandSurvival.Core
                 if (s.Cards.Any(card => limbs.Contains(card.Limb) && card.JobId != job.Id && cards[card.CardId].Kind == VoyageCardKind.Injury))
                     return "进行中的身体牌没有锁定关联伤势。";
             }
-            return s.Cards.Any(card => card.JobId != 0 && !locked.Contains(card.Id)) ? "有卡牌锁在不存在的任务中。" : "";
+            if (s.Cards.Any(card => card.JobId != 0 && !locked.Contains(card.Id))) return "有卡牌锁在不存在的任务中。";
+            return s.DeskVersion == 0 ? "" : ValidateDesktop(s);
         }
     }
 }

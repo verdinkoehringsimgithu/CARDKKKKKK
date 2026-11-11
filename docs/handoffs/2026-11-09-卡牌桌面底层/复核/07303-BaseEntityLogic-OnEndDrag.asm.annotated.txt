@@ -1,0 +1,132 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  0000000180706460: push        rbx
+  0000000180706462: sub         rsp,20h
+  0000000180706466: cmp         byte ptr [00000001833696BEh],0
+  000000018070646D: mov         rbx,rcx
+  0000000180706470: jne         0000000180706485
+  0000000180706472: lea         rcx,[0000000183178688h]
+  0000000180706479: call        00000001803F2920
+  000000018070647E: mov         byte ptr [00000001833696BEh],1
+  0000000180706485: movss       xmm0,dword ptr [rbx+00000000000000D0h]
+  000000018070648D: comiss      xmm0,dword ptr [00000001826F9C38h]
+  0000000180706494: mov         qword ptr [rsp+30h],rdi
+  0000000180706499: jbe         00000001807064E6
+  000000018070649B: cmp         byte ptr [rbx+0000000000000166h],0
+  00000001807064A2: mov         byte ptr [rbx+00000000000000CCh],1
+  00000001807064A9: je          00000001807064E6
+  00000001807064AB: mov         rcx,qword ptr [rbx+00000000000000A8h]
+  00000001807064B2: test        rcx,rcx
+  00000001807064B5: je          0000000180706697
+  00000001807064BB: xor         edx,edx
+  00000001807064BD: call        0000000182418F80
+  00000001807064C2: xor         r8d,r8d
+  00000001807064C5: mov         dl,1
+  00000001807064C7: mov         rcx,rax
+  00000001807064CA: call        000000018065F450 ; UnityGameFramework.Scripts.GameObjectHelper::SetActiveEx
+  00000001807064CF: movss       xmm1,dword ptr [rbx+00000000000000D0h]
+  00000001807064D7: xor         r8d,r8d
+  00000001807064DA: mov         rcx,qword ptr [rbx+00000000000000B0h]
+  00000001807064E1: call        000000018065D900 ; UnityGameFramework.Scripts.FormatHelper::FormatDay
+  00000001807064E6: test        dword ptr [rbx+000000000000022Ch],1E2h
+  00000001807064F0: ja          000000018070668C
+  00000001807064F6: cmp         dword ptr [rbx+0000000000000180h],0
+  00000001807064FD: jne         000000018070668C
+  0000000180706503: cmp         byte ptr [rbx+5Ch],0
+  0000000180706507: jne         000000018070668C
+  000000018070650D: cmp         qword ptr [rbx+0000000000000170h],0
+  0000000180706515: ja          000000018070668C
+  000000018070651B: cmp         byte ptr [0000000183368447h],0
+  0000000180706522: jne         0000000180706537
+  0000000180706524: lea         rcx,[000000018318DD78h]
+  000000018070652B: call        00000001803F2920
+  0000000180706530: mov         byte ptr [0000000183368447h],1
+  0000000180706537: mov         rax,qword ptr [000000018318DD78h]
+  000000018070653E: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180706545: mov         rcx,qword ptr [rcx+00000000000000B0h]
+  000000018070654C: test        rcx,rcx
+  000000018070654F: je          0000000180706697
+  0000000180706555: xor         r8d,r8d
+  0000000180706558: mov         edx,1
+  000000018070655D: call        00000001805DDCE0 ; UnityGameFramework.Scripts.InputMgrComponent::SetCursor
+  0000000180706562: cmp         byte ptr [00000001833696B8h],0
+  0000000180706569: jne         000000018070658A
+  000000018070656B: lea         rcx,[00000001831C2AF8h]
+  0000000180706572: call        00000001803F2920
+  0000000180706577: lea         rcx,[00000001831D3780h]
+  000000018070657E: call        00000001803F2920
+  0000000180706583: mov         byte ptr [00000001833696B8h],1
+  000000018070658A: mov         rdx,qword ptr [rbx+0000000000000138h]
+  0000000180706591: test        rdx,rdx
+  0000000180706594: je          0000000180706697
+  000000018070659A: mov         rcx,qword ptr [rbx+0000000000000088h]
+  00000001807065A1: test        rcx,rcx
+  00000001807065A4: je          0000000180706697
+  00000001807065AA: mov         rdx,qword ptr [rdx+30h]
+  00000001807065AE: xor         r8d,r8d
+  00000001807065B1: call        0000000180588F30 ; UnityGameFramework.Scripts.SortingLayerOrderControl::SetSortingLayerName
+  00000001807065B6: mov         rdi,qword ptr [rbx+00000000000001B8h]
+  00000001807065BD: mov         byte ptr [rbx+0000000000000167h],0
+  00000001807065C4: mov         rcx,qword ptr [00000001831C2AF8h]
+  00000001807065CB: cmp         dword ptr [rcx+00000000000000E0h],0
+  00000001807065D2: jne         00000001807065D9
+  00000001807065D4: call        0000000180380F00
+  00000001807065D9: xor         r8d,r8d
+  00000001807065DC: xor         edx,edx
+  00000001807065DE: mov         rcx,rdi
+  00000001807065E1: call        0000000182421BB0
+  00000001807065E6: test        al,al
+  00000001807065E8: jne         0000000180706604
+  00000001807065EA: mov         rcx,qword ptr [rbx+00000000000001B8h]
+  00000001807065F1: test        rcx,rcx
+  00000001807065F4: je          0000000180706697
+  00000001807065FA: xor         r8d,r8d
+  00000001807065FD: xor         edx,edx
+  00000001807065FF: call        000000018070AA20 ; UnityGameFramework.Scripts.BaseEntityLogic::SetDrag
+  0000000180706604: mov         rcx,qword ptr [rbx+0000000000000138h]
+  000000018070660B: test        rcx,rcx
+  000000018070660E: je          0000000180706697
+  0000000180706614: mov         rdx,qword ptr [rcx]
+  0000000180706617: mov         rax,qword ptr [rdx+00000000000001B8h]
+  000000018070661E: mov         rdx,qword ptr [rdx+00000000000001C0h]
+  0000000180706625: call        rax
+  0000000180706627: test        al,al
+  0000000180706629: jne         000000018070668C
+  000000018070662B: cmp         byte ptr [000000018336826Ch],al
+  0000000180706631: jne         0000000180706646
+  0000000180706633: lea         rcx,[000000018318DD78h]
+  000000018070663A: call        00000001803F2920
+  000000018070663F: mov         byte ptr [000000018336826Ch],1
+  0000000180706646: mov         rax,qword ptr [000000018318DD78h]
+  000000018070664D: mov         rcx,qword ptr [rax+00000000000000B8h]
+  0000000180706654: mov         rdi,qword ptr [rcx+38h]
+  0000000180706658: mov         rcx,qword ptr [0000000183178688h]
+  000000018070665F: cmp         dword ptr [rcx+00000000000000E0h],0
+  0000000180706666: jne         000000018070666D
+  0000000180706668: call        0000000180380F00
+  000000018070666D: xor         edx,edx
+  000000018070666F: xor         ecx,ecx
+  0000000180706671: call        0000000180578430 ; UnityGameFramework.Scripts.DragEntityShowSelectEventArgs::Create
+  0000000180706676: test        rdi,rdi
+  0000000180706679: je          0000000180706697
+  000000018070667B: xor         r9d,r9d
+  000000018070667E: mov         r8,rax
+  0000000180706681: mov         rdx,rbx
+  0000000180706684: mov         rcx,rdi
+  0000000180706687: call        000000018269B9B0
+  000000018070668C: mov         rdi,qword ptr [rsp+30h]
+  0000000180706691: add         rsp,20h
+  0000000180706695: pop         rbx
+  0000000180706696: ret
+  0000000180706697: call        00000001803F2AC0
+  000000018070669C: int         3
+  000000018070669D: int         3
+  000000018070669E: int         3
+  000000018070669F: int         3
+
+  Summary
+
+     2294000 il2cpp

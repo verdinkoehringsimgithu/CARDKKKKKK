@@ -99,7 +99,7 @@ namespace CardKKK.Tabletop.Editor
             QueueRefresh();
         }
 
-        [MenuItem("卡牌桌面/刷新编辑预览")]
+        [MenuItem("孤岛生存/历史演示/自由牌桌/刷新编辑预览")]
         public static void QueueRefresh()
         {
             if (queued || EditorApplication.isPlayingOrWillChangePlaymode) return;

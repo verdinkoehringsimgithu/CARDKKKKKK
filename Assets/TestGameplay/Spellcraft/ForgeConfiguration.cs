@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CardKKK.Spellcraft.Unity
 {
-    [CreateAssetMenu(fileName = "法术工坊配置", menuName = "测试玩法/法术工坊配置")]
+    [CreateAssetMenu(fileName = "法术工坊配置", menuName = "孤岛生存/历史演示/法术工坊/法术工坊配置")]
     public sealed class ForgeConfiguration : ScriptableObject
     {
         [SerializeField, InspectorName("玩法规则")] private ForgeDefinition rules = new ForgeDefinition();

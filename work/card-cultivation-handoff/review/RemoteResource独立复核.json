@@ -1,0 +1,15 @@
+{
+  "identical_to_delivered_json": true,
+  "bytes_consumed": 676589,
+  "file_bytes": 676589,
+  "assets": 10653,
+  "bundles": 55,
+  "bundle_size_errors": [],
+  "all_assets_exactly_one_bundle": true,
+  "dependency_indices_valid": true,
+  "group_indices_valid": true,
+  "asset_path_sets_match": false,
+  "normalized_asset_path_sets_match": true,
+  "remaining_bytes_hex": "",
+  "directed_dependency_edges": 17252
+}

@@ -1,0 +1,60 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804F2280: mov         qword ptr [rsp+8],rbx
+  00000001804F2285: push        rdi
+  00000001804F2286: sub         rsp,20h
+  00000001804F228A: mov         rbx,rdx
+  00000001804F228D: mov         rdi,rcx
+  00000001804F2290: test        rdx,rdx
+  00000001804F2293: je          00000001804F2312
+  00000001804F2295: xor         edx,edx
+  00000001804F2297: mov         rcx,rbx
+  00000001804F229A: call        000000018070DA30 ; UnityGameFramework.Scripts.BaseEntityLogic::get_IsNormal
+  00000001804F229F: test        al,al
+  00000001804F22A1: jne         00000001804F22B0
+  00000001804F22A3: xor         al,al
+  00000001804F22A5: mov         rbx,qword ptr [rsp+30h]
+  00000001804F22AA: add         rsp,20h
+  00000001804F22AE: pop         rdi
+  00000001804F22AF: ret
+  00000001804F22B0: cmp         byte ptr [0000000183368669h],0
+  00000001804F22B7: jne         00000001804F22CC
+  00000001804F22B9: lea         rcx,[00000001831CBF48h]
+  00000001804F22C0: call        00000001803F2920
+  00000001804F22C5: mov         byte ptr [0000000183368669h],1
+  00000001804F22CC: mov         rax,qword ptr [rdi+70h]
+  00000001804F22D0: test        rax,rax
+  00000001804F22D3: je          00000001804F2312
+  00000001804F22D5: mov         rcx,qword ptr [rax+0000000000000260h]
+  00000001804F22DC: test        rcx,rcx
+  00000001804F22DF: je          00000001804F2312
+  00000001804F22E1: cmp         byte ptr [rcx+00000000000000C0h],0
+  00000001804F22E8: jne         00000001804F22A3
+  00000001804F22EA: mov         rcx,qword ptr [rdi+00000000000000A0h]
+  00000001804F22F1: test        rcx,rcx
+  00000001804F22F4: je          00000001804F2312
+  00000001804F22F6: mov         r8,qword ptr [00000001831CBF48h]
+  00000001804F22FD: mov         rdx,rbx
+  00000001804F2300: call        000000018155A920
+  00000001804F2305: mov         rbx,qword ptr [rsp+30h]
+  00000001804F230A: xor         al,1
+  00000001804F230C: add         rsp,20h
+  00000001804F2310: pop         rdi
+  00000001804F2311: ret
+  00000001804F2312: call        00000001803F2AC0
+  00000001804F2317: int         3
+  00000001804F2318: int         3
+  00000001804F2319: int         3
+  00000001804F231A: int         3
+  00000001804F231B: int         3
+  00000001804F231C: int         3
+  00000001804F231D: int         3
+  00000001804F231E: int         3
+  00000001804F231F: int         3
+
+  Summary
+
+     2294000 il2cpp

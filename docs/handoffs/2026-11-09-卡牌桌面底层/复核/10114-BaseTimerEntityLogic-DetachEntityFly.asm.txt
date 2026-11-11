@@ -1,0 +1,64 @@
+
+Dump of file D:\CARDKKKKKK\Card Cultivation\GameAssembly.dll
+
+File Type: DLL
+
+  00000001804F9330: mov         qword ptr [rsp+8],rbx
+  00000001804F9335: mov         qword ptr [rsp+10h],rsi
+  00000001804F933A: push        rdi
+  00000001804F933B: sub         rsp,40h
+  00000001804F933F: mov         rsi,rdx
+  00000001804F9342: xor         edx,edx
+  00000001804F9344: call        0000000182418FC0
+  00000001804F9349: test        rax,rax
+  00000001804F934C: je          00000001804F93F8
+  00000001804F9352: xor         r8d,r8d
+  00000001804F9355: lea         rcx,[rsp+30h]
+  00000001804F935A: mov         rdx,rax
+  00000001804F935D: call        0000000182446090
+  00000001804F9362: xor         r8d,r8d
+  00000001804F9365: lea         rdx,[rsp+20h]
+  00000001804F936A: mov         ecx,2
+  00000001804F936F: movsd       xmm0,mmword ptr [rax]
+  00000001804F9373: mov         eax,dword ptr [rax+8]
+  00000001804F9376: movsd       mmword ptr [rsp+20h],xmm0
+  00000001804F937C: mov         dword ptr [rsp+28h],eax
+  00000001804F9380: call        000000018070EE80
+  00000001804F9385: cmp         byte ptr [000000018336843Eh],0
+  00000001804F938C: mov         rbx,rax
+  00000001804F938F: jne         00000001804F93A4
+  00000001804F9391: lea         rcx,[000000018318DD78h]
+  00000001804F9398: call        00000001803F2920
+  00000001804F939D: mov         byte ptr [000000018336843Eh],1
+  00000001804F93A4: mov         rcx,qword ptr [000000018318DD78h]
+  00000001804F93AB: mov         rdx,qword ptr [rcx+00000000000000B8h]
+  00000001804F93B2: mov         rdi,qword ptr [rdx+30h]
+  00000001804F93B6: test        rsi,rsi
+  00000001804F93B9: je          00000001804F93F8
+  00000001804F93BB: xor         edx,edx
+  00000001804F93BD: mov         rcx,rsi
+  00000001804F93C0: call        000000018056DFF0
+  00000001804F93C5: test        rdi,rdi
+  00000001804F93C8: je          00000001804F93F8
+  00000001804F93CA: xor         r9d,r9d
+  00000001804F93CD: mov         r8,rbx
+  00000001804F93D0: mov         edx,eax
+  00000001804F93D2: mov         rcx,rdi
+  00000001804F93D5: call        0000000182697360
+  00000001804F93DA: test        rbx,rbx
+  00000001804F93DD: je          00000001804F93F8
+  00000001804F93DF: xor         edx,edx
+  00000001804F93E1: mov         rcx,rbx
+  00000001804F93E4: mov         rbx,qword ptr [rsp+50h]
+  00000001804F93E9: mov         rsi,qword ptr [rsp+58h]
+  00000001804F93EE: add         rsp,40h
+  00000001804F93F2: pop         rdi
+  00000001804F93F3: jmp         000000018070EF00
+  00000001804F93F8: call        00000001803F2AC0
+  00000001804F93FD: int         3
+  00000001804F93FE: int         3
+  00000001804F93FF: int         3
+
+  Summary
+
+     2294000 il2cpp

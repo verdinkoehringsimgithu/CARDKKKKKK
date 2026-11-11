@@ -20,7 +20,7 @@ namespace CardKKK.TestGameplay.Unity
         [SerializeField, InspectorName("孤岛生存场景")]
         private string islandScenePath = "Assets/IslandSurvival/Scenes/IslandSurvival.unity";
         [SerializeField, InspectorName("测试玩法场景")]
-        private string gameplayScenePath = "Assets/TestGameplay/Spellcraft/Scenes/Spellcraft.unity";
+        private string gameplayScenePath = "Assets/Archives/Scenes/Spellcraft.unity";
         private static TestGameplayEntry activeEntry;
         private Scene originalScene;
         private Scene gameplayScene;
