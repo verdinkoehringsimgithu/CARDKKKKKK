@@ -1,7 +1,8 @@
 {
-  "total_verified_fields": 252,
-  "verified_bytes_consumed": 3846,
+  "total_verified_fields": 336,
+  "verified_bytes_consumed": 4383,
   "total_file_bytes": 4383,
+  "remaining_unparsed_bytes": 0,
   "proof_milestones": {
     "table_header_pos": "0x0",
     "table_count": 1,
@@ -15,8 +16,11 @@
     "geometric_floats_range": "0xd93 ~ 0xdb3 (8 floats)",
     "effect_damage_armor_offset": "+0x690 (store 0x1806bed1c, value 31002)",
     "effect_attack_offset": "+0x6a0 (store 0x1806bed2c, value 31100)",
-    "verified_range_end_pos": "0xf06",
-    "unverified_composite_range": "0xf06 ~ 0x111f (537 bytes, InitInfo composite structures)"
+    "composite_init_info_range": "0xf06 ~ 0xf11 (MakeTimerInit, ProduceTimerInit, ExploreTimerInit, OnceTimerHide)",
+    "composite_prize_info_range": "0xf5c ~ 0xf8c (CoreGoldenThunderWin..SpawnMonsterWin)",
+    "sound_ids_range": "0xf91 ~ 0xfee (31 sound ints)",
+    "tail_l10n_strings_range": "0xfee ~ 0x111f (14 setting/menu string pairs)",
+    "decoding_completion_rate": "100.0% (4383/4383 bytes, 0 bytes remaining)"
   },
   "physical_parameters": [
     {
@@ -3632,6 +3636,1204 @@
       "getter_va": "0x1806c0c60",
       "store_va": "0x1806bfc20",
       "call_va": "0x1806bfc14"
+    },
+    {
+      "field_index": 252,
+      "prop_name": "MakeTimerInit",
+      "struct_offset": "+0xa70",
+      "type": "InitInfo",
+      "value": {
+        "val1": 113,
+        "val2": 0
+      },
+      "file_offset": "0xf06",
+      "file_offset_dec": 3846,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1760",
+      "store_va": "0x1806bfc40",
+      "call_va": "0x1806bfc14"
+    },
+    {
+      "field_index": 253,
+      "prop_name": "ProduceTimerInit",
+      "struct_offset": "+0xa78",
+      "type": "InitInfo",
+      "value": {
+        "val1": 100,
+        "val2": 0
+      },
+      "file_offset": "0xf08",
+      "file_offset_dec": 3848,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c18b0",
+      "store_va": "0x1806bfc60",
+      "call_va": "0x1806bfc14"
+    },
+    {
+      "field_index": 254,
+      "prop_name": "ExploreTimerInit",
+      "struct_offset": "+0xa80",
+      "type": "InitInfo",
+      "value": {
+        "val1": 113,
+        "val2": 0
+      },
+      "file_offset": "0xf0a",
+      "file_offset_dec": 3850,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1600",
+      "store_va": "0x1806bfc80",
+      "call_va": null
+    },
+    {
+      "field_index": 255,
+      "prop_name": "OnceTimerHide",
+      "struct_offset": "+0xa88",
+      "type": "list_InitInfo",
+      "value": [
+        {
+          "val1": 103,
+          "val2": 0
+        },
+        {
+          "val1": 5,
+          "val2": 0
+        }
+      ],
+      "file_offset": "0xf0c",
+      "file_offset_dec": 3852,
+      "bytes_consumed": 5,
+      "getter_va": "0x1806c1880",
+      "store_va": "0x1806bfcfd",
+      "call_va": null
+    },
+    {
+      "field_index": 256,
+      "prop_name": "ExpLevelUp",
+      "struct_offset": "+0xa90",
+      "type": "int",
+      "value": 201,
+      "file_offset": "0xf11",
+      "file_offset_dec": 3857,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c15d0",
+      "store_va": "0x1806bfd4f",
+      "call_va": "0x1806bfd48"
+    },
+    {
+      "field_index": 257,
+      "prop_name": "ExpLevelUpPet",
+      "struct_offset": "+0xaa0",
+      "type": "int",
+      "value": 100,
+      "file_offset": "0xf13",
+      "file_offset_dec": 3859,
+      "bytes_consumed": 1,
+      "getter_va": "0x1806c15b0",
+      "store_va": "0x1806bfd5f",
+      "call_va": "0x1806bfd58"
+    },
+    {
+      "field_index": 258,
+      "prop_name": "WidgetEmpty",
+      "struct_offset": "+0xab0",
+      "type": "int",
+      "value": 90000,
+      "file_offset": "0xf14",
+      "file_offset_dec": 3860,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1f60",
+      "store_va": "0x1806bfd6f",
+      "call_va": "0x1806bfd68"
+    },
+    {
+      "field_index": 259,
+      "prop_name": "NpcHighLevelPeep",
+      "struct_offset": "+0xac0",
+      "type": "int",
+      "value": 90001,
+      "file_offset": "0xf17",
+      "file_offset_dec": 3863,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1810",
+      "store_va": "0x1806bfd7f",
+      "call_va": "0x1806bfd78"
+    },
+    {
+      "field_index": 260,
+      "prop_name": "NpcLevelPeep",
+      "struct_offset": "+0xad0",
+      "type": "int",
+      "value": 90002,
+      "file_offset": "0xf1a",
+      "file_offset_dec": 3866,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1830",
+      "store_va": "0x1806bfd8f",
+      "call_va": "0x1806bfd88"
+    },
+    {
+      "field_index": 261,
+      "prop_name": "Guide9004",
+      "struct_offset": "+0xae0",
+      "type": "int",
+      "value": 0,
+      "file_offset": "0xf1d",
+      "file_offset_dec": 3869,
+      "bytes_consumed": 1,
+      "getter_va": "0x1806c1660",
+      "store_va": "0x1806bfd9f",
+      "call_va": "0x1806bfd98"
+    },
+    {
+      "field_index": 262,
+      "prop_name": "MakePotionFail",
+      "struct_offset": "+0xaf0",
+      "type": "int",
+      "value": 11001,
+      "file_offset": "0xf1e",
+      "file_offset_dec": 3870,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1740",
+      "store_va": "0x1806bfdaf",
+      "call_va": "0x1806bfda8"
+    },
+    {
+      "field_index": 263,
+      "prop_name": "AdverseFunc",
+      "struct_offset": "+0xb00",
+      "type": "int",
+      "value": -20057,
+      "file_offset": "0xf20",
+      "file_offset_dec": 3872,
+      "bytes_consumed": 5,
+      "getter_va": "0x1806c0b00",
+      "store_va": "0x1806bfdbf",
+      "call_va": "0x1806bfdb8"
+    },
+    {
+      "field_index": 264,
+      "prop_name": "ExpPrizeId",
+      "struct_offset": "+0xb10",
+      "type": "int",
+      "value": 200,
+      "file_offset": "0xf25",
+      "file_offset_dec": 3877,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c15f0",
+      "store_va": "0x1806bfdcf",
+      "call_va": "0x1806bfdc8"
+    },
+    {
+      "field_index": 265,
+      "prop_name": "InsightFunc",
+      "struct_offset": "+0xb20",
+      "type": "int",
+      "value": 40001,
+      "file_offset": "0xf27",
+      "file_offset_dec": 3879,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c16c0",
+      "store_va": "0x1806bfddf",
+      "call_va": "0x1806bfdd8"
+    },
+    {
+      "field_index": 266,
+      "prop_name": "KillCardId",
+      "struct_offset": "+0xb30",
+      "type": "int",
+      "value": 190,
+      "file_offset": "0xf2a",
+      "file_offset_dec": 3882,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1700",
+      "store_va": "0x1806bfdef",
+      "call_va": "0x1806bfde8"
+    },
+    {
+      "field_index": 267,
+      "prop_name": "KillCardFunc",
+      "struct_offset": "+0xb40",
+      "type": "int",
+      "value": -90002,
+      "file_offset": "0xf2c",
+      "file_offset_dec": 3884,
+      "bytes_consumed": 5,
+      "getter_va": "0x1806c16e0",
+      "store_va": "0x1806bfdff",
+      "call_va": "0x1806bfdf8"
+    },
+    {
+      "field_index": 268,
+      "prop_name": "PinCardId",
+      "struct_offset": "+0xb50",
+      "type": "int",
+      "value": 191,
+      "file_offset": "0xf31",
+      "file_offset_dec": 3889,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c18a0",
+      "store_va": "0x1806bfe0f",
+      "call_va": "0x1806bfe08"
+    },
+    {
+      "field_index": 269,
+      "prop_name": "LuckyPrizeId",
+      "struct_offset": "+0xb60",
+      "type": "int",
+      "value": 210,
+      "file_offset": "0xf33",
+      "file_offset_dec": 3891,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1720",
+      "store_va": "0x1806bfe1f",
+      "call_va": "0x1806bfe18"
+    },
+    {
+      "field_index": 270,
+      "prop_name": "GhostPrizeId",
+      "struct_offset": "+0xb70",
+      "type": "int",
+      "value": 450,
+      "file_offset": "0xf35",
+      "file_offset_dec": 3893,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1640",
+      "store_va": "0x1806bfe2f",
+      "call_va": "0x1806bfe28"
+    },
+    {
+      "field_index": 271,
+      "prop_name": "NewbieSplashEndTalk",
+      "struct_offset": "+0xb80",
+      "type": "list_list_int",
+      "value": [
+        [
+          132,
+          2
+        ]
+      ],
+      "file_offset": "0xf37",
+      "file_offset_dec": 3895,
+      "bytes_consumed": 5,
+      "getter_va": "0x1806c17e0",
+      "store_va": "0x1806bfea1",
+      "call_va": null
+    },
+    {
+      "field_index": 272,
+      "prop_name": "NewbieRoleShakeEndNarration",
+      "struct_offset": "+0xb88",
+      "type": "list_int",
+      "value": [
+        1
+      ],
+      "file_offset": "0xf3c",
+      "file_offset_dec": 3900,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c17d0",
+      "store_va": "0x1806bff01",
+      "call_va": null
+    },
+    {
+      "field_index": 273,
+      "prop_name": "NewbieTimerStartTalk",
+      "struct_offset": "+0xb90",
+      "type": "list_list_int",
+      "value": [
+        [
+          130,
+          0,
+          132,
+          4
+        ]
+      ],
+      "file_offset": "0xf3e",
+      "file_offset_dec": 3902,
+      "bytes_consumed": 8,
+      "getter_va": "0x1806c17f0",
+      "store_va": "0x1806bff7e",
+      "call_va": null
+    },
+    {
+      "field_index": 274,
+      "prop_name": "NewbieRoleFirstDungeon",
+      "struct_offset": "+0xb98",
+      "type": "list_int",
+      "value": [
+        7
+      ],
+      "file_offset": "0xf46",
+      "file_offset_dec": 3910,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c17c0",
+      "store_va": "0x1806bffd5",
+      "call_va": null
+    },
+    {
+      "field_index": 275,
+      "prop_name": "SpiritStoneId",
+      "struct_offset": "+0xba0",
+      "type": "int",
+      "value": 205,
+      "file_offset": "0xf48",
+      "file_offset_dec": 3912,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1d90",
+      "store_va": "0x1806bfff0",
+      "call_va": "0x1806bffe9"
+    },
+    {
+      "field_index": 276,
+      "prop_name": "CatchHighLevel",
+      "struct_offset": "+0xbb0",
+      "type": "int",
+      "value": 90014,
+      "file_offset": "0xf4a",
+      "file_offset_dec": 3914,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c0e60",
+      "store_va": "0x1806c0000",
+      "call_va": "0x1806bfff9"
+    },
+    {
+      "field_index": 277,
+      "prop_name": "CatchFail",
+      "struct_offset": "+0xbc0",
+      "type": "int",
+      "value": 90015,
+      "file_offset": "0xf4d",
+      "file_offset_dec": 3917,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c0e40",
+      "store_va": "0x1806c0010",
+      "call_va": "0x1806c0009"
+    },
+    {
+      "field_index": 278,
+      "prop_name": "CatchCanNot",
+      "struct_offset": "+0xbd0",
+      "type": "int",
+      "value": 90016,
+      "file_offset": "0xf50",
+      "file_offset_dec": 3920,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c0e20",
+      "store_va": "0x1806c0020",
+      "call_va": "0x1806c0019"
+    },
+    {
+      "field_index": 279,
+      "prop_name": "CoreEmptyId",
+      "struct_offset": "+0xbe0",
+      "type": "int",
+      "value": 220,
+      "file_offset": "0xf53",
+      "file_offset_dec": 3923,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c0ec0",
+      "store_va": "0x1806c0030",
+      "call_va": "0x1806c0029"
+    },
+    {
+      "field_index": 280,
+      "prop_name": "CoreGoldenWishNum",
+      "struct_offset": "+0xbf0",
+      "type": "map_int_int",
+      "value": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "file_offset": "0xf55",
+      "file_offset_dec": 3925,
+      "bytes_consumed": 7,
+      "getter_va": "0x1806c0f20",
+      "store_va": "0x1806c00aa",
+      "call_va": null
+    },
+    {
+      "field_index": 281,
+      "prop_name": "CoreGoldenThunderWin",
+      "struct_offset": "+0xbf8",
+      "type": "list_PrizeInfo",
+      "value": [
+        {
+          "type_or_weight": 50,
+          "items": [
+            15005
+          ]
+        }
+      ],
+      "file_offset": "0xf5c",
+      "file_offset_dec": 3932,
+      "bytes_consumed": 5,
+      "getter_va": "0x1806c0f10",
+      "store_va": "0x1806c016e",
+      "call_va": null
+    },
+    {
+      "field_index": 282,
+      "prop_name": "CoreGoldenThunderLose",
+      "struct_offset": "+0xc00",
+      "type": "list_PrizeInfo",
+      "value": [
+        {
+          "type_or_weight": 117,
+          "items": [
+            0
+          ]
+        }
+      ],
+      "file_offset": "0xf61",
+      "file_offset_dec": 3937,
+      "bytes_consumed": 4,
+      "getter_va": "0x1806c0f00",
+      "store_va": "0x1806c0222",
+      "call_va": null
+    },
+    {
+      "field_index": 283,
+      "prop_name": "ThunderPowerId",
+      "struct_offset": "+0xc08",
+      "type": "int",
+      "value": 15005,
+      "file_offset": "0xf65",
+      "file_offset_dec": 3941,
+      "bytes_consumed": 2,
+      "getter_va": "0x1806c1db0",
+      "store_va": "0x1806c027c",
+      "call_va": "0x1806c0275"
+    },
+    {
+      "field_index": 284,
+      "prop_name": "ThunderPowerPrize",
+      "struct_offset": "+0xc18",
+      "type": "list_PrizeInfo",
+      "value": [
+        {
+          "type_or_weight": 50,
+          "items": [
+            60
+          ]
+        },
+        {
+          "type_or_weight": 112,
+          "items": [
+            0
+          ]
+        },
+        {
+          "type_or_weight": 121,
+          "items": [
+            0
+          ]
+        },
+        {
+          "type_or_weight": 75,
+          "items": [
+            102
+          ]
+        },
+        {
+          "type_or_weight": 70,
+          "items": [
+            1526
+          ]
+        }
+      ],
+      "file_offset": "0xf67",
+      "file_offset_dec": 3943,
+      "bytes_consumed": 17,
+      "getter_va": "0x1806c1dc0",
+      "store_va": "0x1806c02ee",
+      "call_va": null
+    },
+    {
+      "field_index": 285,
+      "prop_name": "CoreGoldenFlyConf",
+      "struct_offset": "+0xc20",
+      "type": "list_int",
+      "value": [
+        360,
+        5,
+        7200
+      ],
+      "file_offset": "0xf78",
+      "file_offset_dec": 3960,
+      "bytes_consumed": 6,
+      "getter_va": "0x1806c0ed0",
+      "store_va": "0x1806c03a2",
+      "call_va": null
+    },
+    {
+      "field_index": 286,
+      "prop_name": "CoreGoldenFlyPrize",
+      "struct_offset": "+0xc28",
+      "type": "int",
+      "value": 6,
+      "file_offset": "0xf7e",
+      "file_offset_dec": 3966,
+      "bytes_consumed": 1,
+      "getter_va": "0x1806c0ef0",
+      "store_va": "0x1806c0447",
+      "call_va": "0x1806c0440"
+    },
+    {
+      "field_index": 287,
+      "prop_name": "SpawnMonsterWin",
+      "struct_offset": "+0xc38",
+      "type": "list_PrizeInfo",
+      "value": [
+        {
+          "type_or_weight": 50,
+          "items": [
+            211
+          ]
+        },
+        {
+          "type_or_weight": 50,
+          "items": [
+            215
+          ]
+        },
+        {
+          "type_or_weight": 70,
+          "items": [
+            2002
+          ]
+        }
+      ],
+      "file_offset": "0xf7f",
+      "file_offset_dec": 3967,
+      "bytes_consumed": 13,
+      "getter_va": "0x1806c1d50",
+      "store_va": "0x1806c04b9",
+      "call_va": null
+    },
+    {
+      "field_index": 288,
+      "prop_name": "ExpLevelUpErrorTips",
+      "struct_offset": "+0xc40",
+      "type": "int",
+      "value": 90047,
+      "file_offset": "0xf8c",
+      "file_offset_dec": 3980,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1590",
+      "store_va": "0x1806c050c",
+      "call_va": "0x1806c0505"
+    },
+    {
+      "field_index": 289,
+      "prop_name": "InsightFight",
+      "struct_offset": "+0xc50",
+      "type": "list_int",
+      "value": [],
+      "file_offset": "0xf8f",
+      "file_offset_dec": 3983,
+      "bytes_consumed": 1,
+      "getter_va": "0x1806c16a0",
+      "store_va": "0x1806c057e",
+      "call_va": null
+    },
+    {
+      "field_index": 290,
+      "prop_name": "InsightFightSword",
+      "struct_offset": "+0xc60",
+      "type": "list_int",
+      "value": [],
+      "file_offset": "0xf90",
+      "file_offset_dec": 3984,
+      "bytes_consumed": 1,
+      "getter_va": "0x1806c1680",
+      "store_va": "0x1806c067b",
+      "call_va": null
+    },
+    {
+      "field_index": 291,
+      "prop_name": "SoundCardFly",
+      "struct_offset": "+0xc70",
+      "type": "int",
+      "value": 20001,
+      "file_offset": "0xf91",
+      "file_offset_dec": 3985,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c19e0",
+      "store_va": "0x1806c0716",
+      "call_va": "0x1806c070f"
+    },
+    {
+      "field_index": 292,
+      "prop_name": "SoundCardShake",
+      "struct_offset": "+0xc80",
+      "type": "int",
+      "value": 20006,
+      "file_offset": "0xf94",
+      "file_offset_dec": 3988,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1a40",
+      "store_va": "0x1806c0726",
+      "call_va": "0x1806c071f"
+    },
+    {
+      "field_index": 293,
+      "prop_name": "SoundCardDead",
+      "struct_offset": "+0xc90",
+      "type": "int",
+      "value": 20007,
+      "file_offset": "0xf97",
+      "file_offset_dec": 3991,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c19a0",
+      "store_va": "0x1806c0736",
+      "call_va": "0x1806c072f"
+    },
+    {
+      "field_index": 294,
+      "prop_name": "SoundCardPickUp",
+      "struct_offset": "+0xca0",
+      "type": "int",
+      "value": 20002,
+      "file_offset": "0xf9a",
+      "file_offset_dec": 3994,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1a20",
+      "store_va": "0x1806c0746",
+      "call_va": "0x1806c073f"
+    },
+    {
+      "field_index": 295,
+      "prop_name": "SoundCardStack",
+      "struct_offset": "+0xcb0",
+      "type": "int",
+      "value": 20003,
+      "file_offset": "0xf9d",
+      "file_offset_dec": 3997,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1a60",
+      "store_va": "0x1806c0756",
+      "call_va": "0x1806c074f"
+    },
+    {
+      "field_index": 296,
+      "prop_name": "SoundCardHit",
+      "struct_offset": "+0xcc0",
+      "type": "int",
+      "value": 40000,
+      "file_offset": "0xfa0",
+      "file_offset_dec": 4000,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1a00",
+      "store_va": "0x1806c0766",
+      "call_va": "0x1806c075f"
+    },
+    {
+      "field_index": 297,
+      "prop_name": "SoundCardFlyDeath",
+      "struct_offset": "+0xcd0",
+      "type": "int",
+      "value": 40001,
+      "file_offset": "0xfa3",
+      "file_offset_dec": 4003,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c19c0",
+      "store_va": "0x1806c0776",
+      "call_va": "0x1806c076f"
+    },
+    {
+      "field_index": 298,
+      "prop_name": "SoundCardTalk",
+      "struct_offset": "+0xce0",
+      "type": "int",
+      "value": 20008,
+      "file_offset": "0xfa6",
+      "file_offset_dec": 4006,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1a80",
+      "store_va": "0x1806c0786",
+      "call_va": "0x1806c077f"
+    },
+    {
+      "field_index": 299,
+      "prop_name": "SoundConflictStart",
+      "struct_offset": "+0xcf0",
+      "type": "int",
+      "value": 20214,
+      "file_offset": "0xfa9",
+      "file_offset_dec": 4009,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1ae0",
+      "store_va": "0x1806c0796",
+      "call_va": "0x1806c078f"
+    },
+    {
+      "field_index": 300,
+      "prop_name": "SoundConflictJoin",
+      "struct_offset": "+0xd00",
+      "type": "int",
+      "value": 20214,
+      "file_offset": "0xfac",
+      "file_offset_dec": 4012,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1ac0",
+      "store_va": "0x1806c07a6",
+      "call_va": "0x1806c079f"
+    },
+    {
+      "field_index": 301,
+      "prop_name": "SoundCardBuy",
+      "struct_offset": "+0xd10",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfaf",
+      "file_offset_dec": 4015,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1980",
+      "store_va": "0x1806c07b6",
+      "call_va": "0x1806c07af"
+    },
+    {
+      "field_index": 302,
+      "prop_name": "SoundCardUse",
+      "struct_offset": "+0xd20",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfb2",
+      "file_offset_dec": 4018,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1aa0",
+      "store_va": "0x1806c07c6",
+      "call_va": "0x1806c07bf"
+    },
+    {
+      "field_index": 303,
+      "prop_name": "SoundRoleAddEnergy",
+      "struct_offset": "+0xd30",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfb5",
+      "file_offset_dec": 4021,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1b80",
+      "store_va": "0x1806c07d6",
+      "call_va": "0x1806c07cf"
+    },
+    {
+      "field_index": 304,
+      "prop_name": "SoundNpcAddRoleWish",
+      "struct_offset": "+0xd40",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfb8",
+      "file_offset_dec": 4024,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1b20",
+      "store_va": "0x1806c07e6",
+      "call_va": "0x1806c07df"
+    },
+    {
+      "field_index": 305,
+      "prop_name": "SoundNpcAddStone",
+      "struct_offset": "+0xd50",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfbb",
+      "file_offset_dec": 4027,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1b40",
+      "store_va": "0x1806c07f6",
+      "call_va": "0x1806c07ef"
+    },
+    {
+      "field_index": 306,
+      "prop_name": "SoundNpcAddWish",
+      "struct_offset": "+0xd60",
+      "type": "int",
+      "value": 20004,
+      "file_offset": "0xfbe",
+      "file_offset_dec": 4030,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1b60",
+      "store_va": "0x1806c0806",
+      "call_va": "0x1806c07ff"
+    },
+    {
+      "field_index": 307,
+      "prop_name": "SoundEnterWidget",
+      "struct_offset": "+0xd70",
+      "type": "int",
+      "value": 20204,
+      "file_offset": "0xfc1",
+      "file_offset_dec": 4033,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1b00",
+      "store_va": "0x1806c0816",
+      "call_va": "0x1806c080f"
+    },
+    {
+      "field_index": 308,
+      "prop_name": "SoundUiButtonDown",
+      "struct_offset": "+0xd80",
+      "type": "int",
+      "value": 30001,
+      "file_offset": "0xfc4",
+      "file_offset_dec": 4036,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1be0",
+      "store_va": "0x1806c0826",
+      "call_va": "0x1806c081f"
+    },
+    {
+      "field_index": 309,
+      "prop_name": "SoundUiButtonMainDown",
+      "struct_offset": "+0xd90",
+      "type": "int",
+      "value": 30004,
+      "file_offset": "0xfc7",
+      "file_offset_dec": 4039,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1c20",
+      "store_va": "0x1806c0836",
+      "call_va": "0x1806c082f"
+    },
+    {
+      "field_index": 310,
+      "prop_name": "SoundUiButtonEnter",
+      "struct_offset": "+0xda0",
+      "type": "int",
+      "value": 30003,
+      "file_offset": "0xfca",
+      "file_offset_dec": 4042,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1c00",
+      "store_va": "0x1806c0844",
+      "call_va": "0x1806c083f"
+    },
+    {
+      "field_index": 311,
+      "prop_name": "SoundUiOpenTips",
+      "struct_offset": "+0xdb0",
+      "type": "int",
+      "value": 30002,
+      "file_offset": "0xfcd",
+      "file_offset_dec": 4045,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1ce0",
+      "store_va": "0x1806c0856",
+      "call_va": "0x1806c084f"
+    },
+    {
+      "field_index": 312,
+      "prop_name": "SoundUiTaskCollect",
+      "struct_offset": "+0xdc0",
+      "type": "int",
+      "value": 30006,
+      "file_offset": "0xfd0",
+      "file_offset_dec": 4048,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1d20",
+      "store_va": "0x1806c0866",
+      "call_va": "0x1806c085f"
+    },
+    {
+      "field_index": 313,
+      "prop_name": "SoundUiOpenForm",
+      "struct_offset": "+0xdd0",
+      "type": "int",
+      "value": 30005,
+      "file_offset": "0xfd3",
+      "file_offset_dec": 4051,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1cc0",
+      "store_va": "0x1806c0876",
+      "call_va": "0x1806c086f"
+    },
+    {
+      "field_index": 314,
+      "prop_name": "SoundUiGameAgeEnd",
+      "struct_offset": "+0xde0",
+      "type": "int",
+      "value": 50000,
+      "file_offset": "0xfd6",
+      "file_offset_dec": 4054,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1c60",
+      "store_va": "0x1806c0886",
+      "call_va": "0x1806c087f"
+    },
+    {
+      "field_index": 315,
+      "prop_name": "SoundUiCutSceneForm",
+      "struct_offset": "+0xdf0",
+      "type": "int",
+      "value": 50101,
+      "file_offset": "0xfd9",
+      "file_offset_dec": 4057,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1c40",
+      "store_va": "0x1806c0896",
+      "call_va": "0x1806c088f"
+    },
+    {
+      "field_index": 316,
+      "prop_name": "SoundUiNarrationClick",
+      "struct_offset": "+0xe00",
+      "type": "int",
+      "value": 30001,
+      "file_offset": "0xfdc",
+      "file_offset_dec": 4060,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1ca0",
+      "store_va": "0x1806c08a6",
+      "call_va": "0x1806c089f"
+    },
+    {
+      "field_index": 317,
+      "prop_name": "SoundUiGuideClick",
+      "struct_offset": "+0xe10",
+      "type": "int",
+      "value": 30001,
+      "file_offset": "0xfdf",
+      "file_offset_dec": 4063,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1c80",
+      "store_va": "0x1806c08b6",
+      "call_va": "0x1806c08af"
+    },
+    {
+      "field_index": 318,
+      "prop_name": "SoundUiSplashPat",
+      "struct_offset": "+0xe20",
+      "type": "int",
+      "value": 30007,
+      "file_offset": "0xfe2",
+      "file_offset_dec": 4066,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1d00",
+      "store_va": "0x1806c08c6",
+      "call_va": "0x1806c08bf"
+    },
+    {
+      "field_index": 319,
+      "prop_name": "SoundTimerPutCard",
+      "struct_offset": "+0xe30",
+      "type": "int",
+      "value": 20101,
+      "file_offset": "0xfe5",
+      "file_offset_dec": 4069,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1bc0",
+      "store_va": "0x1806c08d6",
+      "call_va": "0x1806c08cf"
+    },
+    {
+      "field_index": 320,
+      "prop_name": "SoundTimerPrizeEnd",
+      "struct_offset": "+0xe40",
+      "type": "int",
+      "value": 20102,
+      "file_offset": "0xfe8",
+      "file_offset_dec": 4072,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1ba0",
+      "store_va": "0x1806c08e6",
+      "call_va": "0x1806c08df"
+    },
+    {
+      "field_index": 321,
+      "prop_name": "SoundWidgetNewTips",
+      "struct_offset": "+0xe50",
+      "type": "int",
+      "value": 50100,
+      "file_offset": "0xfeb",
+      "file_offset_dec": 4075,
+      "bytes_consumed": 3,
+      "getter_va": "0x1806c1d40",
+      "store_va": "0x1806c08f6",
+      "call_va": "0x1806c08ef"
+    },
+    {
+      "field_index": 322,
+      "prop_name": "UiSettingScreenFullName_l10n_key",
+      "struct_offset": "+0xe68",
+      "type": "string",
+      "value": "ui_setting_screen_full_name",
+      "file_offset": "0xfee",
+      "file_offset_dec": 4078,
+      "bytes_consumed": 28,
+      "getter_va": "0x1806c1e70",
+      "store_va": "0x1806c090b",
+      "call_va": "0x1806c08ff"
+    },
+    {
+      "field_index": 323,
+      "prop_name": "UiSettingScreenFullName",
+      "struct_offset": "+0xe60",
+      "type": "string",
+      "value": "全屏",
+      "file_offset": "0x100a",
+      "file_offset_dec": 4106,
+      "bytes_consumed": 7,
+      "getter_va": "0x1806c1e80",
+      "store_va": "0x1806c092b",
+      "call_va": "0x1806c091f"
+    },
+    {
+      "field_index": 324,
+      "prop_name": "UiSettingScreenHalfName_l10n_key",
+      "struct_offset": "+0xe78",
+      "type": "string",
+      "value": "ui_setting_screen_half_name",
+      "file_offset": "0x1011",
+      "file_offset_dec": 4113,
+      "bytes_consumed": 28,
+      "getter_va": "0x1806c1e90",
+      "store_va": "0x1806c094b",
+      "call_va": "0x1806c093f"
+    },
+    {
+      "field_index": 325,
+      "prop_name": "UiSettingScreenHalfName",
+      "struct_offset": "+0xe70",
+      "type": "string",
+      "value": "窗口",
+      "file_offset": "0x102d",
+      "file_offset_dec": 4141,
+      "bytes_consumed": 7,
+      "getter_va": "0x1806c1ea0",
+      "store_va": "0x1806c096b",
+      "call_va": "0x1806c095f"
+    },
+    {
+      "field_index": 326,
+      "prop_name": "UiRecordNoneName_l10n_key",
+      "struct_offset": "+0xe88",
+      "type": "string",
+      "value": "ui_record_none_name",
+      "file_offset": "0x1034",
+      "file_offset_dec": 4148,
+      "bytes_consumed": 20,
+      "getter_va": "0x1806c1e50",
+      "store_va": "0x1806c098b",
+      "call_va": "0x1806c097f"
+    },
+    {
+      "field_index": 327,
+      "prop_name": "UiRecordNoneName",
+      "struct_offset": "+0xe80",
+      "type": "string",
+      "value": "创建存档",
+      "file_offset": "0x1048",
+      "file_offset_dec": 4168,
+      "bytes_consumed": 13,
+      "getter_va": "0x1806c1e60",
+      "store_va": "0x1806c09ab",
+      "call_va": "0x1806c099f"
+    },
+    {
+      "field_index": 328,
+      "prop_name": "UiMenuFormVersion_l10n_key",
+      "struct_offset": "+0xe98",
+      "type": "string",
+      "value": "ui_menu_form_version",
+      "file_offset": "0x1055",
+      "file_offset_dec": 4181,
+      "bytes_consumed": 21,
+      "getter_va": "0x1806c1e10",
+      "store_va": "0x1806c09cb",
+      "call_va": "0x1806c09bf"
+    },
+    {
+      "field_index": 329,
+      "prop_name": "UiMenuFormVersion",
+      "struct_offset": "+0xe90",
+      "type": "string",
+      "value": "版本 {0}",
+      "file_offset": "0x106a",
+      "file_offset_dec": 4202,
+      "bytes_consumed": 11,
+      "getter_va": "0x1806c1e20",
+      "store_va": "0x1806c09eb",
+      "call_va": "0x1806c09df"
+    },
+    {
+      "field_index": 330,
+      "prop_name": "UiShopStoneNumTipsName_l10n_key",
+      "struct_offset": "+0xea8",
+      "type": "string",
+      "value": "ui_shop_stone_num_tips_name",
+      "file_offset": "0x1075",
+      "file_offset_dec": 4213,
+      "bytes_consumed": 28,
+      "getter_va": "0x1806c1eb0",
+      "store_va": "0x1806c0a0b",
+      "call_va": "0x1806c09ff"
+    },
+    {
+      "field_index": 331,
+      "prop_name": "UiShopStoneNumTipsName",
+      "struct_offset": "+0xea0",
+      "type": "string",
+      "value": "(商店售价:<sprite=24>{0})",
+      "file_offset": "0x1091",
+      "file_offset_dec": 4241,
+      "bytes_consumed": 30,
+      "getter_va": "0x1806c1ec0",
+      "store_va": "0x1806c0a2b",
+      "call_va": "0x1806c0a1f"
+    },
+    {
+      "field_index": 332,
+      "prop_name": "UiStoneNumTipsName_l10n_key",
+      "struct_offset": "+0xeb8",
+      "type": "string",
+      "value": "ui_stone_num_tips_name",
+      "file_offset": "0x10af",
+      "file_offset_dec": 4271,
+      "bytes_consumed": 23,
+      "getter_va": "0x1806c1ed0",
+      "store_va": "0x1806c0a4b",
+      "call_va": "0x1806c0a3f"
+    },
+    {
+      "field_index": 333,
+      "prop_name": "UiStoneNumTipsName",
+      "struct_offset": "+0xeb0",
+      "type": "string",
+      "value": "(售价:<sprite=24>{0})",
+      "file_offset": "0x10c6",
+      "file_offset_dec": 4294,
+      "bytes_consumed": 24,
+      "getter_va": "0x1806c1ee0",
+      "store_va": "0x1806c0a6b",
+      "call_va": "0x1806c0a5f"
+    },
+    {
+      "field_index": 334,
+      "prop_name": "UiMenuRecoverSuccessName_l10n_key",
+      "struct_offset": "+0xec8",
+      "type": "string",
+      "value": "ui_menu_recover_success_name",
+      "file_offset": "0x10de",
+      "file_offset_dec": 4318,
+      "bytes_consumed": 29,
+      "getter_va": "0x1806c1e30",
+      "store_va": "0x1806c0a8b",
+      "call_va": "0x1806c0a7f"
+    },
+    {
+      "field_index": 335,
+      "prop_name": "UiMenuRecoverSuccessName",
+      "struct_offset": "+0xec0",
+      "type": "string",
+      "value": "成功恢复最近存档(测试版)",
+      "file_offset": "0x10fb",
+      "file_offset_dec": 4347,
+      "bytes_consumed": 36,
+      "getter_va": "0x1806c1e40",
+      "store_va": "0x1806c0aab",
+      "call_va": "0x1806c0a9f"
     }
   ]
 }

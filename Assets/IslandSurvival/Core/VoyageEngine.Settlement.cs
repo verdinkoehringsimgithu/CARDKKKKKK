@@ -17,6 +17,8 @@ namespace CardKKK.IslandSurvival.Core
             };
             foreach (VoyageJobInput input in job.Inputs)
             {
+                VoyageSlotState prepared = Workspace(s, job.Location)?.Slots.FirstOrDefault(slot => slot.CardId == input.CardId);
+                input.WorkspaceSlot = prepared == null ? 0 : prepared.Index + 1;
                 DetachStack(s, input.CardId, true);
                 RemoveFromSlots(s, input.CardId);
                 Find(s, input.CardId).JobId = job.Id;
@@ -28,12 +30,13 @@ namespace CardKKK.IslandSurvival.Core
         private int Duration(VoyageRecipeRule recipe, IEnumerable<string> lines) =>
             (int)Math.Max(1, Math.Min(int.MaxValue, recipe.Minutes + lines.Sum(id => (long)auxiliaries[id].MinutesDelta)));
 
-        private void Release(VoyageState s, VoyageJobState job)
+        private void Release(VoyageState s, VoyageJobState job, bool returnInputs = true)
         {
             foreach (VoyageJobInput input in job.Inputs) Find(s, input.CardId).JobId = 0;
             if (job.Location != 0) Find(s, job.Location).JobId = 0;
             s.Jobs.Remove(job);
-            foreach (VoyageJobInput input in job.Inputs) PlaceReturned(s, Find(s, input.CardId));
+            if (returnInputs)
+                foreach (VoyageJobInput input in job.Inputs) PlaceReturned(s, Find(s, input.CardId));
         }
 
         private string Settle(VoyageState s, VoyageJobState job)
@@ -52,7 +55,8 @@ namespace CardKKK.IslandSurvival.Core
                 bodies.Remove(affected);
                 bodies.Insert(0, affected);
             }
-            Release(s, job);
+            // Settle consumption and wear before reserving space for surviving inputs.
+            Release(s, job, false);
 
             foreach (VoyageJobInput input in job.Inputs)
             {
@@ -78,6 +82,9 @@ namespace CardKKK.IslandSurvival.Core
                 if (recipe.LocationCharges > 0 && location.Charges == 0) location.RechargeRemaining = rule.RechargeMinutes;
                 Wear(s, location, recipe.LocationWear);
             }
+
+            foreach (VoyageJobInput input in job.Inputs)
+                PlaceReturned(s, Find(s, input.CardId));
 
             s.Hunger = Level(s.Hunger + recipe.HungerDelta);
             s.San = Level(s.San + recipe.SanDelta);
@@ -238,7 +245,7 @@ namespace CardKKK.IslandSurvival.Core
                     creature.Y = Math.Min(1, Math.Max(0, creature.Y + (float)((target.Y - creature.Y) * step)));
                     length -= Math.Min(rules.BirdStep, length);
                 }
-                if (length <= rules.BirdReach) Begin(s, recipe, plan);
+                if (length <= rules.BirdReach && !plan.Inputs.Any(input => heldCards.Contains(input.CardId))) Begin(s, recipe, plan);
             }
         }
 

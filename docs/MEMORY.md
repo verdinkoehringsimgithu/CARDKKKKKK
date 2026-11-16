@@ -1,8 +1,40 @@
 # 开发记忆
 
-更新：2026-11-10。先读本文件和 AGENTS.md，再看实际代码与 Git 状态。当前「孤岛生存」以用户提供的出航版 PDF 为准，旧营地经营版 1.3 及其需求表为历史资料。用户自己执行 Unity、编译与运行验收。
+更新：2026-11-13。先读本文件和 AGENTS.md，再看实际代码与 Git 状态。当前「孤岛生存」以用户提供的出航版 PDF 为准，旧营地经营版 1.3 及其需求表为历史资料。用户自己执行 Unity、编译与运行验收。
 
 ## 当前授权与方向
+
+- [EXECUTION_EIGHTH_REVIEW_FIXES_20261113] 2026-11-13：针对“配置解码仍有 537 字节复合结构未解”完成全链路静态反汇编与端到端 100% 零残留还原：
+  1. 复合结构反序列化器拓扑逆向与类型闭环（E1事实）：
+     - 字段 252~254（MakeTimerInit, ProduceTimerInit, ExploreTimerInit）：调用 0x1805B1810（cfg.recipe.InitInfo::DeserializeInitInfo），反汇编证实其内部连续调用两次 0x181A5C370（ByteBuf.ReadInt），写入 [rbx+10h] 与 [rbx+20h]；
+     - 字段 255（OnceTimerHide）：循环调用 0x1805B1810，证实为 List<InitInfo>；
+     - 字段 256~270（ExpLevelUp 到 GhostPrizeId）：15 次连续调用 ByteBuf.ReadInt；
+     - 字段 271~274（NewbieSplashEndTalk 等）：调用 0x1806C98F0，反汇编证实其内部循环读取 List<int>，确证字段 271/273 为 List<List<int>> 嵌套列表，字段 272/274 为单个包装 List<int>；
+     - 字段 275~279（SpiritStoneId 等）：5 次连续调用 ByteBuf.ReadInt；
+     - 字段 280（CoreGoldenWishNum）：调用 0x180F060A0 分配字典并循环调用 0x18155A7F0（Add），确证为 Dictionary<int, int>（实际解码出 {1: 3, 2: 2, 3: 1}）；
+     - 字段 281, 282, 284, 287（CoreGoldenThunderWin, CoreGoldenThunderLose, ThunderPowerPrize, SpawnMonsterWin）：调用 0x1805ABF70 -> 0x1805AB800，反汇编证实其构造内部先 ReadInt 读取类型/权重，再 ReadSize 循环读取 List<int> 奖励卡 ID 列表，确证为 List<PrizeInfo>；
+     - 字段 283, 286, 288 为独立 int；285, 289, 290 为 List<int>；
+     - 字段 291~321（SoundCardFly 到 SoundWidgetNewTips）：31 次连续调用 ByteBuf.ReadInt，精确对应 31 个音效 ID；
+     - 字段 322~335（UiSettingScreenFullName_l10n_key 到 UiMenuRecoverSuccessName）：14 次连续调用 ByteBuf.ReadString，结尾于 0x10fb 读出“成功恢复最近存档(测试版)”，流指针自然推进至 0x111f；
+  2. 交付物与自动化验证：
+     - 重构 verify_baseconfig_fields.py，从 0x0 顺序自然推进至 0x111f，完全消费 4383/4383 字节（100.0%），剩余未解析字节为 0，彻底终结复合结构未知区；
+     - 产出覆盖全表 336 字段的完整 baseconfig_field_mapping.json，同步校正 baseconfig_true_schema.json；
+     - review_execution.py 保持 304 条指令 0 误差，RemoteResource 严格复现 100% 一致；清理全部临时调试脚本。
+  3. 边界保持：未修改游戏运行时源码，未启动编译器、Unity 或测试命令，未执行 Git 暂存、提交或推送。
+
+- [HANDOFF_20261113] 用户因额度转交另一AI，已创建docs/handoffs/2026-11-09-卡牌桌面底层/13-后续实施与接手说明.md，为最新接手入口。含现有机制/接口/真实文件、四块剩余工作、建议顺序、15项Play脚本、静态验证边界与Git状态。用户问耦合后明确“先不管”并只要求暂存，不应擅自开展大重构。交接前HEAD44f1576，已有15文件暂存；本轮仅文档与入口同步，未提交推送。另有未核查尾部探查analyze_tail_fields.py/extract_ctor_tail.py/ctor_tail_slice.txt及inspect系列未跟踪，保留不纳入。本助手最后独立接受的解码仍为252字段/剩537字节；不据未核文件更新完成声明。用户自行编译/Unity/测试的约定继续有效。
+
+- [WINDOW_INPUT_BATCH_20261112] 2026-11-12：修正空白桌面的可视区射线准入，真实Prefab和生成器为场所/任务窗背景启用射线阻挡；任务窗矩形明确拒绝落牌。各场所独立保留本次会话的槽区滚动位置，切换停止滚动惯性，重新绑定清理缓存。右键投入/退出成功后统一刷新和定位窗口；别处场所的跟随伤势隐藏，身体退出准备时从原场所恢复返还表现。入口「孤岛生存 → 打开孤岛场景」。Prefab875对象ID唯一及本地引用、2份C#括号/meta、Git空白静查完成；未编译、Unity或测试。 根因：scroll背景ray=True在viewport而非world，ReadDropTarget现接受tabletopViewport；tasks/tray原背景ray=False改True。ResolveDrop明确屏蔽任务窗矩形。CapturePreparationScroll在切场所/投入/组合/关窗前保存，PresentPreparation于布局刷新后恢复独立归一化滚动，Bind清理。QuickAction仅成功才展示窗口并Render。InOtherPreparation扩展隐式伤势跟随；DisplayCards识别formerLimbWorkspace释放，隐藏伤势从原场所恢复。tools/build_island_voyage_ui.py已重生成Prefab，实际Prefab仅两处m_RaycastTarget更改，无新增fileID。未改玩法Core/存档。四块整体未运行验收。
+
+- [ATOMIC_INTERACTION_BATCH_20261112] 2026-11-12：批量补齐连续拖放与输入边界。投入/组合与场所切换合为核心事务，失败不切窗；CanPut/CanStagePair走副本规划、归一化和完整校验。持牌目标禁止自动归堆，开工与雏鸟任务不占用持牌投入；拖拽到桌面/槽区边缘自动滚动。窗口切换先取消拖拽，阅读窗阻断暂停，空格与已选按钮提交分流。手动回归源码增加原子性、查询纯度、持牌保护。入口「孤岛生存 → 打开孤岛场景」。7份C#完成括号、meta、Core依赖及diff静态检查，未编译、Unity或测试。 Put新增可选openLocation，StagePair新增可选openGeneral并共用PlanStagePair；旧调用默认行为保留。View.Command返回同步Run执行的Success，成功后PresentPreparation只更新显示，不再追加OpenPreparation核心事务。CanPut副本中执行PutIntoSlot/NormalizeDesktop/ValidateState，CanStagePair同样接PlanStagePair；私有准入仍供候选规划使用。CanStack拒绝目标剩余堆含heldCards，Start拒绝计划含持牌，自动鸟计划也排除附带持牌。TickDesktop按旧ScrollRect敏感度进行边缘滚动，静止持牌预览最多20Hz刷新，移动/滚动仍即时更新；未测性能。新增回归源码未执行。四块整体仍未验收，完整派生窗口与槽规则、视图动画/音效和真实旧档/密集性能仍待。
+
+- [TASK_RELEASE_20261112] 2026-11-12：任务结算先完成消耗/磨损，再为仍存活的投入规划返还落点；取消仍返还全部投入。隐藏的工作牌在结束/取消时先从原场所恢复可见，再播放返还运动。手动核心检查增加真实探索完成、锁和槽清理、身体实例守恒及重复取消回滚断言。入口「孤岛生存 → 打开孤岛场景」。仅静态分支/引用及空白检查，未启动编译器、Unity 或测试。 Core Release新增returnInputs参数，Settle以false调用后结算各投入与场所，再对Find仍存在的投入PlaceReturned。View.DisplayCards从previous快照辨认released，已隐藏视图先激活并SnapTo旧任务场所，再LayoutTo已提交桌面位置；可见工作牌保持原槽起飞。未更改配方/时间/概率/消耗规则。实际动画、旧档、性能仍待验收。
+
+- [WORKING_SLOTS_20261112] 2026-11-12：场所开工后改为显示锁定工作槽，记录任务投入的原物理槽位；旧任务无位置数据时顺序补位，关窗/切换场所隐藏内部工作牌，取消后清空工作投影并返还。新增任务槽位越界/重复校验和手动回归源码。入口「孤岛生存 → 打开孤岛场景」。静态检查完成，未编译、运行 Unity 或执行测试。 VoyageJobInput.WorkspaceSlot 为1起始物理位置、0兼容旧任务及自动附带牌；Begin记录、Copy保留、Validation拒绝重复/越界；VoyageEngine.Slots只为非0场所投影任务输入，不修改Workspaces归属。View按投影布局与计数，其他场所任务内部牌隐藏，锁定槽不启用反向引导。手动VoyageDesktopVerification增加原槽位置、归属独占、Json往返、旧任务补位及取消清理断言（未执行）。四块主工作仍待窗口派生规则/完整生命周期/运行体验验收。
+
+- [DROP_RESOLVER_20261112] 用户要求继续四块主工作，本轮推进牌堆拖放与槽位命中链。VoyageView.Desktop.cs 新 DropIntent/ResolveDrop 统一预览与提交路由（Cancel/Put/Merge/Stack/Pair/Desk）；ReadDropTarget 按 Unity 射线顺序只取首个非持牌命中，前景非桌面 UI 阻断，不组合前后层槽/牌。NearestStackTarget 新接 PointerEventData，排除视口外/准备窗遮挡并对目标中心复查射线可见性。RefreshGuidance 已占槽卡按 CanPut 精确槽替换条件提示。Merge 临时目标 finally 清理。只改 Unity 输入视图，不改 Core/配置/Prefab。静态引用与 diff 检查，无编译/Unity/测试；整体四块仍未完成，任务生命周期、完整窗口/派生槽与运行体验待推进。
+
+- [DROP_PREVIEW_20261112] 用户要求继续开发。VoyageView.Desktop.cs 的 PreviewDrop 原先在直接命中不兼容卡时仍查询邻堆，与 Drop 直接桌面落牌不一致；现限制邻近吸附为未命中卡且位于桌面视口，面板非槽区域直接隐藏预览。合并伤势共用 IsInjuryMerge 判定，配方组合/合并不显示空间落点。仅静态分支对照及 diff 空白检查，未编译/Unity/测试；Play 待用户验证。上轮有用文件已暂存，未提交推送，本轮续作保持此边界。
 
 - [DESKTOP_REBUILD_IMPLEMENTED_20261110] 最新交付见12-交互重构分工与进行中状态.md（正文已更新为实现与验收，非早期进行中清单）。主助手在用户并行解码授权下实现VoyageEngine.Desktop.cs权威Workspaces/Slots、StackParent拓扑、纯CanPut/CanStack/PreviewStack/PreviewDeskDrop、原子Put/Stack/DropOnDesk、配置手势/上限与自动归堆、有限避让、投影/归属校验；Staged/Preparations只作旧配方与旧档投影。VoyageConfiguration.Tabletop绑定原默认配置a74fc...只读，Family从CardDefinition；几何VoyageDeskGeometry由View.MeasureDesk经Bootstrap传Core，不改规则。View.Desktop/SlotView/CardView接实际槽、整堆/Shift单牌、双向引导、落点幽灵、开合/收放/返还/产出/消耗/伤势合并运动、任务圆形进度、Esc/失焦/禁用/读档清理。Info作Location的既有配方保留，单击开组合/双击阅读，Info作材料仍可用。SaveStore接精确旧指纹及DeskVersion0迁移，旧全局组合含场所本体会迁入独立场所。tools/export_reference_desktop_ui.py导出3原图到Art/ReferenceUI含来源hash，用户已授权先复用；生成器/真实Prefab新增槽模板与预览，meta齐全。静查Prefab875对象、内部/项目包GUID引用完整、现存fileID相对HEAD类型冲突0、生成幂等、16C#括号、Core无Unity依赖、diff空白无错误。没有编译/Unity/项目测试，也未执行新手动Core菜单；实际操作/旧档/性能待用户。新增Editor/VoyageDesktopVerification.cs只由用户菜单运行。未stage/提交。配置另一AI已核252字段/余537未解，未再次覆写其研究实现。
 

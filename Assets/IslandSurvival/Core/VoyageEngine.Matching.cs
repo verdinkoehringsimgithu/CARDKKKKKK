@@ -63,6 +63,8 @@ namespace CardKKK.IslandSurvival.Core
             if (s.Staged.Count == 0) return Fail("先把牌放进组合槽。");
             VoyageRecipeRule recipe = FindExact(s, s.Staged, out MatchPlan plan);
             if (recipe == null) return Fail("当前组合无法开始。检查卡牌、耐久与剩余采集次数。");
+            if (plan.Inputs.Any(input => heldCards.Contains(input.CardId)) || heldCards.Contains(plan.Location))
+                return Fail("请先放下正在拖动的投入牌。");
             bool known = s.Known.Contains(recipe.Id);
             Begin(s, recipe, plan);
             s.Staged.Clear();

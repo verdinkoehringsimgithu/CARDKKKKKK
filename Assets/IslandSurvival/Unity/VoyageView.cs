@@ -32,16 +32,37 @@ namespace CardKKK.IslandSurvival.Unity
         [SerializeField] private GameObject tasksPanel;
         [SerializeField] private GameObject preparationPanel;
         private bool preparationVisible;
-        private bool InOtherPreparation(int id) => state.Workspaces.Any(workspace => workspace.Location != state.PreparationLocation &&
-            workspace.Slots.Any(slot => slot.CardId == id));
+        private bool InOtherPreparation(int id)
+        {
+            if (!cardById.TryGetValue(id, out VoyageCardState card)) return false;
+            bool implicitFollower = card.Limb != 0 && cards[card.CardId].Kind == VoyageCardKind.Injury && !engine.IsInSlot(id);
+            return state.Workspaces.Any(workspace => workspace.Location != state.PreparationLocation &&
+                workspace.Slots.Any(slot => slot.CardId == id || implicitFollower && slot.CardId == card.Limb));
+        }
 
         private void OpenPreparation(int id)
+        {
+            if (dragging != null) { AbortDrag(); Render(); }
+            CapturePreparationScroll();
+            if (!Command(value => value.OpenPreparation(id))) return;
+            PresentPreparation(id);
+        }
+
+        private void CapturePreparationScroll()
+        {
+            if (state != null && preparationVisible)
+                preparationScroll[state.PreparationLocation] = Mathf.Clamp01(stageScroll.verticalNormalizedPosition);
+        }
+
+        private void PresentPreparation(int id)
         {
             preparationVisible = true;
             guidanceSlot = -1;
             tasksPanel.SetActive(false);
-            Command(value => value.OpenPreparation(id));
+            stageScroll.StopMovement();
             Render();
+            Canvas.ForceUpdateCanvases();
+            stageScroll.verticalNormalizedPosition = preparationScroll.TryGetValue(id, out float scroll) ? scroll : 1f;
             PositionPreparation(id);
         }
 
@@ -108,12 +129,13 @@ namespace CardKKK.IslandSurvival.Unity
             menuButton.onClick.AddListener(OpenMenu);
             tasksButton.onClick.AddListener(() =>
             {
+                if (dragging != null) { AbortDrag(); Render(); }
                 bool show = !tasksPanel.activeSelf;
                 tasksPanel.SetActive(show);
-                if (show) { preparationVisible = false; preparationPanel.SetActive(false); guidanceSlot = -1; RefreshGuidance(); }
+                if (show) { CapturePreparationScroll(); preparationVisible = false; preparationPanel.SetActive(false); guidanceSlot = -1; RefreshGuidance(); }
             });
             generalPreparation.onClick.AddListener(() => OpenPreparation(0));
-            closePreparation.onClick.AddListener(() => { preparationVisible = false; guidanceSlot = -1; Render(); });
+            closePreparation.onClick.AddListener(() => { AbortDrag(); CapturePreparationScroll(); preparationVisible = false; guidanceSlot = -1; Render(); });
             clearButton.onClick.AddListener(() => Command(value => value.ClearStage()));
             startButton.onClick.AddListener(() => Command(value => value.Start()));
             readClose.onClick.AddListener(CloseRead);
@@ -148,6 +170,7 @@ namespace CardKKK.IslandSurvival.Unity
             taskViews.Clear();
             foreach (VoyageSlotView slot in slotViews.Values) Destroy(slot.gameObject);
             slotViews.Clear();
+            preparationScroll.Clear();
             guidanceSlot = -1;
             panelTime = 0;
             if (preparationFade != null) preparationFade.alpha = 0;
@@ -194,7 +217,7 @@ namespace CardKKK.IslandSurvival.Unity
             bool hasInputs = engine.Slots(state.PreparationLocation).Any(slot => slot.CardId != 0);
             clearButton.interactable = !ended && hasInputs;
             startButton.interactable = !ended && hasInputs;
-            stageCount.text = (state.Staged.Count(id => id != state.PreparationLocation) + followers.Count) + " 张";
+            stageCount.text = (engine.Slots(state.PreparationLocation).Count(slot => slot.CardId != 0) + followers.Count) + " 张";
             taskCount.text = state.Jobs.Count.ToString();
             emptyTasks.SetActive(state.Jobs.Count == 0);
 
@@ -271,10 +294,19 @@ namespace CardKKK.IslandSurvival.Unity
 
         internal void QuickAction(int id)
         {
-            if (state == null || !cardById.TryGetValue(id, out VoyageCardState card) || card.JobId != 0) return;
-            preparationVisible = true;
-            if (engine.IsInSlot(id)) Command(value => value.Unstage(id));
-            else if (IsAvailable(id)) Command(value => value.Stage(id));
+            if (state == null || dragging != null || menuPanel.activeSelf || readPanel.activeSelf ||
+                !cardById.TryGetValue(id, out VoyageCardState card) || card.JobId != 0) return;
+            bool changed = false;
+            if (engine.IsInSlot(id)) changed = Command(value => value.Unstage(id));
+            else if (IsAvailable(id)) changed = Command(value => value.Stage(id));
+            if (changed)
+            {
+                preparationVisible = true;
+                tasksPanel.SetActive(false);
+                guidanceSlot = -1;
+                Render();
+                PositionPreparation(state.PreparationLocation);
+            }
         }
 
         internal void RemoveFromStage(int id) => QuickAction(id);
@@ -339,7 +371,7 @@ namespace CardKKK.IslandSurvival.Unity
                 VoyageJobState job = null;
                 bool inJob = card.JobId != 0 && jobById.TryGetValue(card.JobId, out job);
                 bool staged = stagedIndex.TryGetValue(card.Id, out int index) && card.Id != state.PreparationLocation;
-                bool parked = InOtherPreparation(card.Id);
+                bool parked = InOtherPreparation(card.Id) || inJob && job.Location != 0 && job.Location != card.Id && job.Location != state.PreparationLocation;
                 RectTransform parent = staged ? stageCards : tabletop;
                 bool created = view == null;
                 if (view == null)
@@ -374,7 +406,22 @@ namespace CardKKK.IslandSurvival.Unity
                         position = DesktopPosition(card, view.Rect);
                     }
 
-                    bool returning = view.Rect.parent != parent || card.JobId == 0 && previous != null && previous.Cards.Any(old => old.Id == card.Id && old.JobId != 0);
+                    VoyageCardState previousCard = previous?.Cards.FirstOrDefault(old => old.Id == card.Id);
+                    VoyageWorkspace formerLimbWorkspace = previousCard != null && card.Limb != 0 && cards[card.CardId].Kind == VoyageCardKind.Injury
+                        ? previous.Workspaces.FirstOrDefault(workspace => workspace.Slots.Any(slot => slot.CardId == previousCard.Limb)) : null;
+                    bool releasedFollower = formerLimbWorkspace != null && !engine.IsInSlot(card.Id) &&
+                        !state.Workspaces.Any(workspace => workspace.Slots.Any(slot => slot.CardId == card.Limb));
+                    bool released = card.JobId == 0 && previousCard != null && (previousCard.JobId != 0 || releasedFollower);
+                    if (released && !view.gameObject.activeSelf && !parked && (!staged || preparationVisible))
+                    {
+                        // Hidden work cards must become visible before LayoutTo, which snaps inactive views.
+                        VoyageJobState previousJob = previous.Jobs.FirstOrDefault(task => task.Id == previousCard.JobId);
+                        VoyageCardState origin = previous.Cards.FirstOrDefault(old => old.Id == previousJob?.Location) ??
+                            previous.Cards.FirstOrDefault(old => old.Id == formerLimbWorkspace?.Location) ?? previousCard;
+                        view.gameObject.SetActive(true);
+                        view.SnapTo(tabletop, TablePosition(origin, view.Rect));
+                    }
+                    bool returning = view.Rect.parent != parent || released;
                     view.LayoutTo(parent, position, !created, staged ? 24f : returning ? 32f : 0f);
                     if (!view.Dragging) view.transform.SetAsLastSibling();
                 }
@@ -527,16 +574,18 @@ namespace CardKKK.IslandSurvival.Unity
             return "";
         }
 
-        private void Command(Func<VoyageEngine, VoyageResult> command)
+        private bool Command(Func<VoyageEngine, VoyageResult> command)
         {
-            if (run == null) return;
+            if (run == null) return false;
             Message("");
-            run(command);
+            VoyageResult result = null;
+            run(value => result = command(value));
+            return result != null && result.Success;
         }
 
         private void TogglePause()
         {
-            if (state == null || state.Dead || state.Won || menuPanel.activeSelf) return;
+            if (state == null || state.Dead || state.Won || menuPanel.activeSelf || readPanel.activeSelf) return;
             Command(value => value.SetPaused(!state.Paused));
         }
 
@@ -562,7 +611,7 @@ namespace CardKKK.IslandSurvival.Unity
             if (resumeAfterMenu && state != null && !state.Dead && !state.Won) Command(value => value.SetPaused(false));
             resumeAfterMenu = false;
             confirmRestart = false;
-            Focus(menuButton);
+            Focus(null);
         }
 
         private void Restart()
@@ -623,10 +672,12 @@ namespace CardKKK.IslandSurvival.Unity
                 else if (readPanel.activeSelf) CloseRead();
                 else if (menuPanel.activeSelf) CloseMenu();
                 else if (tasksPanel.activeSelf) tasksPanel.SetActive(false);
-                else if (preparationVisible) { preparationVisible = false; guidanceSlot = -1; Render(); }
+                else if (preparationVisible) { CapturePreparationScroll(); preparationVisible = false; guidanceSlot = -1; Render(); }
                 else OpenMenu();
             }
-            if (Input.GetKeyDown(KeyCode.Space)) TogglePause();
+            GameObject focused = EventSystem.current == null ? null : EventSystem.current.currentSelectedGameObject;
+            bool uiOwnsSubmit = focused != null && focused.GetComponentInParent<Selectable>() != null;
+            if (Input.GetKeyDown(KeyCode.Space) && !uiOwnsSubmit) TogglePause();
         }
 
         private void OnApplicationFocus(bool focused)

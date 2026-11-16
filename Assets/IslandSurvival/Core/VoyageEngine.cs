@@ -106,12 +106,23 @@ namespace CardKKK.IslandSurvival.Core
 
         public VoyageResult Stage(int cardId) => Commit(s => PutAutomatically(s, cardId, s.PreparationLocation));
 
-        public VoyageResult StagePair(int firstId, int secondId) => Commit(s =>
+        public VoyageResult StagePair(int firstId, int secondId, bool openGeneral = false) =>
+            Commit(s => PlanStagePair(s, firstId, secondId, openGeneral));
+
+        private VoyageResult PlanStagePair(VoyageState s, int firstId, int secondId, bool openGeneral)
         {
+            bool switched = openGeneral && s.PreparationLocation != 0;
+            if (openGeneral)
+            {
+                s.PreparationLocation = 0;
+                EnsureWorkspace(s, 0);
+                SyncPreparationProjection(s);
+            }
             VoyageResult first = PutAutomatically(s, firstId, s.PreparationLocation);
             if (!first.Success) return first;
-            return firstId == secondId ? first : PutAutomatically(s, secondId, s.PreparationLocation);
-        });
+            VoyageResult second = firstId == secondId ? first : PutAutomatically(s, secondId, s.PreparationLocation);
+            return second.Success && switched ? Ok() : second;
+        }
 
         public VoyageResult Unstage(int cardId) => Commit(s =>
         {

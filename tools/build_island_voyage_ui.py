@@ -246,7 +246,7 @@ def build():
         card(ui, preview, name, max(4, int(x * 1540) - 56), int(y * 1400) - 82, preview_kind=mark)
 
     tray = ui.box(play, '场所操作浮窗', 920, 160, 456, 348)
-    ui.image(tray, PANEL)
+    ui.image(tray, PANEL, ray=True)
     refs['preparationPanel'] = tray['go']
     _, refs['preparationTitle'] = ui.txt(tray, '面板标题', '桌面组合', 17, 7, 240, 36, 24, WHITE, 3)
     _, refs['closePreparation'] = ui.pxbutton(tray, '关闭场所窗口', '收起', 382, 9, 70, 30, BUTTON, 16)
@@ -260,7 +260,7 @@ def build():
 
     tasks = ui.box(play, '任务浮窗', 1100, 112, 472, 296, False)
     refs['tasksPanel'] = tasks['go']
-    ui.image(tasks, PANEL)
+    ui.image(tasks, PANEL, ray=True)
     ui.txt(tasks, '面板标题', '进行中', 17, 5, 240, 37, 22, WHITE, 3)
     _, refs['taskCount'] = ui.txt(tasks, '任务数量', '0', 296, 7, 151, 34, 17, MUTED, 5)
     refs['taskScroll'], _, rows = scroll(ui, tasks, '任务滚动区', 18, 45, 436, 235, 235)

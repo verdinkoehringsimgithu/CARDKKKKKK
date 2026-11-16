@@ -27,7 +27,7 @@ namespace CardKKK.IslandSurvival.Core
                 Id = job.Id, RecipeId = job.RecipeId, Remaining = job.Remaining, Duration = job.Duration, Location = job.Location,
                 AuxiliaryIds = new List<string>(job.AuxiliaryIds), Inputs = job.Inputs.Select(input => new VoyageJobInput
                 {
-                    CardId = input.CardId, Slot = input.Slot, AuxiliaryId = input.AuxiliaryId
+                    CardId = input.CardId, Slot = input.Slot, AuxiliaryId = input.AuxiliaryId, WorkspaceSlot = input.WorkspaceSlot
                 }).ToList()
             }).ToList()
         };

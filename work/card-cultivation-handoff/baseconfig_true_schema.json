@@ -2524,40 +2524,44 @@
     "prop_name": "MakeTimerInit",
     "struct_offset": "+0xa70",
     "struct_offset_dec": 2672,
-    "type": "string",
+    "type": "InitInfo",
     "getter_va": "0x1806c1760",
     "store_va": "0x1806bfc40",
-    "call_va": "0x1806bfc14"
+    "call_va": "0x1806bfc14",
+    "type_desc": "cfg.recipe.InitInfo (2 ints: val1, val2)"
   },
   {
     "field_index": 253,
     "prop_name": "ProduceTimerInit",
     "struct_offset": "+0xa78",
     "struct_offset_dec": 2680,
-    "type": "string",
+    "type": "InitInfo",
     "getter_va": "0x1806c18b0",
     "store_va": "0x1806bfc60",
-    "call_va": "0x1806bfc14"
+    "call_va": "0x1806bfc14",
+    "type_desc": "cfg.recipe.InitInfo (2 ints: val1, val2)"
   },
   {
     "field_index": 254,
     "prop_name": "ExploreTimerInit",
     "struct_offset": "+0xa80",
     "struct_offset_dec": 2688,
-    "type": "list_int",
+    "type": "InitInfo",
     "getter_va": "0x1806c1600",
     "store_va": "0x1806bfc80",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "cfg.recipe.InitInfo (2 ints: val1, val2)"
   },
   {
     "field_index": 255,
     "prop_name": "OnceTimerHide",
     "struct_offset": "+0xa88",
     "struct_offset_dec": 2696,
-    "type": "list_int",
+    "type": "list_InitInfo",
     "getter_va": "0x1806c1880",
     "store_va": "0x1806bfcfd",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<cfg.recipe.InitInfo>"
   },
   {
     "field_index": 256,
@@ -2714,10 +2718,11 @@
     "prop_name": "NewbieSplashEndTalk",
     "struct_offset": "+0xb80",
     "struct_offset_dec": 2944,
-    "type": "list_int",
+    "type": "list_list_int",
     "getter_va": "0x1806c17e0",
     "store_va": "0x1806bfea1",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<NewbieTalkInfo> (each wrapping List<int>)"
   },
   {
     "field_index": 272,
@@ -2727,17 +2732,19 @@
     "type": "list_int",
     "getter_va": "0x1806c17d0",
     "store_va": "0x1806bff01",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "NewbieTalkInfo (wrapping List<int>)"
   },
   {
     "field_index": 273,
     "prop_name": "NewbieTimerStartTalk",
     "struct_offset": "+0xb90",
     "struct_offset_dec": 2960,
-    "type": "list_int",
+    "type": "list_list_int",
     "getter_va": "0x1806c17f0",
     "store_va": "0x1806bff7e",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<NewbieTalkInfo> (each wrapping List<int>)"
   },
   {
     "field_index": 274,
@@ -2747,7 +2754,8 @@
     "type": "list_int",
     "getter_va": "0x1806c17c0",
     "store_va": "0x1806bffd5",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "NewbieTalkInfo (wrapping List<int>)"
   },
   {
     "field_index": 275,
@@ -2804,30 +2812,33 @@
     "prop_name": "CoreGoldenWishNum",
     "struct_offset": "+0xbf0",
     "struct_offset_dec": 3056,
-    "type": "list_int",
+    "type": "map_int_int",
     "getter_va": "0x1806c0f20",
     "store_va": "0x1806c00aa",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "Dictionary<int, int>"
   },
   {
     "field_index": 281,
     "prop_name": "CoreGoldenThunderWin",
     "struct_offset": "+0xbf8",
     "struct_offset_dec": 3064,
-    "type": "list_int",
+    "type": "list_PrizeInfo",
     "getter_va": "0x1806c0f10",
     "store_va": "0x1806c016e",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<PrizeInfo> (int type_or_weight, List<int> items)"
   },
   {
     "field_index": 282,
     "prop_name": "CoreGoldenThunderLose",
     "struct_offset": "+0xc00",
     "struct_offset_dec": 3072,
-    "type": "list_int",
+    "type": "list_PrizeInfo",
     "getter_va": "0x1806c0f00",
     "store_va": "0x1806c0222",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<PrizeInfo> (int type_or_weight, List<int> items)"
   },
   {
     "field_index": 283,
@@ -2844,10 +2855,11 @@
     "prop_name": "ThunderPowerPrize",
     "struct_offset": "+0xc18",
     "struct_offset_dec": 3096,
-    "type": "list_int",
+    "type": "list_PrizeInfo",
     "getter_va": "0x1806c1dc0",
     "store_va": "0x1806c02ee",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<PrizeInfo> (int type_or_weight, List<int> items)"
   },
   {
     "field_index": 285,
@@ -2874,10 +2886,11 @@
     "prop_name": "SpawnMonsterWin",
     "struct_offset": "+0xc38",
     "struct_offset_dec": 3128,
-    "type": "list_int",
+    "type": "list_PrizeInfo",
     "getter_va": "0x1806c1d50",
     "store_va": "0x1806c04b9",
-    "call_va": null
+    "call_va": null,
+    "type_desc": "List<PrizeInfo> (int type_or_weight, List<int> items)"
   },
   {
     "field_index": 288,

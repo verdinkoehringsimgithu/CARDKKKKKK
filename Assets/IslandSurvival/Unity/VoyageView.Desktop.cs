@@ -10,6 +10,7 @@ namespace CardKKK.IslandSurvival.Unity
     {
         [SerializeField] private VoyageSlotView slotTemplate;
         [SerializeField] private RectTransform dropGhost;
+        private readonly Dictionary<int, float> preparationScroll = new Dictionary<int, float>();
         private readonly Dictionary<int, VoyageSlotView> slotViews = new Dictionary<int, VoyageSlotView>();
         private readonly Dictionary<int, Vector3> dragOffsets = new Dictionary<int, Vector3>();
         private readonly List<VoyageCardView> retiredCards = new List<VoyageCardView>();
@@ -18,7 +19,7 @@ namespace CardKKK.IslandSurvival.Unity
         private VoyageDeskRules deskRules;
         private bool singleDrag;
         private int guidanceSlot = -1;
-        private float guidanceUntil, panelTime;
+        private float guidanceUntil, panelTime, nextDropRefresh;
         private CanvasGroup preparationFade;
 
         public VoyageDeskGeometry MeasureDesk()
@@ -55,6 +56,8 @@ namespace CardKKK.IslandSurvival.Unity
         internal void SelectSlot(int index)
         {
             if (dragging != null || menuPanel.activeSelf || readPanel.activeSelf) return;
+            VoyageSlotOffer slot = engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.Index == index);
+            if (slot == null || slot.Locked) return;
             guidanceSlot = index;
             guidanceUntil = Time.unscaledTime + 3f;
             RefreshGuidance();
@@ -63,15 +66,19 @@ namespace CardKKK.IslandSurvival.Unity
         private void RefreshGuidance()
         {
             if (engine == null || state == null) return;
+            IReadOnlyList<VoyageSlotOffer> offers = engine.Slots(state.PreparationLocation);
             foreach (VoyageCardState card in state.Cards)
             {
                 if (!cardViews.TryGetValue(card.Id, out VoyageCardView view) || view == null) continue;
                 bool candidate = false;
                 if (dragging != null && !dragOffsets.ContainsKey(card.Id))
                 {
-                    candidate = engine.IsLocation(card.Id)
-                        ? engine.FindAcceptingSlot(dragging.CardId, card.Id) >= 0
-                        : engine.CanStack(dragging.CardId, card.Id, singleDrag, out _) || engine.CanStagePair(card.Id, dragging.CardId);
+                    VoyageSlotOffer occupied = preparationVisible ? offers.FirstOrDefault(slot => slot.CardId == card.Id) : null;
+                    candidate = occupied != null
+                        ? engine.CanPut(dragging.CardId, occupied.Location, occupied.Index, out _)
+                        : engine.IsLocation(card.Id)
+                            ? engine.FindAcceptingSlot(dragging.CardId, card.Id) >= 0
+                            : engine.CanStack(dragging.CardId, card.Id, singleDrag, out _) || engine.CanStagePair(card.Id, dragging.CardId);
                 }
                 else if (guidanceSlot >= 0)
                     candidate = engine.CanPut(card.Id, state.PreparationLocation, guidanceSlot, out _);
@@ -79,7 +86,7 @@ namespace CardKKK.IslandSurvival.Unity
             }
             foreach (var pair in slotViews)
             {
-                VoyageSlotOffer offer = engine.Slots(state.PreparationLocation).FirstOrDefault(slot => slot.Index == pair.Key);
+                VoyageSlotOffer offer = offers.FirstOrDefault(slot => slot.Index == pair.Key);
                 if (offer == null) continue;
                 pair.Value.Display(this, offer);
                 pair.Value.Guide(dragging != null && engine.CanPut(dragging.CardId, offer.Location, offer.Index, out _), guidanceSlot == pair.Key);
@@ -143,111 +150,155 @@ namespace CardKKK.IslandSurvival.Unity
             if (isActiveAndEnabled) RefreshGuidance();
         }
 
+        private enum DropAction { Cancel, Put, Merge, Stack, Pair, Desk }
+
+        private struct DropIntent
+        {
+            public DropAction Action;
+            public int Target, Location, Slot;
+            public float X, Y;
+        }
+
+        // Resolve once from the current pointer and committed state. Both preview and release use this route.
+        private DropIntent ResolveDrop(VoyageCardView source, PointerEventData pointer)
+        {
+            var intent = new DropIntent();
+            if (pointer == null || menuPanel.activeSelf || readPanel.activeSelf ||
+                tasksPanel.activeSelf && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)tasksPanel.transform,
+                    pointer.position, pointer.pressEventCamera)) return intent;
+            bool inPanel = preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(
+                (RectTransform)preparationPanel.transform, pointer.position, pointer.pressEventCamera);
+            bool inSlots = inPanel && RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera);
+            if (inPanel && !inSlots) return intent;
+            if (!ReadDropTarget(pointer, out VoyageSlotView slot, out VoyageCardView target)) return intent;
+            int id = source.CardId;
+            if (inSlots)
+            {
+                int index = slot != null && slot.Location == state.PreparationLocation ? slot.Index : target != null
+                    ? engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.CardId == target.CardId)?.Index ?? -1 : -1;
+                if (index < 0) index = engine.FindAcceptingSlot(id, state.PreparationLocation);
+                intent.Action = DropAction.Put;
+                intent.Location = state.PreparationLocation;
+                intent.Slot = index;
+                return intent;
+            }
+            if (!RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, pointer.position, pointer.pressEventCamera)) return intent;
+            Vector3 local = tabletop.InverseTransformPoint(source.Rect.TransformPoint(source.Rect.rect.center));
+            intent.X = Mathf.Clamp01(local.x / tabletop.rect.width);
+            intent.Y = Mathf.Clamp01(-local.y / tabletop.rect.height);
+            if (target != null)
+            {
+                intent.Target = target.CardId;
+                if (engine.IsLocation(target.CardId))
+                {
+                    intent.Action = DropAction.Put;
+                    intent.Location = target.CardId;
+                    intent.Slot = engine.FindAcceptingSlot(id, target.CardId);
+                }
+                else if (IsInjuryMerge(id, target.CardId)) intent.Action = DropAction.Merge;
+                else if (engine.CanStack(id, target.CardId, singleDrag, out _)) intent.Action = DropAction.Stack;
+                else if (engine.CanStagePair(target.CardId, id)) intent.Action = DropAction.Pair;
+                else intent.Action = DropAction.Desk;
+            }
+            else
+            {
+                intent.Target = NearestStackTarget(id, source, singleDrag, pointer);
+                intent.Action = intent.Target == 0 ? DropAction.Desk : DropAction.Stack;
+            }
+            return intent;
+        }
+
         internal void Drop(VoyageCardView card, PointerEventData pointer)
         {
             if (dragging != card) return;
             int id = card.CardId;
             bool single = singleDrag;
-            ReadDropTargets(pointer, out VoyageSlotView slot, out VoyageCardView target);
-            Vector3 local = tabletop.InverseTransformPoint(card.Rect.TransformPoint(card.Rect.rect.center));
-            float x = Mathf.Clamp01(local.x / tabletop.rect.width), y = Mathf.Clamp01(-local.y / tabletop.rect.height);
+            DropIntent intent = ResolveDrop(card, pointer);
             FinishDragSession();
-            if (preparationVisible && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)preparationPanel.transform,
-                pointer.position, pointer.pressEventCamera) && !RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera))
-            { Render(); return; }
-            if (preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera))
+            switch (intent.Action)
             {
-                int index = slot != null ? slot.Index : target != null ? engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.CardId == target.CardId)?.Index ?? -1 : -1;
-                if (index < 0) index = engine.FindAcceptingSlot(id, state.PreparationLocation);
-                Command(value => value.Put(id, state.PreparationLocation, index));
-            }
-            else if (target != null)
-            {
-                if (engine.IsLocation(target.CardId))
-                {
-                    int location = target.CardId;
-                    int index = engine.FindAcceptingSlot(id, location);
-                    if (index >= 0) OpenPreparation(location);
-                    Command(value => value.Put(id, location, index));
-                }
-                else if (cards[cardById[id].CardId].Kind == VoyageCardKind.Injury &&
-                    cardById[id].CardId == cardById[target.CardId].CardId && cardById[id].Limb == cardById[target.CardId].Limb)
-                {
-                    mergeTarget = target.CardId;
-                    Command(value => value.Merge(id, target.CardId));
-                    mergeTarget = 0;
-                }
-                else if (engine.CanStack(id, target.CardId, single, out _)) Command(value => value.Stack(id, target.CardId, single));
-                else if (engine.CanStagePair(target.CardId, id))
-                {
-                    // Non-stacking recipe pairs use the same slot acceptance as direct insertion.
-                    OpenPreparation(0);
-                    Command(value => value.StagePair(target.CardId, id));
-                }
-                else Command(value => value.DropOnDesk(id, x, y, single));
-            }
-            else if (RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, pointer.position, pointer.pressEventCamera)
-                && (!preparationVisible || !RectTransformUtility.RectangleContainsScreenPoint((RectTransform)preparationPanel.transform, pointer.position, pointer.pressEventCamera)))
-            {
-                int near = NearestStackTarget(id, card, single);
-                if (near != 0) Command(value => value.Stack(id, near, single));
-                else Command(value => value.DropOnDesk(id, x, y, single));
+                case DropAction.Put:
+                    CapturePreparationScroll();
+                    if (Command(value => value.Put(id, intent.Location, intent.Slot, true))) PresentPreparation(intent.Location);
+                    break;
+                case DropAction.Merge:
+                    mergeTarget = intent.Target;
+                    try { Command(value => value.Merge(id, intent.Target)); }
+                    finally { mergeTarget = 0; }
+                    break;
+                case DropAction.Stack:
+                    Command(value => value.Stack(id, intent.Target, single));
+                    break;
+                case DropAction.Pair:
+                    CapturePreparationScroll();
+                    if (Command(value => value.StagePair(intent.Target, id, true))) PresentPreparation(0);
+                    break;
+                case DropAction.Desk:
+                    Command(value => value.DropOnDesk(id, intent.X, intent.Y, single));
+                    break;
             }
             Render();
         }
 
-        private void ReadDropTargets(PointerEventData pointer, out VoyageSlotView slot, out VoyageCardView target)
+        private bool IsInjuryMerge(int source, int target)
         {
-            var hits = new List<RaycastResult>();
-            EventSystem.current?.RaycastAll(pointer, hits);
+            return cards[cardById[source].CardId].Kind == VoyageCardKind.Injury &&
+                cardById[source].CardId == cardById[target].CardId && cardById[source].Limb == cardById[target].Limb;
+        }
+
+        // RaycastAll is sorted by Unity's UI order. Never combine targets from different visible layers.
+        private bool ReadDropTarget(PointerEventData pointer, out VoyageSlotView slot, out VoyageCardView target)
+        {
             slot = null; target = null;
+            if (EventSystem.current == null) return false;
+            var hits = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointer, hits);
             foreach (RaycastResult hit in hits)
             {
-                if (slot == null) slot = hit.gameObject.GetComponentInParent<VoyageSlotView>();
                 VoyageCardView candidate = hit.gameObject.GetComponentInParent<VoyageCardView>();
-                if (target == null && candidate != null && !dragOffsets.ContainsKey(candidate.CardId)) target = candidate;
+                if (candidate != null && dragOffsets.ContainsKey(candidate.CardId)) continue;
+                target = candidate;
+                slot = hit.gameObject.GetComponentInParent<VoyageSlotView>();
+                if (target != null || slot != null) return true;
+                Transform surface = hit.gameObject.transform;
+                // Empty table/slot backgrounds accept a drop; other foreground UI consumes it.
+                return surface == tabletopViewport || surface == tabletop || surface.IsChildOf(tabletop) ||
+                    preparationVisible && (surface == stageDrop || surface.IsChildOf(stageDrop));
             }
+            return false;
         }
 
         private void PreviewDrop(VoyageCardView source, PointerEventData pointer)
         {
+            if (dropGhost == null) return;
             dropGhost.gameObject.SetActive(false);
-            ReadDropTargets(pointer, out VoyageSlotView slot, out VoyageCardView target);
-            if (preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera))
+            DropIntent intent = ResolveDrop(source, pointer);
+            if (intent.Action == DropAction.Put)
             {
-                int index = slot != null ? slot.Index : target != null
-                    ? engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.CardId == target.CardId)?.Index ?? -1 : -1;
-                if (index < 0) index = engine.FindAcceptingSlot(source.CardId, state.PreparationLocation);
-                if (index < 0 || !engine.CanPut(source.CardId, state.PreparationLocation, index, out _) || !slotViews.TryGetValue(index, out VoyageSlotView view)) return;
+                if (!preparationVisible || intent.Location != state.PreparationLocation ||
+                    !engine.CanPut(source.CardId, intent.Location, intent.Slot, out _) ||
+                    !slotViews.TryGetValue(intent.Slot, out VoyageSlotView view)) return;
                 dropGhost.SetParent(dragLayer, false);
                 dropGhost.position = view.Rect.position;
             }
-            else
+            else if (intent.Action == DropAction.Stack)
             {
-                if (target != null && engine.IsLocation(target.CardId)) return; // Target itself is already highlighted.
-                int stack = target != null && engine.CanStack(source.CardId, target.CardId, singleDrag, out _) ? target.CardId : NearestStackTarget(source.CardId, source, singleDrag);
-                if (stack != 0)
-                {
-                    if (!engine.PreviewStack(source.CardId, stack, singleDrag, out float x, out float y, out int depth, out _)) return;
-                    dropGhost.SetParent(tabletop, false);
-                    dropGhost.anchoredPosition = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect) + Vector2.down * (depth * deskRules.StackOffset);
-                }
-                else
-                {
-                    if (!RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, pointer.position, pointer.pressEventCamera) ||
-                        preparationVisible && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)preparationPanel.transform, pointer.position, pointer.pressEventCamera)) return;
-                    Vector3 local = tabletop.InverseTransformPoint(source.Rect.TransformPoint(source.Rect.rect.center));
-                    float x = Mathf.Clamp01(local.x / tabletop.rect.width), y = Mathf.Clamp01(-local.y / tabletop.rect.height);
-                    if (!engine.PreviewDeskDrop(source.CardId, x, y, singleDrag, out x, out y, out _)) return;
-                    dropGhost.SetParent(tabletop, false);
-                    dropGhost.anchoredPosition = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect);
-                }
+                if (!engine.PreviewStack(source.CardId, intent.Target, singleDrag, out float x, out float y, out int depth, out _)) return;
+                dropGhost.SetParent(tabletop, false);
+                dropGhost.anchoredPosition = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect) + Vector2.down * (depth * deskRules.StackOffset);
             }
+            else if (intent.Action == DropAction.Desk)
+            {
+                if (!engine.PreviewDeskDrop(source.CardId, intent.X, intent.Y, singleDrag, out float x, out float y, out _)) return;
+                dropGhost.SetParent(tabletop, false);
+                dropGhost.anchoredPosition = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect);
+            }
+            else return;
             dropGhost.SetAsLastSibling();
             dropGhost.gameObject.SetActive(true);
         }
 
-        private int NearestStackTarget(int id, VoyageCardView source, bool single)
+        private int NearestStackTarget(int id, VoyageCardView source, bool single, PointerEventData pointer)
         {
             float best = deskRules.SnapDistance;
             int result = 0;
@@ -258,6 +309,11 @@ namespace CardKKK.IslandSurvival.Unity
                 Vector2 other = dragLayer.InverseTransformPoint(view.Rect.TransformPoint(view.Rect.rect.center));
                 float distance = Vector2.Distance(point, other);
                 if (distance >= best || !engine.CanStack(id, card.Id, single, out _)) continue;
+                Vector2 screen = RectTransformUtility.WorldToScreenPoint(pointer.pressEventCamera, view.Rect.TransformPoint(view.Rect.rect.center));
+                if (!RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, screen, pointer.pressEventCamera) ||
+                    preparationVisible && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)preparationPanel.transform, screen, pointer.pressEventCamera)) continue;
+                var probe = new PointerEventData(EventSystem.current) { position = screen };
+                if (!ReadDropTarget(probe, out _, out VoyageCardView visible) || visible != view) continue;
                 best = distance; result = card.Id;
             }
             return result;
@@ -287,6 +343,19 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void TickDesktop()
         {
+            if (dragging != null && dragPointer != null && !menuPanel.activeSelf && !readPanel.activeSelf)
+            {
+                bool inPanel = preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(
+                    (RectTransform)preparationPanel.transform, dragPointer.position, dragPointer.pressEventCamera);
+                if (inPanel) ScrollWhileDragging(stageScroll, stageDrop);
+                else ScrollWhileDragging(tableScroll, tabletopViewport);
+                // The held card can stay still while the world or its legal targets change.
+                if (Time.unscaledTime >= nextDropRefresh)
+                {
+                    PreviewDrop(dragging, dragPointer);
+                    nextDropRefresh = Time.unscaledTime + .05f;
+                }
+            }
             if (preparationFade != null)
             {
                 float target = preparationVisible ? 1 : 0;
@@ -301,6 +370,22 @@ namespace CardKKK.IslandSurvival.Unity
             }
             if (guidanceSlot >= 0 && (Time.unscaledTime > guidanceUntil || Input.GetMouseButtonDown(0)))
             { guidanceSlot = -1; RefreshGuidance(); }
+        }
+
+        private void ScrollWhileDragging(UnityEngine.UI.ScrollRect scroll, RectTransform viewport)
+        {
+            if (!scroll.vertical || scroll.content == null || !RectTransformUtility.RectangleContainsScreenPoint(
+                viewport, dragPointer.position, dragPointer.pressEventCamera)) return;
+            if (!ReadDropTarget(dragPointer, out _, out _)) return;
+            float hidden = scroll.content.rect.height - viewport.rect.height;
+            if (hidden <= 0 || !RectTransformUtility.ScreenPointToLocalPointInRectangle(viewport,
+                dragPointer.position, dragPointer.pressEventCamera, out Vector2 point)) return;
+            float edge = Mathf.Min(40f, viewport.rect.height * .15f);
+            float top = Mathf.Clamp01(1 - (viewport.rect.yMax - point.y) / edge);
+            float bottom = Mathf.Clamp01(1 - (point.y - viewport.rect.yMin) / edge);
+            float delta = (top - bottom) * Mathf.Max(1, scroll.scrollSensitivity) * 10f * Time.unscaledDeltaTime / hidden;
+            if (Mathf.Abs(delta) > .000001f)
+                scroll.verticalNormalizedPosition = Mathf.Clamp01(scroll.verticalNormalizedPosition + delta);
         }
 
         private void ShowPreparation()

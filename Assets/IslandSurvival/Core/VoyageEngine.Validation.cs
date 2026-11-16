@@ -213,6 +213,9 @@ namespace CardKKK.IslandSurvival.Core
                 else if (!instances.TryGetValue(job.Location, out VoyageCardState location) || location.JobId != job.Id ||
                     !LocationMatches(recipe, location) || !locked.Add(location.Id)) return "进行中的配方找不到原有场所。";
 
+                if (job.Inputs.Any(input => input != null && (input.WorkspaceSlot < 0 || input.WorkspaceSlot > MaxStageSize)) ||
+                    job.Inputs.Where(input => input != null && input.WorkspaceSlot > 0).GroupBy(input => input.WorkspaceSlot).Any(group => group.Count() > 1))
+                    return "任务中的场所槽位位置无效或重复。";
                 var slotCounts = new int[recipe.Inputs.Count];
                 var main = new List<VoyageCardState>();
                 var lines = new List<string>();

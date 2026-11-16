@@ -37,6 +37,23 @@ namespace CardKKK.IslandSurvival.Editor
                     report.AppendLine("牌堆实例、整组查询和序列化往返：通过");
                 }
 
+                var atomic = new VoyageEngine(definition);
+                string atomicBefore = JsonUtility.ToJson(atomic.Snapshot);
+                Require(!atomic.Put(location, location, 0, true).Success && atomicBefore == JsonUtility.ToJson(atomic.Snapshot),
+                    "失败投入切换了场所或修改了归属。");
+                bool accepted = atomic.CanPut(legs[0], location, 0, out _);
+                Require(accepted && atomicBefore == JsonUtility.ToJson(atomic.Snapshot), "完整入槽预览不纯或拒绝有效投入。");
+                Require(atomic.Put(legs[0], location, 0, true).Success && atomic.Snapshot.PreparationLocation == location && atomic.IsInSlot(legs[0]),
+                    "投入与切换场所没有一起提交。");
+                atomicBefore = JsonUtility.ToJson(atomic.Snapshot);
+                Require(!atomic.StagePair(location, legs[1], true).Success && atomicBefore == JsonUtility.ToJson(atomic.Snapshot),
+                    "失败组合切换了场所或留下半份投入。");
+                var heldTarget = new VoyageEngine(definition);
+                heldTarget.Hold(legs[1], true);
+                Require(!heldTarget.CanStack(legs[0], legs[1], false, out _), "持牌仍能接收自动归堆。");
+                heldTarget.Hold(legs[1], false);
+                report.AppendLine("投入/切换原子性、完整纯预览、组合失败回滚及持牌目标保护：通过");
+
                 string beforeQuery = JsonUtility.ToJson(engine.Snapshot);
                 engine.CanPut(legs[0], location, 0, out _);
                 engine.PreviewDeskDrop(legs[0], .5f, .4f, false, out _, out _, out _);
@@ -55,13 +72,42 @@ namespace CardKKK.IslandSurvival.Editor
                 string beforeReject = JsonUtility.ToJson(engine.Snapshot);
                 Require(!engine.Put(invalid, location, 0).Success, "不兼容牌被放入。");
                 Require(beforeReject == JsonUtility.ToJson(engine.Snapshot), "失败入槽改变了状态。");
+                engine.Hold(legs[0], true);
+                string heldBefore = JsonUtility.ToJson(engine.Snapshot);
+                Require(!engine.Start().Success && heldBefore == JsonUtility.ToJson(engine.Snapshot), "开工抢占了正在拖动的投入牌。");
+                engine.Hold(legs[0], false);
                 Require(engine.Start().Success, "真实配方无法开工。");
                 VoyageJobState job = engine.Snapshot.Jobs.Single();
-                Require(engine.Slots(location).All(slot => slot.CardId == 0 && slot.Locked), "开工后准备槽未清空/锁定。");
+                Require(engine.Slots(location).All(slot => slot.Locked), "工作槽未锁定。");
+                Require(engine.Slots(location).Single(slot => slot.Index == 0).CardId == legs[1] &&
+                    engine.Slots(location).Single(slot => slot.Index == 1).CardId == legs[0], "开工后工作牌没有保持原槽位。");
+                Require(!engine.IsInSlot(legs[0]) && !engine.IsInSlot(legs[1]), "工作视图重复占用了准备槽归属。");
+                VoyageState runningSave = JsonUtility.FromJson<VoyageState>(JsonUtility.ToJson(engine.Snapshot));
+                Require(engine.Restore(runningSave).Success && engine.Slots(location).Single(slot => slot.Index == 0).CardId == legs[1], "工作槽保存往返后位置丢失。");
+                VoyageState oldRunning = engine.Snapshot;
+                foreach (VoyageJobInput input in oldRunning.Jobs.Single().Inputs) input.WorkspaceSlot = 0;
+                Require(engine.Restore(oldRunning).Success && engine.Slots(location).Count(slot => slot.CardId != 0) == job.Inputs.Count,
+                    "旧版任务没有回退显示全部工作牌。");
+                Require(engine.Restore(runningSave).Success, "恢复工作槽检查现场失败。");
+                // Separate engine: completing a real job must clear its projection and ownership once.
+                var completion = new VoyageEngine(definition);
+                Require(completion.Restore(runningSave).Success && completion.SetPaused(false).Success, "完成链准备失败。");
+                for (int remaining = job.Remaining; remaining > 0; remaining -= Math.Min(240, remaining))
+                    Require(completion.Advance(Math.Min(240, remaining)).Success, "任务结算失败。");
+                VoyageState completed = completion.Snapshot;
+                Require(!completed.Jobs.Any(task => task.Id == job.Id) && completed.Cards.All(card => card.JobId != job.Id),
+                    "完成后任务或投入锁残留。");
+                Require(completion.Slots(location).All(slot => slot.CardId == 0 && !slot.Locked), "完成后工作槽没有清理。");
+                Require(legs.All(id => completed.Cards.Count(card => card.Id == id) == 1), "海滩探索完成后身体实例丢失或重复。");
+                string completedBeforeCancel = JsonUtility.ToJson(completed);
+                Require(!completion.Cancel(job.Id).Success && completedBeforeCancel == JsonUtility.ToJson(completion.Snapshot),
+                    "重复取消已完成任务改变了状态。");
+                report.AppendLine("真实任务完成、槽清理、实例守恒及完成后取消回滚：通过");
                 string busy = JsonUtility.ToJson(engine.Snapshot);
                 Require(!engine.Put(invalid, location, 0).Success && busy == JsonUtility.ToJson(engine.Snapshot), "忙碌场所仍能收牌或拒绝修改了状态。");
                 Require(engine.Cancel(job.Id).Success && engine.Snapshot.Cards.All(card => card.JobId == 0), "取消任务没有释放全部投入。");
-                report.AppendLine("拒绝回滚、任务占用和取消返还：通过");
+                Require(engine.Slots(location).All(slot => slot.CardId == 0 && !slot.Locked), "取消后工作槽投影没有清理。");
+                report.AppendLine("拒绝回滚、工作槽位置/归属/保存兼容和取消返还：通过");
 
                 Require(engine.Put(legs[0], location, 0).Success, "旧档迁移准备失败。");
                 VoyageState legacy = engine.Snapshot;

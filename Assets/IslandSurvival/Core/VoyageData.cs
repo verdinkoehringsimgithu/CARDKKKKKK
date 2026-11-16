@@ -160,6 +160,8 @@ namespace CardKKK.IslandSurvival.Core
     public sealed class VoyageJobInput
     {
         public int CardId, Slot;
+        // One-based physical workspace position; zero identifies older saves or automatic inputs.
+        public int WorkspaceSlot;
         public string AuxiliaryId = "";
     }
 

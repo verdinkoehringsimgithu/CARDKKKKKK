@@ -9,6 +9,27 @@ namespace CardKKK.IslandSurvival.Core
         // Workspaces/Slots are authoritative. Staged/Preparations are read-only projections for recipe matching and v1 migration.
         public IReadOnlyList<VoyageSlotOffer> Slots(int location)
         {
+            VoyageCardState place = Find(state, location);
+            VoyageJobState running = location == 0 || place == null ? null : state.Jobs.Find(job => job.Id == place.JobId);
+            if (running != null)
+            {
+                // Display projection only: working inputs remain owned exclusively by their job.
+                var occupied = new Dictionary<int, int>();
+                foreach (VoyageJobInput input in running.Inputs.Where(input => input.WorkspaceSlot > 0))
+                    occupied[input.WorkspaceSlot - 1] = input.CardId;
+                foreach (VoyageJobInput input in running.Inputs.Where(input => input.WorkspaceSlot == 0))
+                {
+                    int free = 0;
+                    while (occupied.ContainsKey(free)) free++;
+                    occupied[free] = input.CardId;
+                }
+                int size = Math.Max(SlotCapacity(location), occupied.Keys.DefaultIfEmpty(-1).Max() + 1);
+                return Enumerable.Range(0, size).Select(index => new VoyageSlotOffer
+                {
+                    Location = location, Index = index, CardId = occupied.TryGetValue(index, out int id) ? id : 0,
+                    Label = "进行中", Locked = true
+                }).ToArray();
+            }
             VoyageWorkspace workspace = Workspace(state, location);
             int count = workspace == null ? SlotCapacity(location) : workspace.Slots.Count;
             bool locked = location != 0 && (Find(state, location) == null || Find(state, location).JobId != 0);
@@ -19,7 +40,16 @@ namespace CardKKK.IslandSurvival.Core
             }).ToArray();
         }
 
-        public bool CanPut(int cardId, int location, int slot, out string reason) => CanPut(state, cardId, location, slot, out reason);
+        public bool CanPut(int cardId, int location, int slot, out string reason)
+        {
+            VoyageState candidate = Copy(state);
+            VoyageResult result = PutIntoSlot(candidate, cardId, location, slot);
+            reason = result.Message;
+            if (!result.Success) return false;
+            NormalizeDesktop(candidate);
+            reason = ValidateState(candidate);
+            return reason == "";
+        }
 
         public int FindAcceptingSlot(int cardId, int location)
         {
@@ -78,9 +108,10 @@ namespace CardKKK.IslandSurvival.Core
         public bool CanStagePair(int first, int second)
         {
             VoyageState candidate = Copy(state);
-            candidate.PreparationLocation = 0;
-            EnsureWorkspace(candidate, 0);
-            return PutAutomatically(candidate, first, 0).Success && PutAutomatically(candidate, second, 0).Success;
+            VoyageResult result = PlanStagePair(candidate, first, second, true);
+            if (!result.Success) return false;
+            NormalizeDesktop(candidate);
+            return ValidateState(candidate) == "";
         }
 
         public bool PreviewDeskDrop(int id, float x, float y, bool single, out float settledX, out float settledY, out string reason)
@@ -93,7 +124,13 @@ namespace CardKKK.IslandSurvival.Core
             return result.Success;
         }
 
-        public VoyageResult Put(int id, int location, int slot) => Commit(s => PutIntoSlot(s, id, location, slot));
+        public VoyageResult Put(int id, int location, int slot, bool openLocation = false) => Commit(s =>
+        {
+            VoyageResult result = PutIntoSlot(s, id, location, slot);
+            if (!result.Success || !openLocation || s.PreparationLocation == location) return result;
+            s.PreparationLocation = location;
+            return Ok();
+        });
 
         public VoyageResult Stack(int id, int targetId, bool single) => Commit(s => PlanStack(s, id, targetId, single));
 
@@ -379,6 +416,8 @@ namespace CardKKK.IslandSurvival.Core
             if (moving.Any(card => card.Id == target)) { reason = "不能把牌堆接回自身。"; return false; }
             var movingIds = new HashSet<int>(moving.Select(card => card.Id));
             VoyageCardState[] existing = Tail(s, Root(s, target)).Where(card => !movingIds.Contains(card.Id)).ToArray();
+            if (existing.Any(card => heldCards.Contains(card.Id)))
+            { reason = "目标牌堆正在拖动中。"; return false; }
             if (moving.Length + existing.Length > rules.Desk.MaxStackSize)
             { reason = "牌堆已达到上限。"; return false; }
             if (moving.Any(card => card.JobId != 0 || !StackCompatible(card, other)))
