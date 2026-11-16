@@ -25,7 +25,10 @@ namespace CardKKK.IslandSurvival.Core
             Jobs = source.Jobs.Select(job => new VoyageJobState
             {
                 Id = job.Id, RecipeId = job.RecipeId, Remaining = job.Remaining, Duration = job.Duration, Location = job.Location,
-                AuxiliaryIds = new List<string>(job.AuxiliaryIds), Inputs = job.Inputs.Select(input => new VoyageJobInput
+                AuxiliaryIds = new List<string>(job.AuxiliaryIds),
+                PendingOutputs = new List<int>(job.PendingOutputs ?? Enumerable.Empty<int>()),
+                StageIndex = job.StageIndex, TotalStages = Math.Max(1, job.TotalStages),
+                Inputs = job.Inputs.Select(input => new VoyageJobInput
                 {
                     CardId = input.CardId, Slot = input.Slot, AuxiliaryId = input.AuxiliaryId, WorkspaceSlot = input.WorkspaceSlot
                 }).ToList()

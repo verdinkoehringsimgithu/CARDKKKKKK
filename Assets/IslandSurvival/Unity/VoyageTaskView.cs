@@ -12,15 +12,39 @@ namespace CardKKK.IslandSurvival.Unity
         [SerializeField] private RectTransform fill, sanFill, hungerFill;
         public RectTransform Rect => (RectTransform)transform;
 
-        public void Bind(Action cancelTask) => cancel.onClick.AddListener(() => cancelTask());
+        private Text cancelLabel;
+        private Action onCancel, onCollect;
+        private bool completed;
 
-        public void Display(string recipe, string heldCards, int remaining, int duration, bool paused, bool canCancel, float san, float hunger)
+        private void EnsureLabel()
         {
-            title.text = recipe;
-            timer.text = (paused ? "暂停 · " : "") + remaining + " 分钟";
+            if (cancelLabel == null && cancel != null) cancelLabel = cancel.GetComponentInChildren<Text>();
+        }
+
+        public void Bind(Action cancelTask, Action collectTask = null)
+        {
+            EnsureLabel();
+            onCancel = cancelTask;
+            onCollect = collectTask ?? cancelTask;
+            cancel.onClick.RemoveAllListeners();
+            cancel.onClick.AddListener(() =>
+            {
+                if (completed) onCollect?.Invoke();
+                else onCancel?.Invoke();
+            });
+        }
+
+        public void Display(string recipe, string heldCards, int remaining, int duration, bool paused, bool canCancel, float san, float hunger, bool isCompleted = false, int stage = 1, int totalStages = 1)
+        {
+            EnsureLabel();
+            completed = isCompleted || remaining <= 0;
+            string stageSuffix = totalStages > 1 ? $" (阶段 {stage}/{totalStages})" : "";
+            title.text = recipe + stageSuffix + (completed ? " · [完成]" : "");
+            timer.text = completed ? "已完成 · 点击收取" : (paused ? "暂停 · " : "") + remaining + " 分钟";
             inputs.text = heldCards;
-            cancel.interactable = canCancel;
-            fill.anchorMax = new Vector2(Mathf.Clamp01(1 - (float)remaining / Mathf.Max(1, duration)), 1);
+            if (cancelLabel != null) cancelLabel.text = completed ? "收取" : "取消";
+            cancel.interactable = completed || canCancel;
+            fill.anchorMax = new Vector2(completed ? 1f : Mathf.Clamp01(1 - (float)remaining / Mathf.Max(1, duration)), 1);
             DisplayVial(sanVial, sanFill, san);
             DisplayVial(hungerVial, hungerFill, hunger);
         }

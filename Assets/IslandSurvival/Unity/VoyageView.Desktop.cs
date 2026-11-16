@@ -58,8 +58,9 @@ namespace CardKKK.IslandSurvival.Unity
             if (dragging != null || menuPanel.activeSelf || readPanel.activeSelf) return;
             VoyageSlotOffer slot = engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.Index == index);
             if (slot == null || slot.Locked) return;
+            if (guidanceSlot == index) { guidanceSlot = -1; RefreshGuidance(); return; }
             guidanceSlot = index;
-            guidanceUntil = Time.unscaledTime + 3f;
+            guidanceUntil = Time.unscaledTime + 6f;
             RefreshGuidance();
         }
 
@@ -78,7 +79,7 @@ namespace CardKKK.IslandSurvival.Unity
                         ? engine.CanPut(dragging.CardId, occupied.Location, occupied.Index, out _)
                         : engine.IsLocation(card.Id)
                             ? engine.FindAcceptingSlot(dragging.CardId, card.Id) >= 0
-                            : engine.CanStack(dragging.CardId, card.Id, singleDrag, out _) || engine.CanStagePair(card.Id, dragging.CardId);
+                            : engine.CanMerge(dragging.CardId, card.Id, out _) || engine.CanStack(dragging.CardId, card.Id, singleDrag, out _) || engine.CanStagePair(card.Id, dragging.CardId);
                 }
                 else if (guidanceSlot >= 0)
                     candidate = engine.CanPut(card.Id, state.PreparationLocation, guidanceSlot, out _);
@@ -105,7 +106,12 @@ namespace CardKKK.IslandSurvival.Unity
             tableScroll.StopMovement();
             stageScroll.StopMovement();
             dragOffsets.Clear();
-            foreach (int id in engine.DragCards(card.CardId, single))
+            var dragList = new List<int>();
+            if (multiSelected.Contains(card.CardId))
+                dragList.AddRange(multiSelected.Where(id => engine.CanDrag(id, true, out _)));
+            else
+                dragList.AddRange(engine.DragCards(card.CardId, single));
+            foreach (int id in dragList)
             {
                 if (!cardViews.TryGetValue(id, out VoyageCardView member)) continue;
                 dragOffsets.Add(id, dragLayer.InverseTransformVector(member.Rect.position - card.Rect.position));
@@ -235,16 +241,28 @@ namespace CardKKK.IslandSurvival.Unity
                     break;
                 case DropAction.Desk:
                     Command(value => value.DropOnDesk(id, intent.X, intent.Y, single));
+                    if (multiSelected.Contains(id) && multiSelected.Count > 1)
+                    {
+                        foreach (int otherId in multiSelected.ToArray())
+                        {
+                            if (otherId == id) continue;
+                            if (cardViews.TryGetValue(otherId, out VoyageCardView otherView) && dragOffsets.TryGetValue(otherId, out Vector3 offset))
+                            {
+                                Vector3 worldPos = card.Rect.position + dragLayer.TransformVector(offset);
+                                Vector2 tableLocal = tabletop.InverseTransformPoint(worldPos);
+                                float normX = Mathf.Clamp01(tableLocal.x / tabletop.rect.width);
+                                float normY = Mathf.Clamp01(tableLocal.y / tabletop.rect.height);
+                                Command(value => value.DropOnDesk(otherId, normX, normY, true));
+                            }
+                        }
+                        multiSelected.Clear();
+                    }
                     break;
             }
             Render();
         }
 
-        private bool IsInjuryMerge(int source, int target)
-        {
-            return cards[cardById[source].CardId].Kind == VoyageCardKind.Injury &&
-                cardById[source].CardId == cardById[target].CardId && cardById[source].Limb == cardById[target].Limb;
-        }
+        private bool IsInjuryMerge(int source, int target) => engine.CanMerge(source, target, out _);
 
         // RaycastAll is sorted by Unity's UI order. Never combine targets from different visible layers.
         private bool ReadDropTarget(PointerEventData pointer, out VoyageSlotView slot, out VoyageCardView target)
@@ -285,7 +303,9 @@ namespace CardKKK.IslandSurvival.Unity
             {
                 if (!engine.PreviewStack(source.CardId, intent.Target, singleDrag, out float x, out float y, out int depth, out _)) return;
                 dropGhost.SetParent(tabletop, false);
-                dropGhost.anchoredPosition = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect) + Vector2.down * (depth * deskRules.StackOffset);
+                Vector2 rootPos = TablePosition(new VoyageCardState { X = x, Y = y }, source.Rect);
+                int count = depth + (singleDrag ? 1 : engine.DragCards(source.CardId, false).Count);
+                dropGhost.anchoredPosition = StackedPosition(rootPos, depth, count, source.Rect);
             }
             else if (intent.Action == DropAction.Desk)
             {
@@ -333,12 +353,17 @@ namespace CardKKK.IslandSurvival.Unity
             int depth = StackDepth(card);
             VoyageCardState root = card;
             while (root.StackParent != 0 && cardById.TryGetValue(root.StackParent, out VoyageCardState parent)) root = parent;
-            Vector2 point = TablePosition(root, rect);
+            Vector2 rootPos = TablePosition(root, rect);
             int count = engine.DragCards(root.Id, false).Count;
-            point.y = Mathf.Max(point.y, -tabletop.rect.height + rect.rect.height + 4 + (count - 1) * deskRules.StackOffset);
-            point.y -= depth * deskRules.StackOffset;
-            point.y = Mathf.Max(point.y, -tabletop.rect.height + rect.rect.height + 4);
-            return point;
+            return StackedPosition(rootPos, depth, count, rect);
+        }
+
+        private Vector2 StackedPosition(Vector2 rootPos, int depth, int count, RectTransform rect)
+        {
+            float y = Mathf.Max(rootPos.y, -tabletop.rect.height + rect.rect.height + 4 + (count - 1) * deskRules.StackOffset);
+            y -= depth * deskRules.StackOffset;
+            y = Mathf.Max(y, -tabletop.rect.height + rect.rect.height + 4);
+            return new Vector2(rootPos.x, y);
         }
 
         private void TickDesktop()
@@ -368,8 +393,10 @@ namespace CardKKK.IslandSurvival.Unity
                 if (panelTime <= 0 && !preparationVisible) preparationPanel.SetActive(false);
                 if (dragging != null && dragPointer != null && panelTime > 0 && panelTime < 1) PreviewDrop(dragging, dragPointer);
             }
-            if (guidanceSlot >= 0 && (Time.unscaledTime > guidanceUntil || Input.GetMouseButtonDown(0)))
+            if (guidanceSlot >= 0 && Time.unscaledTime > guidanceUntil)
             { guidanceSlot = -1; RefreshGuidance(); }
+            if (!string.IsNullOrEmpty(notice) && Time.unscaledTime > noticeUntil)
+                Message("");
         }
 
         private void ScrollWhileDragging(UnityEngine.UI.ScrollRect scroll, RectTransform viewport)
@@ -396,6 +423,30 @@ namespace CardKKK.IslandSurvival.Unity
                 if (preparationFade == null) preparationFade = preparationPanel.AddComponent<CanvasGroup>();
             }
             if (preparationVisible) preparationPanel.SetActive(true);
+        }
+    }
+
+    internal sealed class VoyageDraggableWindow : MonoBehaviour, IDragHandler
+    {
+        private RectTransform target;
+        private Action<Vector2> onMoved;
+
+        public void Bind(RectTransform targetRect, Action<Vector2> movedCallback)
+        {
+            target = targetRect;
+            onMoved = movedCallback;
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (target == null) return;
+            Vector2 delta = eventData.delta;
+            Vector2 current = target.anchoredPosition;
+            Vector2 next = current + delta;
+            next.x = Mathf.Clamp(next.x, 18f, 1600f - target.rect.width - 18f);
+            next.y = Mathf.Clamp(next.y, -810f + target.rect.height, -88f);
+            target.anchoredPosition = next;
+            onMoved?.Invoke(next);
         }
     }
 }

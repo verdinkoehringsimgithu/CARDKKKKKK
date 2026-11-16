@@ -203,7 +203,8 @@ namespace CardKKK.IslandSurvival.Core
             foreach (VoyageJobState job in s.Jobs)
             {
                 if (job == null || job.Id <= 0 || job.Id >= s.NextJobId || !jobIds.Add(job.Id) || !Has(recipes, job.RecipeId) ||
-                    job.Remaining <= 0 || job.Remaining > job.Duration || job.Inputs == null || job.AuxiliaryIds == null)
+                    job.Remaining < 0 || job.Remaining > job.Duration || job.Inputs == null || job.AuxiliaryIds == null ||
+                    job.StageIndex < 0 || job.StageIndex >= Math.Max(1, job.TotalStages))
                     return "进行中的配方记录无效。";
                 VoyageRecipeRule recipe = recipes[job.RecipeId];
                 if (string.IsNullOrEmpty(recipe.LocationId))

@@ -21,7 +21,7 @@ namespace CardKKK.IslandSurvival.Unity
             Location = slot.Location;
             Index = slot.Index;
             CardId = slot.CardId;
-            label.text = slot.Locked ? "进行中" : slot.CardId == 0 ? "+" : "";
+            label.text = slot.Locked ? "进行中" : slot.CardId == 0 ? (string.IsNullOrEmpty(slot.Label) ? "+" : slot.Label) : "";
             frame.color = slot.Locked ? new Color(.40f, .43f, .42f, .65f) : new Color(.72f, .76f, .67f, .75f);
         }
 

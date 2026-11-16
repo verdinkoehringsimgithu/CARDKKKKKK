@@ -36,8 +36,54 @@ namespace CardKKK.IslandSurvival.Core
             return Enumerable.Range(0, count).Select(index => new VoyageSlotOffer
             {
                 Location = location, Index = index, CardId = workspace?.Slots[index].CardId ?? 0,
-                Label = "投入", Locked = locked || state.Dead || state.Won
+                Label = InferSlotLabel(state, location, index), Locked = locked || state.Dead || state.Won
             }).ToArray();
+        }
+
+        private string InferSlotLabel(VoyageState s, int location, int index)
+        {
+            VoyageCardState locCard = location == 0 ? null : Find(s, location);
+            if (locCard != null && (cards[locCard.CardId].Tags.Contains("bag") || cards[locCard.CardId].Tags.Contains("container") || cards[locCard.CardId].Tags.Contains("容器")))
+                return "储物";
+            VoyageRecipeRule[] possible = WorkspaceRecipes(s, location).ToArray();
+            if (possible.Length == 0) return "+";
+            var kinds = new HashSet<VoyageCardKind>();
+            var tags = new HashSet<string>();
+            foreach (VoyageRecipeRule recipe in possible)
+            {
+                if (index < recipe.Inputs.Count)
+                {
+                    VoyageInputRule input = recipe.Inputs[index];
+                    if (!string.IsNullOrEmpty(input.CardId) && cards.TryGetValue(input.CardId, out VoyageCardRule cardRule))
+                        kinds.Add(cardRule.Kind);
+                    else if (!string.IsNullOrEmpty(input.Tag))
+                        tags.Add(input.Tag);
+                }
+            }
+            if (kinds.Count == 1 && tags.Count == 0)
+            {
+                switch (kinds.First())
+                {
+                    case VoyageCardKind.Body: return "肢体";
+                    case VoyageCardKind.Tool: return "工具";
+                    case VoyageCardKind.Material: return "材料";
+                    case VoyageCardKind.Food: return "食材";
+                    case VoyageCardKind.Injury: return "伤势";
+                    case VoyageCardKind.Resource: return "资源";
+                    case VoyageCardKind.Facility: return "设施";
+                    case VoyageCardKind.Thought: return "思考";
+                    case VoyageCardKind.Information: return "线索";
+                }
+            }
+            if (tags.Count == 1 && kinds.Count == 0)
+            {
+                string tag = tags.First();
+                if (tag == "tool") return "工具";
+                if (tag == "material") return "材料";
+                if (tag == "food") return "食材";
+                if (tag == "container") return "容器";
+            }
+            return "+";
         }
 
         public bool CanPut(int cardId, int location, int slot, out string reason)
@@ -65,7 +111,11 @@ namespace CardKKK.IslandSurvival.Core
         private bool IsLocation(VoyageState s, int id)
         {
             VoyageCardState card = Find(s, id);
-            return card != null && (cards[card.CardId].Kind == VoyageCardKind.Resource || cards[card.CardId].Kind == VoyageCardKind.Facility ||
+            return card != null && (cards[card.CardId].Kind == VoyageCardKind.Resource ||
+                cards[card.CardId].Kind == VoyageCardKind.Facility ||
+                cards[card.CardId].Tags.Contains("bag") ||
+                cards[card.CardId].Tags.Contains("container") ||
+                cards[card.CardId].Tags.Contains("容器") ||
                 rules.Recipes.Any(recipe => !recipe.Automatic && recipe.LocationId == card.CardId));
         }
 
@@ -126,7 +176,7 @@ namespace CardKKK.IslandSurvival.Core
 
         public VoyageResult Put(int id, int location, int slot, bool openLocation = false) => Commit(s =>
         {
-            VoyageResult result = PutIntoSlot(s, id, location, slot);
+            VoyageResult result = slot >= 0 ? PutIntoSlot(s, id, location, slot) : PutAutomatically(s, id, location);
             if (!result.Success || !openLocation || s.PreparationLocation == location) return result;
             s.PreparationLocation = location;
             return Ok();
@@ -234,6 +284,15 @@ namespace CardKKK.IslandSurvival.Core
             VoyageWorkspace workspace = Workspace(s, locationId);
             int capacity = workspace == null ? SlotCapacity(locationId, s) : workspace.Slots.Count;
             if (index < 0 || index >= capacity) { reason = "这个槽位不存在。"; return false; }
+            VoyageCardState locCard = Find(s, locationId);
+            bool isContainer = locCard != null && (cards[locCard.CardId].Tags.Contains("bag") ||
+                cards[locCard.CardId].Tags.Contains("container") || cards[locCard.CardId].Tags.Contains("容器"));
+            if (isContainer)
+            {
+                if (cards[card.CardId].Kind == VoyageCardKind.Facility || cards[card.CardId].Kind == VoyageCardKind.Resource)
+                { reason = "无法将大型设施存入容器。"; return false; }
+                return true;
+            }
             var selected = new List<int>();
             if (locationId != 0) selected.Add(locationId);
             if (workspace != null)
@@ -258,7 +317,16 @@ namespace CardKKK.IslandSurvival.Core
             RemoveFromSlots(s, id);
             ReleaseEmptyWorkspace(s, id, location);
             slot.CardId = id;
-            if (displaced != 0) PlaceReturned(s, Find(s, displaced));
+            if (displaced != 0)
+            {
+                VoyageCardState displacedCard = Find(s, displaced);
+                if (displacedCard != null)
+                {
+                    VoyageCardState anchor = Find(s, location);
+                    if (anchor != null) { displacedCard.X = anchor.X; displacedCard.Y = anchor.Y; }
+                    PlaceReturned(s, displacedCard);
+                }
+            }
             return Ok();
         }
 
@@ -271,6 +339,9 @@ namespace CardKKK.IslandSurvival.Core
         private int SlotCapacity(int location, VoyageState s = null)
         {
             s = s ?? state;
+            VoyageCardState card = location == 0 ? null : Find(s, location);
+            if (card != null && (cards[card.CardId].Tags.Contains("bag") || cards[card.CardId].Tags.Contains("container") || cards[card.CardId].Tags.Contains("容器")))
+                return Math.Max(4, Math.Min(12, cards[card.CardId].Durability > 0 ? cards[card.CardId].Durability : 6));
             VoyageRecipeRule[] possible = WorkspaceRecipes(s, location).ToArray();
             int capacity = possible.Select(recipe => recipe.Inputs.Sum(input => input.Quantity) +
                 rules.AuxiliaryLines.Count(line => AppliesToRecipe(line, recipe))).DefaultIfEmpty(1).Max();
@@ -406,10 +477,12 @@ namespace CardKKK.IslandSurvival.Core
             { reason = "这两张牌现在不能堆叠。"; return false; }
             if (single && !rules.Desk.AllowSingleCardDrag || !single && !rules.Desk.AllowWholePileDrag && Child(s, id) != null)
             { reason = "当前牌桌规则不允许这样拖动。"; return false; }
-            // Places are targets for inputs rather than ordinary piles.
+            // Places and creatures cannot be stacked into ordinary piles.
             if (cards[source.CardId].Kind == VoyageCardKind.Resource || cards[source.CardId].Kind == VoyageCardKind.Facility ||
                 cards[other.CardId].Kind == VoyageCardKind.Resource || cards[other.CardId].Kind == VoyageCardKind.Facility)
             { reason = "场所不能叠入牌堆。"; return false; }
+            if (cards[source.CardId].Kind == VoyageCardKind.Creature || cards[other.CardId].Kind == VoyageCardKind.Creature)
+            { reason = "生物不能叠入牌堆。"; return false; }
             if (Workspace(s, id)?.Slots.Any(slot => slot.CardId != 0) ?? false)
             { reason = "请先退回这张牌所带场所中的投入。"; return false; }
             VoyageCardState[] moving = single ? new[] { source } : Tail(s, id).ToArray();
@@ -458,8 +531,9 @@ namespace CardKKK.IslandSurvival.Core
                 if (parent == null || !parents.Add(parent.Id) || card.JobId != 0 || parent.JobId != 0 ||
                     occupied.Contains(parent.Id) || occupied.Contains(card.Id) || !StackCompatible(card, parent)) return "牌堆归属无效。";
                 if (cards[card.CardId].Kind == VoyageCardKind.Resource || cards[card.CardId].Kind == VoyageCardKind.Facility ||
-                    cards[parent.CardId].Kind == VoyageCardKind.Resource || cards[parent.CardId].Kind == VoyageCardKind.Facility)
-                    return "场所不能保存在普通牌堆中。";
+                    cards[parent.CardId].Kind == VoyageCardKind.Resource || cards[parent.CardId].Kind == VoyageCardKind.Facility ||
+                    cards[card.CardId].Kind == VoyageCardKind.Creature || cards[parent.CardId].Kind == VoyageCardKind.Creature)
+                    return "场所或生物不能保存在普通牌堆中。";
                 var seen = new HashSet<int> { card.Id };
                 while (parent != null)
                 {

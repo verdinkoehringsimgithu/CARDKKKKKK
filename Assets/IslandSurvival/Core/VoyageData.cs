@@ -59,7 +59,7 @@ namespace CardKKK.IslandSurvival.Core
     public sealed class VoyageRecipeRule
     {
         public string Id = "", Name = "", LocationId = "", DiscoveryCardId = "", Tag = "";
-        public int LocationWear, LocationCharges, Minutes = 1;
+        public int LocationWear, LocationCharges, Minutes = 1, Stages = 1;
         public bool InitiallyKnown, Automatic;
         public List<VoyageInputRule> Inputs = new List<VoyageInputRule>();
         public List<VoyageOutputRule> Outputs = new List<VoyageOutputRule>();
@@ -154,6 +154,9 @@ namespace CardKKK.IslandSurvival.Core
         public string RecipeId = "";
         public List<VoyageJobInput> Inputs = new List<VoyageJobInput>();
         public List<string> AuxiliaryIds = new List<string>();
+        public List<int> PendingOutputs = new List<int>();
+        public int StageIndex, TotalStages = 1;
+        public bool IsCompleted => Remaining <= 0;
     }
 
     [Serializable]

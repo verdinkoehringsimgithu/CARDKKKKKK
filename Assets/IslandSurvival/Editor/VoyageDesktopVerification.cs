@@ -48,24 +48,34 @@ namespace CardKKK.IslandSurvival.Editor
                 atomicBefore = JsonUtility.ToJson(atomic.Snapshot);
                 Require(!atomic.StagePair(location, legs[1], true).Success && atomicBefore == JsonUtility.ToJson(atomic.Snapshot),
                     "失败组合切换了场所或留下半份投入。");
+                Require(atomic.Put(legs[1], location, -1, true).Success && atomic.IsInSlot(legs[1]),
+                    "自动分配空槽投入失败。");
+                Require(!atomic.Put(legs[0], location, -1, true).Success,
+                    "满槽自动分配投入未被拒绝。");
+                Require(!atomic.CanMerge(legs[0], legs[1], out _) && !atomic.CanMerge(legs[0], legs[0], out _),
+                    "非伤势或自身牌被误判为可合并。");
                 var heldTarget = new VoyageEngine(definition);
                 heldTarget.Hold(legs[1], true);
                 Require(!heldTarget.CanStack(legs[0], legs[1], false, out _), "持牌仍能接收自动归堆。");
                 heldTarget.Hold(legs[1], false);
-                report.AppendLine("投入/切换原子性、完整纯预览、组合失败回滚及持牌目标保护：通过");
+                report.AppendLine("投入/切换原子性、完整纯预览、空槽自动分配、伤势合并准入及持牌保护：通过");
 
                 string beforeQuery = JsonUtility.ToJson(engine.Snapshot);
                 engine.CanPut(legs[0], location, 0, out _);
                 engine.PreviewDeskDrop(legs[0], .5f, .4f, false, out _, out _, out _);
                 Require(beforeQuery == JsonUtility.ToJson(engine.Snapshot), "准入或落点预览修改了已提交状态。");
                 Require(engine.OpenPreparation(location).Success, "无法打开海滩。");
+                Require(engine.Slots(location)[0].Label == "肢体", "海滩槽位语义标签未推导为肢体。");
                 Require(engine.Put(legs[0], location, 0).Success, "第一张腿未进入指定槽。");
                 Require(engine.Snapshot.Cards.All(card => card.Id != legs[0] || card.StackParent == 0), "入槽未从牌堆摘出单牌。");
                 Require(engine.Put(legs[1], location, 0).Success, "占用槽位无法替换。");
                 Require(engine.IsInSlot(legs[1]) && !engine.IsInSlot(legs[0]), "替换后新旧牌重复占用。");
+                VoyageCardState locCard = engine.Snapshot.Cards.Single(c => c.Id == location);
+                VoyageCardState displacedLeg = engine.Snapshot.Cards.Single(c => c.Id == legs[0]);
+                Require(Math.Abs(displacedLeg.X - locCard.X) < .35f && Math.Abs(displacedLeg.Y - locCard.Y) < .35f, "替换退桌卡牌未在场所附近落位。");
                 Require(engine.Put(legs[0], location, 1).Success, "第二槽无法接收腿。");
                 Require(engine.Preview().Match == VoyageMatch.Ready, "两张腿没有组成真实海滩配方。");
-                report.AppendLine("纯预览、单牌摘堆、指定槽替换及配方接入：通过");
+                report.AppendLine("纯预览、语义槽位、单牌摘堆、指定槽替换、退桌就近落位及配方接入：通过");
 
                 int invalid = engine.Snapshot.Cards.Where(card => card.Id != location && card.JobId == 0)
                     .Select(card => card.Id).First(id => !engine.CanPut(id, location, 0, out _));
@@ -138,6 +148,20 @@ namespace CardKKK.IslandSurvival.Editor
                 string committed = JsonUtility.ToJson(engine.Snapshot);
                 Require(!engine.Restore(malformed).Success && committed == JsonUtility.ToJson(engine.Snapshot), "重复占槽存档未被拒绝或破坏已提交状态。");
                 report.AppendLine("旧列表迁移、重复归属拒绝与恢复回滚：通过");
+
+                VoyageCardRule containerCard = definition.Cards.FirstOrDefault(c => c.Tags.Contains("容器") || c.Tags.Contains("container") || c.Tags.Contains("bag"));
+                if (containerCard != null)
+                {
+                    var contEngine = new VoyageEngine(definition);
+                    VoyageCardState cInst = contEngine.Snapshot.Cards.FirstOrDefault(c => c.CardId == containerCard.Id);
+                    if (cInst != null)
+                    {
+                        Require(contEngine.IsLocation(cInst.Id), "容器卡未被识别为具有内部空间的场所/容器。");
+                        Require(contEngine.Slots(cInst.Id).Count >= 4, "容器槽位容量未达到基准。");
+                    }
+                }
+                Require(completion.CollectAll().Success || !completion.Snapshot.Jobs.Any(j => j.Remaining <= 0), "产物收取失败。");
+                report.AppendLine("容器空间识别、产物收取接口与多阶段结构：通过");
                 report.AppendLine("本入口只核对核心。实际拖拽、画面、声音和旧文件指纹迁移仍需Play验收。");
             }
             catch (Exception exception)

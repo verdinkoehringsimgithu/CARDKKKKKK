@@ -14,9 +14,17 @@ namespace CardKKK.IslandSurvival.Core
             public int Location;
         }
 
-        public VoyageOffer Preview(int additionalCardId = 0)
+        public VoyageOffer Preview(int additionalCardId = 0) => Preview(-1, additionalCardId);
+
+        public VoyageOffer Preview(int location, int additionalCardId)
         {
-            var selected = new List<int>(state.Staged);
+            int loc = location < 0 ? state.PreparationLocation : location;
+            var selected = new List<int>();
+            if (loc != 0) selected.Add(loc);
+            VoyageWorkspace workspace = Workspace(state, loc);
+            if (workspace != null)
+                selected.AddRange(workspace.Slots.Where(slot => slot.CardId != 0).Select(slot => slot.CardId));
+            else if (loc == state.PreparationLocation) selected.AddRange(state.Staged);
             if (additionalCardId != 0 && !selected.Contains(additionalCardId))
             {
                 if (!Available(state, Find(state, additionalCardId)) || selected.Count >= MaxStageSize)
@@ -58,16 +66,26 @@ namespace CardKKK.IslandSurvival.Core
             };
         }
 
-        public VoyageResult Start() => Commit(s =>
+        public VoyageResult Start() => Start(-1);
+
+        public VoyageResult Start(int location) => Commit(s =>
         {
-            if (s.Staged.Count == 0) return Fail("先把牌放进组合槽。");
-            VoyageRecipeRule recipe = FindExact(s, s.Staged, out MatchPlan plan);
+            int loc = location < 0 ? s.PreparationLocation : location;
+            VoyageWorkspace workspace = Workspace(s, loc);
+            var selected = new List<int>();
+            if (loc != 0) selected.Add(loc);
+            if (workspace != null)
+                selected.AddRange(workspace.Slots.Where(slot => slot.CardId != 0).Select(slot => slot.CardId));
+            if (selected.Count == 0) return Fail("先把牌放进组合槽。");
+            VoyageRecipeRule recipe = FindExact(s, selected, out MatchPlan plan);
             if (recipe == null) return Fail("当前组合无法开始。检查卡牌、耐久与剩余采集次数。");
             if (plan.Inputs.Any(input => heldCards.Contains(input.CardId)) || heldCards.Contains(plan.Location))
                 return Fail("请先放下正在拖动的投入牌。");
             bool known = s.Known.Contains(recipe.Id);
             Begin(s, recipe, plan);
-            s.Staged.Clear();
+            if (workspace != null)
+                foreach (VoyageSlotState slot in workspace.Slots) slot.CardId = 0;
+            SyncPreparationProjection(s);
             return Ok(known ? recipe.Name + "已开始。" : "正在尝试这个组合。");
         });
 

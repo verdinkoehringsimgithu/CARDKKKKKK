@@ -4,6 +4,25 @@
 
 ## 当前授权与方向
 
+- [FOUNDATION_7_POINTS_EXPANSION_20261116] 2026-11-16：孤岛出航进阶交互与底层扩展 7 项能力全量实装：
+  - [CORE]
+    * 多场所与容器：`VoyageEngine.Desktop.cs` 的 `IsLocation`、`SlotCapacity`、`CanPut` 支持识别 `容器`/`bag`/`container` 标签卡，赋予 4~12 格独立存储空间，空槽语义显示为“储物”；`Start(location)`、`Preview(location)`、`ClearStage(location)` 支持针对任意场所独立规划执行，解除单一全局 Staged 限制。
+    * 分阶段推进：`VoyageRecipeRule` 与 `VoyageJobState` 接入 `Stages` / `StageIndex` / `TotalStages`，`Advance` 中自动推进未结算的中间阶段，报送进度通知，终末阶段才执行完成。
+    * 专属产物待收区：`VoyageJobState` 接入 `PendingOutputs`，`VoyageEngine.Settlement.cs` 增加 `Collect(jobId)` 与 `CollectAll()` 权威收取命令。
+    * 连续推挤：`ResolveDeskOverlap` 升级分离轴阻尼排斥，避免桌边死锁。
+  - [UI]
+    * 浮窗拖拽与记忆：`VoyageView.Desktop.cs` 增加 `VoyageDraggableWindow` 拖拽标题栏，`windowPositions` 按场所 ID 记忆自定义位置并在打开时还原；点击已打开场所卡平滑关闭，点击新场所无缝切换。
+    * 多选协同拖拽：Ctrl 点击卡牌切换多选，拖拽时整组协同位移，落入桌面时按相对偏移提交，Esc 一键清空多选。
+    * 待收任务交互：`VoyageTaskView` 支持显示阶段后缀 `(阶段 X/Y)`，任务完成时取消按钮动态切换为“收取”，一键收集产物。
+  - [VERIFY] `VoyageDesktopVerification.cs` 补充容器空间、多阶段结构与产物收取断言。全量 C# 语法括号 100% 平衡，Core 零 UnityEngine 依赖，meta 完整。
+  - [NEXT] 用户在 Unity 中 Play 验收（重点测试：标题栏拖动浮窗位置记忆、Ctrl多选批量移动、容器卡存取物品、任务收取按钮）。
+
+- [FOUNDATION_INTEGRATION_20261116] 2026-11-16：孤岛桌面底层交互链路闭环与几何统一（Block B/C/D 推进）：
+  - [CORE] Assets/IslandSurvival/Core/VoyageEngine.Settlement.cs 新增权威准入 CanMerge，严格校验伤势等级、身体关联及桌面空闲可用，Merge 复用同一准入；在 Release 和 Settle 中，存活返还卡牌以场所物理坐标为基准落位（PlaceReturned 环形避让），杜绝退桌跳点。Core/VoyageEngine.Desktop.cs 的 Put 接收 slot < 0 时自动调用 PutAutomatically 分配空槽，满槽或不符时返回友好中文提示而非槽位越界异常；新增 InferSlotLabel 根据候选配方输入类型（肢体/工具/材料/食材等）推导空槽语义标签；PutIntoSlot 替换旧牌退桌时以场所坐标就近落位；CanStack 显式阻断 Creature 生物牌堆叠。Core/VoyageEngine.cs 的 Advance 中收集所有结算通知并以分号聚合（combinedNotice），防止同分钟多个任务完成时通知被覆盖丢失。
+  - [UI] Assets/IslandSurvival/Unity/VoyageSlotView.cs 的 Display 接入 slot.Label，空槽呈现推导语义标签替代单一加号。Assets/IslandSurvival/Unity/VoyageView.Desktop.cs 的 RefreshGuidance 接入 CanMerge 提示可合并伤势；IsInjuryMerge 复用 CanMerge 保持同源；StackedPosition 统一牌堆对齐与底边避让边界；TickDesktop 增加通知时效性检查（超时自动清空）。VoyageView.cs 的 QuickAction 联动 CapturePreparationScroll 与 PresentPreparation 保持滚动与窗口对齐；Message 设置 5 秒过期时效；双击阅读优先于跟随肢体拦截。VoyageBootstrap.cs 的 Run 在命令成功且产生状态变更（且无新提示）时自动清空历史错误提示。
+  - [VERIFY] Assets/IslandSurvival/Editor/VoyageDesktopVerification.cs 补齐负槽号自动分配空槽、满槽拒绝且状态回滚、伤势合并自身及非伤势拦截断言、海滩槽位语义推导为“肢体”、替换退桌就近落位校验。全量 C# 括号 100% 平衡，Core 零 UnityEngine 依赖，meta 完整。
+  - [NEXT] 用户手动 Play 验收孤岛场景（重点检验：空槽语义提示、海滩两条腿探索任务、替换旧腿退桌就近落位、同分钟双任务完成通知聚合、伤势合并高亮与操作）。
+
 - [EXECUTION_EIGHTH_REVIEW_FIXES_20261113] 2026-11-13：针对“配置解码仍有 537 字节复合结构未解”完成全链路静态反汇编与端到端 100% 零残留还原：
   1. 复合结构反序列化器拓扑逆向与类型闭环（E1事实）：
      - 字段 252~254（MakeTimerInit, ProduceTimerInit, ExploreTimerInit）：调用 0x1805B1810（cfg.recipe.InitInfo::DeserializeInitInfo），反汇编证实其内部连续调用两次 0x181A5C370（ByteBuf.ReadInt），写入 [rbx+10h] 与 [rbx+20h]；

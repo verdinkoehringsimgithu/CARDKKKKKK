@@ -125,6 +125,13 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 
 ## 验证与开发记录
 
+- 2026-11-16：孤岛桌面底层继续推进：
+  1. 统一伤势合并准入与双向引导：VoyageEngine 新增公共权威准入 CanMerge，严格校验同种同级、关联同一身体、关联身体未在准备中及两牌空闲可用；VoyageView.RefreshGuidance 将其纳入持牌目标引导，解决伤势合并目标不高亮的问题。
+  2. 桌面直接投场所容错与友好原因：VoyageEngine.Put 接收负槽号（slot < 0）时回退走 PutAutomatically 自动分配可用空槽；满槽或无适合空槽时准确反馈友好错误提示，杜绝“槽位不存在”内部异常。
+  3. 牌堆幽灵落点与最终落点几何计算统一：抽取 StackedPosition 共享函数，使 PreviewDrop 的牌堆落点幽灵与 DesktopPosition 的最终对齐/桌面底边避让修正完全一致，消除桌角堆叠落点抖动。
+  4. 快捷操作窗口联动完善：QuickAction（右键入槽/退槽）执行前后同步调用 CapturePreparationScroll 与 PresentPreparation，保持槽区滚动位置、停止滚动惯性并正确对齐窗口。
+  5. 手动回归源码补齐：VoyageDesktopVerification 增加负槽号自动分配、满槽拒绝回滚、伤势合并非法目标拦截断言。入口「孤岛生存 → 打开孤岛场景」。C# 括号、meta、Core 无 Unity 依赖及 Git 空白静查完成；未编译、Unity 或测试。
+
 - 2026-11-13：按用户要求整理13-后续实施与接手说明，记录当前暂存成果、源码入口、后续优先级、操作验收、耦合风险及调研裁决；同步交接首页和MEMORY。运行入口仍为「孤岛生存 → 打开孤岛场景」。本轮只改文档并核对链接和Git空白，未改代码、编译、运行Unity或测试。
 
 - 2026-11-12：修正空白桌面的可视区射线准入，真实Prefab和生成器为场所/任务窗背景启用射线阻挡；任务窗矩形明确拒绝落牌。各场所独立保留本次会话的槽区滚动位置，切换停止滚动惯性，重新绑定清理缓存。右键投入/退出成功后统一刷新和定位窗口；别处场所的跟随伤势隐藏，身体退出准备时从原场所恢复返还表现。入口「孤岛生存 → 打开孤岛场景」。Prefab875对象ID唯一及本地引用、2份C#括号/meta、Git空白静查完成；未编译、Unity或测试。
@@ -218,6 +225,8 @@ Unity 2022.3.62f3c1 单机卡牌项目。原自由牌桌保留生成、选择、
 - 2026-11-09：完成任务 R01（对象层级与参数恢复）。编写纯 Python TypeTree 反序列化器，从 Card、Timer、Area、UIForms 4 个已解包资源节点中成功恢复 26 个重点 Prefab 的完整 GameObject 层级、Transform/RectTransform 几何与父子关系、组件列表与序列化参数（共 1013 个对象节点、2587 个组件）。明确卡槽与卡牌物理尺寸 (0.64, 0.852)、三种高亮色、场所实体与局部窗口解耦结构。输出报告至 docs/handoffs/2026-11-09-卡牌桌面底层/证据/R01-对象层级与参数.{json,md}。未启动编译器、Unity 或测试，未提交上传。
 - 2026-11-09：按用户要求局部拆解本地 Card Cultivation，提取 IL2CPP 类型成员、7个资源包的11个节点和资源路径索引，形成[卡牌桌面底层交接](docs/handoffs/2026-11-09-卡牌桌面底层/00-从这里开始.md)、任务依赖与32项操作验收。入口为交接文档；游戏入口与代码未改。已核对元数据结构、解压长度、节点边界及哈希记录；未恢复方法体、未运行参考游戏、Unity、编译器或项目测试，未提交上传。
 - 2026-11-09：按用户确认的 PDF 修订稿切换「孤岛生存」场景。接入身体牌并行占用、配方预览与盲试、执行期间冻结牌自身计时、伤势跟随与升级、雏鸟觅食、两条航线路线与出航、独立存档。补齐 16 张关键插画及海滩、低语、卡纸声音。入口为原牌桌「孤岛生存」，策划从「孤岛生存 → 出航规则配置」编辑。只做了 C# 语法、资产引用、序列化字段和配方依赖静态核对，未启动编译器、Unity 或游戏测试。
+- 2026-11-16：完成进阶交互与底层扩展的全部7项关键能力实装。1) 多场所并行展开与切换：Core层解除单一Staged限制，Start/Preview/ClearStage支持指定场所，View支持点击场所开关/切换；2) 专属产物待收取区：VoyageJobState接入PendingOutputs，结算进入待收状态，提供Collect/CollectAll及TaskView的收取按钮；3) 多选与批量位移：Ctrl多选卡牌，拖拽时多选组协同移动并保持相对拓扑落位，Esc清空；4) 独立储物/背包容器：IsLocation/SlotCapacity/CanPut原生支持容器卡（容器/bag/container），提供4~12格储物槽及存取；5) 分阶段任务模型：RecipeRule与JobState扩充Stages阶段推进逻辑，时钟自动跨阶段流转并报送进度；6) 连续碰撞推挤：ResolveDeskOverlap升级分离轴连续位移与阻尼，消除卡死振荡；7) 浮窗自由拖拽与位置记忆：VoyageDraggableWindow支持标题栏随意拖放，windowPositions按场所独立记忆。全量静态语法校验通过，未启动Unity、编译器或测试，未提交Git。
+- 2026-11-16：推进孤岛出航底座与交互基础设施（Block B/C/D）。1) 场所槽位语义化：在 VoyageEngine.Desktop.cs 增加 InferSlotLabel，根据场所可用配方输入特征自动推导空槽类别（肢体/工具/材料/食材等），VoyageSlotView 呈现直观提示标签替代单一加号；2) 替换与返还落点收敛：槽位替换旧卡、任务取消及结算返还牌时，以场所物理坐标为基准就近落位（PlaceReturned 环形避让），杜绝退桌跳点；3) 同分钟多任务结算：Advance 聚合多任务完成通知（分号拼接），避免同帧结算信息被最后一条覆盖；4) 提示条时效与自愈：通知增加 5 秒时效，并在有效状态变更操作后主动清除历史报错；5) 扩展 VoyageDesktopVerification 静态断言（槽位语义推导、就近落位、生物不可堆叠保护）。仅静态审查与语法括号平衡校验，未启动编译器、Unity 或测试，未提交 Git。
 - 2026-11-10：落实 11 报告第六次更新，纠偏 OnDetachFrom 坐标处理并建立真实类型驱动解码：1) 证明 0x1807057E7 读入局部基准高度 [rbx+104h] 经 shufps 替换高度标量后写回目标坐标与当前坐标（重置回桌面基准平面，保持 X/Z 水平投影位置），解除父子挂接恢复为独立桌牌，后续在常规帧 UpdatePhysics 重叠时由 PushAwayFromOthers 推开；2) 由 BaseConfig::.ctor 的 336 条原生写入指令生成 baseconfig_true_schema.json，彻底纠正 +0x468（RoleAgeFormat）、+0x4E0（BaseMapEventInfoList）、+0x520（FlyShowWidgetSystemNum）、+0x690（EffectDamageArmor = 31002）、+0x6A0（EffectAttack = 31100）的字段错配；纯由真实类型驱动解码前 252 个字段（消费 3846/4383 字节，87.7%），流指针自然命中 0xd92 读出 EntityTopNum = 30 及 8 个几何浮点；如实保留 0xf06~0x111f 未知复合结构范围，不作启发式强解，不冒充全表闭环；3) 6 篇报告引述的 304 条指令经 review_execution.py 自动化校验 100% 匹配。未改游戏运行时代码，未启动编译器、Unity 或测试，未提交 Git。
 - 2026-11-10：落实 11 报告第五次更新，攻克槽位替换旧卡去向全链路实证与 Luban 全流式解码至 EOF：1) 证明 AddBaseCardSlotEntity 以 DType=0 调 DetachEntityData.Create，旧卡接收端 BaseEntityLogic.OnDetachFrom (0x180705420) 严格命中 DType==0 原位解绑分支（0x1807057D9），写回原世界坐标脱离父级恢复为独立桌牌，确无 Bounce/位移动画，由后续物理推挤自然避让（P1 闭环）；2) 提取全部 336 个属性独立 Getter 机器码解析结构体偏移与物理类型，重构 verify_baseconfig_fields.py 从 0x0 顺序解码至 EOF (0x111f / 4383 字节，零字节残留)，证明自然推进在 0xd92 读出 EntityTopNum=30、8个几何浮点、53个Effect整数及5个List集合，产出 651 条全量映射 JSON；3) 6 篇报告引述的 304 条指令经 review_execution.py 自动化校验 100% 匹配。未改游戏运行时代码，未启动编译器、Unity 或测试，未提交 Git。
 - 2026-11-10：针对执行结果独立复核指出的 5 项问题完成修正：证实 GetTopNum (VA 0x1807044C0) 遍历父子双向链，修正单向父链范例与任务门槛区分；修正取消入口 VA 为 0x1805DC610（直调 OnPointerUp），撤回失焦绝对安全无条件保证；修正 0x180709D2D 真实调用为 GetForceNum (VA 0x1807035A0)，更正 produceformidle 空绑定事实，明确有限步松弛为项目设计；修正入槽拒绝流程图与正文统一（拒绝立即回滚不降级）；解析补齐 RemoteResource 第 4 字段 FileSystems，彻底解决最后 1 字节悬挂并经严格 EOF 验证。未启动编译器、Unity或测试，未提交Git。

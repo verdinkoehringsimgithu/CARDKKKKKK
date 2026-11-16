@@ -98,6 +98,7 @@ namespace CardKKK.IslandSurvival.Unity
                 running = !snapshot.Paused && !snapshot.Won && !snapshot.Dead;
                 dirty = true;
                 SyncAudio(snapshot, true);
+                if (result.Success && string.IsNullOrEmpty(result.Message)) view.Message("");
                 view.Render();
             }
             if (!result.Success) view.Reject();

@@ -13,7 +13,8 @@ namespace CardKKK.IslandSurvival.Core
             var job = new VoyageJobState
             {
                 Id = s.NextJobId++, RecipeId = recipe.Id, Location = plan.Location, Inputs = plan.Inputs,
-                AuxiliaryIds = lines, Duration = duration, Remaining = duration
+                AuxiliaryIds = lines, Duration = duration, Remaining = duration,
+                StageIndex = 0, TotalStages = Math.Max(1, recipe.Stages)
             };
             foreach (VoyageJobInput input in job.Inputs)
             {
@@ -36,7 +37,18 @@ namespace CardKKK.IslandSurvival.Core
             if (job.Location != 0) Find(s, job.Location).JobId = 0;
             s.Jobs.Remove(job);
             if (returnInputs)
-                foreach (VoyageJobInput input in job.Inputs) PlaceReturned(s, Find(s, input.CardId));
+            {
+                VoyageCardState loc = job.Location == 0 ? null : Find(s, job.Location);
+                foreach (VoyageJobInput input in job.Inputs)
+                {
+                    VoyageCardState card = Find(s, input.CardId);
+                    if (card != null)
+                    {
+                        if (loc != null) { card.X = loc.X; card.Y = loc.Y; }
+                        PlaceReturned(s, card);
+                    }
+                }
+            }
         }
 
         private string Settle(VoyageState s, VoyageJobState job)
@@ -84,7 +96,14 @@ namespace CardKKK.IslandSurvival.Core
             }
 
             foreach (VoyageJobInput input in job.Inputs)
-                PlaceReturned(s, Find(s, input.CardId));
+            {
+                VoyageCardState card = Find(s, input.CardId);
+                if (card != null)
+                {
+                    if (location != null) { card.X = location.X; card.Y = location.Y; }
+                    PlaceReturned(s, card);
+                }
+            }
 
             s.Hunger = Level(s.Hunger + recipe.HungerDelta);
             s.San = Level(s.San + recipe.SanDelta);
@@ -107,6 +126,7 @@ namespace CardKKK.IslandSurvival.Core
                 produced.ProducedByJobId = job.Id;
                 produced.ProducedFromX = anchor.X;
                 produced.ProducedFromY = anchor.Y;
+                job.PendingOutputs.Add(produced.Id);
             }
             return recipe.Name + "完成。";
         }
@@ -186,17 +206,74 @@ namespace CardKKK.IslandSurvival.Core
             }
         }
 
-        public VoyageResult Merge(int sourceId, int targetId) => Commit(s =>
+        public VoyageResult Collect(int jobId) => Commit(s =>
         {
+            VoyageJobState job = s.Jobs.Find(j => j.Id == jobId);
+            if (job == null) return Fail("这项任务已不在列表中。");
+            VoyageCardState loc = job.Location == 0 ? null : Find(s, job.Location);
+            foreach (int outputId in job.PendingOutputs)
+            {
+                VoyageCardState outCard = Find(s, outputId);
+                if (outCard != null)
+                {
+                    if (loc != null) { outCard.X = loc.X; outCard.Y = loc.Y; }
+                    PlaceReturned(s, outCard);
+                }
+            }
+            job.PendingOutputs.Clear();
+            Release(s, job, false);
+            return Ok("产物已收取。");
+        });
+
+        public VoyageResult CollectAll() => Commit(s =>
+        {
+            var finished = s.Jobs.Where(j => j.Remaining <= 0).ToArray();
+            if (finished.Length == 0) return Unchanged();
+            foreach (VoyageJobState job in finished)
+            {
+                VoyageCardState loc = job.Location == 0 ? null : Find(s, job.Location);
+                foreach (int outputId in job.PendingOutputs)
+                {
+                    VoyageCardState outCard = Find(s, outputId);
+                    if (outCard != null)
+                    {
+                        if (loc != null) { outCard.X = loc.X; outCard.Y = loc.Y; }
+                        PlaceReturned(s, outCard);
+                    }
+                }
+                job.PendingOutputs.Clear();
+                Release(s, job, false);
+            }
+            return Ok("所有产物已收取。");
+        });
+
+        public bool CanMerge(int sourceId, int targetId, out string reason) => CanMerge(state, sourceId, targetId, out reason);
+
+        private bool CanMerge(VoyageState s, int sourceId, int targetId, out string reason)
+        {
+            reason = "";
             VoyageCardState source = Find(s, sourceId);
             VoyageCardState target = Find(s, targetId);
-            if (sourceId == targetId || !Available(s, source) || !Available(s, target)) return Fail("请把两张伤势牌放回桌面再合并。");
+            if (s.Dead || s.Won || source == null || target == null || sourceId == targetId || !Available(s, source) || !Available(s, target))
+            { reason = "请把两张伤势牌放回桌面再合并。"; return false; }
             VoyageCardRule rule = cards[source.CardId];
             if (rule.Kind != VoyageCardKind.Injury || rule.Id != target.CardId || string.IsNullOrEmpty(rule.NextInjuryId))
-                return Fail("只有同种、同级的伤势可以合并。");
-            if (source.Limb != target.Limb) return Fail("这两处伤势关联不同的身体牌。");
+            { reason = "只有同种、同级的伤势可以合并。"; return false; }
+            if (source.Limb != target.Limb)
+            { reason = "这两处伤势关联不同的身体牌。"; return false; }
             VoyageCardState limb = Find(s, source.Limb);
-            if (s.Staged.Contains(limb.Id)) return Fail("请先把关联的身体牌移回桌面。");
+            if (limb != null && s.Staged.Contains(limb.Id))
+            { reason = "请先把关联的身体牌移回桌面。"; return false; }
+            return true;
+        }
+
+        public VoyageResult Merge(int sourceId, int targetId) => Commit(s =>
+        {
+            if (!CanMerge(s, sourceId, targetId, out string reason)) return Fail(reason);
+            VoyageCardState source = Find(s, sourceId);
+            VoyageCardState target = Find(s, targetId);
+            VoyageCardRule rule = cards[source.CardId];
+            VoyageCardState limb = Find(s, source.Limb);
             VoyageCardRule next = cards[rule.NextInjuryId];
             Remove(s, source);
             Remove(s, target);

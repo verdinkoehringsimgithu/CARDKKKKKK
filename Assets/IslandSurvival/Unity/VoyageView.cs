@@ -66,19 +66,29 @@ namespace CardKKK.IslandSurvival.Unity
             PositionPreparation(id);
         }
 
+        private readonly Dictionary<int, Vector2> windowPositions = new Dictionary<int, Vector2>();
+        private readonly HashSet<int> multiSelected = new HashSet<int>();
+
         private void PositionPreparation(int id)
         {
             RectTransform panel = (RectTransform)preparationPanel.transform;
             RectTransform parent = (RectTransform)panel.parent;
+            if (windowPositions.TryGetValue(id, out Vector2 saved))
+            {
+                panel.anchoredPosition = saved;
+                return;
+            }
             Vector2 point = new Vector2(780, 160);
             if (cardViews.TryGetValue(id, out VoyageCardView card))
             {
                 Vector3 local = parent.InverseTransformPoint(card.Rect.TransformPoint(card.Rect.rect.center));
                 point = new Vector2(local.x - parent.rect.xMin + 76, parent.rect.yMax - local.y - 70);
             }
-            panel.anchoredPosition = new Vector2(
+            Vector2 clamped = new Vector2(
                 Mathf.Clamp(point.x, 18, 1600 - panel.rect.width - 18),
                 -Mathf.Clamp(point.y, 88, 810 - panel.rect.height));
+            panel.anchoredPosition = clamped;
+            windowPositions[id] = clamped;
         }
 
         private static readonly Color Selection = new Color(.98f, .81f, .48f);
@@ -134,6 +144,14 @@ namespace CardKKK.IslandSurvival.Unity
                 tasksPanel.SetActive(show);
                 if (show) { CapturePreparationScroll(); preparationVisible = false; preparationPanel.SetActive(false); guidanceSlot = -1; RefreshGuidance(); }
             });
+            if (preparationTitle != null)
+            {
+                var titleDrag = preparationTitle.gameObject.AddComponent<VoyageDraggableWindow>();
+                titleDrag.Bind((RectTransform)preparationPanel.transform, pos =>
+                {
+                    if (state != null) windowPositions[state.PreparationLocation] = pos;
+                });
+            }
             generalPreparation.onClick.AddListener(() => OpenPreparation(0));
             closePreparation.onClick.AddListener(() => { AbortDrag(); CapturePreparationScroll(); preparationVisible = false; guidanceSlot = -1; Render(); });
             clearButton.onClick.AddListener(() => Command(value => value.ClearStage()));
@@ -253,9 +271,12 @@ namespace CardKKK.IslandSurvival.Unity
             }
         }
 
+        private float noticeUntil;
+
         public void Message(string message)
         {
             notice = message ?? "";
+            noticeUntil = string.IsNullOrEmpty(notice) ? 0f : Time.unscaledTime + 5f;
             noticeText.text = notice;
             if (menuPanel.activeSelf && !confirmRestart) menuNotice.text = notice;
         }
@@ -266,10 +287,45 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (state == null || menuPanel.activeSelf || readPanel.activeSelf || !cardById.TryGetValue(id, out VoyageCardState card)) return;
             selected = id;
+            if (guidanceSlot >= 0)
+            {
+                int targetSlot = guidanceSlot;
+                guidanceSlot = -1;
+                if (engine.CanPut(id, state.PreparationLocation, targetSlot, out _))
+                {
+                    CapturePreparationScroll();
+                    if (Command(value => value.Put(id, state.PreparationLocation, targetSlot, true)))
+                    {
+                        PresentPreparation(state.PreparationLocation);
+                        return;
+                    }
+                }
+            }
+            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+            {
+                if (multiSelected.Contains(id)) multiSelected.Remove(id);
+                else multiSelected.Add(id);
+                Render();
+                return;
+            }
             VoyageCardKind selectedKind = cards[card.CardId].Kind;
             if (engine.IsLocation(id) && (selectedKind != VoyageCardKind.Information || clicks < 2 && !engine.IsInSlot(id)))
             {
+                if (preparationVisible && state.PreparationLocation == id)
+                {
+                    CapturePreparationScroll();
+                    preparationVisible = false;
+                    guidanceSlot = -1;
+                    Render();
+                    return;
+                }
                 OpenPreparation(id);
+                return;
+            }
+            VoyageCardRule rule = cards[card.CardId];
+            if (clicks > 1 && !string.IsNullOrEmpty(rule.Description))
+            {
+                OpenRead(card, rule);
                 return;
             }
             if (preparedFollowers.Contains(id))
@@ -278,8 +334,7 @@ namespace CardKKK.IslandSurvival.Unity
                 return;
             }
             if (cardViews.TryGetValue(id, out VoyageCardView view) && !state.Staged.Contains(id)) view.transform.SetAsLastSibling();
-            VoyageCardRule rule = cards[card.CardId];
-            if (rule.Kind == VoyageCardKind.Information || rule.Kind == VoyageCardKind.Ending || clicks > 1 && !string.IsNullOrEmpty(rule.Description))
+            if (rule.Kind == VoyageCardKind.Information || rule.Kind == VoyageCardKind.Ending)
                 OpenRead(card, rule);
             Render();
         }
@@ -296,17 +351,11 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (state == null || dragging != null || menuPanel.activeSelf || readPanel.activeSelf ||
                 !cardById.TryGetValue(id, out VoyageCardState card) || card.JobId != 0) return;
+            CapturePreparationScroll();
             bool changed = false;
             if (engine.IsInSlot(id)) changed = Command(value => value.Unstage(id));
             else if (IsAvailable(id)) changed = Command(value => value.Stage(id));
-            if (changed)
-            {
-                preparationVisible = true;
-                tasksPanel.SetActive(false);
-                guidanceSlot = -1;
-                Render();
-                PositionPreparation(state.PreparationLocation);
-            }
+            if (changed) PresentPreparation(state.PreparationLocation);
         }
 
         internal void RemoveFromStage(int id) => QuickAction(id);
@@ -433,7 +482,7 @@ namespace CardKKK.IslandSurvival.Unity
                 if (!vivid) color = Fade(color, dread);
 
                 Color frame;
-                if (selected == card.Id) frame = Selection;
+                if (selected == card.Id || multiSelected.Contains(card.Id)) frame = Selection;
                 else if (inJob || parked) frame = InJobBorder;
                 else if (related.Contains(card.Id)) frame = Related;
                 else if (card.Id == linkedLimb) frame = LinkedLimb;
@@ -512,7 +561,7 @@ namespace CardKKK.IslandSurvival.Unity
                 {
                     view = Instantiate(taskTemplate, taskRows, false);
                     int id = job.Id;
-                    view.Bind(() => Command(value => value.Cancel(id)));
+                    view.Bind(() => Command(value => value.Cancel(id)), () => Command(value => value.Collect(id)));
                     taskViews.Add(id, view);
                 }
                 string title = state.Known.Contains(job.RecipeId) ? recipes[job.RecipeId].Name : "尝试组合";
@@ -521,7 +570,8 @@ namespace CardKKK.IslandSurvival.Unity
                 bool HoldsRole(string role) => held.Any(id => cardById.TryGetValue(id, out VoyageCardState card) && cards[card.CardId].Tags.Contains(role));
                 view.Display(title, Shorten(string.Join(" · ", held.Select(CardName).Where(name => name.Length != 0)), 23),
                     job.Remaining, job.Duration, state.Paused, !state.Dead && !state.Won,
-                    HoldsRole("head") ? (float)state.San / 100f : -1, HoldsRole("torso") ? (float)state.Hunger / 100f : -1);
+                    HoldsRole("head") ? (float)state.San / 100f : -1, HoldsRole("torso") ? (float)state.Hunger / 100f : -1,
+                    job.Remaining <= 0, job.StageIndex + 1, Math.Max(1, job.TotalStages));
                 view.Rect.anchoredPosition = new Vector2(5, -3 - i * 76);
                 if (!view.gameObject.activeSelf) view.gameObject.SetActive(true);
             }
@@ -668,7 +718,8 @@ namespace CardKKK.IslandSurvival.Unity
             TickDesktop();
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (dragging != null) { AbortDrag(); Render(); }
+                if (multiSelected.Count > 0) { multiSelected.Clear(); Render(); }
+                else if (dragging != null) { AbortDrag(); Render(); }
                 else if (readPanel.activeSelf) CloseRead();
                 else if (menuPanel.activeSelf) CloseMenu();
                 else if (tasksPanel.activeSelf) tasksPanel.SetActive(false);

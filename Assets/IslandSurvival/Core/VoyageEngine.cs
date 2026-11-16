@@ -133,13 +133,26 @@ namespace CardKKK.IslandSurvival.Core
             return Ok();
         });
 
-        public VoyageResult ClearStage() => Commit(s =>
+        public VoyageResult ClearStage() => ClearStage(-1);
+
+        public VoyageResult ClearStage(int location) => Commit(s =>
         {
-            VoyageWorkspace workspace = EnsureWorkspace(s, s.PreparationLocation);
+            int loc = location < 0 ? s.PreparationLocation : location;
+            VoyageWorkspace workspace = EnsureWorkspace(s, loc);
             if (workspace.Slots.All(slot => slot.CardId == 0)) return Unchanged();
             int[] returning = workspace.Slots.Where(slot => slot.CardId != 0).Select(slot => slot.CardId).ToArray();
             foreach (VoyageSlotState slot in workspace.Slots) slot.CardId = 0;
-            foreach (int id in returning) PlaceReturned(s, Find(s, id));
+            VoyageCardState locCard = Find(s, loc);
+            foreach (int id in returning)
+            {
+                VoyageCardState card = Find(s, id);
+                if (card != null)
+                {
+                    if (locCard != null) { card.X = locCard.X; card.Y = locCard.Y; }
+                    PlaceReturned(s, card);
+                }
+            }
+            SyncPreparationProjection(s);
             return Ok();
         });
 
@@ -169,7 +182,7 @@ namespace CardKKK.IslandSurvival.Core
             if (state.Paused) return Unchanged();
             return Commit(s =>
             {
-                string notice = "";
+                var notices = new List<string>();
                 for (int i = 0; i < minutes && !s.Dead && !s.Won; i++)
                 {
                     s.Minute++;
@@ -181,15 +194,26 @@ namespace CardKKK.IslandSurvival.Core
                     if (s.Dead || s.Won) break;
                     foreach (VoyageJobState job in s.Jobs.ToArray())
                     {
+                        if (job.Remaining <= 0) continue;
                         job.Remaining--;
                         if (job.Remaining > 0) continue;
-                        notice = Settle(s, job);
+                        if (job.StageIndex < job.TotalStages - 1)
+                        {
+                            job.StageIndex++;
+                            job.Remaining = job.Duration;
+                            VoyageRecipeRule rec = recipes[job.RecipeId];
+                            notices.Add(rec.Name + $" 阶段 {job.StageIndex + 1}/{job.TotalStages} 进行中。");
+                            continue;
+                        }
+                        string finishedNotice = Settle(s, job);
+                        if (!string.IsNullOrEmpty(finishedNotice)) notices.Add(finishedNotice);
                         ResolveEnd(s);
                         if (s.Dead || s.Won) break;
                     }
                     if (!s.Dead && !s.Won) TickCreatures(s);
                 }
-                return Ok(s.Dead || s.Won ? s.EndReason : notice);
+                string combinedNotice = string.Join("；", notices);
+                return Ok(s.Dead || s.Won ? s.EndReason : combinedNotice);
             });
         }
 
