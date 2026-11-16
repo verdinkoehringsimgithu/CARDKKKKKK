@@ -22,6 +22,13 @@ namespace CardKKK.IslandSurvival.Unity
         private float guidanceUntil, panelTime, nextDropRefresh;
         private CanvasGroup preparationFade;
 
+        private VoyageSlotView FindSlotView(int location, int index)
+        {
+            if (openTrays.TryGetValue(location, out VoyageTrayInstance tray) && tray.SlotViews.TryGetValue(index, out VoyageSlotView view))
+                return view;
+            return null;
+        }
+
         public VoyageDeskGeometry MeasureDesk()
         {
             Canvas.ForceUpdateCanvases();
@@ -30,35 +37,46 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void DisplaySlots()
         {
-            IReadOnlyList<VoyageSlotOffer> slots = engine.Slots(state.PreparationLocation);
-            foreach (int index in slotViews.Keys.Where(index => index >= slots.Count).ToArray())
+            foreach (var tray in openTrays.Values)
             {
-                Destroy(slotViews[index].gameObject);
-                slotViews.Remove(index);
-            }
-            foreach (VoyageSlotOffer slot in slots)
-            {
-                if (!slotViews.TryGetValue(slot.Index, out VoyageSlotView view) || view == null)
+                IReadOnlyList<VoyageSlotOffer> slots = engine.Slots(tray.LocationId);
+                var live = new HashSet<int>(slots.Select(s => s.Index));
+                foreach (int index in tray.SlotViews.Keys.Where(index => !live.Contains(index)).ToArray())
                 {
-                    view = Instantiate(slotTemplate, stageCards, false);
-                    slotViews[slot.Index] = view;
+                    if (tray.SlotViews[index] != null) Destroy(tray.SlotViews[index].gameObject);
+                    tray.SlotViews.Remove(index);
                 }
-                view.Rect.anchoredPosition = SlotPosition(slot.Index);
-                view.transform.SetAsFirstSibling();
-                view.Display(this, slot);
-                view.gameObject.SetActive(true);
+                foreach (VoyageSlotOffer slot in slots)
+                {
+                    if (!tray.SlotViews.TryGetValue(slot.Index, out VoyageSlotView view) || view == null)
+                    {
+                        view = Instantiate(slotTemplate, tray.StageCards, false);
+                        tray.SlotViews[slot.Index] = view;
+                    }
+                    view.Rect.anchoredPosition = SlotPosition(slot.Index);
+                    view.transform.SetAsFirstSibling();
+                    view.Display(this, slot);
+                    view.gameObject.SetActive(true);
+                }
+                SetHeight(tray.StageCards, Mathf.Max(190, Mathf.CeilToInt(slots.Count / 3f) * 180 + 8));
             }
-            SetHeight(stageCards, Mathf.Max(190, Mathf.CeilToInt(slots.Count / 3f) * 180 + 8));
         }
 
         private static Vector2 SlotPosition(int index) => new Vector2(8 + index % 3 * 138, -5 - index / 3 * 180);
 
-        internal void SelectSlot(int index)
+        internal void SelectSlot(int location, int index)
         {
             if (dragging != null || menuPanel.activeSelf || readPanel.activeSelf) return;
-            VoyageSlotOffer slot = engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.Index == index);
+            VoyageSlotOffer slot = engine.Slots(location).FirstOrDefault(item => item.Index == index);
             if (slot == null || slot.Locked) return;
-            if (guidanceSlot == index) { guidanceSlot = -1; RefreshGuidance(); return; }
+            if (guidanceSlot == index && guidanceLocation == location)
+            {
+                guidanceSlot = -1;
+                guidanceLocation = -1;
+                RefreshGuidance();
+                return;
+            }
+            guidanceLocation = location;
             guidanceSlot = index;
             guidanceUntil = Time.unscaledTime + 6f;
             RefreshGuidance();
@@ -67,30 +85,47 @@ namespace CardKKK.IslandSurvival.Unity
         private void RefreshGuidance()
         {
             if (engine == null || state == null) return;
-            IReadOnlyList<VoyageSlotOffer> offers = engine.Slots(state.PreparationLocation);
             foreach (VoyageCardState card in state.Cards)
             {
                 if (!cardViews.TryGetValue(card.Id, out VoyageCardView view) || view == null) continue;
                 bool candidate = false;
                 if (dragging != null && !dragOffsets.ContainsKey(card.Id))
                 {
-                    VoyageSlotOffer occupied = preparationVisible ? offers.FirstOrDefault(slot => slot.CardId == card.Id) : null;
-                    candidate = occupied != null
-                        ? engine.CanPut(dragging.CardId, occupied.Location, occupied.Index, out _)
-                        : engine.IsLocation(card.Id)
+                    bool isSlotOccupant = false;
+                    foreach (var tray in openTrays.Values)
+                    {
+                        VoyageSlotOffer occ = engine.Slots(tray.LocationId).FirstOrDefault(s => s.CardId == card.Id);
+                        if (occ != null)
+                        {
+                            isSlotOccupant = true;
+                            if (engine.CanPut(dragging.CardId, occ.Location, occ.Index, out _)) candidate = true;
+                            break;
+                        }
+                    }
+                    if (!isSlotOccupant)
+                    {
+                        candidate = engine.IsLocation(card.Id)
                             ? engine.FindAcceptingSlot(dragging.CardId, card.Id) >= 0
                             : engine.CanMerge(dragging.CardId, card.Id, out _) || engine.CanStack(dragging.CardId, card.Id, singleDrag, out _) || engine.CanStagePair(card.Id, dragging.CardId);
+                    }
                 }
-                else if (guidanceSlot >= 0)
-                    candidate = engine.CanPut(card.Id, state.PreparationLocation, guidanceSlot, out _);
+                else if (guidanceSlot >= 0 && guidanceLocation >= 0)
+                {
+                    candidate = engine.CanPut(card.Id, guidanceLocation, guidanceSlot, out _);
+                }
                 view.Guide(candidate);
             }
-            foreach (var pair in slotViews)
+            foreach (var tray in openTrays.Values)
             {
-                VoyageSlotOffer offer = offers.FirstOrDefault(slot => slot.Index == pair.Key);
-                if (offer == null) continue;
-                pair.Value.Display(this, offer);
-                pair.Value.Guide(dragging != null && engine.CanPut(dragging.CardId, offer.Location, offer.Index, out _), guidanceSlot == pair.Key);
+                IReadOnlyList<VoyageSlotOffer> offers = engine.Slots(tray.LocationId);
+                foreach (var pair in tray.SlotViews)
+                {
+                    VoyageSlotOffer offer = offers.FirstOrDefault(slot => slot.Index == pair.Key);
+                    if (offer == null) continue;
+                    pair.Value.Display(this, offer);
+                    pair.Value.Guide(dragging != null && engine.CanPut(dragging.CardId, offer.Location, offer.Index, out _),
+                        guidanceLocation == tray.LocationId && guidanceSlot == pair.Key);
+                }
             }
         }
 
@@ -138,6 +173,11 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void FinishDragSession()
         {
+            if (hoveredSlot != null)
+            {
+                hoveredSlot.SetHoverHighlight(false, false);
+                hoveredSlot = null;
+            }
             foreach (int id in dragOffsets.Keys)
             {
                 engine?.Hold(id, false);
@@ -172,21 +212,23 @@ namespace CardKKK.IslandSurvival.Unity
             if (pointer == null || menuPanel.activeSelf || readPanel.activeSelf ||
                 tasksPanel.activeSelf && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)tasksPanel.transform,
                     pointer.position, pointer.pressEventCamera)) return intent;
-            bool inPanel = preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(
-                (RectTransform)preparationPanel.transform, pointer.position, pointer.pressEventCamera);
-            bool inSlots = inPanel && RectTransformUtility.RectangleContainsScreenPoint(stageDrop, pointer.position, pointer.pressEventCamera);
-            if (inPanel && !inSlots) return intent;
             if (!ReadDropTarget(pointer, out VoyageSlotView slot, out VoyageCardView target)) return intent;
             int id = source.CardId;
-            if (inSlots)
+            foreach (var tray in openTrays.Values)
             {
-                int index = slot != null && slot.Location == state.PreparationLocation ? slot.Index : target != null
-                    ? engine.Slots(state.PreparationLocation).FirstOrDefault(item => item.CardId == target.CardId)?.Index ?? -1 : -1;
-                if (index < 0) index = engine.FindAcceptingSlot(id, state.PreparationLocation);
-                intent.Action = DropAction.Put;
-                intent.Location = state.PreparationLocation;
-                intent.Slot = index;
-                return intent;
+                bool inTray = RectTransformUtility.RectangleContainsScreenPoint(tray.Rect, pointer.position, pointer.pressEventCamera);
+                bool inSlots = inTray && tray.StageDrop != null && RectTransformUtility.RectangleContainsScreenPoint(tray.StageDrop, pointer.position, pointer.pressEventCamera);
+                if (inTray && !inSlots) return intent;
+                if (inSlots)
+                {
+                    int index = slot != null && slot.Location == tray.LocationId ? slot.Index : target != null
+                        ? engine.Slots(tray.LocationId).FirstOrDefault(item => item.CardId == target.CardId)?.Index ?? -1 : -1;
+                    if (index < 0) index = engine.FindAcceptingSlot(id, tray.LocationId);
+                    intent.Action = DropAction.Put;
+                    intent.Location = tray.LocationId;
+                    intent.Slot = index;
+                    return intent;
+                }
             }
             if (!RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, pointer.position, pointer.pressEventCamera)) return intent;
             Vector3 local = tabletop.InverseTransformPoint(source.Rect.TransformPoint(source.Rect.rect.center));
@@ -279,9 +321,8 @@ namespace CardKKK.IslandSurvival.Unity
                 slot = hit.gameObject.GetComponentInParent<VoyageSlotView>();
                 if (target != null || slot != null) return true;
                 Transform surface = hit.gameObject.transform;
-                // Empty table/slot backgrounds accept a drop; other foreground UI consumes it.
-                return surface == tabletopViewport || surface == tabletop || surface.IsChildOf(tabletop) ||
-                    preparationVisible && (surface == stageDrop || surface.IsChildOf(stageDrop));
+                bool overAnyTrayDrop = openTrays.Values.Any(t => t.StageDrop != null && (surface == t.StageDrop || surface.IsChildOf(t.StageDrop)));
+                return surface == tabletopViewport || surface == tabletop || surface.IsChildOf(tabletop) || overAnyTrayDrop;
             }
             return false;
         }
@@ -291,11 +332,32 @@ namespace CardKKK.IslandSurvival.Unity
             if (dropGhost == null) return;
             dropGhost.gameObject.SetActive(false);
             DropIntent intent = ResolveDrop(source, pointer);
+            VoyageSlotView currentSlot = null;
+            if (intent.Action == DropAction.Put && intent.Location >= 0 && intent.Slot >= 0)
+            {
+                currentSlot = FindSlotView(intent.Location, intent.Slot);
+            }
+            else
+            {
+                ReadDropTarget(pointer, out currentSlot, out _);
+            }
+            if (hoveredSlot != currentSlot)
+            {
+                if (hoveredSlot != null) hoveredSlot.SetHoverHighlight(false, false);
+                hoveredSlot = currentSlot;
+            }
+            if (hoveredSlot != null)
+            {
+                bool valid = engine.CanPut(source.CardId, hoveredSlot.Location, hoveredSlot.Index, out _);
+                hoveredSlot.SetHoverHighlight(true, valid);
+            }
+
             if (intent.Action == DropAction.Put)
             {
-                if (!preparationVisible || intent.Location != state.PreparationLocation ||
+                if (!openLocations.Contains(intent.Location) ||
                     !engine.CanPut(source.CardId, intent.Location, intent.Slot, out _) ||
-                    !slotViews.TryGetValue(intent.Slot, out VoyageSlotView view)) return;
+                    FindSlotView(intent.Location, intent.Slot) == null) return;
+                VoyageSlotView view = FindSlotView(intent.Location, intent.Slot);
                 dropGhost.SetParent(dragLayer, false);
                 dropGhost.position = view.Rect.position;
             }
@@ -331,7 +393,7 @@ namespace CardKKK.IslandSurvival.Unity
                 if (distance >= best || !engine.CanStack(id, card.Id, single, out _)) continue;
                 Vector2 screen = RectTransformUtility.WorldToScreenPoint(pointer.pressEventCamera, view.Rect.TransformPoint(view.Rect.rect.center));
                 if (!RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, screen, pointer.pressEventCamera) ||
-                    preparationVisible && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)preparationPanel.transform, screen, pointer.pressEventCamera)) continue;
+                    openTrays.Values.Any(t => RectTransformUtility.RectangleContainsScreenPoint(t.Rect, screen, pointer.pressEventCamera))) continue;
                 var probe = new PointerEventData(EventSystem.current) { position = screen };
                 if (!ReadDropTarget(probe, out _, out VoyageCardView visible) || visible != view) continue;
                 best = distance; result = card.Id;
@@ -368,33 +430,113 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void TickDesktop()
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (dragging == null && !menuPanel.activeSelf && !readPanel.activeSelf &&
+                    RectTransformUtility.RectangleContainsScreenPoint(tabletopViewport, Input.mousePosition, null))
+                {
+                    var pointer = new PointerEventData(EventSystem.current) { position = Input.mousePosition };
+                    var hits = new List<RaycastResult>();
+                    EventSystem.current?.RaycastAll(pointer, hits);
+                    bool hitInteractive = false;
+                    foreach (var hit in hits)
+                    {
+                        if (hit.gameObject.GetComponentInParent<VoyageCardView>() != null ||
+                            hit.gameObject.GetComponentInParent<VoyageSlotView>() != null ||
+                            hit.gameObject.GetComponentInParent<UnityEngine.UI.Button>() != null ||
+                            openTrays.Values.Any(t => hit.gameObject.transform.IsChildOf(t.Rect)) ||
+                            (tasksPanel.activeSelf && hit.gameObject.transform.IsChildOf((RectTransform)tasksPanel.transform)))
+                        {
+                            hitInteractive = true;
+                            break;
+                        }
+                    }
+                    if (!hitInteractive)
+                    {
+                        isMarqueeSelecting = true;
+                        marqueeStartScreen = Input.mousePosition;
+                        if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl) &&
+                            !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+                        {
+                            multiSelected.Clear();
+                        }
+                    }
+                }
+            }
+            else if (isMarqueeSelecting && Input.GetMouseButton(0))
+            {
+                float dist = Vector2.Distance(marqueeStartScreen, (Vector2)Input.mousePosition);
+                if (dist > 5f)
+                {
+                    if (marqueeBox == null)
+                    {
+                        var go = new GameObject("MarqueeSelectionBox", typeof(RectTransform), typeof(CanvasRenderer), typeof(UnityEngine.UI.Image));
+                        go.transform.SetParent(dragLayer, false);
+                        marqueeBox = go.GetComponent<UnityEngine.UI.Image>();
+                        marqueeBox.color = new Color(0.25f, 0.6f, 1f, 0.22f);
+                        marqueeBox.raycastTarget = false;
+                    }
+                    Vector2 minScreen = Vector2.Min(marqueeStartScreen, Input.mousePosition);
+                    Vector2 maxScreen = Vector2.Max(marqueeStartScreen, Input.mousePosition);
+                    Rect marqueeScreenRect = new Rect(minScreen, maxScreen - minScreen);
+
+                    if (RectTransformUtility.ScreenPointToLocalPointInRectangle(dragLayer, minScreen, null, out Vector2 localMin) &&
+                        RectTransformUtility.ScreenPointToLocalPointInRectangle(dragLayer, maxScreen, null, out Vector2 localMax))
+                    {
+                        marqueeBox.rectTransform.anchoredPosition = localMin;
+                        marqueeBox.rectTransform.sizeDelta = localMax - localMin;
+                        marqueeBox.gameObject.SetActive(true);
+                    }
+
+                    Vector3[] corners = new Vector3[4];
+                    foreach (VoyageCardState card in state.Cards)
+                    {
+                        if (card.JobId != 0 || InOtherPreparation(card.Id) || engine.IsInSlot(card.Id)) continue;
+                        if (!cardViews.TryGetValue(card.Id, out VoyageCardView cv) || cv == null || !cv.gameObject.activeInHierarchy) continue;
+                        cv.Rect.GetWorldCorners(corners);
+                        Vector2 cMin = RectTransformUtility.WorldToScreenPoint(null, corners[0]);
+                        Vector2 cMax = cMin;
+                        for (int k = 1; k < 4; k++)
+                        {
+                            Vector2 sp = RectTransformUtility.WorldToScreenPoint(null, corners[k]);
+                            cMin = Vector2.Min(cMin, sp);
+                            cMax = Vector2.Max(cMax, sp);
+                        }
+                        Rect cardRect = new Rect(cMin, cMax - cMin);
+                        if (marqueeScreenRect.Overlaps(cardRect))
+                        {
+                            multiSelected.Add(card.Id);
+                        }
+                        else if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl))
+                        {
+                            multiSelected.Remove(card.Id);
+                        }
+                    }
+                    RefreshGuidance();
+                }
+            }
+            else if (isMarqueeSelecting && Input.GetMouseButtonUp(0))
+            {
+                isMarqueeSelecting = false;
+                if (marqueeBox != null) marqueeBox.gameObject.SetActive(false);
+                Render();
+            }
+
             if (dragging != null && dragPointer != null && !menuPanel.activeSelf && !readPanel.activeSelf)
             {
-                bool inPanel = preparationVisible && RectTransformUtility.RectangleContainsScreenPoint(
-                    (RectTransform)preparationPanel.transform, dragPointer.position, dragPointer.pressEventCamera);
-                if (inPanel) ScrollWhileDragging(stageScroll, stageDrop);
+                VoyageTrayInstance hitTray = openTrays.Values.FirstOrDefault(t =>
+                    RectTransformUtility.RectangleContainsScreenPoint(t.Rect, dragPointer.position, dragPointer.pressEventCamera));
+                if (hitTray != null && hitTray.StageScroll != null) ScrollWhileDragging(hitTray.StageScroll, hitTray.StageDrop);
                 else ScrollWhileDragging(tableScroll, tabletopViewport);
-                // The held card can stay still while the world or its legal targets change.
+
                 if (Time.unscaledTime >= nextDropRefresh)
                 {
                     PreviewDrop(dragging, dragPointer);
                     nextDropRefresh = Time.unscaledTime + .05f;
                 }
             }
-            if (preparationFade != null)
-            {
-                float target = preparationVisible ? 1 : 0;
-                panelTime = Mathf.MoveTowards(panelTime, target, Time.unscaledDeltaTime / .333333f);
-                float t = Mathf.SmoothStep(0, 1, panelTime);
-                preparationFade.alpha = t;
-                preparationFade.interactable = preparationVisible;
-                preparationFade.blocksRaycasts = preparationVisible;
-                preparationPanel.transform.localScale = Vector3.one * Mathf.Lerp(.92f, 1f, t);
-                if (panelTime <= 0 && !preparationVisible) preparationPanel.SetActive(false);
-                if (dragging != null && dragPointer != null && panelTime > 0 && panelTime < 1) PreviewDrop(dragging, dragPointer);
-            }
             if (guidanceSlot >= 0 && Time.unscaledTime > guidanceUntil)
-            { guidanceSlot = -1; RefreshGuidance(); }
+            { guidanceSlot = -1; guidanceLocation = -1; RefreshGuidance(); }
             if (!string.IsNullOrEmpty(notice) && Time.unscaledTime > noticeUntil)
                 Message("");
         }
@@ -417,12 +559,11 @@ namespace CardKKK.IslandSurvival.Unity
 
         private void ShowPreparation()
         {
-            if (preparationFade == null)
+            foreach (var tray in openTrays.Values)
             {
-                preparationFade = preparationPanel.GetComponent<CanvasGroup>();
-                if (preparationFade == null) preparationFade = preparationPanel.AddComponent<CanvasGroup>();
+                if (tray.GameObject != null && !tray.GameObject.activeSelf)
+                    tray.GameObject.SetActive(true);
             }
-            if (preparationVisible) preparationPanel.SetActive(true);
         }
     }
 

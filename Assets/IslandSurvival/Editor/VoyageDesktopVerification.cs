@@ -162,6 +162,30 @@ namespace CardKKK.IslandSurvival.Editor
                 }
                 Require(completion.CollectAll().Success || !completion.Snapshot.Jobs.Any(j => j.Remaining <= 0), "产物收取失败。");
                 report.AppendLine("容器空间识别、产物收取接口与多阶段结构：通过");
+
+                // 一键整理与配方解锁校验
+                var tidyEngine = new VoyageEngine(definition);
+                int tidyBeforeCount = tidyEngine.Snapshot.Cards.Count;
+                VoyageResult tidyRes = tidyEngine.TidyDesk();
+                Require(tidyRes.Success, "桌面一键整理失败：" + tidyRes.Message);
+                Require(tidyEngine.Snapshot.Cards.Count == tidyBeforeCount, "整理桌面后卡牌总数不一致。");
+                foreach (VoyageCardState c in tidyEngine.Snapshot.Cards)
+                {
+                    Require(c.X >= 0.03f && c.X <= 0.97f && c.Y >= 0.03f && c.Y <= 0.97f, "整理后卡牌超出桌面有效边界。");
+                }
+                Require(tidyEngine.IsInSlot(legs[0], out _, out _) == false, "桌面牌被误判为在槽内。");
+
+                string firstRecipe = definition.Recipes.FirstOrDefault()?.Id;
+                if (!string.IsNullOrEmpty(firstRecipe))
+                {
+                    bool isUnlocked = tidyEngine.IsRecipeUnlocked(firstRecipe);
+                    if (!isUnlocked)
+                    {
+                        VoyageResult unlockRes = tidyEngine.UnlockRecipe(firstRecipe);
+                        Require(unlockRes.Success && tidyEngine.IsRecipeUnlocked(firstRecipe), "配方解锁逻辑未生效。");
+                    }
+                }
+                report.AppendLine("一键整理桌面对齐、槽位精准查询与配方解锁逻辑：通过");
                 report.AppendLine("本入口只核对核心。实际拖拽、画面、声音和旧文件指纹迁移仍需Play验收。");
             }
             catch (Exception exception)

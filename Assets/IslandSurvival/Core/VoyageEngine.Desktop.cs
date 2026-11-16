@@ -106,6 +106,25 @@ namespace CardKKK.IslandSurvival.Core
 
         public bool IsInSlot(int id) => state.Workspaces.Any(workspace => workspace.Slots.Any(slot => slot.CardId == id));
 
+        public bool IsInSlot(int id, out int location, out int slotIndex)
+        {
+            foreach (VoyageWorkspace workspace in state.Workspaces)
+            {
+                for (int i = 0; i < workspace.Slots.Count; i++)
+                {
+                    if (workspace.Slots[i].CardId == id)
+                    {
+                        location = workspace.Location;
+                        slotIndex = i;
+                        return true;
+                    }
+                }
+            }
+            location = -1;
+            slotIndex = -1;
+            return false;
+        }
+
         public bool IsLocation(int id) => IsLocation(state, id);
 
         private bool IsLocation(VoyageState s, int id)
@@ -197,6 +216,109 @@ namespace CardKKK.IslandSurvival.Core
         }
 
         // Dragging is a visual preview. Ownership changes only when this command commits.
+        public VoyageResult TidyDesk() => Commit(s =>
+        {
+            if (heldCards.Count > 0) return Fail("请先放下手中的卡牌。");
+
+            var freeCards = s.Cards.Where(c => c.JobId == 0 && !InSlot(s, c.Id) &&
+                !(c.Limb != 0 && cards[c.CardId].Kind == VoyageCardKind.Injury)).ToList();
+            if (freeCards.Count == 0) return Ok("桌面没有需要整理的卡牌。");
+
+            if (rules.Desk.AllowStacking)
+            {
+                var stackableGroups = freeCards
+                    .Where(c => c.StackParent == 0 && Child(s, c.Id) == null &&
+                                cards[c.CardId].Kind != VoyageCardKind.Resource &&
+                                cards[c.CardId].Kind != VoyageCardKind.Facility &&
+                                cards[c.CardId].Kind != VoyageCardKind.Creature)
+                    .GroupBy(c => c.CardId)
+                    .ToList();
+
+                foreach (var group in stackableGroups)
+                {
+                    var list = group.ToList();
+                    if (list.Count <= 1) continue;
+                    VoyageCardState target = list[0];
+                    int currentStackSize = Tail(s, target.Id).Count();
+                    for (int i = 1; i < list.Count; i++)
+                    {
+                        VoyageCardState candidate = list[i];
+                        if (currentStackSize >= rules.Desk.MaxStackSize)
+                        {
+                            target = candidate;
+                            currentStackSize = Tail(s, target.Id).Count();
+                            continue;
+                        }
+                        if (CanStack(s, candidate.Id, target.Id, false, out _))
+                        {
+                            VoyageCardState top = Tail(s, target.Id).Last();
+                            candidate.StackParent = top.Id;
+                            currentStackSize++;
+                        }
+                    }
+                }
+            }
+
+            var rootCards = freeCards.Where(c => c.StackParent == 0).ToList();
+
+            int KindPriority(VoyageCardKind kind)
+            {
+                switch (kind)
+                {
+                    case VoyageCardKind.Body: return 0;
+                    case VoyageCardKind.Facility: return 1;
+                    case VoyageCardKind.Resource: return 2;
+                    case VoyageCardKind.Tool: return 3;
+                    case VoyageCardKind.Material: return 4;
+                    case VoyageCardKind.Food: return 5;
+                    case VoyageCardKind.Creature: return 6;
+                    case VoyageCardKind.Thought: return 7;
+                    case VoyageCardKind.Information: return 8;
+                    case VoyageCardKind.Boat: return 9;
+                    case VoyageCardKind.Ending: return 10;
+                    default: return 99;
+                }
+            }
+
+            rootCards.Sort((a, b) =>
+            {
+                int ka = KindPriority(cards[a.CardId].Kind);
+                int kb = KindPriority(cards[b.CardId].Kind);
+                if (ka != kb) return ka.CompareTo(kb);
+                int sa = cards[a.CardId].SortRank;
+                int sb = cards[b.CardId].SortRank;
+                if (sa != sb) return sa.CompareTo(sb);
+                int cmpId = string.Compare(a.CardId, b.CardId, StringComparison.Ordinal);
+                return cmpId != 0 ? cmpId : a.Id.CompareTo(b.Id);
+            });
+
+            float deskW = geometry.Width > 0 ? geometry.Width : rules.Desk.Width;
+            float deskH = geometry.Height > 0 ? geometry.Height : rules.Desk.Height;
+            float cardW = geometry.CardWidth > 0 ? geometry.CardWidth : rules.Desk.CardWidth;
+            float cardH = geometry.CardHeight > 0 ? geometry.CardHeight : rules.Desk.CardHeight;
+            float gap = rules.Desk.Gap > 0 ? rules.Desk.Gap : 16f;
+
+            float marginX = cardW / 2f + gap + 30f;
+            float marginY = cardH / 2f + gap + 40f;
+            float stepX = cardW + gap + 16f;
+            float stepY = cardH + gap + 36f;
+
+            int cols = Math.Max(1, (int)((deskW - marginX * 2) / stepX) + 1);
+
+            for (int i = 0; i < rootCards.Count; i++)
+            {
+                int col = i % cols;
+                int row = i / cols;
+                float px = marginX + col * stepX;
+                float py = marginY + row * stepY;
+                rootCards[i].X = Math.Min(0.96f, Math.Max(0.04f, px / deskW));
+                rootCards[i].Y = Math.Min(0.94f, Math.Max(0.06f, py / deskH));
+            }
+
+            NormalizeDesktop(s);
+            return Ok("桌面已自动整理。");
+        });
+
         public VoyageResult DropOnDesk(int id, float x, float y, bool single) => Commit(s => PlanDeskDrop(s, id, x, y, single));
 
         private VoyageResult PlanDeskDrop(VoyageState s, int id, float x, float y, bool single)

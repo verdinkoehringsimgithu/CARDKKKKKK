@@ -31,9 +31,21 @@ namespace CardKKK.IslandSurvival.Unity
             else if (selected) frame.color = new Color(.98f, .81f, .48f, 1f);
         }
 
+        public void SetHoverHighlight(bool hovered, bool valid)
+        {
+            if (!hovered)
+                frame.color = label.text == "进行中" ? new Color(.40f, .43f, .42f, .65f) : new Color(.72f, .76f, .67f, .75f);
+            else
+                frame.color = valid ? new Color(.25f, .95f, .25f, 1f) : new Color(.95f, .25f, .25f, 1f);
+        }
+        {
+            if (acceptable) frame.color = new Color(.46f, 1f, .16f, 1f);
+            else if (selected) frame.color = new Color(.98f, .81f, .48f, 1f);
+        }
+
         public void OnPointerClick(PointerEventData pointer)
         {
-            if (pointer.button == PointerEventData.InputButton.Left) owner?.SelectSlot(Index);
+            if (pointer.button == PointerEventData.InputButton.Left) owner?.SelectSlot(Location, Index);
         }
     }
 }

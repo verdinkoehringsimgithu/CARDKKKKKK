@@ -82,6 +82,7 @@ namespace CardKKK.IslandSurvival.Core
             if (plan.Inputs.Any(input => heldCards.Contains(input.CardId)) || heldCards.Contains(plan.Location))
                 return Fail("请先放下正在拖动的投入牌。");
             bool known = s.Known.Contains(recipe.Id);
+            if (!known) Learn(s, recipe.Id);
             Begin(s, recipe, plan);
             if (workspace != null)
                 foreach (VoyageSlotState slot in workspace.Slots) slot.CardId = 0;

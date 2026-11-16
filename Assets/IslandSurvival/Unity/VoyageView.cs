@@ -31,54 +31,191 @@ namespace CardKKK.IslandSurvival.Unity
         [SerializeField] private Button closePreparation, generalPreparation, tasksButton;
         [SerializeField] private GameObject tasksPanel;
         [SerializeField] private GameObject preparationPanel;
-        private bool preparationVisible;
+        private readonly HashSet<int> openLocations = new HashSet<int>();
+        private readonly Dictionary<int, VoyageTrayInstance> openTrays = new Dictionary<int, VoyageTrayInstance>();
+        private VoyageTrayInstance primaryTray;
+        private int guidanceLocation = -1;
+        private bool isMarqueeSelecting;
+        private Vector2 marqueeStartScreen;
+        private Image marqueeBox;
+        private VoyageSlotView hoveredSlot;
+
         private bool InOtherPreparation(int id)
         {
             if (!cardById.TryGetValue(id, out VoyageCardState card)) return false;
             bool implicitFollower = card.Limb != 0 && cards[card.CardId].Kind == VoyageCardKind.Injury && !engine.IsInSlot(id);
-            return state.Workspaces.Any(workspace => workspace.Location != state.PreparationLocation &&
-                workspace.Slots.Any(slot => slot.CardId == id || implicitFollower && slot.CardId == card.Limb));
+            if (implicitFollower)
+            {
+                foreach (VoyageWorkspace workspace in state.Workspaces)
+                {
+                    if (openLocations.Contains(workspace.Location)) continue;
+                    if (workspace.Slots.Any(slot => slot.CardId == card.Limb)) return true;
+                }
+                return false;
+            }
+            if (!engine.IsInSlot(id, out int loc, out _)) return false;
+            return !openLocations.Contains(loc);
         }
 
         private void OpenPreparation(int id)
         {
             if (dragging != null) { AbortDrag(); Render(); }
             CapturePreparationScroll();
-            if (!Command(value => value.OpenPreparation(id))) return;
+            openLocations.Add(id);
+            Command(value => value.OpenPreparation(id));
             PresentPreparation(id);
         }
 
         private void CapturePreparationScroll()
         {
-            if (state != null && preparationVisible)
-                preparationScroll[state.PreparationLocation] = Mathf.Clamp01(stageScroll.verticalNormalizedPosition);
+            foreach (var tray in openTrays.Values)
+            {
+                if (tray.StageScroll != null)
+                    preparationScroll[tray.LocationId] = Mathf.Clamp01(tray.StageScroll.verticalNormalizedPosition);
+            }
+        }
+
+        private VoyageTrayInstance EnsureTrayInstance(int id)
+        {
+            if (openTrays.TryGetValue(id, out VoyageTrayInstance existing)) return existing;
+            if (primaryTray == null)
+            {
+                primaryTray = new VoyageTrayInstance
+                {
+                    LocationId = 0,
+                    GameObject = preparationPanel,
+                    Rect = (RectTransform)preparationPanel.transform,
+                    Title = preparationTitle,
+                    CloseButton = closePreparation,
+                    ClearButton = clearButton,
+                    StartButton = startButton,
+                    StartLabel = startButton != null ? startButton.GetComponentInChildren<Text>() : null,
+                    StageStatus = stageStatus,
+                    StageCount = stageCount,
+                    StageCards = stageCards,
+                    StageDrop = stageDrop,
+                    StageScroll = stageScroll,
+                    Fade = preparationPanel.GetComponent<CanvasGroup>() ?? preparationPanel.AddComponent<CanvasGroup>()
+                };
+            }
+
+            VoyageTrayInstance tray;
+            if (id == 0)
+            {
+                tray = primaryTray;
+            }
+            else
+            {
+                GameObject clone = Instantiate(preparationPanel, preparationPanel.transform.parent);
+                clone.name = "PreparationTray_" + id;
+                tray = CreateTrayInstance(clone, id);
+            }
+            openTrays[id] = tray;
+            return tray;
+        }
+
+        private VoyageTrayInstance CreateTrayInstance(GameObject go, int locationId)
+        {
+            var tray = new VoyageTrayInstance
+            {
+                LocationId = locationId,
+                GameObject = go,
+                Rect = (RectTransform)go.transform,
+                Title = go.transform.Find("面板标题")?.GetComponent<Text>(),
+                CloseButton = go.transform.Find("关闭场所窗口")?.GetComponent<Button>(),
+                StageCount = go.transform.Find("已放入数量")?.GetComponent<Text>(),
+                StageStatus = go.transform.Find("匹配状态")?.GetComponent<Text>(),
+                ClearButton = go.transform.Find("退回卡牌")?.GetComponent<Button>(),
+                StartButton = go.transform.Find("开始组合")?.GetComponent<Button>(),
+                Fade = go.GetComponent<CanvasGroup>() ?? go.AddComponent<CanvasGroup>()
+            };
+            if (tray.StartButton != null) tray.StartLabel = tray.StartButton.GetComponentInChildren<Text>();
+            Transform scrollTrans = go.transform.Find("投入卡牌");
+            if (scrollTrans != null)
+            {
+                tray.StageScroll = scrollTrans.GetComponent<ScrollRect>();
+                if (tray.StageScroll != null)
+                {
+                    tray.StageDrop = tray.StageScroll.viewport;
+                    tray.StageCards = tray.StageScroll.content;
+                }
+            }
+            if (tray.Title != null)
+            {
+                var titleDrag = tray.Title.gameObject.AddComponent<VoyageDraggableWindow>();
+                titleDrag.Bind(tray.Rect, pos => windowPositions[locationId] = pos);
+            }
+            if (tray.CloseButton != null) tray.CloseButton.onClick.AddListener(() => ClosePreparation(locationId));
+            if (tray.ClearButton != null) tray.ClearButton.onClick.AddListener(() => Command(v => v.ClearStage(locationId)));
+            if (tray.StartButton != null) tray.StartButton.onClick.AddListener(() => Command(v => v.Start(locationId)));
+            return tray;
+        }
+
+        private void ClosePreparation(int id)
+        {
+            AbortDrag();
+            CapturePreparationScroll();
+            openLocations.Remove(id);
+            if (openTrays.TryGetValue(id, out VoyageTrayInstance tray))
+            {
+                foreach (var sv in tray.SlotViews.Values) if (sv != null) Destroy(sv.gameObject);
+                tray.SlotViews.Clear();
+                if (id == 0) tray.GameObject.SetActive(false);
+                else Destroy(tray.GameObject);
+                openTrays.Remove(id);
+            }
+            if (guidanceLocation == id) { guidanceSlot = -1; guidanceLocation = -1; }
+            Render();
+        }
+
+        private void CloseAllPreparations()
+        {
+            AbortDrag();
+            CapturePreparationScroll();
+            foreach (int id in openLocations.ToArray())
+            {
+                if (openTrays.TryGetValue(id, out VoyageTrayInstance tray))
+                {
+                    foreach (var sv in tray.SlotViews.Values) if (sv != null) Destroy(sv.gameObject);
+                    tray.SlotViews.Clear();
+                    if (id == 0) tray.GameObject.SetActive(false);
+                    else Destroy(tray.GameObject);
+                }
+            }
+            openLocations.Clear();
+            openTrays.Clear();
+            guidanceSlot = -1;
+            guidanceLocation = -1;
         }
 
         private void PresentPreparation(int id)
         {
-            preparationVisible = true;
-            guidanceSlot = -1;
             tasksPanel.SetActive(false);
-            stageScroll.StopMovement();
+            VoyageTrayInstance tray = EnsureTrayInstance(id);
+            tray.GameObject.SetActive(true);
+            tray.Rect.SetAsLastSibling();
+            tray.StageScroll?.StopMovement();
+            PositionPreparation(tray, id);
             Render();
             Canvas.ForceUpdateCanvases();
-            stageScroll.verticalNormalizedPosition = preparationScroll.TryGetValue(id, out float scroll) ? scroll : 1f;
-            PositionPreparation(id);
+            if (tray.StageScroll != null)
+                tray.StageScroll.verticalNormalizedPosition = preparationScroll.TryGetValue(id, out float scroll) ? scroll : 1f;
         }
 
         private readonly Dictionary<int, Vector2> windowPositions = new Dictionary<int, Vector2>();
         private readonly HashSet<int> multiSelected = new HashSet<int>();
 
-        private void PositionPreparation(int id)
+        private void PositionPreparation(VoyageTrayInstance tray, int id)
         {
-            RectTransform panel = (RectTransform)preparationPanel.transform;
+            RectTransform panel = tray.Rect;
             RectTransform parent = (RectTransform)panel.parent;
             if (windowPositions.TryGetValue(id, out Vector2 saved))
             {
                 panel.anchoredPosition = saved;
                 return;
             }
-            Vector2 point = new Vector2(780, 160);
+            int openIndex = openLocations.Count - 1;
+            Vector2 point = new Vector2(780 + openIndex * 32, 160 + openIndex * 24);
             if (cardViews.TryGetValue(id, out VoyageCardView card))
             {
                 Vector3 local = parent.InverseTransformPoint(card.Rect.TransformPoint(card.Rect.rect.center));
@@ -142,20 +279,24 @@ namespace CardKKK.IslandSurvival.Unity
                 if (dragging != null) { AbortDrag(); Render(); }
                 bool show = !tasksPanel.activeSelf;
                 tasksPanel.SetActive(show);
-                if (show) { CapturePreparationScroll(); preparationVisible = false; preparationPanel.SetActive(false); guidanceSlot = -1; RefreshGuidance(); }
+                if (show) { CapturePreparationScroll(); CloseAllPreparations(); guidanceSlot = -1; guidanceLocation = -1; RefreshGuidance(); }
             });
             if (preparationTitle != null)
             {
                 var titleDrag = preparationTitle.gameObject.AddComponent<VoyageDraggableWindow>();
                 titleDrag.Bind((RectTransform)preparationPanel.transform, pos =>
                 {
-                    if (state != null) windowPositions[state.PreparationLocation] = pos;
+                    windowPositions[0] = pos;
                 });
             }
-            generalPreparation.onClick.AddListener(() => OpenPreparation(0));
-            closePreparation.onClick.AddListener(() => { AbortDrag(); CapturePreparationScroll(); preparationVisible = false; guidanceSlot = -1; Render(); });
-            clearButton.onClick.AddListener(() => Command(value => value.ClearStage()));
-            startButton.onClick.AddListener(() => Command(value => value.Start()));
+            generalPreparation.onClick.AddListener(() =>
+            {
+                if (openLocations.Contains(0)) ClosePreparation(0);
+                else OpenPreparation(0);
+            });
+            closePreparation.onClick.AddListener(() => ClosePreparation(0));
+            clearButton.onClick.AddListener(() => Command(value => value.ClearStage(0)));
+            startButton.onClick.AddListener(() => Command(value => value.Start(0)));
             readClose.onClick.AddListener(CloseRead);
             menuClose.onClick.AddListener(CloseMenu);
             saveButton.onClick.AddListener(() => save?.Invoke());
@@ -186,16 +327,13 @@ namespace CardKKK.IslandSurvival.Unity
             foreach (VoyageTaskView job in taskViews.Values) { job.gameObject.SetActive(false); Destroy(job.gameObject); }
             cardViews.Clear();
             taskViews.Clear();
-            foreach (VoyageSlotView slot in slotViews.Values) Destroy(slot.gameObject);
-            slotViews.Clear();
+            CloseAllPreparations();
             preparationScroll.Clear();
             guidanceSlot = -1;
+            guidanceLocation = -1;
             panelTime = 0;
-            if (preparationFade != null) preparationFade.alpha = 0;
-            preparationPanel.SetActive(false);
             state = null;
             selected = hovered = 0;
-            preparationVisible = false;
             tasksPanel.SetActive(false);
             resumeAfterMenu = false;
             editorPreview.SetActive(false);
@@ -225,24 +363,58 @@ namespace CardKKK.IslandSurvival.Unity
                 || dragged.JobId != 0 || preparedFollowers.Contains(dragging.CardId) || state.Dead || state.Won))
                 AbortDrag();
 
-            ShowPreparation();
-            preparationTitle.text = state.PreparationLocation == 0 ? "桌面组合" : CardName(state.PreparationLocation);
             bool ended = state.Dead || state.Won;
             int minuteOfDay = state.Minute % 1440;
             clockText.text = $"第 {state.Minute / 1440 + 1} 天  {minuteOfDay / 60:00}:{minuteOfDay % 60:00}";
             pauseLabel.text = state.Paused ? "继续" : "暂停";
             pauseButton.interactable = !ended;
-            bool hasInputs = engine.Slots(state.PreparationLocation).Any(slot => slot.CardId != 0);
-            clearButton.interactable = !ended && hasInputs;
-            startButton.interactable = !ended && hasInputs;
-            stageCount.text = (engine.Slots(state.PreparationLocation).Count(slot => slot.CardId != 0) + followers.Count) + " 张";
             taskCount.text = state.Jobs.Count.ToString();
             emptyTasks.SetActive(state.Jobs.Count == 0);
 
+            foreach (int loc in openLocations.ToArray())
+            {
+                EnsureTrayInstance(loc);
+                if (openTrays.TryGetValue(loc, out VoyageTrayInstance tray))
+                {
+                    tray.GameObject.SetActive(true);
+                    if (tray.Title != null) tray.Title.text = loc == 0 ? "桌面组合" : CardName(loc);
+                    var offers = engine.Slots(loc);
+                    bool hasInputs = offers.Any(slot => slot.CardId != 0);
+                    if (tray.ClearButton != null) tray.ClearButton.interactable = !ended && hasInputs;
+                    if (tray.StartButton != null) tray.StartButton.interactable = !ended && hasInputs;
+                    if (tray.StageCount != null) tray.StageCount.text = offers.Count(slot => slot.CardId != 0) + " 张";
+                    VoyageOffer offer = engine.Preview(loc);
+                    if (tray.StartLabel != null) tray.StartLabel.text = offer.Match == VoyageMatch.Ready ? "开始" : "试一试";
+                    if (tray.StageStatus != null)
+                    {
+                        int busyJob = cardById.TryGetValue(loc, out VoyageCardState place) ? place.JobId : 0;
+                        VoyageJobState running = busyJob == 0 ? null : state.Jobs.FirstOrDefault(job => job.Id == busyJob);
+                        if (running != null)
+                        {
+                            tray.StageStatus.color = InJobBorder;
+                            tray.StageStatus.text = recipes[running.RecipeId].Name + " · 剩余 " + running.Remaining + " 分钟";
+                        }
+                        else if (offer.Match == VoyageMatch.Ready)
+                        {
+                            tray.StageStatus.text = offer.Name + " · 条件齐备";
+                            tray.StageStatus.color = Related;
+                        }
+                        else if (offer.Match == VoyageMatch.Incomplete)
+                        {
+                            tray.StageStatus.text = offer.Name + " · " + offer.Detail;
+                            tray.StageStatus.color = Selection;
+                        }
+                        else
+                        {
+                            tray.StageStatus.text = "将卡牌拖入组合，或将卡牌拖到设施上。";
+                            tray.StageStatus.color = NormalText;
+                        }
+                    }
+                }
+            }
+
             VoyageOffer staged = engine.Preview();
             VoyageOffer hint = state.Staged.Count == 0 && IsAvailable(selected) ? engine.Preview(selected) : staged;
-            startLabel.text = staged.Match == VoyageMatch.Ready || state.Staged.Count == 0 ? "开始" : "试一试";
-            DisplayStage(hint);
             DisplaySlots();
             DisplayCards(new HashSet<int>(hint.RelatedCardIds), followers, previous);
             RefreshGuidance();
@@ -287,16 +459,18 @@ namespace CardKKK.IslandSurvival.Unity
         {
             if (state == null || menuPanel.activeSelf || readPanel.activeSelf || !cardById.TryGetValue(id, out VoyageCardState card)) return;
             selected = id;
-            if (guidanceSlot >= 0)
+            if (guidanceSlot >= 0 && guidanceLocation >= 0)
             {
+                int targetLoc = guidanceLocation;
                 int targetSlot = guidanceSlot;
                 guidanceSlot = -1;
-                if (engine.CanPut(id, state.PreparationLocation, targetSlot, out _))
+                guidanceLocation = -1;
+                if (engine.CanPut(id, targetLoc, targetSlot, out _))
                 {
                     CapturePreparationScroll();
-                    if (Command(value => value.Put(id, state.PreparationLocation, targetSlot, true)))
+                    if (Command(value => value.Put(id, targetLoc, targetSlot, true)))
                     {
-                        PresentPreparation(state.PreparationLocation);
+                        PresentPreparation(targetLoc);
                         return;
                     }
                 }
@@ -311,12 +485,9 @@ namespace CardKKK.IslandSurvival.Unity
             VoyageCardKind selectedKind = cards[card.CardId].Kind;
             if (engine.IsLocation(id) && (selectedKind != VoyageCardKind.Information || clicks < 2 && !engine.IsInSlot(id)))
             {
-                if (preparationVisible && state.PreparationLocation == id)
+                if (openLocations.Contains(id))
                 {
-                    CapturePreparationScroll();
-                    preparationVisible = false;
-                    guidanceSlot = -1;
-                    Render();
+                    ClosePreparation(id);
                     return;
                 }
                 OpenPreparation(id);
@@ -390,13 +561,7 @@ namespace CardKKK.IslandSurvival.Unity
             float dread = Mathf.InverseLerp(75, 5, (float)state.San);
             tableTone.color = Fade(boardColor, dread);
             if (subduedArtwork != null) subduedArtwork.SetFloat("_Desaturation", dread * .9f);
-            var stagedIndex = new Dictionary<int, int>();
-            foreach (VoyageSlotOffer slot in engine.Slots(state.PreparationLocation))
-                if (slot.CardId != 0) stagedIndex.Add(slot.CardId, slot.Index);
-            int followerIndex = engine.Slots(state.PreparationLocation).Count;
-            foreach (int id in followers) stagedIndex.Add(id, followerIndex++);
             int linkedLimb = cardById.TryGetValue(selected, out VoyageCardState selectedCard) ? selectedCard.Limb : 0;
-            SetHeight(stageCards, Mathf.Max(190, Mathf.CeilToInt((engine.Slots(state.PreparationLocation).Count + followers.Count) / 3f) * 180 + 8));
             foreach (int id in cardViews.Keys.Where(id => !cardById.ContainsKey(id)).ToArray())
             {
                 VoyageCardView leaving = cardViews[id];
@@ -419,9 +584,10 @@ namespace CardKKK.IslandSurvival.Unity
                 cardViews.TryGetValue(card.Id, out VoyageCardView view);
                 VoyageJobState job = null;
                 bool inJob = card.JobId != 0 && jobById.TryGetValue(card.JobId, out job);
-                bool staged = stagedIndex.TryGetValue(card.Id, out int index) && card.Id != state.PreparationLocation;
-                bool parked = InOtherPreparation(card.Id) || inJob && job.Location != 0 && job.Location != card.Id && job.Location != state.PreparationLocation;
-                RectTransform parent = staged ? stageCards : tabletop;
+                bool inSlot = engine.IsInSlot(card.Id, out int slotLoc, out int slotIdx);
+                bool trayOpen = inSlot && openTrays.TryGetValue(slotLoc, out VoyageTrayInstance cardTray);
+                bool parked = InOtherPreparation(card.Id) || (inJob && job.Location != 0 && job.Location != card.Id && !openLocations.Contains(job.Location));
+                RectTransform parent = trayOpen ? cardTray.StageCards : tabletop;
                 bool created = view == null;
                 if (view == null)
                 {
@@ -430,11 +596,10 @@ namespace CardKKK.IslandSurvival.Unity
                 }
                 if (!view.Dragging)
                 {
-
                     Vector2 position;
-                    if (staged)
+                    if (trayOpen)
                     {
-                        position = SlotPosition(index);
+                        position = SlotPosition(slotIdx);
                     }
                     else if (inJob && job.Location != 0 && job.Location != card.Id)
                     {
@@ -723,8 +888,12 @@ namespace CardKKK.IslandSurvival.Unity
                 else if (readPanel.activeSelf) CloseRead();
                 else if (menuPanel.activeSelf) CloseMenu();
                 else if (tasksPanel.activeSelf) tasksPanel.SetActive(false);
-                else if (preparationVisible) { CapturePreparationScroll(); preparationVisible = false; guidanceSlot = -1; Render(); }
+                else if (openLocations.Count > 0) { CloseAllPreparations(); Render(); }
                 else OpenMenu();
+            }
+            if (Input.GetKeyDown(KeyCode.T) && !readPanel.activeSelf && !menuPanel.activeSelf && dragging == null)
+            {
+                Command(v => v.TidyDesk());
             }
             GameObject focused = EventSystem.current == null ? null : EventSystem.current.currentSelectedGameObject;
             bool uiOwnsSubmit = focused != null && focused.GetComponentInParent<Selectable>() != null;

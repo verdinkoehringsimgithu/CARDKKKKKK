@@ -15,6 +15,17 @@ namespace CardKKK.IslandSurvival.Core
         private VoyageState state;
 
         public VoyageState Snapshot => Copy(state);
+        public bool IsRecipeUnlocked(string recipeId) => state.Known.Contains(recipeId);
+        public IReadOnlyList<string> UnlockedRecipes => state.Known;
+        public IReadOnlyList<VoyageRecipeRule> GetUnlockedRecipes() =>
+            state.Known.Where(id => recipes.ContainsKey(id)).Select(id => recipes[id]).ToList();
+        public VoyageResult UnlockRecipe(string recipeId) => Commit(s =>
+        {
+            if (string.IsNullOrEmpty(recipeId) || !recipes.ContainsKey(recipeId)) return Fail("不存在此配方。");
+            if (s.Known.Contains(recipeId)) return Fail("该配方此前已解锁。");
+            Learn(s, recipeId);
+            return Ok("已解锁新配方：" + recipes[recipeId].Name);
+        });
         public IReadOnlyList<int> PreparedFollowers => state.Cards.Where(card => card.JobId == 0 &&
             state.Staged.Contains(card.Limb) && IsFollowingPreparedLimb(state, card) && !state.Staged.Contains(card.Id)).Select(card => card.Id).ToArray();
 

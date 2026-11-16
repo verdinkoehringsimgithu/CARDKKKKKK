@@ -4,6 +4,19 @@
 
 ## 当前授权与方向
 
+- [FOUNDATION_5_ADVANCED_FEATURES_20261116] 2026-11-16：孤岛桌面五大进阶机制全量实装：
+  - [CORE]
+    * 配方解锁逻辑：`VoyageEngine.cs` 增加 `IsRecipeUnlocked`、`UnlockedRecipes`、`GetUnlockedRecipes` 与 `UnlockRecipe(recipeId)` 权威命令；`VoyageEngine.Matching.cs` 的 `Start` 在任务启动时自动将未解锁配方录入 `Known`；`VoyageSaveStore` 自动将已知配方持久化保存。
+    * 一键整理桌面：`VoyageEngine.Desktop.cs` 实现 `TidyDesk()`，桌面游离卡牌按肢体、设施、资源、工具、材料、食材、生灵、思绪、信息分类层级与配置 `SortRank` 稳定排序，相同卡牌在容量允许时自动合并，以桌面物理几何计算规范网格排布，保持卡牌在有效视口内（X/Y 0.04~0.96）。
+    * 槽位精确查询：`VoyageEngine.Desktop.cs` 增加 `IsInSlot(id, out int location, out int slotIndex)` 双向准确定位卡牌所在的具体场所与槽位号。
+  - [UI]
+    * 鼠标拉框多选（Marquee Box Selection）：`VoyageView.Desktop.cs` 的 `TickDesktop` 监听空白桌面左键拖动，动态生成半透明选框，实时检测桌面卡牌屏幕包围盒交叉并纳入 `multiSelected`，配合 `Selection` 金框高亮与整组协同拖拽。
+    * 多窗并发常驻（Multi-Window Floating Tray Concurrency）：`VoyageView.cs` 引入 `VoyageTrayInstance` 与 `openTrays` 实例管理器，支持海滩、营地、通用等多个场所托盘在桌面上同时常驻平铺打开与独立摆放，各自拥有独立的槽位、开工/退回按钮、预览状态与标题栏拖动记忆；点击不同场所卡无缝多开，点击已开场所独立关闭，相互之间支持无缝跨窗拖牌。
+    * 槽位拖拽悬停动态变色（Slot Drop Target Hover Glow）：`VoyageSlotView.cs` 增加 `SetHoverHighlight(bool hovered, bool valid)`，卡牌拖拽悬停至任意槽位上方时，依据 `CanPut` 准入实时将槽框呈现绿色（合规）或红色（违规/锁定），松手或移出即刻自愈恢复。
+    * 键盘一键整理快捷键：`VoyageView.cs` 接入 `KeyCode.T` 触发 `Command(v => v.TidyDesk())`。
+  - [VERIFY] `VoyageDesktopVerification.cs` 补齐桌面一键整理卡牌数量守恒与边界断言、配方解锁状态与查询断言、槽位反查断言。全量 C# 括号 100% 平衡，Core 零 UnityEngine 依赖，meta 完整。
+  - [NEXT] 用户在 Unity 中 Play 验收（重点体验：空白桌面鼠标拉框多选、多场所托盘同时打开并在不同托盘间拖牌、拖拽卡牌悬停槽位变绿/变红、按 T 键一键整理桌面对齐、新配方解锁记录）。
+
 - [FOUNDATION_7_POINTS_EXPANSION_20261116] 2026-11-16：孤岛出航进阶交互与底层扩展 7 项能力全量实装：
   - [CORE]
     * 多场所与容器：`VoyageEngine.Desktop.cs` 的 `IsLocation`、`SlotCapacity`、`CanPut` 支持识别 `容器`/`bag`/`container` 标签卡，赋予 4~12 格独立存储空间，空槽语义显示为“储物”；`Start(location)`、`Preview(location)`、`ClearStage(location)` 支持针对任意场所独立规划执行，解除单一全局 Staged 限制。
