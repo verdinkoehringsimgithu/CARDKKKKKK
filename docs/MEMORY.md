@@ -1,8 +1,10 @@
 # 开发记忆
 
-更新：2026-11-13。先读本文件和 AGENTS.md，再看实际代码与 Git 状态。当前「孤岛生存」以用户提供的出航版 PDF 为准，旧营地经营版 1.3 及其需求表为历史资料。用户自己执行 Unity、编译与运行验收。
+更新：2026-11-17。先读本文件和 AGENTS.md，再看实际代码与 Git 状态。当前「孤岛生存」以用户提供的出航版 PDF 为准，旧营地经营版 1.3 及其需求表为历史资料。用户自己执行 Unity、编译与运行验收。
 
 ## 当前授权与方向
+
+- [COMPILE_FIX_20261117] 2026-11-17：针对用户反馈的 Unity 编译报错 `Assets\IslandSurvival\Core\VoyageEngine.Copies.cs(30,60): error CS0103: The name 'Math' does not exist in the current context` 完成修复。根因为 Copies.cs 头部遗漏 `using System;`，补全命名空间引用；排查 Assets/IslandSurvival 全部 C# 文件，确认括号与命名空间引用完整。入口仍为「孤岛生存 → 打开孤岛场景」。未自动运行 Unity、编译器或测试，待用户验收。
 
 - [FOUNDATION_5_ADVANCED_FEATURES_20261116] 2026-11-16：孤岛桌面五大进阶机制全量实装：
   - [CORE]
