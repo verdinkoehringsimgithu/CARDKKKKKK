@@ -38,10 +38,6 @@ namespace CardKKK.IslandSurvival.Unity
             else
                 frame.color = valid ? new Color(.25f, .95f, .25f, 1f) : new Color(.95f, .25f, .25f, 1f);
         }
-        {
-            if (acceptable) frame.color = new Color(.46f, 1f, .16f, 1f);
-            else if (selected) frame.color = new Color(.98f, .81f, .48f, 1f);
-        }
 
         public void OnPointerClick(PointerEventData pointer)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using CardKKK.IslandSurvival.Core;
@@ -19,7 +20,7 @@ namespace CardKKK.IslandSurvival.Unity
         private VoyageDeskRules deskRules;
         private bool singleDrag;
         private int guidanceSlot = -1;
-        private float guidanceUntil, panelTime, nextDropRefresh;
+        private float guidanceUntil, nextDropRefresh;
         private CanvasGroup preparationFade;
 
         private VoyageSlotView FindSlotView(int location, int index)

@@ -9,6 +9,20 @@ using UnityEngine.UI;
 
 namespace CardKKK.IslandSurvival.Unity
 {
+    internal sealed class VoyageTrayInstance
+    {
+        public int LocationId;
+        public GameObject GameObject;
+        public RectTransform Rect;
+        public Text Title;
+        public Button CloseButton, ClearButton, StartButton;
+        public Text StartLabel, StageStatus, StageCount;
+        public RectTransform StageCards, StageDrop;
+        public ScrollRect StageScroll;
+        public CanvasGroup Fade;
+        public readonly Dictionary<int, VoyageSlotView> SlotViews = new Dictionary<int, VoyageSlotView>();
+    }
+
     public sealed partial class VoyageView : MonoBehaviour
     {
         [SerializeField] private RectTransform tabletop, tabletopViewport, stageCards, stageDrop, taskRows, dragLayer;
@@ -331,7 +345,7 @@ namespace CardKKK.IslandSurvival.Unity
             preparationScroll.Clear();
             guidanceSlot = -1;
             guidanceLocation = -1;
-            panelTime = 0;
+
             state = null;
             selected = hovered = 0;
             tasksPanel.SetActive(false);
@@ -584,10 +598,11 @@ namespace CardKKK.IslandSurvival.Unity
                 cardViews.TryGetValue(card.Id, out VoyageCardView view);
                 VoyageJobState job = null;
                 bool inJob = card.JobId != 0 && jobById.TryGetValue(card.JobId, out job);
+                VoyageTrayInstance cardTray = null;
                 bool inSlot = engine.IsInSlot(card.Id, out int slotLoc, out int slotIdx);
-                bool trayOpen = inSlot && openTrays.TryGetValue(slotLoc, out VoyageTrayInstance cardTray);
+                bool trayOpen = inSlot && openTrays.TryGetValue(slotLoc, out cardTray);
                 bool parked = InOtherPreparation(card.Id) || (inJob && job.Location != 0 && job.Location != card.Id && !openLocations.Contains(job.Location));
-                RectTransform parent = trayOpen ? cardTray.StageCards : tabletop;
+                RectTransform parent = trayOpen && cardTray != null ? cardTray.StageCards : tabletop;
                 bool created = view == null;
                 if (view == null)
                 {
@@ -626,7 +641,7 @@ namespace CardKKK.IslandSurvival.Unity
                     bool releasedFollower = formerLimbWorkspace != null && !engine.IsInSlot(card.Id) &&
                         !state.Workspaces.Any(workspace => workspace.Slots.Any(slot => slot.CardId == card.Limb));
                     bool released = card.JobId == 0 && previousCard != null && (previousCard.JobId != 0 || releasedFollower);
-                    if (released && !view.gameObject.activeSelf && !parked && (!staged || preparationVisible))
+                    if (released && !view.gameObject.activeSelf && !parked && (!inSlot || trayOpen))
                     {
                         // Hidden work cards must become visible before LayoutTo, which snaps inactive views.
                         VoyageJobState previousJob = previous.Jobs.FirstOrDefault(task => task.Id == previousCard.JobId);
@@ -636,7 +651,7 @@ namespace CardKKK.IslandSurvival.Unity
                         view.SnapTo(tabletop, TablePosition(origin, view.Rect));
                     }
                     bool returning = view.Rect.parent != parent || released;
-                    view.LayoutTo(parent, position, !created, staged ? 24f : returning ? 32f : 0f);
+                    view.LayoutTo(parent, position, !created, trayOpen ? 24f : returning ? 32f : 0f);
                     if (!view.Dragging) view.transform.SetAsLastSibling();
                 }
                 VoyageCardRule rule = cards[card.CardId];
@@ -651,7 +666,7 @@ namespace CardKKK.IslandSurvival.Unity
                 else if (inJob || parked) frame = InJobBorder;
                 else if (related.Contains(card.Id)) frame = Related;
                 else if (card.Id == linkedLimb) frame = LinkedLimb;
-                else if (staged) frame = StageBorder;
+                else if (trayOpen) frame = StageBorder;
                 else frame = Color.Lerp(color, Color.black, .24f);
 
                 float water = head ? (float)state.San / 100f : torso ? (float)state.Hunger / 100f : -1;
@@ -677,7 +692,7 @@ namespace CardKKK.IslandSurvival.Unity
                     vivid || dread == 0 ? null : subduedArtwork, color, frame, water,
                     head ? new Color(.25f, .68f, .66f) : new Color(.86f, .55f, .25f), wear);
                 view.SetProgress(inJob ? 1f - (float)job.Remaining / job.Duration : -1);
-                bool visible = !parked && (!staged || preparationVisible);
+                bool visible = !parked && (!inSlot || trayOpen);
                 if (view.gameObject.activeSelf != visible) view.gameObject.SetActive(visible);
             }
         }

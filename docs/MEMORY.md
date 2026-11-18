@@ -4,6 +4,7 @@
 
 ## 当前授权与方向
 
+- [COMPILE_FIX_20261118] 2026-11-18：针对 Unity Console 反馈的编译报错完成修复：1) VoyageCardView.cs 区分 retiring 与 motion 作用域变量名，消除局部变量 t 重名冲突（CS0136）；2) VoyageView.cs 显式初始化 cardTray 规避短路赋值未定义报错（CS0165），并将多窗托盘重构遗留的 staged/preparationVisible 替换为 inSlot/trayOpen 状态（CS0103）；3) 清理 VoyageView.Desktop.cs 未使用字段 panelTime 警告（CS0414）。静态语法与括号校验 100% 平衡，Core 零 UnityEngine 依赖，未启动 Unity/编译器，待用户在 Unity 中切回验证。
 - [COMPILE_FIX_20261117] 2026-11-17：针对用户反馈的 Unity 编译报错 `Assets\IslandSurvival\Core\VoyageEngine.Copies.cs(30,60): error CS0103: The name 'Math' does not exist in the current context` 完成修复。根因为 Copies.cs 头部遗漏 `using System;`，补全命名空间引用；排查 Assets/IslandSurvival 全部 C# 文件，确认括号与命名空间引用完整。入口仍为「孤岛生存 → 打开孤岛场景」。未自动运行 Unity、编译器或测试，待用户验收。
 
 - [FOUNDATION_5_ADVANCED_FEATURES_20261116] 2026-11-16：孤岛桌面五大进阶机制全量实装：

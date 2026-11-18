@@ -182,10 +182,10 @@ namespace CardKKK.IslandSurvival.Unity
             if (retiring)
             {
                 retireTime = Mathf.Min(1, retireTime + Time.unscaledDeltaTime / .22f);
-                float t = Mathf.SmoothStep(0, 1, retireTime);
-                Rect.position = Vector3.LerpUnclamped(retireFrom, retireTo, t);
-                Rect.localScale = Vector3.one * Mathf.Lerp(1, .25f, t);
-                retireFade.alpha = 1 - t;
+                float stepT = Mathf.SmoothStep(0, 1, retireTime);
+                Rect.position = Vector3.LerpUnclamped(retireFrom, retireTo, stepT);
+                Rect.localScale = Vector3.one * Mathf.Lerp(1, .25f, stepT);
+                retireFade.alpha = 1 - stepT;
                 if (retireTime >= 1) Destroy(gameObject);
                 return;
             }
